@@ -1,0 +1,165 @@
+
+@page {
+    margin: 0;
+    orientation:landscape;
+}
+@page :first {size: A4 landscape}
+@media print {
+  html, body {
+    width: 148mm;
+    height: 105mm;
+    size: A4 landscape;
+  }
+}
+.frontpage
+{
+    /*border: 1px solid purple;*/
+
+}
+.pageset
+{
+    page-break-before: always;
+    width:800px;
+    min-width:100%;
+    display:block;
+}
+.backpage
+{
+    size: A4 landscape;
+    margin: 0;
+    /*border: 1px solid orange;*/
+}
+.card_row
+{
+ margin-left:20px;   
+ border-bottom: 1px solid black;
+ margin-top:25px;
+}
+
+.frontpage .entrant_number_box
+{
+    padding-top:40px;
+    padding-bottom:30px;
+    width:520px;
+    text-align:center;
+    font-size:20px;
+    /*border: 1px solid #00cccc;*/
+    
+}
+.frontpage .entrant_number
+{
+    font-size:30px;
+    border-bottom: 1px solid black;
+    display:inline-block;
+    width:40px;    
+}
+.frontpage .prize_box
+{
+    padding-top:30px;
+    padding-bottom:100px;
+    width:456px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-size:20px;
+}
+.frontpage .prize
+{
+    font-size:20px;
+    border-bottom: 1px solid black;
+    display:inline-block;
+    width:180px;    
+}
+.frontpage .class_number_box
+{
+    padding-top:30px;
+    padding-bottom:30px;
+    width:150px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-size:30px;
+    /*border:1px solid green;*/
+}
+.frontpage .class_number
+{
+    font-size:36px;
+    border-bottom: 1px solid black;
+    display:inline-block;
+    width:40px;
+    font-weight:bold;
+        
+}
+.frontpage .entrant_number
+{
+    margin-left:auto;    
+}
+.entrycard
+{
+    width:800px;
+    
+}
+.backpage.second
+{
+    left:50%;
+}
+
+.backpage
+{
+        background-color:blue;
+        width:100%;
+        /*width:50%;*/
+        /*min-width:50%;*/
+}
+.frontpage
+{
+        background-color:red;
+        width:100%;
+}
+.frontpage .footer
+{
+    font-size:10px;
+}
+.frontpage .footer_box
+{
+    margin-left:50px;
+}
+img.rhs-logo
+{
+    padding:10px;
+    margin:10px;
+    margin-top:30px;
+}
+
+.backpage .society_name
+{
+    margin-top:30px;
+    margin-left:20px;
+    font-size:26px;
+}
+.backpage .prize_box
+{
+    margin-left:20px;
+    margin-top:30px;
+    width:350px;
+    height:30px;
+    border:1px solid black;
+    padding:10px;
+}
+.backpage .class_number
+{
+    padding-top:20px;
+}
+.backpage .class_name
+{
+    width:100%;
+}
+.backpage .exhibitor_name
+{
+    width:100%;
+}
+.backpage .gardener_name
+{
+    width:100%;
+    margin-bottom:10px;
+}
