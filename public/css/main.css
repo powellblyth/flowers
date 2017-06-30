@@ -1,58 +1,81 @@
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+div.links
+{
+    border-bottom:1px solid #aaa;
+    padding-bottom:4px;
+    margin-bottom:6px;
+}
+.full-height {
+    height: 100vh;
+}
 
-            .full-height {
-                height: 100vh;
-            }
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+.position-ref {
+    position: relative;
+}
 
-            .position-ref {
-                position: relative;
-            }
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+.content {
+    text-align: center;
+}
 
-            .content {
-                text-align: center;
-            }
+.title {
+    font-size: 84px;
+}
 
-            .title {
-                font-size: 84px;
-            }
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+.m-b-md {
+    margin-bottom: 30px;
+}
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-            
-            
-            
-            div#content
-            {
-                width:70%;
-                margin-left:15%;
-            }
+
+
+div#content
+{
+    width:70%;
+    margin-left:15%;
+}
+
+a.button, input.button
+{
+
+    border: 1px solid teal;
+    background: lightblue;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px;
+    display: inline-block;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    color:#333;
+
+}
+a.button:visited
+{
+    color:#333;
+}

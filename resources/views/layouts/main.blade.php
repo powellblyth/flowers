@@ -36,10 +36,10 @@
 
                 <div class="links">
                     <a href="{{ url('/') }}">Höm</a>
-                    <a href="{{ url('/entrants') }}">List all entrants</a>
+                    <a href="{{ url('/entrants') }}">Entrants</a>
                     <a href="{{ url('/entrants/create') }}">Add an entrant</a>
-                    <a href="{{ url('/categories') }}">Show categories</a>
-                    <a href="{{ url('/cups') }}">Show cups</a>
+                    <a href="{{ url('/categories') }}">Categories / Results</a>
+                    <a href="{{ url('/cups') }}">Cups</a>
                 </div>
                 <div id="content">
                     @yield('content')

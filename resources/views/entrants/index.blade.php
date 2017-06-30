@@ -12,7 +12,7 @@
         <tr>
             <td>{{ Form::label('section', 'Search:', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('searchterm', null, ['class' => 'form-control']) }}</td>
-            <td>{{ Form::submit('Search', ['class' => 'btn btn-primary']) }}</td>   
+            <td>{{ Form::submit('Search', ['class' => 'button btn btn-primary']) }}</td>   
         </tr>
     </table>
 

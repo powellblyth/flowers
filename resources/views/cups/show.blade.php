@@ -1,7 +1,7 @@
 @extends('layouts/main')
 @section('pagetitle', 'Cup ' . $thing->name)
 @section('content')
-<a href="/cups">Cups</a>
+<a href="/cups">&laquo; Cups</a>
 <br />
 <ul>
       <li>Name: {{ $thing->name }}</li>
@@ -15,9 +15,42 @@
 @foreach ($cup_links as $cup_link)
 <tr>
     <td>{{$category_data[$cup_link->category]->number}} {{$category_data[$cup_link->category]->name}}</td>
-    @foreach ($winners_by_category[$cup_link->category] as $place=>$winner)
-    <td>{{$place}} - {{$winners[$winner]['entrant']->getName()}} ({{$winners[$winner]['points']}} points)</td>
-    @endforeach
+    @if (array_key_exists($cup_link->category, $winners_by_category) && count($winners_by_category[$cup_link->category]) > 0)
+    @php
+    //var_dump($winners_by_category[$cup_link->category]['1']);die();
+    @endphp
+        <td>
+            @if (array_key_exists('1', $winners_by_category[$cup_link->category]))
+                {{$winners[$winners_by_category[$cup_link->category]['1']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['1']['points']}} points)
+            @else
+             - 
+            @endif
+        </td>
+        <td>
+            @if (array_key_exists('2', $winners_by_category[$cup_link->category]))
+                {{$winners[$winners_by_category[$cup_link->category]['2']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['2']['points']}} points)
+            @else
+             - 
+            @endif
+        </td>
+        <td>
+            @if (array_key_exists('3', $winners_by_category[$cup_link->category]))
+                {{$winners[$winners_by_category[$cup_link->category]['3']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['3']['points']}} points)
+            @else
+             - 
+            @endif
+        </td>
+        <td>
+            @if (array_key_exists('commended', $winners_by_category[$cup_link->category]))
+                {{$winners[$winners_by_category[$cup_link->category]['commended']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['commended']['points']}} points)
+            @else
+             - 
+            @endif
+        </td>
+    @else
+    <td colspan="4">Unavailable</td>
+    @endif
+    
 </tr>
 @endforeach
 </table>

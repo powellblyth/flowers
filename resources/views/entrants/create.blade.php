@@ -48,7 +48,7 @@
     </table>
 </div>
 
-{{ Form::submit('Create New Entrant', ['class' => 'btn btn-primary']) }}
+{{ Form::submit('Create New Entrant', ['class' => 'button btn btn-primary']) }}
 
 {{ Form::close() }}
 

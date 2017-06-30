@@ -6,7 +6,6 @@
 @php
 $lastSection = 'no'
 @endphp
-<a href="/categories/create">+ Add a new one</a><br />
 <div class="form-group" style="text-align:left;padding-left:10%">
 @foreach ($things as $thing)
 @php
@@ -14,7 +13,7 @@ $currentSection = $thing->section
 @endphp
 
 @if ($lastSection != $currentSection)
-    <b>{{$thing->section}}</b> - <a href="/categories/resultsentry?section={{urlencode($thing->section)}}">Enter Results</a><Br />
+    <b>{{$thing->section}}</b> - <a class="button" href="/categories/resultsentry?section={{urlencode($thing->section)}}">Enter Results</a><Br />
 @endif
 <p>{{$thing->number}} {{ $thing->name }}
     @if(count($results[$thing->id]) > 0)
@@ -43,4 +42,5 @@ $lastSection = $thing->section
 @endforeach
 
 </div>
+<a href="/categories/create" class="button">+ Add a new category</a><br />
 @stop

@@ -25,8 +25,8 @@ class CupController extends Controller
         $resultset = DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
 sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
 sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
-sum(if(winningplace='4', 1,0)) as commendedplacepoints, 
-sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3', 2,0) + if(winningplace='4', 1,0)) as totalpoints,
+sum(if(winningplace='commended', 1,0)) as commendedplacepoints, 
+sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3', 2,0) + if(winningplace='commended', 1,0)) as totalpoints,
 entrant from entries 
 
 where category in (
@@ -40,8 +40,8 @@ order by (totalpoints) desc", array($cup->id));
 //        echo "select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
 //sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
 //sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
-//sum(if(winningplace='4', 1,0)) as commendedplacepoints, 
-//sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3', 2,0) + if(winningplace='4', 1,0)) as totalpoints,
+//sum(if(winningplace='commended', 1,0)) as commendedplacepoints, 
+//sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3', 2,0) + if(winningplace='commended', 1,0)) as totalpoints,
 //entrant from entries 
 //
 //where category in (
@@ -71,28 +71,24 @@ order by (totalpoints) desc", array($cup->id));
         $categoryData = [];
         foreach ($cupLinks as $cupLink)
         {
-$resultset = DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
-sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
-sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
-sum(if(winningplace='4', 1,0)) as commendedplacepoints, 
-sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3', 2,0) + if(winningplace='4', 1,0)) as totalpoints,
+$resultset = DB::select("select if(winningplace='1', 4,if(winningplace='2',3, if(winningplace='3',2, if(winningplace='commended',1, 0 ) ) )) as points, 
 winningplace,
-entrant from entries 
+entrant 
+
+from entries 
 
 where category = ?
+AND winningplace IN ('1','2','3','commended')
 
-group by entrant
-
-having (totalpoints > 0)
-order by (totalpoints) desc", array($cupLink->category));            
+order by (winningplace) ASC", array($cupLink->category));            
 
             $winnerDataByCategory[$cupLink->category] = array();
             foreach ($resultset as $categoryWinners)
             {
-                $winnerDataByCategory[$cupLink->category][$categoryWinners->totalpoints] = $categoryWinners->entrant;
+                $winnerDataByCategory[$cupLink->category][$categoryWinners->winningplace] = ['entrant'=>$categoryWinners->entrant, 'place'=>$categoryWinners->winningplace, 'points'=>$categoryWinners->points];
                 if (!array_key_exists($categoryWinners->entrant, $winners))
                 {
-                    $winners[$categoryWinners->winningplace] = array('entrant'=> Entrant::find($categoryWinners->entrant), 'points'=>$categoryWinners->totalpoints);
+                    $winners[$categoryWinners->entrant] = Entrant::find($categoryWinners->entrant);
                 }
             }
             

@@ -1,10 +1,7 @@
-@section('extra_head')
-    <link rel="stylesheet" href="{{URL::asset('css/formPrint.css')}}" media="print"/>
-@stop
 @extends('layouts/main')
 @section('pagetitle', 'Entrant ' . $thing->firstname. ' ' .  $thing->familyname)
 @section('content')
-<a href="/entrants">Entrants</a>
+<a href="/entrants">&laquo; Entrants</a>
 <br />
 <table>
     <tr>
@@ -17,7 +14,7 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2"><a href="/entrants/{{$thing->id}}/print">PRINT ALL CARDS</a> <a href="/entrants/{{$thing->id}}/edit">Edit Entrant</a></td>
+        <td colspan="2"><a href="/entrants/{{$thing->id}}/print" target="_blank" class="button">Print all cards</a> <a href="/entrants/{{$thing->id}}/edit" class="button">Edit Entrant</a></td>
     </tr>
 </table>
 
@@ -25,10 +22,10 @@
     <tr>
         <td><h2>Payments (&pound;{{number_format($paid,2)}})</h2></td>
         <td><h2>Entries ({{count($entries)}}, £{{number_format($entry_fee/100,2)}})</h2></td>
-        <td><h2>Balance Due</h2></td>
+        <td><h2>Totals</h2></td>
     </tr>
     <tr>
-        <td>
+        <td style="text-align:left;vertical-align:top">
 @if (count($payments) <= 0)
 {{$thing->firstname}} has not made any payments yet
 @else
@@ -38,7 +35,7 @@
 @endif
 
         </td>
-        <td>
+        <td style="text-align:left;vertical-align:top">
 
 @if (count($entries) <= 0)
 {{$thing->firstname}} has not entered any categories yet
@@ -62,16 +59,16 @@
 <p>{{$category_data[$entry->category]->number}}) {{$category_data[$entry->category]->name}} ({{$thisPrice}}p) 
     @if ($entry->hasWon())
     <b><u>{{$entry->getPlacementName()}}</u></b>
-    (£{{$category_data[$entry->category]->getWinningAmount($entry->winningplace)/100}})
+    (£{{number_format($category_data[$entry->category]->getWinningAmount($entry->winningplace)/100,2)}})
     @endif
 </p>
 @endforeach
 @endif
         </td>
-        <td>
-            <b>&pound;{{number_format(($entry_fee/100) - $paid,2)}}</b>
-<p><b>Prizes</b>
-    <b>£{{number_format($total_prizes/100,2)}}</b></p>
+        <td style="text-align:left;vertical-align:top">
+            <p><nobr><b>Balance: &pound;{{number_format(($entry_fee/100) - $paid,2)}}</b></nobr></p>
+<p><nobr><b>Prizes</b>
+    <b>£{{number_format($total_prizes/100,2)}}</b></nobr></p>
         </td>
     </tr>
 </table>
@@ -87,7 +84,7 @@
 {{ Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px']) }}
 @endfor
 <br />
-{{ Form::submit('Create Entry', ['class' => 'btn btn-primary']) }}
+{{ Form::submit('Create Entry', ['class' => 'button btn btn-primary']) }}
 <br /><br /><br />
 {{ Form::close() }}
 <h2>New Payment Record</h2>

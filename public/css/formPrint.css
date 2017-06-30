@@ -72,8 +72,8 @@
 }
 .frontpage .class_number_box
 {
-    padding-top:30px;
-    padding-bottom:30px;
+    padding-top:20px;
+    padding-bottom:26px;
     width:150px;
     margin-left:auto;
     margin-right:auto;
@@ -106,14 +106,12 @@
 
 .backpage
 {
-        background-color:blue;
         width:100%;
         /*width:50%;*/
         /*min-width:50%;*/
 }
 .frontpage
 {
-        background-color:red;
         width:100%;
 }
 .frontpage .footer
@@ -128,7 +126,7 @@ img.rhs-logo
 {
     padding:10px;
     margin:10px;
-    margin-top:30px;
+    margin-top:24px;
 }
 
 .backpage .society_name
@@ -161,5 +159,5 @@ img.rhs-logo
 .backpage .gardener_name
 {
     width:100%;
-    margin-bottom:10px;
+    margin-bottom:6px;
 }
