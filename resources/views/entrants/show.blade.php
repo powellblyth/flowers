@@ -21,7 +21,8 @@
 <table style="width:100%;border:1px solid #ddd">
     <tr>
         <td><h2>Payments (&pound;{{number_format($paid,2)}})</h2></td>
-        <td><h2>Entries ({{count($entries)}}, £{{number_format($entry_fee/100,2)}})</h2></td>
+        <td><h2>Memberships (&pound;{{number_format($membership_fee/100,2)}})</h2></td>
+        <td><h2>Entries ({{count($entries)}}, &pound;{{number_format($entry_fee/100,2)}})</h2></td>
         <td><h2>Totals</h2></td>
     </tr>
     <tr>
@@ -37,6 +38,12 @@
         </td>
         <td style="text-align:left;vertical-align:top">
 
+@foreach ($membership_purchases as $purchase)
+<p>{{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
+@endforeach
+        </td>
+        <td style="text-align:left;vertical-align:top">
+
 @if (count($entries) <= 0)
 {{$thing->firstname}} has not entered any categories yet
 @else
@@ -44,7 +51,7 @@
 
 @php
                 $created = new \DateTime($entry->created_at);
-                $cutoffDate = new \DateTime('5 July 2017 23:59:59');
+                $cutoffDate = new \DateTime('7 July 2017 12:00:59');
 
                 if ($created < $cutoffDate )
                 {
@@ -66,7 +73,7 @@
 @endif
         </td>
         <td style="text-align:left;vertical-align:top">
-            <p><nobr><b>Balance: &pound;{{number_format(($entry_fee/100) - $paid,2)}}</b></nobr></p>
+            <p><nobr><b>Balance due: &pound;{{number_format((($entry_fee + $membership_fee)/100) - $paid,2)}}</b></nobr></p>
 <p><nobr><b>Prizes</b>
     <b>£{{number_format($total_prizes/100,2)}}</b></nobr></p>
         </td>
@@ -94,11 +101,24 @@
 ]) }}
 
 {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
-{{ Form::label('amount', 'Amount: £', ['class' => 'control-label']) }}
+{{ Form::label('amount', 'Amount: &pound;', ['class' => 'control-label']) }}
 {{ Form::text('amount', null, ['class' => 'form-control']) }}
             {{Form::select('source', $payment_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
 <br />
-{{ Form::submit('Store Payment', ['class' => 'btn btn-primary']) }}
+{{ Form::submit('Store Payment', ['class' => 'button btn btn-primary']) }}
+<br /><br /><br />
+{{ Form::close() }}
+<h2>New Membership Purchase</h2>
+
+{{ Form::open([
+    'route' => 'membershippurchases.store'
+]) }}
+
+{{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
+{{ Form::label('type', 'Type:', ['class' => 'control-label']) }}
+            {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
+<br />
+{{ Form::submit('Purchase Membership', ['class' => 'button btn btn-primary']) }}
 <br /><br /><br />
 {{ Form::close() }}
 

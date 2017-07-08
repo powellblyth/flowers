@@ -29,7 +29,10 @@
                                     <div class="footer_box"><span class="footer">Petersham Horticultural Society - Summer Show 2017</span></div>
                                 </div>
                             </td>
-                        @endif
+                        @else
+                          <td><div style="width:535px" >&nbsp;</div></td>
+
+                            @endif
                         @php
                         $cardcounter++
                         @endphp
@@ -56,11 +59,11 @@
                                 $y = $cardcounter + 1;
                             }
                             @endphp
-                            @if (array_key_exists($y,$card_backs))
                             <table class="backpage
                                  @if (1 == $q)
                                  second
                                  @endif">
+                            @if (array_key_exists($y,$card_backs))
                                 <tr>
                                     <td><img class="rhs-logo" src="/images/RHS-LOGO-BW-SMALL.jpg" /></td>
                                     <td>
@@ -72,12 +75,14 @@
                                     <td colspan="2">
                                             <div class="card_row class_number"><b>Class</b> {{$card_backs[$y]['class_number']}}</div>
                                             <div class="card_row class_name"><b>Description</b> {{$card_backs[$y]['class_name']}}</div>
-                                            <div class="card_row exhibitor_name"><b>Exhibitor name</b> {{$card_backs[$y]['entrant_name']}}</div>
+                                            <div class="card_row exhibitor_name"><b>Exhibitor name</b> {{$card_backs[$y]['entrant_name']}} (Entrant #{{$card_backs[$y]['entrant_number']}})</div>
                                             <div class="card_row gardener_name"><b>Gardener</b> (if any) </div><br />
                                     </td>
                                 </tr>
+                                @else
+                                <tr><td><div style="width:535px" >&nbsp;</div></td></tr>
+                                @endif
                             </table>
-                                        @endif
                         </td>
                         @php
                             $cardcounter++

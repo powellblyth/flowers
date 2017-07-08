@@ -19,6 +19,6 @@
 {{ Form::close() }}
 
 @foreach ($things as $thing)
-<p>{{$thing->id}}: <a href="{{$thing->getUrl()}}">Entrant {{ $thing->firstname }} {{ $thing->familyname }}</a></p>
+<p>{{$thing->id}}: <a href="{{$thing->getUrl()}}">{{ $thing->firstname }} {{ $thing->familyname }}</a></p>
 @endforeach
 @stop

@@ -22,10 +22,6 @@
             <td>{{ Form::text('membernumber', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
-            <td>{{ Form::label('email', 'Email:', ['class' => 'control-label']) }}</td>
-            <td>{{ Form::text('email', null, ['class' => 'form-control']) }}</td>
-        </tr>
-        <tr>
             <td>{{ Form::label('address', 'Address:', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('address', null, ['class' => 'form-control']) }}</td>
         </tr>
@@ -35,11 +31,19 @@
         </tr>
         <tr>
             <td>{{ Form::label('addresstown', 'Town / City:', ['class' => 'control-label']) }}</td>
-            <td>{{ Form::text('address', null, ['class' => 'form-control']) }}</td>
+            <td>{{ Form::text('addresstown', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
             <td>{{ Form::label('postcode', 'Postcode:', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('postcode', null, ['class' => 'form-control']) }}</td>
+        </tr>
+        <tr>
+            <td>{{ Form::label('email', 'Email:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::text('email', null, ['class' => 'form-control']) }}</td>
+        </tr>
+        <tr>
+            <td>{{ Form::label('telephone', 'Telephone:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::text('telephone', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
             <td>{{ Form::label('age', 'Age (Children):', ['class' => 'control-label']) }}</td>

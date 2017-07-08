@@ -15,10 +15,10 @@ $currentSection = $thing->section
 @if ($lastSection != $currentSection)
     <b>{{$thing->section}}</b> - <a class="button" href="/categories/resultsentry?section={{urlencode($thing->section)}}">Enter Results</a><Br />
 @endif
-<p>{{$thing->number}} {{ $thing->name }}
-    @if(count($results[$thing->id]) > 0)
+<p>{{$thing->number}} {{ $thing->name }} (<b>{{((array_key_exists($thing->id, $results) && count($results[$thing->id]['total_entries']) > 0) ? $results[$thing->id]['total_entries'] : 0)}}</b> entries)
+    @if(array_key_exists($thing->id, $results) && count($results[$thing->id]['placements']) > 0)
     <br /><b><u>Results</u></b>
-@foreach ($results[$thing->id] as $result)
+@foreach ($results[$thing->id]['placements'] as $result)
 <b>@if($result->winningplace == 1)
 First place
 @elseif ($result->winningplace == 2)

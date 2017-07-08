@@ -13,12 +13,10 @@
     @php
     @endphp
 @foreach ($cup_links as $cup_link)
+@if (array_key_exists($cup_link->category, $category_data) && !is_null($category_data[$cup_link->category]))
 <tr>
     <td>{{$category_data[$cup_link->category]->number}} {{$category_data[$cup_link->category]->name}}</td>
     @if (array_key_exists($cup_link->category, $winners_by_category) && count($winners_by_category[$cup_link->category]) > 0)
-    @php
-    //var_dump($winners_by_category[$cup_link->category]['1']);die();
-    @endphp
         <td>
             @if (array_key_exists('1', $winners_by_category[$cup_link->category]))
                 {{$winners[$winners_by_category[$cup_link->category]['1']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['1']['points']}} points)
@@ -52,6 +50,9 @@
     @endif
     
 </tr>
+@else
+<tr><td>Misssing data for {{$cup_link->category}}</td></tr>
+@endif
 @endforeach
 </table>
 @stop

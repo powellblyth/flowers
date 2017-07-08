@@ -22,6 +22,7 @@ Route::get('/categories/resultsentry',
     'uses' => 'CategoryController@resultsentry']);
 
 Route::resource('categories', 'CategoryController');
+Route::resource('membershippurchases', 'MembershipPurchaseController');
 Route::resource('cups', 'CupController');
 Route::resource('payments', 'PaymentController');
 

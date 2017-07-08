@@ -34,6 +34,7 @@
  margin-left:20px;   
  border-bottom: 1px solid black;
  margin-top:25px;
+ width:97%;
 }
 
 .frontpage .entrant_number_box
@@ -74,7 +75,7 @@
 {
     padding-top:20px;
     padding-bottom:26px;
-    width:150px;
+    width:230px;
     margin-left:auto;
     margin-right:auto;
     text-align:center;
@@ -86,7 +87,7 @@
     font-size:36px;
     border-bottom: 1px solid black;
     display:inline-block;
-    width:40px;
+    width:100px;
     font-weight:bold;
         
 }
@@ -121,6 +122,7 @@
 .frontpage .footer_box
 {
     margin-left:50px;
+    margin-bottom:10px;
 }
 img.rhs-logo
 {
@@ -139,7 +141,7 @@ img.rhs-logo
 {
     margin-left:20px;
     margin-top:30px;
-    width:350px;
+    width:345px;
     height:30px;
     border:1px solid black;
     padding:10px;
@@ -148,16 +150,13 @@ img.rhs-logo
 {
     padding-top:20px;
 }
-.backpage .class_name
-{
-    width:100%;
-}
-.backpage .exhibitor_name
-{
-    width:100%;
-}
+
 .backpage .gardener_name
 {
-    width:100%;
     margin-bottom:6px;
+}
+.backpage .class_name
+{
+    margin-bottom:6px;
+    height:18px;
 }
