@@ -37,9 +37,7 @@ class CategoryController extends Controller {
         foreach ($things as $category) {
             $placements = Entry::where('category', $category->id)->whereNotNull('winningplace')->whereNotIn('winningplace', [''])->orderBy('winningplace')->get();
             $total = Entry::where('category', $category->id)->select(DB::raw('count(*) as total'))->groupBy('category')->first();
-//            var_dump($total);die();
             $results[$category->id] = ['placements'=>$placements, 'total_entries'=> (($total !== null)? $total->total:0)];
-//var_dump($total);die();
             foreach ($placements as $placement) {
                 if (empty($winners[$placement->entrant])) {
                     $winners[$placement->entrant] = Entrant::find($placement->entrant);

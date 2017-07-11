@@ -24,6 +24,7 @@ Route::get('/categories/resultsentry',
 Route::resource('categories', 'CategoryController');
 Route::resource('membershippurchases', 'MembershipPurchaseController');
 Route::resource('cups', 'CupController');
+//Route::resource('cups-no-link', 'CupController');
 Route::resource('payments', 'PaymentController');
 
 Route::get('/entrants/search', 

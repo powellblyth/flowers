@@ -19,9 +19,9 @@ class CupController extends Controller
         $winners = array();
         $results = array();
 //        $cups = Cup::
-                $cups = $this->baseClass::orderBy('id', 'asc')->get();
-                foreach ($cups as $cup)
-                {
+        $cups = $this->baseClass::orderBy('id', 'asc')->get();
+        foreach ($cups as $cup)
+        {
         $resultset = DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
 sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
 sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
@@ -37,27 +37,29 @@ group by entrant
 having (totalpoints > 0)
 order by (totalpoints) desc", array($cup->id));
         
-//        echo "select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
-//sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
-//sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
-//sum(if(winningplace='commended', 1,0)) as commendedplacepoints, 
-//sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3', 2,0) + if(winningplace='commended', 1,0)) as totalpoints,
-//entrant from entries 
-//
-//where category in (
-//select cup_to_categories.category from cup_to_categories where cup_to_categories.cup = ".$cup->id.")
-//
-//group by entrant
-//order by (totalpoints) desc<br /><Br />";
-                $results[$cup->id] = $resultset;
-                foreach ($resultset as $result)
-                {
-                    if (!array_key_exists($result->entrant, $winners)) {
-                        $winners[$result->entrant] = ['entrant' => Entrant::find($result->entrant), 'points'=>$result->totalpoints];
-                    }
-
+            $thisCupPoints = array();        
+            foreach ($resultset as $result)
+            {
+                $thisCupPoints[] = ['firstplacepoints'=>$result->firstplacepoints,
+                    'secondplacepoints'=>$result->secondplacepoints,
+                    'thirdplacepoints'=>$result->thirdplacepoints,
+                    'commendedplacepoints'=>$result->commendedplacepoints,
+                    'totalpoints'=>$result->totalpoints,
+                    'entrant'=>$result->entrant];
+                if (!array_key_exists($result->entrant, $winners)) {
+                    $winners[$result->entrant] = ['entrant' => Entrant::find($result->entrant), 'points'=>$result->totalpoints];
                 }
+
             }
+            if ((int)$cup->direct_winner  >0)
+            {
+                if (!array_key_exists($cup->direct_winner, $winners)) {
+                    $winners[$cup->direct_winner] = ['entrant' => Entrant::find($cup->direct_winner), 'points'=>0];
+                }
+
+            }
+            $results[$cup->id] = array('results' =>$thisCupPoints, 'direct_winner'=>$cup->direct_winner, 'winning_category'=>$cup->winning_category);
+        }
 
         return view($this->templateDir . '.index', array_merge($extraData, array('cups' => $cups, 'results' => $results, 'winners'=>$winners)));
     }
