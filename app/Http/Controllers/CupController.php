@@ -19,7 +19,7 @@ class CupController extends Controller
         $winners = array();
         $results = array();
 //        $cups = Cup::
-        $cups = $this->baseClass::orderBy('id', 'asc')->get();
+        $cups = $this->baseClass::orderBy('sort_order', 'asc')->get();
         foreach ($cups as $cup)
         {
         $resultset = DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 

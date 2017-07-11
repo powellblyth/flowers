@@ -4,7 +4,9 @@
 
 @section('content')
 @php
-$lastSection = 'no'
+$lastSection = 'no';
+$publishMode = true;
+
 @endphp
 <div class="form-group" style="text-align:left;padding-left:10%">
 @foreach ($things as $thing)
@@ -13,30 +15,42 @@ $currentSection = $thing->section
 @endphp
 
 @if ($lastSection != $currentSection)
-    <b>{{$thing->section}}</b> - <a class="button" href="/categories/resultsentry?section={{urlencode($thing->section)}}">Enter Results</a><Br />
+    <b>Section {{$thing->section}}</b> 
+    @if (!$publishMode)
+        - <a class="button" href="/categories/resultsentry?section={{urlencode($thing->section)}}">Enter Results</a>
+    @endif
+    <br />
 @endif
-<p>{{$thing->number}} {{ $thing->name }} (<b>{{((array_key_exists($thing->id, $results) && count($results[$thing->id]['total_entries']) > 0) ? $results[$thing->id]['total_entries'] : 0)}}</b> entries)
+<p>
+    {{$thing->number}} {{ $thing->name }} 
+    (<b>{{((array_key_exists($thing->id, $results) && count($results[$thing->id]['total_entries']) > 0) ? $results[$thing->id]['total_entries'] : 0)}}</b> entries)
     @if(array_key_exists($thing->id, $results) && count($results[$thing->id]['placements']) > 0)
-    <br /><b><u>Results</u></b>
-@foreach ($results[$thing->id]['placements'] as $result)
-<b>@if($result->winningplace == 1)
-First place
-@elseif ($result->winningplace == 2)
-Second Place
-@elseif ($result->winningplace == 3)
-Third Place
-@else
-{{$result->winningplace}}
-@endif
-</b>
-- 
-{{$winners[$result->entrant]->firstname}} {{$winners[$result->entrant]->familyname}}
-@endforeach
-@endif
+        <br /><b><u>Results</u></b>
+        @foreach ($results[$thing->id]['placements'] as $result)
+            <b>
+                @if($result->winningplace == 1)
+                    First place
+                @elseif ($result->winningplace == 2)
+                    Second Place
+                @elseif ($result->winningplace == 3)
+                    Third Place
+                @else
+                    {{ucfirst($result->winningplace)}}
+                @endif
+            </b>
+            - 
+            @if (!$publishMode)
+                {{$winners[$result->entrant]->getName()}}
+            @else
+                {{substr($winners[$result->entrant]->firstname,0,1)}} {{$winners[$result->entrant]->familyname}}
+            @endif
+
+        @endforeach
+    @endif
 </p>
 
 @php
-$lastSection = $thing->section
+    $lastSection = $thing->section
 @endphp
 
 @endforeach
