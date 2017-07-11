@@ -15,7 +15,7 @@ $publishMode = true;
         }
         else
         {
-            $maxResults = (($cup->id==13) ? 4: 2);
+            $maxResults = 2;
         }
         
         $lastResult = -1;
