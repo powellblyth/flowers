@@ -20,6 +20,8 @@ class CupController extends Controller
         $results = array();
 //        $cups = Cup::
         $cups = $this->baseClass::orderBy('sort_order', 'asc')->get();
+
+//->where('year', env('CURRENT_YEAR', 2018))
         foreach ($cups as $cup)
         {
         $resultset = DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
@@ -31,11 +33,11 @@ entrant from entries
 
 where category in (
 select cup_to_categories.category from cup_to_categories where cup_to_categories.cup = ?)
-
+AND entries.year = ?
 group by entrant
 
 having (totalpoints > 0)
-order by (totalpoints) desc", array($cup->id));
+order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
         
             $thisCupPoints = array();        
             foreach ($resultset as $result)
@@ -81,8 +83,8 @@ from entries
 
 where category = ?
 AND winningplace IN ('1','2','3','commended')
-
-order by (winningplace) ASC", array($cupLink->category));            
+AND year = ?
+order by (winningplace) ASC", array($cupLink->category,env('CURRENT_YEAR', 2018)));            
 
             $winnerDataByCategory[$cupLink->category] = array();
             foreach ($resultset as $categoryWinners)

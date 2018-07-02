@@ -25,9 +25,7 @@ class EntrantController extends Controller {
         , 'family' => 'family');
 
     public function index($extraData = []) {
-        $query = $this->baseClass::orderBy('familyname', 'asc');
-
-        $things = $query->get();
+        $things = $this->baseClass::orderBy('familyname', 'asc')->get();
         return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things)));
     }
 
@@ -88,17 +86,17 @@ class EntrantController extends Controller {
         $entryFee = 0;
 
         $categoriesAry = [0 => 'Select...'];
-        $categories = Category::orderBy('sortorder')->get();
+        $categories = Category::orderBy('sortorder')->where('year', env('CURRENT_YEAR', 2018))->get();
         foreach ($categories as $category) {
             $categoriesAry[$category->id] = $category->number . ': ' . $category->name;
         }
-        $payments = Payment::where('entrant', (int) $id)->get();
+        $payments = Payment::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $totalPaid = 0;
         foreach ($payments as $payment) {
             $totalPaid += $payment->amount;
         }
 
-        $membershipPayments = MembershipPurchase::where('entrant', (int) $id)->get();
+        $membershipPayments = MembershipPurchase::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $membershipPaymentData = [];
         foreach ($membershipPayments as $payment) {
             $amount = (($payment->type == 'single' ? 300 : 500));
@@ -106,15 +104,15 @@ class EntrantController extends Controller {
             $membershipPaymentData[] = ['type' => $payment->type, 'amount' => $amount];
         }
 
-        $entries = Entry::where('entrant', (int) $id)->get();
+        $entries = Entry::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $categoryData = [];
         foreach ($entries as $entry) {
             if ($entry->category) {
-                $categoryData[$entry->category] = Category::find($entry->category);
+                $categoryData[$entry->category] = Category::where('id',$entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
 //                var_dump($entry->created_at);
                 $created = new \DateTime($entry->created_at);
                 // Hack because of late processing
-                $cutoffDate = new \DateTime('7 July 2017 12:00:59');
+                $cutoffDate = new \DateTime('6 July 2018 12:00:59');
 
                 if ($created < $cutoffDate) {
 //                    var_dump('normal');
@@ -147,13 +145,13 @@ class EntrantController extends Controller {
     function printcards($id) {
         $categoryData = [];
         $entrant = $this->baseClass::find($id);
-        $entries = Entry::where('entrant', (int) $id)->get();
+        $entries = Entry::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $cardFronts = [];
         $cardBacks = [];
 
         foreach ($entries as $entry) {
             if ($entry->category) {
-                $categoryData[$entry->category] = Category::find($entry->category);
+                $categoryData[$entry->category] = Category::where('id',$entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
                 $cardFronts[] = [
                     'class_number' => rtrim($categoryData[$entry->category]->number,'.'),
                     'entrant_number' => (int) $id,

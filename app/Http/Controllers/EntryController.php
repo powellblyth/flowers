@@ -18,6 +18,7 @@ class EntryController extends Controller
                     $entry = new Entry;
                     $entry->category = (int)$category;
                     $entry->entrant = (int)$request->input('entrant');
+                    $entry->year = (int) env('CURRENT_YEAR', 2018);
                     $entry->save();
                 }
             }

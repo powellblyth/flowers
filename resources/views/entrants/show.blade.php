@@ -31,7 +31,7 @@
 {{$thing->firstname}} has not made any payments yet
 @else
 @foreach ($payments as $payment)
-<p><b>&pound;{{number_format($payment->amount,2)}}</b> {{date_format($payment->created_at,'dS M H:i')}}</p>
+<p><b>&pound;{{number_format($payment->amount,2)}}</b> {{date_format($payment->created_at,'jS M Y')}}</p>
 @endforeach
 @endif
 
@@ -51,7 +51,7 @@
 
 @php
                 $created = new \DateTime($entry->created_at);
-                $cutoffDate = new \DateTime('7 July 2017 12:00:59');
+                $cutoffDate = new \DateTime('6 July 2018 12:00:59');
 
                 if ($created < $cutoffDate )
                 {

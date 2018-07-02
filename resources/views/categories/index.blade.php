@@ -5,7 +5,7 @@
 @section('content')
 @php
 $lastSection = 'no';
-$publishMode = true;
+$publishMode = false;
 
 @endphp
 <div class="form-group" style="text-align:left;padding-left:10%">
@@ -23,7 +23,13 @@ $currentSection = $thing->section
 @endif
 <p>
     {{$thing->number}} {{ $thing->name }} 
-    (<b>{{((array_key_exists($thing->id, $results) && count($results[$thing->id]['total_entries']) > 0) ? $results[$thing->id]['total_entries'] : 0)}}</b> entries)
+    (<b>
+        @if (array_key_exists($thing->id, $results) && $results[$thing->id]['total_entries'] > 0)
+        {{ $results[$thing->id]['total_entries']}}
+        @else
+        {{'0'}}
+        @endif
+        </b> entries)
     @if(array_key_exists($thing->id, $results) && count($results[$thing->id]['placements']) > 0)
         <br /><b><u>Results</u></b>
         @foreach ($results[$thing->id]['placements'] as $result)
