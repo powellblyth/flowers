@@ -4,7 +4,8 @@
 
 @section('content')
 @php
-$publishMode = true;
+$publishMode = false;
+$showaddress = true;
 @endphp
 <div class="form-group" style="text-align:left;padding-left:10%">
 @foreach ($cups as $cup)
@@ -49,6 +50,10 @@ $publishMode = true;
                     <a href="{{$winners[$winningEntrantId]['entrant']->getUrl()}}">
                     {{$winners[$winningEntrantId]['entrant']->getName()}}
                     </a>
+                    @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
+                        {{$winners[$winningEntrantId]['entrant']->address}}, {{$winners[$winningEntrantId]['entrant']->address2}}, {{$winners[$winningEntrantId]['entrant']->addresstown}}, {{$winners[$winningEntrantId]['entrant']->postcode}}<br />
+                        {{$winners[$winningEntrantId]['entrant']->telephone}}, {{$winners[$winningEntrantId]['entrant']->email}}
+                    @endif
                 @else
                     {{substr($winners[$winningEntrantId]['entrant']->firstname,0,1)}} {{$winners[$winningEntrantId]['entrant']->familyname}}
                 @endif
@@ -82,6 +87,10 @@ $publishMode = true;
                 <a href="{{$winners[$directWinnerId]['entrant']->getUrl()}}">
                     {{$winners[$directWinnerId]['entrant']->getName()}}
                 </a>
+                    @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
+                        {{$winners[$directWinnerId]['entrant']->address}}, {{$winners[$directWinnerId]['entrant']->address2}}, {{$winners[$directWinnerId]['entrant']->addresstown}}, {{$winners[$directWinnerId]['entrant']->postcode}}<br />
+                        {{$winners[$directWinnerId]['entrant']->telephone}}, {{$winners[$directWinnerId]['entrant']->email}}
+                    @endif
             </b>
             @else
                 <b>{{substr($winners[$directWinnerId]['entrant']->firstname,0,1)}} {{$winners[$directWinnerId]['entrant']->familyname}}</b>

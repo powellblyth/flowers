@@ -41,7 +41,7 @@
             <td>{{ Form::text('email', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
-            <td>{{ Form::label('telephone', 'Telephon:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::label('telephone', 'Telephone:', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('telephone', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
