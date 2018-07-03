@@ -22,7 +22,7 @@ $currentSection = $thing->section
     <br />
 @endif
 <p>
-    {{$thing->number}} {{ $thing->name }} 
+    {{$thing->number}}. {{ $thing->name }} 
     (<b>
         @if (array_key_exists($thing->id, $results) && $results[$thing->id]['total_entries'] > 0)
         {{ $results[$thing->id]['total_entries']}}

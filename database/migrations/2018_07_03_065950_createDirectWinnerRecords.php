@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMembershipPurchasesTable extends Migration {
+class CreateDirectWinnerRecords extends Migration {
 
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ class CreateMembershipPurchasesTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('membership_purchases', function (Blueprint $table) {
+        Schema::create('cup_direct_winners', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('cup');
+            $table->integer('entrant');
+            $table->integer('year')->default('2017');
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ class CreateMembershipPurchasesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('membership_purchases');
+        Schema::dropIfExists('cup_direct_winners');
     }
 }

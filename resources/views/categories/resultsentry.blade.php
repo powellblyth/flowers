@@ -9,7 +9,7 @@
     'route' => 'categories.storeresults'
 ]) }}
 @foreach ($categories as $category)
-{{$category->number}} {{$category->name}}<br />  
+{{$category->number}}. {{$category->name}}<br />  
 <b>Entrants:</b>
 @foreach ($entries[$category->id] as $entrant => $entrantName)
 <div style="display:inline-block;background-color:#d9edf7; margin:2px; padding:2px;">

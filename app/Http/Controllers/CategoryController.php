@@ -111,7 +111,7 @@ class CategoryController extends Controller {
                 {
                     $winners[$category->id][$entry->entrant] = $entry->winningplace;
                 }
-                $entries[$category->id][$entry->entrant] = $entry->entrant . ' ' . $entrant->firstname . ' ' . $entrant->familyname;
+                $entries[$category->id][$entry->entrant] = $entry->entrant . ' ' . $entrant->getName();
             }
         }
         return view($this->templateDir . '.resultsentry', 

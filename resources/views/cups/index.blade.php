@@ -51,11 +51,11 @@ $showaddress = true;
                     {{$winners[$winningEntrantId]['entrant']->getName()}}
                     </a>
                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
-                        {{$winners[$winningEntrantId]['entrant']->address}}, {{$winners[$winningEntrantId]['entrant']->address2}}, {{$winners[$winningEntrantId]['entrant']->addresstown}}, {{$winners[$winningEntrantId]['entrant']->postcode}}<br />
+                        {{$winners[$winningEntrantId]['entrant']->getAddress()}}<br />
                         {{$winners[$winningEntrantId]['entrant']->telephone}}, {{$winners[$winningEntrantId]['entrant']->email}}
                     @endif
                 @else
-                    {{substr($winners[$winningEntrantId]['entrant']->firstname,0,1)}} {{$winners[$winningEntrantId]['entrant']->familyname}}
+                    {{substr($winners[$winningEntrantId]['entrant']->getPrintableName(),0,1)}}
                 @endif
                 </b>
                 ({{$results[$cup->id]['results'][$x]['totalpoints'] }} points)
@@ -76,7 +76,7 @@ $showaddress = true;
             
             @endphp
         @endfor
-    
+
         @if ((int)$results[$cup->id]['direct_winner'] > 0)
         <i>Winner:</i>
             @php 
@@ -88,15 +88,15 @@ $showaddress = true;
                     {{$winners[$directWinnerId]['entrant']->getName()}}
                 </a>
                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
-                        {{$winners[$directWinnerId]['entrant']->address}}, {{$winners[$directWinnerId]['entrant']->address2}}, {{$winners[$directWinnerId]['entrant']->addresstown}}, {{$winners[$directWinnerId]['entrant']->postcode}}<br />
+                        {{$winners[$directWinnerId]['entrant']->getAddress()}}<br />
                         {{$winners[$directWinnerId]['entrant']->telephone}}, {{$winners[$directWinnerId]['entrant']->email}}
                     @endif
             </b>
             @else
-                <b>{{substr($winners[$directWinnerId]['entrant']->firstname,0,1)}} {{$winners[$directWinnerId]['entrant']->familyname}}</b>
+                <b>{{$winners[$directWinnerId]['entrant']->getPrintableName()}}</b>
             @endif
             for category {{$results[$cup->id]['winning_category']}}
-        @endif
+        @endif        
     </p>
 @endforeach
 </div>

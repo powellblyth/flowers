@@ -4,11 +4,16 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CupWinningCriteria extends Migration {
+class AddWinningCategoryToCupDirectWinners extends Migration {
 
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up() {
-        Schema::table('cups', function (Blueprint $table) {
-            $table->integer('winning_criteria')->nullable();
+        Schema::table('cup_direct_winners', function (Blueprint $table) {
+            $table->integer('winning_category')->nullable();
         }); //
     }
 
@@ -19,7 +24,7 @@ class CupWinningCriteria extends Migration {
      */
     public function down() {
         Schema::table('cups', function (Blueprint $table) {
-            $table->dropColumn(['winning_criteria']);
+            $table->dropColumn(['winning_category']);
         });
     }
 }

@@ -15,7 +15,7 @@
 @foreach ($cup_links as $cup_link)
 @if (array_key_exists($cup_link->category, $category_data) && !is_null($category_data[$cup_link->category]))
 <tr>
-    <td>{{$category_data[$cup_link->category]->number}} {{$category_data[$cup_link->category]->name}}</td>
+    <td>{{$category_data[$cup_link->category]->number}}. {{$category_data[$cup_link->category]->name}}</td>
     @if (array_key_exists($cup_link->category, $winners_by_category) && count($winners_by_category[$cup_link->category]) > 0)
         <td>
             @if (array_key_exists('1', $winners_by_category[$cup_link->category]))

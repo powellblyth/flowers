@@ -88,7 +88,7 @@ class EntrantController extends Controller {
         $categoriesAry = [0 => 'Select...'];
         $categories = Category::orderBy('sortorder')->where('year', env('CURRENT_YEAR', 2018))->get();
         foreach ($categories as $category) {
-            $categoriesAry[$category->id] = $category->number . ': ' . $category->name;
+            $categoriesAry[$category->id] = $category->number . '. ' . $category->name;
         }
         $payments = Payment::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $totalPaid = 0;
@@ -153,13 +153,13 @@ class EntrantController extends Controller {
             if ($entry->category) {
                 $categoryData[$entry->category] = Category::where('id',$entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
                 $cardFronts[] = [
-                    'class_number' => rtrim($categoryData[$entry->category]->number,'.'),
+                    'class_number' => $categoryData[$entry->category]->number,
                     'entrant_number' => (int) $id,
                     'entrant_age' => (($entrant->age && 18 > (int) $entrant->age) ? $entrant->age : '')
                 ];
-                $cardBacks[] = ['class_number' => rtrim($categoryData[$entry->category]->number,'.'),
+                $cardBacks[] = ['class_number' => $categoryData[$entry->category]->number,
                     'class_name' => $categoryData[$entry->category]->name,
-                    'entrant_name' => $entrant->firstname . ' ' . $entrant->familyname,
+                    'entrant_name' => $entrant->getName(),
                     'entrant_number' => $entrant->id
                 ];
             }

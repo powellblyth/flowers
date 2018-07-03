@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('pagetitle', 'Entrant ' . $thing->firstname. ' ' .  $thing->familyname)
+@section('pagetitle', 'Entrant ' . $thing->getName())
 @section('content')
 <a href="/entrants">&laquo; Entrants</a>
 <br />
@@ -9,7 +9,7 @@
         <td><b>Member Number:</b> {{ $thing->membernumber }}</td>
     </r>
     <tr>
-        <td><b>Name:</b> {{ $thing->firstname }} {{ $thing->familyname }}</td>
+        <td><b>Name:</b> {{ $thing->getName() }}</td>
         <td><b>Age:</b> {{ $thing->age }}</td>
         </td>
     </tr>
@@ -66,7 +66,7 @@
 <p>{{$category_data[$entry->category]->number}}) {{$category_data[$entry->category]->name}} ({{$thisPrice}}p) 
     @if ($entry->hasWon())
     <b><u>{{$entry->getPlacementName()}}</u></b>
-    (£{{number_format($category_data[$entry->category]->getWinningAmount($entry->winningplace)/100,2)}})
+    (&pound;{{number_format($category_data[$entry->category]->getWinningAmount($entry->winningplace)/100,2)}})
     @endif
 </p>
 @endforeach

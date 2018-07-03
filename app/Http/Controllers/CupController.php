@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CupToCategory;
 use App\Cup;
+use App\CupDirectWinner;
 use App\Category;
 use App\Entrant;
 use DB;
@@ -17,6 +18,7 @@ class CupController extends Controller
     public function index($extraData = [])
     {
         $winners = array();
+        $oldwinners = array();
         $results = array();
 //        $cups = Cup::
         $cups = $this->baseClass::orderBy('sort_order', 'asc')->get();
@@ -53,17 +55,28 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
                 }
 
             }
-            if ((int)$cup->direct_winner  >0)
+            
+            $cupWinner = CupDirectWinner::where('cup',$cup->id)->where('year',env('CURRENT_YEAR', 2018) )->first();
+            if ($cupWinner instanceof CupDirectWinner)
             {
-                if (!array_key_exists($cup->direct_winner, $winners)) {
-                    $winners[$cup->direct_winner] = ['entrant' => Entrant::find($cup->direct_winner), 'points'=>0];
+                if (!array_key_exists($cupWinner->entrant, $winners)) {
+                    $winners[$cupWinner->entrant] = ['entrant' => Entrant::find($cupWinner->entrant), 'points'=>0];
                 }
-
+                
             }
-            $results[$cup->id] = array('results' =>$thisCupPoints, 'direct_winner'=>$cup->direct_winner, 'winning_category'=>$cup->winning_category);
+            
+            $results[$cup->id] = array('results' =>$thisCupPoints, 
+                'direct_winner'=>(($cupWinner instanceof CupDirectWinner )?$cupWinner->entrant:null), 
+                'winning_category'=>$cup->winning_category);
         }
 
-        return view($this->templateDir . '.index', array_merge($extraData, array('cups' => $cups, 'results' => $results, 'winners'=>$winners)));
+        return view($this->templateDir . '.index', 
+            array_merge($extraData, 
+                array('cups' => $cups, 
+                    'results' => $results, 
+                    'winners'=>$winners, 
+                    'oldwinners'=>$oldwinners
+            )));
     }
     
     public function show($id, $showData = [])
