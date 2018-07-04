@@ -48,14 +48,13 @@ $showaddress = true;
             <b>
                 @if ( ! $publishMode)
                     <a href="{{$winners[$winningEntrantId]['entrant']->getUrl()}}">
-                    {{$winners[$winningEntrantId]['entrant']->getName()}}
-                    </a>
+                    {{$winners[$winningEntrantId]['entrant']->getName()}}</a>
                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
                         {{$winners[$winningEntrantId]['entrant']->getAddress()}}<br />
                         {{$winners[$winningEntrantId]['entrant']->telephone}}, {{$winners[$winningEntrantId]['entrant']->email}}
                     @endif
                 @else
-                    {{substr($winners[$winningEntrantId]['entrant']->getPrintableName(),0,1)}}
+                    {{$winners[$winningEntrantId]['entrant']->getPrintableName()}}
                 @endif
                 </b>
                 ({{$results[$cup->id]['results'][$x]['totalpoints'] }} points)
@@ -95,7 +94,9 @@ $showaddress = true;
             @else
                 <b>{{$winners[$directWinnerId]['entrant']->getPrintableName()}}</b>
             @endif
-            for category {{$results[$cup->id]['winning_category']}}
+            @if (is_object($results[$cup->id]['winning_category']))
+                for category {{$results[$cup->id]['winning_category']->getNumberedLabel()}}
+            @endif
         @endif        
     </p>
 @endforeach

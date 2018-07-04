@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddWinningCategoryToCupDirectWinners extends Migration {
+class AddWinningEntryToCupDirectWinners extends Migration {
 
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddWinningCategoryToCupDirectWinners extends Migration {
      */
     public function up() {
         Schema::table('cup_direct_winners', function (Blueprint $table) {
-            $table->integer('winning_category')->nullable();
+            $table->integer('winning_entry')->nullable();
         }); //
     }
 
@@ -24,7 +24,7 @@ class AddWinningCategoryToCupDirectWinners extends Migration {
      */
     public function down() {
         Schema::table('cup_direct_winners', function (Blueprint $table) {
-            $table->dropColumn(['winning_category']);
+            $table->dropColumn(['winning_entry']);
         });
     }
 }

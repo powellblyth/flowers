@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -32,8 +31,8 @@ class EntrantController extends Controller {
     public function search(Request $request) {
         $searchterm = $request->input('searchterm');
         $things = $this->baseClass::where('entrants.firstname', 'LIKE', "%$searchterm%")
-                ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
-                ->get();
+            ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
+            ->get();
         return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm));
     }
 
@@ -52,6 +51,18 @@ class EntrantController extends Controller {
         $thing->addresstown = $request->addresstown;
         $thing->postcode = $request->postcode;
         $thing->age = $request->age;
+        if ((int) $request->can_retain_data) {
+            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_retain_data = (int) $request->can_retain_data;
+        if ((int) $request->can_email) {
+            $thing->email_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_email = (int) $request->can_email;
+        if ($request->can_sms) {
+            $thing->sms_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_sms = (int) $request->can_sms;
         $thing->save();
         return view($this->templateDir . '.saved', array('thing' => $thing));
     }
@@ -70,8 +81,40 @@ class EntrantController extends Controller {
         $thing->addresstown = $request->addresstown;
         $thing->postcode = $request->postcode;
         $thing->age = $request->age;
+        if (!$thing->can_retain_data && (int) $request->can_retain_data) {
+            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_retain_data = (int) $request->can_retain_data;
+        if (!$thing->can_email && (int) $request->can_email) {
+            $thing->email_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_email = (int) $request->can_email;
+        if (!$thing->can_sms && $request->can_sms) {
+            $thing->sms_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_sms = (int) $request->can_sms;
         $thing->save();
         return view($this->templateDir . '.saved', array('thing' => $thing));
+    }
+
+    public function optins(Request $request) {
+        // Validate the request...
+        $thing = $this->baseClass::find($request->id);
+
+        if (!$thing->can_retain_data && (int) $request->can_retain_data) {
+            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_retain_data = (int) $request->can_retain_data;
+        if (!$thing->can_email && (int) $request->can_email) {
+            $thing->email_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_email = (int) $request->can_email;
+        if (!$thing->can_sms && $request->can_sms) {
+            $thing->sms_opt_in = date('Y-m-d H:i:s');
+        }
+        $thing->can_sms = (int) $request->can_sms;
+        $thing->save();
+        return back();
     }
 
     /**
@@ -88,7 +131,7 @@ class EntrantController extends Controller {
         $categoriesAry = [0 => 'Select...'];
         $categories = Category::orderBy('sortorder')->where('year', env('CURRENT_YEAR', 2018))->get();
         foreach ($categories as $category) {
-            $categoriesAry[$category->id] = $category->number . '. ' . $category->name;
+            $categoriesAry[$category->id] = $category->getNumberedLabel();
         }
         $payments = Payment::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $totalPaid = 0;
@@ -108,7 +151,7 @@ class EntrantController extends Controller {
         $categoryData = [];
         foreach ($entries as $entry) {
             if ($entry->category) {
-                $categoryData[$entry->category] = Category::where('id',$entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
+                $categoryData[$entry->category] = Category::where('id', $entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
 //                var_dump($entry->created_at);
                 $created = new \DateTime($entry->created_at);
                 // Hack because of late processing
@@ -129,17 +172,17 @@ class EntrantController extends Controller {
             }
         }
         return parent::show($id, array_merge($showData, array('entries' => $entries,
-                    'category_data' => $categoryData,
-                    'categories' => $categoriesAry,
-                    'membership_purchases' => $membershipPaymentData,
-                    'payments' => $payments,
-                    'entry_fee' => $entryFee,
-                    'total_price' => $entryFee + $membershipFee,
-                    'paid' => $totalPaid,
-                    'payment_types' => $this->paymentTypes,
-                    'total_prizes' => $totalPrizes,
-                    'membership_fee' => $membershipFee,
-                    'membership_types' => $this->membershipTypes)));
+                'category_data' => $categoryData,
+                'categories' => $categoriesAry,
+                'membership_purchases' => $membershipPaymentData,
+                'payments' => $payments,
+                'entry_fee' => $entryFee,
+                'total_price' => $entryFee + $membershipFee,
+                'paid' => $totalPaid,
+                'payment_types' => $this->paymentTypes,
+                'total_prizes' => $totalPrizes,
+                'membership_fee' => $membershipFee,
+                'membership_types' => $this->membershipTypes)));
     }
 
     function printcards($id) {
@@ -151,7 +194,7 @@ class EntrantController extends Controller {
 
         foreach ($entries as $entry) {
             if ($entry->category) {
-                $categoryData[$entry->category] = Category::where('id',$entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
+                $categoryData[$entry->category] = Category::where('id', $entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
                 $cardFronts[] = [
                     'class_number' => $categoryData[$entry->category]->number,
                     'entrant_number' => (int) $id,
@@ -185,5 +228,4 @@ class EntrantController extends Controller {
 
         return view($this->templateDir . '.edit', array('thing' => $thing));
     }
-
 }

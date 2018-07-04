@@ -48,7 +48,7 @@ $currentSection = $thing->section
             @if (!$publishMode)
                 {{$winners[$result->entrant]->getName()}}
             @else
-                {{substr($winners[$result->entrant]->firstname,0,1)}} {{$winners[$result->entrant]->familyname}}
+                {{$winners[$result->entrant]->getPrintableName()}}
             @endif
 
         @endforeach

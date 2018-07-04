@@ -26,4 +26,9 @@ class Category extends Model
         }
         return $result;
     }
+    
+    public function getNumberedLabel()
+    {
+        return $this->number .'. ' . $this->name;
+    }
 }

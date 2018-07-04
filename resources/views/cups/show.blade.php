@@ -7,11 +7,12 @@
       <li>Name: {{ $thing->name }}</li>
     </ul>
 
+@if (count($cup_links) > 0)
 <b>Linked to: </b><br/>
 <table border>
     <tr><th>Category</th><th>First</th><th>Second</th><th>Third</th><th>Commended</th></tr>
-    @php
-    @endphp
+
+
 @foreach ($cup_links as $cup_link)
 @if (array_key_exists($cup_link->category, $category_data) && !is_null($category_data[$cup_link->category]))
 <tr>
@@ -54,5 +55,23 @@
 <tr><td>Misssing data for {{$cup_link->category}}</td></tr>
 @endif
 @endforeach
+
 </table>
+@else
+<h2>Pick a winner from an entry</h2>
+{{ Form::open([
+    'route' => ['cup.directResultPick','id'=>$thing->id]
+]) }}
+{{ Form::select('category', $categories)}}
+{{ Form::submit('Find Entrants', ['class' => 'button btn btn-primary']) }}
+{{Form::close()}}
+<h2>Pick a winner from a list of entrants</h2>
+{{ Form::open([
+    'route' => ['cup.directResultSetWinnerPerson','id'=>$thing->id]
+]) }}
+{{ Form::select('person', $people)}}
+{{ Form::submit('Set Winner', ['class' => 'button btn btn-primary']) }}
+{{Form::close()}}
+@endif
+
 @stop
