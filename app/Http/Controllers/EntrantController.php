@@ -155,7 +155,7 @@ class EntrantController extends Controller {
 //                var_dump($entry->created_at);
                 $created = new \DateTime($entry->created_at);
                 // Hack because of late processing
-                $cutoffDate = new \DateTime('6 July 2018 12:00:59');
+                $cutoffDate = new \DateTime('4 July 2018 23:59:59');
 
                 if ($created < $cutoffDate) {
 //                    var_dump('normal');
