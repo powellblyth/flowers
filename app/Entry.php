@@ -25,15 +25,22 @@ class Entry extends Model {
     }
 
     public function getPriceType() {
-        $created = new \DateTime($this->created_at);
 
-        $cutoffDate = new \DateTime($this->getCutoffDate($this->year));
-
-        if ($created > $cutoffDate) {
+        if ($this->isLate()) {
             return Category::PRICE_LATE_PRICE;
         } else {
             return Category::PRICE_EARLY_PRICE;
         }
+    }
+    
+    public function isLate()
+    {
+        $created = new \DateTime($this->created_at);
+
+        $cutoffDate = new \DateTime($this->getCutoffDate($this->year));
+        
+        return $created > $cutoffDate;
+
     }
 
     public function getCutoffDate(int $year): string {

@@ -47,7 +47,7 @@ class ReportsController extends Controller {
         return view($this->templateDir . '.membershipReport', array('totals' => $totals, 'purchases'=>$purchases));
     }
     
-    public function entryReport(Request $request) {
+    public function entriesReport(Request $request) {
         $entriesSold = Entry::where('year', env('CURRENT_YEAR'))->get();
         $purchases = [];
         $amountChild = 0; $amountAdult = 0;
@@ -56,17 +56,20 @@ class ReportsController extends Controller {
         foreach ($entriesSold as $entry) {
             $entrant = Entrant::find($entry->entrant);
             $category = Category::find($entry->category);
-            $purchases[$entry->id] = ['created' => $entry->created_at, 
+            $price = $category->getPrice($entry->getPriceType());
+            $purchases[$entry->id] = [
+                'created' => $entry->created_at, 
                 'type' => $category->getType(), 
-                'amount' => $entry->paid,
+                'is_late' => $entry->isLate(), 
+                'amount' => $price,
                 'entrant_id' => $entrant->id,
                 'entrant_name' => $entrant->getName()];
             
-            if (Category::TYPE_ADULT == $membership->type){
-                $amountAdult +=$membership->amount;
+            if (Category::TYPE_ADULT == $category->getType()){
+                $amountAdult +=$price;
                 $countAdult++;
             } else {
-                $amountChild +=$membership->amount;
+                $amountChild +=$price;
                 $countChild++;
             }
         }
@@ -75,9 +78,9 @@ class ReportsController extends Controller {
             'amount_adult'=>$amountAdult,
             'amount_child'=>$amountChild,
             'count_adult'=>$countAdult,
-            'count_child'=>$countchild];
+            'count_child'=>$countChild];
 //var_dump($totals);die()
-        return view($this->templateDir . '.membershipReport', array('totals' => $totals, 'purchases'=>$purchases));
+        return view($this->templateDir . '.entriesReport', array('totals' => $totals, 'purchases'=>$purchases));
     }    
 
     public function index($extraData = []) {

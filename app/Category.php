@@ -31,7 +31,14 @@ class Category extends Model {
     }
 
     public function getType() {
-        return self::TYPE_ADULT;
+        if (in_array($this->section, ['8 - Childrens Floral, Fruit and Vegetables', '9 - Childrens Cookery, Arts & Crafts'])){
+            $type =  self::TYPE_JUNIOR;
+        }
+        else
+        {
+            $type = self::TYPE_ADULT;
+        }
+        return $type;
     }
     public function getPrice(string $type) {
         if ($type == self::PRICE_EARLY_PRICE) {
