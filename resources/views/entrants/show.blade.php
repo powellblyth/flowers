@@ -56,7 +56,7 @@
    @endif
     @if ($entry['has_won'])
     <b><u>{{$entry['placement_name']}}</u></b>
-    (&pound;{{number_format($category_data[$entry['category_id']]->getWinningAmount($entry['winningplace'])/100,2)}})
+    (&pound;{{number_format($category_data[$entry['category_id']]->getWinningAmount($entry['winning_place'])/100,2)}})
     @endif
 </p>
 @endforeach
