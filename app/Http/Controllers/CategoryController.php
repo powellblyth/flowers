@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -37,21 +36,19 @@ class CategoryController extends Controller {
         foreach ($things as $category) {
             $placements = Entry::where('category', $category->id)->whereNotNull('winningplace')->whereNotIn('winningplace', [''])->where('year', env('CURRENT_YEAR', 2018))->orderBy('winningplace')->get();
             $total = Entry::where('category', $category->id)->where('year', env('CURRENT_YEAR', 2018))->select(DB::raw('count(*) as total'))->groupBy('category')->first();
-            
-            $results[$category->id] = ['placements'=>$placements, 'total_entries'=> (($total !== null)? $total->total:0)];
-            
+
+            $results[$category->id] = ['placements' => $placements, 'total_entries' => (($total !== null) ? $total->total : 0)];
+
             foreach ($placements as $placement) {
                 if (empty($winners[$placement->entrant])) {
                     $winners[$placement->entrant] = Entrant::find($placement->entrant);
                 }
             }
         }
-        
-        return view($this->templateDir . '.index', 
-            array_merge($extraData, 
-                array('things' => $things, 
-                    'results' => $results, 
-                    'winners' => $winners)));
+
+        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things,
+            'results' => $results,
+            'winners' => $winners)));
     }
 
     /**
@@ -107,18 +104,16 @@ class CategoryController extends Controller {
             $winners[$category->id] = [];
             foreach ($thisEntries as $entry) {
                 $entrant = Entrant::find($entry->entrant);
-                if ('' != trim($entry->winningplace))
-                {
+                if ('' != trim($entry->winningplace)) {
                     $winners[$category->id][$entry->entrant] = $entry->winningplace;
                 }
                 $entries[$category->id][$entry->entrant] = $entry->entrant . ' ' . $entrant->getName();
             }
         }
-        return view($this->templateDir . '.resultsentry', 
-                array('categories' => $categories, 
-                    'entries' => $entries, 
-                    'section' => $request->section, 
-                    'winners'=>$winners));
+        return view($this->templateDir . '.resultsentry', array('categories' => $categories,
+            'entries' => $entries,
+            'section' => $request->section,
+            'winners' => $winners));
     }
 
     public function storeresults(Request $request) {

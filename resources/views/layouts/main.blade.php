@@ -40,6 +40,7 @@
                     <a href="{{ url('/entrants/create') }}">Add an entrant</a>
                     <a href="{{ url('/categories') }}">Categories / Results</a>
                     <a href="{{ url('/cups') }}">Cups</a>
+                    <a href="{{ route('reports.index') }}">Reports</a>
                 </div>
                 <div id="content">
                     @yield('content')

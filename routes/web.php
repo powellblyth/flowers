@@ -58,3 +58,13 @@ Route::post('/entrants/{id}/update',
 Route::post('/entrants/{id}/optins', 
         ['as' => 'entrants.optins',
     'uses' => 'EntrantController@optins']);
+
+Route::get('/reports/', 
+        ['as' => 'reports.index',
+    'uses' => 'ReportsController@index']);
+Route::get('/reports/members', 
+        ['as' => 'reports.members',
+    'uses' => 'ReportsController@membershipReport']);
+Route::get('/reports/entries', 
+        ['as' => 'reports.entries',
+    'uses' => 'ReportsController@entriesReport']);

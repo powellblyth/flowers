@@ -44,29 +44,19 @@
         </td>
         <td style="text-align:left;vertical-align:top">
 
-@if (count($entries) <= 0)
+@if (count($entry_data ) <= 0)
 {{$thing->firstname}} has not entered any categories yet
 @else
-@foreach ($entries as $entry)
+@foreach ($entry_data as $entry)
 
-@php
-                $created = new \DateTime($entry->created_at);
-                $cutoffDate = new \DateTime('6 July 2018 12:00:59');
-
-                if ($created < $cutoffDate )
-                {
-                    $thisPrice = $category_data[$entry->category]->price;
-                }
-                else
-                {
-                    $thisPrice = $category_data[$entry->category]->late_price;
-                }
-
-@endphp
-<p>{{$category_data[$entry->category]->number}}) {{$category_data[$entry->category]->name}} ({{$thisPrice}}p) 
-    @if ($entry->hasWon())
-    <b><u>{{$entry->getPlacementName()}}</u></b>
-    (&pound;{{number_format($category_data[$entry->category]->getWinningAmount($entry->winningplace)/100,2)}})
+<p> {{$entry['name']}} ({{$entry['price']}}p) 
+    @if ($entry['is_late'])
+    (late)
+    
+   @endif
+    @if ($entry['has_won'])
+    <b><u>{{$entry['placement_name']}}</u></b>
+    (&pound;{{number_format($category_data[$entry['category_id']]->getWinningAmount($entry['winningplace'])/100,2)}})
     @endif
 </p>
 @endforeach
