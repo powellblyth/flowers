@@ -22,7 +22,7 @@
     <tr><th>Adult Entries</th><td>{{$totals['count_adult']}} (&pound;{{number_format($totals['amount_adult']/100, 2)}})</td></tr>
     <tr><th>Child Entries</th><td>{{$totals['count_child']}} (&pound;{{number_format($totals['amount_child']/100, 2)}})</td></tr>
     <tr><td colspan="2"><hr /></td></tr>
-    <tr><th>ALL Purchases</th><td>{{$totals['count']}} (&pound;{{number_format($totals['amount']/100, 2)}})</td></tr>
+    <tr><th>ALL Entries</th><td>{{$totals['count']}} (&pound;{{number_format($totals['amount']/100, 2)}})</td></tr>
     <tr><td colspan="2"><hr /></td></tr>
 </tfoot>
 </table>
