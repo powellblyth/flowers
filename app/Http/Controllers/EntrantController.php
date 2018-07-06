@@ -150,6 +150,7 @@ class EntrantController extends Controller {
         $entries = Entry::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $entryData = [];
         $categoryData = [];
+$dbug=0;
         foreach ($entries as $entry) {
             if ($entry->category) {
                 // Hydrate
