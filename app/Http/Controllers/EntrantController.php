@@ -149,13 +149,11 @@ class EntrantController extends Controller {
 
         $entries = Entry::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $entryData = [];
-        $categoryData = [];
         $dbug = 0;
         foreach ($entries as $entry) {
             if ($entry->category) {
                 // Hydrate
                 $category = Category::where('id', $entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
-                $categoryData[$entry->category] = $category;
 
                 $price = $category->getPrice($entry->getPriceType());
                 $entryFee += $price;
@@ -178,7 +176,6 @@ class EntrantController extends Controller {
         return parent::show($id, array_merge($showData, array(
                 'entry_data' => $entryData,
                 'entries' => $entries,
-                'category_data' => $categoryData,
                 'categories' => $categoriesAry,
                 'membership_purchases' => $membershipPaymentData,
                 'payments' => $payments,

@@ -14,7 +14,10 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2"><a href="/entrants/{{$thing->id}}/print" target="_blank" class="button">Print all cards</a> <a href="/entrants/{{$thing->id}}/edit" class="button">Edit Entrant</a></td>
+        <td colspan="2">
+            <a href="/entrants/{{$thing->id}}/print" target="_blank" class="button">Print all cards</a> 
+            <a href="/entrants/{{$thing->id}}/edit" class="button">Edit Entrant</a>
+        </td>
     </tr>
 </table>
 
@@ -56,7 +59,7 @@
         @endif
         @if ($entry['has_won'])
             <b><u>{{$entry['placement_name']}}</u></b>
-            (&pound;{{number_format($category_data[$entry['category_id']]->getWinningAmount($entry['winning_place'])/100,2)}})
+            (&pound;{{number_format($entry['winning_amount']/100,2)}})
         @endif
     </p>
     @endforeach

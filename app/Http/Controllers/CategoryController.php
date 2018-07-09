@@ -110,6 +110,7 @@ class CategoryController extends Controller {
         $winners = [];
         $categories = Category::where('section', $request->section)
             ->where('year', env('CURRENT_YEAR', 2018))
+            ->orderby('sortorder')
             ->get();
         foreach ($categories as $category) {
             $thisEntries = Entry::where('category', $category->id)
