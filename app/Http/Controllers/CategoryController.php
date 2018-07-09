@@ -43,11 +43,11 @@ class CategoryController extends Controller {
                 ->orderBy('winningplace')
                 ->get();
             $total = Entry::where('category', $category->id)
-                ->where('year', env('CURRENT_YEAR', 2018))
-                ->select(DB::raw('count(*) as total'))
-                ->groupBy('category')->first();
+                    ->where('year', env('CURRENT_YEAR', 2018))
+                    ->select(DB::raw('count(*) as total'))
+                    ->groupBy('category')->first();
 
-            $results[$category->id] = ['placements' => $placements, 
+            $results[$category->id] = ['placements' => $placements,
                 'total_entries' => (($total !== null) ? $total->total : 0)];
 
             foreach ($placements as $placement) {
@@ -114,19 +114,20 @@ class CategoryController extends Controller {
             ->get();
         foreach ($categories as $category) {
             $thisEntries = Entry::where('category', $category->id)
-                ->where('year', env('CURRENT_YEAR', 2018))
-                ->orderBy('entrant')->get();
+                    ->where('year', env('CURRENT_YEAR', 2018))
+                    ->orderBy('entrant')->get();
             $entries[$category->id] = [];
             $winners[$category->id] = [];
+
             foreach ($thisEntries as $entry) {
                 $entrant = Entrant::find($entry->entrant);
                 if ('' != trim($entry->winningplace)) {
                     $winners[$category->id][$entry->entrant] = $entry->winningplace;
                 }
                 $entries[$category->id][$entry->id] = [
-                    'entrant_id' =>$entry->entrant,
+                    'entrant_id' => $entry->entrant,
                     'entrant_name' => $entrant->getName()
-                    ];
+                ];
             }
         }
         return view($this->templateDir . '.resultsentry', array('categories' => $categories,
@@ -147,5 +148,4 @@ class CategoryController extends Controller {
         }
         return redirect()->route('categories.index');
     }
-
 }
