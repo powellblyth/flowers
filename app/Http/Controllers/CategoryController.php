@@ -31,13 +31,24 @@ class CategoryController extends Controller {
     public function index($extraData = []) {
         $winners = array();
         $results = [];
-        $things = $this->baseClass::orderBy('sortorder', 'asc')->where('year', env('CURRENT_YEAR', 2018))->get();
+        $things = $this->baseClass::orderBy('sortorder', 'asc')
+            ->where('year', env('CURRENT_YEAR', 2018))
+            ->get();
 
         foreach ($things as $category) {
-            $placements = Entry::where('category', $category->id)->whereNotNull('winningplace')->whereNotIn('winningplace', [''])->where('year', env('CURRENT_YEAR', 2018))->orderBy('winningplace')->get();
-            $total = Entry::where('category', $category->id)->where('year', env('CURRENT_YEAR', 2018))->select(DB::raw('count(*) as total'))->groupBy('category')->first();
+            $placements = Entry::where('category', $category->id)
+                ->whereNotNull('winningplace')
+                ->whereNotIn('winningplace', [''])
+                ->where('year', env('CURRENT_YEAR', 2018))
+                ->orderBy('winningplace')
+                ->get();
+            $total = Entry::where('category', $category->id)
+                ->where('year', env('CURRENT_YEAR', 2018))
+                ->select(DB::raw('count(*) as total'))
+                ->groupBy('category')->first();
 
-            $results[$category->id] = ['placements' => $placements, 'total_entries' => (($total !== null) ? $total->total : 0)];
+            $results[$category->id] = ['placements' => $placements, 
+                'total_entries' => (($total !== null) ? $total->total : 0)];
 
             foreach ($placements as $placement) {
                 if (empty($winners[$placement->entrant])) {
@@ -97,9 +108,13 @@ class CategoryController extends Controller {
     public function resultsentry(Request $request) {
         $entries = [];
         $winners = [];
-        $categories = Category::where('section', $request->section)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $categories = Category::where('section', $request->section)
+            ->where('year', env('CURRENT_YEAR', 2018))
+            ->get();
         foreach ($categories as $category) {
-            $thisEntries = Entry::where('category', $category->id)->where('year', env('CURRENT_YEAR', 2018))->orderBy('entrant')->get();
+            $thisEntries = Entry::where('category', $category->id)
+                ->where('year', env('CURRENT_YEAR', 2018))
+                ->orderBy('entrant')->get();
             $entries[$category->id] = [];
             $winners[$category->id] = [];
             foreach ($thisEntries as $entry) {
@@ -107,7 +122,10 @@ class CategoryController extends Controller {
                 if ('' != trim($entry->winningplace)) {
                     $winners[$category->id][$entry->entrant] = $entry->winningplace;
                 }
-                $entries[$category->id][$entry->entrant] = $entry->entrant . ' ' . $entrant->getName();
+                $entries[$category->id][$entry->id] = [
+                    'entrant_id' =>$entry->entrant,
+                    'entrant_name' => $entrant->getName()
+                    ];
             }
         }
         return view($this->templateDir . '.resultsentry', array('categories' => $categories,
@@ -118,9 +136,9 @@ class CategoryController extends Controller {
 
     public function storeresults(Request $request) {
         foreach ($request->positions as $categoryId => $placings) {
-            foreach ($placings as $entrant_id => $result) {
+            foreach ($placings as $entryId => $result) {
                 if ('0' !== $result && '' != trim($result)) {
-                    $entry = Entry::where(['entrant' => $entrant_id, 'category' => $categoryId])->first();
+                    $entry = Entry::where(['id' => $entryId, 'category' => $categoryId])->first();
                     $entry->winningplace = $result;
                     $entry->save();
                 }

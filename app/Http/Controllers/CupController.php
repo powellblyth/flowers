@@ -59,11 +59,12 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
                 if (!array_key_exists($cupWinner->entrant, $winners)) {
                     $winners[$cupWinner->entrant] = ['entrant' => Entrant::find($cupWinner->entrant), 'points' => 0];
                 }
-                $winningCategory = Category::where('id', $cupWinner->winning_entry)->where('year', env('CURRENT_YEAR', 2018))->first();
+                $winningCategory = Category::where('id', $cupWinner->winning_category)->where('year', env('CURRENT_YEAR', 2018))->first();
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
                 'direct_winner' => (($cupWinner instanceof CupDirectWinner ) ? $cupWinner->entrant : null),
+//                var_dump($winningCategory)
                 'winning_category' => $winningCategory);
         }
 

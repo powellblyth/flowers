@@ -6,6 +6,7 @@
 @php
 $publishMode = false;
 $showaddress = true;
+$shortName = false;
 @endphp
 <div class="form-group" style="text-align:left;padding-left:10%">
 @foreach ($cups as $cup)
@@ -24,9 +25,11 @@ $showaddress = true;
 
     <p> 
         @if ( ! $publishMode)
-            <a href="{{$cup->getUrl()}}"><b>{{ $cup->name }}</b></a>
+        <a href="{{$cup->getUrl()}}"><big><b>{{ $cup->name }}</b></big></a>
+            <br />{{ $cup->winning_criteria }}
+
         @else
-            <b>{{ $cup->name }}</b>
+        <b><big>{{ $cup->name }}</big></b>
             <br />{{$cup->winning_criteria}}
         @endif
 
@@ -54,7 +57,7 @@ $showaddress = true;
                         {{$winners[$winningEntrantId]['entrant']->telephone}}, {{$winners[$winningEntrantId]['entrant']->email}}
                     @endif
                 @else
-                    {{$winners[$winningEntrantId]['entrant']->getPrintableName()}}
+                <big>{{$winners[$winningEntrantId]['entrant']->getName()}}</big>
                 @endif
                 </b>
                 ({{$results[$cup->id]['results'][$x]['totalpoints'] }} points)
@@ -84,7 +87,7 @@ $showaddress = true;
         @if ( ! $publishMode)
             <b>
                 <a href="{{$winners[$directWinnerId]['entrant']->getUrl()}}">
-                    {{$winners[$directWinnerId]['entrant']->getName()}}
+                   {{$winners[$directWinnerId]['entrant']->getName()}}
                 </a>
                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
                         {{$winners[$directWinnerId]['entrant']->getAddress()}}<br />
@@ -92,10 +95,10 @@ $showaddress = true;
                     @endif
             </b>
             @else
-                <b>{{$winners[$directWinnerId]['entrant']->getPrintableName()}}</b>
+    <big><b>{{$winners[$directWinnerId]['entrant']->getName()}}</b></big>
             @endif
             @if (is_object($results[$cup->id]['winning_category']))
-                for category {{$results[$cup->id]['winning_category']->getNumberedLabel()}}
+            for category <i><b>{{$results[$cup->id]['winning_category']->getNumberedLabel()}}</b></i>
             @endif
         @endif        
     </p>

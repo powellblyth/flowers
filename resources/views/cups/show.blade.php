@@ -5,6 +5,7 @@
 <br />
 <ul>
       <li>Name: {{ $thing->name }}</li>
+      <li>Criteria: {{ $thing->winning_criteria }}</li>
     </ul>
 
 @if (count($cup_links) > 0)

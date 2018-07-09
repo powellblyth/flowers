@@ -68,3 +68,6 @@ Route::get('/reports/members',
 Route::get('/reports/entries', 
         ['as' => 'reports.entries',
     'uses' => 'ReportsController@entriesReport']);
+Route::get('/reports/unplacedCategories', 
+        ['as' => 'reports.categories',
+    'uses' => 'ReportsController@unplacedcategoriesReport']);

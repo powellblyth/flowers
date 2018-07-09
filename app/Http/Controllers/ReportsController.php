@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\MembershipPurchase;
 use App\Entrant;
 use App\Entry;
+use App\CupToCategory;
 use App\Category;
 
 class ReportsController extends Controller {
@@ -82,6 +83,21 @@ class ReportsController extends Controller {
 //var_dump($totals);die()
         return view($this->templateDir . '.entriesReport', array('totals' => $totals, 'purchases'=>$purchases));
     }    
+    
+    public function unplacedCategoriesReport()
+    {$unplacedCategories = [];
+        $categories = Category::where('year', env('CURRENT_YEAR'))->orderby('sortorder')->get();
+        foreach ($categories as $category)
+        {
+            $matchedCup = CupToCategory::where('category',$category->id)->first();
+            if (!$matchedCup instanceof CupToCategory)
+                
+            {
+                $unplacedCategories[$category->id] = $category->getNumberedLabel();
+            }
+        }
+        return view($this->templateDir . '.unplacedCategoriesReport', array('unplaced_categories' => $unplacedCategories));
+    }
 
     public function index($extraData = []) {
         return view($this->templateDir . '.index', $extraData = []);
