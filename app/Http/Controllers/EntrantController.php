@@ -150,35 +150,34 @@ class EntrantController extends Controller {
         $entries = Entry::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $entryData = [];
         $categoryData = [];
-$dbug=0;
+        $dbug = 0;
         foreach ($entries as $entry) {
             if ($entry->category) {
                 // Hydrate
-                $category  = Category::where('id', $entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
+                $category = Category::where('id', $entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
                 $categoryData[$entry->category] = $category;
-//var_dump(get_class($category));
-//                echo $entry->getPriceType();
+
                 $price = $category->getPrice($entry->getPriceType());
                 $entryFee += $price;
 
                 if ('' !== trim($entry->winningplace)) {
-                    $totalPrizes += $categoryData[$entry->category]->getWinningAmount($entry->winningplace);
+                    $totalPrizes += $category->getWinningAmount($entry->winningplace);
                 }
                 $entryData[$entry->id] = [
-                    'name'=>$category->getNumberedLabel(),
-                    'has_won'=>$entry->hasWon(),
-                    'winning_place'=>$entry->winningplace,
-                    'category_id'=>$entry->category,
-                    'placement_name'=>$entry->getPlacementName(),
-                    'price'=>$price,
-                    'is_late'=>($entry->getPriceType() == Category::PRICE_LATE_PRICE)
-                    
+                    'name' => $category->getNumberedLabel(),
+                    'has_won' => $entry->hasWon(),
+                    'winning_place' => $entry->winningplace,
+                    'winning_amount' => $category->getWinningAmount($entry->winningplace),
+                    'category_id' => $entry->category,
+                    'placement_name' => $entry->getPlacementName(),
+                    'price' => $price,
+                    'is_late' => ($entry->getPriceType() == Category::PRICE_LATE_PRICE)
                 ];
             }
         }
         return parent::show($id, array_merge($showData, array(
-            'entry_data' =>$entryData,
-            'entries' => $entries,
+                'entry_data' => $entryData,
+                'entries' => $entries,
                 'category_data' => $categoryData,
                 'categories' => $categoriesAry,
                 'membership_purchases' => $membershipPaymentData,

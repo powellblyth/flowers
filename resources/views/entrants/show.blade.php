@@ -28,44 +28,44 @@
     <tr>
         <td style="text-align:left;vertical-align:top">
 @if (count($payments) <= 0)
-{{$thing->firstname}} has not made any payments yet
+    {{$thing->firstname}} has not made any payments yet
 @else
-@foreach ($payments as $payment)
-<p><b>&pound;{{number_format($payment->amount,2)}}</b> {{date_format($payment->created_at,'jS M Y')}}</p>
-@endforeach
+    @foreach ($payments as $payment)
+        <p><b>&pound;{{number_format($payment->amount,2)}}</b> {{date_format($payment->created_at,'jS M Y')}}</p>
+    @endforeach
 @endif
 
         </td>
         <td style="text-align:left;vertical-align:top">
 
 @foreach ($membership_purchases as $purchase)
-<p>{{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
+    <p>{{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
 @endforeach
         </td>
         <td style="text-align:left;vertical-align:top">
 
 @if (count($entry_data ) <= 0)
-{{$thing->firstname}} has not entered any categories yet
+    {{$thing->firstname}} has not entered any categories yet
 @else
-@foreach ($entry_data as $entry)
+    @foreach ($entry_data as $entry)
 
-<p> {{$entry['name']}} ({{$entry['price']}}p) 
-    @if ($entry['is_late'])
-    (late)
-    
-   @endif
-    @if ($entry['has_won'])
-    <b><u>{{$entry['placement_name']}}</u></b>
-    (&pound;{{number_format($category_data[$entry['category_id']]->getWinningAmount($entry['winning_place'])/100,2)}})
-    @endif
-</p>
-@endforeach
+    <p> {{$entry['name']}} ({{$entry['price']}}p) 
+        @if ($entry['is_late'])
+            (late)
+
+        @endif
+        @if ($entry['has_won'])
+            <b><u>{{$entry['placement_name']}}</u></b>
+            (&pound;{{number_format($category_data[$entry['category_id']]->getWinningAmount($entry['winning_place'])/100,2)}})
+        @endif
+    </p>
+    @endforeach
 @endif
         </td>
         <td style="text-align:left;vertical-align:top">
             <p><nobr><b>Balance due: &pound;{{number_format((($entry_fee + $membership_fee)/100) - $paid,2)}}</b></nobr></p>
 <p><nobr><b>Prizes</b>
-    <b>£{{number_format($total_prizes/100,2)}}</b></nobr></p>
+    <b>&pound;{{number_format($total_prizes/100,2)}}</b></nobr></p>
         </td>
     </tr>
 </table>
