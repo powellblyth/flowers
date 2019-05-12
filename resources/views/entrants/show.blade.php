@@ -25,7 +25,10 @@
     <tr>
         <td><h2>Payments (&pound;{{number_format($paid,2)}})</h2></td>
         <td><h2>Memberships (&pound;{{number_format($membership_fee/100,2)}})</h2></td>
-        <td><h2>Entries ({{count($entries)}}, &pound;{{number_format($entry_fee/100,2)}})</h2></td>
+        <td>
+            <h2>Entries ({{count($entries)}}, &pound;{{number_format($entry_fee/100,2)}}) </h2>
+                <a href="{{route('entrants.changecategories', $thing->id)}}" class="button">Edit Entries</a>
+        </td>
         <td><h2>Totals</h2></td>
     </tr>
     <tr>
@@ -41,9 +44,9 @@
         </td>
         <td style="text-align:left;vertical-align:top">
 
-@foreach ($membership_purchases as $purchase)
-    <p>{{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
-@endforeach
+            @foreach ($membership_purchases as $purchase)
+                <p>{{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
+            @endforeach
         </td>
         <td style="text-align:left;vertical-align:top">
 

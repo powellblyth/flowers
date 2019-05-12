@@ -116,6 +116,23 @@ class EntrantController extends Controller {
         $thing->save();
         return back();
     }
+    public function changeCategories(Request $request, int $id) {
+        if ($request->isMethod('POST')) {
+             return redirect()->route('entrants.index');
+        } else {
+            $entrant = Entrant::where('id', $id)->first();
+            if ($entrant instanceof Entrant)
+            {
+            var_dump($entrant->getName());
+            }
+            else
+            {
+                die('bust'.$id);    
+            }
+            die();
+        }
+    }
+
 
     /**
      * Display the specified resource.

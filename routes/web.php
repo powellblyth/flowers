@@ -44,6 +44,12 @@ Route::resource('payments', 'PaymentController');
 Route::get('/entrants/search', 
         ['as' => 'entrants.search',
     'uses' => 'EntrantController@search']);
+Route::get('/entrants/{id}/changecategories', 
+        ['as' => 'entrants.changecategories',
+    'uses' => 'EntrantController@changeCategories']);
+Route::post('/entrants/{id}/changecategories', 
+        ['as' => 'entrants.storechangecategories',
+    'uses' => 'EntrantController@changeCategories']);
 Route::post('/entry/creates', 
         ['as' => 'entry.creates',
     'uses' => 'EntryController@creates']);

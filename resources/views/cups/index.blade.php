@@ -25,13 +25,11 @@ $shortName = false;
 
     <p> 
         @if ( ! $publishMode)
-        <a href="{{$cup->getUrl()}}"><big><b>{{ $cup->name }}</b></big></a>
-            <br />{{ $cup->winning_criteria }}
-
+            <a href="{{$cup->getUrl()}}"><big><b>{{ $cup->name }}</b></big></a>
         @else
-        <b><big>{{ $cup->name }}</big></b>
-            <br />{{$cup->winning_criteria}}
+            <b><big>{{ $cup->name }}</big></b>
         @endif
+            <br />{{$cup->winning_criteria}}
 
         <br />
         @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
@@ -57,7 +55,7 @@ $shortName = false;
                         {{$winners[$winningEntrantId]['entrant']->telephone}}, {{$winners[$winningEntrantId]['entrant']->email}}
                     @endif
                 @else
-                <big>{{$winners[$winningEntrantId]['entrant']->getName()}}</big>
+                <big>{{$winners[$winningEntrantId]['entrant']->getPrintableName()}}</big>
                 @endif
                 </b>
                 ({{$results[$cup->id]['results'][$x]['totalpoints'] }} points)
@@ -95,7 +93,7 @@ $shortName = false;
                     @endif
             </b>
             @else
-    <big><b>{{$winners[$directWinnerId]['entrant']->getName()}}</b></big>
+    <big><b>{{$winners[$directWinnerId]['entrant']->getPrintableName()}}</b></big>
             @endif
             @if (is_object($results[$cup->id]['winning_category']))
             for category <i><b>{{$results[$cup->id]['winning_category']->getNumberedLabel()}}</b></i>
