@@ -17,6 +17,7 @@ class CreateDirectWinnerRecords extends Migration {
             $table->integer('cup');
             $table->integer('entrant');
             $table->integer('year')->default('2017');
+            $table->integer('winning_category')->nullable();
             $table->timestamps();
         });
     }
