@@ -19,7 +19,7 @@ class ReportsController extends Controller {
         $countFamily = 0; $countSingle = 0;
         
         foreach ($membershipsSold as $membership) {
-            $entrant = Entrant::find($membership->entrant);
+            $entrant = Entrant::find($membership->entrant_id);
             $purchases[$membership->id] = ['created' => $membership->created_at, 
                 'type' => $membership->type, 
                 'amount' => $membership->amount,
@@ -55,7 +55,7 @@ class ReportsController extends Controller {
         $countChild = 0; $countAdult = 0;
         
         foreach ($entriesSold as $entry) {
-            $entrant = Entrant::find($entry->entrant);
+            $entrant = Entrant::find($entry->entrant_id);
             $category = Category::find($entry->category);
             $price = $category->getPrice($entry->getPriceType());
             $purchases[$entry->id] = [

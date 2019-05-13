@@ -16,8 +16,8 @@ class EntryController extends Controller
                 if ('0' !== $category)
                 {
                     $entry = new Entry;
-                    $entry->category = (int)$category;
-                    $entry->entrant = (int)$request->input('entrant');
+                    $entry->category_id = (int)$category;
+                    $entry->entrant_id = (int)$request->input('entrant');
                     $entry->year = (int) env('CURRENT_YEAR', 2018);
                     $entry->save();
                 }

@@ -47,7 +47,7 @@ $currentSection = $thing->section
                 @endif
             </b>
             - 
-                {{$winners[$result->entrant]->getName($printableNames)}}
+                {{$winners[$result->entrant_id]->getName($printableNames)}}
 
         @endforeach
     @endif
@@ -60,5 +60,5 @@ $currentSection = $thing->section
 @endforeach
 
 </div>
-<a href="/categories/create" class="button">+ Add a new category</a><br />
+@if($isAdmin)<a href="/categories/create" class="button">+ Add a new category</a><br />@endif
 @stop

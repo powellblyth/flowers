@@ -47,4 +47,8 @@ class Category extends Model {
             return $this->late_price;
         }
     }
+    public function entries(): \Illuminate\Database\Eloquent\Relations\hasMany {
+        return $this->hasMany('App\Entry');
+    }
+
 }

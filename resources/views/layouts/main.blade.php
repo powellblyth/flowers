@@ -19,11 +19,11 @@
         <div class="flex-top position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                    @if (Auth::check())
                     <a href="{{route('logout')}}"
                        onclick="event.preventDefault(); document.getElementById('frm-logout').submit();return false">
                         Log out
                     </a>
-                    @if (Auth::check())
 {{--                        <a href="{{ url('/') }}">Home</a>--}}
 {{--                    @else--}}
 {{--                        <a href="{{ url('/login') }}">Login</a>--}}
@@ -54,7 +54,7 @@
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
-                    <a href="{{ url('/categories') }}">Categories / Results</a>
+                    <a href="{{route('categories.index')}}">Categories / Results</a>
                     <a href="{{ url('/cups') }}">Cups</a>
                         @if(Auth::check() && Auth::User()->isAdmin())
                         <a href="{{ route('reports.index') }}">Reports</a>

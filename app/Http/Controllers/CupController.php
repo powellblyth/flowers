@@ -29,12 +29,12 @@ sum(if(winningplace='2', 3,0) ) as secondplacepoints,
 sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
 sum(if(winningplace='commended', 1,0)) as commendedplacepoints, 
 sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3', 2,0) + if(winningplace='commended', 1,0)) as totalpoints,
-entrant from entries 
+entrant_id from entries 
 
-where category in (
+where category_id in (
 select cup_to_categories.category from cup_to_categories where cup_to_categories.cup = ?)
 AND entries.year = ?
-group by entrant
+group by entrant_id
 
 having (totalpoints > 0)
 order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
@@ -46,25 +46,25 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
                     'thirdplacepoints' => $result->thirdplacepoints,
                     'commendedplacepoints' => $result->commendedplacepoints,
                     'totalpoints' => $result->totalpoints,
-                    'entrant' => $result->entrant];
-                if (!array_key_exists($result->entrant, $winners)) {
-                    $winners[$result->entrant] = ['entrant' => Entrant::find($result->entrant), 'points' => $result->totalpoints];
+                    'entrant' => $result->entrant_id];
+                if (!array_key_exists($result->entrant_id, $winners)) {
+                    $winners[$result->entrant_id] = ['entrant' => Entrant::find($result->entrant_id), 'points' => $result->totalpoints];
                 }
             }
 
             $winningCategory = null;
 
             // Gather up more winners if needed
-            $cupWinner = CupDirectWinner::where('cup', $cup->id)->where('year', env('CURRENT_YEAR', 2018))->first();
+            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('year', env('CURRENT_YEAR', 2018))->first();
             if ($cupWinner instanceof CupDirectWinner) {
-                if (!array_key_exists($cupWinner->entrant, $winners)) {
-                    $winners[$cupWinner->entrant] = ['entrant' => Entrant::find($cupWinner->entrant), 'points' => 0];
+                if (!array_key_exists($cupWinner->entrant_id, $winners)) {
+                    $winners[$cupWinner->entrant_id] = ['entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0];
                 }
-                $winningCategory = Category::where('id', $cupWinner->winning_category)->where('year', env('CURRENT_YEAR', 2018))->first();
+                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('year', env('CURRENT_YEAR', 2018))->first();
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
-                'direct_winner' => (($cupWinner instanceof CupDirectWinner ) ? $cupWinner->entrant : null),
+                'direct_winner' => (($cupWinner instanceof CupDirectWinner ) ? $cupWinner->entrant_id : null),
 //                var_dump($winningCategory)
                 'winning_category' => $winningCategory);
         }
@@ -85,20 +85,20 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
         foreach ($cupLinks as $cupLink) {
             $resultset = DB::select("select if(winningplace='1', 4,if(winningplace='2',3, if(winningplace='3',2, if(winningplace='commended',1, 0 ) ) )) as points, 
 winningplace,
-entrant 
+entrant_id 
 
 from entries 
 
-where category = ?
+where category_id = ?
 AND winningplace IN ('1','2','3','commended')
 AND year = ?
 order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018)));
 
             $winnerDataByCategory[$cupLink->category] = array();
             foreach ($resultset as $categoryWinners) {
-                $winnerDataByCategory[$cupLink->category][$categoryWinners->winningplace] = ['entrant' => $categoryWinners->entrant, 'place' => $categoryWinners->winningplace, 'points' => $categoryWinners->points];
-                if (!array_key_exists($categoryWinners->entrant, $winners)) {
-                    $winners[$categoryWinners->entrant] = Entrant::find($categoryWinners->entrant);
+                $winnerDataByCategory[$cupLink->category][$categoryWinners->winningplace] = ['entrant' => $categoryWinners->entrant_id, 'place' => $categoryWinners->winningplace, 'points' => $categoryWinners->points];
+                if (!array_key_exists($categoryWinners->entrant_id, $winners)) {
+                    $winners[$categoryWinners->entrant_id] = Entrant::find($categoryWinners->entrant_id);
                 }
             }
 
@@ -115,7 +115,7 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
         $validEntries = Entry::where('year', env('CURRENT_YEAR', 2018))->get();
         $people = [];
         foreach ($validEntries as $entry) {
-            $person = Entrant::find($entry->entrant);
+            $person = Entrant::find($entry->entrant_id);
             $people[$person->id] = $person->getName();
         }
         unset($person);
@@ -141,7 +141,7 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
         $entriesObj = Entry::where('category', $request->category)->where('year', env('CURRENT_YEAR', 2018))->get();
         $entries = [];
         foreach ($entriesObj as $entry) {
-            $entrant = Entrant::find($entry->entrant);
+            $entrant = $entry->entrant;
             $entries[$entry->id] = $entrant->getName();
         }
         return view($this->templateDir . '.directResultPickEntrant', ['entries' => $entries, 'id' => $id, 'thing' => $thing,
@@ -155,10 +155,10 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
 //        $entries = Entrant::where('id', $request->entrant)->first();
         $cupDirectWinner = new CupDirectWinner();
         $cupDirectWinner->cup = $id;
-        $cupDirectWinner->winning_entry = $entry->id;
+        $cupDirectWinner->winning_entry_id = $entry->id;
         $cupDirectWinner->year = env('CURRENT_YEAR', 2018);
-        $cupDirectWinner->entrant = $entry->entrant;
-        $cupDirectWinner->winning_category = $entry->category;
+        $cupDirectWinner->entrant_id = $entry->entrant_id;
+        $cupDirectWinner->winning_category_id = $entry->category_id;
         $cupDirectWinner->save();
 
         return redirect('/cups/' . $id);
@@ -172,7 +172,7 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
         $cupDirectWinner = new CupDirectWinner();
         $cupDirectWinner->cup = $id;
         $cupDirectWinner->year = env('CURRENT_YEAR', 2018);
-        $cupDirectWinner->entrant = $request->person;
+        $cupDirectWinner->entrant_id = $request->person;
         $cupDirectWinner->save();
 
         return redirect('/cups/' . $id);

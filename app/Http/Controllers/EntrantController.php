@@ -27,12 +27,14 @@ class EntrantController extends Controller {
 
     public function index($extraData = []) {
         $things = Auth::User()->entrants;
-        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things, 'all' => false)));
+        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things, 'all' => false,
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
     }
 
     public function all($extraData = []) {
         $things = $this->baseClass::orderBy('familyname', 'asc')->get();
-        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things, 'all' => true)));
+        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things, 'all' => true,
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
     }
 
     public function search(Request $request) {
@@ -40,7 +42,8 @@ class EntrantController extends Controller {
         $things = Auth::User()->entrants()
             ->whereRaw("(entrants.firstname LIKE '%$searchterm%' OR entrants.familyname LIKE '%$searchterm%' OR entrants.id =  '%$searchterm%') ")
             ->get();
-        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => false));
+        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => false,
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin()));
     }
 
     public function searchAll(Request $request) {
@@ -49,8 +52,10 @@ class EntrantController extends Controller {
             ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
             ->orWhere('entrants.id', '=', "%$searchterm%")
             ->get();
-        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => true));
+        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => true,
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin()));
     }
+
 
     public function store(Request $request) {
         // Validate the request...
@@ -67,6 +72,8 @@ class EntrantController extends Controller {
         $thing->addresstown = $request->addresstown;
         $thing->postcode = $request->postcode;
         $thing->age = $request->age;
+
+        $thing->use_user_address = (bool)$request->use_user_address;
         if ((int)$request->can_retain_data) {
             $thing->retain_data_opt_in = date('Y-m-d H:i:s');
         }
@@ -164,18 +171,21 @@ class EntrantController extends Controller {
         $membershipFee = 0;
         $entryFee = 0;
 
+        $thing = $this->baseClass::find($id);
+//        $showData = array_merge($extraData,  array('thing' => $thing));
+
         $categoriesAry = [0 => 'Select...'];
         $categories = Category::orderBy('sortorder')->where('year', env('CURRENT_YEAR', 2018))->get();
         foreach ($categories as $category) {
             $categoriesAry[$category->id] = $category->getNumberedLabel();
         }
-        $payments = Payment::where('entrant', (int)$id)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $payments = $thing->payments()->where('year', env('CURRENT_YEAR', 2018))->get();
         $totalPaid = 0;
         foreach ($payments as $payment) {
             $totalPaid += $payment->amount;
         }
 
-        $membershipPayments = MembershipPurchase::where('entrant', (int)$id)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $membershipPayments = $thing->membershipPurchases()->where('year', env('CURRENT_YEAR', 2018))->get();
         $membershipPaymentData = [];
         foreach ($membershipPayments as $payment) {
             $amount = (($payment->type == 'single' ? 300 : 500));
@@ -183,13 +193,13 @@ class EntrantController extends Controller {
             $membershipPaymentData[] = ['type' => $payment->type, 'amount' => $amount];
         }
 
-        $entries = Entry::where('entrant', (int)$id)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $entries = $thing->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
         $entryData = [];
         $dbug = 0;
         foreach ($entries as $entry) {
-            if ($entry->category) {
+            if ($entry->category_id) {
                 // Hydrate
-                $category = Category::where('id', $entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
+                $category = $entry->category()->where('year', env('CURRENT_YEAR', 2018))->first();
 
                 $price = $category->getPrice($entry->getPriceType());
                 $entryFee += $price;
@@ -209,7 +219,7 @@ class EntrantController extends Controller {
                 ];
             }
         }
-        return parent::show($id, array_merge($showData, array(
+        return view($this->templateDir.'.show', array_merge($showData, array(
             'entry_data' => $entryData,
             'entries' => $entries,
             'categories' => $categoriesAry,
@@ -221,7 +231,15 @@ class EntrantController extends Controller {
             'payment_types' => $this->paymentTypes,
             'total_prizes' => $totalPrizes,
             'membership_fee' => $membershipFee,
-            'membership_types' => $this->membershipTypes)));
+            'membership_types' => $this->membershipTypes,
+                'can_email' => $thing->can_email,
+                'can_sms' => $thing->can_sms,
+                'can_phone' => $thing->can_phone,
+                'can_retain_data' => $thing->can_retain_data,
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
+            'thing' => $thing))
+            );
+//        return parent::show($id, );
     }
 
     function printcards($id) {
@@ -265,6 +283,7 @@ class EntrantController extends Controller {
 //      $showData = array_merge($extraData,  array('thing' => $thing));
 //      return view($this->templateDir.'.show', $showData);
 
-        return view($this->templateDir . '.edit', array('thing' => $thing));
+        return view($this->templateDir . '.edit', array('thing' => $thing,
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin()));
     }
 }

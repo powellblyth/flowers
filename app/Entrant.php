@@ -35,4 +35,13 @@ class Entrant extends Model {
     public function user(): \Illuminate\Database\Eloquent\Relations\belongsTo {
         return $this->belongsTo('App\User');
     }
+    public function entries(): \Illuminate\Database\Eloquent\Relations\hasMany {
+        return $this->hasMany('App\Entry');
+    }
+    public function payments(): \Illuminate\Database\Eloquent\Relations\hasMany {
+        return $this->hasMany('App\Payment');
+    }
+    public function membershipPurchases(): \Illuminate\Database\Eloquent\Relations\hasMany {
+        return $this->hasMany('App\MembershipPurchase');
+    }
 }

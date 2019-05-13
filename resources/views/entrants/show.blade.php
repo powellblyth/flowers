@@ -7,7 +7,7 @@
     <tr>
         <td><b>ID: {{ $thing->id }}</b></td>
         <td><b>Member Number:</b> {{ $thing->membernumber }}</td>
-    </r>
+    </tr>
     <tr>
         <td><b>Name:</b> {{ $thing->getName() }}</td>
         <td><b>Age:</b> {{ $thing->age }}</td>
@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <a href="/entrants/{{$thing->id}}/print" target="_blank" class="button">Print all cards</a> 
+            @if($isAdmin)<a href="/entrants/{{$thing->id}}/print" target="_blank" class="button">Print all cards</a>@endif
             <a href="/entrants/{{$thing->id}}/edit" class="button">Edit Entrant</a>
         </td>
     </tr>
@@ -27,7 +27,7 @@
         <td><h2>Memberships (&pound;{{number_format($membership_fee/100,2)}})</h2></td>
         <td>
             <h2>Entries ({{count($entries)}}, &pound;{{number_format($entry_fee/100,2)}}) </h2>
-                <a href="{{route('entrants.changecategories', $thing->id)}}" class="button">Edit Entries</a>
+                @if($isAdmin)<a href="{{route('entrants.changecategories', $thing->id)}}" class="button">Edit Entries</a>@endif
         </td>
         <td><h2>Totals</h2></td>
     </tr>
@@ -91,11 +91,11 @@
         </tr>
         <tr>
             <td>{{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}
-                {{ Form::checkbox('can_retain_data', 1) }}</td>
+                {{ Form::checkbox('can_retain_data', 1, $can_retain_data) }}</td>
             <td>{{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}
-                {{ Form::checkbox('can_email', 1) }}</td>
+                {{ Form::checkbox('can_email', 1,$can_email) }}</td>
             <td>{{ Form::label('can_sms', 'Can we contact you by SMS?:', ['class' => 'control-label']) }}
-                {{ Form::checkbox('can_sms', 1) }}</td>
+                {{ Form::checkbox('can_sms', 1, $can_sms) }}</td>
         </tr>
 </table>
 {{ Form::submit('Store Preferences', ['class' => 'button btn btn-primary']) }}
@@ -117,6 +117,7 @@
 {{ Form::submit('Create Entry', ['class' => 'button btn btn-primary']) }}
 <br /><br /><br />
 {{ Form::close() }}
+@if($isAdmin)
 <h2>New Payment Record</h2>
 
 {{ Form::open([
@@ -131,6 +132,8 @@
 {{ Form::submit('Store Payment', ['class' => 'button btn btn-primary']) }}
 <br /><br /><br />
 {{ Form::close() }}
+@endif
+@if($isAdmin)
 <h2>New Membership Purchase</h2>
 
 {{ Form::open([
@@ -144,5 +147,6 @@
 {{ Form::submit('Purchase Membership', ['class' => 'button btn btn-primary']) }}
 <br /><br /><br />
 {{ Form::close() }}
+    @endif
 
 @stop

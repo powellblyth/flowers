@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('pagetitle', 'New Entrants')
+@section('pagetitle', 'New Entrant')
 
 @section('content')
 
@@ -10,11 +10,11 @@
 <div class="form-group">
     <table>
         <tr>
-            <td>{{ Form::label('firstname', 'First Name:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::label('firstname', 'First Name: * ', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('firstname', null, ['class' => 'form-control']) }}</td>
        </tr>
         <tr>
-            <td>{{ Form::label('familyname', 'Family Name:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::label('familyname', 'Family Name: *', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('familyname', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
@@ -22,11 +22,31 @@
             <td>{{ Form::text('membernumber', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
+            <td>{{ Form::label('email', 'Email: (optional)', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::text('email', null, ['class' => 'form-control']) }}</td>
+        </tr>
+        <tr>
+            <td>{{ Form::label('telephone', 'Telephone:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::text('telephone', null, ['class' => 'form-control']) }}</td>
+        </tr>
+        <tr>
+            <td>{{ Form::label('age', 'Age in years (Children only):', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::text('age', null, ['class' => 'form-control']) }}</td>
+        </tr>
+        <tr>
+            <td>{{ Form::label('use_parent_address', 'Use the user account\'s address:', ['class' => 'control-label']) }}<br />
+                ( <b>{{Auth::User()->getAddress()}}</b> )</td>
+            <td>{{ Form::checkbox('use_parent_address', 1) }}</td>
+        </tr>
+        <tr>
+            <td><i><b>OR</b></i></td><td></td>
+        </tr>
+        <tr>
             <td>{{ Form::label('address', 'Address:', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('address', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
-            <td>{{ Form::label('address', 'Address line 2:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::label('address2', 'Address line 2:', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('address2', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
@@ -36,18 +56,6 @@
         <tr>
             <td>{{ Form::label('postcode', 'Postcode:', ['class' => 'control-label']) }}</td>
             <td>{{ Form::text('postcode', null, ['class' => 'form-control']) }}</td>
-        </tr>
-        <tr>
-            <td>{{ Form::label('email', 'Email:', ['class' => 'control-label']) }}</td>
-            <td>{{ Form::text('email', null, ['class' => 'form-control']) }}</td>
-        </tr>
-        <tr>
-            <td>{{ Form::label('telephone', 'Telephone:', ['class' => 'control-label']) }}</td>
-            <td>{{ Form::text('telephone', null, ['class' => 'form-control']) }}</td>
-        </tr>
-        <tr>
-            <td>{{ Form::label('age', 'Age (Children):', ['class' => 'control-label']) }}</td>
-            <td>{{ Form::text('age', null, ['class' => 'form-control']) }}</td>
         </tr>
         <tr>
             <td colspan="2"><b>We would like permission to retain your personal data within our data entry system for a period of 3 years after

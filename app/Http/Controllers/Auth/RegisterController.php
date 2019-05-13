@@ -50,6 +50,7 @@ class RegisterController extends Controller {
             'lastname' => 'required|string|max:255',
             'email' => 'bail|required|unique:users|string|email|max:255',
             'password' => 'required|string|min:2|confirmed',
+            
         ]);
     }
 
@@ -60,16 +61,41 @@ class RegisterController extends Controller {
      * @return User
      */
     public function create( $extraData = []) {
-        return User::create([
+        var_dump($extraData);
+        $data = [
             'firstname' => $extraData['firstname'],
             'lastname' => $extraData['lastname'],
             'email' => $extraData['email'],
+            'address' => $extraData['address'],
+            'address2' => $extraData['address2'],
+            'addresstown' => $extraData['addresstown'],
+            'postcode' => $extraData['postcode'],
             'password' => Hash::make($extraData['password']),
             'auth_token' => md5(random_int(PHP_INT_MIN,PHP_INT_MAX)),
             'password_reset_token' => '',
             'type' => User::DEFAULT_TYPE,
-            ]);
-        parent::create();
+        ];
+
+        if ((int)$extraData['can_retain_data']) {
+            $data['retain_data_opt_in'] = date('Y-m-d H:i:s');
+        }
+        $data['can_retain_data'] = (int)$extraData['can_retain_data'];
+
+        if ((int)$extraData['can_email']) {
+            $data['email_opt_in'] = date('Y-m-d H:i:s');
+        }
+        $data['can_email'] = (int)$extraData['can_email'];
+
+        if ($extraData['can_sms']) {
+            $data['sms_opt_in'] = date('Y-m-d H:i:s');
+        }
+        $data['can_sms'] = (int)$extraData['can_sms'];
+
+        $res = User::create($data);
+        var_dump($res);
+        die();
+        return $res;
+//        parent::create();
     }
     public function dcreate($extraData = [])
     {

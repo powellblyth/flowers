@@ -55,4 +55,10 @@ class Entry extends Model {
         }
         return $date;
     }
+    public function entrant(): \Illuminate\Database\Eloquent\Relations\belongsTo {
+        return $this->belongsTo('App\Entrant');
+    }
+    public function category(): \Illuminate\Database\Eloquent\Relations\belongsTo {
+        return $this->belongsTo('App\Category');
+    }
 }

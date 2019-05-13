@@ -16,6 +16,7 @@ class IsAdmin {
         if (auth()->user()->isAdmin()) {
             return $next($request);
         }
+//        return view('disallowed');
         return redirect('/');
     }
 }

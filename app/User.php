@@ -20,7 +20,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password','auth_token','password_reset_token'
+        'firstname', 'lastname', 'email', 'password','auth_token','password_reset_token',
+        'address', 'address2', 'addresstown', 'postcode', 'retain_data_opt_in',
+        'can_retain_data', 'email_opt_in', 'can_email', 'sms_opt_in', 'can_sms'
+
     ];
 
     /**
@@ -34,5 +37,13 @@ class User extends Authenticatable
 
     public function entrants(): \Illuminate\Database\Eloquent\Relations\hasMany {
         return $this->hasMany('App\Entrant');
+    }
+    public function getAddress():string {
+        $concatted = trim($this->address) . ', '
+            . trim($this->address2) . ', ' . trim($this->addresstown);
+        $deduped = str_replace(', , ', ', ',
+            str_replace(', , ', ', ',
+                $concatted));
+        return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
     }
 }

@@ -37,23 +37,23 @@ class CategoryController extends Controller {
             ->get();
 
         foreach ($things as $category) {
-            $placements = Entry::where('category', $category->id)
+            $placements = $category->entries()
                 ->whereNotNull('winningplace')
                 ->whereNotIn('winningplace', [''])
                 ->where('year', env('CURRENT_YEAR', 2018))
                 ->orderBy('winningplace')
                 ->get();
-            $total = Entry::where('category', $category->id)
+            $total = Entry::where('category_id', $category->id)
                     ->where('year', env('CURRENT_YEAR', 2018))
                     ->select(DB::raw('count(*) as total'))
-                    ->groupBy('category')->first();
+                    ->groupBy('category_id')->first();
 
             $results[$category->id] = ['placements' => $placements,
                 'total_entries' => (($total !== null) ? $total->total : 0)];
 
             foreach ($placements as $placement) {
-                if (empty($winners[$placement->entrant])) {
-                    $winners[$placement->entrant] = Entrant::find($placement->entrant);
+                if (empty($winners[$placement->entrant_id])) {
+                    $winners[$placement->entrant_id] = Entrant::find($placement->entrant_id);
                 }
             }
         }
@@ -122,12 +122,12 @@ class CategoryController extends Controller {
             $winners[$category->id] = [];
 
             foreach ($thisEntries as $entry) {
-                $entrant = Entrant::find($entry->entrant);
+                $entrant = Entrant::find($entry->entrant_id);
                 if ('' != trim($entry->winningplace)) {
-                    $winners[$category->id][$entry->entrant] = $entry->winningplace;
+                    $winners[$category->id][$entry->entrant_id] = $entry->winningplace;
                 }
                 $entries[$category->id][$entry->id] = [
-                    'entrant_id' => $entry->entrant,
+                    'entrant_id' => $entry->entrant_id,
                     'entrant_name' => $entrant->getName()
                 ];
             }
