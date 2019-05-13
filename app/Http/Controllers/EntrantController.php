@@ -1,39 +1,56 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Input;
+use App\Category;
 use App\Entrant;
 use App\Entry;
-use App\Payment;
 use App\MembershipPurchase;
-use App\Category;
+use App\Payment;
+use Illuminate\Http\Request;
+use Illuminate\Input;
+use Illuminate\Support\Facades\Auth;
 
 class EntrantController extends Controller {
 
     protected $templateDir = 'entrants';
     protected $baseClass = 'App\Entrant';
     protected $paymentTypes = array('cash' => 'cash'
-        , 'cheque' => 'cheque'
-        , 'online' => 'online'
-        , 'debit' => 'debit'
-        , 'refund_cash' => 'refund_cash'
-        , 'refund_online' => 'refund_online'
-        , 'refund_cheque' => 'refund_cheque');
+    , 'cheque' => 'cheque'
+    , 'online' => 'online'
+    , 'debit' => 'debit'
+    , 'refund_cash' => 'refund_cash'
+    , 'refund_online' => 'refund_online'
+    , 'refund_cheque' => 'refund_cheque');
     protected $membershipTypes = array('single' => 'single'
-        , 'family' => 'family');
+    , 'family' => 'family');
 
     public function index($extraData = []) {
+        $things = Auth::User()->entrants;
+        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things, 'all' => false)));
+    }
+
+    public function all($extraData = []) {
         $things = $this->baseClass::orderBy('familyname', 'asc')->get();
-        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things)));
+        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things, 'all' => true)));
     }
 
     public function search(Request $request) {
         $searchterm = $request->input('searchterm');
+        $things = Auth::User()->entrants()->where('entrants.firstname', 'LIKE', "%$searchterm%")
+            ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
+            ->orWhere('entrants.id', '=', "%$searchterm%")
+            ->get();
+        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => false));
+    }
+
+    public function searchAll(Request $request) {
+        $searchterm = $request->input('searchterm');
         $things = $this->baseClass::where('entrants.firstname', 'LIKE', "%$searchterm%")
             ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
+            ->orWhere('entrants.id', '=', "%$searchterm%")
             ->get();
-        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm));
+        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => true));
     }
 
     public function store(Request $request) {
@@ -51,19 +68,24 @@ class EntrantController extends Controller {
         $thing->addresstown = $request->addresstown;
         $thing->postcode = $request->postcode;
         $thing->age = $request->age;
-        if ((int) $request->can_retain_data) {
+        if ((int)$request->can_retain_data) {
             $thing->retain_data_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_retain_data = (int) $request->can_retain_data;
-        if ((int) $request->can_email) {
+        $thing->can_retain_data = (int)$request->can_retain_data;
+        if ((int)$request->can_email) {
             $thing->email_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_email = (int) $request->can_email;
+        $thing->can_email = (int)$request->can_email;
         if ($request->can_sms) {
             $thing->sms_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_sms = (int) $request->can_sms;
-        $thing->save();
+        $thing->can_sms = (int)$request->can_sms;
+
+        if ($thing->save()) {
+            if (!Auth::User()->isAdmin()) {
+                Auth::User()->entrants()->save($thing);
+            }
+        }
         return view($this->templateDir . '.saved', array('thing' => $thing));
     }
 
@@ -81,18 +103,18 @@ class EntrantController extends Controller {
         $thing->addresstown = $request->addresstown;
         $thing->postcode = $request->postcode;
         $thing->age = $request->age;
-        if (!$thing->can_retain_data && (int) $request->can_retain_data) {
+        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
             $thing->retain_data_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_retain_data = (int) $request->can_retain_data;
-        if (!$thing->can_email && (int) $request->can_email) {
+        $thing->can_retain_data = (int)$request->can_retain_data;
+        if (!$thing->can_email && (int)$request->can_email) {
             $thing->email_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_email = (int) $request->can_email;
+        $thing->can_email = (int)$request->can_email;
         if (!$thing->can_sms && $request->can_sms) {
             $thing->sms_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_sms = (int) $request->can_sms;
+        $thing->can_sms = (int)$request->can_sms;
         $thing->save();
         return view($this->templateDir . '.saved', array('thing' => $thing));
     }
@@ -101,33 +123,31 @@ class EntrantController extends Controller {
         // Validate the request...
         $thing = $this->baseClass::find($request->id);
 
-        if (!$thing->can_retain_data && (int) $request->can_retain_data) {
+        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
             $thing->retain_data_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_retain_data = (int) $request->can_retain_data;
-        if (!$thing->can_email && (int) $request->can_email) {
+        $thing->can_retain_data = (int)$request->can_retain_data;
+        if (!$thing->can_email && (int)$request->can_email) {
             $thing->email_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_email = (int) $request->can_email;
+        $thing->can_email = (int)$request->can_email;
         if (!$thing->can_sms && $request->can_sms) {
             $thing->sms_opt_in = date('Y-m-d H:i:s');
         }
-        $thing->can_sms = (int) $request->can_sms;
+        $thing->can_sms = (int)$request->can_sms;
         $thing->save();
         return back();
     }
+
     public function changeCategories(Request $request, int $id) {
         if ($request->isMethod('POST')) {
-             return redirect()->route('entrants.index');
+            return redirect()->route('entrants.index');
         } else {
             $entrant = Entrant::where('id', $id)->first();
-            if ($entrant instanceof Entrant)
-            {
-            var_dump($entrant->getName());
-            }
-            else
-            {
-                die('bust'.$id);    
+            if ($entrant instanceof Entrant) {
+                var_dump($entrant->getName());
+            } else {
+                die('bust' . $id);
             }
             die();
         }
@@ -137,7 +157,7 @@ class EntrantController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function show($id, $showData = []) {
@@ -150,13 +170,13 @@ class EntrantController extends Controller {
         foreach ($categories as $category) {
             $categoriesAry[$category->id] = $category->getNumberedLabel();
         }
-        $payments = Payment::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $payments = Payment::where('entrant', (int)$id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $totalPaid = 0;
         foreach ($payments as $payment) {
             $totalPaid += $payment->amount;
         }
 
-        $membershipPayments = MembershipPurchase::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $membershipPayments = MembershipPurchase::where('entrant', (int)$id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $membershipPaymentData = [];
         foreach ($membershipPayments as $payment) {
             $amount = (($payment->type == 'single' ? 300 : 500));
@@ -164,7 +184,7 @@ class EntrantController extends Controller {
             $membershipPaymentData[] = ['type' => $payment->type, 'amount' => $amount];
         }
 
-        $entries = Entry::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $entries = Entry::where('entrant', (int)$id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $entryData = [];
         $dbug = 0;
         foreach ($entries as $entry) {
@@ -191,24 +211,24 @@ class EntrantController extends Controller {
             }
         }
         return parent::show($id, array_merge($showData, array(
-                'entry_data' => $entryData,
-                'entries' => $entries,
-                'categories' => $categoriesAry,
-                'membership_purchases' => $membershipPaymentData,
-                'payments' => $payments,
-                'entry_fee' => $entryFee,
-                'total_price' => $entryFee + $membershipFee,
-                'paid' => $totalPaid,
-                'payment_types' => $this->paymentTypes,
-                'total_prizes' => $totalPrizes,
-                'membership_fee' => $membershipFee,
-                'membership_types' => $this->membershipTypes)));
+            'entry_data' => $entryData,
+            'entries' => $entries,
+            'categories' => $categoriesAry,
+            'membership_purchases' => $membershipPaymentData,
+            'payments' => $payments,
+            'entry_fee' => $entryFee,
+            'total_price' => $entryFee + $membershipFee,
+            'paid' => $totalPaid,
+            'payment_types' => $this->paymentTypes,
+            'total_prizes' => $totalPrizes,
+            'membership_fee' => $membershipFee,
+            'membership_types' => $this->membershipTypes)));
     }
 
     function printcards($id) {
         $categoryData = [];
         $entrant = $this->baseClass::find($id);
-        $entries = Entry::where('entrant', (int) $id)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $entries = Entry::where('entrant', (int)$id)->where('year', env('CURRENT_YEAR', 2018))->get();
         $cardFronts = [];
         $cardBacks = [];
 
@@ -217,8 +237,8 @@ class EntrantController extends Controller {
                 $categoryData[$entry->category] = Category::where('id', $entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
                 $cardFronts[] = [
                     'class_number' => $categoryData[$entry->category]->number,
-                    'entrant_number' => (int) $id,
-                    'entrant_age' => (($entrant->age && 18 > (int) $entrant->age) ? $entrant->age : '')
+                    'entrant_number' => (int)$id,
+                    'entrant_age' => (($entrant->age && 18 > (int)$entrant->age) ? $entrant->age : '')
                 ];
                 $cardBacks[] = ['class_number' => $categoryData[$entry->category]->number,
                     'class_name' => $categoryData[$entry->category]->name,
@@ -238,7 +258,7 @@ class EntrantController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id) {

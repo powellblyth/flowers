@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -18,11 +19,15 @@ class Entrant extends Model {
     }
 
     public function getAddress() {
-        $concatted =trim($this->address) . ', '
-                . trim($this->address2) . ', ' . trim($this->addresstown);
-        $deduped = str_replace(', , ', ', ', 
-            str_replace(', , ', ', ', 
+        $concatted = trim($this->address) . ', '
+            . trim($this->address2) . ', ' . trim($this->addresstown);
+        $deduped = str_replace(', , ', ', ',
+            str_replace(', , ', ', ',
                 $concatted));
-        return trim(trim($deduped, ', ')  . ' ' . trim($this->postcode), ', ');
+        return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
+    }
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\belongsTo {
+        return $this->belongsTo('App\User');
     }
 }

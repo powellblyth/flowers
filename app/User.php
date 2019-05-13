@@ -31,4 +31,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token','auth_token','password_reset_token'
     ];
+
+    public function entrants(): \Illuminate\Database\Eloquent\Relations\hasMany {
+        return $this->hasMany('App\Entrant');
+    }
 }

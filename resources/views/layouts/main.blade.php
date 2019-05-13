@@ -17,16 +17,16 @@
     </head>
     <body>
         <div class="flex-top position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+{{--            @if (Route::has('login'))--}}
+{{--                <div class="top-right links">--}}
+{{--                    @if (Auth::check())--}}
+{{--                        <a href="{{ url('/') }}">Home</a>--}}
+{{--                    @else--}}
+{{--                        <a href="{{ url('/login') }}">Login</a>--}}
+{{--                        <a href="{{ url('/register') }}">Register</a>--}}
+{{--                    @endif--}}
+{{--                </div>--}}
+{{--            @endif--}}
 
             <div class="content">
                 <div class="title m-b-md">
@@ -35,9 +35,17 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('/') }}">Höm</a>
-                    <a href="{{ url('/entrants') }}">Entrants</a>
-                    <a href="{{ url('/entrants/create') }}">Add an entrant</a>
+                    @if (Auth::check())
+                        <a href="{{ url('/') }}">Home</a>
+    @if(Auth::User()->isAdmin())
+                    <a href="{{route('entrants.searchall')}}">All Entrants</a>
+    @endif
+                    @else
+                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/register') }}">Register</a>
+                    @endif
+                    <a href="{{route('entrants.search')}}">Entrants</a>
+                    <a href="{{route('entrants.create')}}">Add an entrant</a>
                     <a href="{{ url('/categories') }}">Categories / Results</a>
                     <a href="{{ url('/cups') }}">Cups</a>
                     <a href="{{ route('reports.index') }}">Reports</a>

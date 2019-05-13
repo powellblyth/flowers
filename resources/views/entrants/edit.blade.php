@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('pagetitle', 'All Entrants ')
+@section('pagetitle', 'Edit Entrant ')
 
 @section('content')
 

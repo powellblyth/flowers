@@ -44,7 +44,13 @@ Route::resource('payments', 'PaymentController')->middleware('auth');
 
 Route::get('/entrants/search',
     ['as' => 'entrants.search',
-        'uses' => 'EntrantController@search'])->middleware('is_admin');
+        'uses' => 'EntrantController@search'])->middleware('auth');
+Route::get('/entrants/searchall',
+    ['as' => 'entrants.searchall',
+        'uses' => 'EntrantController@searchall'])->middleware('is_admin');
+Route::get('/entrants/all',
+    ['as' => 'entrants.all',
+        'uses' => 'EntrantController@all'])->middleware('is_admin');
 Route::get('/entrants/{id}/changecategories',
     ['as' => 'entrants.changecategories',
         'uses' => 'EntrantController@changeCategories'])->middleware('auth')->middleware('is_admin');
