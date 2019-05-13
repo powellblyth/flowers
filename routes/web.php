@@ -10,20 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/categories/storeresults', 
         ['as' => 'categories.storeresults',
-    'uses' => 'CategoryController@storeresults']);
+    'uses' => 'CategoryController@storeresults'])->middleware('auth');;
 Route::get('/categories/resultsentry', 
         ['as' => 'category.resultsentry',
-    'uses' => 'CategoryController@resultsentry']);
+    'uses' => 'CategoryController@resultsentry'])->middleware('auth');;
 
 Route::resource('categories', 'CategoryController');
 Route::resource('membershippurchases', 'MembershipPurchaseController');
-Route::resource('cups', 'CupController');
+Route::resource('cups', 'CupController')->middleware('auth');;
 
 //Route::post('/taps/{id}/connectToSensor', 
 //        ['as' => 'taps.connectToSensor',
@@ -31,49 +32,49 @@ Route::resource('cups', 'CupController');
 
 Route::post('/cups/{id}/directresultpick', 
     ['as' => 'cup.directResultPick',
-    'uses' => 'CupController@directResultPick']);
+    'uses' => 'CupController@directResultPick'])->middleware('auth');;
 Route::post('/cups/{id}/directresultsetwinner', 
     ['as' => 'cup.directResultSetWinner',
-    'uses' => 'CupController@directResultSetWinner']);
+    'uses' => 'CupController@directResultSetWinner'])->middleware('auth');;
 Route::post('/cups/{id}/directResultSetWinnerPerson', 
     ['as' => 'cup.directResultSetWinnerPerson',
-    'uses' => 'CupController@directResultSetWinnerPerson']);
+    'uses' => 'CupController@directResultSetWinnerPerson'])->middleware('auth');;
 
-Route::resource('payments', 'PaymentController');
+Route::resource('payments', 'PaymentController')->middleware('auth');;
 
 Route::get('/entrants/search', 
         ['as' => 'entrants.search',
-    'uses' => 'EntrantController@search']);
+    'uses' => 'EntrantController@search'])->middleware('auth');;
 Route::get('/entrants/{id}/changecategories', 
         ['as' => 'entrants.changecategories',
-    'uses' => 'EntrantController@changeCategories']);
+    'uses' => 'EntrantController@changeCategories'])->middleware('auth');;
 Route::post('/entrants/{id}/changecategories', 
         ['as' => 'entrants.storechangecategories',
-    'uses' => 'EntrantController@changeCategories']);
+    'uses' => 'EntrantController@changeCategories'])->middleware('auth');;
 Route::post('/entry/creates', 
         ['as' => 'entry.creates',
-    'uses' => 'EntryController@creates']);
+    'uses' => 'EntryController@creates'])->middleware('auth');;
 Route::get('/entrants/{id}/print', 
         ['as' => 'entrant.print',
-    'uses' => 'EntrantController@printcards']);
-Route::resource('entrants', 'EntrantController');
+    'uses' => 'EntrantController@printcards'])->middleware('auth');;
+Route::resource('entrants', 'EntrantController')->middleware('auth');;
 
 Route::post('/entrants/{id}/update', 
         ['as' => 'entrants.update',
-    'uses' => 'EntrantController@update']);
+    'uses' => 'EntrantController@update'])->middleware('auth');;
 Route::post('/entrants/{id}/optins', 
         ['as' => 'entrants.optins',
-    'uses' => 'EntrantController@optins']);
+    'uses' => 'EntrantController@optins'])->middleware('auth');;
 
 Route::get('/reports/', 
         ['as' => 'reports.index',
-    'uses' => 'ReportsController@index']);
+    'uses' => 'ReportsController@index'])->middleware('auth');;
 Route::get('/reports/members', 
         ['as' => 'reports.members',
-    'uses' => 'ReportsController@membershipReport']);
+    'uses' => 'ReportsController@membershipReport'])->middleware('auth');;
 Route::get('/reports/entries', 
         ['as' => 'reports.entries',
-    'uses' => 'ReportsController@entriesReport']);
+    'uses' => 'ReportsController@entriesReport'])->middleware('auth');;
 Route::get('/reports/unplacedCategories', 
         ['as' => 'reports.categories',
-    'uses' => 'ReportsController@unplacedcategoriesReport']);
+    'uses' => 'ReportsController@unplacedcategoriesReport'])->middleware('auth');;
