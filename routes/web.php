@@ -22,7 +22,7 @@ Route::get('/categories/resultsentry',
     ['as' => 'category.resultsentry',
         'uses' => 'CategoryController@resultsentry'])->middleware('is_admin');
 
-Route::resource('categories', 'CategoryController');
+Route::resource('categories', 'CategoryController')->middleware('auth');
 Route::resource('membershippurchases', 'MembershipPurchaseController');
 Route::resource('cups', 'CupController')->middleware('auth');
 
@@ -45,6 +45,9 @@ Route::resource('payments', 'PaymentController')->middleware('auth');
 Route::get('/entrants/search',
     ['as' => 'entrants.search',
         'uses' => 'EntrantController@search'])->middleware('auth');
+Route::get('/entrants',
+    ['as' => 'entrants.index',
+        'uses' => 'EntrantController@index'])->middleware('auth');
 Route::get('/entrants/searchall',
     ['as' => 'entrants.searchall',
         'uses' => 'EntrantController@searchall'])->middleware('is_admin');

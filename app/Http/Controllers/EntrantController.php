@@ -37,9 +37,8 @@ class EntrantController extends Controller {
 
     public function search(Request $request) {
         $searchterm = $request->input('searchterm');
-        $things = Auth::User()->entrants()->where('entrants.firstname', 'LIKE', "%$searchterm%")
-            ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
-            ->orWhere('entrants.id', '=', "%$searchterm%")
+        $things = Auth::User()->entrants()
+            ->whereRaw("(entrants.firstname LIKE '%$searchterm%' OR entrants.familyname LIKE '%$searchterm%' OR entrants.id =  '%$searchterm%') ")
             ->get();
         return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => false));
     }

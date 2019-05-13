@@ -13,7 +13,7 @@
          <link rel="stylesheet" href="{{ url('/css/main.css') }}" />
         @yield('extra_head')
 
-        </style>
+
     </head>
     <body>
         <div class="flex-top position-ref full-height">
@@ -44,7 +44,7 @@
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
-                    <a href="{{route('entrants.search')}}">Entrants</a>
+                    <a href="{{route('entrants.index')}}">Entrants</a>
                     <a href="{{route('entrants.create')}}">Add an entrant</a>
                     <a href="{{ url('/categories') }}">Categories / Results</a>
                     <a href="{{ url('/cups') }}">Cups</a>

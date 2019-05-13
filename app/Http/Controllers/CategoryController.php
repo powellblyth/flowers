@@ -1,10 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Category;
-use App\Entry;
 use App\Entrant;
+use App\Entry;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use DB;
 
 class CategoryController extends Controller {
@@ -59,7 +60,8 @@ class CategoryController extends Controller {
 
         return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things,
             'results' => $results,
-            'winners' => $winners)));
+            'winners' => $winners,
+            'isAdmin' => Auth::User()->isAdmin())));
     }
 
     /**
@@ -133,7 +135,8 @@ class CategoryController extends Controller {
         return view($this->templateDir . '.resultsentry', array('categories' => $categories,
             'entries' => $entries,
             'section' => $request->section,
-            'winners' => $winners));
+            'winners' => $winners,
+            'isAdmin' => Auth::User()->isAdmin()));
     }
 
     public function storeresults(Request $request) {

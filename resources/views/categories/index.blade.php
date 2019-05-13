@@ -16,7 +16,7 @@ $currentSection = $thing->section
 
 @if ($lastSection != $currentSection)
     <b>Section {{$thing->section}}</b> 
-    @if (!$publishMode)
+    @if (!$publishMode && $isAdmin)
         - <a class="button" href="/categories/resultsentry?section={{urlencode($thing->section)}}">Enter Results</a>
     @endif
     <br />
