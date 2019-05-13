@@ -11,8 +11,7 @@ class AdditionalUserFields extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::table('users', function (Blueprint $table) {
             $table->string('firstname');
             $table->string('lastname');
@@ -29,10 +28,9 @@ class AdditionalUserFields extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['auth_token', 'password_reset_token', 'firstname','lastname', 'status']);
+            $table->dropColumn(['auth_token', 'password_reset_token', 'firstname', 'lastname', 'status']);
             $table->string('name');
         });
     }
