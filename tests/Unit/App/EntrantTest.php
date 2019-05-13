@@ -35,10 +35,12 @@ class EntrantTest extends TestCase {
 
     public function providergetName() {
         return [
-            ['first', 'second', 'first second'],
-            ['first', '', 'first'],
-            ['', 'second', 'second'],
-            ['first', 'second ', 'first second'],
+            ['first second', 'first', 'second', null],
+            ['first second', 'first', 'second', false],
+            ['f second', 'first', 'second', true],
+            ['first', 'first', '', null],
+            ['second', '', 'second', null],
+            ['first second', 'first', 'second ', null],
             ['', '', '']
         ];
     }
@@ -48,12 +50,12 @@ class EntrantTest extends TestCase {
      * @dataProvider providergetName
      * @return void
      */
-    public function testgetName($first, $second, $expected) {
+    public function testgetName(string $expected, string $first, string $second, ?bool $printable=null) {
         $this->sut = new Entrant();
         $this->sut->firstname = $first;
         $this->sut->familyname = $second;
 
-        $this->assertSame($expected, $this->sut->getName());
+        $this->assertSame($expected, $this->sut->getName($printable));
     }
 
     public function providergetPrintableName() {

@@ -5,7 +5,8 @@
 @section('content')
 @php
 $publishMode = false;
-$showaddress = true;
+$showaddress = $isAdmin;
+$printableNames = !$isAdmin;
 $shortName = false;
 @endphp
 <div class="form-group" style="text-align:left;padding-left:10%">
@@ -49,13 +50,14 @@ $shortName = false;
             <b>
                 @if ( ! $publishMode)
                     <a href="{{$winners[$winningEntrantId]['entrant']->getUrl()}}">
-                    {{$winners[$winningEntrantId]['entrant']->getName()}}</a>
+                    {{$winners[$winningEntrantId]['entrant']->getName($printableNames)}}</a>
                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
                         {{$winners[$winningEntrantId]['entrant']->getAddress()}}<br />
                         {{$winners[$winningEntrantId]['entrant']->telephone}}, {{$winners[$winningEntrantId]['entrant']->email}}
+{{--                    @else--}}
                     @endif
                 @else
-                <big>{{$winners[$winningEntrantId]['entrant']->getPrintableName()}}</big>
+                <big>{{$winners[$winningEntrantId]['entrant']->getName($printableNames)}}</big>
                 @endif
                 </b>
                 ({{$results[$cup->id]['results'][$x]['totalpoints'] }} points)
@@ -66,7 +68,7 @@ $shortName = false;
 
             <br />
             @php
-            // If we have a matchin point then add one to the iterator
+            // If we have a matching point then add one to the iterator
             if ($lastResult == $totalPoints)
             {
                 $maxResults++;
@@ -85,7 +87,7 @@ $shortName = false;
         @if ( ! $publishMode)
             <b>
                 <a href="{{$winners[$directWinnerId]['entrant']->getUrl()}}">
-                   {{$winners[$directWinnerId]['entrant']->getName()}}
+                   {{$winners[$directWinnerId]['entrant']->getName($printableNames)}}
                 </a>
                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
                         {{$winners[$directWinnerId]['entrant']->getAddress()}}<br />
@@ -93,7 +95,7 @@ $shortName = false;
                     @endif
             </b>
             @else
-    <big><b>{{$winners[$directWinnerId]['entrant']->getPrintableName()}}</b></big>
+    <big><b>{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</b></big>
             @endif
             @if (is_object($results[$cup->id]['winning_category']))
             for category <i><b>{{$results[$cup->id]['winning_category']->getNumberedLabel()}}</b></i>

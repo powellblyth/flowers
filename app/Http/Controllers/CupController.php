@@ -9,6 +9,7 @@ use App\Category;
 use App\Entrant;
 use App\Entry;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class CupController extends Controller {
 
@@ -70,7 +71,8 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
 
         return view($this->templateDir . '.index', array_merge($extraData, array('cups' => $cups,
             'results' => $results,
-            'winners' => $winners
+            'winners' => $winners,
+            'isAdmin' => Auth::User()->isAdmin()
         )));
     }
 
@@ -125,7 +127,8 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
                 'winners' => $winners,
                 'winners_by_category' => $winnerDataByCategory,
                 'categories' => $categories,
-                'people' => $people
+                'people' => $people,
+            'isAdmin' => Auth::User()->isAdmin()
         )));
     }
 
@@ -141,7 +144,8 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
             $entrant = Entrant::find($entry->entrant);
             $entries[$entry->id] = $entrant->getName();
         }
-        return view($this->templateDir . '.directResultPickEntrant', ['entries' => $entries, 'id' => $id, 'thing' => $thing]);
+        return view($this->templateDir . '.directResultPickEntrant', ['entries' => $entries, 'id' => $id, 'thing' => $thing,
+            'isAdmin' => Auth::User()->isAdmin()]);
     }
 
     public function directResultSetWinner(Request $request, int $id) {

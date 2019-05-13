@@ -48,7 +48,9 @@
                     <a href="{{route('entrants.create')}}">Add an entrant</a>
                     <a href="{{ url('/categories') }}">Categories / Results</a>
                     <a href="{{ url('/cups') }}">Cups</a>
-                    <a href="{{ route('reports.index') }}">Reports</a>
+                        @if(Auth::User()->isAdmin())
+                        <a href="{{ route('reports.index') }}">Reports</a>
+                            @endif
                 </div>
                 <div id="content">
                     @yield('content')

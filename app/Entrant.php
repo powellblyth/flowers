@@ -10,15 +10,20 @@ class Entrant extends Model {
         return '/entrants/' . $this->id;
     }
 
-    public function getName() {
-        return trim($this->firstname . ' ' . $this->familyname);
+    public function getName(bool $printable=null):string {
+        if ($printable){
+            return $this->getPrintableName();
+        }
+        else {
+            return trim($this->firstname . ' ' . $this->familyname);
+        }
     }
 
-    public function getPrintableName() {
+    public function getPrintableName():string {
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname);
     }
 
-    public function getAddress() {
+    public function getAddress():string {
         $concatted = trim($this->address) . ', '
             . trim($this->address2) . ', ' . trim($this->addresstown);
         $deduped = str_replace(', , ', ', ',

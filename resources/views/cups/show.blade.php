@@ -1,6 +1,9 @@
 @extends('layouts/main')
 @section('pagetitle', 'Cup ' . $thing->name)
 @section('content')
+    @php
+        $printableNames = !$isAdmin
+    @endphp
 <a href="/cups">&laquo; Cups</a>
 <br />
 <ul>
@@ -21,28 +24,28 @@
     @if (array_key_exists($cup_link->category, $winners_by_category) && count($winners_by_category[$cup_link->category]) > 0)
         <td>
             @if (array_key_exists('1', $winners_by_category[$cup_link->category]))
-                {{$winners[$winners_by_category[$cup_link->category]['1']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['1']['points']}} points)
+                {{$winners[$winners_by_category[$cup_link->category]['1']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$cup_link->category]['1']['points']}} points)
             @else
              - 
             @endif
         </td>
         <td>
             @if (array_key_exists('2', $winners_by_category[$cup_link->category]))
-                {{$winners[$winners_by_category[$cup_link->category]['2']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['2']['points']}} points)
+                {{$winners[$winners_by_category[$cup_link->category]['2']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$cup_link->category]['2']['points']}} points)
             @else
              - 
             @endif
         </td>
         <td>
             @if (array_key_exists('3', $winners_by_category[$cup_link->category]))
-                {{$winners[$winners_by_category[$cup_link->category]['3']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['3']['points']}} points)
+                {{$winners[$winners_by_category[$cup_link->category]['3']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$cup_link->category]['3']['points']}} points)
             @else
              - 
             @endif
         </td>
         <td>
             @if (array_key_exists('commended', $winners_by_category[$cup_link->category]))
-                {{$winners[$winners_by_category[$cup_link->category]['commended']['entrant']]->getName()}} ({{$winners_by_category[$cup_link->category]['commended']['points']}} points)
+                {{$winners[$winners_by_category[$cup_link->category]['commended']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$cup_link->category]['commended']['points']}} points)
             @else
              - 
             @endif

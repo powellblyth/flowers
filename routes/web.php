@@ -77,13 +77,13 @@ Route::post('/entrants/{id}/optins',
 
 Route::get('/reports/',
     ['as' => 'reports.index',
-        'uses' => 'ReportsController@index'])->middleware('auth');
+        'uses' => 'ReportsController@index'])->middleware('is_admin');
 Route::get('/reports/members',
     ['as' => 'reports.members',
-        'uses' => 'ReportsController@membershipReport'])->middleware('auth');
+        'uses' => 'ReportsController@membershipReport'])->middleware('is_admin');
 Route::get('/reports/entries',
     ['as' => 'reports.entries',
-        'uses' => 'ReportsController@entriesReport'])->middleware('auth');
+        'uses' => 'ReportsController@entriesReport'])->middleware('is_admin');
 Route::get('/reports/unplacedCategories',
     ['as' => 'reports.categories',
-        'uses' => 'ReportsController@unplacedcategoriesReport'])->middleware('auth');
+        'uses' => 'ReportsController@unplacedcategoriesReport'])->middleware('is_admin');
