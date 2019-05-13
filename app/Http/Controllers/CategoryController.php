@@ -61,7 +61,7 @@ class CategoryController extends Controller {
         return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things,
             'results' => $results,
             'winners' => $winners,
-            'isAdmin' => Auth::User()->isAdmin())));
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
     }
 
     /**

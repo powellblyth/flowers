@@ -17,21 +17,29 @@
     </head>
     <body>
         <div class="flex-top position-ref full-height">
-{{--            @if (Route::has('login'))--}}
-{{--                <div class="top-right links">--}}
-{{--                    @if (Auth::check())--}}
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    <a href="{{route('logout')}}"
+                       onclick="event.preventDefault(); document.getElementById('frm-logout').submit();return false">
+                        Log out
+                    </a>
+                    @if (Auth::check())
 {{--                        <a href="{{ url('/') }}">Home</a>--}}
 {{--                    @else--}}
 {{--                        <a href="{{ url('/login') }}">Login</a>--}}
 {{--                        <a href="{{ url('/register') }}">Register</a>--}}
-{{--                    @endif--}}
-{{--                </div>--}}
-{{--            @endif--}}
+                    @endif
+                </div>
+            @endif
 
             <div class="content">
                 <div class="title m-b-md">
                     @yield('pagetitle')
-                    
+
+                </div>
+                <div class="subtitle m-b-md">
+                    @yield('pagesubtitle')
+
                 </div>
 
                 <div class="links">
@@ -40,15 +48,15 @@
     @if(Auth::User()->isAdmin())
                     <a href="{{route('entrants.searchall')}}">All Entrants</a>
     @endif
+                        <a href="{{route('entrants.index')}}">Entrants</a>
+                        <a href="{{route('entrants.create')}}">Add an entrant</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
-                    <a href="{{route('entrants.index')}}">Entrants</a>
-                    <a href="{{route('entrants.create')}}">Add an entrant</a>
                     <a href="{{ url('/categories') }}">Categories / Results</a>
                     <a href="{{ url('/cups') }}">Cups</a>
-                        @if(Auth::User()->isAdmin())
+                        @if(Auth::check() && Auth::User()->isAdmin())
                         <a href="{{ route('reports.index') }}">Reports</a>
                             @endif
                 </div>
@@ -58,4 +66,7 @@
             </div>
         </div>
     </body>
+    <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 </html>

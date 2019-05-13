@@ -21,10 +21,20 @@ Route::post('/categories/storeresults',
 Route::get('/categories/resultsentry',
     ['as' => 'category.resultsentry',
         'uses' => 'CategoryController@resultsentry'])->middleware('is_admin');
+Route::get('/categories',
+    ['as' => 'category.index',
+        'uses' => 'CategoryController@resultsentry']);
 
-Route::resource('categories', 'CategoryController')->middleware('auth');
+Route::resource('categories', 'CategoryController');
 Route::resource('membershippurchases', 'MembershipPurchaseController');
-Route::resource('cups', 'CupController')->middleware('auth');
+//Route::resource('cups', 'CupController')->middleware('auth');
+Route::get('/cups',
+    ['as' => 'cups.index',
+        'uses' => 'CupController@index']);
+Route::get('/cups/{id}',
+    ['as' => 'cups.show',
+        'uses' => 'CupController@show']);
+//Route::resource('cups', 'CupController');
 
 //Route::post('/taps/{id}/connectToSensor', 
 //        ['as' => 'taps.connectToSensor',

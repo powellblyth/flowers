@@ -48,9 +48,8 @@ $shortName = false;
             $winningEntrantId = $results[$cup->id]['results'][$x]['entrant'];
             @endphp
             <b>
-                @if ( ! $publishMode)
-                    <a href="{{$winners[$winningEntrantId]['entrant']->getUrl()}}">
-                    {{$winners[$winningEntrantId]['entrant']->getName($printableNames)}}</a>
+                @if ( (! $publishMode) && $isAdmin)
+                    <a href="{{$winners[$winningEntrantId]['entrant']->getUrl()}}">{{$winners[$winningEntrantId]['entrant']->getName($printableNames)}}</a>
                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
                         {{$winners[$winningEntrantId]['entrant']->getAddress()}}<br />
                         {{$winners[$winningEntrantId]['entrant']->telephone}}, {{$winners[$winningEntrantId]['entrant']->email}}
@@ -84,11 +83,9 @@ $shortName = false;
             @php 
         $directWinnerId = $results[$cup->id]['direct_winner'];
         @endphp
-        @if ( ! $publishMode)
+        @if ( ! $publishMode && $isAdmin)
             <b>
-                <a href="{{$winners[$directWinnerId]['entrant']->getUrl()}}">
-                   {{$winners[$directWinnerId]['entrant']->getName($printableNames)}}
-                </a>
+                <a href="{{$winners[$directWinnerId]['entrant']->getUrl()}}">{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</a>
                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
                         {{$winners[$directWinnerId]['entrant']->getAddress()}}<br />
                         {{$winners[$directWinnerId]['entrant']->telephone}}, {{$winners[$directWinnerId]['entrant']->email}}

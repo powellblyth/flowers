@@ -56,12 +56,13 @@
     
 </tr>
 @else
-<tr><td>Misssing data for {{$cup_link->category}}</td></tr>
+<tr><td>Missing data for {{$cup_link->category}}</td></tr>
 @endif
 @endforeach
 
 </table>
 @else
+    @if ($isAdmin)
 <h2>Pick a winner from an entry</h2>
 {{ Form::open([
     'route' => ['cup.directResultPick','id'=>$thing->id]
@@ -77,5 +78,5 @@
 {{ Form::submit('Set Winner', ['class' => 'button btn btn-primary']) }}
 {{Form::close()}}
 @endif
-
+@endif
 @stop

@@ -72,7 +72,7 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
         return view($this->templateDir . '.index', array_merge($extraData, array('cups' => $cups,
             'results' => $results,
             'winners' => $winners,
-            'isAdmin' => Auth::User()->isAdmin()
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin()
         )));
     }
 
@@ -128,7 +128,7 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
                 'winners_by_category' => $winnerDataByCategory,
                 'categories' => $categories,
                 'people' => $people,
-            'isAdmin' => Auth::User()->isAdmin()
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin()
         )));
     }
 
@@ -145,7 +145,7 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
             $entries[$entry->id] = $entrant->getName();
         }
         return view($this->templateDir . '.directResultPickEntrant', ['entries' => $entries, 'id' => $id, 'thing' => $thing,
-            'isAdmin' => Auth::User()->isAdmin()]);
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
     }
 
     public function directResultSetWinner(Request $request, int $id) {

@@ -5,7 +5,9 @@
 @section('content')
 @php
 $lastSection = 'no';
-$publishMode = false;
+$publishMode = true;
+$printableNames = !$isAdmin;
+
 
 @endphp
 <div class="form-group" style="text-align:left;padding-left:10%">
@@ -45,11 +47,7 @@ $currentSection = $thing->section
                 @endif
             </b>
             - 
-            @if (!$publishMode)
-                {{$winners[$result->entrant]->getName()}}
-            @else
-                {{$winners[$result->entrant]->getPrintableName()}}
-            @endif
+                {{$winners[$result->entrant]->getName($printableNames)}}
 
         @endforeach
     @endif
