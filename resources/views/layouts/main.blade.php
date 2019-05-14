@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('pagetitle') @ PHS</title>
+        <link rel="icon" href="/images/favicon.ico" />
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -22,7 +23,7 @@
                     @if (Auth::check())
                     <a href="{{route('logout')}}"
                        onclick="event.preventDefault(); document.getElementById('frm-logout').submit();return false">
-                        Log out
+                        Sign out
                     </a>
 {{--                        <a href="{{ url('/') }}">Home</a>--}}
 {{--                    @else--}}
@@ -51,7 +52,7 @@
                         <a href="{{route('entrants.index')}}">Entrants</a>
                         <a href="{{route('entrants.create')}}">Add an entrant</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/login') }}">Sign in</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
                     <a href="{{route('categories.index')}}">Categories / Results</a>

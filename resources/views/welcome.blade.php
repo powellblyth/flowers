@@ -145,7 +145,7 @@ $welcome = $Lang[$keys[$chosen]];
 @endphp
 
 @section('pagetitle', ucwords($welcome))
-@section('pagesubtitle', '(Now you know how to say hello in '. ucwords(strToLower($keys[$chosen])) . ')')
+@section('pagesubtitle', '(Now you know how to say \'welcome\' in '. ucwords(strToLower($keys[$chosen])) . ')')
 
 
 @section('content')

@@ -61,7 +61,7 @@ class RegisterController extends Controller {
      * @return User
      */
     public function create( $extraData = []) {
-        var_dump($extraData);
+//        var_dump($extraData);
         $data = [
             'firstname' => $extraData['firstname'],
             'lastname' => $extraData['lastname'],
@@ -92,8 +92,8 @@ class RegisterController extends Controller {
         $data['can_sms'] = (int)$extraData['can_sms'];
 
         $res = User::create($data);
-        var_dump($res);
-        die();
+//        var_dump($res);
+//        die();
         return $res;
 //        parent::create();
     }

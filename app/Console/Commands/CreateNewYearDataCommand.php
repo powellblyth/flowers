@@ -77,8 +77,8 @@ class CreateNewYearDataCommand extends Command {
             $cupToCategories = CupToCategory::where('category', $category->id)->get();
             foreach ($cupToCategories as $cupToCategory) {
                 $newCupToCategory = new CupToCategory();
-                $newCupToCategory->cup = $cupToCategory->cup;
-                $newCupToCategory->category = $newCategory->id;
+                $newCupToCategory->cup_id = $cupToCategory->cup;
+                $newCupToCategory->category_id = $newCategory->id;
                 $newCupToCategory->save();
             }
         }

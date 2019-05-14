@@ -19,6 +19,7 @@
     'method' => 'GET'
 ]) }}
 @endif
+    <p>Use this page to see yourself and your family. Click 'Add an Entrant' above to add yourselves</p>
 <table>
         <tr>
             @if(true === $all)

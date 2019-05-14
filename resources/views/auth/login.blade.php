@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('pagetitle', 'Log In')
+@section('pagetitle', 'Sign in')
 @section('loginNavHighlight', 'active')
 
 @section('content')
