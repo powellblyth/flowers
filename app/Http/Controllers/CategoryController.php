@@ -115,9 +115,9 @@ class CategoryController extends Controller {
             ->orderby('sortorder')
             ->get();
         foreach ($categories as $category) {
-            $thisEntries = Entry::where('category', $category->id)
+            $thisEntries = $category->entries()
                     ->where('year', env('CURRENT_YEAR', 2018))
-                    ->orderBy('entrant')->get();
+                    ->orderBy('entrant_id')->get();
             $entries[$category->id] = [];
             $winners[$category->id] = [];
 
@@ -143,7 +143,7 @@ class CategoryController extends Controller {
         foreach ($request->positions as $categoryId => $placings) {
             foreach ($placings as $entryId => $result) {
                 if ('0' !== $result && '' != trim($result)) {
-                    $entry = Entry::where(['id' => $entryId, 'category' => $categoryId])->first();
+                    $entry = Entry::where(['id' => $entryId, 'category_id' => $categoryId])->first();
                     $entry->winningplace = $result;
                     $entry->save();
                 }

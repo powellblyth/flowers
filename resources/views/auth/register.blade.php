@@ -1,141 +1,219 @@
-@extends('layouts/main')
-@section('pagetitle', 'Register a new account')
-@section('registerNavHighlight', 'active')
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('Material Dashboard')])
+
 @section('content')
-    <!-- resources/views/auth/register.blade.php -->
-    @if ($errors->any())
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="row">
-                    <div class="col-lg-12 mx-auto text-center">
-                        @foreach ($errors->all() as $error)
-                            <p class="alert alert-danger">{{ $error }}</p>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
+    <div class="container" style="height: auto;">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-8 ml-auto mr-auto">
+                <form class="form" method="POST" action="{{ route('register') }}">
+                    @csrf
 
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="row">
-                <div class="col-lg-12 mx-auto text-center">
-                    @foreach (['danger', 'warning', 'success', 'info'] as $key)
-                        @if(Session::has($key))
-                            <p class="alert alert-{{ $key }}">{{ Session::get($key) }}</p>
-                        @endif
-                    @endforeach
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title">Register your details</h4>
+                    <div class="card card-login card-hidden mb-3">
+                        <div class="card-header card-header-primary text-center">
+                            <h4 class="card-title"><strong>{{ __('Register') }}</strong></h4>
+                            {{--            <div class="social-line">--}}
+                            {{--              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">--}}
+                            {{--                <i class="fa fa-facebook-square"></i>--}}
+                            {{--              </a>--}}
+                            {{--              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">--}}
+                            {{--                <i class="fa fa-twitter"></i>--}}
+                            {{--              </a>--}}
+                            {{--              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">--}}
+                            {{--                <i class="fa fa-google-plus"></i>--}}
+                            {{--              </a>--}}
+                            {{--            </div>--}}
                         </div>
-                        <div class="card-body">
-                            {{ Form::open(['route' => 'register']) }}
-                            <div class="row">
-                                <div class="col-md-6">
-                                    {{ Form::label('firstname', 'First Name *', ['class' => 'bmd-label-floating']) }}
-                                    {{ Form::text('firstname', old('firstname'), ['class' => 'form-control']) }}
-
+                        <div class="card-body ">
+                            {{--            <p class="card-description text-center">{{ __('Or Be Classical') }}</p>--}}
+                            <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">face</i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="firstname" class="form-control"
+                                           placeholder="{{ __('First Name...') }}" value="{{ old('firstname') }}"
+                                           required>
+                                    <input type="text" name="lastname" class="form-control"
+                                           placeholder="{{ __('Last Name...') }}" value="{{ old('lastname') }}"
+                                           required>
                                 </div>
-                                <div class="col-md-6">
-                                    {{ Form::label('lastname', 'Last Name *', ['class' => 'bmd-label-floating']) }}
-                                    {{ Form::text('lastname', old('lastname'), ['class' => 'form-control']) }}
-
-                                </div>
+                                @if ($errors->has('name'))
+                                    <div id="name-error" class="error text-danger pl-3" for="name"
+                                         style="display: block;">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </div>
+                                @endif
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{ Form::label('email', 'Email Address *', ['class' => 'bmd-label-floating']) }}
-                                    {{ Form::email('email', old('email'), ['class' => 'form-control']) }}
-
+                            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">email</i>
+                                        </span>
+                                    </div>
+                                    <input type="email" name="email" class="form-control"
+                                           placeholder="{{ __('Email...') }}" value="{{ old('email') }}" required>
                                 </div>
+                                @if ($errors->has('email'))
+                                    <div id="email-error" class="error text-danger pl-3" for="email"
+                                         style="display: block;">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </div>
+                                @endif
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    {{ Form::label('password', 'Password *', ['class' => 'bmd-label-floating']) }}
-                                    {{ Form::password('password', ['class' => 'form-control']) }}
-
+                            <div class="bmd-form-group{{ $errors->has('address') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">home</i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="address" class="form-control"
+                                           placeholder="{{ __('Address line 1...') }}" value="{{ old('address') }}">
                                 </div>
-                                <div class="col-md-6">
-                                    {{ Form::label('password_confirmation', 'Password Confirmation *', ['class' => 'bmd-label-floating']) }}
-                                    {{ Form::password('password_confirmation', ['class' => 'form-control']) }}
-
-                                </div>
+                                @if ($errors->has('address'))
+                                    <div id="email-error" class="error text-danger pl-3" for="address"
+                                         style="display: block;">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </div>
+                                @endif
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">{{ Form::label('address', 'Address:', ['class' => 'control-label']) }}
-                                {{ Form::text('address', null, ['class' => 'form-control']) }}
+                            <div class="bmd-form-group{{ $errors->has('address2') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">home</i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="address2" class="form-control"
+                                           placeholder="{{ __('Address line 2...') }}" value="{{ old('address2') }}">
                                 </div>
+                                @if ($errors->has('address2'))
+                                    <div id="email-error" class="error text-danger pl-3" for="address2"
+                                         style="display: block;">
+                                        <strong>{{ $errors->first('address2') }}</strong>
+                                    </div>
+                                @endif
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">{{ Form::label('address2', 'Address line 2:', ['class' => 'control-label']) }}
-                                {{ Form::text('address2', null, ['class' => 'form-control']) }}
+                            <div class="bmd-form-group{{ $errors->has('addresstown') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">home</i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="addresstown" class="form-control"
+                                           placeholder="{{ __('Town / City...') }}" value="{{ old('addresstown') }}"
+                                           required>
                                 </div>
+                                @if ($errors->has('addresstown'))
+                                    <div id="email-error" class="error text-danger pl-3" for="address"
+                                         style="display: block;">
+                                        <strong>{{ $errors->first('addresstown') }}</strong>
+                                    </div>
+                                @endif
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">{{ Form::label('addresstown', 'Town / City:', ['class' => 'control-label']) }}
-                                {{ Form::text('addresstown', null, ['class' => 'form-control']) }}
+                            <div class="bmd-form-group{{ $errors->has('postcode') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">home</i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="postcode" class="form-control"
+                                           placeholder="{{ __('Postcode') }}" value="{{ old('postcode') }}"
+                                           required>
                                 </div>
+                                @if ($errors->has('postcode'))
+                                    <div id="email-error" class="error text-danger pl-3" for="address"
+                                         style="display: block;">
+                                        <strong>{{ $errors->first('postcode') }}</strong>
+                                    </div>
+                                @endif
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">{{ Form::label('postcode', 'Postcode:', ['class' => 'control-label']) }}
-                                {{ Form::text('postcode', null, ['class' => 'form-control']) }}
+                            <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                           placeholder="{{ __('Password...') }}" required>
                                 </div>
+                                @if ($errors->has('password'))
+                                    <div id="password-error" class="error text-danger pl-3" for="password"
+                                         style="display: block;">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </div>
+                                @endif
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">{{ Form::label('telephone', 'Telephone:', ['class' => 'control-label']) }}
-                                {{ Form::text('telephone', null, ['class' => 'form-control']) }}
+                            <div class="bmd-form-group{{ $errors->has('password_confirmation') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="password_confirmation" id="password_confirmation"
+                                           class="form-control" placeholder="{{ __('Confirm Password...') }}" required>
                                 </div>
+                                @if ($errors->has('password_confirmation'))
+                                    <div id="password_confirmation-error" class="error text-danger pl-3"
+                                         for="password_confirmation" style="display: block;">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </div>
+                                @endif
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <b>We would like permission to retain your personal data within our data entry system for a period of 3 years after
-                                        your last entry to the show. This includes your name, telephone number, email address, and age (children only).<br />
-                                        The reason to retain this is for the purposes of <br />
-                                        <ol>
-                                            <li>Making it faster for you to enter next year, as you would not need to provide your data again (unless it changed)</li>
-                                            <li>Sending you reminders up to three times per year to remind you about the show, and invite you to our events.</li>
-                                            <li>We will <i> NOT </i> share this data with any third parties, beyond communication systems under our control used to send the messages (e.g. email sending software).</li>
-                                            <li>You can opt out of this at any time by emailing enquiries@petershamhorticulturalsociety.org.uk</li>
-                                        </ol></b>                                </div>
+                            <div class="form-check mr-auto ml-3 mt-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="policy"
+                                           name="policy" {{ old('policy', 1) ? 'checked' : '' }} >
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {{ __('I agree with the ') }} <a href="#">{{ __('Privacy Policy') }}</a>
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">{{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}
-                                </div>
-                                <div class="col-md-6">{{ Form::checkbox('can_retain_data', 1) }}
-                                </div>
+                            <div class="form-check mr-auto ml-3 mt-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="policy"
+                                           name="can_retain_data" {{ old('can_retain_data', 0) ? 'checked' : '' }} >
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {{ __('You may retain my data for up to 3 years after I last enter the show or am a member') }}
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">{{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}
-                                </div>
-                                <div class="col-md-6">{{ Form::checkbox('can_email', 1) }}
-                                </div>
+                            <div class="form-check mr-auto ml-3 mt-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="policy"
+                                           name="email_opt_in" {{ old('policy', 0) ? 'checked' : '' }} >
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {{ __('You may send me emails (no more than a few times per year') }}
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">{{ Form::label('can_sms', 'Can we contact you by SMS?:', ['class' => 'control-label']) }}
-                                </div>
-                                <div class="col-md-6">{{ Form::checkbox('can_sms', 1) }}
-                                </div>
+                            <div class="form-check mr-auto ml-3 mt-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="policy"
+                                           name="can_sms" {{ old('can_sms', 0) ? 'checked' : '' }} >
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {{ __('You may send me SMS (infrequently)') }}
+                                </label>
                             </div>
-
-                            </div>
-                            {{ Form::Submit('Register', ['class'=>'button btn btn-primary'])}}
-                            {{ Form::close() }}
-
+                        </div>
+                        <div class="card-footer justify-content-center">
+                            <button type="submit"
+                                    class="btn btn-primary btn-link btn-lg">{{ __('Create account') }}</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-
 @endsection

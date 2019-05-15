@@ -61,7 +61,6 @@ class RegisterController extends Controller {
      * @return User
      */
     public function create( $extraData = []) {
-//        var_dump($extraData);
         $data = [
             'firstname' => $extraData['firstname'],
             'lastname' => $extraData['lastname'],
@@ -75,21 +74,24 @@ class RegisterController extends Controller {
             'password_reset_token' => '',
             'type' => User::DEFAULT_TYPE,
         ];
+        $canRetainData = array_key_exists('can_retain_data', $extraData) && 1 == (int)$extraData['can_retain_data'];
+        $canEmail = array_key_exists('can_email', $extraData) && 1 == (int)$extraData['can_email'];
+        $canSms = array_key_exists('can_sms', $extraData) && 1 == (int)$extraData['can_sms'];
 
-        if ((int)$extraData['can_retain_data']) {
+        if ($canRetainData) {
             $data['retain_data_opt_in'] = date('Y-m-d H:i:s');
         }
-        $data['can_retain_data'] = (int)$extraData['can_retain_data'];
+        $data['can_retain_data'] = (int)$canRetainData;
 
-        if ((int)$extraData['can_email']) {
+        if ($canEmail) {
             $data['email_opt_in'] = date('Y-m-d H:i:s');
         }
-        $data['can_email'] = (int)$extraData['can_email'];
+        $data['can_email'] = (int)$canEmail;
 
-        if ($extraData['can_sms']) {
+        if ($canSms) {
             $data['sms_opt_in'] = date('Y-m-d H:i:s');
         }
-        $data['can_sms'] = (int)$extraData['can_sms'];
+        $data['can_sms'] = (int)$canSms;
 
         $res = User::create($data);
 //        var_dump($res);
