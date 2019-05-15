@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Category;
@@ -32,11 +33,17 @@ class CategoryController extends Controller {
     public function index($extraData = []) {
         $winners = array();
         $results = [];
-        $things = $this->baseClass::orderBy('sortorder', 'asc')
+        $lastSection = 'notasection';
+        $categoryList = [];
+        $things = Category::orderBy('sortorder', 'asc')
             ->where('year', env('CURRENT_YEAR', 2018))
             ->get();
 
         foreach ($things as $category) {
+            if ($lastSection !== $category->section) {
+                $categoryList[$category->section] = [];
+            }
+            $categoryList[$category->section][$category->id] = $category;
             $placements = $category->entries()
                 ->whereNotNull('winningplace')
                 ->whereNotIn('winningplace', [''])
@@ -44,9 +51,9 @@ class CategoryController extends Controller {
                 ->orderBy('winningplace')
                 ->get();
             $total = Entry::where('category_id', $category->id)
-                    ->where('year', env('CURRENT_YEAR', 2018))
-                    ->select(DB::raw('count(*) as total'))
-                    ->groupBy('category_id')->first();
+                ->where('year', env('CURRENT_YEAR', 2018))
+                ->select(DB::raw('count(*) as total'))
+                ->groupBy('category_id')->first();
 
             $results[$category->id] = ['placements' => $placements,
                 'total_entries' => (($total !== null) ? $total->total : 0)];
@@ -56,12 +63,16 @@ class CategoryController extends Controller {
                     $winners[$placement->entrant_id] = Entrant::find($placement->entrant_id);
                 }
             }
+            $lastSection = $category->section;
         }
 
-        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things,
-            'results' => $results,
-            'winners' => $winners,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
+        return view($this->templateDir . '.index', array_merge($extraData,
+            array(
+                'things' => $things,
+                'categoryList' => $categoryList,
+                'results' => $results,
+                'winners' => $winners,
+                'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
     }
 
     /**
@@ -76,7 +87,7 @@ class CategoryController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id) {
@@ -86,7 +97,7 @@ class CategoryController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function update($id) {
@@ -96,7 +107,7 @@ class CategoryController extends Controller {
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id) {
@@ -116,8 +127,8 @@ class CategoryController extends Controller {
             ->get();
         foreach ($categories as $category) {
             $thisEntries = $category->entries()
-                    ->where('year', env('CURRENT_YEAR', 2018))
-                    ->orderBy('entrant_id')->get();
+                ->where('year', env('CURRENT_YEAR', 2018))
+                ->orderBy('entrant_id')->get();
             $entries[$category->id] = [];
             $winners[$category->id] = [];
 

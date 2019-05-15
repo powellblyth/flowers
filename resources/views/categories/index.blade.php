@@ -14,83 +14,73 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header card-header-success">Enter the Entrant's details</div>
+                        <div class="card-header card-header-success">All categories</div>
                         <div class="card-body">
-                            <p>Use this page to see yourself and your family. Click 'Add an
-                                        Entrant' on the menu to add yourselves.</p>
+                            <p>You can see the categories for this show, along with all winners if available, here.</p>
                         </div>
-
-            @foreach ($things as $thing)
-                @php
-                    $currentSection = $thing->section
-                @endphp
-                @if ($lastSection != $currentSection)
-                        </div>
-                </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="card">
-                                <div class="card-header card-header-success">
-                                    Section {{$thing->section}}
-                                </div>
 
-                                <div class="card-body">
-                                    @if (!$publishMode && $isAdmin)
-                                        <a class="button btn btn-success"
-                                             href="/categories/resultsentry?section={{urlencode($thing->section)}}">Enter
-                                            Results</a>
-                                    @endif
 
-                @endif
-                                <div class="row"><div class="col-lg-6">
-                <p>{{$thing->number}}. {{ $thing->name }}
-                (<b>
-                    @if (array_key_exists($thing->id, $results) && $results[$thing->id]['total_entries'] > 0)
-                        {{ $results[$thing->id]['total_entries']}}
-                    @else
-                        {{'0'}}
-                    @endif
-                </b> entries)
-                </p>
+            @foreach ($categoryList as $section => $categories)
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-success">
+                                Section {{$section}}
+                            </div>
+
+                            <div class="card-body">
+                                @if (!$publishMode && $isAdmin)
+                                    <p><a class="button btn btn-success"
+                                          href="/categories/resultsentry?section={{urlencode($section)}}">Enter
+                                            Results</a></p>
+                                @endif
+                                @foreach ($categories as $category)
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p>{{$category->number}}. {{ $category->name }}
+                                                (<b>
+                                                    @if (array_key_exists($category->id, $results) && $results[$category->id]['total_entries'] > 0)
+                                                        {{ $results[$category->id]['total_entries']}}
+                                                    @else
+                                                        {{'0'}}
+                                                    @endif
+                                                </b> entries)
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            @if(array_key_exists($category->id, $results) && count($results[$category->id]['placements']) > 0)
+                                                <b><u>Results</u></b>
+                                                @foreach ($results[$category->id]['placements'] as $result)
+                                                    <b>
+                                                        @if($result->winningplace == 1)
+                                                           <span class="badge-success">First place</span>
+                                                        @elseif ($result->winningplace == 2)
+                                                            <span class="badge-warning">Second Place</span>
+                                                        @elseif ($result->winningplace == 3)
+                                                            <span class="badge-danger">Third Place</span>
+                                                        @else
+                                                            {{ucfirst($result->winningplace)}}
+                                                        @endif
+                                                    </b>
+                                                    -
+                                                    {{$winners[$result->entrant_id]->getName($printableNames)}}
+
+                                                @endforeach
+                                            @endif
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6">
-                @if(array_key_exists($thing->id, $results) && count($results[$thing->id]['placements']) > 0)
-                    <b><u>Results</u></b>
-                    @foreach ($results[$thing->id]['placements'] as $result)
-                        <b>
-                            @if($result->winningplace == 1)
-                                First place
-                            @elseif ($result->winningplace == 2)
-                                Second Place
-                            @elseif ($result->winningplace == 3)
-                                Third Place
-                            @else
-                                {{ucfirst($result->winningplace)}}
-                            @endif
-                        </b>
-                        -
-                        {{$winners[$result->entrant_id]->getName($printableNames)}}
 
-                     @endforeach
-                @endif
-                                    </div>
-                                </div>
 
-                @php
-                    $lastSection = $thing->section
-                @endphp
-
-            @endforeach
-
+                                @endforeach
                             </div>
                         </div>
                     </div>
-            </div></div>
-    </div>
-    </div>
-    </div>
+                </div>
+            @endforeach
+
         </div>
     </div>
     @if($isAdmin)<a href="/categories/create" class="button">+ Add a new category</a><br/>@endif
