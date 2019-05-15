@@ -1,10 +1,10 @@
-@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'home', 'title' => __('Material Dashboard')])
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'home', 'title' => __('PHS SUMMER SHOW ENTRY MANAGEMENT')])
 
 @section('content')
 <div class="container" style="height: auto;">
   <div class="row justify-content-center">
       <div class="col-lg-7 col-md-8">
-          <h1 class="text-white text-center">{{ __('Welcome to Material Dashboard FREE Laravel Live Preview.') }}</h1>
+          <h1 class="text-white text-center">{{ __('Welcome to the PHS Summer Show entry system. Log in or register above to get started') }}</h1>
           @if(Auth::check())
               -    <h1>Welcome, {{Auth::User()->firstname}}</h1>
               -    <p>This is the <a href="http://www.petershamhorticulturalsociety.org.uk" target="_blank">Petersham Horticultural Society</a>'s system for self-registering membership and entries to the show. Your user account allows you to manage Show Entrants, who are people you

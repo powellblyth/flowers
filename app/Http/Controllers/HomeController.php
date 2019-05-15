@@ -1,17 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
-{
+class HomeController extends Controller {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
 
@@ -20,10 +19,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index($extraData = [])
-    {
-
+    public function index($extraData = []) {
+        $totalEntries = 0;
         $entrantCount = Auth::User()->entrants()->count();
-        return view('dashboard', ['entrantCount'=>$entrantCount]);
+        foreach (Auth::User()->entrants as $entrant) {
+            $totalEntries += $entrant->entries()->count();
+        }
+        return view('dashboard', ['entrantCount' => $entrantCount, 'entryCount' => $totalEntries]);
     }
 }

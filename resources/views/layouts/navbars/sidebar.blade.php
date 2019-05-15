@@ -5,7 +5,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
+    <a href="/" onclick="return false" class="simple-text logo-normal">
       {{ __('PHS Entries') }}
     </a>
   </div>
@@ -13,43 +13,43 @@
     <ul class="nav">
       @if (Auth::check())
         <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-        <a  class="nav-link" href="{{ url('/') }}"><i class="material-icons">dashboard</i><p>Home</p></a>
+        <a  class="nav-link" href="{{ url('/home') }}"><i class="material-icons">dashboard</i><p>Home</p></a>
         </li>
 
       @if(Auth::User()->isAdmin())
-          <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+          <li class="nav-item{{ $activePage == 'allentrants' ? ' active' : '' }}">
           <a class="nav-link" href="{{route('entrants.searchall')}}"><i class="material-icons">dashboard</i><p>All Entrants</p></a>
           </li>
 
         @endif
-        <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+        <li class="nav-item{{ $activePage == 'entrants' ? ' active' : '' }}">
         <a class="nav-link" href="{{route('entrants.index')}}"><i class="material-icons">dashboard</i><p>Entrants</p></a>
         </li>
 
-        <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+        <li class="nav-item{{ $activePage == 'add-entrant' ? ' active' : '' }}">
         <a class="nav-link" href="{{route('entrants.create')}}"><i class="material-icons">dashboard</i><p>Add an entrant</p></a>
         </li>
 
       @else
-        <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+        <li class="nav-item{{ $activePage == 'sign-in' ? ' active' : '' }}">
         <a class="nav-link" href="{{ url('/login') }}"><i class="material-icons">dashboard</i><p>Sign in</p></a>
         </li>
 
-        <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+        <li class="nav-item{{ $activePage == 'register' ? ' active' : '' }}">
         <a class="nav-link" href="{{ url('/register') }}"><i class="material-icons">dashboard</i><p>Register</p></a>
         </li>
 
       @endif
-        <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+        <li class="nav-item{{ $activePage == 'categories' ? ' active' : '' }}">
       <a class="nav-link" href="{{route('categories.index')}}"><i class="material-icons">dashboard</i><p>Categories / Results</p></a>
         </li>
 
-        <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+        <li class="nav-item{{ $activePage == 'cups' ? ' active' : '' }}">
       <a class="nav-link" href="{{ url('/cups') }}"><i class="material-icons">dashboard</i><p>Cups</p></a>
         </li>
 
       @if(Auth::check() && Auth::User()->isAdmin())
-          <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+          <li class="nav-item{{ $activePage == 'reports' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('reports.index') }}"><i class="material-icons">dashboard</i><p>Reports</p></a>
           </li>
 

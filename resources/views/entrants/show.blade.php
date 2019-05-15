@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'addentrant', 'titlePage' =>  $thing->getName() ])
+@extends('layouts.app', ['activePage' => 'entrants', 'titlePage' =>  $thing->getName() ])
 
 @section('pagetitle', 'Entrant ' . $thing->getName())
 @section('content')

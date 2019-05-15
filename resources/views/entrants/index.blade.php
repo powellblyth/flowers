@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'addentrant', 'titlePage' => __('My Entrants')])
+@extends('layouts.app', ['activePage' => 'entrants', 'titlePage' => __('My Entrants')])
 
 @if(true === $all)
     @section('pagetitle', 'All Entrants ')
