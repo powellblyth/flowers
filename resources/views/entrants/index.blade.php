@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header card-header-success">Enter the Entrant's details</div>
+                        <div class="card-header card-header-success">All my family's entrants</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12"><p>Use this page to see yourself and your family. Click 'Add an

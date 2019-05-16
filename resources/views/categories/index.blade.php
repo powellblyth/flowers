@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'categories', 'titlePage' => __('Show Categories')])
+@extends('layouts.app', ['activePage' => 'categories', 'titlePage' => __('Show Categories'), 'title' => __('')])
 @section('pagetitle', 'All categories ')
 
 @section('content')
@@ -39,7 +39,7 @@
                                 @endif
                                 @foreach ($categories as $category)
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-5 col-md-12">
                                             <p>{{$category->number}}. {{ $category->name }}
                                                 (<b>
                                                     @if (array_key_exists($category->id, $results) && $results[$category->id]['total_entries'] > 0)
@@ -50,13 +50,14 @@
                                                 </b> entries)
                                             </p>
                                         </div>
-                                        <div class="col-lg-6">
-                                            @if(array_key_exists($category->id, $results) && count($results[$category->id]['placements']) > 0)
-                                                <b><u>Results</u></b>
+                                        @if(array_key_exists($category->id, $results) && count($results[$category->id]['placements']) > 0)
+
+                                            <div class="col-lg-7">
+                                                <b><u>Results:</u></b>
                                                 @foreach ($results[$category->id]['placements'] as $result)
                                                     <b>
                                                         @if($result->winningplace == 1)
-                                                           <span class="badge-success">First place</span>
+                                                            <span class="badge-success">First place</span>
                                                         @elseif ($result->winningplace == 2)
                                                             <span class="badge-warning">Second Place</span>
                                                         @elseif ($result->winningplace == 3)
@@ -65,12 +66,14 @@
                                                             {{ucfirst($result->winningplace)}}
                                                         @endif
                                                     </b>
-                                                    -
-                                                    {{$winners[$result->entrant_id]->getName($printableNames)}}
+                                                    <nobr>{{$winners[$result->entrant_id]->getName($printableNames)}}</nobr>
+
+                                                    &nbsp;&nbsp;&nbsp;
 
                                                 @endforeach
-                                            @endif
-                                        </div>
+                                            </div>
+                                        @endif
+
                                     </div>
 
 
@@ -83,5 +86,6 @@
 
         </div>
     </div>
+
     @if($isAdmin)<a href="/categories/create" class="button">+ Add a new category</a><br/>@endif
 @stop
