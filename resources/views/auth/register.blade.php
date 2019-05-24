@@ -62,6 +62,23 @@
                                     </div>
                                 @endif
                             </div>
+                            <div class="bmd-form-group{{ $errors->has('telephone') ? ' has-danger' : '' }} mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">phone</i>
+                                        </span>
+                                    </div>
+                                    <input type="telephone" name="text" class="form-control"
+                                           placeholder="{{ __('Telephone number...') }}" value="{{ old('telephone') }}" required>
+                                </div>
+                                @if ($errors->has('telephone'))
+                                    <div id="telephone-error" class="error text-danger pl-3" for="telephone"
+                                         style="display: block;">
+                                        <strong>{{ $errors->first('telephone') }}</strong>
+                                    </div>
+                                @endif
+                            </div>
                             <div class="bmd-form-group{{ $errors->has('address') ? ' has-danger' : '' }} mt-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -173,12 +190,15 @@
                                     <span class="form-check-sign">
                                         <span class="check"></span>
                                     </span>
-                                    {{ __('I agree with the ') }} <a href="#">{{ __('Privacy Policy') }}</a>
+                                    {{ __('I agree with the ') }} <a href="https://www.petershamhorticulturalsociety.org.uk/privacy" target="_blank">{{ __('Privacy Policy') }}</a>
                                 </label>
+                            </div>
+                            <div class="mr-auto mk-3 mt-3">
+                                {!!$privacyContent!!}
                             </div>
                             <div class="form-check mr-auto ml-3 mt-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="policy"
+                                    <input class="form-check-input" type="checkbox" id="can_retain_data"
                                            name="can_retain_data" {{ old('can_retain_data', 0) ? 'checked' : '' }} >
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -188,22 +208,32 @@
                             </div>
                             <div class="form-check mr-auto ml-3 mt-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="policy"
-                                           name="email_opt_in" {{ old('policy', 0) ? 'checked' : '' }} >
+                                    <input class="form-check-input" type="checkbox" id="can_email"
+                                           name="can_email" {{ old('can_email', 0) ? 'checked' : '' }} >
                                     <span class="form-check-sign">
                                         <span class="check"></span>
                                     </span>
-                                    {{ __('You may send me emails (no more than a few times per year') }}
+                                    {{ __('You may send me emails (occasionally)') }}
                                 </label>
                             </div>
                             <div class="form-check mr-auto ml-3 mt-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="policy"
+                                    <input class="form-check-input" type="checkbox" id="can_sms"
                                            name="can_sms" {{ old('can_sms', 0) ? 'checked' : '' }} >
                                     <span class="form-check-sign">
                                         <span class="check"></span>
                                     </span>
-                                    {{ __('You may send me SMS (infrequently)') }}
+                                    {{ __('You may send me text messages (infrequently)') }}
+                                </label>
+                            </div>
+                            <div class="form-check mr-auto ml-3 mt-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="can_post"
+                                           name="can_post" {{ old('can_post', 0) ? 'checked' : '' }} >
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {{ __('You may contact me by post (infrequently)') }}
                                 </label>
                             </div>
                         </div>

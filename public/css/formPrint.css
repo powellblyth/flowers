@@ -49,10 +49,10 @@
 }
 .frontpage .entrant_number
 {
-    font-size:30px;
+    font-size:25px;
     border-bottom: 1px solid black;
     display:inline-block;
-    width:40px;    
+    width:120px;
 }
 .frontpage .prize_box
 {

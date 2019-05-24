@@ -31,7 +31,7 @@ class Category extends Model {
     }
 
     public function getType() {
-        if (in_array($this->section, ['8 - Childrens Floral, Fruit and Vegetables', '9 - Childrens Cookery, Arts & Crafts'])){
+        if (in_array($this->section->number, ['8', '9'])){
             $type =  self::TYPE_JUNIOR;
         }
         else
@@ -49,6 +49,9 @@ class Category extends Model {
     }
     public function entries(): \Illuminate\Database\Eloquent\Relations\hasMany {
         return $this->hasMany('App\Entry');
+    }
+    public function section(): \Illuminate\Database\Eloquent\Relations\belongsTo {
+        return $this->belongsTo('App\Section');
     }
 
 }

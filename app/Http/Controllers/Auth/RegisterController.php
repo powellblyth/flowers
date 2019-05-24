@@ -38,6 +38,10 @@ class RegisterController extends Controller {
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm() {
+        return view('auth.register', ['privacyContent'=>config('static_content.privacy_content')]);
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -77,6 +81,7 @@ class RegisterController extends Controller {
         $canRetainData = array_key_exists('can_retain_data', $extraData) && 1 == (int)$extraData['can_retain_data'];
         $canEmail = array_key_exists('can_email', $extraData) && 1 == (int)$extraData['can_email'];
         $canSms = array_key_exists('can_sms', $extraData) && 1 == (int)$extraData['can_sms'];
+        $canPost = array_key_exists('can_post', $extraData) && 1 == (int)$extraData['can_post'];
 
         if ($canRetainData) {
             $data['retain_data_opt_in'] = date('Y-m-d H:i:s');
@@ -93,11 +98,15 @@ class RegisterController extends Controller {
         }
         $data['can_sms'] = (int)$canSms;
 
+        if ($canPost) {
+            $data['post_opt_in'] = date('Y-m-d H:i:s');
+        }
+        $data['can_post'] = (int)$canPost;
+
         $res = User::create($data);
 //        var_dump($res);
 //        die();
         return $res;
-//        parent::create();
     }
     public function dcreate($extraData = [])
     {

@@ -19,7 +19,7 @@
                                 <div class="frontpage">
                                     <div class="class_number_box">CLASS <span class="class_number">{{$card_fronts[$cardcounter]['class_number']}}</span></div>
                                     <div class="entrant_number_box">
-                                        Entrant's No. <span class="class_number">{{ $card_fronts[$cardcounter]['entrant_number'] }}</span>
+                                        Entrant's No. <span class="entrant_number">{{ $card_fronts[$cardcounter]['entrant_number'] }}</span>
                                         @if ($card_fronts[$cardcounter]['entrant_age'])
                                         <span class="age">Age {{$card_fronts[$cardcounter]['entrant_age']}}</span>
                                         @endif

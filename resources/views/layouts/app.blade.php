@@ -112,17 +112,17 @@
         <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
         <script src="{{ asset('material') }}/js/plugins/bootstrap-selectpicker.js"></script>
         <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-        <script src="{{ asset('material') }}/js/plugins/bootstrap-datetimepicker.min.js"></script>
+{{--        <script src="{{ asset('material') }}/js/plugins/bootstrap-datetimepicker.min.js"></script>--}}
         <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-        <script src="{{ asset('material') }}/js/plugins/jquery.dataTables.min.js"></script>
+{{--        <script src="{{ asset('material') }}/js/plugins/jquery.dataTables.min.js"></script>--}}
         <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-        <script src="{{ asset('material') }}/js/plugins/bootstrap-tagsinput.js"></script>
+{{--        <script src="{{ asset('material') }}/js/plugins/bootstrap-tagsinput.js"></script>--}}
         <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
 {{--        <script src="{{ asset('material') }}/js/plugins/jasny-bootstrap.min.js"></script>--}}
         <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-        <script src="{{ asset('material') }}/js/plugins/fullcalendar.min.js"></script>
+{{--        <script src="{{ asset('material') }}/js/plugins/fullcalendar.min.js"></script>--}}
         <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-        <script src="{{ asset('material') }}/js/plugins/jquery-jvectormap.js"></script>
+{{--        <script src="{{ asset('material') }}/js/plugins/jquery-jvectormap.js"></script>--}}
         <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
         <script src="{{ asset('material') }}/js/plugins/nouislider.min.js"></script>
         <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->

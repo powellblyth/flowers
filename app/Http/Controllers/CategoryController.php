@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Entrant;
 use App\Entry;
+use App\Section;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use DB;
+use \Illuminate\View\View;
 
 class CategoryController extends Controller {
 
@@ -30,49 +32,56 @@ class CategoryController extends Controller {
         '7 - Arts and Crafts' => '7 - Arts and Crafts',
     ];
 
-    public function index($extraData = []) {
+    public function index(array $extraData = []): View {
         $winners = array();
         $results = [];
-        $lastSection = 'notasection';
         $categoryList = [];
+        $sectionList = [];
+
+        $sections = Section::orderBy('number', 'asc')->get();
         $things = Category::orderBy('sortorder', 'asc')
             ->where('year', env('CURRENT_YEAR', 2018))
             ->get();
 
-        foreach ($things as $category) {
-            if ($lastSection !== $category->section) {
-                $categoryList[$category->section] = [];
-            }
-            $categoryList[$category->section][$category->id] = $category;
-            $placements = $category->entries()
-                ->whereNotNull('winningplace')
-                ->whereNotIn('winningplace', [''])
+        foreach ($sections as $section) {
+            $sectionList[$section->id] = $section->id . ' ' . $section->name;
+            $categoryList[$section->id] = [];
+            $categories = $section->categories()->orderBy('sortorder', 'asc')
                 ->where('year', env('CURRENT_YEAR', 2018))
-                ->orderBy('winningplace')
                 ->get();
-            $total = Entry::where('category_id', $category->id)
-                ->where('year', env('CURRENT_YEAR', 2018))
-                ->select(DB::raw('count(*) as total'))
-                ->groupBy('category_id')->first();
 
-            $results[$category->id] = ['placements' => $placements,
-                'total_entries' => (($total !== null) ? $total->total : 0)];
+            foreach ($categories as $category) {
+                $categoryList[$section->id][$category->id] = $category;
+                $placements = $category->entries()
+                    ->whereNotNull('winningplace')
+                    ->whereNotIn('winningplace', [''])
+                    ->where('year', env('CURRENT_YEAR', 2018))
+                    ->orderBy('winningplace')
+                    ->get();
+                $total = Entry::where('category_id', $category->id)
+                    ->where('year', env('CURRENT_YEAR', 2018))
+                    ->select(DB::raw('count(*) as total'))
+                    ->groupBy('category_id')->first();
 
-            foreach ($placements as $placement) {
-                if (empty($winners[$placement->entrant_id])) {
-                    $winners[$placement->entrant_id] = Entrant::find($placement->entrant_id);
+                $results[$category->id] = ['placements' => $placements,
+                    'total_entries' => (($total !== null) ? $total->total : 0)];
+
+                foreach ($placements as $placement) {
+                    if (empty($winners[$placement->entrant_id])) {
+                        $winners[$placement->entrant_id] = Entrant::find($placement->entrant_id);
+                    }
                 }
             }
-            $lastSection = $category->section;
         }
-
         return view($this->templateDir . '.index', array_merge($extraData,
             array(
                 'things' => $things,
                 'categoryList' => $categoryList,
+                'sectionList' => $sectionList,
                 'results' => $results,
                 'winners' => $winners,
                 'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
+
     }
 
     /**
@@ -114,14 +123,15 @@ class CategoryController extends Controller {
         //
     }
 
-    public function create($extraData = []) {
-        return parent::create(['sections' => $this->sections]);
+    public function create(array $extraData = []): View {
+        return view($this->templateDir . '.create', ['sections' => $this->sections]);
     }
 
-    public function resultsentry(Request $request) {
+    public function resultsentry(Request $request): View {
         $entries = [];
         $winners = [];
-        $categories = Category::where('section', $request->section)
+        $section = Section::find($request->section);
+        $categories = $section->categories()
             ->where('year', env('CURRENT_YEAR', 2018))
             ->orderby('sortorder')
             ->get();
@@ -150,7 +160,7 @@ class CategoryController extends Controller {
             'isAdmin' => Auth::User()->isAdmin()));
     }
 
-    public function storeresults(Request $request) {
+    public function storeresults(Request $request): \Illuminate\Http\RedirectResponse {
         foreach ($request->positions as $categoryId => $placings) {
             foreach ($placings as $entryId => $result) {
                 if ('0' !== $result && '' != trim($result)) {

@@ -7,55 +7,124 @@ use App\Entrant;
 use App\Entry;
 use App\MembershipPurchase;
 use App\Payment;
+use App\User;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Input;
 use Illuminate\Support\Facades\Auth;
+use \Illuminate\View\View;
 
 class EntrantController extends Controller {
 
     protected $templateDir = 'entrants';
     protected $baseClass = 'App\Entrant';
-    protected $paymentTypes = array('cash' => 'cash'
-    , 'cheque' => 'cheque'
-    , 'online' => 'online'
-    , 'debit' => 'debit'
-    , 'refund_cash' => 'refund_cash'
-    , 'refund_online' => 'refund_online'
-    , 'refund_cheque' => 'refund_cheque');
-    protected $membershipTypes = array('single' => 'single'
-    , 'family' => 'family');
+    protected $paymentTypes = array('cash' => 'cash',
+        'cheque' => 'cheque',
+        'online' => 'online',
+        'debit' => 'debit',
+        'refund_cash' => 'refund_cash',
+        'refund_online' => 'refund_online',
+        'refund_cheque' => 'refund_cheque');
 
-    public function index($extraData = []) {
-        $things = Auth::User()->entrants;
-        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things, 'all' => false,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
+    protected $membershipTypes = array(
+        'single' => 'single',
+        'family' => 'family');
+
+    public function isAdmin(): bool {
+        return Auth::check() && Auth::User()->isAdmin();
     }
 
-    public function all($extraData = []) {
-        $things = $this->baseClass::orderBy('familyname', 'asc')->get();
-        return view($this->templateDir . '.index', array_merge($extraData, array('things' => $things, 'all' => true,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
-    }
-
-    public function search(Request $request) {
-        $searchterm = $request->input('searchterm');
-        $things = Auth::User()->entrants()
-            ->whereRaw("(entrants.firstname LIKE '%$searchterm%' OR entrants.familyname LIKE '%$searchterm%' OR entrants.id =  '%$searchterm%') ")
+    public function index(Request $request, array $extraData = []): View {
+        if ($this->isAdmin()) {
+            if ($request->has('user_id') && 0 < (int)$request->user_id){
+                $user = User::find(  (int)$request->user_id);
+            }
+            else{
+                $user = Auth::User();
+            }
+        } else {
+            $user = Auth::User();
+        }
+        $things = $user->entrants()
+            ->orderBy('familyname', 'asc')
+            ->orderBy('firstname', 'asc')
             ->get();
-        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => false,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin()));
+        // OVerride parent method - this prevents the same query running twice
+        // and producing too much data
+        return view($this->templateDir . '.index',
+            array_merge($extraData,
+                array('things' => $things,
+                    'owner'=>$user,
+                    'all' => false,
+                    'isAdmin' => $this->isAdmin())));
+//        return parent::index(array_merge($extraData,
+//            array('things' => $things,
+//                'all' => false,
+//                'isAdmin' => $this->isAdmin())));
     }
 
-    public function searchAll(Request $request) {
-        $searchterm = $request->input('searchterm');
-        $things = $this->baseClass::where('entrants.firstname', 'LIKE', "%$searchterm%")
-            ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
-            ->orWhere('entrants.id', '=', "%$searchterm%")
-            ->get();
-        return view($this->templateDir . '.index', array('things' => $things, 'searchterm' => $searchterm, 'all' => true,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin()));
+    public function search(Request $request): View {
+        $searchTerm = $request->input('searchterm');
+        if ($request->has('searchterm')) {
+            $things = Auth::User()->entrants()
+                ->whereRaw("(entrants.firstname LIKE '%$searchTerm%' OR entrants.familyname LIKE '%$searchTerm%' OR entrants.id =  '%$searchTerm%') ")
+                ->orderBy('familyname', 'asc')->orderBy('firstname', 'asc')
+                ->get();
+        } else {
+            $things = Auth::User()->entrants()
+                ->orderBy('familyname', 'asc')->orderBy('firstname', 'asc')
+                ->get();
+
+        }
+        return view($this->templateDir . '.index',
+            array('things' => $things,
+                'searchterm' => $searchTerm,
+                'all' => false,
+                'isAdmin' => $this->isAdmin()));
     }
 
+    public function searchAll(Request $request): View {
+        $searchterm = null;
+        if ($request->has('searchterm')) {
+            $searchterm = $request->input('searchterm');
+            $things = $this->baseClass::where('entrants.firstname', 'LIKE', "%$searchterm%")
+                ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
+                ->orWhere('entrants.id', '=', "%$searchterm%")
+                ->get();
+        } else {
+            $things = $this->baseClass::orderBy('familyname', 'asc')->orderBy('firstname', 'asc')->get();
+        }
+        return view($this->templateDir . '.index',
+            array('things' => $things,
+                'searchterm' => $searchterm,
+                'all' => true,
+                'isAdmin' => $this->isAdmin()));
+    }
+
+    public function create(Request $request): View {
+        $indicatedAdmin = Auth::User();
+
+        if ($this->isAdmin()) {
+            if ($request->has('user_id') && 0 < (int)$request->get('user_id')) {
+                $indicatedAdmin = (int)$request->get('user_id');
+            } else {
+                $indicatedAdmin = Auth::User()->id;
+            }
+
+            $allUsers = User::Select(DB::raw('id, concat(lastname, \', \', firstname) as the_name'))->Where('is_anonymised', false)->orderBy('lastname', 'asc')->orderBy('firstname')->pluck('the_name', 'id');
+        } else {
+            $allUsers = null;
+        }
+
+
+//        var_dump($allUsers);
+        return view($this->templateDir . '.create', [
+            'isAdmin' => $this->isAdmin(),
+            'privacyContent' => config('static_content.privacy_content'),
+            'allUsers' => $allUsers,
+            'indicatedAdmin' => $indicatedAdmin,
+        ]);
+    }
 
     public function store(Request $request) {
         // Validate the request...
@@ -65,85 +134,93 @@ class EntrantController extends Controller {
         $thing->firstname = $request->firstname;
         $thing->familyname = $request->familyname;
         $thing->membernumber = $request->membernumber;
-        $thing->email = $request->email;
-        $thing->telephone = $request->telephone;
-        $thing->address = $request->address;
-        $thing->address2 = $request->address2;
-        $thing->addresstown = $request->addresstown;
-        $thing->postcode = $request->postcode;
         $thing->age = $request->age;
+//        $thing->email = $request->email;
+//        $thing->telephone = $request->telephone;
+//        $thing->address = $request->address;
+//        $thing->address2 = $request->address2;
+//        $thing->addresstown = $request->addresstown;
+//        $thing->postcode = $request->postcode;
 
-        $thing->use_user_address = (bool)$request->use_user_address;
+//        $thing->use_user_address = (bool)$request->use_user_address;
         if ((int)$request->can_retain_data) {
             $thing->retain_data_opt_in = date('Y-m-d H:i:s');
         }
         $thing->can_retain_data = (int)$request->can_retain_data;
-        if ((int)$request->can_email) {
-            $thing->email_opt_in = date('Y-m-d H:i:s');
-        }
-        $thing->can_email = (int)$request->can_email;
-        if ($request->can_sms) {
-            $thing->sms_opt_in = date('Y-m-d H:i:s');
-        }
-        $thing->can_sms = (int)$request->can_sms;
+//        if ((int)$request->can_email) {
+//            $thing->email_opt_in = date('Y-m-d H:i:s');
+//        }
+//        $thing->can_email = (int)$request->can_email;
+//        if ($request->can_sms) {
+//            $thing->sms_opt_in = date('Y-m-d H:i:s');
+//        }
+//        $thing->can_sms = (int)$request->can_sms;
 
         if ($thing->save()) {
-            if (!Auth::User()->isAdmin()) {
+            if (!$this->isAdmin()) {
                 Auth::User()->entrants()->save($thing);
+            } elseif ($request->has('user_id')) {
+                $user = User::find((int)$request->user_id);
+                $user->entrants()->save($thing);
             }
+            $request->session()->flash('success', 'Family Member Saved');
+            return redirect()->route('entrants.index');
+        } else {
+            $request->session()->flash('error', 'Something went wrong saving the Family Member');
+            return back();
         }
-        return view($this->templateDir . '.saved', array('thing' => $thing));
+//        return view($this->templateDir . '.saved', array('thing' => $thing));
     }
 
-    public function update(Request $request) {
+    public function update(Request $request): View {
         // Validate the request...
         $thing = $this->baseClass::find($request->id);
 
         $thing->firstname = $request->firstname;
         $thing->familyname = $request->familyname;
         $thing->membernumber = $request->membernumber;
-        $thing->email = $request->email;
-        $thing->telephone = $request->telephone;
-        $thing->address = $request->address;
-        $thing->address2 = $request->address2;
-        $thing->addresstown = $request->addresstown;
-        $thing->postcode = $request->postcode;
         $thing->age = $request->age;
-        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
-            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
-        }
-        $thing->can_retain_data = (int)$request->can_retain_data;
-        if (!$thing->can_email && (int)$request->can_email) {
-            $thing->email_opt_in = date('Y-m-d H:i:s');
-        }
-        $thing->can_email = (int)$request->can_email;
-        if (!$thing->can_sms && $request->can_sms) {
-            $thing->sms_opt_in = date('Y-m-d H:i:s');
-        }
-        $thing->can_sms = (int)$request->can_sms;
+//        $thing->email = $request->email;
+//        $thing->telephone = $request->telephone;
+//        $thing->address = $request->address;
+//        $thing->address2 = $request->address2;
+//        $thing->addresstown = $request->addresstown;
+//        $thing->postcode = $request->postcode;
+//        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
+//            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
+//        }
+//        $thing->can_retain_data = (int)$request->can_retain_data;
+//        if (!$thing->can_email && (int)$request->can_email) {
+//            $thing->email_opt_in = date('Y-m-d H:i:s');
+//        }
+//        $thing->can_email = (int)$request->can_email;
+//        if (!$thing->can_sms && $request->can_sms) {
+//            $thing->sms_opt_in = date('Y-m-d H:i:s');
+//        }
+//        $thing->can_sms = (int)$request->can_sms;
         $thing->save();
         return view($this->templateDir . '.saved', array('thing' => $thing));
     }
 
-    public function optins(Request $request) {
-        // Validate the request...
-        $thing = $this->baseClass::find($request->id);
-
-        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
-            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
-        }
-        $thing->can_retain_data = (int)$request->can_retain_data;
-        if (!$thing->can_email && (int)$request->can_email) {
-            $thing->email_opt_in = date('Y-m-d H:i:s');
-        }
-        $thing->can_email = (int)$request->can_email;
-        if (!$thing->can_sms && $request->can_sms) {
-            $thing->sms_opt_in = date('Y-m-d H:i:s');
-        }
-        $thing->can_sms = (int)$request->can_sms;
-        $thing->save();
-        return back();
-    }
+//    public function optins(Request $request): \Illuminate\Http\RedirectResponse {
+//        // Validate the request...
+//        $thing = $this->baseClass::find($request->id);
+//
+//        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
+//            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
+//        }
+//        $thing->can_retain_data = (int)$request->can_retain_data;
+//        if (!$thing->can_email && (int)$request->can_email) {
+//            $thing->email_opt_in = date('Y-m-d H:i:s');
+//        }
+//        $thing->can_email = (int)$request->can_email;
+//        if (!$thing->can_sms && $request->can_sms) {
+//            $thing->sms_opt_in = date('Y-m-d H:i:s');
+//        }
+//        $thing->can_sms = (int)$request->can_sms;
+//        $thing->save();
+//        return back();
+//    }
 
     public function changeCategories(Request $request, int $id) {
         if ($request->isMethod('POST')) {
@@ -166,7 +243,7 @@ class EntrantController extends Controller {
      * @param int $id
      * @return Response
      */
-    public function show($id, $showData = []) {
+    public function show(int $id, array $showData = []): View {
         $totalPrizes = 0;
         $membershipFee = 0;
         $entryFee = 0;
@@ -219,48 +296,48 @@ class EntrantController extends Controller {
                 ];
             }
         }
-        return view($this->templateDir.'.show', array_merge($showData, array(
-            'entry_data' => $entryData,
-            'entries' => $entries,
-            'categories' => $categoriesAry,
-            'membership_purchases' => $membershipPaymentData,
-            'payments' => $payments,
-            'entry_fee' => $entryFee,
-            'total_price' => $entryFee + $membershipFee,
-            'paid' => $totalPaid,
-            'payment_types' => $this->paymentTypes,
-            'total_prizes' => $totalPrizes,
-            'membership_fee' => $membershipFee,
-            'membership_types' => $this->membershipTypes,
-                'can_email' => $thing->can_email,
-                'can_sms' => $thing->can_sms,
-                'can_phone' => $thing->can_phone,
-                'can_retain_data' => $thing->can_retain_data,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
-            'thing' => $thing))
-            );
+        return view($this->templateDir . '.show', array_merge($showData, array(
+                'entry_data' => $entryData,
+                'entries' => $entries,
+                'categories' => $categoriesAry,
+                'membership_purchases' => $membershipPaymentData,
+                'payments' => $payments,
+                'entry_fee' => $entryFee,
+                'total_price' => $entryFee + $membershipFee,
+                'paid' => $totalPaid,
+                'payment_types' => $this->paymentTypes,
+                'total_prizes' => $totalPrizes,
+                'membership_fee' => $membershipFee,
+                'membership_types' => $this->membershipTypes,
+//                'can_email' => $thing->can_email,
+//                'can_sms' => $thing->can_sms,
+//                'can_phone' => $thing->can_phone,
+//                'can_retain_data' => $thing->can_retain_data,
+                'isAdmin' => $this->isAdmin(),
+                'thing' => $thing))
+        );
 //        return parent::show($id, );
     }
 
     function printcards($id) {
         $categoryData = [];
         $entrant = $this->baseClass::find($id);
-        $entries = Entry::where('entrant', (int)$id)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $entries = $entrant->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
         $cardFronts = [];
         $cardBacks = [];
 
         foreach ($entries as $entry) {
             if ($entry->category) {
-                $categoryData[$entry->category] = Category::where('id', $entry->category)->where('year', env('CURRENT_YEAR', 2018))->first();
+                $categoryData[$entry->category->id] = $entry->category()->where('year', env('CURRENT_YEAR', 2018))->first();
                 $cardFronts[] = [
-                    'class_number' => $categoryData[$entry->category]->number,
-                    'entrant_number' => (int)$id,
+                    'class_number' => $categoryData[$entry->category->id]->number,
+                    'entrant_number' => $entrant->getEntrantNumber(),
                     'entrant_age' => (($entrant->age && 18 > (int)$entrant->age) ? $entrant->age : '')
                 ];
-                $cardBacks[] = ['class_number' => $categoryData[$entry->category]->number,
-                    'class_name' => $categoryData[$entry->category]->name,
+                $cardBacks[] = ['class_number' => $categoryData[$entry->category->id]->number,
+                    'class_name' => $categoryData[$entry->category->id]->name,
                     'entrant_name' => $entrant->getName(),
-                    'entrant_number' => $entrant->id
+                    'entrant_number' => $entrant->getEntrantNumber()
                 ];
             }
         }
@@ -284,6 +361,6 @@ class EntrantController extends Controller {
 //      return view($this->templateDir.'.show', $showData);
 
         return view($this->templateDir . '.edit', array('thing' => $thing,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin()));
+            'isAdmin' => $this->isAdmin()));
     }
 }

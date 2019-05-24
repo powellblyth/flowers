@@ -18,8 +18,8 @@
                         </div>
                         <div class="card-footer">
                             <div class="stats">
-{{--                                <i class="material-icons text-danger">warning</i>--}}
-{{--                                <a href="{{route('entrants.create')}}">Add another</a>--}}
+                                {{--                                <i class="material-icons text-danger">warning</i>--}}
+                                {{--                                <a href="{{route('entrants.create')}}">Add another</a>--}}
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="stats">
-{{--                                <i class="material-icons">date_range</i> Last 24 Hours--}}
+                                {{--                                <i class="material-icons">date_range</i> Last 24 Hours--}}
                             </div>
                         </div>
                     </div>
@@ -63,12 +63,13 @@
                                 <i class="material-icons">info_outline</i>
                             </div>
                             <p class="card-category">Balance Due</p>
-                            <h3 class="card-title">&pound;{{number_format((($entry_fee + $membership_fee)/100) - $paid,2)}}</h3>
+                            <h3 class="card-title">
+                                &pound;{{number_format((($entry_fee + $membership_fee)/100) - $paid,2)}}</h3>
                         </div>
                         <div class="card-footer">
-                            <div class="stats">
-                                <i class="material-icons">update</i> Just Updated
-                            </div>
+{{--                            <div class="stats">--}}
+{{--                                <i class="material-icons">update</i> Just Updated--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -79,16 +80,21 @@
                         @if(Auth::check())
                             <div class="card-header card-header-success">
                                 {{$thing->getName()}}
+                               <a href="/entrants/{{$thing->id}}/print" target="_blank"class="button"><i class="material-icons">printer</i></a>
+                                <a href="/entrants/{{$thing->id}}/edit" class="button"><i class="material-icons">edit</i></a>
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12"><b>ID: {{ $thing->id }}</b></div>
-                                    <div class="col-lg-6  col-md-6 col-sm-12"><b>Member Number:</b> {{ $thing->membernumber }}</div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12"><b>Entrant Number: {{ $thing->getEntrantNumber() }}</b></div>
+                                    <div class="col-lg-6  col-md-6 col-sm-12"><b>Member
+                                            Number:</b> {{ $thing->membernumber }}</div>
 
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $thing->getName() }}</div>
-                                    <div class="col-lg-6 col-md-6  col-sm-12">Age:</b> {{ $thing->age }}</div>
+                                    @if(!is_null($thing->age))
+                                        <div class="col-lg-6 col-md-6  col-sm-12">Age:</b> {{ $thing->age }}</div>
+                                    @endif
 
                                 </div>
                             </div>
@@ -105,7 +111,9 @@
                                 {{$thing->firstname}} has not made any payments yet
                             @else
                                 @foreach ($payments as $payment)
-                                    <p><b>&pound;{{number_format($payment->amount,2)}}</b> {{date_format($payment->created_at,'jS M Y')}}</p>
+                                    <p>
+                                        <b>&pound;{{number_format($payment->amount,2)}}</b> {{date_format($payment->created_at,'jS M Y')}}
+                                    </p>
                                 @endforeach
                             @endif
 
@@ -120,7 +128,8 @@
                                 {{$thing->firstname}} has not made any membership purchases yet
                             @else
                                 @foreach ($membership_purchases as $purchase)
-                                    <p>{{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
+                                    <p>
+                                        {{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
                                 @endforeach
                             @endif
 
@@ -154,31 +163,31 @@
                     </div>
                 </div>
 
-{{--<h2>Opt-in</h2>--}}
-{{--{{  Form::model($thing, array('route' => array('entrants.optins', $thing->id))) }}--}}
-{{--<table border="0">--}}
-{{--<tr>--}}
-{{--            <td colspan="3"><b>We would like permission to retain your personal data within our data entry system for a period of 3 years after--}}
-{{--            your last entry to the show. This includes your name, telephone number, email address, and age (children only).<br />--}}
-{{--            The reason to retain this is for the purposes of <br />--}}
-{{--            <ol>--}}
-{{--                <li>Making it faster for you to enter next year, as you would not need to provide your data again (unless it changed)</li>--}}
-{{--                <li>Sending you reminders up to three times per year to remind you about the show, and invite you to our events.</li>--}}
-{{--                <li> we will <i> NOT </i> share this data with any third parties, beyond communication systems under our control used to send the messages (e.g. email sending software).</li>--}}
-{{--                <li>You can opt out of this at any time by emailing enquiries@petershamhorticulturalsociety.org.uk</li>--}}
-{{--            </ol></b></td>--}}
-{{--        </tr>--}}
-{{--        <tr>--}}
-{{--            <td>{{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}--}}
-{{--                {{ Form::checkbox('can_retain_data', 1, $can_retain_data) }}</td>--}}
-{{--            <td>{{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}--}}
-{{--                {{ Form::checkbox('can_email', 1,$can_email) }}</td>--}}
-{{--            <td>{{ Form::label('can_sms', 'Can we contact you by SMS?:', ['class' => 'control-label']) }}--}}
-{{--                {{ Form::checkbox('can_sms', 1, $can_sms) }}</td>--}}
-{{--        </tr>--}}
-{{--</table>--}}
-{{--{{ Form::submit('Store Preferences', ['class' => 'button btn btn-primary']) }}--}}
-{{--{{ Form::close()}}--}}
+                {{--<h2>Opt-in</h2>--}}
+                {{--{{  Form::model($thing, array('route' => array('entrants.optins', $thing->id))) }}--}}
+                {{--<table border="0">--}}
+                {{--<tr>--}}
+                {{--            <td colspan="3"><b>We would like permission to retain your personal data within our data entry system for a period of 3 years after--}}
+                {{--            your last entry to the show. This includes your name, telephone number, email address, and age (children only).<br />--}}
+                {{--            The reason to retain this is for the purposes of <br />--}}
+                {{--            <ol>--}}
+                {{--                <li>Making it faster for you to enter next year, as you would not need to provide your data again (unless it changed)</li>--}}
+                {{--                <li>Sending you reminders up to three times per year to remind you about the show, and invite you to our events.</li>--}}
+                {{--                <li> we will <i> NOT </i> share this data with any third parties, beyond communication systems under our control used to send the messages (e.g. email sending software).</li>--}}
+                {{--                <li>You can opt out of this at any time by emailing enquiries@petershamhorticulturalsociety.org.uk</li>--}}
+                {{--            </ol></b></td>--}}
+                {{--        </tr>--}}
+                {{--        <tr>--}}
+                {{--            <td>{{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}--}}
+                {{--                {{ Form::checkbox('can_retain_data', 1, $can_retain_data) }}</td>--}}
+                {{--            <td>{{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}--}}
+                {{--                {{ Form::checkbox('can_email', 1,$can_email) }}</td>--}}
+                {{--            <td>{{ Form::label('can_sms', 'Can we contact you by SMS?:', ['class' => 'control-label']) }}--}}
+                {{--                {{ Form::checkbox('can_sms', 1, $can_sms) }}</td>--}}
+                {{--        </tr>--}}
+                {{--</table>--}}
+                {{--{{ Form::submit('Store Preferences', ['class' => 'button btn btn-primary']) }}--}}
+                {{--{{ Form::close()}}--}}
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
@@ -187,76 +196,77 @@
                             <div class="card-body">
                                 <p>Choose the categories you wish to add entries for below</p>
 
-{{ Form::open([
-    'route' => 'entry.creates'
-]) }}
+                                {{ Form::open([
+                                    'route' => 'entry.creates'
+                                ]) }}
                                 <div class="row">
 
-{{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
+                                    {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
 
-@for ($i = 0; $i < 40; $i++)
+                                    @for ($i = 0; $i < 40; $i++)
                                         <div class="col-sm-3 col-md-2 col-lg-1">{{ Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px']) }}</div>
-@endfor
+                                    @endfor
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                    <br />
-{{ Form::submit('Create Entry', ['class' => 'button btn btn-primary']) }}
-</div>
+                                        <br/>
+                                        {{ Form::submit('Create Entry', ['class' => 'button btn btn-primary']) }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-{{ Form::close() }}
-@if($isAdmin)
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card">
-                            <div class="card-header-success">New Payment Record</div>
-                            <div class="card-body">
+                {{ Form::close() }}
+                @if($isAdmin)
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-header-success">New Payment Record</div>
+                                <div class="card-body">
 
 
-{{ Form::open([
-    'route' => 'payments.store'
-]) }}
+                                    {{ Form::open([
+                                        'route' => 'payments.store'
+                                    ]) }}
 
-{{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
-{{ Form::label('amount', 'Amount: &pound;', ['class' => 'control-label']) }}
-{{ Form::text('amount', null, ['class' => 'form-control']) }}
-            {{Form::select('source', $payment_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
-<br />
-{{ Form::submit('Store Payment', ['class' => 'button btn btn-primary']) }}
-<br /><br /><br />
+                                    {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
+                                    {{ Form::label('amount', 'Amount: &pound;', ['class' => 'control-label']) }}
+                                    {{ Form::text('amount', null, ['class' => 'form-control']) }}
+                                    {{Form::select('source', $payment_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
+                                    <br/>
+                                    {{ Form::submit('Store Payment', ['class' => 'button btn btn-primary']) }}
+                                    <br/><br/><br/>
 
-{{ Form::close() }}
+                                    {{ Form::close() }}
+                                </div>
                             </div>
                         </div>
+
+                        @endif
+                        @if($isAdmin)
+                            <div class="col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header-success">New Membership Purchase</div>
+                                    <div class="card-body">
+                                        <p>Note that your membership will not be processed until the money has been
+                                            received</p>
+                                        {{ Form::open([
+                                            'route' => 'membershippurchases.store'
+                                        ]) }}
+
+                                        {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
+                                        {{ Form::label('type', 'Type:', ['class' => 'control-label']) }}
+                                        {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
+                                        <br/>
+                                        {{ Form::submit('Purchase Membership', ['class' => 'button btn btn-primary']) }}
+                                        <br/><br/><br/>
+                                        {{ Form::close() }}
+                                    </div>
+                                </div>
+                            </div>
                     </div>
-
-    @endif
-    @if($isAdmin)
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card">
-                            <div class="card-header-success">New Membership Purchase</div>
-                            <div class="card-body">
-<p>Note that your membership will not be processed until the money has been received</p>
-{{ Form::open([
-    'route' => 'membershippurchases.store'
-]) }}
-
-{{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
-{{ Form::label('type', 'Type:', ['class' => 'control-label']) }}
-            {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
-<br />
-{{ Form::submit('Purchase Membership', ['class' => 'button btn btn-primary']) }}
-<br /><br /><br />
-{{ Form::close() }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-    @endif
+                @endif
             </div>
         </div>
     </div>

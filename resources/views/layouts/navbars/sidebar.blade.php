@@ -18,16 +18,15 @@
 
       @if(Auth::User()->isAdmin())
           <li class="nav-item{{ $activePage == 'allentrants' ? ' active' : '' }}">
-          <a class="nav-link" href="{{route('entrants.searchall')}}"><i class="material-icons">dashboard</i><p>All Entrants</p></a>
+          <a class="nav-link" href="{{route('entrants.searchall')}}"><i class="material-icons">people-outline</i><p>All Entrants</p></a>
           </li>
-
-        @endif
+      @endif
         <li class="nav-item{{ $activePage == 'entrants' ? ' active' : '' }}">
-        <a class="nav-link" href="{{route('entrants.index')}}"><i class="material-icons">dashboard</i><p>Entrants</p></a>
+        <a class="nav-link" href="{{route('entrants.index')}}"><i class="material-icons">people</i><p>My Family</p></a>
         </li>
 
         <li class="nav-item{{ $activePage == 'add-entrant' ? ' active' : '' }}">
-        <a class="nav-link" href="{{route('entrants.create')}}"><i class="material-icons">dashboard</i><p>Add an entrant</p></a>
+        <a class="nav-link" href="{{route('entrants.create')}}"><i class="material-icons">group_add</i><p>Add a family member</p></a>
         </li>
 
       @else
@@ -41,17 +40,20 @@
 
       @endif
         <li class="nav-item{{ $activePage == 'categories' ? ' active' : '' }}">
-      <a class="nav-link" href="{{route('categories.index')}}"><i class="material-icons">dashboard</i><p>Categories / Results</p></a>
+      <a class="nav-link" href="{{route('categories.index')}}"><i class="material-icons">view_list</i><p>Categories / Results</p></a>
         </li>
 
         <li class="nav-item{{ $activePage == 'cups' ? ' active' : '' }}">
-      <a class="nav-link" href="{{ url('/cups') }}"><i class="material-icons">dashboard</i><p>Cups</p></a>
+      <a class="nav-link" href="{{ url('/cups') }}"><i class="material-icons">new_releases</i><p>Cups</p></a>
         </li>
 
       @if(Auth::check() && Auth::User()->isAdmin())
-          <li class="nav-item{{ $activePage == 'reports' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('reports.index') }}"><i class="material-icons">dashboard</i><p>Reports</p></a>
-          </li>
+              <li class="nav-item{{ $activePage == 'reports' ? ' active' : '' }}">
+                  <a class="nav-link" href="{{ route('reports.index') }}"><i class="material-icons">dashboard</i><p>Reports</p></a>
+              </li>
+              <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
+                  <a class="nav-link" href="{{ route('users.index') }}"><i class="material-icons">dashboard</i><p>Users</p></a>
+              </li>
 
         @endif
 

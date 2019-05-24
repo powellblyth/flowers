@@ -72,6 +72,7 @@ class CreateNewYearDataCommand extends Command {
             $newCategory->first_prize = $category->first_prize;
             $newCategory->second_prize = $category->second_prize;
             $newCategory->third_prize = $category->third_prize;
+            $newCategory->section_id = $category->section_id;
             $newCategory->save();
 
             $cupToCategories = CupToCategory::where('category', $category->id)->get();

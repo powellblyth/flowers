@@ -15,6 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\CreateNewYearDataCommand::class,
         Commands\UpdateAgesCommand::class,
+        Commands\AnonymiseEntrantsCommand::class,
+
     ];
 
     /**

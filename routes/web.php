@@ -24,6 +24,9 @@ Route::get('/categories/resultsentry',
 Route::get('/categories',
     ['as' => 'category.index',
         'uses' => 'CategoryController@resultsentry']);
+Route::get('/sections/forwebsite',
+    ['as' => 'section.forwebsite',
+        'uses' => 'SectionController@forwebsite']);
 
 Route::resource('categories', 'CategoryController');
 Route::resource('membershippurchases', 'MembershipPurchaseController');
@@ -58,12 +61,12 @@ Route::get('/entrants/search',
 Route::get('/entrants',
     ['as' => 'entrants.index',
         'uses' => 'EntrantController@index'])->middleware('auth');
+Route::get('/entrants/create',
+    ['as' => 'entrants.create',
+        'uses' => 'EntrantController@create'])->middleware('auth');
 Route::get('/entrants/searchall',
     ['as' => 'entrants.searchall',
         'uses' => 'EntrantController@searchall'])->middleware('is_admin');
-Route::get('/entrants/all',
-    ['as' => 'entrants.all',
-        'uses' => 'EntrantController@all'])->middleware('is_admin');
 Route::get('/entrants/{id}/changecategories',
     ['as' => 'entrants.changecategories',
         'uses' => 'EntrantController@changeCategories'])->middleware('auth')->middleware('is_admin');
@@ -84,6 +87,15 @@ Route::post('/entrants/{id}/update',
 Route::post('/entrants/{id}/optins',
     ['as' => 'entrants.optins',
         'uses' => 'EntrantController@optins'])->middleware('auth');
+
+Route::get('/users/',
+    ['as' => 'users.index',
+        'uses' => 'UserController@index'])->middleware('is_admin');
+
+Route::get('/users/{id}',
+    ['as' => 'users.show',
+        'uses' => 'UserController@show'])->middleware('is_admin');
+
 
 Route::get('/reports/',
     ['as' => 'reports.index',

@@ -34,10 +34,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token','auth_token','password_reset_token'
     ];
-
-    public function entrants(): \Illuminate\Database\Eloquent\Relations\hasMany {
-        return $this->hasMany('App\Entrant');
+    public function getUrl() {
+        return route('users.show', $this);
+    }    public function getName(bool $printable=null):string {
+        if ($printable){
+            return $this->getPrintableName();
+        }
+        else {
+            return trim($this->firstname . ' ' . $this->lastname);
+        }
     }
+
     public function getAddress():string {
         $concatted = trim($this->address) . ', '
             . trim($this->address2) . ', ' . trim($this->addresstown);
@@ -46,4 +53,12 @@ class User extends Authenticatable
                 $concatted));
         return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
     }
+
+    public function getPrintableName():string {
+        return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
+    }
+    public function entrants(): \Illuminate\Database\Eloquent\Relations\hasMany {
+        return $this->hasMany('App\Entrant');
+    }
+
 }

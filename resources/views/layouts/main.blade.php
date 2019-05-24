@@ -45,7 +45,7 @@
 
                 <div class="links">
                     @if (Auth::check())
-                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/home') }}">Home</a>
     @if(Auth::User()->isAdmin())
                     <a href="{{route('entrants.searchall')}}">All Entrants</a>
     @endif

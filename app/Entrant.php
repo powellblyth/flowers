@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Entrant extends Model {
 
     public function getUrl() {
-        return '/entrants/' . $this->id;
+        return route('entrants.show', $this);
     }
 
     public function getName(bool $printable=null):string {
@@ -19,17 +19,15 @@ class Entrant extends Model {
         }
     }
 
+    /**
+     * Simple way to get an entrant number
+     * @return string
+     */
+    public function getEntrantNumber():string{
+        return 'E-'. str_pad((string)$this->id,'5', '0',STR_PAD_LEFT);
+    }
     public function getPrintableName():string {
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname);
-    }
-
-    public function getAddress():string {
-        $concatted = trim($this->address) . ', '
-            . trim($this->address2) . ', ' . trim($this->addresstown);
-        $deduped = str_replace(', , ', ', ',
-            str_replace(', , ', ', ',
-                $concatted));
-        return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
     }
 
     public function user(): \Illuminate\Database\Eloquent\Relations\belongsTo {

@@ -1,22 +1,24 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\CupToCategory;
+use App\Category;
 use App\Cup;
 use App\CupDirectWinner;
-use App\Category;
+use App\CupToCategory;
 use App\Entrant;
 use App\Entry;
 use DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use \Illuminate\View\View;
 
 class CupController extends Controller {
 
     protected $templateDir = 'cups';
     protected $baseClass = 'App\Cup';
 
-    public function index($extraData = []) {
+    public function index(array $extraData = []): View {
         $winners = array();
         $results = array();
 //        $cups = Cup::
@@ -64,7 +66,7 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
-                'direct_winner' => (($cupWinner instanceof CupDirectWinner ) ? $cupWinner->entrant_id : null),
+                'direct_winner' => (($cupWinner instanceof CupDirectWinner) ? $cupWinner->entrant_id : null),
 //                var_dump($winningCategory)
                 'winning_category' => $winningCategory);
         }
@@ -76,11 +78,11 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
         )));
     }
 
-    public function show($id, $showData = []) {
+    public function show(int $id, array $showData = []): View {
         $winnerDataByCategory = [];
         $winners = [];
 
-        $cupLinks = CupToCategory::where('cup', (int) $id)->get();
+        $cupLinks = CupToCategory::where('cup', (int)$id)->get();
         $categoryData = [];
         foreach ($cupLinks as $cupLink) {
             $resultset = DB::select("select if(winningplace='1', 4,if(winningplace='2',3, if(winningplace='3',2, if(winningplace='commended',1, 0 ) ) )) as points, 
@@ -123,11 +125,11 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
 //        foreahc 
         asort($people);
         return parent::show($id, array_merge($showData, array('category_data' => $categoryData,
-                'cup_links' => $cupLinks,
-                'winners' => $winners,
-                'winners_by_category' => $winnerDataByCategory,
-                'categories' => $categories,
-                'people' => $people,
+            'cup_links' => $cupLinks,
+            'winners' => $winners,
+            'winners_by_category' => $winnerDataByCategory,
+            'categories' => $categories,
+            'people' => $people,
             'isAdmin' => Auth::check() && Auth::User()->isAdmin()
         )));
     }
@@ -135,7 +137,7 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
 //        public function storeresults(Request $request) {
 //        foreach ($request->positions as $categoryId => $placings) {
 
-    public function directResultPick(Request $request, int $id) {
+    public function directResultPick(Request $request, int $id): View {
 
         $thing = Cup::find($id);
         $entriesObj = Entry::where('category', $request->category)->where('year', env('CURRENT_YEAR', 2018))->get();
@@ -148,7 +150,7 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
             'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
     }
 
-    public function directResultSetWinner(Request $request, int $id) {
+    public function directResultSetWinner(Request $request, int $id): \Illuminate\Http\RedirectResponse {
 
         $entry = Entry::find($request->entry);
 //        $thing = Cup::find($id);
@@ -164,7 +166,7 @@ order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018
         return redirect('/cups/' . $id);
     }
 
-    public function directResultSetWinnerPerson(Request $request, int $id) {
+    public function directResultSetWinnerPerson(Request $request, int $id): \Illuminate\Http\RedirectResponse {
 
 //        $entry = Entry::find($request->entry);
 //        $thing = Cup::find($id);
