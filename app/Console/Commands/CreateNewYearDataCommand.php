@@ -59,12 +59,12 @@ class CreateNewYearDataCommand extends Command {
         }
 
         // Gather all categories from the old year
-        $categories = Category::where('year', (int) $yearFrom)->get();
+        $categories = Category::where('year', (int) $yearFrom)->orderBy('sortorder', 'asc')->get();
         foreach ($categories as $category) {
             $newCategory = new Category();
             $newCategory->year = $yearTo;
             $newCategory->name = $category->name;
-            $newCategory->section = $category->section;
+//            $newCategory->section = $category->section;
             $newCategory->number = $category->number;
             $newCategory->price = $category->price;
             $newCategory->late_price = $category->late_price;
