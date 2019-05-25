@@ -62,12 +62,13 @@
                             @endif
                             <div class="row">
                                 @if(count($things )> 0)
-                                    <div class="table-responsive col-lg-6 col-md-12 col-sm-12">
+                                    <div class="table-responsive col-lg-8 col-md-12 col-sm-12">
                                         <table class="table ">
                                             <thead>
                                             <th>Name</th>
                                             @if($all)
                                                 <th>Family Manager</th>
+                                                <th class="text-right">Actions</th>
                                             @endif
                                             </thead>
                                             @foreach ($things as $thing)
@@ -76,9 +77,11 @@
                                                         <a href="{{$thing->getUrl()}}">{{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}</a>
                                                     </td>
                                                     @if($all)
-                                                        <td class="text-right">
                                                             @if (!is_null($thing->user ))
-                                                                {{$thing->user->getName()}}
+                                                            <td>
+                                                            {{$thing->user->getName()}}
+                                                        </td>
+                                                        <td class="text-right">
 {{--                                                                <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>--}}
 {{--                                                                <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
 
@@ -93,8 +96,8 @@
                                                                    data-original-title=""
                                                                    title="">
                                                                     Show {{$thing->user->firstname}}'s Family
-                                                                </a>
-                                                            @endif</td>
+                                                                </a></td>
+                                                            @endif
                                                     @endif
                                                 </tr>
                                             @endforeach
