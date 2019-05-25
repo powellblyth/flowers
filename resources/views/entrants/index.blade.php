@@ -76,7 +76,7 @@
                                                         <a href="{{$thing->getUrl()}}">{{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}</a>
                                                     </td>
                                                     @if($all)
-                                                        <td>
+                                                        <td class="text-right">
                                                             @if (!is_null($thing->user ))
                                                                 {{$thing->user->getName()}}
 {{--                                                                <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>--}}
