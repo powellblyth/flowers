@@ -18,7 +18,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12"><p>These are the cups we award during the annual Flower Show and
-                                        the winners (where available).</p>
+                                        the winners of the {{env('CURRENT_YEAR')}} show (when available).</p>
                                 </div>
 
                             </div>
@@ -95,9 +95,11 @@
                                         </div>
                                         @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
                                             <div class="col-lg-6">
-                                                {{$winners[$winningEntrantId]['entrant']->getAddress()}}<br/>
-                                                {{$winners[$winningEntrantId]['entrant']->telephone}}
-                                                , {{$winners[$winningEntrantId]['entrant']->email}}
+                                                @if (!is_null($winners[$winningEntrantId]['entrant']->user))
+                                                {{$winners[$winningEntrantId]['entrant']->user->getAddress()}}<br/>
+                                                {{$winners[$winningEntrantId]['entrant']->user->telephone}}
+                                                , {{$winners[$winningEntrantId]['entrant']->user->email}}
+                                                @endif
                                                 {{--                    @else--}}
                                             </div>
                                         @endif

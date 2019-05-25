@@ -23,6 +23,14 @@
                     <div class="card">
                         <div class="card-header card-header-success">{{__('Family Members')}}</div>
                         <div class="card-body">
+                            @if(false == $all && $owner->id !== Auth::User()->id)
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>
+{{--                                    <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
+                                </div>
+                            </div>
+                            @endif
                             <div class="row">
                                 <div class="col-md-12">
                                     @if(true == $all)
@@ -31,7 +39,7 @@
                                         <p>Use this page to see yourself and your family. Click 'Add a
                                             Family Member' on the menu to add yourselves.</p>
                                     @else
-                                        <p>These are the family members belonging to {{$owner->getName()}}.</p>
+                                        <p>These are the family members managed by <b><a href="{{route('user.edit', $owner)}}">{{ucwords($owner->getName())}}</a></b>.</p>
                                     @endif
                                 </div>
 
@@ -59,24 +67,32 @@
                                             <thead>
                                             <th>Name</th>
                                             @if($all)
-                                                <th>Owner User</th>
+                                                <th>Family Manager</th>
                                             @endif
                                             </thead>
                                             @foreach ($things as $thing)
                                                 <tr>
                                                     <td>
-                                                        <a href="{{$thing->getUrl()}}">{{ $thing->firstname }} {{ $thing->familyname }}</a>
+                                                        <a href="{{$thing->getUrl()}}">{{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}</a>
                                                     </td>
                                                     @if($all)
                                                         <td>
                                                             @if (!is_null($thing->user ))
                                                                 {{$thing->user->getName()}}
-                                                                <a rel="tooltip" class="btn btn-primary btn-link"
+{{--                                                                <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>--}}
+{{--                                                                <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
+
+                                                                <a rel="tooltip" class="btn btn-primary "
                                                                    href="{{route('user.edit', $thing->user)}}"
                                                                    data-original-title=""
+                                                                   title="Show Family Manager">
+                                                                    Edit {{$thing->user->firstname}}
+                                                                </a>
+                                                                <a rel="tooltip" class="btn btn-primary"
+                                                                   href="{{route('entrants.index')}}?user_id={{$thing->user->id}}"
+                                                                   data-original-title=""
                                                                    title="">
-                                                                    <i class="material-icons">visibility</i>
-                                                                    <div class="ripple-container"></div>
+                                                                    Show {{$thing->user->firstname}}'s Family
                                                                 </a>
                                                             @endif</td>
                                                     @endif

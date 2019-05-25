@@ -186,18 +186,34 @@ class EntrantController extends Controller {
 //        $thing->address2 = $request->address2;
 //        $thing->addresstown = $request->addresstown;
 //        $thing->postcode = $request->postcode;
-//        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
-//            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
-//        }
-//        $thing->can_retain_data = (int)$request->can_retain_data;
-//        if (!$thing->can_email && (int)$request->can_email) {
-//            $thing->email_opt_in = date('Y-m-d H:i:s');
-//        }
-//        $thing->can_email = (int)$request->can_email;
-//        if (!$thing->can_sms && $request->can_sms) {
-//            $thing->sms_opt_in = date('Y-m-d H:i:s');
-//        }
-//        $thing->can_sms = (int)$request->can_sms;
+        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
+            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
+        }
+        else{            $thing->retain_data_opt_out = date('Y-m-d H:i:s');
+        }
+        $thing->can_retain_data = (int)$request->can_retain_data;
+        if (!$thing->can_email && (int)$request->can_email) {
+            $thing->email_opt_in = date('Y-m-d H:i:s');
+        }
+        else{            $thing->email_opt_out = date('Y-m-d H:i:s');
+        }
+        $thing->can_email = (int)$request->can_email;
+        if (!$thing->can_sms && $request->can_sms) {
+            $thing->sms_opt_in = date('Y-m-d H:i:s');
+        }
+        else{
+            $thing->sms_opt_out = date('Y-m-d H:i:s');
+
+        }
+        $thing->can_sms = (int)$request->can_sms;
+        if (!$thing->can_post && $request->can_post) {
+            $thing->post_opt_in = date('Y-m-d H:i:s');
+        }
+        else{
+            $thing->post_opt_out = date('Y-m-d H:i:s');
+
+        }
+        $thing->can_post = (int)$request->can_post;
         $thing->save();
         return view($this->templateDir . '.saved', array('thing' => $thing));
     }

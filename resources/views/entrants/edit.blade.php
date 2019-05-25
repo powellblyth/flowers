@@ -59,18 +59,22 @@
                 <li>You can opt out of this at any time by emailing enquiries@petershamhorticulturalsociety.org.uk</li>
             </ol></b></td>
         </tr>
-{{--        <tr>--}}
-{{--            <td>{{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}</td>--}}
-{{--            <td>{{ Form::checkbox('can_retain_data', 1) }}</td>--}}
-{{--        </tr>--}}
-{{--        <tr>--}}
-{{--            <td>{{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}</td>--}}
-{{--            <td>{{ Form::checkbox('can_email', 1) }}</td>--}}
-{{--        </tr>--}}
-{{--        <tr>--}}
-{{--            <td>{{ Form::label('can_sms', 'Can we contact you by Text Message (SMS)?:', ['class' => 'control-label']) }}</td>--}}
-{{--            <td>{{ Form::checkbox('can_sms', 1) }}</td>--}}
-{{--        </tr>--}}
+        <tr>
+            <td>{{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::checkbox('can_retain_data', 1) }}</td>
+        </tr>
+        <tr>
+            <td>{{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::checkbox('can_email', 1) }}</td>
+        </tr>
+        <tr>
+            <td>{{ Form::label('can_sms', 'Can we contact you by Text Message (SMS)?:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::checkbox('can_sms', 1) }}</td>
+        </tr>
+        <tr>
+            <td>{{ Form::label('can_post', 'Can we contact you by Text Message (SMS)?:', ['class' => 'control-label']) }}</td>
+            <td>{{ Form::checkbox('can_post', 1) }}</td>
+        </tr>
     </table>
 </div>
 

@@ -67,25 +67,36 @@
                                 &pound;{{number_format((($entry_fee + $membership_fee)/100) - $paid,2)}}</h3>
                         </div>
                         <div class="card-footer">
-{{--                            <div class="stats">--}}
-{{--                                <i class="material-icons">update</i> Just Updated--}}
-{{--                            </div>--}}
+                            {{--                            <div class="stats">--}}
+                            {{--                                <i class="material-icons">update</i> Just Updated--}}
+                            {{--                            </div>--}}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            @if (Auth::User()->isAdmin())
+
+                                <a href="{{route('entrant.print', $thing)}}" target="_blank"
+                                   class="btn btn-primary">Print
+                                    Cards</a>
+                            @endif
+                            <a href="{{route('entrants.edit', $thing)}}"
+                               class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                        </div>
+                    </div>
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
                                 {{$thing->getName()}}
-                               <a href="/entrants/{{$thing->id}}/print" target="_blank"class="button"><i class="material-icons">printer</i></a>
-                                <a href="/entrants/{{$thing->id}}/edit" class="button"><i class="material-icons">edit</i></a>
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12"><b>Entrant Number: {{ $thing->getEntrantNumber() }}</b></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12"><b>Entrant
+                                            Number: {{ $thing->getEntrantNumber() }}</b></div>
                                     <div class="col-lg-6  col-md-6 col-sm-12"><b>Member
                                             Number:</b> {{ $thing->membernumber }}</div>
 
@@ -95,6 +106,16 @@
                                     @if(!is_null($thing->age))
                                         <div class="col-lg-6 col-md-6  col-sm-12">Age:</b> {{ $thing->age }}</div>
                                     @endif
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6  col-sm-12">Family Manager:</b>
+                                        @if(!is_null($thing->user))
+                                            <a href="{{$thing->user->getUrl()}}">{{ $thing->user->getName() }}</a>
+                                        @else
+                                            None Set
+                                        @endif
+                                    </div>
 
                                 </div>
                             </div>

@@ -59,7 +59,6 @@ class AnonymiseEntrantsCommand extends Command {
         foreach ($entrants as $entrant) {
             $entrant->email = $entrant->id . '@' . $entrant->id . 'phs-anonymised' . rand(0, 100000) . '.com';
             $entrant->is_anonymised = true;
-            $entrant->user_id = null;
             $entrant->firstname = 'Anonymised';
             $entrant->familyname = 'Anonymised';
             $entrant->member_number = null;
@@ -79,7 +78,6 @@ class AnonymiseEntrantsCommand extends Command {
         foreach ($users as $user) {
             $user->email = $users->id . '@' . $users->id . 'phs-anonymised' . rand(0, 100000) . '.com';
             $user->is_anonymised = true;
-//            $entrant->user_id = null;
             $user->firstname = 'Anonymised';
             $user->lastname = 'Anonymised';
             $entrant->member_number = null;

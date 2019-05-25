@@ -124,7 +124,8 @@ class CategoryController extends Controller {
     }
 
     public function create(array $extraData = []): View {
-        return view($this->templateDir . '.create', ['sections' => $this->sections]);
+        $sections = Section::pluck('name', 'id');
+        return view($this->templateDir . '.create', ['sections' => $sections]);
     }
 
     public function resultsentry(Request $request): View {

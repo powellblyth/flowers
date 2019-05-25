@@ -5,22 +5,23 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     use Notifiable;
 
     const ADMIN_TYPE = 'admin';
     const DEFAULT_TYPE = 'default';
-    public function isAdmin()    {
+
+    public function isAdmin() {
         return $this->type === self::ADMIN_TYPE;
     }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password','auth_token','password_reset_token',
+        'firstname', 'lastname', 'email', 'password', 'auth_token', 'password_reset_token',
         'address', 'address2', 'addresstown', 'postcode', 'retain_data_opt_in',
         'can_retain_data', 'email_opt_in', 'can_email', 'sms_opt_in', 'can_sms'
 
@@ -32,20 +33,22 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token','auth_token','password_reset_token'
+        'password', 'remember_token', 'auth_token', 'password_reset_token'
     ];
+
     public function getUrl() {
-        return route('users.show', $this);
-    }    public function getName(bool $printable=null):string {
-        if ($printable){
+        return route('user.edit', $this);
+    }
+
+    public function getName(bool $printable = null): string {
+        if ($printable) {
             return $this->getPrintableName();
-        }
-        else {
+        } else {
             return trim($this->firstname . ' ' . $this->lastname);
         }
     }
 
-    public function getAddress():string {
+    public function getAddress(): string {
         $concatted = trim($this->address) . ', '
             . trim($this->address2) . ', ' . trim($this->addresstown);
         $deduped = str_replace(', , ', ', ',
@@ -54,9 +57,10 @@ class User extends Authenticatable
         return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
     }
 
-    public function getPrintableName():string {
+    public function getPrintableName(): string {
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
     }
+
     public function entrants(): \Illuminate\Database\Eloquent\Relations\hasMany {
         return $this->hasMany('App\Entrant');
     }

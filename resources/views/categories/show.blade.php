@@ -6,6 +6,6 @@
 <ul>
       <li>Number: {{ $thing->number }}</li>
       <li>Name: {{ $thing->name }}</li>
-      <li>Section: {{ $thing->section }}</li>
+      <li>Section: {{ $thing->section->name }}</li>
     </ul>
 @stop
