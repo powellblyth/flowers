@@ -14,8 +14,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-{{--    <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />--}}
+        <style type="text/css">
+            .page-header footer.footer
+            {
+                z-index: 100;
+            }
+        </style>
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -124,7 +128,7 @@
         <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
 {{--        <script src="{{ asset('material') }}/js/plugins/jquery-jvectormap.js"></script>--}}
         <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-        <script src="{{ asset('material') }}/js/plugins/nouislider.min.js"></script>
+{{--        <script src="{{ asset('material') }}/js/plugins/nouislider.min.js"></script>--}}
         <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
         <!-- Library for adding dinamically elements -->

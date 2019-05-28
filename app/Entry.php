@@ -47,6 +47,9 @@ class Entry extends Model {
         $date = '';
         switch ($year)
         {
+            case 2019:
+                $date = '3 July 2019 23:59:59';
+                break;
             case 2018:
                 $date = '4 July 2018 23:59:59';
                 break;

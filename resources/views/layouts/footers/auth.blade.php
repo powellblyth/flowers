@@ -12,6 +12,11 @@
             {{ __('About US') }}
           </a>
         </li>
+        <li>
+
+            {{ __('About US') }}
+
+        </li>
       </ul>
     </nav>
     <div class="copyright float-right">

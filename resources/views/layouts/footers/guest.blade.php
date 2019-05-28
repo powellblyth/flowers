@@ -12,6 +12,8 @@
                         {{ __('About US') }}
                     </a>
                 </li>
+                <li>            @yield('extraFooter')
+                </li>
             </ul>
         </nav>
         <div class="copyright float-right">
@@ -19,7 +21,6 @@
             <script>
                 document.write(new Date().getFullYear())
             </script>
-
         </div>
     </div>
 </footer>
