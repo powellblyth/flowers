@@ -10,6 +10,7 @@ use \Illuminate\View\View;
 class UserController extends Controller {
     protected $templateDir = 'users';
     protected $baseClass = 'App\User';
+
     /**
      * Display a listing of the users
      *
@@ -17,7 +18,7 @@ class UserController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index(User $model): View {
-        return view('users.index', ['users' => $model->paginate(2)]);
+        return view('users.index', ['users' => $model->get()]);
     }
 
     /**
@@ -26,7 +27,7 @@ class UserController extends Controller {
      * @return \Illuminate\View\View
      */
     public function create(array $extraData = []): View {
-        return view('users.create');
+        return view('users.create',['privacyContent'=>config('static_content.privacy_content')]);
     }
 
     /**
@@ -37,7 +38,16 @@ class UserController extends Controller {
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(UserRequest $request, User $model) {
-        $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
+        if (empty($request->get('password'))) {
+            $newPassword = '';
+        } else {
+            $newPassword = Hash::make($request->get('password'));
+        }
+        $model->create($request->merge(
+            [
+                'password_reset_token' => '',
+                'password' => $newPassword,
+                'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX))])->all());
 
         return redirect()->route('user.index')->withStatus(__('User successfully created.'));
     }

@@ -3,7 +3,6 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Category;
-use App\CupToCategory;
 
 class CreateNewYearDataCommand extends Command {
 
@@ -75,40 +74,11 @@ class CreateNewYearDataCommand extends Command {
             $newCategory->section_id = $category->section_id;
             $newCategory->save();
 
-            $cupToCategories = CupToCategory::where('category', $category->id)->get();
-            foreach ($cupToCategories as $cupToCategory) {
-                $newCupToCategory = new CupToCategory();
-                $newCupToCategory->cup_id = $cupToCategory->cup;
-                $newCupToCategory->category_id = $newCategory->id;
-                $newCupToCategory->save();
-            }
+            $newCategory->cups()->attach($category->cups);
+
         }
 
-//insert into categories (
-//categories.name,
-//section,
-//created_at,
-//updated_at,
-//number,
-//price,
-//late_price,
-//sortorder,
-//first_prize,
-//second_prize,
-//third_prize, categories.year) 
-//(select 
-//categories.name,
-//section,
-//created_at,
-//updated_at,
-//number,
-//price,
-//late_price,
-//sortorder,
-//first_prize,
-//second_prize,
-//third_prize,
-//2018 from categories where year=2017)
+
 
 
         var_dump($this->arguments());

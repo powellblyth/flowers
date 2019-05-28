@@ -8,13 +8,13 @@
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
-                                {{__('Unplaced Categories')}}
+                                {{__('Unattached     Categories')}}
                             </div>
                             <div class="card-body">
-                                These categories have not yet had a winner assigned
+                                These {{env('CURRENT_YEAR')}} categories have not yet had a cup associated with them.
                                 <div class="table-responsive">
                                     <table class="table">
-                                        <thead class=" text-primary">
+                                        <thead class=" default text-primary">
                                         <tr>
                                             <th>Name</th>
                                         </tr>
@@ -22,7 +22,7 @@
                                         <tbody>
                                         @foreach ($unplaced_categories as $categoryID=>$categoryName)
                                             <tr>
-                                                <td><a href="/categories/{{$categoryID}}">{{$categoryName}}</a></td>
+                                                <td><a class="text-warning" href="/categories/{{$categoryID}}">{{$categoryName}}</a></td>
                                             </tr>
                                         @endforeach
                                         </tbody>

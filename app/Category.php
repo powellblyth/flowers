@@ -54,4 +54,7 @@ class Category extends Model {
         return $this->belongsTo('App\Section');
     }
 
+    public function cups(){
+        return $this->belongsToMany('App\Cup');
+    }
 }

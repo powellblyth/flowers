@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\CupToCategory;
 use App\Entrant;
 use App\Entry;
 use App\MembershipPurchase;
@@ -94,8 +93,8 @@ class ReportsController extends Controller {
         $unplacedCategories = [];
         $categories = Category::where('year', env('CURRENT_YEAR'))->orderby('sortorder')->get();
         foreach ($categories as $category) {
-            $matchedCup = CupToCategory::where('category', $category->id)->first();
-            if (!$matchedCup instanceof CupToCategory) {
+            $cups = $category->cups()->count();
+            if (0 == $cups) {
                 $unplacedCategories[$category->id] = $category->getNumberedLabel();
             }
         }

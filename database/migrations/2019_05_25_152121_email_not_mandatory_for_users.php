@@ -4,14 +4,15 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MembershipNumberOptional extends Migration {
+class EmailNotMandatoryForUsers extends Migration
+{
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        DB::statement('ALTER TABLE `entrants` MODIFY `membernumber` VARCHAR(255) NULL;');
+        DB::statement('ALTER TABLE `users` MODIFY `email` VARCHAR(255) NULL;');
     }
 
     /**

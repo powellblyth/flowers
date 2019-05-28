@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Cup;
 use App\CupDirectWinner;
-use App\CupToCategory;
 use App\Entrant;
 use App\Entry;
 use DB;
@@ -34,7 +33,7 @@ sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3',
 entrant_id from entries 
 
 where category_id in (
-select cup_to_categories.category from cup_to_categories where cup_to_categories.cup = ?)
+select category_cup.category_id from category_cup where category_cup.cup_id = ?)
 AND entries.year = ?
 group by entrant_id
 
@@ -81,51 +80,41 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
     public function show(int $id, array $showData = []): View {
         $winnerDataByCategory = [];
         $winners = [];
+        $cup = Cup::find($id);
 
-        $cupLinks = CupToCategory::where('cup', (int)$id)->get();
-        $categoryData = [];
-        foreach ($cupLinks as $cupLink) {
-            $resultset = DB::select("select if(winningplace='1', 4,if(winningplace='2',3, if(winningplace='3',2, if(winningplace='commended',1, 0 ) ) )) as points, 
-winningplace,
-entrant_id 
+        $categories = $cup->categories()->where('year', env('CURRENT_YEAR'))->orderBy('sortorder')->get();
+        foreach ($categories as $category) {
+            $resultset = $category
+                ->entries()
+                ->selectRaw('if(winningplace=\'1\', 4,if(winningplace=\'2\',3, if(winningplace=\'3\',2, if(winningplace=\'commended\',1, 0 ) ) )) as points, winningplace, entrant_id')
+                ->whereIn('winningplace', ['1', '2', '3', 'commended'])
+                ->where('year', env('CURRENT_YEAR'))
+                ->orderBy('winningplace', 'asc')
+                ->get();
 
-from entries 
-
-where category_id = ?
-AND winningplace IN ('1','2','3','commended')
-AND year = ?
-order by (winningplace) ASC", array($cupLink->category, env('CURRENT_YEAR', 2018)));
-
-            $winnerDataByCategory[$cupLink->category] = array();
+            $winnerDataByCategory[$category->id] = [];
             foreach ($resultset as $categoryWinners) {
-                $winnerDataByCategory[$cupLink->category][$categoryWinners->winningplace] = ['entrant' => $categoryWinners->entrant_id, 'place' => $categoryWinners->winningplace, 'points' => $categoryWinners->points];
+                $winnerDataByCategory[$category->id][$categoryWinners->winningplace] = ['entrant' => $categoryWinners->entrant_id, 'place' => $categoryWinners->winningplace, 'points' => $categoryWinners->points];
                 if (!array_key_exists($categoryWinners->entrant_id, $winners)) {
                     $winners[$categoryWinners->entrant_id] = Entrant::find($categoryWinners->entrant_id);
                 }
-            }
-
-            $categoryData[$cupLink->category] = Category::find($cupLink->category);
-        }
-        $categories = [];
-        if (0 == count($cupLinks)) {
-            $categoriesObj = Category::orderBy('sortorder')->where('year', env('CURRENT_YEAR', 2018))->get();
-            foreach ($categoriesObj as $category) {
-                $categories[$category->id] = $category->getNumberedLabel();
             }
         }
 
         $validEntries = Entry::where('year', env('CURRENT_YEAR', 2018))->get();
         $people = [];
         foreach ($validEntries as $entry) {
-            $person = Entrant::find($entry->entrant_id);
-            $people[$person->id] = $person->getName();
+            if ($entry->entrant instanceof Entrant) {
+                $person = $entry->entrant;
+                $people[$person->id] = $person->getName();
+            } else {
+                $people[$entry->entrant_id] = 'Unknown';
+            }
         }
         unset($person);
-//        $people = Entrant::orderBy('familyName', 'ASC')->orderBy('firstName', 'asc')->get();
-//        foreahc 
+
         asort($people);
-        return parent::show($id, array_merge($showData, array('category_data' => $categoryData,
-            'cup_links' => $cupLinks,
+        return parent::show($id, array_merge($showData, array(
             'winners' => $winners,
             'winners_by_category' => $winnerDataByCategory,
             'categories' => $categories,

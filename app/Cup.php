@@ -10,4 +10,8 @@ class Cup extends Model
     {
         return '/cups/'.$this->id;
     }
+
+    public function categories(){
+        return $this->belongsToMany('App\Category');
+    }
 }

@@ -11,41 +11,40 @@
       <li>Criteria: {{ $thing->winning_criteria }}</li>
     </ul>
 
-@if (count($cup_links) > 0)
+@if (count($categories) > 0)
 <b>Linked to: </b><br/>
 <table border>
     <tr><th>Category</th><th>First</th><th>Second</th><th>Third</th><th>Commended</th></tr>
 
 
-@foreach ($cup_links as $cup_link)
-@if (array_key_exists($cup_link->category, $category_data) && !is_null($category_data[$cup_link->category]))
+@foreach ($categories as $category)
 <tr>
-    <td>{{$category_data[$cup_link->category]->number}}. {{$category_data[$cup_link->category]->name}}</td>
-    @if (array_key_exists($cup_link->category, $winners_by_category) && count($winners_by_category[$cup_link->category]) > 0)
+    <td>{{$category->getNumberedLabel()}}</td>
+    @if (array_key_exists($category->id, $winners_by_category) && count($winners_by_category[$category->id]) > 0)
         <td>
-            @if (array_key_exists('1', $winners_by_category[$cup_link->category]))
-                {{$winners[$winners_by_category[$cup_link->category]['1']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$cup_link->category]['1']['points']}} points)
+            @if (array_key_exists('1', $winners_by_category[$category->id]))
+                {{$winners[$winners_by_category[$category->id]['1']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$category->id]['1']['points']}} points)
             @else
              - 
             @endif
         </td>
         <td>
-            @if (array_key_exists('2', $winners_by_category[$cup_link->category]))
-                {{$winners[$winners_by_category[$cup_link->category]['2']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$cup_link->category]['2']['points']}} points)
+            @if (array_key_exists('2', $winners_by_category[$category->id]))
+                {{$winners[$winners_by_category[$category->id]['2']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$category->id]['2']['points']}} points)
             @else
              - 
             @endif
         </td>
         <td>
-            @if (array_key_exists('3', $winners_by_category[$cup_link->category]))
-                {{$winners[$winners_by_category[$cup_link->category]['3']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$cup_link->category]['3']['points']}} points)
+            @if (array_key_exists('3', $winners_by_category[$category->id]))
+                {{$winners[$winners_by_category[$category->id]['3']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$category->id]['3']['points']}} points)
             @else
              - 
             @endif
         </td>
         <td>
-            @if (array_key_exists('commended', $winners_by_category[$cup_link->category]))
-                {{$winners[$winners_by_category[$cup_link->category]['commended']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$cup_link->category]['commended']['points']}} points)
+            @if (array_key_exists('commended', $winners_by_category[$category->id]))
+                {{$winners[$winners_by_category[$category->id]['commended']['entrant']]->getName($printableNames)}} ({{$winners_by_category[$category->id]['commended']['points']}} points)
             @else
              - 
             @endif
@@ -55,9 +54,7 @@
     @endif
     
 </tr>
-@else
-<tr><td>Missing data for {{$cup_link->category}}</td></tr>
-@endif
+
 @endforeach
 
 </table>
