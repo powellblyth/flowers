@@ -96,7 +96,7 @@ Route::get('/users/{id}',
     ['as' => 'users.show',
         'uses' => 'UserController@show'])->middleware('is_admin');
 
-Route::get('/users/{id}/edit',
+Route::get('/users/{user}/edit',
     ['as' => 'user.edit',
         'uses' => 'UserController@edit'])->middleware('is_admin');
 
