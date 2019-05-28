@@ -11,6 +11,13 @@
     @endphp
     <div class="content">
         <div class="container-fluid">
+            @if($isAdmin)
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <a href="{{ route('category.print') }}" target="_blank" class="btn btn-sm btn-primary">{{ __('Print show entry cards') }}</a>
+                </div>
+            </div>
+            @endif
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -57,7 +64,7 @@
                                                 @foreach ($results[$category->id]['placements'] as $result)
                                                     <b>
                                                         @if($result->winningplace == 1)
-                                                            <span class="badge-success">First place</span>
+                                                            <span class="badge-success">First Place</span>
                                                         @elseif ($result->winningplace == 2)
                                                             <span class="badge-warning">Second Place</span>
                                                         @elseif ($result->winningplace == 3)
@@ -67,9 +74,6 @@
                                                         @endif
                                                     </b>
                                                     <nobr>{{$winners[$result->entrant_id]->getName($printableNames)}}</nobr>
-
-                                                    &nbsp;&nbsp;&nbsp;
-
                                                 @endforeach
                                             </div>
                                         @endif

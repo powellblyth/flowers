@@ -161,6 +161,26 @@ class CategoryController extends Controller {
             'isAdmin' => Auth::User()->isAdmin()));
     }
 
+    /**
+     * This prints all the category cards for the show entries
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
+    function printcards() {
+        $categories = Category::where('year', env('CURRENT_YEAR'))->get();
+        $cardFronts = [];
+
+        foreach ($categories as $category) {
+            $cardFronts[] = [
+                'class_number' => $category->number,
+                'class_name' => $category->name
+            ];
+        }
+//        }var_dump($cardFronts);die();
+
+        return view($this->templateDir . '.printcards', ['card_fronts' =>$cardFronts]);
+    }
+
     public function storeresults(Request $request): \Illuminate\Http\RedirectResponse {
         foreach ($request->positions as $categoryId => $placings) {
             foreach ($placings as $entryId => $result) {

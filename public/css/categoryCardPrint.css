@@ -1,0 +1,53 @@
+
+@page {
+    margin: 0;
+    orientation:landscape;
+    size: A4 landscape;
+    height:100%;
+}
+@page :first {size: A4 landscape}
+@media print {
+  html, body {
+    width: 148mm;
+    height: 105mm;
+    size: A4 landscape;
+  }
+}
+.strap_line{
+    height:14px;
+    font-family:robotto,"Helvetica Neue";
+}
+.pageset
+{
+    page-break-before: always;
+    width:1200px;
+    min-width:100%;
+    display:block;
+}
+.card_row
+{
+ margin-left:20px;   
+ border-bottom: 1px solid black;
+ margin-top:25px;
+ width:97%;
+    height:400px;
+}
+
+.entrycard
+{
+    width:50%;
+    height:400px;
+
+
+}
+.class_number{
+    font-size:120px;
+    height:120px;
+    text-align:center;
+}
+.class_name{
+    font-size:55px;
+    height:270px;
+    text-align:center;
+    overflow:hidden;
+}
