@@ -95,10 +95,12 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12"><b>Entrant
-                                            Number: {{ $thing->getEntrantNumber() }}</b></div>
-                                    <div class="col-lg-6  col-md-6 col-sm-12"><b>Member
-                                            Number:</b> {{ $thing->membernumber }}</div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <b>Entrant Number: {{ $thing->getEntrantNumber() }}</b>
+                                    </div>
+                                    <div class="col-lg-6  col-md-6 col-sm-12">
+                                        <b>Member Number:</b> {{ $member_number }}
+                                    </div>
 
                                 </div>
                                 <div class="row">

@@ -308,6 +308,9 @@ class EntrantController extends Controller {
                     ];
                 }
             }
+            $memberNumber = null;
+            $memberNumber = $thing->getMemberNumber();
+            if (is_null($memberNumber)){$memberNumber = 'Not currently a member';}
             return view($this->templateDir . '.show', array_merge($showData, array(
                     'entry_data' => $entryData,
                     'entries' => $entries,
@@ -326,7 +329,9 @@ class EntrantController extends Controller {
                     //                'can_phone' => $thing->can_phone,
                     //                'can_retain_data' => $thing->can_retain_data,
                     'isAdmin' => $this->isAdmin(),
-                    'thing' => $thing))
+                    'thing' => $thing,
+                    'member_number' => $memberNumber,
+                ))
             );
         }
 //        return parent::show($id, );
