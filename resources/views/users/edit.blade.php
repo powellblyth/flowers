@@ -45,7 +45,7 @@
                   <label class="col-sm-2 col-form-label">{{ __('Address') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('address') ? ' has-danger' : '' }}">
-                      <input autocomplete="new-user-address" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" id="input-address" type="text" placeholder="{{ __('Address') }}" value="{{ old('address', $user->address) }}" required />
+                      <input autocomplete="new-user-address" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" id="input-address" type="text" placeholder="{{ __('Address') }}" value="{{ old('address', $user->address) }}"  />
                       @if ($errors->has('address'))
                         <span id="email-address2" class="error text-danger" for="input-address">{{ $errors->first('address') }}</span>
                       @endif
@@ -56,7 +56,7 @@
                   <label class="col-sm-2 col-form-label">{{ __('Address Line 2') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('address2') ? ' has-danger' : '' }}">
-                      <input autocomplete="new-user-details" class="form-control{{ $errors->has('address2') ? ' is-invalid' : '' }}" name="address2" id="input-address2" type="text" placeholder="{{ __('Address Line 2') }}" value="{{ old('address2', $user->address2) }}" required />
+                      <input autocomplete="new-user-details" class="form-control{{ $errors->has('address2') ? ' is-invalid' : '' }}" name="address2" id="input-address2" type="text" placeholder="{{ __('Address Line 2') }}" value="{{ old('address2', $user->address2) }}"  />
                       @if ($errors->has('address2'))
                         <span id="address2-error" class="error text-danger" for="input-address2">{{ $errors->first('address2') }}</span>
                       @endif
@@ -67,7 +67,7 @@
                   <label class="col-sm-2 col-form-label">{{ __('Town / City') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('addresstown') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('addresstown') ? ' is-invalid' : '' }}" name="addresstown" id="input-addresstown" type="text" placeholder="{{ __('Town / City') }}" value="{{ old('addresstown', $user->addresstown) }}" required />
+                      <input class="form-control{{ $errors->has('addresstown') ? ' is-invalid' : '' }}" name="addresstown" id="input-addresstown" type="text" placeholder="{{ __('Town / City') }}" value="{{ old('addresstown', $user->addresstown) }}"  />
                       @if ($errors->has('addresstown'))
                         <span id="town-error" class="error text-danger" for="input-town">{{ $errors->first('addresstown') }}</span>
                       @endif
@@ -78,7 +78,7 @@
                   <label class="col-sm-2 col-form-label">{{ __('Post Code') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('postcode') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" id="input-postcode" type="text" placeholder="{{ __('Post Code') }}" value="{{ old('postcode', $user->postcode) }}" required />
+                      <input class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" id="input-postcode" type="text" placeholder="{{ __('Post Code') }}" value="{{ old('postcode', $user->postcode) }}"  />
                       @if ($errors->has('postcode'))
                         <span id="postcode-error" class="error text-danger" for="input-postcode">{{ $errors->first('postcode') }}</span>
                       @endif
@@ -89,7 +89,7 @@
                   <label class="col-sm-2 col-form-label">{{ __('Email') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email', $user->email) }}" required />
+                      <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email', $user->email) }}"  />
                       @if ($errors->has('email'))
                         <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
                       @endif
@@ -100,7 +100,7 @@
                   <label class="col-sm-2 col-form-label">{{ __('Telephone') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('telephone') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" name="telephone" id="input-telephone" type="text" placeholder="{{ __('Telephone') }}" value="{{ old('telephone', $user->telephone) }}" required />
+                      <input class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" name="telephone" id="input-telephone" type="text" placeholder="{{ __('Telephone') }}" value="{{ old('telephone', $user->telephone) }}"  />
                       @if ($errors->has('telephone'))
                         <span id="telephone-error" class="error text-danger" for="input-telephone">{{ $errors->first('telephone') }}</span>
                       @endif
