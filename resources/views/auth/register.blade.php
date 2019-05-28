@@ -198,7 +198,7 @@
                             </div>
                             <div class="form-check mr-auto ml-3 mt-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="can_retain_data"
+                                    <input class="form-check-input" type="checkbox" value="1" id="can_retain_data"
                                            name="can_retain_data" {{ old('can_retain_data', 0) ? 'checked' : '' }} >
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -208,7 +208,7 @@
                             </div>
                             <div class="form-check mr-auto ml-3 mt-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="can_email"
+                                    <input class="form-check-input" type="checkbox"  value="1" id="can_email"
                                            name="can_email" {{ old('can_email', 0) ? 'checked' : '' }} >
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -218,7 +218,7 @@
                             </div>
                             <div class="form-check mr-auto ml-3 mt-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="can_sms"
+                                    <input class="form-check-input" type="checkbox"  value="1" id="can_sms"
                                            name="can_sms" {{ old('can_sms', 0) ? 'checked' : '' }} >
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -228,7 +228,7 @@
                             </div>
                             <div class="form-check mr-auto ml-3 mt-3">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="can_post"
+                                    <input class="form-check-input" type="checkbox"  value="1" id="can_post"
                                            name="can_post" {{ old('can_post', 0) ? 'checked' : '' }} >
                                     <span class="form-check-sign">
                                         <span class="check"></span>

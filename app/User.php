@@ -67,11 +67,11 @@ class User extends Authenticatable {
         $entrant->can_retain_data = $this->can_retain_data;
         if ($entrant->can_retain_data){$entrant->retain_data_opt_in = date('Y-m-d H:i:s');}
         $entrant->can_sms = $this->can_sms;
-        if ($entrant->can_sms){$entrant->can_sms_opt_in = date('Y-m-d H:i:s');}
+        if ($entrant->can_sms){$entrant->sms_opt_in = date('Y-m-d H:i:s');}
         $entrant->can_email = $this->can_email;
-        if ($entrant->can_email_data){$entrant->can_email_opt_in = date('Y-m-d H:i:s');}
+        if ($entrant->can_email_data){$entrant->email_opt_in = date('Y-m-d H:i:s');}
         $entrant->can_post = $this->can_post;
-        if ($entrant->can_post){$entrant->can_post_opt_in = date('Y-m-d H:i:s');}
+        if ($entrant->can_post){$entrant->post_opt_in = date('Y-m-d H:i:s');}
         if ($entrant->save())
         {
             $this->entrants()->save($entrant);
