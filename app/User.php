@@ -57,6 +57,28 @@ class User extends Authenticatable {
         return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
     }
 
+    /**
+     * This creates a single entrant matching the user's data
+     */
+    public function makeDefaultEntrant(){
+        $entrant = new Entrant();
+        $entrant->firstname = $this->firstname;
+        $entrant->familyname = $this->lastname;
+        $entrant->can_retain_data = $this->can_retain_data;
+        if ($entrant->can_retain_data){$entrant->retain_data_opt_in = date('Y-m-d H:i:s');}
+        $entrant->can_sms = $this->can_sms;
+        if ($entrant->can_sms){$entrant->can_sms_opt_in = date('Y-m-d H:i:s');}
+        $entrant->can_email = $this->can_email;
+        if ($entrant->can_email_data){$entrant->can_email_opt_in = date('Y-m-d H:i:s');}
+        $entrant->can_post = $this->can_post;
+        if ($entrant->can_post){$entrant->can_post_opt_in = date('Y-m-d H:i:s');}
+        if ($entrant->save())
+        {
+            $this->entrants()->save($entrant);
+        }
+
+    }
+
     public function getPrintableName(): string {
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
     }
@@ -64,5 +86,7 @@ class User extends Authenticatable {
     public function entrants(): \Illuminate\Database\Eloquent\Relations\hasMany {
         return $this->hasMany('App\Entrant');
     }
+
+
 
 }

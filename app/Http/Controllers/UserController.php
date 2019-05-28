@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entrant;
 use App\Http\Requests\UserRequest;
 use App\User;
 use Illuminate\Support\Facades\Hash;
@@ -43,11 +44,12 @@ class UserController extends Controller {
         } else {
             $newPassword = Hash::make($request->get('password'));
         }
-        $model->create($request->merge(
+        $user = $model->create($request->merge(
             [
                 'password_reset_token' => '',
                 'password' => $newPassword,
                 'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX))])->all());
+        $user->makeDefaultEntrant();
 
         return redirect()->route('user.index')->withStatus(__('User successfully created.'));
     }
@@ -77,7 +79,6 @@ class UserController extends Controller {
 
         return redirect()->route('user.index')->withStatus(__('User successfully updated.'));
     }
-
     /**
      * Remove the specified user from storage
      *

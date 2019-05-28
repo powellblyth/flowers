@@ -53,7 +53,7 @@
                                         </span>
                                     </div>
                                     <input type="email" name="email" class="form-control"
-                                           placeholder="{{ __('Email...') }}" value="{{ old('email') }}" required>
+                                           placeholder="{{ __('Email...') }}" value="{{ old('email') }}" >
                                 </div>
                                 @if ($errors->has('email'))
                                     <div id="email-error" class="error text-danger pl-3" for="email"
@@ -69,8 +69,8 @@
                                             <i class="material-icons">phone</i>
                                         </span>
                                     </div>
-                                    <input type="telephone" name="text" class="form-control"
-                                           placeholder="{{ __('Telephone number...') }}" value="{{ old('telephone') }}" required>
+                                    <input type="text" name="telephone" class="form-control"
+                                           placeholder="{{ __('Telephone number...') }}" value="{{ old('telephone') }}" >
                                 </div>
                                 @if ($errors->has('telephone'))
                                     <div id="telephone-error" class="error text-danger pl-3" for="telephone"
@@ -90,7 +90,7 @@
                                            placeholder="{{ __('Address line 1...') }}" value="{{ old('address') }}">
                                 </div>
                                 @if ($errors->has('address'))
-                                    <div id="email-error" class="error text-danger pl-3" for="address"
+                                    <div id="address-error" class="error text-danger pl-3" for="address"
                                          style="display: block;">
                                         <strong>{{ $errors->first('address') }}</strong>
                                     </div>
@@ -107,7 +107,7 @@
                                            placeholder="{{ __('Address line 2...') }}" value="{{ old('address2') }}">
                                 </div>
                                 @if ($errors->has('address2'))
-                                    <div id="email-error" class="error text-danger pl-3" for="address2"
+                                    <div id="address2-error" class="error text-danger pl-3" for="address2"
                                          style="display: block;">
                                         <strong>{{ $errors->first('address2') }}</strong>
                                     </div>
@@ -121,11 +121,10 @@
                                         </span>
                                     </div>
                                     <input type="text" name="addresstown" class="form-control"
-                                           placeholder="{{ __('Town / City...') }}" value="{{ old('addresstown') }}"
-                                           required>
+                                           placeholder="{{ __('Town / City...') }}" value="{{ old('addresstown') }}">
                                 </div>
                                 @if ($errors->has('addresstown'))
-                                    <div id="email-error" class="error text-danger pl-3" for="address"
+                                    <div id="addresstown-error" class="error text-danger pl-3" for="addresstown"
                                          style="display: block;">
                                         <strong>{{ $errors->first('addresstown') }}</strong>
                                     </div>
@@ -143,7 +142,7 @@
                                            required>
                                 </div>
                                 @if ($errors->has('postcode'))
-                                    <div id="email-error" class="error text-danger pl-3" for="address"
+                                    <div id="postcode-error" class="error text-danger pl-3" for="postcode"
                                          style="display: block;">
                                         <strong>{{ $errors->first('postcode') }}</strong>
                                     </div>
