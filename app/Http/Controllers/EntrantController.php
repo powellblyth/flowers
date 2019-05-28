@@ -36,10 +36,9 @@ class EntrantController extends Controller {
 
     public function index(Request $request, array $extraData = []): View {
         if ($this->isAdmin()) {
-            if ($request->has('user_id') && 0 < (int)$request->user_id){
-                $user = User::find(  (int)$request->user_id);
-            }
-            else{
+            if ($request->has('user_id') && 0 < (int)$request->user_id) {
+                $user = User::find((int)$request->user_id);
+            } else {
                 $user = Auth::User();
             }
         } else {
@@ -54,7 +53,7 @@ class EntrantController extends Controller {
         return view($this->templateDir . '.index',
             array_merge($extraData,
                 array('things' => $things,
-                    'owner'=>$user,
+                    'owner' => $user,
                     'all' => false,
                     'isAdmin' => $this->isAdmin())));
 //        return parent::index(array_merge($extraData,
@@ -172,71 +171,59 @@ class EntrantController extends Controller {
 //        return view($this->templateDir . '.saved', array('thing' => $thing));
     }
 
-    public function update(Request $request): View {
+    public function update(Request $request) {
         // Validate the request...
-        $thing = $this->baseClass::find($request->id);
+        if (Auth::User()->isAdmin()) {
+            $thing = Entrant::where('id', $request->id)->first();
+        }
+        else{
+           $thing = Auth::User()->entrants()->where('id', $request->id)->first();
+        }
 
         $thing->firstname = $request->firstname;
         $thing->familyname = $request->familyname;
         $thing->membernumber = $request->membernumber;
         $thing->age = $request->age;
-//        $thing->email = $request->email;
-//        $thing->telephone = $request->telephone;
-//        $thing->address = $request->address;
-//        $thing->address2 = $request->address2;
-//        $thing->addresstown = $request->addresstown;
-//        $thing->postcode = $request->postcode;
+
         if (!$thing->can_retain_data && (int)$request->can_retain_data) {
             $thing->retain_data_opt_in = date('Y-m-d H:i:s');
-        }
-        else{            $thing->retain_data_opt_out = date('Y-m-d H:i:s');
+        } else {
+            $thing->retain_data_opt_out = date('Y-m-d H:i:s');
         }
         $thing->can_retain_data = (int)$request->can_retain_data;
+
         if (!$thing->can_email && (int)$request->can_email) {
             $thing->email_opt_in = date('Y-m-d H:i:s');
-        }
-        else{            $thing->email_opt_out = date('Y-m-d H:i:s');
+        } else {
+            $thing->email_opt_out = date('Y-m-d H:i:s');
         }
         $thing->can_email = (int)$request->can_email;
+
         if (!$thing->can_sms && $request->can_sms) {
             $thing->sms_opt_in = date('Y-m-d H:i:s');
-        }
-        else{
+        } else {
             $thing->sms_opt_out = date('Y-m-d H:i:s');
 
         }
         $thing->can_sms = (int)$request->can_sms;
+
         if (!$thing->can_post && $request->can_post) {
             $thing->post_opt_in = date('Y-m-d H:i:s');
-        }
-        else{
+        } else {
             $thing->post_opt_out = date('Y-m-d H:i:s');
 
         }
         $thing->can_post = (int)$request->can_post;
-        $thing->save();
-        return view($this->templateDir . '.saved', array('thing' => $thing));
+        if ($thing->save()) {
+            $request->session()->flash('success', 'Family Member Saved');
+            return redirect()->route('entrants.index');
+        } else {
+            $request->session()->flash('error', 'Something went wrong saving the Family Member');
+            return back();
+        }
+//        return view($this->templateDir . '.saved', array('thing' => $thing));
     }
 
-//    public function optins(Request $request): \Illuminate\Http\RedirectResponse {
-//        // Validate the request...
-//        $thing = $this->baseClass::find($request->id);
-//
-//        if (!$thing->can_retain_data && (int)$request->can_retain_data) {
-//            $thing->retain_data_opt_in = date('Y-m-d H:i:s');
-//        }
-//        $thing->can_retain_data = (int)$request->can_retain_data;
-//        if (!$thing->can_email && (int)$request->can_email) {
-//            $thing->email_opt_in = date('Y-m-d H:i:s');
-//        }
-//        $thing->can_email = (int)$request->can_email;
-//        if (!$thing->can_sms && $request->can_sms) {
-//            $thing->sms_opt_in = date('Y-m-d H:i:s');
-//        }
-//        $thing->can_sms = (int)$request->can_sms;
-//        $thing->save();
-//        return back();
-//    }
 
     public function changeCategories(Request $request, int $id) {
         if ($request->isMethod('POST')) {
@@ -264,74 +251,84 @@ class EntrantController extends Controller {
         $membershipFee = 0;
         $entryFee = 0;
 
-        $thing = $this->baseClass::find($id);
-//        $showData = array_merge($extraData,  array('thing' => $thing));
-
-        $categoriesAry = [0 => 'Select...'];
-        $categories = Category::orderBy('sortorder')->where('year', env('CURRENT_YEAR', 2018))->get();
-        foreach ($categories as $category) {
-            $categoriesAry[$category->id] = $category->getNumberedLabel();
+        if (Auth::User()->isAdmin()) {
+            $thing = Entrant::where('id', $id)->first();
         }
-        $payments = $thing->payments()->where('year', env('CURRENT_YEAR', 2018))->get();
-        $totalPaid = 0;
-        foreach ($payments as $payment) {
-            $totalPaid += $payment->amount;
+        else{
+            $thing = Auth::User()->entrants()->where('id', $id)->first();
         }
+        if (!$thing instanceof Entrant)
+        {
+            return view('404');
+        }else {
+            //        $showData = array_merge($extraData,  array('thing' => $thing));
 
-        $membershipPayments = $thing->membershipPurchases()->where('year', env('CURRENT_YEAR', 2018))->get();
-        $membershipPaymentData = [];
-        foreach ($membershipPayments as $payment) {
-            $amount = (($payment->type == 'single' ? 300 : 500));
-            $membershipFee += $amount;
-            $membershipPaymentData[] = ['type' => $payment->type, 'amount' => $amount];
-        }
-
-        $entries = $thing->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
-        $entryData = [];
-        $dbug = 0;
-        foreach ($entries as $entry) {
-            if ($entry->category_id) {
-                // Hydrate
-                $category = $entry->category()->where('year', env('CURRENT_YEAR', 2018))->first();
-
-                $price = $category->getPrice($entry->getPriceType());
-                $entryFee += $price;
-
-                if ('' !== trim($entry->winningplace)) {
-                    $totalPrizes += $category->getWinningAmount($entry->winningplace);
-                }
-                $entryData[$entry->id] = [
-                    'name' => $category->getNumberedLabel(),
-                    'has_won' => $entry->hasWon(),
-                    'winning_place' => $entry->winningplace,
-                    'winning_amount' => $category->getWinningAmount($entry->winningplace),
-                    'category_id' => $entry->category,
-                    'placement_name' => $entry->getPlacementName(),
-                    'price' => $price,
-                    'is_late' => ($entry->getPriceType() == Category::PRICE_LATE_PRICE)
-                ];
+            $categoriesAry = [0 => 'Select...'];
+            $categories = Category::orderBy('sortorder')->where('year', env('CURRENT_YEAR', 2018))->get();
+            foreach ($categories as $category) {
+                $categoriesAry[$category->id] = $category->getNumberedLabel();
             }
+            $payments = $thing->payments()->where('year', env('CURRENT_YEAR', 2018))->get();
+            $totalPaid = 0;
+            foreach ($payments as $payment) {
+                $totalPaid += $payment->amount;
+            }
+
+            $membershipPayments = $thing->membershipPurchases()->where('year', env('CURRENT_YEAR', 2018))->get();
+            $membershipPaymentData = [];
+            foreach ($membershipPayments as $payment) {
+                $amount = (($payment->type == 'single' ? 300 : 500));
+                $membershipFee += $amount;
+                $membershipPaymentData[] = ['type' => $payment->type, 'amount' => $amount];
+            }
+
+            $entries = $thing->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
+            $entryData = [];
+            $dbug = 0;
+            foreach ($entries as $entry) {
+                if ($entry->category_id) {
+                    // Hydrate
+                    $category = $entry->category()->where('year', env('CURRENT_YEAR', 2018))->first();
+
+                    $price = $category->getPrice($entry->getPriceType());
+                    $entryFee += $price;
+
+                    if ('' !== trim($entry->winningplace)) {
+                        $totalPrizes += $category->getWinningAmount($entry->winningplace);
+                    }
+                    $entryData[$entry->id] = [
+                        'name' => $category->getNumberedLabel(),
+                        'has_won' => $entry->hasWon(),
+                        'winning_place' => $entry->winningplace,
+                        'winning_amount' => $category->getWinningAmount($entry->winningplace),
+                        'category_id' => $entry->category,
+                        'placement_name' => $entry->getPlacementName(),
+                        'price' => $price,
+                        'is_late' => ($entry->getPriceType() == Category::PRICE_LATE_PRICE)
+                    ];
+                }
+            }
+            return view($this->templateDir . '.show', array_merge($showData, array(
+                    'entry_data' => $entryData,
+                    'entries' => $entries,
+                    'categories' => $categoriesAry,
+                    'membership_purchases' => $membershipPaymentData,
+                    'payments' => $payments,
+                    'entry_fee' => $entryFee,
+                    'total_price' => $entryFee + $membershipFee,
+                    'paid' => $totalPaid,
+                    'payment_types' => $this->paymentTypes,
+                    'total_prizes' => $totalPrizes,
+                    'membership_fee' => $membershipFee,
+                    'membership_types' => $this->membershipTypes,
+                    //                'can_email' => $thing->can_email,
+                    //                'can_sms' => $thing->can_sms,
+                    //                'can_phone' => $thing->can_phone,
+                    //                'can_retain_data' => $thing->can_retain_data,
+                    'isAdmin' => $this->isAdmin(),
+                    'thing' => $thing))
+            );
         }
-        return view($this->templateDir . '.show', array_merge($showData, array(
-                'entry_data' => $entryData,
-                'entries' => $entries,
-                'categories' => $categoriesAry,
-                'membership_purchases' => $membershipPaymentData,
-                'payments' => $payments,
-                'entry_fee' => $entryFee,
-                'total_price' => $entryFee + $membershipFee,
-                'paid' => $totalPaid,
-                'payment_types' => $this->paymentTypes,
-                'total_prizes' => $totalPrizes,
-                'membership_fee' => $membershipFee,
-                'membership_types' => $this->membershipTypes,
-//                'can_email' => $thing->can_email,
-//                'can_sms' => $thing->can_sms,
-//                'can_phone' => $thing->can_phone,
-//                'can_retain_data' => $thing->can_retain_data,
-                'isAdmin' => $this->isAdmin(),
-                'thing' => $thing))
-        );
 //        return parent::show($id, );
     }
 
@@ -371,12 +368,24 @@ class EntrantController extends Controller {
      * @param int $id
      * @return Response
      */
-    public function edit($id) {
-        $thing = $this->baseClass::find($id);
+    public function edit(int $id) {
+        if (Auth::User()->isAdmin()) {
+            $thing = Entrant::where('id', $id)->first();
+        }
+        else{
+            $thing = Auth::User()->entrants()->where('id', $id)->first();
+        }
+        if (!$thing instanceof Entrant){
+            return view('404');
+        }
+        else {
+
 //      $showData = array_merge($extraData,  array('thing' => $thing));
 //      return view($this->templateDir.'.show', $showData);
 
-        return view($this->templateDir . '.edit', array('thing' => $thing,
-            'isAdmin' => $this->isAdmin()));
-    }
+            return view($this->templateDir . '.edit', array(
+                'thing' => $thing,
+                'privacyContent' => config('static_content.privacy_content'),
+                'isAdmin' => $this->isAdmin()));
+        }   }
 }

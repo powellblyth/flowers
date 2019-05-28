@@ -53,7 +53,7 @@
                                         </span>
                                     </div>
                                     <input type="email" name="email" class="form-control"
-                                           placeholder="{{ __('Email...') }}" value="{{ old('email') }}" >
+                                           placeholder="{{ __('Email...') }}" value="{{ old('email') }}">
                                 </div>
                                 @if ($errors->has('email'))
                                     <div id="email-error" class="error text-danger pl-3" for="email"
@@ -70,7 +70,7 @@
                                         </span>
                                     </div>
                                     <input type="text" name="telephone" class="form-control"
-                                           placeholder="{{ __('Telephone number...') }}" value="{{ old('telephone') }}" >
+                                           placeholder="{{ __('Telephone number...') }}" value="{{ old('telephone') }}">
                                 </div>
                                 @if ($errors->has('telephone'))
                                     <div id="telephone-error" class="error text-danger pl-3" for="telephone"
@@ -138,8 +138,7 @@
                                         </span>
                                     </div>
                                     <input type="text" name="postcode" class="form-control"
-                                           placeholder="{{ __('Postcode') }}" value="{{ old('postcode') }}"
-                                           required>
+                                           placeholder="{{ __('Postcode') }}" value="{{ old('postcode') }}">
                                 </div>
                                 @if ($errors->has('postcode'))
                                     <div id="postcode-error" class="error text-danger pl-3" for="postcode"
@@ -189,7 +188,9 @@
                                     <span class="form-check-sign">
                                         <span class="check"></span>
                                     </span>
-                                    {{ __('I agree with the ') }} <a href="https://www.petershamhorticulturalsociety.org.uk/privacy" target="_blank">{{ __('Privacy Policy') }}</a>
+                                    {{ __('I agree with the ') }} <a
+                                            href="https://www.petershamhorticulturalsociety.org.uk/privacy"
+                                            target="_blank">{{ __('Privacy Policy') }}</a>
                                 </label>
                             </div>
                             <div class="mr-auto mk-3 mt-3">

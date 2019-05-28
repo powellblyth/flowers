@@ -53,8 +53,8 @@ class RegisterController extends Controller {
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'email' => 'required_without_all:address,postcode|unique:users|string|email|max:255',
-            'address' => 'required_without:email|string|string|max:255',
-            'postcode' => 'required_without:email|string|string|max:10',
+            'address' => 'required_without:email|max:255',
+            'postcode' => 'required_without:email|max:10',
             'password' => 'required|string|min:2|confirmed',
             
         ]);
@@ -106,6 +106,7 @@ class RegisterController extends Controller {
         $data['can_post'] = (int)$canPost;
 
         $res = User::create($data);
+        $res->makeDefaultEntrant();
         return $res;
     }
     public function dcreate($extraData = [])

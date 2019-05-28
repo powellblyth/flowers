@@ -34,20 +34,21 @@ class UserRequest extends FormRequest
 
         return [
             'firstname' => [
-                'required', 'min:3'
+                'required', 'min:2'
             ],
             'lastname' => [
-                'required', 'min:3'
+                'required', 'min:2'
             ],
             'email' => [
                 'required_without_all:address,postcode', 'max:255',
 //                'required', 'email', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)
             ],
             'address' => 'required_without:email', 'users', 'string', 'max:255',
+            'addresstown' => 'required_without:email', 'users', 'string', 'max:255',
             'postcode' => 'required_without:email', 'string', 'max:10',
-//            'password' => [
-//                $this->route()->user ? 'nullable' : 'required', 'confirmed', 'min:6'
-//            ]
+            'password' => [
+                $this->route()->user ? 'nullable' : 'required', 'confirmed', 'min:6'
+            ]
         ];
     }
 }
