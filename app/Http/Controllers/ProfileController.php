@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit');
+        return view('profile.edit', ['privacyContent'=>config('static_content.privacy_content')]);
     }
 
     /**
