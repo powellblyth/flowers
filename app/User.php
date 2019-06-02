@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Events\UserSaving;
+use App\Observers\UserObserver;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -11,6 +13,9 @@ class User extends Authenticatable {
     const ADMIN_TYPE = 'admin';
     const DEFAULT_TYPE = 'default';
 
+    protected $dispatchesEvents = [
+        'saving' => UserSaving::class
+    ];
     public function isAdmin() {
         return $this->type === self::ADMIN_TYPE;
     }
@@ -65,21 +70,9 @@ class User extends Authenticatable {
         $entrant->firstname = $this->firstname;
         $entrant->familyname = $this->lastname;
         $entrant->can_retain_data = $this->can_retain_data;
-        if ($entrant->can_retain_data) {
-            $entrant->retain_data_opt_in = date('Y-m-d H:i:s');
-        }
         $entrant->can_sms = $this->can_sms;
-        if ($entrant->can_sms) {
-            $entrant->sms_opt_in = date('Y-m-d H:i:s');
-        }
         $entrant->can_email = $this->can_email;
-        if ($entrant->can_email_data) {
-            $entrant->email_opt_in = date('Y-m-d H:i:s');
-        }
         $entrant->can_post = $this->can_post;
-        if ($entrant->can_post) {
-            $entrant->post_opt_in = date('Y-m-d H:i:s');
-        }
         if ($entrant->save()) {
             $this->entrants()->save($entrant);
         }

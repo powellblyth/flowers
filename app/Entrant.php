@@ -3,8 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Events\EntrantSaving;
+use App\Observers\EntrantObserver;
+use Illuminate\Notifications\Notifiable;
 
 class Entrant extends Model {
+    use Notifiable;
+
+    protected $dispatchesEvents = [
+        'saving' => EntrantSaving::class
+    ];
 
     public function getUrl() {
         return route('entrants.show', $this);
@@ -50,10 +58,10 @@ class Entrant extends Model {
         return $this->hasMany('\App\Membership', 'entrant_id');
     }
 
-    public function familyMembership():?Membership {
+    public function familyMembership(): ?Membership {
         if ($this->user instanceof User) {
             return $this->user->familyMemberships()->first();
-        }else{
+        } else {
             return null;
         }
     }
@@ -77,10 +85,12 @@ class Entrant extends Model {
 
     public function getMemberNumber() {
         $membership = $this->getCurrentMembership();
-            if ($membership instanceof \App\Membership) {
+        if ($membership instanceof \App\Membership) {
             return $membership->getNumber();
         } else {
             return null;
         }
     }
+
+//    public function
 }

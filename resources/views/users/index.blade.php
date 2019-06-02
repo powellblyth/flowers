@@ -35,6 +35,7 @@
                                     <th>
                                         {{ __('Name') }}
                                     </th>
+                                        <th>Type</th>
                                     <th>
                                         {{ __('Email') }}
                                     </th>
@@ -53,6 +54,7 @@
 
                                                 {{ $user->lastname }}
                                             </td>
+                                                <td>{{ucfirst($user->type)}}</td>
                                             <td>
                                                 {{ $user->email }}
                                             </td>
@@ -61,14 +63,14 @@
                                                 <a rel="tooltip" class="btn btn-success btn-link"
                                                    href="{{ route('entrants.index') }}?user_id={{$user->id}}" data-original-title=""
                                                    title="">
-                                                    <i class="material-icons">add</i>
-                                                    <div class="ripple-container"></div>
+                                                    <i class="material-icons">zoom_in</i>
+                                                    <div class="ripple-container">Show</div>
                                                 </a>
                                                 <a rel="tooltip" class="btn btn-success btn-link"
                                                    href="{{ route('entrants.create') }}?user_id={{$user->id}}" data-original-title=""
                                                    title="">
                                                     <i class="material-icons">add</i>
-                                                    <div class="ripple-container"></div>
+                                                    <div class="ripple-container">Add</div>
                                                 </a>
                                             </td>
                                             <td class="td-actions text-right">

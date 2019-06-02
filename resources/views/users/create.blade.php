@@ -8,7 +8,6 @@
           <form method="post" action="{{ route('user.store') }}" autocomplete="off" class="form-horizontal">
             @csrf
             @method('post')
-
             <div class="card ">
               <div class="card-header card-header-primary">
                 <h4 class="card-title">{{ __('Add User') }}</h4>
@@ -36,7 +35,7 @@
                   <label class="col-sm-2 col-form-label">{{ __('Last Name') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('lastname') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" id="input-lastname" type="text" placeholder="{{ __('Lat Name') }}" value="{{ old('lastname') }}" required="true" aria-required="true"/>
+                      <input class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" id="input-lastname" type="text" placeholder="{{ __('Last Name') }}" value="{{ old('lastname') }}" required="true" aria-required="true"/>
                       @if ($errors->has('lastname'))
                         <span id="lastname-error" class="error text-danger" for="input-lastname">{{ $errors->first('lastname') }}</span>
                       @endif
@@ -44,7 +43,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Email') }}</label>
+                  <label class="col-sm-2 col-form-label" for="input-email">{{ __('Email') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}"  />
@@ -55,18 +54,18 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Address') }}</label>
+                  <label class="col-sm-2 col-form-label" for="input-address">{{ __('Address') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('address') ? ' has-danger' : '' }}">
                       <input autocomplete="new-user-address" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" id="input-address" type="text" placeholder="{{ __('Address') }}" value="{{ old('address') }}"  />
                       @if ($errors->has('address'))
-                        <span id="email-address2" class="error text-danger" for="input-address">{{ $errors->first('address') }}</span>
+                        <span id="address-error" class="error text-danger" for="input-address">{{ $errors->first('address') }}</span>
                       @endif
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Address Line 2') }}</label>
+                  <label class="col-sm-2 col-form-label" for="input-address2">{{ __('Address Line 2') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('address2') ? ' has-danger' : '' }}">
                       <input autocomplete="new-user-details" class="form-control{{ $errors->has('address2') ? ' is-invalid' : '' }}" name="address2" id="input-address2" type="text" placeholder="{{ __('Address Line 2') }}" value="{{ old('address2') }}"  />
@@ -77,7 +76,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Town / City') }}</label>
+                  <label class="col-sm-2 col-form-label" for="addresstown">{{ __('Town / City') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('addresstown') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('addresstown') ? ' is-invalid' : '' }}" name="addresstown" id="input-addresstown" type="text" placeholder="{{ __('Town / City') }}" value="{{ old('addresstown') }}"  />
@@ -88,7 +87,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Post Code') }}</label>
+                  <label class="col-sm-2 col-form-label" for="postcode">{{ __('Post Code') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('postcode') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" id="input-postcode" type="text" placeholder="{{ __('Post Code') }}" value="{{ old('postcode') }}"  />
@@ -99,7 +98,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Telephone') }}</label>
+                  <label class="col-sm-2 col-form-label" for="telephone">{{ __('Telephone') }}</label>
                   <div class="col-sm-8">
                     <div class="form-group{{ $errors->has('telephone') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" name="telephone" id="input-telephone" type="text" placeholder="{{ __('Telephone') }}" value="{{ old('telephone') }}"  />

@@ -79,23 +79,23 @@
                                                     @if($all)
                                                             @if (!is_null($thing->user ))
                                                             <td>
-                                                            {{$thing->user->getName()}}
+                                                                <a rel="tooltip" class="default "
+                                                                href="{{route('user.edit', $thing->user)}}"
+                                                                data-original-title=""
+                                                                title="Edit {{$thing->user->getName()}} (Family Manager)">
+                                                                {{$thing->user->getName()}}
+                                                                </a>
+
                                                         </td>
                                                         <td class="text-right">
 {{--                                                                <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>--}}
 {{--                                                                <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
 
-                                                                <a rel="tooltip" class="btn btn-primary "
-                                                                   href="{{route('user.edit', $thing->user)}}"
-                                                                   data-original-title=""
-                                                                   title="Show Family Manager">
-                                                                    Edit {{$thing->user->firstname}}
-                                                                </a>
-                                                                <a rel="tooltip" class="btn btn-primary"
+                                                                <a rel="tooltip" class="btn btn-success"
                                                                    href="{{route('entrants.index')}}?user_id={{$thing->user->id}}"
                                                                    data-original-title=""
-                                                                   title="">
-                                                                    Show {{$thing->user->firstname}}'s Family
+                                                                   title="Show {{$thing->user->getName()}}'s Family">
+                                                                    Show Family
                                                                 </a></td>
                                                             @endif
                                                     @endif

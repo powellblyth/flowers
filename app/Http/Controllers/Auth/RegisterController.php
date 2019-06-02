@@ -85,24 +85,9 @@ class RegisterController extends Controller {
         $canSms = array_key_exists('can_sms', $extraData) && 1 == (int)$extraData['can_sms'];
         $canPost = array_key_exists('can_post', $extraData) && 1 == (int)$extraData['can_post'];
 
-        if ($canRetainData) {
-            $data['retain_data_opt_in'] = date('Y-m-d H:i:s');
-        }
         $data['can_retain_data'] = (int)$canRetainData;
-
-        if ($canEmail) {
-            $data['email_opt_in'] = date('Y-m-d H:i:s');
-        }
         $data['can_email'] = (int)$canEmail;
-
-        if ($canSms) {
-            $data['sms_opt_in'] = date('Y-m-d H:i:s');
-        }
         $data['can_sms'] = (int)$canSms;
-
-        if ($canPost) {
-            $data['post_opt_in'] = date('Y-m-d H:i:s');
-        }
         $data['can_post'] = (int)$canPost;
 
         $res = User::create($data);
