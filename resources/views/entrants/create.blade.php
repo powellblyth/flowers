@@ -84,7 +84,7 @@
                             @if($isAdmin)
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                {{ Form::label('user_id', 'Owner User:', ['class' => 'control-label']) }}
+                                                                {{ Form::label('user_id', 'Family Manager:', ['class' => 'control-label']) }}
                                                                 {{ Form::select('user_id', $allUsers, old('user_id', (int)$indicatedAdmin), ['class' => 'form-control']) }}
                                                             </div>
                                                         </div>
@@ -95,7 +95,7 @@
                                                                 <p>{{ Form::checkbox('can_retain_data', 1) }} {{ Form::label('can_retain_data', 'Check here to allow retain your information for future shows?:', ['class' => 'control-label']) }}</p>
 {{--                                                                <p>{{ Form::checkbox('can_email', 1) }} {{ Form::label('can_email', 'Check here to allow us to contact you by email (up ot a few times a year)?:', ['class' => 'control-label']) }}</p>--}}
 {{--                                                                <p>{{ Form::checkbox('can_sms', 1) }} {{ Form::label('can_sms', 'Check here to allow us contact you by SMS (very infrequent)?:', ['class' => 'control-label']) }}</p>--}}
-                                                                {{ Form::submit('Create New Entrant', ['class' => 'button btn btn-primary']) }}
+                                                                {{ Form::submit('Create New Member', ['class' => 'button btn btn-primary']) }}
 
                                                             </div>
 

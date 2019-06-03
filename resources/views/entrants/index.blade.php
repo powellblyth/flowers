@@ -23,6 +23,12 @@
                     <div class="card">
                         <div class="card-header card-header-success">{{__('Family Members')}}</div>
                         <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-right">
+                                    <a href="{{ route('entrants.create') }}"
+                                       class="btn btn-sm btn-primary">{{ __('Add family member') }}</a>
+                                </div>
+                            </div>
                             @if(false == $all && $owner->id !== Auth::User()->id)
                             <div class="row">
                                 <div class="col-md-12 text-right">
