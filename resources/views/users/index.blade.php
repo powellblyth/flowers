@@ -50,27 +50,25 @@
                                     @foreach($users as $user)
                                         <tr>
                                             <td>
-                                                {{ $user->firstname }}
-
-                                                {{ $user->lastname }}
+                                                {{ $user->firstname }} {{ $user->lastname }}
                                             </td>
                                                 <td>{{ucfirst($user->type)}}</td>
                                             <td>
                                                 {{ $user->email }}
                                             </td>
-                                            <td>
+                                            <td class="td-actions">
                                                 {{ $user->entrants()->count() }}
                                                 <a rel="tooltip" class="btn btn-success btn-link"
                                                    href="{{ route('entrants.index') }}?user_id={{$user->id}}" data-original-title=""
-                                                   title="">
-                                                    <i class="material-icons">zoom_in</i>
-                                                    <div class="ripple-container">Show</div>
+                                                   title="show family members">
+                                                    <i class="material-icons">people</i>
+                                                    <div class="ripple-container"></div>
                                                 </a>
                                                 <a rel="tooltip" class="btn btn-success btn-link"
                                                    href="{{ route('entrants.create') }}?user_id={{$user->id}}" data-original-title=""
-                                                   title="">
+                                                   title="add a new family member">
                                                     <i class="material-icons">add</i>
-                                                    <div class="ripple-container">Add</div>
+                                                    <div class="ripple-container"></div>
                                                 </a>
                                             </td>
                                             <td class="td-actions text-right">

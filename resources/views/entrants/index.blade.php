@@ -67,6 +67,7 @@
                                             <thead>
                                             <th>Name</th>
                                             @if($all)
+                                                <th></th>
                                                 <th>Family Manager</th>
                                                 <th class="text-right">Actions</th>
                                             @endif
@@ -74,11 +75,24 @@
                                             @foreach ($things as $thing)
                                                 <tr>
                                                     <td>
-                                                        <a href="{{$thing->getUrl()}}">{{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}</a>
+                                                        {{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}
+                                                    </td><td class="td-actions">
+                                                        <a rel="tooltip" class="btn btn-success btn-link"
+                                                           href="{{ route('entrants.edit', $thing) }}" data-original-title=""
+                                                           title="edit {{$thing->firstname}}">
+                                                            <i class="material-icons">edit</i>
+                                                            <div class="ripple-container"></div>
+                                                        </a>
+                                                        <a rel="tooltip" class="btn btn-success btn-link"
+                                                           href="{{ route('entrants.edit', $thing) }}" data-original-title=""
+                                                           title="manage {{$thing->firstname}}'s entries">
+                                                            <i class="material-icons">build</i>
+                                                            <div class="ripple-container"></div>
+                                                        </a>
                                                     </td>
                                                     @if($all)
+                                                        <td>
                                                             @if (!is_null($thing->user ))
-                                                            <td>
                                                                 <a rel="tooltip" class="default "
                                                                 href="{{route('user.edit', $thing->user)}}"
                                                                 data-original-title=""
@@ -87,17 +101,21 @@
                                                                 </a>
 
                                                         </td>
-                                                        <td class="text-right">
+                                                        <td class="text-right td-actions">
 {{--                                                                <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>--}}
 {{--                                                                <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
 
-                                                                <a rel="tooltip" class="btn btn-success"
-                                                                   href="{{route('entrants.index')}}?user_id={{$thing->user->id}}"
-                                                                   data-original-title=""
-                                                                   title="Show {{$thing->user->getName()}}'s Family">
-                                                                    Show Family
-                                                                </a></td>
+                                                            <a rel="tooltip" class="btn btn-success btn-link"
+                                                               href="{{route('entrants.index')}}?user_id={{$thing->user->id}}"
+                                                               data-original-title=""
+                                                               title="Show {{$thing->user->getName()}}'s Family">
+                                                                <i class="material-icons">people</i>
+                                                                <div class="ripple-container"></div>
+
+                                                            </a>
+
                                                             @endif
+                                                        </td>
                                                     @endif
                                                 </tr>
                                             @endforeach
