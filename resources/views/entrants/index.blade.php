@@ -90,7 +90,7 @@
                                                             <div class="ripple-container"></div>
                                                         </a>
                                                         <a rel="tooltip" class="btn btn-success btn-link"
-                                                           href="{{ route('entrants.edit', $thing) }}" data-original-title=""
+                                                           href="{{ route('entrants.show', $thing) }}" data-original-title=""
                                                            title="manage {{$thing->firstname}}'s entries">
                                                             <i class="material-icons">build</i>
                                                             <div class="ripple-container"></div>
