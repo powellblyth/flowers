@@ -114,13 +114,17 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
         unset($person);
 
         asort($people);
-        return parent::show($id, array_merge($showData, array(
+        $thing = $this->baseClass::find($id);
+//        $showData = array_merge($extraData, array('thing' => $thing));
+        return view($this->templateDir . '.show', [
+            'thing' => $thing,
             'winners' => $winners,
             'winners_by_category' => $winnerDataByCategory,
             'categories' => $categories,
             'people' => $people,
             'isAdmin' => Auth::check() && Auth::User()->isAdmin()
-        )));
+        ]);
+
     }
 
 //        public function storeresults(Request $request) {
