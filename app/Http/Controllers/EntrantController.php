@@ -219,7 +219,9 @@ class EntrantController extends Controller {
      * @param int $id
      * @return Response
      */
-    public function show(int $id, array $showData = []): View {
+    public function show(int $id, array $showData = []) {
+
+        return redirect('billing');
         $totalPrizes = 0;
         $membershipFee = 0;
         $entryFee = 0;

@@ -72,8 +72,8 @@
                                         <table class="table ">
                                             <thead>
                                             <th>Name</th>
+                                            <th></th>
                                             @if($all)
-                                                <th></th>
                                                 <th>Family Manager</th>
                                                 <th class="text-right">Actions</th>
                                             @endif
@@ -82,7 +82,8 @@
                                                 <tr>
                                                     <td>
                                                         {{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}
-                                                    </td><td class="td-actions">
+                                                    </td>
+                                                    <td class="td-actions">
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{ route('entrants.edit', $thing) }}" data-original-title=""
                                                            title="edit {{$thing->firstname}}">
@@ -120,8 +121,8 @@
 
                                                             </a>
 
-                                                            @endif
                                                         </td>
+                                                            @endif
                                                     @endif
                                                 </tr>
                                             @endforeach

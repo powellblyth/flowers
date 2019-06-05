@@ -99,6 +99,7 @@ Route::get('/users/{id}',
     ['as' => 'users.show',
         'uses' => 'UserController@show'])->middleware('is_admin');
 
+
 Route::get('/users/{user}/edit',
     ['as' => 'user.edit',
         'uses' => 'UserController@edit'])->middleware('is_admin');
@@ -152,8 +153,20 @@ Route::group(['middleware' => 'auth'], function () {
 //Route::get('')
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show', 'edit']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+    Route::get('/profile/subscribe',
+        ['as' => 'users.subscribe',
+            'uses' => 'ProfileController@subscribe']);
+    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
+
+Route::post(
+    'stripe/webhook',
+    '\App\Http\Controllers\WebhookController@handleWebhook'
+);
+Route::post(
+    'stripe/webhook',
+    '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
+);
