@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\AnonymiseEntrantsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -16,6 +17,8 @@ class Kernel extends ConsoleKernel
         Commands\CreateNewYearDataCommand::class,
         Commands\UpdateAgesCommand::class,
         Commands\AnonymiseEntrantsCommand::class,
+        Commands\SendMailchimpSubscribesCommand::class,
+        Commands\ScruffyCommand::class,
 
     ];
 
@@ -27,8 +30,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('mailchimp:subscribeusers')->cron('8 9,11,13,15,17,19,21 * * *');
+//         $schedule->command('inspire')->hourly();
     }
 
     /**
