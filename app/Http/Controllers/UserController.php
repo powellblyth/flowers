@@ -19,7 +19,7 @@ class UserController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index(User $model): View {
-        return view('users.index', ['users' => $model->get()]);
+        return view('users.index', ['users' => $model::orderBy('lastname')->where('is_anonymised', false)->orderBy('firstname')->get()]);
     }
 
     /**
