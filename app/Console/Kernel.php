@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('mailchimp:subscribeusers')->cron('8 9,11,13,15,17,19,21 * * *');
+        $schedule->command('mailchimp:subscribeusers')->cron('*/5 9,11,12,13,15,17,19,21 * * *');
 //         $schedule->command('inspire')->hourly();
     }
 
