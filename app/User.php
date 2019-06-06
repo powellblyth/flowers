@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Events\UserSaving;
+use App\Notifications\MustChangePasswordNotification;
 use App\Observers\UserObserver;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -108,5 +109,8 @@ class User extends Authenticatable {
         return $memberships;
     }
 
+    public function routeNotificationForMail() {
+        return $this->email;
+    }
 
 }

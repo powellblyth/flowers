@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Flowers',
+    'name' => 'Petersham Horti Entries system',
 
     /*
     |--------------------------------------------------------------------------

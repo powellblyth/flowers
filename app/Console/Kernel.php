@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\AnonymiseEntrantsCommand;
+use App\Console\Commands\ScruffyCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -19,6 +20,7 @@ class Kernel extends ConsoleKernel
         Commands\AnonymiseEntrantsCommand::class,
         Commands\SendMailchimpSubscribesCommand::class,
         Commands\ScruffyCommand::class,
+        Commands\SendEmailToUnpasswordedPeopleCommand::class,
 
     ];
 
