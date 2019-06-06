@@ -49,8 +49,8 @@ class SendMailchimpSubscribesCommand extends Command {
             echo ++$counter . ':';
             $email = $user->getSafeEmail();
             echo $user->firstname . ' ' . $user->lastname . ' ' . $email . "\n";
-            $member = (new Member($email))->language('en');
             if ($user->can_retain_data && $user->can_email) {
+                $member = (new Member($email))->language('en');
                 $member = $member->confirm(false)->status('subscribed');
                 $mailchimp->addUpdateMember($listID, $member);
                 echo "subscribing\n";
@@ -59,12 +59,11 @@ class SendMailchimpSubscribesCommand extends Command {
             // If the user is unsubscrbed, we cannot add them as unsubscribed
             // so we only change them if they already exist
             elseif ($mailchimp->check($listID, $email)) {
-                $member = $member->status('unsubscribed');
+//                $member = $member->status('unsubscribed');
                 $mailchimp->unsubscribe($listID, $email);
                 echo "doing unsubscribing\n";
             }
 //            var_dump($member);
-            if (20  <= $counter ){break;}
         }
 //        var_dump($mailchimp->getLists());
         //
