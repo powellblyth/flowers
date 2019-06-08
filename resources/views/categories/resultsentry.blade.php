@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('pagetitle', 'Results section for ' . $section)
+@section('pagetitle', 'Results section for ' . $section->name)
 @section('content')
 <a href="/categories">&laquo; Categories</a>
 <br />

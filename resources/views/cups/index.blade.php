@@ -51,6 +51,15 @@
                             @endif
                         </div>
                         <div class="card-body">
+                            @if ($isAdmin)
+                            <div class="row">
+                                <div class="col-12 text-right">
+                                    <a href="{{ route('cups.show', $cup) }}"
+                                       class="btn btn-sm btn-primary">{{ __('Show Cup') }}</a>
+                                </div>
+                            </div>
+                            @endif
+
 
                             <div class="row">
                                 <div class="col-lg-12">

@@ -14,11 +14,11 @@ class AddMoreUserData extends Migration
     public function up()
     {
         Schema::table('entrants', function (Blueprint $table) {
-    $table->string('telephone')->nullable();
-    $table->string('address')->nullable();
-    $table->string('email')->nullable();
-    $table->string('age')->nullable();
-});//
+            $table->string('telephone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('age')->nullable();
+        });//
     }
 
     /**
@@ -26,10 +26,9 @@ class AddMoreUserData extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::table('entrants', function (Blueprint $table) {
-         $table->dropColumn(['telephone', 'address', 'email', 'age']);
+            $table->dropColumn(['telephone', 'address', 'email', 'age']);
         });
     }
 }

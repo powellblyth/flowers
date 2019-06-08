@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Events\UserSaving;
+use App\Notifications\MustChangePasswordNotification;
 use App\Observers\UserObserver;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,6 +19,7 @@ class User extends Authenticatable {
     protected $dispatchesEvents = [
         'saving' => UserSaving::class
     ];
+
     public function isAdmin() {
         return $this->type === self::ADMIN_TYPE;
     }
@@ -42,6 +44,18 @@ class User extends Authenticatable {
     protected $hidden = [
         'password', 'remember_token', 'auth_token', 'password_reset_token'
     ];
+
+    /**
+     * If we are not on production then return a sensible false string
+     * @return string
+     */
+    public function getSafeEmail(): string {
+        $email = $this->email;
+        if ('production' !== env('APP_ENV')) {
+            $email = str_replace(substr($email, strpos($email, '@')), '@powellblyth.com', $email);
+        }
+        return $email;
+    }
 
     public function getUrl() {
         return route('user.edit', $this);
@@ -97,5 +111,8 @@ class User extends Authenticatable {
         return $memberships;
     }
 
+    public function routeNotificationForMail() {
+        return $this->email;
+    }
 
 }
