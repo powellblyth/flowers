@@ -13,15 +13,14 @@ class AddUserIDToPayments extends Migration
      */
     public function up()
     {
+        DB::statement('ALTER TABLE `payments` MODIFY `entrant_id` INT(11) NULL');
         Schema::table('payments', function (Blueprint $table) {
-            $table->integer('entrant_id')->unsigned()->nullable();
             $table->unsignedInteger('user_id')->nullable();
         });
         DB::statement('UPDATE payments SET user_id = (select user_id from entrants where entrants.id=payments.entrant_id) where user_id IS NULL');
         Schema::table('payments', function (Blueprint $table) {
             $table->index(['user_id', 'year', 'entrant_id', ], 'entrant_user_year');
         });
-        DB::statement('ALTER TABLE `payments` MODIFY `entrant_id` BIGINT(255) NULL;');
 
     }
 
