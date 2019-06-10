@@ -13,6 +13,8 @@ class SomeIndeces extends Migration
      */
     public function up()
     {
+        DB::statement('ALTER TABLE `users` CHANGE `email` `email` VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL');
+        DB::statement('ALTER TABLE `users` CHANGE `password` `password` VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL');
         Schema::table('users', function (Blueprint $table) {
             $table->index(['lastname', 'firstname'], 'user_name_search');
             $table->index(['email', 'password'], 'user_login');
