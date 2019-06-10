@@ -115,12 +115,23 @@ class User extends Authenticatable {
         return $memberships;
     }
 
-    public function memberships(){
+    public function memberships(): \Illuminate\Database\Eloquent\Relations\hasMany {
         return $this->hasMany('App\MembershipPurchase');
     }
 
     public function routeNotificationForMail() {
         return $this->email;
+    }
+
+    public function getMemberNumber(): ?string {
+        $membership = $this->memberships()->where('year', env('CURRENT_YEAR'))->first();
+//        var_dump($membership);die();
+        if ($membership instanceof \App\MembershipPurchase) {
+//            die('moo');
+            return $membership->getNumber();
+        } else {
+            return null;
+        }
     }
 
 }

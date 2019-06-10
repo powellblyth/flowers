@@ -11,11 +11,11 @@ class MembershipPurchase extends Model
         if ((int)$this->year == (int)getenv('CURRENT_YEAR')) {
             switch ($this->type) {
                 case 'family':
-                    $membershipNumber = 'FM-' . str_pad((string)$this->user_id, '5', '0', STR_PAD_LEFT);
+                    $membershipNumber = 'FM-' . str_pad((string)$this->id, '5', '0', STR_PAD_LEFT);
                     break;
                 case 'individual':
                 default:
-                    $membershipNumber = 'SM-' . str_pad((string)$this->entrant_id, '5', '0', STR_PAD_LEFT);
+                    $membershipNumber = 'SM-' . str_pad((string)$this->id, '5', '0', STR_PAD_LEFT);
                     break;
             }
         }

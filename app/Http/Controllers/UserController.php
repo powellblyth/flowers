@@ -33,6 +33,7 @@ class UserController extends Controller {
     public function index(User $model): View {
         return view('users.index', ['users' => $model::orderBy('lastname')->where('is_anonymised', false)->orderBy('firstname')->get()]);
     }
+
     public function isAdmin(): bool {
         return Auth::check() && Auth::User()->isAdmin();
     }
@@ -50,50 +51,41 @@ class UserController extends Controller {
         $entryFee = 0;
         $totalPaid = 0;
 
-        $currentYear =  env('CURRENT_YEAR', 2018);
-        foreach ($thing->entrants() as $entrant) {
-            $payments = $thing->payments()->where('year',$currentYear)->get();
-            foreach ($payments as $payment) {
-                $totalPaid += $payment->amount;
-            }
-            $entries = $entrant->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
+        $currentYear = env('CURRENT_YEAR', 2018);
+        foreach ($thing->entrants as $entrant) {
+
+            $entries = $entrant->entries()->where('year', $currentYear)->get();
             foreach ($entries as $entry) {
-                if ($entry->category_id) {
-                    $price = $entry->category->getPrice($entry->getPriceType());
-                    $entryFee += $price;
-                }
+                $price = $entry->category->getPrice($entry->getPriceType());
+                $entryFee += $price;
             }
         }
 
-        $payments = $thing->payments()->where('year', env('CURRENT_YEAR', 2018))->get();
+        $payments = $thing->payments()->where('year', $currentYear)->get();
         foreach ($payments as $payment) {
             $totalPaid += $payment->amount;
         }
 
-        $memberNumber = null;
+        $memberNumber = $thing->getMemberNumber();
         $memberships = $thing->memberships()->where('year', $currentYear)->get();
-        foreach ($memberships as $membership)
-        {
+        foreach ($memberships as $membership) {
             $membershipFee += $membership->amount;
-            if ($membership->type=='family'){
-                $memberNumber = $membership->getMemberNumber();
-            }
         }
-//var_dump([$model->id]);
+//var_dump([$currentYear,     $membershipFee]);die();
         return view('users.show', [
             'thing' => $thing,
             'paid' => $totalPaid,
-            'membership_fee' =>$membershipFee,
+            'membership_fee' => $membershipFee,
             'entry_fee' => $entryFee,
             'member_number' => $memberNumber,
-            'total_paid' =>$totalPaid,
+            'total_paid' => $totalPaid,
             'payments' => $payments,
             'membership_purchases' => $memberships,
             'isAdmin' => $this->isAdmin(),
             'payment_types' => $this->paymentTypes,
-            'membership_types' =>$this->membershipTypes,
+            'membership_types' =>['family'=>'Family'],
 
-            ]);
+        ]);
     }
 
     /**

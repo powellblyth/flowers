@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'entrants', 'titlePage' =>  $thing->getName() ])
+@extends('layouts.app', ['activePage' => 'users', 'titlePage' =>  $thing->getName() ])
 
 @section('pagetitle', 'Entrant ' . $thing->getName())
 @section('content')
@@ -6,24 +6,6 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="card card-stats">
-                        <div class="card-header card-header-warning card-header-icon">
-                            <div class="card-icon">
-                                <i class="material-icons">euro_symbol</i>
-                            </div>
-                            <p class="card-category">Payments</p>
-                            <h3 class="card-title">&pound;{{number_format($paid,2)}}
-                            </h3>
-                        </div>
-                        <div class="card-footer">
-                            <div class="stats">
-                                {{--                                <i class="material-icons text-danger">warning</i>--}}
-                                {{--                                <a href="{{route('entrants.create')}}">Add another</a>--}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="card card-stats">
                         <div class="card-header card-header-success card-header-icon">
@@ -48,6 +30,29 @@
                             </div>
                             <p class="card-category">Entries</p>
                             <h3 class="card-title"> &pound;{{number_format($entry_fee/100,2)}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                {{--                                <i class="material-icons">date_range</i> Last 24 Hours--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-warning card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">euro_symbol</i>
+                            </div>
+                            <p class="card-category">Payments</p>
+                            <h3 class="card-title">&pound;{{number_format($paid,2)}}
+                            </h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                {{--                                <i class="material-icons text-danger">warning</i>--}}
+                                {{--                                <a href="{{route('entrants.create')}}">Add another</a>--}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -145,28 +150,35 @@
                         <div class="card-body">
                             @foreach ($thing->entrants as $entrant)
                                 <h3>{{$entrant->getName()}}</h3>
-                            @php $entry_data = $entrant->entries()->where('year', env('CURRENT_YEAR'))@endphp
+                                @php
+                                    $entry_data = $entrant->entries()->where('year', env('CURRENT_YEAR'))->get();
+                                    $totalFee = 0;
+                                @endphp
                                 @if (count($entry_data ) <= 0)
                                     <p>{{$entrant->firstname}} has not entered any categories yet</p>
                                 @else
-                                    <p> <a href="{{route('entrants.show', $entrant->id)}}">{{count($entry_data)}} entry(ies)</a></p>
-{{--                            @foreach ($entrant->entries()->where('year', env('CURRENT_YEAR')) as $entry)--}}
+                                    @foreach ($entry_data as $entry)
+                                        @php $totalFee += $entry->getActualPrice() @endphp
+                                    @endforeach
+                                    <p><a href="{{route('entrants.show', $entrant->id)}}">{{count($entry_data)}}
+                                            entry(ies)</a> TOTAL:£{{number_format($totalFee/100, 2)}}</p>
+                                    {{--                            @foreach ($entrant->entries()->where('year', env('CURRENT_YEAR')) as $entry)--}}
 
-{{--                                @foreach ($entry_data as $entry)--}}
+                                    {{--                                @foreach ($entry_data as $entry)--}}
 
-{{--                                    <p> {{$entry->category->name}} ({{$entry['price']}}p)--}}
-{{--                                        @if ($entry['is_late'])--}}
-{{--                                            (late)--}}
+                                    {{--                                    <p> {{$entry->category->name}} ({{$entry['price']}}p)--}}
+                                    {{--                                        @if ($entry['is_late'])--}}
+                                    {{--                                            (late)--}}
 
-{{--                                        @endif--}}
-{{--                                        @if ($entry['has_won'])--}}
-{{--                                            <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>--}}
-{{--                                            (&pound;{{number_format($entry['winning_amount']/100,2)}})--}}
-{{--                                        @endif--}}
-{{--                                    </p>--}}
-{{--                                @endforeach--}}
-{{--                            @endif--}}
-{{--                                @endforeach--}}
+                                    {{--                                        @endif--}}
+                                    {{--                                        @if ($entry['has_won'])--}}
+                                    {{--                                            <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>--}}
+                                    {{--                                            (&pound;{{number_format($entry['winning_amount']/100,2)}})--}}
+                                    {{--                                        @endif--}}
+                                    {{--                                    </p>--}}
+                                    {{--                                @endforeach--}}
+                                    {{--                            @endif--}}
+                                    {{--                                @endforeach--}}
                                 @endif
                             @endforeach
                         </div>
@@ -214,7 +226,7 @@
                                         'route' => 'payments.store'
                                     ]) }}
 
-                                    {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
+                                    {{ Form::hidden('user', $thing->id, ['class' => 'form-control']) }}
                                     {{ Form::label('amount', 'Amount: &pound;', ['class' => 'control-label']) }}
                                     {{ Form::text('amount', null, ['class' => 'form-control']) }}
                                     {{Form::select('source', $payment_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
@@ -233,13 +245,10 @@
                             <div class="card">
                                 <div class="card-header-success">New Membership Purchase</div>
                                 <div class="card-body">
-                                    <p>Note that your membership will not be processed until the money has been
-                                        received</p>
-                                    {{ Form::open([
-                                        'route' => 'membershippurchases.store'
-                                    ]) }}
+                                    <p>Note that your membership will not be processed until the money has been received</p>
+                                    {{ Form::open([ 'route' => 'membershippurchases.store' ]) }}
 
-                                    {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
+                                    {{ Form::hidden('user', $thing->id, ['class' => 'form-control']) }}
                                     {{ Form::label('type', 'Type:', ['class' => 'control-label']) }}
                                     {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
                                     <br/>

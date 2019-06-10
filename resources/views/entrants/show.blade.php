@@ -195,6 +195,7 @@
                                     ]) }}
 
                                     {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
+                                    {{ Form::hidden('user', $thing->user_id, ['class' => 'form-control']) }}
                                     {{ Form::label('type', 'Type:', ['class' => 'control-label']) }}
                                     {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
                                     <br/>

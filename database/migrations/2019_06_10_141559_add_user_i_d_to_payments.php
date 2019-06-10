@@ -20,6 +20,7 @@ class AddUserIDToPayments extends Migration
         Schema::table('payments', function (Blueprint $table) {
             $table->index(['user_id', 'year', 'entrant_id', ], 'entrant_user_year');
         });
+        DB::statement('ALTER TABLE `payments` MODIFY `entrant_id` BIGINT(255) NULL;');
 
     }
 

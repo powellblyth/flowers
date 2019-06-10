@@ -14,6 +14,7 @@ class RejigMembership extends Migration {
         Schema::table('membership_purchases', function (Blueprint $table) {
             $table->unsignedInteger('user_id')->nullable();
         });
+        DB::statement('ALTER TABLE `membership_purchases` MODIFY `entrant_id` BIGINT(255) NULL;');
         Schema::dropIfExists('memberships');
         DB::statement('UPDATE membership_purchases SET user_id = (select user_id from entrants where entrants.id=membership_purchases.entrant_id) where user_id IS NULL');
         Schema::table('membership_purchases', function (Blueprint $table) {

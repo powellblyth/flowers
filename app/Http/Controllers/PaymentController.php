@@ -18,8 +18,12 @@ class PaymentController extends Controller
         $thing->amount = $request->amount;
         $thing->source = $request->source;
         $thing->entrant_id = $request->entrant;
+        $thing->user_id = $request->user;
         $thing->year = (int) env('CURRENT_YEAR', 2018);
         $thing->save();
-        return redirect()->route('entrants.show', array('thing' => $request->entrant));
+        if (  $request->entrant) {
+            return redirect()->route('entrants.show', array('thing' => $request->entrant));
+        }
+        else{return redirect()->route('user.show', array('thing' => $request->user));}
     }
 }

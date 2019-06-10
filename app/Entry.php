@@ -60,6 +60,11 @@ class Entry extends Model {
         ];
     }
 
+    public function getActualPrice(){
+//        die(var_dump([$this->getPriceType(),$this->category->getPrice($this->getPriceType()) ]));
+        return $this->category->getPrice($this->getPriceType());
+    }
+
     public function getCutoffDate(int $year): string {
         $date = '';
         switch ($year) {

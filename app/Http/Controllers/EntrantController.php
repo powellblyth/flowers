@@ -251,13 +251,14 @@ class EntrantController extends Controller {
 
             $entries = $thing->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
             $entryData = [];
-            $dbug = 0;
+
             foreach ($entries as $entry) {
                 if ($entry->category_id) {
                     // Hydrate
                     $category = $entry->category;
 
                     $price = $category->getPrice($entry->getPriceType());
+
                     $entryFee += $price;
 
                     if ('' !== trim($entry->winningplace)) {
@@ -291,7 +292,7 @@ class EntrantController extends Controller {
                     'payment_types' => $this->paymentTypes,
                     'total_prizes' => $totalPrizes,
 //                    'membership_fee' => $membershipFee,
-                    'membership_types' =>['single'],
+                    'membership_types' =>['single'=>'Single'],
                     //                'can_email' => $thing->can_email,
                     //                'can_sms' => $thing->can_sms,
                     //                'can_phone' => $thing->can_phone,
