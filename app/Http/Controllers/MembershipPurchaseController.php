@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MembershipPurchase;
 use Illuminate\Http\Request;
 
 class MembershipPurchaseController extends Controller
@@ -26,14 +27,19 @@ class MembershipPurchaseController extends Controller
     {
         // Validate the request...
 
-        $thing = new $this->baseClass();
+        $thing = new MembershipPurchase();
 
         $thing->type = $request->type;
         $thing->amount = $this->getAmount($request->type);
-        $thing->entrant_id = $request->entrant;
+        if( 'single' == $request->type) {
+            $thing->entrant_id = $request->entrant;
+        }
+        $thing->user_id = $request->user;
         $thing->year = (int) env('CURRENT_YEAR', 2018);
         $thing->save();
-        return redirect()->route('entrants.show', array('thing' => $request->entrant));
+        if( 'single' == $request->type) {
+            return redirect()->route('entrants.show', array('thing' => $request->entrant));
+        }
     }
 
 }

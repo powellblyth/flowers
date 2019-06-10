@@ -172,9 +172,8 @@ class EntrantController extends Controller {
         // Validate the request...
         if (Auth::User()->isAdmin()) {
             $thing = Entrant::where('id', $request->id)->first();
-        }
-        else{
-           $thing = Auth::User()->entrants()->where('id', $request->id)->first();
+        } else {
+            $thing = Auth::User()->entrants()->where('id', $request->id)->first();
         }
 
         $thing->firstname = $request->firstname;
@@ -221,21 +220,19 @@ class EntrantController extends Controller {
      */
     public function show(int $id, array $showData = []) {
 
-        return redirect('billing');
+//        return redirect('billing');
         $totalPrizes = 0;
         $membershipFee = 0;
         $entryFee = 0;
 
         if (Auth::User()->isAdmin()) {
             $thing = Entrant::where('id', $id)->first();
-        }
-        else{
+        } else {
             $thing = Auth::User()->entrants()->where('id', $id)->first();
         }
-        if (!$thing instanceof Entrant)
-        {
+        if (!$thing instanceof Entrant) {
             return view('404');
-        }else {
+        } else {
             //        $showData = array_merge($extraData,  array('thing' => $thing));
 
             $categoriesAry = [0 => 'Select...'];
@@ -243,18 +240,13 @@ class EntrantController extends Controller {
             foreach ($categories as $category) {
                 $categoriesAry[$category->id] = $category->getNumberedLabel();
             }
-            $payments = $thing->payments()->where('year', env('CURRENT_YEAR', 2018))->get();
-            $totalPaid = 0;
-            foreach ($payments as $payment) {
-                $totalPaid += $payment->amount;
-            }
 
-            $membershipPayments = $thing->membershipPurchases()->where('year', env('CURRENT_YEAR', 2018))->get();
+            $membershipPurchases = $thing->membershipPurchases()->where('year', env('CURRENT_YEAR', 2018))->get();
             $membershipPaymentData = [];
-            foreach ($membershipPayments as $payment) {
-                $amount = (($payment->type == 'single' ? 300 : 500));
+            foreach ($membershipPurchases as $membershipPurchase) {
+                $amount = (($membershipPurchase->type == 'single' ? 300 : 500));
                 $membershipFee += $amount;
-                $membershipPaymentData[] = ['type' => $payment->type, 'amount' => $amount];
+                $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
             }
 
             $entries = $thing->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
@@ -263,7 +255,7 @@ class EntrantController extends Controller {
             foreach ($entries as $entry) {
                 if ($entry->category_id) {
                     // Hydrate
-                    $category = $entry->category()->where('year', env('CURRENT_YEAR', 2018))->first();
+                    $category = $entry->category;
 
                     $price = $category->getPrice($entry->getPriceType());
                     $entryFee += $price;
@@ -285,20 +277,21 @@ class EntrantController extends Controller {
             }
             $memberNumber = null;
             $memberNumber = $thing->getMemberNumber();
-            if (is_null($memberNumber)){$memberNumber = 'Not currently a member';}
+            if (is_null($memberNumber)) {
+                $memberNumber = 'Not currently a member';
+            }
             return view($this->templateDir . '.show', array_merge($showData, array(
                     'entry_data' => $entryData,
                     'entries' => $entries,
                     'categories' => $categoriesAry,
                     'membership_purchases' => $membershipPaymentData,
-                    'payments' => $payments,
                     'entry_fee' => $entryFee,
                     'total_price' => $entryFee + $membershipFee,
-                    'paid' => $totalPaid,
+//                    'paid' => $totalPaid,
                     'payment_types' => $this->paymentTypes,
                     'total_prizes' => $totalPrizes,
-                    'membership_fee' => $membershipFee,
-                    'membership_types' => $this->membershipTypes,
+//                    'membership_fee' => $membershipFee,
+                    'membership_types' =>['single'],
                     //                'can_email' => $thing->can_email,
                     //                'can_sms' => $thing->can_sms,
                     //                'can_phone' => $thing->can_phone,
@@ -321,25 +314,16 @@ class EntrantController extends Controller {
 
         foreach ($entries as $entry) {
             if ($entry->category) {
-                $categoryData[$entry->category->id] = $entry->category()->where('year', env('CURRENT_YEAR', 2018))->first();
-                $cardFronts[] = [
-                    'class_number' => $categoryData[$entry->category->id]->number,
-                    'entrant_number' => $entrant->getEntrantNumber(),
-                    'entrant_age' => (($entrant->age && 18 > (int)$entrant->age) ? $entrant->age : '')
-                ];
-                $cardBacks[] = ['class_number' => $categoryData[$entry->category->id]->number,
-                    'class_name' => $categoryData[$entry->category->id]->name,
-                    'entrant_name' => $entrant->getName(),
-                    'entrant_number' => $entrant->getEntrantNumber()
-                ];
+                $categoryData[$entry->category->id] = $entry->category;
+                $cardFronts[] = $entry->getCardFrontData();
+                $cardBacks[] = $entry->getCardBackData();
             }
         }
 
-        return view($this->templateDir . '.printcards', ['entrant' => $entrant,
+        return view('cards.printcards', [
             'card_fronts' => $cardFronts,
             'card_backs' => $cardBacks,
-            'category_data' => $categoryData,
-            'entries' => $entries]);
+            ]);
     }
 
     /**
@@ -351,14 +335,12 @@ class EntrantController extends Controller {
     public function edit(int $id) {
         if (Auth::User()->isAdmin()) {
             $thing = Entrant::where('id', $id)->first();
-        }
-        else{
+        } else {
             $thing = Auth::User()->entrants()->where('id', $id)->first();
         }
-        if (!$thing instanceof Entrant){
+        if (!$thing instanceof Entrant) {
             return view('404');
-        }
-        else {
+        } else {
 
 //      $showData = array_merge($extraData,  array('thing' => $thing));
 //      return view($this->templateDir.'.show', $showData);
@@ -367,5 +349,6 @@ class EntrantController extends Controller {
                 'thing' => $thing,
                 'privacyContent' => config('static_content.privacy_content'),
                 'isAdmin' => $this->isAdmin()));
-        }   }
+        }
+    }
 }
