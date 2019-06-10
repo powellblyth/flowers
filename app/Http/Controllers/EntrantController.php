@@ -77,7 +77,10 @@ class EntrantController extends Controller {
                 ->orWhere('entrants.id', '=', "%$searchterm%")
                 ->get();
         } else {
-            $things = $this->baseClass::orderBy('familyname', 'asc')->orderBy('firstname', 'asc')->get();
+            $things = $this->baseClass::where('is_anonymised', false)
+                ->orderBy('familyname', 'asc')
+                ->orderBy('firstname', 'asc')
+                ->get();
         }
         return view($this->templateDir . '.index',
             array('things' => $things,

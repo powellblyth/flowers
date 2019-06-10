@@ -31,10 +31,12 @@
                                 <a href="{{route('entrant.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
                             @endif
-                                <a href="{{route('entrants.edit', $thing)}}"
-                                   class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                            <a href="{{route('entrants.edit', $thing)}}"
+                               class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                            @if ($thing->user)
                                 <a href="{{route('user.show', $thing->user)}}"
                                    class="btn btn-primary">Show Family Manager</a>
+                            @endif
                         </div>
                     </div>
                     <div class="card">
@@ -85,15 +87,15 @@
                                 @foreach ($entry_data as $entry)
 
                                     {{$entry['name']}} ({{$entry['price']}}p)
-                                        @if ($entry['is_late'])
-                                            (late)
+                                    @if ($entry['is_late'])
+                                        (late)
 
-                                        @endif
-                                        @if ($entry['has_won'])
-                                            <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>
-                                            (&pound;{{number_format($entry['winning_amount']/100,2)}})
-                                        @endif
-                                    <br />
+                                    @endif
+                                    @if ($entry['has_won'])
+                                        <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>
+                                        (&pound;{{number_format($entry['winning_amount']/100,2)}})
+                                    @endif
+                                    <br/>
                                 @endforeach
                             @endif
                         </div>

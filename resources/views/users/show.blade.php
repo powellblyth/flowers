@@ -1,4 +1,10 @@
-@extends('layouts.app', ['activePage' => 'users', 'titlePage' =>  $thing->getName() ])
+@php
+$activePage = 'entrants';
+if ($thing->id <> Auth::User()->id){
+$activePage = 'users';
+}
+@endphp
+@extends('layouts.app', ['activePage' => $activePage, 'titlePage' =>  $thing->getName() ])
 
 @section('pagetitle', 'Entrant ' . $thing->getName())
 @section('content')
