@@ -83,6 +83,12 @@
                                                             <i class="material-icons">edit</i>
                                                             <div class="ripple-container"></div>
                                                         </a>
+                                                        <a rel="tooltip" class="btn btn-success btn-link"
+                                                           href="{{ route('user.show', $user) }}" data-original-title=""
+                                                           title="show {{$user->firstname}}">
+                                                            <i class="material-icons">person</i>
+                                                            <div class="ripple-container"></div>
+                                                        </a>
                                                         <button type="button" class="btn btn-danger btn-link"
                                                                 data-original-title="" title=""
                                                                 onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">

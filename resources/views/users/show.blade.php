@@ -8,6 +8,40 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="card card-stats">
+                        <div class="card-header card-header-warning card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">euro_symbol</i>
+                            </div>
+                            <p class="card-category">Payments</p>
+                            <h3 class="card-title">&pound;{{number_format($paid,2)}}
+                            </h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                {{--                                <i class="material-icons text-danger">warning</i>--}}
+                                {{--                                <a href="{{route('entrants.create')}}">Add another</a>--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-success card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">store</i>
+                            </div>
+                            <p class="card-category">Membership Purchases</p>
+                            <h3 class="card-title">&pound;{{number_format($membership_fee/100,2)}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                {{--                                <i class="material-icons">date_range</i> Last 24 Hours--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
                         <div class="card-header card-header-success card-header-icon">
                             <div class="card-icon">
                                 <i class="material-icons">list_alt</i>
@@ -15,10 +49,22 @@
                             <p class="card-category">Entries</p>
                             <h3 class="card-title"> &pound;{{number_format($entry_fee/100,2)}}</h3>
                         </div>
-                        <div class="card-footer">
-                            <div class="stats">
-                                <i class="material-icons">local_offer</i> {{count($entries)}} entries
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header @if((($entry_fee + $membership_fee)/100) - $paid > 0.01)card-header-danger @else  card-header-success @endif card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">info_outline</i>
                             </div>
+                            <p class="card-category">Balance Due</p>
+                            <h3 class="card-title">
+                                &pound;{{number_format((($entry_fee + $membership_fee)/100) - $paid,2)}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            {{--                            <div class="stats">--}}
+                            {{--                                <i class="material-icons">update</i> Just Updated--}}
+                            {{--                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -28,13 +74,12 @@
                     <div class="row">
                         <div class="col-12 text-right">
                             @if (Auth::User()->isAdmin())
-                                <a href="{{route('entrant.print', $thing)}}" target="_blank"
+
+                                <a href="{{route('user.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
                             @endif
-                                <a href="{{route('entrants.edit', $thing)}}"
-                                   class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
-                                <a href="{{route('user.show', $thing->user)}}"
-                                   class="btn btn-primary">Show Family Manager</a>
+                            <a href="{{route('user.edit', $thing)}}"
+                               class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
                         </div>
                     </div>
                     <div class="card">
@@ -44,9 +89,6 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <b>Entrant Number: {{ $thing->getEntrantNumber() }}</b>
-                                    </div>
                                     <div class="col-lg-6  col-md-6 col-sm-12">
                                         <b>Member Number:</b> {{ $member_number }}
                                     </div>
@@ -54,19 +96,6 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $thing->getName() }}</div>
-                                    @if(!is_null($thing->age))
-                                        <div class="col-lg-6 col-md-6  col-sm-12">Age:</b> {{ $thing->age }}</div>
-                                    @endif
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6  col-sm-12">Family Manager:</b>
-                                        @if(!is_null($thing->user))
-                                            <a href="{{$thing->user->getUrl()}}">{{ $thing->user->getName() }}</a>
-                                        @else
-                                            None Set
-                                        @endif
-                                    </div>
 
                                 </div>
                             </div>
@@ -75,27 +104,71 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-header-success">Payments</div>
+                        <div class="card-body">
+                            @if (count($payments) <= 0)
+                                {{$thing->firstname}} has not made any payments yet
+                            @else
+                                @foreach ($payments as $payment)
+                                    <p>
+                                        <b>&pound;{{number_format($payment->amount,2)}}</b> {{date_format($payment->created_at,'jS M Y')}}
+                                    </p>
+                                @endforeach
+                            @endif
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-header-success">Membership Purchases</div>
+                        <div class="card-body">
+                            @if (count($membership_purchases) <= 0)
+                                {{$thing->firstname}} has not made any membership purchases yet
+                            @else
+                                @foreach ($membership_purchases as $purchase)
+                                    <p>
+                                        {{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
+                                @endforeach
+                            @endif
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header-success">Entries</div>
                         <div class="card-body">
-                            @if (count($entry_data ) <= 0)
-                                {{$thing->firstname}} has not entered any categories yet
-                            @else
-                                @foreach ($entry_data as $entry)
+                            @foreach ($thing->entrants as $entrant)
+                                <h3>{{$entrant->getName()}}</h3>
+                            @php $entry_data = $entrant->entries()->where('year', env('CURRENT_YEAR'))@endphp
+                                @if (count($entry_data ) <= 0)
+                                    <p>{{$entrant->firstname}} has not entered any categories yet</p>
+                                @else
+                                    <p> <a href="{{route('entrants.show', $entrant->id)}}">{{count($entry_data)}} entry(ies)</a></p>
+{{--                            @foreach ($entrant->entries()->where('year', env('CURRENT_YEAR')) as $entry)--}}
 
-                                    <p> {{$entry['name']}} ({{$entry['price']}}p)
-                                        @if ($entry['is_late'])
-                                            (late)
+{{--                                @foreach ($entry_data as $entry)--}}
 
-                                        @endif
-                                        @if ($entry['has_won'])
-                                            <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>
-                                            (&pound;{{number_format($entry['winning_amount']/100,2)}})
-                                        @endif
-                                    </p>
-                                @endforeach
-                            @endif
+{{--                                    <p> {{$entry->category->name}} ({{$entry['price']}}p)--}}
+{{--                                        @if ($entry['is_late'])--}}
+{{--                                            (late)--}}
+
+{{--                                        @endif--}}
+{{--                                        @if ($entry['has_won'])--}}
+{{--                                            <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>--}}
+{{--                                            (&pound;{{number_format($entry['winning_amount']/100,2)}})--}}
+{{--                                        @endif--}}
+{{--                                    </p>--}}
+{{--                                @endforeach--}}
+{{--                            @endif--}}
+{{--                                @endforeach--}}
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -126,36 +199,8 @@
                 {{--{{ Form::submit('Store Preferences', ['class' => 'button btn btn-primary']) }}--}}
                 {{--{{ Form::close()}}--}}
 
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-header-success">Create New Entries</div>
-                            <div class="card-body">
-                                <p>Choose the categories you wish to add entries for below</p>
 
-                                {{ Form::open([
-                                    'route' => 'entry.creates'
-                                ]) }}
-                                <div class="row">
-
-                                    {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
-
-                                    @for ($i = 0; $i < 40; $i++)
-                                        <div class="col-sm-3 col-md-2 col-lg-1">{{ Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px']) }}</div>
-                                    @endfor
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <br/>
-                                        {{ Form::submit('Create Entry', ['class' => 'button btn btn-primary']) }}
-                                    </div>
-                                </div>
-                                {{ Form::close() }}
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{ Form::close() }}
                 <div class="row">
                     @if($isAdmin)
 

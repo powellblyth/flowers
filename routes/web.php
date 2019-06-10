@@ -96,8 +96,12 @@ Route::get('/users/',
         'uses' => 'UserController@index'])->middleware('is_admin');
 
 Route::get('/users/{id}',
-    ['as' => 'users.show',
+    ['as' => 'user.show',
         'uses' => 'UserController@show'])->middleware('is_admin');
+Route::get('/users/{id}/print',
+    ['as' => 'user.print',
+        'uses' => 'UserController@printcards'])->middleware('is_admin');
+
 
 
 Route::get('/users/{user}/edit',

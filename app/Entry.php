@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -24,7 +25,7 @@ class Entry extends Model {
         return $result;
     }
 
-    public function getPriceType() {
+    public function getPriceType(): string {
 
         if ($this->isLate()) {
             return Category::PRICE_LATE_PRICE;
@@ -32,21 +33,36 @@ class Entry extends Model {
             return Category::PRICE_EARLY_PRICE;
         }
     }
-    
-    public function isLate()
-    {
+
+    public function isLate(): bool {
         $created = new \DateTime($this->created_at);
 
         $cutoffDate = new \DateTime($this->getCutoffDate($this->year));
-        
+
         return $created > $cutoffDate;
 
     }
 
+    public function getCardBackData(): array {
+        return [
+            'class_number' => $this->category->number,
+            'class_name' => $this->category->name,
+            'entrant_name' => $this->entrant->getName(),
+            'entrant_number' => $this->entrant->getEntrantNumber(),
+            'entrant_age' => (($this->entrant->age && 18 > (int)$this->entrant->age) ? $this->entrant->age : ''),
+        ];
+    }
+
+    public function getCardFrontData(): array {
+        return ['class_number' => $this->category->number,
+            'entrant_number' => $this->entrant->getEntrantNumber(),
+            'entrant_age' => (($this->entrant->age && 18 > (int)$this->entrant->age) ? $this->entrant->age : ''),
+        ];
+    }
+
     public function getCutoffDate(int $year): string {
         $date = '';
-        switch ($year)
-        {
+        switch ($year) {
             case 2019:
                 $date = '3 July 2019 23:59:59';
                 break;
@@ -58,9 +74,11 @@ class Entry extends Model {
         }
         return $date;
     }
+
     public function entrant(): \Illuminate\Database\Eloquent\Relations\belongsTo {
         return $this->belongsTo('App\Entrant');
     }
+
     public function category(): \Illuminate\Database\Eloquent\Relations\belongsTo {
         return $this->belongsTo('App\Category');
     }

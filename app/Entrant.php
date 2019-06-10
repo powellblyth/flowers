@@ -57,10 +57,10 @@ class Entrant extends Model {
     }
 
     public function individualMemberships() {
-        return $this->hasMany('\App\Membership', 'entrant_id');
+        return $this->hasMany('\App\MembershipPurchase', 'entrant_id');
     }
 
-    public function familyMembership(): ?Membership {
+    public function familyMembership(): ?MembershipPurchase {
         if ($this->user instanceof User) {
             return $this->user->familyMemberships()->first();
         } else {
@@ -68,13 +68,13 @@ class Entrant extends Model {
         }
     }
 
-    public function getCurrentMembership(): ?Membership {
-        $membership = $this->individualMemberships()->where('year_start', env('CURRENT_YEAR'))
+    public function getCurrentMembership(): ?MembershipPurchase {
+        $membership = $this->individualMemberships()->where('year', env('CURRENT_YEAR'))
             ->where('type', 'individual')
             ->first();
 //        var_dump(get_class($membership));
 //        die('here');
-        if (!$membership instanceof Membership) {
+        if (!$membership instanceof MembershipPurchase) {
 //            die('not a member');
             $membership = $this->familyMembership();
         }
@@ -87,7 +87,7 @@ class Entrant extends Model {
 
     public function getMemberNumber() {
         $membership = $this->getCurrentMembership();
-        if ($membership instanceof \App\Membership) {
+        if ($membership instanceof \App\MembershipPurchase) {
             return $membership->getNumber();
         } else {
             return null;

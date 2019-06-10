@@ -103,12 +103,20 @@ class User extends Authenticatable {
         return $this->hasMany('App\Entrant');
     }
 
+    public function payments(): \Illuminate\Database\Eloquent\Relations\hasMany {
+        return $this->hasMany('App\Payment');
+    }
+
     public function familyMemberships(bool $current = true) {
-        $memberships = $this->hasMany('App\Membership', 'user_id')->where('type', 'family');
+        $memberships = $this->hasMany('App\MembershipPurchase', 'user_id')->where('type', 'family');
         if ($current) {
-            $memberships = $memberships->where('year_start', env('CURRENT_YEAR'));
+            $memberships = $memberships->where('year', env('CURRENT_YEAR'));
         }
         return $memberships;
+    }
+
+    public function memberships(){
+        return $this->hasMany('App\MembershipPurchase');
     }
 
     public function routeNotificationForMail() {
