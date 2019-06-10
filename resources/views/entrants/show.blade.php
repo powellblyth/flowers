@@ -84,7 +84,7 @@
                             @else
                                 @foreach ($entry_data as $entry)
 
-                                    <p> {{$entry['name']}} ({{$entry['price']}}p)
+                                    {{$entry['name']}} ({{$entry['price']}}p)
                                         @if ($entry['is_late'])
                                             (late)
 
@@ -93,7 +93,7 @@
                                             <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>
                                             (&pound;{{number_format($entry['winning_amount']/100,2)}})
                                         @endif
-                                    </p>
+                                    <br />
                                 @endforeach
                             @endif
                         </div>

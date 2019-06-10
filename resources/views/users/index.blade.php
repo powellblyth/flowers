@@ -59,7 +59,7 @@
                                             <td class="td-actions">
                                                 {{ $user->entrants()->count() }}
                                                 <a rel="tooltip" class="btn btn-success btn-link"
-                                                   href="{{ route('entrants.index') }}?user_id={{$user->id}}" data-original-title=""
+                                                   href="{{ route('user.show', $user) }}" data-original-title=""
                                                    title="show family members">
                                                     <i class="material-icons">people</i>
                                                     <div class="ripple-container"></div>

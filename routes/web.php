@@ -59,110 +59,93 @@ Route::post('/cups/{id}/directResultSetWinnerPerson',
 Route::resource('payments', 'PaymentController')->middleware('auth');
 
 Route::get('/entrants/search',
-    ['as' => 'entrants.search',
-        'uses' => 'EntrantController@search'])->middleware('auth');
+    ['as' => 'entrants.search', 'uses' => 'EntrantController@search'])->middleware('auth');
 Route::get('/entrants',
-    ['as' => 'entrants.index',
-        'uses' => 'EntrantController@index'])->middleware('auth');
+    ['as' => 'entrants.index', 'uses' => 'EntrantController@index'])->middleware('is_admin');
 Route::get('/entrants/create',
-    ['as' => 'entrants.create',
-        'uses' => 'EntrantController@create'])->middleware('auth');
+    ['as' => 'entrants.create', 'uses' => 'EntrantController@create'])->middleware('auth');
 Route::get('/entrants/searchall',
-    ['as' => 'entrants.searchall',
-        'uses' => 'EntrantController@searchall'])->middleware('is_admin');
+    ['as' => 'entrants.searchall', 'uses' => 'EntrantController@searchall'])->middleware('is_admin');
 Route::get('/entrants/{id}/changecategories',
-    ['as' => 'entrants.changecategories',
-        'uses' => 'EntrantController@changeCategories'])->middleware('auth')->middleware('is_admin');
+    ['as' => 'entrants.changecategories', 'uses' => 'EntrantController@changeCategories'])->middleware('auth')->middleware('is_admin');
 Route::post('/entrants/{id}/changecategories',
-    ['as' => 'entrants.storechangecategories',
-        'uses' => 'EntrantController@changeCategories'])->middleware('auth')->middleware('is_admin');
+    ['as' => 'entrants.storechangecategories', 'uses' => 'EntrantController@changeCategories'])->middleware('auth')->middleware('is_admin');
 Route::post('/entry/creates',
-    ['as' => 'entry.creates',
-        'uses' => 'EntryController@creates'])->middleware('auth');
+    ['as' => 'entry.creates', 'uses' => 'EntryController@creates'])->middleware('auth');
 Route::get('/entrants/{id}/print',
-    ['as' => 'entrant.print',
-        'uses' => 'EntrantController@printcards'])->middleware('is_admin');
+    ['as' => 'entrant.print', 'uses' => 'EntrantController@printcards'])->middleware('is_admin');
 Route::resource('entrants', 'EntrantController')->middleware('auth');
 
 Route::post('/entrants/{id}/update',
-    ['as' => 'entrants.update',
-        'uses' => 'EntrantController@update'])->middleware('auth');
+    ['as' => 'entrants.update', 'uses' => 'EntrantController@update'])->middleware('auth');
 Route::post('/entrants/{id}/optins',
-    ['as' => 'entrants.optins',
-        'uses' => 'EntrantController@optins'])->middleware('auth');
+    ['as' => 'entrants.optins', 'uses' => 'EntrantController@optins'])->middleware('auth');
 
 Route::get('/users/',
-    ['as' => 'users.index',
-        'uses' => 'UserController@index'])->middleware('is_admin');
+    ['as' => 'users.index', 'uses' => 'UserController@index'])->middleware('is_admin');
 
 Route::get('/users/{id}',
-    ['as' => 'user.show',
-        'uses' => 'UserController@show'])->middleware('is_admin');
+    ['as' => 'user.show', 'uses' => 'UserController@family'])->middleware('is_admin');
 Route::get('/users/{id}/print',
-    ['as' => 'user.print',
-        'uses' => 'UserController@printcards'])->middleware('is_admin');
-
+    ['as' => 'user.print', 'uses' => 'UserController@printcards'])->middleware('is_admin');
+Route::get('/family',
+    ['as' => 'user.family', 'uses' => 'UserController@family'])->middleware('auth');
 
 
 Route::get('/users/{user}/edit',
-    ['as' => 'user.edit',
-        'uses' => 'UserController@edit'])->middleware('is_admin');
+    ['as' => 'user.edit', 'uses' => 'UserController@edit'])->middleware('is_admin');
 
 
 Route::get('/reports/',
-    ['as' => 'reports.index',
-        'uses' => 'ReportsController@index'])->middleware('is_admin');
+    ['as' => 'reports.index', 'uses' => 'ReportsController@index'])->middleware('is_admin');
 Route::get('/reports/members',
-    ['as' => 'reports.members',
-        'uses' => 'ReportsController@membershipReport'])->middleware('is_admin');
+    ['as' => 'reports.members', 'uses' => 'ReportsController@membershipReport'])->middleware('is_admin');
 Route::get('/reports/entries',
-    ['as' => 'reports.entries',
-        'uses' => 'ReportsController@entriesReport'])->middleware('is_admin');
+    ['as' => 'reports.entries', 'uses' => 'ReportsController@entriesReport'])->middleware('is_admin');
 Route::get('/reports/unplacedCategories',
-    ['as' => 'reports.categories',
-        'uses' => 'ReportsController@unplacedcategoriesReport'])->middleware('is_admin');
+    ['as' => 'reports.categories', 'uses' => 'ReportsController@unplacedcategoriesReport'])->middleware('is_admin');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
+    Route::get('table-list', function () {
+        return view('pages.table_list');
+    })->name('table');
 
-	Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');
+    Route::get('typography', function () {
+        return view('pages.typography');
+    })->name('typography');
 
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
+    Route::get('icons', function () {
+        return view('pages.icons');
+    })->name('icons');
 
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
+    Route::get('map', function () {
+        return view('pages.map');
+    })->name('map');
 
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
+    Route::get('notifications', function () {
+        return view('pages.notifications');
+    })->name('notifications');
 
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
+    Route::get('rtl-support', function () {
+        return view('pages.language');
+    })->name('language');
 
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
+    Route::get('upgrade', function () {
+        return view('pages.upgrade');
+    })->name('upgrade');
 });
 //Route::get('')
 Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'UserController', ['except' => ['show', 'edit']]);
+    Route::resource('user', 'UserController', ['except' => ['show', 'edit']]);
     Route::get('/profile/subscribe',
         ['as' => 'users.subscribe',
             'uses' => 'ProfileController@subscribe']);
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+    Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
 

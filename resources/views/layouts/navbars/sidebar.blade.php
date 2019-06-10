@@ -22,7 +22,7 @@
           </li>
       @endif
         <li class="nav-item{{ $activePage == 'entrants' ? ' active' : '' }}">
-        <a class="nav-link" href="{{route('entrants.index')}}"><i class="material-icons">people</i><p>My Family</p></a>
+        <a class="nav-link" href="{{route('user.family')}}"><i class="material-icons">people</i><p>My Family</p></a>
         </li>
 
         <li class="nav-item{{ $activePage == 'add-entrant' ? ' active' : '' }}">

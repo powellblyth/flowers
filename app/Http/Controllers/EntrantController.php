@@ -35,16 +35,7 @@ class EntrantController extends Controller {
     }
 
     public function index(Request $request, array $extraData = []): View {
-        if ($this->isAdmin()) {
-            if ($request->has('user_id') && 0 < (int)$request->user_id) {
-                $user = User::find((int)$request->user_id);
-            } else {
-                $user = Auth::User();
-            }
-        } else {
-            $user = Auth::User();
-        }
-        $things = $user->entrants()
+        $things = Entrant::where('is_anonymised', false)
             ->orderBy('familyname', 'asc')
             ->orderBy('firstname', 'asc')
             ->get();
@@ -53,13 +44,8 @@ class EntrantController extends Controller {
         return view($this->templateDir . '.index',
             array_merge($extraData,
                 array('things' => $things,
-                    'owner' => $user,
                     'all' => false,
                     'isAdmin' => $this->isAdmin())));
-//        return parent::index(array_merge($extraData,
-//            array('things' => $things,
-//                'all' => false,
-//                'isAdmin' => $this->isAdmin())));
     }
 
     public function search(Request $request): View {

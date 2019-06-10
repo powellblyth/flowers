@@ -24,106 +24,78 @@
                         <div class="card-header card-header-success">{{__('Family Members')}}</div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12 text-right">
-                                    <a href="{{ route('entrants.create') }}"
-                                       class="btn btn-sm btn-primary">{{ __('Add family member') }}</a>
-                                </div>
-                            </div>
-                            @if(false == $all && $owner->id !== Auth::User()->id)
-                            <div class="row">
-                                <div class="col-md-12 text-right">
-                                    <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>
-{{--                                    <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
-                                </div>
-                            </div>
-                            @endif
-                            <div class="row">
                                 <div class="col-md-12">
-                                    @if(true == $all)
-                                        These are all the entrants currently registered, including anonymised entrants
-                                    @elseif ($owner->id == Auth::User()->id)
-                                        <p>Use this page to see yourself and your family. Click 'Add a
-                                            Family Member' on the menu to add yourselves.</p>
-                                    @else
-                                        <p>These are the family members managed by <b><a href="{{route('user.edit', $owner)}}">{{ucwords($owner->getName())}}</a></b>.</p>
-                                    @endif
+                                    These are all the entrants currently registered, including anonymised entrants
                                 </div>
 
                             </div>
-                            @if(true === $all)
-                                {{ Form::open([
-                                    'route' => 'entrants.searchall',
-                                    'method' => 'GET'
-                                ]) }}
-                                {{ Form::label('section', __('Search All').':', ['class' => 'control-label']) }}
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-10 col-sm-10">
-                                        {{ Form::text('searchterm', null, ['class' => 'form-control']) }}
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">
-                                        {{ Form::submit('Search', ['class' => 'button btn btn-primary']) }}
-                                    </div>
+                            {{ Form::open([
+                                'route' => 'entrants.searchall',
+                                'method' => 'GET'
+                            ]) }}
+                            {{ Form::label('section', __('Search All').':', ['class' => 'control-label']) }}
+                            <div class="row">
+                                <div class="col-lg-6 col-md-10 col-sm-10">
+                                    {{ Form::text('searchterm', null, ['class' => 'form-control']) }}
                                 </div>
-                                {{ Form::close() }}
-                            @endif
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                    {{ Form::submit('Search', ['class' => 'button btn btn-primary']) }}
+                                </div>
+                            </div>
+                            {{ Form::close() }}
                             <div class="row">
                                 @if(count($things )> 0)
                                     <div class="table-responsive col-lg-8 col-md-12 col-sm-12">
                                         <table class="table ">
                                             <thead>
-                                            <th>Name</th>
-                                            <th></th>
-                                            @if($all)
-                                                <th>Family Manager</th>
-                                                <th class="text-right">Actions</th>
-                                            @endif
+                                                <th>Name</th><th></th><th>Family Manager</th><th class="text-right">Actions</th>
                                             </thead>
                                             @foreach ($things as $thing)
                                                 <tr>
-                                                    <td>
-                                                        {{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}
-                                                    </td>
+                                                    <td>{{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}</td>
                                                     <td class="td-actions">
                                                         <a rel="tooltip" class="btn btn-success btn-link"
-                                                           href="{{ route('entrants.edit', $thing) }}" data-original-title=""
+                                                           href="{{ route('entrants.edit', $thing) }}"
+                                                           data-original-title=""
                                                            title="edit {{$thing->firstname}}">
                                                             <i class="material-icons">edit</i>
                                                             <div class="ripple-container"></div>
                                                         </a>
                                                         <a rel="tooltip" class="btn btn-success btn-link"
-                                                           href="{{ route('entrants.show', $thing) }}" data-original-title=""
+                                                           href="{{ route('entrants.show', $thing) }}"
+                                                           data-original-title=""
                                                            title="manage {{$thing->firstname}}'s entries">
                                                             <i class="material-icons">build</i>
                                                             <div class="ripple-container"></div>
                                                         </a>
                                                     </td>
-                                                    @if($all)
-                                                        <td>
-                                                            @if (!is_null($thing->user ))
-                                                                <a rel="tooltip" class="default "
-                                                                href="{{route('user.edit', $thing->user)}}"
-                                                                data-original-title=""
-                                                                title="Edit {{$thing->user->getName()}} (Family Manager)">
+                                                    <td>
+                                                        @if (!is_null($thing->user ))
+                                                            <a rel="tooltip" class="default "
+                                                               href="{{route('user.edit', $thing->user)}}"
+                                                               data-original-title=""
+                                                               title="Edit {{$thing->user->getName()}} (Family Manager)">
                                                                 {{$thing->user->getName()}}
-                                                                </a>
-
-                                                        </td>
-                                                        <td class="text-right td-actions">
-{{--                                                                <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>--}}
-{{--                                                                <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
+                                                            </a>
+                                                        @endif
+                                                    </td>
+                                                    <td class="text-right td-actions">
+                                                        {{--                                                                <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>--}}
+                                                        {{--                                                                <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
+                                                        @if (!is_null($thing->user ))
 
                                                             <a rel="tooltip" class="btn btn-success btn-link"
-                                                               href="{{route('entrants.index')}}?user_id={{$thing->user->id}}"
+                                                               href="{{route('user.family', $thing->user)}}"
                                                                data-original-title=""
                                                                title="Show {{$thing->user->getName()}}'s Family">
                                                                 <i class="material-icons">people</i>
                                                                 <div class="ripple-container"></div>
 
                                                             </a>
+                                                        @endif
 
-                                                        </td>
-                                                            @endif
-                                                    @endif
+                                                    </td>
+
                                                 </tr>
                                             @endforeach
                                         </table>
