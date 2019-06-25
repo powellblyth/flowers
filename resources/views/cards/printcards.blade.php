@@ -26,7 +26,7 @@
                                     </div>
 
                                     <div class="prize_box"><span class="prize">&nbsp;</span> Prize</div>
-                                    <div class="footer_box"><span class="footer">Petersham Horticultural Society - Summer Show {{env('CURRENT_YEAR')}}</span></div>
+                                    <div class="footer_box"><span class="footer">Petersham Horticultural Society - Summer Show {{config('app.year')}}</span></div>
                                 </div>
                             </td>
                         @else

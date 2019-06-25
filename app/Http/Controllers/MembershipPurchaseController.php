@@ -29,7 +29,7 @@ class MembershipPurchaseController extends Controller {
             $thing->entrant_id = $request->entrant;
         }
         $thing->user_id = $request->user;
-        $thing->year = (int)env('CURRENT_YEAR', 2018);
+        $thing->year = (int)config('app.year');
         $thing->save();
 
         if ('single' == $request->type) {

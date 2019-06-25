@@ -23,7 +23,6 @@ class CupController extends Controller {
 //        $cups = Cup::
         $cups = $this->baseClass::orderBy('sort_order', 'asc')->get();
 
-//->where('year', env('CURRENT_YEAR', 2018))
         foreach ($cups as $cup) {
             $resultset = DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
 sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
@@ -38,7 +37,7 @@ AND entries.year = ?
 group by entrant_id
 
 having (totalpoints > 0)
-order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
+order by (totalpoints) desc", array($cup->id, config('app.year')));
 
             $thisCupPoints = array();
             foreach ($resultset as $result) {
@@ -56,12 +55,12 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
             $winningCategory = null;
 
             // Gather up more winners if needed
-            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('year', env('CURRENT_YEAR', 2018))->first();
+            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('year', config('app.year'))->first();
             if ($cupWinner instanceof CupDirectWinner) {
                 if (!array_key_exists($cupWinner->entrant_id, $winners)) {
                     $winners[$cupWinner->entrant_id] = ['entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0];
                 }
-                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('year', env('CURRENT_YEAR', 2018))->first();
+                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('year',config('app.year'))->first();
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
@@ -82,13 +81,13 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
         $winners = [];
         $cup = Cup::find($id);
 
-        $categories = $cup->categories()->where('year', env('CURRENT_YEAR'))->orderBy('sortorder')->get();
+        $categories = $cup->categories()->where('year', config('app.year'))->orderBy('sortorder')->get();
         foreach ($categories as $category) {
             $resultset = $category
                 ->entries()
                 ->selectRaw('if(winningplace=\'1\', 4,if(winningplace=\'2\',3, if(winningplace=\'3\',2, if(winningplace=\'commended\',1, 0 ) ) )) as points, winningplace, entrant_id')
                 ->whereIn('winningplace', ['1', '2', '3', 'commended'])
-                ->where('year', env('CURRENT_YEAR'))
+                ->where('year', config('app.year'))
                 ->orderBy('winningplace', 'asc')
                 ->get();
 
@@ -101,7 +100,7 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
             }
         }
 
-        $validEntries = Entry::where('year', env('CURRENT_YEAR', 2018))->get();
+        $validEntries = Entry::where('year', config('app.year'))->get();
         $people = [];
         foreach ($validEntries as $entry) {
             if ($entry->entrant instanceof Entrant) {
@@ -133,7 +132,7 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
     public function directResultPick(Request $request, int $id): View {
 
         $thing = Cup::find($id);
-        $entriesObj = Entry::where('category', $request->category)->where('year', env('CURRENT_YEAR', 2018))->get();
+        $entriesObj = Entry::where('category', $request->category)->where('year', config('app.year'))->get();
         $entries = [];
         foreach ($entriesObj as $entry) {
             $entrant = $entry->entrant;
@@ -151,7 +150,7 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
         $cupDirectWinner = new CupDirectWinner();
         $cupDirectWinner->cup = $id;
         $cupDirectWinner->winning_entry_id = $entry->id;
-        $cupDirectWinner->year = env('CURRENT_YEAR', 2018);
+        $cupDirectWinner->year = config('app.year');
         $cupDirectWinner->entrant_id = $entry->entrant_id;
         $cupDirectWinner->winning_category_id = $entry->category_id;
         $cupDirectWinner->save();
@@ -166,7 +165,7 @@ order by (totalpoints) desc", array($cup->id, env('CURRENT_YEAR', 2018)));
 //        $entries = Entrant::where('id', $request->entrant)->first();
         $cupDirectWinner = new CupDirectWinner();
         $cupDirectWinner->cup = $id;
-        $cupDirectWinner->year = env('CURRENT_YEAR', 2018);
+        $cupDirectWinner->year = config('app.year');
         $cupDirectWinner->entrant_id = $request->person;
         $cupDirectWinner->save();
 

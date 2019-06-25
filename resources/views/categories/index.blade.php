@@ -23,7 +23,7 @@
                     <div class="card">
                         <div class="card-header card-header-success">All categories</div>
                         <div class="card-body">
-                            <p>You can see the categories for this show, along with all winners from the {{env('CURRENT_YEAR')}} show, if available, here.</p>
+                            <p>You can see the categories for this show, along with all winners from the {{config('app.year')}} show, if available, here.</p>
                         </div>
                     </div>
                 </div>

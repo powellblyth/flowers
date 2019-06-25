@@ -18,7 +18,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12"><p>These are the cups we award during the annual Flower Show and
-                                        the winners of the {{env('CURRENT_YEAR')}} show (when available).</p>
+                                        the winners of the {{config('app.year')}} show (when available).</p>
                                 </div>
 
                             </div>

@@ -31,7 +31,7 @@ class SectionController extends Controller {
 
         foreach ($things as $section) {
             $categoryList[$section->id] = $section->categories()
-                ->where('year', env('CURRENT_YEAR', 2018))
+                ->where('year', config('app.year'))
                 ->orderBy('sortorder', 'asc')
                 ->get();
 //

@@ -14,7 +14,7 @@ class ReportsController extends Controller {
     protected $templateDir = 'reports';
 
     public function membershipReport(Request $request): View {
-        $membershipsSold = MembershipPurchase::where('year', env('CURRENT_YEAR'))->get();
+        $membershipsSold = MembershipPurchase::where('year', config('app.year'))->get();
         $purchases = [];
         $amountFamily = 0;
         $amountSingle = 0;
@@ -52,7 +52,7 @@ class ReportsController extends Controller {
     }
 
     public function entriesReport(Request $request): View {
-        $entriesSold = Entry::where('year', env('CURRENT_YEAR'))->get();
+        $entriesSold = Entry::where('year', config('app.year'))->get();
         $purchases = [];
         $amountChild = 0;
         $amountAdult = 0;
@@ -91,7 +91,7 @@ class ReportsController extends Controller {
 
     public function unplacedCategoriesReport(): View {
         $unplacedCategories = [];
-        $categories = Category::where('year', env('CURRENT_YEAR'))->orderby('sortorder')->get();
+        $categories = Category::where('year', config('app.year'))->orderby('sortorder')->get();
         foreach ($categories as $category) {
             $cups = $category->cups()->count();
             if (0 == $cups) {

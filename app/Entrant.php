@@ -69,7 +69,7 @@ class Entrant extends Model {
     }
 
     public function getCurrentMembership(): ?MembershipPurchase {
-        $membership = $this->individualMemberships()->where('year', env('CURRENT_YEAR'))
+        $membership = $this->individualMemberships()->where('year', config('app.year'))
             ->where('type', 'individual')
             ->first();
 //        var_dump(get_class($membership));

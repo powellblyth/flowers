@@ -110,7 +110,7 @@ class User extends Authenticatable {
     public function familyMemberships(bool $current = true) {
         $memberships = $this->hasMany('App\MembershipPurchase', 'user_id')->where('type', 'family');
         if ($current) {
-            $memberships = $memberships->where('year', env('CURRENT_YEAR'));
+            $memberships = $memberships->where('year', config('app.year'));
         }
         return $memberships;
     }
@@ -124,7 +124,7 @@ class User extends Authenticatable {
     }
 
     public function getMemberNumber(): ?string {
-        $membership = $this->memberships()->where('year', env('CURRENT_YEAR'))->first();
+        $membership = $this->memberships()->where('year', config('app.year'))->first();
 //        var_dump($membership);die();
         if ($membership instanceof \App\MembershipPurchase) {
 //            die('moo');

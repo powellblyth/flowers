@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\CreateNewYearDataCommand::class,
         Commands\UpdateAgesCommand::class,
+        Commands\resetPasswordResetsCommand::class,
         Commands\AnonymiseEntrantsCommand::class,
         Commands\SendMailchimpSubscribesCommand::class,
         Commands\ScruffyCommand::class,

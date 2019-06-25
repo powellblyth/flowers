@@ -17,7 +17,7 @@
                         @if(array_key_exists($cardcounter, $card_fronts))
                         <td class="entrycard">
                             <div class="frontpage">
-                                <div class="strap_line">Petersham Horticultural Society {{(int)env('CURRENT_YEAR') - 1906}}th Show {{env('CURRENT_YEAR')}}</div>
+                                <div class="strap_line">Petersham Horticultural Society {{(int)config('app.year') - 1906}}th Show {{config('app.year')}}</div>
                                 <div class="class_number"><span class="class_number">{{$card_fronts[$cardcounter]['class_number']}}</span></div>
                                 <div class="class_name">
                                     <span class="class_name">{{ $card_fronts[$cardcounter]['class_name'] }}</span>

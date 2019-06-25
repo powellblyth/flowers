@@ -18,7 +18,7 @@ class EntryController extends Controller
                     $entry = new Entry;
                     $entry->category_id = (int)$category;
                     $entry->entrant_id = (int)$request->input('entrant');
-                    $entry->year = (int) env('CURRENT_YEAR', 2018);
+                    $entry->year = (int)config('app.year');
                     $entry->save();
                 }
             }

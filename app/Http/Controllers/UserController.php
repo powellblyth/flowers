@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Entrant;
 use App\Http\Requests\UserRequest;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use \Illuminate\View\View;
@@ -38,6 +39,15 @@ class UserController extends Controller {
         return Auth::check() && Auth::User()->isAdmin();
     }
 
+    public function subscribe(Request $request) {
+        return view('users.subscribe',
+            [
+                'thing' => Auth::User(),
+                'api_key' => config('stripe.api_key_publishable')
+            ]
+        );
+    }
+
     /**
      * Display a listing of the users
      *
@@ -55,7 +65,7 @@ class UserController extends Controller {
         $totalPaid = 0;
         if ($thing instanceof User) {
 
-            $currentYear = env('CURRENT_YEAR', 2018);
+            $currentYear = config('app.year');
 //            var_dump($thing->entrants);die();
             foreach ($thing->entrants as $entrant) {
 
@@ -76,6 +86,8 @@ class UserController extends Controller {
             foreach ($memberships as $membership) {
                 $membershipFee += $membership->amount;
             }
+
+            $hasFamilySubscription = $thing->subscribed('family');
 //var_dump([$currentYear,     $membershipFee]);die();
             return view('users.show', [
                 'thing' => $thing,
@@ -88,6 +100,7 @@ class UserController extends Controller {
                 'isAdmin' => $this->isAdmin(),
                 'payment_types' => $this->paymentTypes,
                 'membership_types' => ['family' => 'Family'],
+                'has_family_subscription' => $hasFamilySubscription,
 
             ]);
         } else {
@@ -110,7 +123,7 @@ class UserController extends Controller {
 //var_dump($thing->entrants);die();
         $entrants = $thing->entrants;
         foreach ($entrants as $entrant) {
-            $entries = $entrant->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
+            $entries = $entrant->entries()->where('year',config('app.year'))->get();
             $cardFronts = [];
             $cardBacks = [];
 

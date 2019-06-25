@@ -225,12 +225,12 @@ class EntrantController extends Controller {
             //        $showData = array_merge($extraData,  array('thing' => $thing));
 
             $categoriesAry = [0 => 'Select...'];
-            $categories = Category::orderBy('sortorder')->where('year', env('CURRENT_YEAR', 2018))->get();
+            $categories = Category::orderBy('sortorder')->where('year', config('app.year'))->get();
             foreach ($categories as $category) {
                 $categoriesAry[$category->id] = $category->getNumberedLabel();
             }
 
-            $membershipPurchases = $thing->membershipPurchases()->where('year', env('CURRENT_YEAR', 2018))->get();
+            $membershipPurchases = $thing->membershipPurchases()->where('year', config('app.year'))->get();
             $membershipPaymentData = [];
             foreach ($membershipPurchases as $membershipPurchase) {
                 $amount = (($membershipPurchase->type == 'single' ? 300 : 500));
@@ -238,7 +238,7 @@ class EntrantController extends Controller {
                 $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
             }
 
-            $entries = $thing->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
+            $entries = $thing->entries()->where('year', config('app.year'))->get();
             $entryData = [];
 
             foreach ($entries as $entry) {
@@ -298,7 +298,7 @@ class EntrantController extends Controller {
     function printcards($id) {
         $categoryData = [];
         $entrant = $this->baseClass::find($id);
-        $entries = $entrant->entries()->where('year', env('CURRENT_YEAR', 2018))->get();
+        $entries = $entrant->entries()->where('year', config('app.year'))->get();
         $cardFronts = [];
         $cardBacks = [];
 

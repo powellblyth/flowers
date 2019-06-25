@@ -40,14 +40,14 @@ class CategoryController extends Controller {
 
         $sections = Section::orderBy('number', 'asc')->get();
         $things = Category::orderBy('sortorder', 'asc')
-            ->where('year', env('CURRENT_YEAR', 2018))
+            ->where('year', config('app.year'))
             ->get();
 
         foreach ($sections as $section) {
             $sectionList[$section->id] = $section->id . ' ' . $section->name;
             $categoryList[$section->id] = [];
             $categories = $section->categories()->orderBy('sortorder', 'asc')
-                ->where('year', env('CURRENT_YEAR', 2018))
+                ->where('year', config('app.year'))
                 ->get();
 
             foreach ($categories as $category) {
@@ -55,11 +55,11 @@ class CategoryController extends Controller {
                 $placements = $category->entries()
                     ->whereNotNull('winningplace')
                     ->whereNotIn('winningplace', [''])
-                    ->where('year', env('CURRENT_YEAR', 2018))
+                    ->where('year', config('app.year'))
                     ->orderBy('winningplace')
                     ->get();
                 $total = Entry::where('category_id', $category->id)
-                    ->where('year', env('CURRENT_YEAR', 2018))
+                    ->where('year',config('app.year'))
                     ->select(DB::raw('count(*) as total'))
                     ->groupBy('category_id')->first();
 
@@ -133,12 +133,12 @@ class CategoryController extends Controller {
         $winners = [];
         $section = Section::find($request->section);
         $categories = $section->categories()
-            ->where('year', env('CURRENT_YEAR', 2018))
+            ->where('year',config('app.year'))
             ->orderby('sortorder')
             ->get();
         foreach ($categories as $category) {
             $thisEntries = $category->entries()
-                ->where('year', env('CURRENT_YEAR', 2018))
+                ->where('year', config('app.year'))
                 ->orderBy('entrant_id')->get();
             $entries[$category->id] = [];
             $winners[$category->id] = [];
@@ -167,7 +167,7 @@ class CategoryController extends Controller {
      * @return \Illuminate\Contracts\View\Factory|View
      */
     function printcards() {
-        $categories = Category::where('year', env('CURRENT_YEAR'))->get();
+        $categories = Category::where('year', config('app.year'))->get();
         $cardFronts = [];
 
         foreach ($categories as $category) {
