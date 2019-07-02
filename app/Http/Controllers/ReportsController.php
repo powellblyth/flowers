@@ -6,6 +6,7 @@ use App\Category;
 use App\Entrant;
 use App\Entry;
 use App\MembershipPurchase;
+use App\User;
 use Illuminate\Http\Request;
 use \Illuminate\View\View;
 
@@ -14,32 +15,48 @@ class ReportsController extends Controller {
     protected $templateDir = 'reports';
 
     public function membershipReport(Request $request): View {
-        $membershipsSold = MembershipPurchase::where('year', config('app.year'))->get();
-        $purchases = [];
+        $singlemembershipsSold = MembershipPurchase::where('year', config('app.year'))->where('type', 'single')->get();
+        $familymembershipsSold = MembershipPurchase::where('year', config('app.year'))->where('type', 'family')->get();
+        $singlepurchases = [];
+        $familypurchases = [];
         $amountFamily = 0;
         $amountSingle = 0;
         $countFamily = 0;
         $countSingle = 0;
 
-        foreach ($membershipsSold as $membership) {
-            $entrant = Entrant::find($membership->entrant_id);
-            $purchases[$membership->id] = ['created' => $membership->created_at,
-                'type' => $membership->type,
+        foreach ($singlemembershipsSold as $membership) {
+            $user = $membership->user;// Entrant::find($membership->entrant_id);
+            $entrant = $membership->entrant;
+            $singlepurchases[$membership->id] = ['created' => $membership->created_at,
                 'amount' => $membership->amount,
+                'user_id' => $user->id,
                 'entrant_id' => $entrant->id,
                 'entrant_name' => $entrant->getName(),
-                'entrant_address' => $entrant->getAddress(),
-                'entrant_telephone' => $entrant->telephone,
-                'entrant_email' => $entrant->email,
-                'entrant_can_email' => $entrant->can_email];
+                'user_name' => $user->getName(),
+                'user_address' => $user->getAddress(),
+                'user_telephone' => $user->telephone,
+                'user_email' => $user->email,
+                'user_can_email' => $user->can_email,
+            ];
 
-            if ('family' == $membership->type) {
-                $amountFamily += $membership->amount;
-                $countFamily++;
-            } else {
-                $amountSingle += $membership->amount;
-                $countSingle++;
-            }
+            $amountSingle += $membership->amount;
+            $countSingle++;
+
+        }
+        foreach ($familymembershipsSold as $membership) {
+            $user = $membership->user;// Entrant::find($membership->entrant_id);
+            $familypurchases[$membership->id] = ['created' => $membership->created_at,
+                'amount' => $membership->amount,
+                'user_id' => $user->id,
+                'user_name' => $user->getName(),
+                'user_address' => $user->getAddress(),
+                'user_telephone' => $user->telephone,
+                'user_email' => $user->email,
+                'user_can_email' => $user->can_email,
+            ];
+            $amountFamily += $membership->amount;
+            $countFamily++;
+
         }
         $totals = ['amount' => $amountFamily + $amountSingle,
             'count' => $countFamily + $countSingle,
@@ -48,7 +65,12 @@ class ReportsController extends Controller {
             'count_family' => $countFamily,
             'count_single' => $countSingle];
 //var_dump($totals);die()
-        return view($this->templateDir . '.membershipReport', array('totals' => $totals, 'purchases' => $purchases));
+        return view($this->templateDir . '.membershipReport',
+            [
+                'totals' => $totals,
+                'singlepurchases' => $singlepurchases,
+                'familypurchases' => $familypurchases,
+            ]);
     }
 
     public function entriesReport(Request $request): View {
@@ -64,8 +86,8 @@ class ReportsController extends Controller {
 
         foreach ($entriesSold as $entry) {
             $entrant = $entry->entrant;
-            $entrants[$entrant->id]= 'yo ho ho and a bottle of rum';
-            $users[$entrant->user_id]= 'Vittals for johnnie';
+            $entrants[$entrant->id] = 'yo ho ho and a bottle of rum';
+            $users[$entrant->user_id] = 'Vittals for johnnie';
             $category = $entry->category;
             $price = $category->getPrice($entry->getPriceType());
             $purchases[$entry->id] = [
