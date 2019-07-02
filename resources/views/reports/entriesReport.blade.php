@@ -65,6 +65,12 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <th>Entrants</th>
+                                                <td>{{$totals['count_entrants']}}
+
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td colspan="2">
                                                     <hr/>
                                                 </td>
