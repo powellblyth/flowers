@@ -76,7 +76,7 @@ class RegisterController extends Controller {
             'addresstown' => $extraData['addresstown'],
             'postcode' => $extraData['postcode'],
             'password' => Hash::make($extraData['password']),
-            'auth_token' => md5(random_int(PHP_INT_MIN,PHP_INT_MAX)),
+            'auth_token' => md5((string) random_int(PHP_INT_MIN,PHP_INT_MAX)),
             'password_reset_token' => '',
             'type' => User::DEFAULT_TYPE,
         ];

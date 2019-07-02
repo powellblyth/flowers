@@ -29,7 +29,6 @@ class CategoryController extends Controller {
         '7 - Arts and Crafts' => '7 - Arts and Crafts',
         '8 - Childrens Floral, Fruit and Vegetables' => '8 - Childrens Floral, Fruit and Vegetables',
         '9 - Childrens Cookery, Arts & Crafts' => '9 - Childrens Cookery, Arts & Crafts',
-        '7 - Arts and Crafts' => '7 - Arts and Crafts',
     ];
 
     public function index(array $extraData = []): View {
