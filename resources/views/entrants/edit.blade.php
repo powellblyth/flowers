@@ -45,14 +45,14 @@
                                     {{ Form::text('age', null, ['class' => 'form-control']) }}
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-5">
-                                    {{ Form::label('firstname', 'First Name:', ['class' => 'control-label']) }}
-                                </div>
-                                <div class="col-7">
-                                    {{ Form::text('firstname', null, ['class' => 'form-control']) }}
-                                </div>
-                            </div>
+{{--                            <div class="row">--}}
+{{--                                <div class="col-5">--}}
+{{--                                    {{ Form::label('firstname', 'First Name:', ['class' => 'control-label']) }}--}}
+{{--                                </div>--}}
+{{--                                <div class="col-7">--}}
+{{--                                    {{ Form::text('firstname', null, ['class' => 'form-control']) }}--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="row">
                                 <div class="col-12">
                                     {!!  $privacyContent  !!}
