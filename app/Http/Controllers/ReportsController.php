@@ -59,11 +59,13 @@ class ReportsController extends Controller {
         $countChild = 0;
         $countAdult = 0;
         $entrants = [];
+        $users = [];
 //        $entrants = DB::('SELECT count(DISTINCT entrants.')
 
         foreach ($entriesSold as $entry) {
             $entrant = $entry->entrant;
             $entrants[$entrant->id]= 'yo ho ho and a bottle of rum';
+            $users[$entrant->user_id]= 'Vittals for johnnie';
             $category = $entry->category;
             $price = $category->getPrice($entry->getPriceType());
             $purchases[$entry->id] = [
@@ -86,7 +88,8 @@ class ReportsController extends Controller {
             'count' => $countAdult + $countChild,
             'amount_adult' => $amountAdult,
             'amount_child' => $amountChild,
-            'count_entrants' => count($entrants),
+            'count_entrant' => count($entrants),
+            'count_user' => count($users),
             'count_adult' => $countAdult,
             'count_child' => $countChild];
 //var_dump($totals);die()

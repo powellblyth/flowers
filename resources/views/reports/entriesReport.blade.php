@@ -66,7 +66,13 @@
                                             </tr>
                                             <tr>
                                                 <th>Entrants</th>
-                                                <td>{{$totals['count_entrants']}}
+                                                <td>{{$totals['count_entrant']}}
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Families</th>
+                                                <td>{{$totals['count_user']}}
 
                                                 </td>
                                             </tr>
