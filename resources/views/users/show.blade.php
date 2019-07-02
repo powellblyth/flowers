@@ -89,8 +89,10 @@ $activePage = 'users';
                                 <a href="{{route('user.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
                             @endif
-                            <a href="{{route('user.edit', $thing)}}"
-                               class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                                <a href="{{route('user.edit', $thing)}}"
+                                   class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                                <a href="{{route('entrants.create')}}"
+                                   class="btn btn-primary">Add another family member</a>
                         </div>
                     </div>
                     <div class="card">
@@ -135,9 +137,9 @@ $activePage = 'users';
                                     family member before you can add any show entries</p>
                             @else
                                 @foreach ($thing->entrants as $entrant)
-                                    <h4>{{$entrant->getName()}} <a href="{{route('entrants.show', $entrant->id)}}"><i class="material-icons">person</i> show</a> <a href="{{route('entrants.edit', $entrant->id)}}"><i class="material-icons">edit</i> edit</a></h4>
+                                    <h4>{{$entrant->getName()}}<a href="{{route('entrants.show', $entrant->id)}}"><i class="material-icons">toc</i> Manage Entries / Show</a> <a href="{{route('entrants.edit', $entrant->id)}}"><i class="material-icons">edit</i> edit</a></h4>
                                     @php
-                                        $entry_data = $entrant->entries()->where('year', env('CURRENT_YEAR'))->get();
+                                        $entry_data = $entrant->entries()->where('year', config('app.year'))->get();
                                         $totalFee = 0;
                                     @endphp
                                     @if (count($entry_data ) <= 0)
@@ -203,6 +205,17 @@ $activePage = 'users';
                                         {{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
                                 @endforeach
                             @endif
+
+                        </div>
+                    </div>
+                </div>
+            </div>            <div class="row">
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-header-success">Your membership subscription</div>
+                        <div class="card-body">
+                            If you wish to subscribe, you must enter your card details, and our partner Stripe will manage the annual renewal for us.
 
                         </div>
                     </div>

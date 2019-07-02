@@ -11,7 +11,7 @@
                                 {{__('Unattached     Categories')}}
                             </div>
                             <div class="card-body">
-                                These {{env('CURRENT_YEAR')}} categories have not yet had a cup associated with them.
+                                These {{config('app.year')}} categories have not yet had a cup associated with them.
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead class=" default text-primary">
