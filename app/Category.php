@@ -47,14 +47,14 @@ class Category extends Model {
             return $this->late_price;
         }
     }
-    public function entries(): \Illuminate\Database\Eloquent\Relations\hasMany {
+    public function entries(): \Illuminate\Database\Eloquent\Relations\HasMany {
         return $this->hasMany('App\Entry');
     }
-    public function section(): \Illuminate\Database\Eloquent\Relations\belongsTo {
+    public function section(): \Illuminate\Database\Eloquent\Relations\BelongsTo {
         return $this->belongsTo('App\Section');
     }
 
-    public function cups(){
+    public function cups():\Illuminate\Database\Eloquent\Relations\BelongsToMany {
         return $this->belongsToMany('App\Cup');
     }
 }

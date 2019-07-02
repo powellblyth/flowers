@@ -5,10 +5,10 @@ namespace App;
 use App\Events\UserSaving;
 use App\Notifications\MustChangePasswordNotification;
 use App\Observers\UserObserver;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
-
 class User extends Authenticatable {
     use Notifiable;
     use Billable;
@@ -99,11 +99,11 @@ class User extends Authenticatable {
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
     }
 
-    public function entrants(): \Illuminate\Database\Eloquent\Relations\hasMany {
+    public function entrants():HasMany {
         return $this->hasMany('App\Entrant');
     }
 
-    public function payments(): \Illuminate\Database\Eloquent\Relations\hasMany {
+    public function payments(): HasMany {
         return $this->hasMany('App\Payment');
     }
 
@@ -115,7 +115,7 @@ class User extends Authenticatable {
         return $memberships;
     }
 
-    public function memberships(): \Illuminate\Database\Eloquent\Relations\hasMany {
+    public function memberships(): HasMany {
         return $this->hasMany('App\MembershipPurchase');
     }
 

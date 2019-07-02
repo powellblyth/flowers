@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
+use \Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Entry extends Model {
 
@@ -26,7 +27,6 @@ class Entry extends Model {
     }
 
     public function getPriceType(): string {
-
         if ($this->isLate()) {
             return Category::PRICE_LATE_PRICE;
         } else {
@@ -60,7 +60,7 @@ class Entry extends Model {
         ];
     }
 
-    public function getActualPrice(){
+    public function getActualPrice() {
 //        die(var_dump([$this->getPriceType(),$this->category->getPrice($this->getPriceType()) ]));
         return $this->category->getPrice($this->getPriceType());
     }
@@ -80,11 +80,11 @@ class Entry extends Model {
         return $date;
     }
 
-    public function entrant(): \Illuminate\Database\Eloquent\Relations\belongsTo {
+    public function entrant(): BelongsTo {
         return $this->belongsTo('App\Entrant');
     }
 
-    public function category(): \Illuminate\Database\Eloquent\Relations\belongsTo {
+    public function category(): BelongsTo {
         return $this->belongsTo('App\Category');
     }
 }

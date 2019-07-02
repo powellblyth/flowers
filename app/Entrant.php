@@ -33,26 +33,26 @@ class Entrant extends Model {
      * @return string
      */
     public function getEntrantNumber(): string {
-        return 'E-' . str_pad((string)$this->id, '5', '0', STR_PAD_LEFT);
+        return 'E-' . str_pad((string)$this->id, 5, '0', STR_PAD_LEFT);
     }
 
     public function getPrintableName(): string {
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname);
     }
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\belongsTo {
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo {
         return $this->belongsTo('App\User');
     }
 
-    public function entries(): \Illuminate\Database\Eloquent\Relations\hasMany {
+    public function entries(): \Illuminate\Database\Eloquent\Relations\HasMany {
         return $this->hasMany('App\Entry');
     }
 
-    public function payments(): \Illuminate\Database\Eloquent\Relations\hasMany {
+    public function payments(): \Illuminate\Database\Eloquent\Relations\HasMany {
         return $this->hasMany('App\Payment');
     }
 
-    public function membershipPurchases(): \Illuminate\Database\Eloquent\Relations\hasMany {
+    public function membershipPurchases(): \Illuminate\Database\Eloquent\Relations\HasMany {
         return $this->hasMany('App\MembershipPurchase');
     }
 
