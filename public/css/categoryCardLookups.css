@@ -1,0 +1,33 @@
+
+@page {
+    margin: 0;
+    orientation:portrait;
+    size: A4 portrait;
+    height:100%;
+}
+@page :first {size: A4 portrait}
+  html, body {
+      /*height: 148mm;*/
+      /*width: 105mm;*/
+    size: A4 portrait;
+      margin-left:12px;
+      margin-top:12px;
+}
+.class_number{
+    font-size:30px;
+    font-weight:bold;
+    text-align:center;
+    margin-right:10px;
+}
+.class_name{
+    font-size:25px;
+}
+div.section{
+    page-break-before: always;
+
+}
+.section_name{
+    text-decoration:underline;
+    font-weight:bold;
+    font-size:35px;
+}

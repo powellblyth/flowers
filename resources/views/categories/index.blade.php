@@ -14,7 +14,8 @@
             @if($isAdmin)
             <div class="row">
                 <div class="col-md-12 text-right">
-                    <a href="{{ route('category.print') }}" target="_blank" class="btn btn-sm btn-primary">{{ __('Print show entry cards') }}</a>
+                    <a href="{{ route('category.tabletopprint') }}" target="_blank" class="btn btn-sm btn-primary">{{ __('Print table-top cards') }}</a>
+                    <a href="{{ route('category.lookupprint') }}" target="_blank" class="btn btn-sm btn-primary">{{ __('Print category lookup sheet') }}</a>
                 </div>
             </div>
             @endif

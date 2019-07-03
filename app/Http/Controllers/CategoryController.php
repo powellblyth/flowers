@@ -161,7 +161,7 @@ class CategoryController extends Controller {
     }
 
     /**
-     * This prints all the category cards for the show entries
+     * This prints all the category cards for the show entries to put on the tabless
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|View
      */
@@ -175,9 +175,30 @@ class CategoryController extends Controller {
                 'class_name' => $category->name
             ];
         }
-//        }var_dump($cardFronts);die();
 
         return view($this->templateDir . '.printcards', ['card_fronts' =>$cardFronts]);
+    }
+    /**
+     *
+     * This prints the lookup sheet to look up where entry categories are
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
+    function printlookups() {
+        $categories = Category::where('year', config('app.year'))->orderBy('section_id')->orderBy('sortorder')->get();
+        $cardFronts = [];
+
+        foreach ($categories as $category) {
+            $section = $category->section;
+            $cardFronts[] = [
+                'section' => $section->id,
+                'section_name' => $section->name,
+                'class_number' => $category->number,
+                'class_name' => $category->name
+            ];
+        }
+
+        return view($this->templateDir . '.printlookups', ['card_fronts' =>$cardFronts]);
     }
 
     public function storeresults(Request $request): \Illuminate\Http\RedirectResponse {

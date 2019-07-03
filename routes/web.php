@@ -27,9 +27,12 @@ Route::get('/categories',
 Route::get('/sections/forwebsite',
     ['as' => 'section.forwebsite',
         'uses' => 'SectionController@forwebsite']);
-Route::get('/categories/print',
-    ['as' => 'category.print',
+Route::get('/categories/printtabletop',
+    ['as' => 'category.tabletopprint',
         'uses' => 'CategoryController@printcards'])->middleware('is_admin');
+Route::get('/categories/printlookup',
+    ['as' => 'category.lookupprint',
+        'uses' => 'CategoryController@printlookups'])->middleware('is_admin');
 
 Route::resource('categories', 'CategoryController');
 Route::resource('membershippurchases', 'MembershipPurchaseController');

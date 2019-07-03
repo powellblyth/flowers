@@ -74,6 +74,7 @@ class Entry extends Model {
             case 2018:
                 $date = '4 July 2018 23:59:59';
                 break;
+            case 2017:
             default:
                 $date = '6 July 2017 12:00:59';
         }
