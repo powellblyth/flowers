@@ -159,7 +159,7 @@ $activePage = 'users';
 
                                         {{--                                @foreach ($entry_data as $entry)--}}
 
-                                                                            {{$entry->category->name}} ({{$entry['price']}}p)
+                                                                            {{$entry->category->getNumberedLabel()}} ({{$entry['price']}}p)
                                         {{--                                        @if ($entry['is_late'])--}}
                                         {{--                                            (late)--}}
 
