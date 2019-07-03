@@ -17,7 +17,16 @@ class CupController extends Controller {
     protected $templateDir = 'cups';
     protected $baseClass = 'App\Cup';
 
-    public function index(array $extraData = []): View {
+    protected function getYearFromRequest(Request $request): int {
+        if ($request->has = ('year') && is_numeric($request->year) && (int)$request->year > 2015 && (int)$request->year < (int)date('Y')) {
+            return (int)$request->year;
+        } else {
+            return config('app.year');
+        }
+    }
+
+    public function index(Request $request): View {
+        $year = $this->getYearFromRequest($request);
         $winners = array();
         $results = array();
 //        $cups = Cup::
@@ -37,7 +46,7 @@ AND entries.year = ?
 group by entrant_id
 
 having (totalpoints > 0)
-order by (totalpoints) desc", array($cup->id, config('app.year')));
+order by (totalpoints) desc", array($cup->id, $year));
 
             $thisCupPoints = array();
             foreach ($resultset as $result) {
@@ -55,12 +64,12 @@ order by (totalpoints) desc", array($cup->id, config('app.year')));
             $winningCategory = null;
 
             // Gather up more winners if needed
-            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('year', config('app.year'))->first();
+            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('year', $year)->first();
             if ($cupWinner instanceof CupDirectWinner) {
                 if (!array_key_exists($cupWinner->entrant_id, $winners)) {
                     $winners[$cupWinner->entrant_id] = ['entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0];
                 }
-                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('year',config('app.year'))->first();
+                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('year',$year)->first();
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
@@ -69,25 +78,27 @@ order by (totalpoints) desc", array($cup->id, config('app.year')));
                 'winning_category' => $winningCategory);
         }
 
-        return view($this->templateDir . '.index', array_merge($extraData, array('cups' => $cups,
+        return view($this->templateDir . '.index', ['cups' => $cups,
             'results' => $results,
             'winners' => $winners,
+            'year' => $year,
             'isAdmin' => Auth::check() && Auth::User()->isAdmin()
-        )));
+        ]);
     }
 
-    public function show(int $id, array $showData = []): View {
+    public function show(int $id , Request $request): View {
         $winnerDataByCategory = [];
         $winners = [];
         $cup = Cup::find($id);
+        $year = $this->getYearFromRequest($request);
 
-        $categories = $cup->categories()->where('year', config('app.year'))->orderBy('sortorder')->get();
+        $categories = $cup->categories()->where('year', $year)->orderBy('sortorder')->get();
         foreach ($categories as $category) {
             $resultset = $category
                 ->entries()
                 ->selectRaw('if(winningplace=\'1\', 4,if(winningplace=\'2\',3, if(winningplace=\'3\',2, if(winningplace=\'commended\',1, 0 ) ) )) as points, winningplace, entrant_id')
                 ->whereIn('winningplace', ['1', '2', '3', 'commended'])
-                ->where('year', config('app.year'))
+                ->where('year', $year)
                 ->orderBy('winningplace', 'asc')
                 ->get();
 
@@ -100,17 +111,20 @@ order by (totalpoints) desc", array($cup->id, config('app.year')));
             }
         }
 
-        $validEntries = Entry::where('year', config('app.year'))->get();
+        $isCurrentYear = ($year === (int)date('Y'));
         $people = [];
-        foreach ($validEntries as $entry) {
-            if ($entry->entrant instanceof Entrant) {
-                $person = $entry->entrant;
-                $people[$person->id] = $person->getName();
-            } else {
-                $people[$entry->entrant_id] = 'Unknown';
+        if ($isCurrentYear){
+            $validEntries = Entry::where('year', $year)->get();
+            foreach ($validEntries as $entry) {
+                if ($entry->entrant instanceof Entrant) {
+                    $person = $entry->entrant;
+                    $people[$person->id] = $person->getName();
+                } else {
+                    $people[$entry->entrant_id] = 'Unknown';
+                }
             }
-        }
-        unset($person);
+            unset($person);
+        }else{$validEntries = null;}
 
         asort($people);
         $thing = $this->baseClass::find($id);
@@ -121,7 +135,9 @@ order by (totalpoints) desc", array($cup->id, config('app.year')));
             'winners_by_category' => $winnerDataByCategory,
             'categories' => $categories,
             'people' => $people,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin()
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
+            'year'=>$year,
+            'is_current_year'=>$isCurrentYear,
         ]);
 
     }

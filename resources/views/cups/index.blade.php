@@ -18,7 +18,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12"><p>These are the cups we award during the annual Flower Show and
-                                        the winners of the {{config('app.year')}} show (when available).</p>
+                                        the winners of the {{$year}} show (when available).</p>
                                 </div>
 
                             </div>
@@ -54,7 +54,7 @@
                             @if ($isAdmin)
                             <div class="row">
                                 <div class="col-12 text-right">
-                                    <a href="{{ route('cups.show', $cup) }}"
+                                    <a href="{{ route('cups.show', $cup) }}?year={{$year}}"
                                        class="btn btn-sm btn-primary">{{ __('Show Cup') }}</a>
                                 </div>
                             </div>
