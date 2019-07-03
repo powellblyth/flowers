@@ -5,16 +5,25 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                @for ($x=2017; $x<=date('Y'); $x++)
+                    <div class="col-1">
+                        <a href="{{route('reports.members')}}?year={{$x}}">{{$x}}</a>
+                    </div>
+                    @endfor
+            </div>
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
-                                {{__('Memberships Purchased')}}
+                                {{__('Memberships Purchased')}} in {{$year}}
+
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table">
-                                        <h2>Single Membership Purchases</h2>
+                                        <h2>Single Membership Purchases in {{$year}}
+                                        </h2>
                                         <thead class=" text-primary">
                                         <tr>
                                             <th>Date</th>
@@ -47,7 +56,8 @@
                                             <th>&nbsp;</th>
                                         </tr>
                                         <tr>
-                                            <th>Single Purchases</th>
+                                            <th>Single Membership Purchases
+                                            </th>
                                             <td>{{$totals['count_single']}}
                                                 (&pound;{{number_format($totals['amount_single']/100, 2)}})
                                             </td>
@@ -63,7 +73,8 @@
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table">
-                                        <h2>Family Membership Purchases</h2>
+                                        <h2>Family Membership Purchases in {{$year}}
+                                        </h2>
                                         <thead class=" text-primary">
                                         <tr>
                                             <th>Date</th>
@@ -107,7 +118,8 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>ALL Purchases</th>
+                                            <th>ALL Membership Purchases
+                                            </th>
                                             <td>{{$totals['count']}} (&pound;{{number_format($totals['amount']/100, 2)}}
                                                 )
                                             </td>

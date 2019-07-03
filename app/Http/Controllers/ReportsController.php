@@ -14,9 +14,18 @@ class ReportsController extends Controller {
 
     protected $templateDir = 'reports';
 
+    protected function getYearFromRequest(Request $request): int {
+        if ($request->has = ('year') && is_numeric($request->year) && (int)$request->year > 2015 && (int)$request->year < (int)date('Y')) {
+            return (int)$request->year;
+        } else {
+            return config('app.year');
+        }
+    }
+
     public function membershipReport(Request $request): View {
-        $singlemembershipsSold = MembershipPurchase::where('year', config('app.year'))->where('type', 'single')->get();
-        $familymembershipsSold = MembershipPurchase::where('year', config('app.year'))->where('type', 'family')->get();
+        $year = $this->getYearFromRequest($request);
+        $singlemembershipsSold = MembershipPurchase::where('year', $year)->where('type', 'single')->get();
+        $familymembershipsSold = MembershipPurchase::where('year', $year)->where('type', 'family')->get();
         $singlepurchases = [];
         $familypurchases = [];
         $amountFamily = 0;
@@ -29,14 +38,14 @@ class ReportsController extends Controller {
             $entrant = $membership->entrant;
             $singlepurchases[$membership->id] = ['created' => $membership->created_at,
                 'amount' => $membership->amount,
-                'user_id' => $user->id,
-                'entrant_id' => $entrant->id,
-                'entrant_name' => $entrant->getName(),
-                'user_name' => $user->getName(),
-                'user_address' => $user->getAddress(),
-                'user_telephone' => $user->telephone,
-                'user_email' => $user->email,
-                'user_can_email' => $user->can_email,
+                'user_id' => (($user)?$user->id:null),
+                'entrant_id' => (($entrant)?$entrant->id:''),
+                'entrant_name' => (($entrant)?$entrant->getName():''),
+                'user_name' => (($user)?$user->getName():''),
+                'user_address' => (($user)?$user->getAddress():''),
+                'user_telephone' => (($user)?$user->telephone:''),
+                'user_email' => (($user)?$user->email:''),
+                'user_can_email' => (($user)?$user->can_email:''),
             ];
 
             $amountSingle += $membership->amount;
@@ -47,12 +56,12 @@ class ReportsController extends Controller {
             $user = $membership->user;// Entrant::find($membership->entrant_id);
             $familypurchases[$membership->id] = ['created' => $membership->created_at,
                 'amount' => $membership->amount,
-                'user_id' => $user->id,
-                'user_name' => $user->getName(),
-                'user_address' => $user->getAddress(),
-                'user_telephone' => $user->telephone,
-                'user_email' => $user->email,
-                'user_can_email' => $user->can_email,
+                'user_id' => (($user)?$user->id:''),
+                'user_name' => (($user)?$user->getName():''),
+                'user_address' => (($user)?$user->getAddress():''),
+                'user_telephone' => (($user)?$user->telephone:''),
+                'user_email' => (($user)?$user->email:''),
+                'user_can_email' => (($user)?$user->can_email:''),
             ];
             $amountFamily += $membership->amount;
             $countFamily++;
@@ -64,17 +73,18 @@ class ReportsController extends Controller {
             'amount_single' => $amountSingle,
             'count_family' => $countFamily,
             'count_single' => $countSingle];
-//var_dump($totals);die()
         return view($this->templateDir . '.membershipReport',
             [
                 'totals' => $totals,
+                'year' => $year,
                 'singlepurchases' => $singlepurchases,
                 'familypurchases' => $familypurchases,
             ]);
     }
 
     public function entriesReport(Request $request): View {
-        $entriesSold = Entry::where('year', config('app.year'))->get();
+        $year = $this->getYearFromRequest($request);
+        $entriesSold = Entry::where('year', $year)->get();
         $purchases = [];
         $amountChild = 0;
         $amountAdult = 0;
@@ -86,8 +96,14 @@ class ReportsController extends Controller {
 
         foreach ($entriesSold as $entry) {
             $entrant = $entry->entrant;
-            $entrants[$entrant->id] = 'yo ho ho and a bottle of rum';
-            $users[$entrant->user_id] = 'Vittals for johnnie';
+            $entrant_id = null;
+            $entrant_name = null;
+            if ($entrant instanceof Entrant) {
+                $entrant_id = $entrant->id;
+                $entrant_name = $entrant->getName();
+                $entrants[$entrant_id] = 'yo ho ho and a bottle of rum';
+                $users[$entrant->user_id] = 'Vittals for johnnie';
+            }
             $category = $entry->category;
             $price = $category->getPrice($entry->getPriceType());
             $purchases[$entry->id] = [
@@ -95,8 +111,8 @@ class ReportsController extends Controller {
                 'type' => $category->getType(),
                 'is_late' => $entry->isLate(),
                 'amount' => $price,
-                'entrant_id' => $entrant->id,
-                'entrant_name' => $entrant->getName()];
+                'entrant_id' => $entrant_id,
+                'entrant_name' => $entrant_name];
 
             if (Category::TYPE_ADULT == $category->getType()) {
                 $amountAdult += $price;
@@ -115,19 +131,29 @@ class ReportsController extends Controller {
             'count_adult' => $countAdult,
             'count_child' => $countChild];
 //var_dump($totals);die()
-        return view($this->templateDir . '.entriesReport', array('totals' => $totals, 'purchases' => $purchases));
+        return view($this->templateDir . '.entriesReport',
+            [
+                'totals' => $totals,
+                'purchases' => $purchases,
+                'year' => $year,
+            ]);
     }
 
-    public function unplacedCategoriesReport(): View {
+    public function unplacedCategoriesReport(Request $request): View {
+        $year = $this->getYearFromRequest($request);
         $unplacedCategories = [];
-        $categories = Category::where('year', config('app.year'))->orderby('sortorder')->get();
+        $categories = Category::where('year', $year)->orderby('sortorder')->get();
         foreach ($categories as $category) {
             $cups = $category->cups()->count();
             if (0 == $cups) {
                 $unplacedCategories[$category->id] = $category->getNumberedLabel();
             }
         }
-        return view($this->templateDir . '.unplacedCategoriesReport', array('unplaced_categories' => $unplacedCategories));
+        return view($this->templateDir . '.unplacedCategoriesReport',
+            [
+                'unplaced_categories' => $unplacedCategories,
+                'year' => $year,
+            ]);
     }
 
     public function index(array $extraData = []): View {
