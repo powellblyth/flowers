@@ -31,7 +31,17 @@ class CategoryController extends Controller {
         '9 - Childrens Cookery, Arts & Crafts' => '9 - Childrens Cookery, Arts & Crafts',
     ];
 
-    public function index(array $extraData = []): View {
+    protected function getYearFromRequest(Request $request): int {
+        if ($request->has = ('year') && is_numeric($request->year) && (int)$request->year > 2015 && (int)$request->year < (int)date('Y')) {
+            return (int)$request->year;
+        } else {
+            return config('app.year');
+        }
+    }
+
+    public function index(Request $request): View {
+        $year = $this->getYearFromRequest($request);
+
         $winners = array();
         $results = [];
         $categoryList = [];
@@ -39,14 +49,14 @@ class CategoryController extends Controller {
 
         $sections = Section::orderBy('number', 'asc')->get();
         $things = Category::orderBy('sortorder', 'asc')
-            ->where('year', config('app.year'))
+            ->where('year', $year)
             ->get();
 
         foreach ($sections as $section) {
             $sectionList[$section->id] = $section->id . ' ' . $section->name;
             $categoryList[$section->id] = [];
             $categories = $section->categories()->orderBy('sortorder', 'asc')
-                ->where('year', config('app.year'))
+                ->where('year', $year)
                 ->get();
 
             foreach ($categories as $category) {
@@ -54,11 +64,11 @@ class CategoryController extends Controller {
                 $placements = $category->entries()
                     ->whereNotNull('winningplace')
                     ->whereNotIn('winningplace', [''])
-                    ->where('year', config('app.year'))
+                    ->where('year', $year)
                     ->orderBy('winningplace')
                     ->get();
                 $total = Entry::where('category_id', $category->id)
-                    ->where('year',config('app.year'))
+                    ->where('year',$year)
                     ->select(DB::raw('count(*) as total'))
                     ->groupBy('category_id')->first();
 
@@ -72,14 +82,16 @@ class CategoryController extends Controller {
                 }
             }
         }
-        return view($this->templateDir . '.index', array_merge($extraData,
-            array(
+        return view($this->templateDir . '.index',
+            [
                 'things' => $things,
                 'categoryList' => $categoryList,
                 'sectionList' => $sectionList,
                 'results' => $results,
                 'winners' => $winners,
-                'isAdmin' => Auth::check() && Auth::User()->isAdmin())));
+                'year' => $year,
+                'is_current_year' => ($year == (int)date('Y')),
+                'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
 
     }
 
@@ -132,7 +144,7 @@ class CategoryController extends Controller {
         $winners = [];
         $section = Section::find($request->section);
         $categories = $section->categories()
-            ->where('year',config('app.year'))
+            ->where('year', config('app.year'))
             ->orderby('sortorder')
             ->get();
         foreach ($categories as $category) {
@@ -149,13 +161,14 @@ class CategoryController extends Controller {
                 }
                 $entries[$category->id][$entry->id] = [
                     'entrant_id' => $entry->entrant_id,
-                    'entrant_name' => $entrant->getName()
+                    'entrant_name' => $entrant->getName(),
+                    'entrant_number' => $entrant->getEntrantNumber(),
                 ];
             }
         }
         return view($this->templateDir . '.resultsentry', array('categories' => $categories,
             'entries' => $entries,
-            'section' => $request->section,
+            'section' => $section,
             'winners' => $winners,
             'isAdmin' => Auth::User()->isAdmin()));
     }
@@ -176,8 +189,9 @@ class CategoryController extends Controller {
             ];
         }
 
-        return view($this->templateDir . '.printcards', ['card_fronts' =>$cardFronts]);
+        return view($this->templateDir . '.printcards', ['card_fronts' => $cardFronts]);
     }
+
     /**
      *
      * This prints the lookup sheet to look up where entry categories are
@@ -198,7 +212,7 @@ class CategoryController extends Controller {
             ];
         }
 
-        return view($this->templateDir . '.printlookups', ['card_fronts' =>$cardFronts]);
+        return view($this->templateDir . '.printlookups', ['card_fronts' => $cardFronts]);
     }
 
     public function storeresults(Request $request): \Illuminate\Http\RedirectResponse {
