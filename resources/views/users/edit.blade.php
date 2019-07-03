@@ -18,7 +18,7 @@
                 <div class="row">
                   <div class="col-md-12 text-right">
                     <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
-                    <a href="{{ route('entrants.index') }}?user_id={{$user->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>
+                    <a href="{{ route('user.show', $user) }}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>
                   </div>
                 </div>
                 <div class="row">
