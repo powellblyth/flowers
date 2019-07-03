@@ -159,32 +159,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    @if($isAdmin)
 
-                        <div class="col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="card-header-success">New Payment Record</div>
-                                <div class="card-body">
-
-
-                                    {{ Form::open([
-                                        'route' => 'payments.store'
-                                    ]) }}
-
-                                    {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
-                                    {{ Form::label('amount', 'Amount: &pound;', ['class' => 'control-label']) }}
-                                    {{ Form::text('amount', null, ['class' => 'form-control']) }}
-                                    {{Form::select('source', $payment_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
-                                    <br/>
-                                    {{ Form::submit('Store Payment', ['class' => 'button btn btn-primary']) }}
-                                    <br/><br/><br/>
-
-                                    {{ Form::close() }}
-                                </div>
-                            </div>
-                        </div>
-
-                    @endif
                     @if($isAdmin)
                         <div class="col-md-6 col-sm-12">
                             <div class="card">
