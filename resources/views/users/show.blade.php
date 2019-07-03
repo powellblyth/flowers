@@ -137,7 +137,12 @@ $activePage = 'users';
                                     family member before you can add any show entries</p>
                             @else
                                 @foreach ($thing->entrants as $entrant)
-                                    <h4>{{$entrant->getName()}}<a href="{{route('entrants.show', $entrant->id)}}"><i class="material-icons">toc</i> Manage Entries / Show</a> <a href="{{route('entrants.edit', $entrant->id)}}"><i class="material-icons">edit</i> edit</a></h4>
+                                    <h4>{{$entrant->getName()}}
+                                        @if ($entrant->age)
+                                            (Age {{$entrant->age}} years)
+                                            @endif
+                                        <a href="{{route('entrants.show', $entrant->id)}}"><i class="material-icons">toc</i> Manage Entries / Show</a> <a href="{{route('entrants.edit', $entrant->id)}}"><i class="material-icons">edit</i> edit</a></h4>
+
                                     @php
                                         $entry_data = $entrant->entries()->where('year', config('app.year'))->get();
                                         $totalFee = 0;
@@ -168,6 +173,7 @@ $activePage = 'users';
                                         {{--                            @endif--}}
                                         {{--                                @endforeach--}}
                                     @endif
+                                    <hr />
                                 @endforeach
                             @endif
 
