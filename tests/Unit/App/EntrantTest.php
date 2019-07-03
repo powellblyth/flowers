@@ -77,8 +77,8 @@ class EntrantTest extends TestCase {
 
     public function providergetEntrantNumber() {
         return [
-            ['E-00001', 1],
-            ['E-00032',  32],
+            ['E-0001', 1],
+            ['E-0032',  32],
         ];
     }
 

@@ -33,7 +33,7 @@ class Entrant extends Model {
      * @return string
      */
     public function getEntrantNumber(): string {
-        return 'E-' . str_pad((string)$this->id, 5, '0', STR_PAD_LEFT);
+        return 'E-' . str_pad((string)$this->id, 4, '0', STR_PAD_LEFT);
     }
 
     public function getPrintableName(): string {
