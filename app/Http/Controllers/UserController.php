@@ -32,7 +32,12 @@ class UserController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index(User $model): View {
-        return view('users.index', ['users' => $model::orderBy('lastname')->where('is_anonymised', false)->orderBy('firstname')->get()]);
+        return view('users.index', ['users' =>
+            $model::where('is_anonymised', false)
+                ->orderBy('lastname')
+                ->orderBy('firstname')
+                ->get()
+        ]);
     }
 
     public function isAdmin(): bool {
@@ -59,7 +64,6 @@ class UserController extends Controller {
             $id = Auth::user()->id;
         }
         $thing = User::find($id);
-        $totalPaid = 0;
         $membershipFee = 0;
         $entryFee = 0;
         $totalPaid = 0;
@@ -119,13 +123,13 @@ class UserController extends Controller {
 
     function printcards($id) {
         $categoryData = [];
-        $thing = $this->baseClass::find($id);
+        $thing = User::find($id);
 //var_dump($thing->entrants);die();
         $entrants = $thing->entrants;
+        $cardFronts = [];
+        $cardBacks = [];
         foreach ($entrants as $entrant) {
             $entries = $entrant->entries()->where('year',config('app.year'))->get();
-            $cardFronts = [];
-            $cardBacks = [];
 
             foreach ($entries as $entry) {
                 if ($entry->category) {
@@ -158,7 +162,7 @@ class UserController extends Controller {
             [
                 'password_reset_token' => '',
                 'password' => $newPassword,
-                'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX))])->all());
+                'auth_token' => md5((string) random_int(PHP_INT_MIN, PHP_INT_MAX))])->all());
         $user->makeDefaultEntrant();
 
         return redirect()->route('user.index')->withStatus(__('User successfully created.'));

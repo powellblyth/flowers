@@ -52,7 +52,7 @@
                                             </thead>
                                             @foreach ($things as $thing)
                                                 <tr>
-                                                    <td>{{ ucwords($thing->firstname) }} {{ ucwords($thing->familyname) }}</td>
+                                                    <td>{{ ucwords($thing->getName()) }}</td>
                                                     <td class="td-actions">
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{ route('entrants.edit', $thing) }}"
@@ -85,7 +85,7 @@
                                                         @if (!is_null($thing->user ))
 
                                                             <a rel="tooltip" class="btn btn-success btn-link"
-                                                               href="{{route('user.family', $thing->user)}}"
+                                                               href="{{route('user.show', $thing->user)}}"
                                                                data-original-title=""
                                                                title="Show {{$thing->user->getName()}}'s Family">
                                                                 <i class="material-icons">people</i>
