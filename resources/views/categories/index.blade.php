@@ -92,5 +92,4 @@
         </div>
     </div>
 
-    @if($isAdmin)<a href="/categories/create" class="button">+ Add a new category</a><br/>@endif
 @stop
