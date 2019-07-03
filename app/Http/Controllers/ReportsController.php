@@ -110,6 +110,7 @@ class ReportsController extends Controller {
                 'created' => $entry->created_at,
                 'type' => $category->getType(),
                 'is_late' => $entry->isLate(),
+                'category_number' => $entry->category->number,
                 'amount' => $price,
                 'entrant_id' => $entrant_id,
                 'entrant_name' => $entrant_name];

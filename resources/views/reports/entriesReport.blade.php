@@ -25,6 +25,7 @@
                                             <tr>
                                                 <th>Date</th>
                                                 <th>Name</th>
+                                                <th>Category</th>
                                                 <th>Type</th>
                                                 <th>Paid</th>
                                                 <th>Late?</th>
@@ -36,6 +37,7 @@
                                                 <td>
                                                     <a href="/entrants/{{$purchase['entrant_id']}}">{{$purchase['entrant_name']}}</a>
                                                 </td>
+                                                <td>{{$purchase['category_number']}}</td>
                                                 <td>{{$purchase['type']}}</td>
                                                 <td>{{$purchase['amount']}}p</td>
                                                 <td>{{(($purchase['is_late'])? 'Yes':'No')}}</td>
