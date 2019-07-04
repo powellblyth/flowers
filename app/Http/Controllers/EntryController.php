@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entrant;
 use Illuminate\Http\Request;
 use App\Entry;
 
@@ -24,6 +25,28 @@ class EntryController extends Controller
             }
         }
         return redirect()->route('entrants.show',(int)$request->input('entrant'));
+    }
+
+    public function printallcards(){
+        $categoryData = [];
+        $entries = Entry::join('entrants', 'entries.entrant_id','=','entrants.id')->join('users','users.id','=','entrants.user_id')
+        ->where('year', config('app.year'))->orderBy('users.id')->orderBy('entrant_id')->get();
+        $cardFronts = [];
+        $cardBacks = [];
+
+        foreach ($entries as $entry) {
+            if ($entry->category) {
+                $categoryData[$entry->category->id] = $entry->category;
+                $cardFronts[] = $entry->getCardFrontData();
+                $cardBacks[] = $entry->getCardBackData();
+            }
+        }
+
+        return view('cards.printcards', [
+            'card_fronts' => $cardFronts,
+            'card_backs' => $cardBacks,
+        ]);
+
     }
     
 

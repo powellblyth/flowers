@@ -40,6 +40,10 @@ Route::resource('membershippurchases', 'MembershipPurchaseController');
 Route::get('/cups',
     ['as' => 'cups.index',
         'uses' => 'CupController@index']);
+Route::get('/cups/printableresults',
+    ['as' => 'cup.printableresults',
+        'uses' => 'CupController@printableresults']);
+
 Route::get('/cups/{id}',
     ['as' => 'cups.show',
         'uses' => 'CupController@show']);
@@ -97,6 +101,9 @@ Route::get('/family',
 
 Route::get('/users/{user}/edit',
     ['as' => 'user.edit', 'uses' => 'UserController@edit'])->middleware('is_admin');
+
+Route::get('/entries/printall',
+    ['as' => 'entries.printall', 'uses' => 'EntryController@printallcards'])->middleware('is_admin');
 
 
 Route::get('/reports/',

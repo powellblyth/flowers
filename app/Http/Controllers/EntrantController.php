@@ -297,7 +297,7 @@ class EntrantController extends Controller {
 
     function printcards($id) {
         $categoryData = [];
-        $entrant = $this->baseClass::find($id);
+        $entrant = Entrant::find($id);
         $entries = $entrant->entries()->where('year', config('app.year'))->get();
         $cardFronts = [];
         $cardBacks = [];

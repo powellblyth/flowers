@@ -19,6 +19,15 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-12 text-right">
+                    @if (Auth::User()->isAdmin())
+
+                        <a href="{{route('entries.printall')}}" target="_blank"
+                           class="btn btn-primary">Print ALL Cards</a>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-success">{{__('Family Members')}}</div>

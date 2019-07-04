@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{URL::asset('css/formPrint.css')}}"/>
+<link rel="stylesheet" href="{{URL::asset('css/cardPrint.css')}}"/>
 <div id="everything">
     @php
     $numPerPage = 4;
@@ -26,7 +26,7 @@
                                     </div>
 
                                     <div class="prize_box"><span class="prize">&nbsp;</span> Prize</div>
-                                    <div class="footer_box"><span class="footer">Petersham Horticultural Society - Summer Show {{config('app.year')}}</span></div>
+                                    <div class="footer_box"><span class="footer">Petersham Horticultural Society - Summer Show {{config('app.year')}} - <b>This side up for judging</b></span></div>
                                 </div>
                             </td>
                         @else
@@ -68,6 +68,7 @@
                                     <td><img class="rhs-logo" src="/images/RHS-LOGO-BW-SMALL.jpg" /></td>
                                     <td>
                                         <div class="society_name">Petersham Horticultural Society</div>
+                                        <div class="sort_letter">{{$card_backs[$y]['user_sort_letter']}}</div>
                                         <div class="prize_box">&nbsp;</div>
                                     </td>
                                 </tr>

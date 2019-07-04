@@ -1,9 +1,12 @@
 
 @page {
     margin: 0;
-    orientation:landscape;
+    width: 148mm;
+    height: 105mm;
+    /*orientation:landscape;*/
+    size: A4 landscape;
 }
-@page :first {size: A4 landscape}
+/*@page :first {size: A4 landscape}*/
 @media print {
   html, body {
     width: 148mm;
@@ -130,12 +133,24 @@ img.rhs-logo
     margin:10px;
     margin-top:24px;
 }
+.backpage .sort_letter{
+    display: inline-block;
+    font-size:20px;
+    margin-left:8px;
+    margin-top:-6px;
+    /*width:25px;*/
+    text-align:right;
+    font-style: italic;
+    color:#999;
 
+}
 .backpage .society_name
 {
     margin-top:30px;
     margin-left:20px;
     font-size:26px;
+    display:inline-block;
+    width:340px;
 }
 .backpage .prize_box
 {

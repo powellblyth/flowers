@@ -25,29 +25,18 @@ class CupController extends Controller {
         }
     }
 
+
     public function index(Request $request): View {
         $year = $this->getYearFromRequest($request);
         $winners = array();
         $results = array();
 //        $cups = Cup::
-        $cups = $this->baseClass::orderBy('sort_order', 'asc')->get();
+        $cups = Cup::orderBy('sort_order', 'asc')->get();
 
+        /** dragons here - copied tp printableresults */
         foreach ($cups as $cup) {
-            $resultset = DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
-sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
-sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
-sum(if(winningplace='commended', 1,0)) as commendedplacepoints, 
-sum(if(winningplace='1', 4,0) + if(winningplace='2', 3,0) + if(winningplace='3', 2,0) + if(winningplace='commended', 1,0)) as totalpoints,
-entrant_id from entries 
-
-where category_id in (
-select category_cup.category_id from category_cup where category_cup.cup_id = ?)
-AND entries.year = ?
-group by entrant_id
-
-having (totalpoints > 0)
-order by (totalpoints) desc", array($cup->id, $year));
-
+            $resultset = $cup->getWinningResults($year);
+//var_dump($resultset);
             $thisCupPoints = array();
             foreach ($resultset as $result) {
                 $thisCupPoints[] = ['firstplacepoints' => $result->firstplacepoints,
@@ -141,6 +130,56 @@ order by (totalpoints) desc", array($cup->id, $year));
         ]);
 
     }
+    public function printableresults(Request $request){
+        $year = $this->getYearFromRequest($request);
+        $showAddress = $request->has('show_address') || $request->has('showaddress') || $request->has('showAddress');
+        $winners = array();
+        $results = array();
+        $cups = Cup::orderBy('sort_order', 'asc')->get();
+//var_dump($year);
+        /** dragons here - copied from index*/
+        foreach ($cups as $cup) {
+            $resultset = $cup->getWinningResults($year);
+//var_Dump($resultset);
+            $thisCupPoints = array();
+            foreach ($resultset as $result) {
+                $thisCupPoints[] = ['firstplacepoints' => $result->firstplacepoints,
+                    'secondplacepoints' => $result->secondplacepoints,
+                    'thirdplacepoints' => $result->thirdplacepoints,
+                    'commendedplacepoints' => $result->commendedplacepoints,
+                    'totalpoints' => $result->totalpoints,
+                    'entrant' => $result->entrant_id];
+                if (!array_key_exists($result->entrant_id, $winners)) {
+                    $winners[$result->entrant_id] = ['entrant' => Entrant::find($result->entrant_id), 'points' => $result->totalpoints];
+                }
+            }
+
+            $winningCategory = null;
+
+            // Gather up more winners if needed
+            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('year', $year)->first();
+            if ($cupWinner instanceof CupDirectWinner) {
+                if (!array_key_exists($cupWinner->entrant_id, $winners)) {
+                    $winners[$cupWinner->entrant_id] = ['entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0];
+                }
+                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('year',$year)->first();
+            }
+
+            $results[$cup->id] = array('results' => $thisCupPoints,
+                'direct_winner' => (($cupWinner instanceof CupDirectWinner) ? $cupWinner->entrant_id : null),
+//                var_dump($winningCategory)
+                'winning_category' => $winningCategory);
+        }
+//var_dump($winners);
+        return view($this->templateDir . '.publishablesnippet', ['cups' => $cups,
+            'results' => $results,
+            'winners' => $winners,
+            'year' => $year,
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
+            'showAddress' => $showAddress,
+
+        ]);
+    }
 
 //        public function storeresults(Request $request) {
 //        foreach ($request->positions as $categoryId => $placings) {
@@ -187,4 +226,7 @@ order by (totalpoints) desc", array($cup->id, $year));
 
         return redirect('/cups/' . $id);
     }
+
+
+
 }

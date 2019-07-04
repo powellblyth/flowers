@@ -50,6 +50,7 @@ class Entry extends Model {
             'entrant_name' => $this->entrant->getName(),
             'entrant_number' => $this->entrant->getEntrantNumber(),
             'entrant_age' => (($this->entrant->age && 18 > (int)$this->entrant->age) ? $this->entrant->age : ''),
+            'user_sort_letter' => strtoupper(substr($this->entrant->user->lastname,0,1)),
         ];
     }
 
