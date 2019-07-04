@@ -29,10 +29,8 @@ class EntrantSubscriptionListener
         $entrant = $event->entrant;
         if ($entrant->isDirty('can_retain_data')) {
             if ($entrant->can_retain_data) {
-                echo "usr retains";
                 $entrant->retain_data_opt_in = date('Y-m-d H:i:s');
             } else {
-                echo "usr not rareta";
                 $entrant->retain_data_opt_out = date('Y-m-d H:i:s');
             }
         }

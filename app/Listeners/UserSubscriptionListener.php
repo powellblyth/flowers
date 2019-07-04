@@ -29,10 +29,8 @@ class UserSubscriptionListener
         $user = $event->user;
         if ($user->isDirty('can_retain_data')) {
             if ($user->can_retain_data) {
-                echo "usr retains";
                 $user->retain_data_opt_in = date('Y-m-d H:i:s');
             } else {
-                echo "usr not rareta";
                 $user->retain_data_opt_out = date('Y-m-d H:i:s');
             }
         }

@@ -81,7 +81,11 @@ Route::post('/entry/creates',
     ['as' => 'entry.creates', 'uses' => 'EntryController@creates'])->middleware('auth');
 Route::get('/entrants/{id}/print',
     ['as' => 'entrant.print', 'uses' => 'EntrantController@printcards'])->middleware('is_admin');
-Route::resource('entrants', 'EntrantController')->middleware('auth');
+Route::get('/entrants/{id}/edit',
+    ['as' => 'entrants.edit', 'uses' => 'EntrantController@edit'])->middleware('auth');
+Route::get('/entrants/{id}',
+    ['as' => 'entrants.show', 'uses' => 'EntrantController@show'])->middleware('auth');
+//Route::resource('entrants', 'EntrantController')->middleware('auth');
 
 Route::post('/entrants/{id}/update',
     ['as' => 'entrants.update', 'uses' => 'EntrantController@update'])->middleware('auth');

@@ -30,9 +30,9 @@
                             @if (Auth::User()->isAdmin())
                                 <a href="{{route('entrant.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
-                            @endif
                             <a href="{{route('entrants.edit', $thing)}}"
                                class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                            @endif
                             @if ($thing->user)
                                 <a href="{{route('user.show', $thing->user)}}"
                                    class="btn btn-primary">Show Family Manager</a>

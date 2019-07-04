@@ -34,7 +34,7 @@ class EntrantController extends Controller {
         return Auth::check() && Auth::User()->isAdmin();
     }
 
-    public function index(Request $request, array $extraData = []): View {
+    public function index(Request $request): View {
         $things = Entrant::where('is_anonymised', false)
             ->orderBy('familyname', 'asc')
             ->orderBy('firstname', 'asc')
@@ -42,10 +42,9 @@ class EntrantController extends Controller {
         // OVerride parent method - this prevents the same query running twice
         // and producing too much data
         return view($this->templateDir . '.index',
-            array_merge($extraData,
-                array('things' => $things,
-                    'all' => false,
-                    'isAdmin' => $this->isAdmin())));
+            ['things' => $things,
+                'all' => false,
+                'isAdmin' => $this->isAdmin()]);
     }
 
     public function search(Request $request): View {
@@ -142,14 +141,15 @@ class EntrantController extends Controller {
 //        $thing->can_sms = (int)$request->can_sms;
 
         if ($thing->save()) {
+            $request->session()->flash('success', 'Family Member Saved');
             if (!$this->isAdmin()) {
                 Auth::User()->entrants()->save($thing);
+                return redirect()->route('user.family');
             } elseif ($request->has('user_id')) {
                 $user = User::find((int)$request->user_id);
                 $user->entrants()->save($thing);
+                return redirect()->route('entrants.index');
             }
-            $request->session()->flash('success', 'Family Member Saved');
-            return redirect()->route('entrants.index');
         } else {
             $request->session()->flash('error', 'Something went wrong saving the Family Member');
             return back();
@@ -177,7 +177,12 @@ class EntrantController extends Controller {
 
         if ($thing->save()) {
             $request->session()->flash('success', 'Family Member Saved');
-            return redirect()->route('entrants.index');
+            if ($this->isAdmin()) {
+                return redirect()->route('entrants.index');
+            }
+            else{
+                return redirect()->route('user.family');
+            }
         } else {
             $request->session()->flash('error', 'Something went wrong saving the Family Member');
             return back();
@@ -281,7 +286,7 @@ class EntrantController extends Controller {
                     'payment_types' => $this->paymentTypes,
                     'total_prizes' => $totalPrizes,
 //                    'membership_fee' => $membershipFee,
-                    'membership_types' =>['single'=>'Single'],
+                    'membership_types' => ['single' => 'Single'],
                     //                'can_email' => $thing->can_email,
                     //                'can_sms' => $thing->can_sms,
                     //                'can_phone' => $thing->can_phone,
@@ -313,7 +318,7 @@ class EntrantController extends Controller {
         return view('cards.printcards', [
             'card_fronts' => $cardFronts,
             'card_backs' => $cardBacks,
-            ]);
+        ]);
     }
 
     /**

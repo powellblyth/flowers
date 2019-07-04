@@ -88,9 +88,9 @@ $activePage = 'users';
 
                                 <a href="{{route('user.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
-                            @endif
                                 <a href="{{route('user.edit', $thing)}}"
                                    class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                            @endif
                                 <a href="{{route('entrants.create')}}"
                                    class="btn btn-primary">Add another family member</a>
                         </div>
