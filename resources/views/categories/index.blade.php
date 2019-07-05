@@ -40,10 +40,9 @@
                             </div>
 
                             <div class="card-body">
-                                @if (!$publishMode && $isAdmin && $is_current_year)
+                                @if (!$publishMode && $isAdmin && $is_current_year && !$isLocked)
                                     <p><a class="button btn btn-success"
-                                          href="/categories/resultsentry?section={{urlencode($section)}}">Enter
-                                            Results</a></p>
+                                          href="/categories/resultsentry?section={{urlencode($section)}}">Enter Results</a></p>
                                 @endif
                                 @foreach ($categories as $category)
                                     <div class="row">

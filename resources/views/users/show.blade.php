@@ -88,11 +88,15 @@ $activePage = 'users';
 
                                 <a href="{{route('user.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
-                                <a href="{{route('user.edit', $thing)}}"
+                               @if(!@isLocked)
+                                    <a href="{{route('user.edit', $thing)}}"
                                    class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                                   @endif
                             @endif
+                            @if(!$isLocked)
                                 <a href="{{route('entrants.create')}}"
                                    class="btn btn-primary">Add another family member</a>
+                                @endif
                         </div>
                     </div>
                     <div class="card">
@@ -141,7 +145,10 @@ $activePage = 'users';
                                         @if ($entrant->age)
                                             (Age {{$entrant->age}} years)
                                             @endif
-                                        <a href="{{route('entrants.show', $entrant->id)}}"><i class="material-icons">toc</i> Manage Entries / Show</a> <a href="{{route('entrants.edit', $entrant->id)}}"><i class="material-icons">edit</i> edit</a></h4>
+                                        @if (!$isLocked)
+                                        <a href="{{route('entrants.show', $entrant->id)}}"><i class="material-icons">toc</i> Manage Entries / Show</a> <a href="{{route('entrants.edit', $entrant->id)}}"><i class="material-icons">edit</i> edit</a>
+                                            @endif
+                                    </h4>
 
                                     @php
                                         $entry_data = $entrant->entries()->where('year', config('app.year'))->get();
@@ -257,7 +264,7 @@ $activePage = 'users';
 
             {{ Form::close() }}
             <div class="row">
-                @if($isAdmin)
+                @if($isAdmin && !$isLocked)
 
                     <div class="col-md-6 col-sm-12">
                         <div class="card">
@@ -283,7 +290,7 @@ $activePage = 'users';
                     </div>
 
                 @endif
-                @if($isAdmin)
+                @if($isAdmin && !$isLocked)
                     <div class="col-md-6 col-sm-12">
                         <div class="card">
                             <div class="card-header-success">New Membership Purchase</div>

@@ -32,11 +32,12 @@ class UserController extends Controller {
      * @return \Illuminate\View\View
      */
     public function index(User $model): View {
-        return view('users.index', ['users' =>
-            $model::where('is_anonymised', false)
+        return view('users.index', [
+            'users' => $model::where('is_anonymised', false)
                 ->orderBy('lastname')
                 ->orderBy('firstname')
-                ->get()
+                ->get(),
+            'isLocked' => config('app.state') == 'locked',
         ]);
     }
 
@@ -105,7 +106,7 @@ class UserController extends Controller {
                 'payment_types' => $this->paymentTypes,
                 'membership_types' => ['family' => 'Family'],
                 'has_family_subscription' => $hasFamilySubscription,
-
+                'isLocked' => config('app.state') == 'locked'
             ]);
         } else {
             return view('404');
@@ -129,7 +130,7 @@ class UserController extends Controller {
         $cardFronts = [];
         $cardBacks = [];
         foreach ($entrants as $entrant) {
-            $entries = $entrant->entries()->where('year',config('app.year'))->get();
+            $entries = $entrant->entries()->where('year', config('app.year'))->get();
 
             foreach ($entries as $entry) {
                 if ($entry->category) {
@@ -162,7 +163,7 @@ class UserController extends Controller {
             [
                 'password_reset_token' => '',
                 'password' => $newPassword,
-                'auth_token' => md5((string) random_int(PHP_INT_MIN, PHP_INT_MAX))])->all());
+                'auth_token' => md5((string)random_int(PHP_INT_MIN, PHP_INT_MAX))])->all());
         $user->makeDefaultEntrant();
 
         return redirect()->route('user.index')->withStatus(__('User successfully created.'));

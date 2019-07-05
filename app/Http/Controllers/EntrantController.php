@@ -179,8 +179,7 @@ class EntrantController extends Controller {
             $request->session()->flash('success', 'Family Member Saved');
             if ($this->isAdmin()) {
                 return redirect()->route('entrants.index');
-            }
-            else{
+            } else {
                 return redirect()->route('user.family');
             }
         } else {
@@ -294,6 +293,7 @@ class EntrantController extends Controller {
                     'isAdmin' => $this->isAdmin(),
                     'thing' => $thing,
                     'member_number' => $memberNumber,
+                    'isLocked' => config('app.state') == 'locked',
                 ))
             );
         }

@@ -24,10 +24,11 @@
         <li class="nav-item{{ $activePage == 'entrants' ? ' active' : '' }}">
         <a class="nav-link" href="{{route('user.family')}}"><i class="material-icons">people</i><p>My Family</p></a>
         </li>
-
+            @if(config('app.state') !== 'locked')
         <li class="nav-item{{ $activePage == 'add-entrant' ? ' active' : '' }}">
         <a class="nav-link" href="{{route('entrants.create')}}"><i class="material-icons">group_add</i><p>Add a family member</p></a>
         </li>
+            @endif
 
       @else
         <li class="nav-item{{ $activePage == 'sign-in' ? ' active' : '' }}">

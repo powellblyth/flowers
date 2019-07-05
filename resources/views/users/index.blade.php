@@ -23,19 +23,21 @@
                                     </div>
                                 </div>
                             @endif
-                            <div class="row">
-                                <div class="col-12 text-right">
-                                    <a href="{{ route('user.create') }}"
-                                       class="btn btn-sm btn-primary">{{ __('Add user') }}</a>
+                            @if(!$isLocked)
+                                <div class="row">
+                                    <div class="col-12 text-right">
+                                        <a href="{{ route('user.create') }}"
+                                           class="btn btn-sm btn-primary">{{ __('Add user') }}</a>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class=" text-primary">
                                     <th>
                                         {{ __('Name') }}
                                     </th>
-                                        <th>Type</th>
+                                    <th>Type</th>
                                     <th>
                                         {{ __('Email') }}
                                     </th>
@@ -52,7 +54,7 @@
                                             <td>
                                                 {{ $user->firstname }} {{ $user->lastname }}
                                             </td>
-                                                <td>{{ucfirst($user->type)}}</td>
+                                            <td>{{ucfirst($user->type)}}</td>
                                             <td>
                                                 {{ $user->email }}
                                             </td>
@@ -64,12 +66,15 @@
                                                     <i class="material-icons">people</i>
                                                     <div class="ripple-container"></div>
                                                 </a>
-                                                <a rel="tooltip" class="btn btn-success btn-link"
-                                                   href="{{ route('entrants.create') }}?user_id={{$user->id}}" data-original-title=""
-                                                   title="add a new family member">
-                                                    <i class="material-icons">add</i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
+                                                @if(!$isLocked)
+                                                    <a rel="tooltip" class="btn btn-success btn-link"
+                                                       href="{{ route('entrants.create') }}?user_id={{$user->id}}"
+                                                       data-original-title=""
+                                                       title="add a new family member">
+                                                        <i class="material-icons">add</i>
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                @endif
                                             </td>
                                             <td class="td-actions text-right">
                                                 @if ($user->id != auth()->id())
@@ -77,6 +82,7 @@
                                                         @csrf
                                                         @method('delete')
 
+                                                        @if (!$isLocked)
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{ route('user.edit', $user) }}" data-original-title=""
                                                            title="edit {{$user->firstname}}">
@@ -95,6 +101,7 @@
                                                             <i class="material-icons">close</i>
                                                             <div class="ripple-container"></div>
                                                         </button>
+                                                            @endif
                                                     </form>
                                                 @else
                                                     <a rel="tooltip" class="btn btn-success btn-link"

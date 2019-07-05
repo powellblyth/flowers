@@ -91,7 +91,9 @@ class CategoryController extends Controller {
                 'winners' => $winners,
                 'year' => $year,
                 'is_current_year' => ($year == (int)date('Y')),
-                'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
+                'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
+                'isLocked'=>config('app.state') == 'locked',
+            ]);
 
     }
 

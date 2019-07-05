@@ -30,8 +30,10 @@
                             @if (Auth::User()->isAdmin())
                                 <a href="{{route('entrant.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
-                            <a href="{{route('entrants.edit', $thing)}}"
-                               class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                                @if(!$isLocked)
+                                    <a href="{{route('entrants.edit', $thing)}}"
+                                       class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                                @endif
                             @endif
                             @if ($thing->user)
                                 <a href="{{route('user.show', $thing->user)}}"
@@ -127,40 +129,41 @@
                 {{--</table>--}}
                 {{--{{ Form::submit('Store Preferences', ['class' => 'button btn btn-primary']) }}--}}
                 {{--{{ Form::close()}}--}}
+                @if(!$isLocked)
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card">
+                                <div class="card-header-success">Create New Entries</div>
+                                <div class="card-body">
+                                    <p>Choose the categories you wish to add entries for below</p>
 
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-header-success">Create New Entries</div>
-                            <div class="card-body">
-                                <p>Choose the categories you wish to add entries for below</p>
+                                    {{ Form::open([
+                                        'route' => 'entry.creates'
+                                    ]) }}
+                                    <div class="row">
 
-                                {{ Form::open([
-                                    'route' => 'entry.creates'
-                                ]) }}
-                                <div class="row">
+                                        {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
 
-                                    {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
-
-                                    @for ($i = 0; $i < 40; $i++)
-                                        <div class="col-sm-3 col-md-2 col-lg-1">{{ Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px']) }}</div>
-                                    @endfor
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <br/>
-                                        {{ Form::submit('Create Entry', ['class' => 'button btn btn-primary']) }}
+                                        @for ($i = 0; $i < 40; $i++)
+                                            <div class="col-sm-3 col-md-2 col-lg-1">{{ Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px']) }}</div>
+                                        @endfor
                                     </div>
-                                </div>
-                                {{ Form::close() }}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <br/>
+                                            {{ Form::submit('Create Entry', ['class' => 'button btn btn-primary']) }}
+                                        </div>
+                                    </div>
+                                    {{ Form::close() }}
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
+                @endif
 
-                    @if($isAdmin)
+                @if($isAdmin && !$isLocked)
+                    <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-header-success">New Membership Purchase</div>
@@ -182,8 +185,9 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
-                </div>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>

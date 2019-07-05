@@ -26,7 +26,11 @@ class HomeController extends Controller {
         foreach (Auth::User()->entrants as $entrant) {
             $totalEntries += $entrant->entries()->count();
         }
-
-        return view('dashboard', ['entrantCount' => $entrantCount, 'entryCount' => $totalEntries]);
+//die();
+        return view('dashboard', [
+            'entrantCount' => $entrantCount,
+            'entryCount' => $totalEntries,
+            'isLocked'=>config('app.state') == 'locked',
+            ]);
     }
 }
