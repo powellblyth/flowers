@@ -44,7 +44,8 @@ class EntrantController extends Controller {
         return view($this->templateDir . '.index',
             ['things' => $things,
                 'all' => false,
-                'isAdmin' => $this->isAdmin()]);
+                'isAdmin' => $this->isAdmin(),
+            ]);
     }
 
     public function search(Request $request): View {
@@ -82,10 +83,12 @@ class EntrantController extends Controller {
                 ->get();
         }
         return view($this->templateDir . '.index',
-            array('things' => $things,
+            ['things' => $things,
                 'searchterm' => $searchterm,
                 'all' => true,
-                'isAdmin' => $this->isAdmin()));
+                'isAdmin' => $this->isAdmin(),
+                'isLocked' => config('app.state') == 'locked',
+            ]);
     }
 
     public function create(Request $request): View {

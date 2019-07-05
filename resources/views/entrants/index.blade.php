@@ -57,19 +57,25 @@
                                     <div class="table-responsive col-lg-8 col-md-12 col-sm-12">
                                         <table class="table ">
                                             <thead>
-                                                <th>Name</th><th></th><th>Family Manager</th><th class="text-right">Actions</th>
+                                            <th>Name</th>
+                                            <th></th>
+                                            <th>Family Manager</th>
+                                            <th class="text-right">Actions</th>
                                             </thead>
                                             @foreach ($things as $thing)
                                                 <tr>
                                                     <td>{{ ucwords($thing->getName()) }}</td>
                                                     <td class="td-actions">
-                                                        <a rel="tooltip" class="btn btn-success btn-link"
-                                                           href="{{ route('entrants.edit', $thing) }}"
-                                                           data-original-title=""
-                                                           title="edit {{$thing->firstname}}">
-                                                            <i class="material-icons">edit</i>
-                                                            <div class="ripple-container"></div>
-                                                        </a>
+                                                        @if(!$isLocked)
+                                                            <a rel="tooltip" class="btn btn-success btn-link"
+                                                               href="{{ route('entrants.edit', $thing) }}"
+                                                               data-original-title=""
+                                                               title="edit {{$thing->firstname}}">
+                                                                <i class="material-icons">edit</i>
+                                                                <div class="ripple-container"></div>
+                                                            </a>
+                                                        @endif
+
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{ route('entrants.show', $thing) }}"
                                                            data-original-title=""
