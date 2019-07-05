@@ -67,6 +67,8 @@ Route::resource('payments', 'PaymentController')->middleware('auth');
 
 Route::get('/entrants/search',
     ['as' => 'entrants.search', 'uses' => 'EntrantController@search'])->middleware('auth');
+Route::post('/entrants/store',
+    ['as' => 'entrants.store', 'uses' => 'EntrantController@store'])->middleware('auth');
 Route::get('/entrants',
     ['as' => 'entrants.index', 'uses' => 'EntrantController@index'])->middleware('is_admin');
 Route::get('/entrants/create',
