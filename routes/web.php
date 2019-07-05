@@ -13,7 +13,7 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'  , ['isLocked'=>config('app.state') == 'locked'] );
 });
 Route::post('/categories/storeresults',
     ['as' => 'categories.storeresults',

@@ -35,9 +35,11 @@
         <a class="nav-link" href="{{ url('/login') }}"><i class="material-icons">dashboard</i><p>Sign in</p></a>
         </li>
 
+            @if(config('app.state') !== 'locked')
         <li class="nav-item{{ $activePage == 'register' ? ' active' : '' }}">
         <a class="nav-link" href="{{ url('/register') }}"><i class="material-icons">dashboard</i><p>Register</p></a>
         </li>
+                @endif
 
       @endif
         <li class="nav-item{{ $activePage == 'categories' ? ' active' : '' }}">

@@ -53,7 +53,9 @@
                         <a href="{{route('entrants.create')}}">Add an entrant</a>
                     @else
                         <a href="{{ url('/login') }}">Sign in</a>
+                        @if(config('app.state') !== 'locked')
                         <a href="{{ url('/register') }}">Register</a>
+                            @endif
                     @endif
                     <a href="{{route('categories.index')}}">Categories / Results</a>
                     <a href="{{ url('/cups') }}">Cups</a>
