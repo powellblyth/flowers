@@ -4,16 +4,8 @@
 @endphp
 @foreach ($cups as $cup)
     @php
-        if ($cup->id == 13)
-        {
-            $maxResults = 4;
-        }
-        else
-        {
-            $maxResults = 2;
-        }
-
         $lastResult = -1;
+    $maxResults = $cup->num_display_results;
     @endphp
 
     <span style="font-size:18pt">{{ $cup->name }}</span><br/>

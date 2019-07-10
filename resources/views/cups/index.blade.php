@@ -36,20 +36,8 @@
             </div>
             @foreach ($cups as $cup)
                 @php
-                    if ($cup->id == 13)
-                    {
-                        $maxResults = 4;
-                    }
-                    elseif ($cup->id == 11 || $cup->id=12)
-                    {
-                        $maxResults = 4;
-                    }
-                    else
-                    {
-                        $maxResults = 2;
-                    }
-
                     $lastResult = -1;
+                    $maxResults = $cup->num_display_results;
                 @endphp
 
                 <div class="row">

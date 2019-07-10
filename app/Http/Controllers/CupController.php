@@ -66,7 +66,7 @@ class CupController extends Controller {
 //                var_dump($winningCategory)
                 'winning_category' => $winningCategory);
         }
-
+//var_dump($results);
         return view($this->templateDir . '.index', ['cups' => $cups,
             'results' => $results,
             'winners' => $winners,
