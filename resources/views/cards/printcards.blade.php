@@ -68,7 +68,7 @@
                                     <td><img class="rhs-logo" src="/images/RHS-LOGO-BW-SMALL.jpg" /></td>
                                     <td>
                                         <div class="society_name">Petersham Horticultural Society</div>
-                                        <div class="sort_letter">{{$card_backs[$y]['user_sort_letter']}}</div>
+{{--                                        <div class="sort_letter">{{$card_backs[$y]['user_sort_letter']}}</div>--}}
                                         <div class="prize_box">&nbsp;</div>
                                     </td>
                                 </tr>

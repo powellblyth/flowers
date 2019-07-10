@@ -40,6 +40,10 @@
                     {
                         $maxResults = 4;
                     }
+                    elseif ($cup->id == 11 || $cup->id=12)
+                    {
+                        $maxResults = 4;
+                    }
                     else
                     {
                         $maxResults = 2;
@@ -142,9 +146,9 @@
                                         <b>
                                             <a href="{{$winners[$directWinnerId]['entrant']->getUrl()}}">{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</a>
                                             @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
-                                                {{$winners[$directWinnerId]['entrant']->getAddress()}}<br/>
-                                                {{$winners[$directWinnerId]['entrant']->telephone}}
-                                                , {{$winners[$directWinnerId]['entrant']->email}}
+                                                {{$winners[$directWinnerId]['entrant']->user->getAddress()}}<br/>
+                                                {{$winners[$directWinnerId]['entrant']->user->telephone}}
+                                                , {{$winners[$directWinnerId]['entrant']->user->email}}
                                             @endif
                                         </b>
                                     @else

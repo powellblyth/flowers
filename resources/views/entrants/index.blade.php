@@ -10,7 +10,8 @@
     @endphp
 @endif
 @extends('layouts.app', ['activePage' =>$activePage, 'titlePage' => $pageTitle])
-
+@php
+@endphp
 @section('pagetitle', $pageTitle)
 @section('content')
 

@@ -30,7 +30,7 @@ class EntryController extends Controller
     public function printallcards(){
         $categoryData = [];
         $entries = Entry::join('entrants', 'entries.entrant_id','=','entrants.id')->join('users','users.id','=','entrants.user_id')
-        ->where('year', config('app.year'))->orderBy('users.id')->orderBy('entrant_id')->get();
+        ->where('year', config('app.year'))->orderBy('users.lastname')->orderBy('entrants.familyname')->orderBy('entrant_id')->get();
         $cardFronts = [];
         $cardBacks = [];
 

@@ -80,9 +80,12 @@ class CupController extends Controller {
         $winners = [];
         $cup = Cup::find($id);
         $year = $this->getYearFromRequest($request);
-
+//var_dump($year);
         $categories = $cup->categories()->where('year', $year)->orderBy('sortorder')->get();
+//        var_dump(count($categories));
+        $categoriesArray = [];
         foreach ($categories as $category) {
+            $categoriesArray[$category->id] = $category->getNumberedLabel();
             $resultset = $category
                 ->entries()
                 ->selectRaw('if(winningplace=\'1\', 4,if(winningplace=\'2\',3, if(winningplace=\'3\',2, if(winningplace=\'commended\',1, 0 ) ) )) as points, winningplace, entrant_id')
@@ -114,7 +117,7 @@ class CupController extends Controller {
             }
             unset($person);
         }else{$validEntries = null;}
-
+//var_dump($categoriesArray);die();
         asort($people);
         $thing = $this->baseClass::find($id);
 //        $showData = array_merge($extraData, array('thing' => $thing));
@@ -122,7 +125,7 @@ class CupController extends Controller {
             'thing' => $thing,
             'winners' => $winners,
             'winners_by_category' => $winnerDataByCategory,
-            'categories' => $categories,
+            'categories' => $categoriesArray,
             'people' => $people,
             'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
             'year'=>$year,
@@ -219,7 +222,7 @@ class CupController extends Controller {
 //        $thing = Cup::find($id);
 //        $entries = Entrant::where('id', $request->entrant)->first();
         $cupDirectWinner = new CupDirectWinner();
-        $cupDirectWinner->cup = $id;
+        $cupDirectWinner->cup_id = $id;
         $cupDirectWinner->year = config('app.year');
         $cupDirectWinner->entrant_id = $request->person;
         $cupDirectWinner->save();

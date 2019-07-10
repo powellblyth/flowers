@@ -45,7 +45,8 @@ class EntrantController extends Controller {
             ['things' => $things,
                 'all' => false,
                 'isAdmin' => $this->isAdmin(),
-            ]);
+                'isLocked' => config('app.state') == 'locked',
+                ]);
     }
 
     public function search(Request $request): View {
