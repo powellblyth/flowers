@@ -269,7 +269,7 @@ class EntrantController extends Controller {
                         'category_id' => $entry->category,
                         'placement_name' => $entry->getPlacementName(),
                         'price' => $price,
-                        'is_late' => ($entry->getPriceType() == Category::PRICE_LATE_PRICE)
+                        'is_late' => ($entry->getPriceType() == Category::PRICE_LATE_PRICE),
                     ];
                 }
             }
@@ -278,6 +278,11 @@ class EntrantController extends Controller {
             if (is_null($memberNumber)) {
                 $memberNumber = 'Not currently a member';
             }
+            $currentYear = config('app.year');
+
+            //@todo centralise this
+            $tooLateForEntries = time() > strToTime( $currentYear."-07-09 00:00:00");
+
             return view($this->templateDir . '.show', array_merge($showData, array(
                     'entry_data' => $entryData,
                     'entries' => $entries,
@@ -298,6 +303,7 @@ class EntrantController extends Controller {
                     'thing' => $thing,
                     'member_number' => $memberNumber,
                     'isLocked' => config('app.state') == 'locked',
+                    'too_late_for_entries' => $tooLateForEntries,
                 ))
             );
         }

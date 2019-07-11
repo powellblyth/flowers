@@ -145,7 +145,7 @@ $activePage = 'users';
                                         @if ($entrant->age)
                                             (Age {{$entrant->age}} years)
                                             @endif
-                                        @if (!$isLocked)
+                                        @if (!$isLocked && !$too_late_for_entries)
                                         <a href="{{route('entrants.show', $entrant->id)}}"><i class="material-icons">toc</i> Manage Entries / Show</a> <a href="{{route('entrants.edit', $entrant->id)}}"><i class="material-icons">edit</i> edit</a>
                                             @endif
                                     </h4>

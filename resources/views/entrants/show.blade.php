@@ -129,7 +129,7 @@
                 {{--</table>--}}
                 {{--{{ Form::submit('Store Preferences', ['class' => 'button btn btn-primary']) }}--}}
                 {{--{{ Form::close()}}--}}
-                @if(!$isLocked)
+                @if(!$isLocked && !$too_late_for_entries)
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="card">

@@ -92,6 +92,9 @@ class UserController extends Controller {
                 $membershipFee += $membership->amount;
             }
 
+            //@todo centralise this
+            $tooLateForEntries = time() > strToTime( $currentYear."-07-09 00:00:00");
+
             $hasFamilySubscription = $thing->subscribed('family');
 //var_dump([$currentYear,     $membershipFee]);die();
             return view('users.show', [
@@ -106,7 +109,8 @@ class UserController extends Controller {
                 'payment_types' => $this->paymentTypes,
                 'membership_types' => ['family' => 'Family'],
                 'has_family_subscription' => $hasFamilySubscription,
-                'isLocked' => config('app.state') == 'locked'
+                'isLocked' => config('app.state') == 'locked',
+                'too_late_for_entries' => $tooLateForEntries,
             ]);
         } else {
             return view('404');

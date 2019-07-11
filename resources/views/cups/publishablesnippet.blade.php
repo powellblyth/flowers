@@ -8,7 +8,7 @@
     $maxResults = $cup->num_display_results;
     @endphp
 
-    <span style="font-size:18pt">{{ $cup->name }}</span><br/>
+    <h3><b>{{ $cup->name }}</b></h3>
     {{$cup->winning_criteria}}<br/>
     @if ((int)$results[$cup->id]['direct_winner'] == 0)
 
@@ -19,7 +19,7 @@
             @if(0 == $x || $lastResult == $totalPoints)
                 <b>Winner:</b>
             @else
-                <br/><b>Proxime Accessit:</b>
+                <b>Proxime Accessit:</b>
             @endif
         ({{$results[$cup->id]['results'][$x]['totalpoints'] }} points)
             @php
