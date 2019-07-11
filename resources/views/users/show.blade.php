@@ -88,7 +88,7 @@ $activePage = 'users';
 
                                 <a href="{{route('user.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
-                               @if(!@isLocked)
+                               @if(!$isLocked)
                                     <a href="{{route('user.edit', $thing)}}"
                                    class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
                                    @endif
