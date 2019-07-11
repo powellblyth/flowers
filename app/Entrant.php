@@ -69,18 +69,20 @@ class Entrant extends Model {
     }
 
     public function getCurrentMembership(): ?MembershipPurchase {
-        $membership = $this->individualMemberships()->where('year', config('app.year'))
+        $membership = $this->individualMemberships()
+            ->orderBy('year', 'desc')
+            ->orderBy('created_at', 'desc')
             ->where('type', 'single')
             ->first();
-//        var_dump($membership);
-//      var_dump(get_class($membership));
-////        die('here');
-        if (!$membership instanceof MembershipPurchase) {
-//            die('not a member');
+
+        if (!$membership instanceof MembershipPurchase && $membership->isNotExpired()) {
             $membership = $this->familyMembership();
         }
-//        die('oh');
-        return $membership;
+        if ($membership->isNotExpired()) {
+            return $membership;
+        } else {
+            return null;
+        }
     }
 
     public function isAMember(): bool {

@@ -1,8 +1,8 @@
 @php
-$activePage = 'entrants';
-if ($thing->id <> Auth::User()->id){
-$activePage = 'users';
-}
+    $activePage = 'entrants';
+    if ($thing->id <> Auth::User()->id){
+    $activePage = 'users';
+    }
 @endphp
 @extends('layouts.app', ['activePage' => $activePage, 'titlePage' =>  $thing->getName() ])
 
@@ -88,15 +88,15 @@ $activePage = 'users';
 
                                 <a href="{{route('user.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
-                               @if(!$isLocked)
+                                @if(!$isLocked)
                                     <a href="{{route('user.edit', $thing)}}"
-                                   class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
-                                   @endif
+                                       class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                                @endif
                             @endif
                             @if(!$isLocked)
                                 <a href="{{route('entrants.create')}}"
                                    class="btn btn-primary">Add another family member</a>
-                                @endif
+                            @endif
                         </div>
                     </div>
                     <div class="card">
@@ -144,12 +144,14 @@ $activePage = 'users';
                                     <h4>{{$entrant->getName()}}
                                         @if ($entrant->age)
                                             (Age {{$entrant->age}} years)
-                                            @endif
-                                        <a href="{{route('entrants.show', $entrant->id)}}"><i class="material-icons">toc</i> Manage Entries / Show</a>
-                                            @if (!$isLocked )
+                                        @endif
+                                        <a href="{{route('entrants.show', $entrant->id)}}"><i
+                                                    class="material-icons">toc</i> Manage Entries / Show</a>
+                                        @if (!$isLocked )
 
-                                            <a href="{{route('entrants.edit', $entrant->id)}}"><i class="material-icons">edit</i> edit</a>
-                                            @endif
+                                            <a href="{{route('entrants.edit', $entrant->id)}}"><i
+                                                        class="material-icons">edit</i> edit</a>
+                                        @endif
                                     </h4>
 
                                     @php
@@ -163,26 +165,26 @@ $activePage = 'users';
                                             @php $totalFee += $entry->getActualPrice() @endphp
                                         @endforeach
                                         <p>{{count($entry_data)}}
-                                                entry(ies) TOTAL:£{{number_format($totalFee/100, 2)}}</p>
-                                                                    @foreach ($entry_data as $entry)
+                                            entry(ies) TOTAL:£{{number_format($totalFee/100, 2)}}</p>
+                                        @foreach ($entry_data as $entry)
 
-                                        {{--                                @foreach ($entry_data as $entry)--}}
+                                            {{--                                @foreach ($entry_data as $entry)--}}
 
-                                                                            {{$entry->category->getNumberedLabel()}} ({{$entry->getActualPrice()}}p)
-                                        {{--                                        @if ($entry['is_late'])--}}
-                                        {{--                                            (late)--}}
+                                            {{$entry->category->getNumberedLabel()}} ({{$entry->getActualPrice()}}p)
+                                            {{--                                        @if ($entry['is_late'])--}}
+                                            {{--                                            (late)--}}
 
-                                        {{--                                        @endif--}}
-                                        {{--                                        @if ($entry['has_won'])--}}
-                                        {{--                                            <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>--}}
-                                        {{--                                            (&pound;{{number_format($entry['winning_amount']/100,2)}})--}}
-                                        {{--                                        @endif--}}
-                                                                            <br />
-                                                                        @endforeach
+                                            {{--                                        @endif--}}
+                                            {{--                                        @if ($entry['has_won'])--}}
+                                            {{--                                            <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>--}}
+                                            {{--                                            (&pound;{{number_format($entry['winning_amount']/100,2)}})--}}
+                                            {{--                                        @endif--}}
+                                            <br/>
+                                        @endforeach
                                         {{--                            @endif--}}
                                         {{--                                @endforeach--}}
                                     @endif
-                                    <hr />
+                                    <hr/>
                                 @endforeach
                             @endif
 
@@ -224,13 +226,15 @@ $activePage = 'users';
                         </div>
                     </div>
                 </div>
-            </div>            <div class="row">
+            </div>
+            <div class="row">
 
                 <div class="col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-header-success">Your membership subscription</div>
                         <div class="card-body">
-                            If you wish to subscribe, you must enter your card details, and our partner Stripe will manage the annual renewal for us.
+                            If you wish to subscribe, you must enter your card details, and our partner Stripe will
+                            manage the annual renewal for us.
 
                         </div>
                     </div>
@@ -284,7 +288,6 @@ $activePage = 'users';
                                 {{Form::select('source', $payment_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
                                 <br/>
                                 {{ Form::submit('Store Payment', ['class' => 'button btn btn-primary']) }}
-                                <br/><br/><br/>
 
                                 {{ Form::close() }}
                             </div>
@@ -300,12 +303,15 @@ $activePage = 'users';
                                 <p>Note that your membership will not be processed until the money has been received</p>
                                 {{ Form::open([ 'route' => 'membershippurchases.store' ]) }}
 
-                                {{ Form::hidden('user', $thing->id, ['class' => 'form-control']) }}
+                                {{ Form::hidden('user', $thing->id) }}
+
+                                {{ Form::label('number', 'Number:', ['class' => 'control-label']) }}
+                                {{ Form::text('number', null,['class' => 'form-control','style'=>'width:150px'])}}
+                                <br/>
                                 {{ Form::label('type', 'Type:', ['class' => 'control-label']) }}
-                                {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
+                                {{ Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:150px'])}}
                                 <br/>
                                 {{ Form::submit('Purchase Membership', ['class' => 'button btn btn-primary']) }}
-                                <br/><br/><br/>
                                 {{ Form::close() }}
                             </div>
                         </div>

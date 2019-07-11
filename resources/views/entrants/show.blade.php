@@ -52,7 +52,7 @@
                                         <b>Entrant Number: {{ $thing->getEntrantNumber() }}</b>
                                     </div>
                                     <div class="col-lg-6  col-md-6 col-sm-12">
-                                        <b>Member Number:</b> {{ $member_number }}
+                                        <b>Member Number:</b> {{ $thing->getMemberNumber() }}
                                     </div>
 
                                 </div>
@@ -176,8 +176,12 @@
 
                                     {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
                                     {{ Form::hidden('user', $thing->user_id, ['class' => 'form-control']) }}
+
+                                    {{ Form::label('number', 'Number:', ['class' => 'control-label']) }}
+                                    {{ Form::text('number', null,['class' => 'form-control','style'=>'width:150px'])}}
+
                                     {{ Form::label('type', 'Type:', ['class' => 'control-label']) }}
-                                    {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
+                                    {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:150px'])}}
                                     <br/>
                                     {{ Form::submit('Purchase Membership', ['class' => 'button btn btn-primary']) }}
                                     <br/><br/><br/>
