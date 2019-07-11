@@ -56,7 +56,7 @@ class Entrant extends Model {
         return $this->hasMany('App\MembershipPurchase');
     }
 
-    public function individualMemberships() {
+    public function individualMemberships(): \Illuminate\Database\Eloquent\Relations\HasMany {
         return $this->hasMany('\App\MembershipPurchase', 'entrant_id');
     }
 
@@ -70,14 +70,16 @@ class Entrant extends Model {
 
     public function getCurrentMembership(): ?MembershipPurchase {
         $membership = $this->individualMemberships()->where('year', config('app.year'))
-            ->where('type', 'individual')
+            ->where('type', 'single')
             ->first();
-//        var_dump(get_class($membership));
-//        die('here');
+//        var_dump($membership);
+//      var_dump(get_class($membership));
+////        die('here');
         if (!$membership instanceof MembershipPurchase) {
 //            die('not a member');
             $membership = $this->familyMembership();
         }
+//        die('oh');
         return $membership;
     }
 
@@ -87,7 +89,7 @@ class Entrant extends Model {
 
     public function getMemberNumber() {
         $membership = $this->getCurrentMembership();
-        if ($membership instanceof \App\MembershipPurchase) {
+        if ($membership instanceof MembershipPurchase) {
             return $membership->getNumber();
         } else {
             return null;
