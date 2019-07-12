@@ -75,7 +75,7 @@ class Entrant extends Model {
             ->where('type', 'single')
             ->first();
 
-        if (!$membership instanceof MembershipPurchase && $membership->isNotExpired()) {
+        if (!$membership instanceof MembershipPurchase || $membership->isNotExpired()) {
             $membership = $this->familyMembership();
         }
         if ($membership->isNotExpired()) {
