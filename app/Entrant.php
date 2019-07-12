@@ -78,7 +78,7 @@ class Entrant extends Model {
         if (!$membership instanceof MembershipPurchase || $membership->isNotExpired()) {
             $membership = $this->familyMembership();
         }
-        if ($membership->isNotExpired()) {
+        if ($membership instanceof MembershipPurchase  && $membership->isNotExpired()) {
             return $membership;
         } else {
             return null;
