@@ -64,24 +64,24 @@
                                 </div>
 
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    {{ Form::checkbox('can_email', 1) }} {{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}
-                                </div>
+{{--                            <div class="row">--}}
+{{--                                <div class="col-12">--}}
+{{--                                    {{ Form::checkbox('can_email', 1) }} {{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}--}}
+{{--                                </div>--}}
 
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    {{ Form::checkbox('can_sms', 1) }} {{ Form::label('can_sms', 'Can we contact you by Text Message (SMS)?:', ['class' => 'control-label']) }}
-                                </div>
+{{--                            </div>--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-12">--}}
+{{--                                    {{ Form::checkbox('can_sms', 1) }} {{ Form::label('can_sms', 'Can we contact you by Text Message (SMS)?:', ['class' => 'control-label']) }}--}}
+{{--                                </div>--}}
 
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    {{ Form::checkbox('can_post', 1) }} {{ Form::label('can_post', 'Can we contact you by Post?:', ['class' => 'control-label']) }}
-                                </div>
+{{--                            </div>--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-12">--}}
+{{--                                    {{ Form::checkbox('can_post', 1) }} {{ Form::label('can_post', 'Can we contact you by Post?:', ['class' => 'control-label']) }}--}}
+{{--                                </div>--}}
 
-                            </div>
+{{--                            </div>--}}
                             {{ Form::submit('Save Family Member', ['class' => 'button btn btn-primary']) }}
 
                         </div>

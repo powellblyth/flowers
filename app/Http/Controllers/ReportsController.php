@@ -37,11 +37,12 @@ class ReportsController extends Controller {
             $user = $membership->user;// Entrant::find($membership->entrant_id);
             $entrant = $membership->entrant;
             $singlepurchases[$membership->id] = ['created' => $membership->created_at,
-                'amount' => $membership->amount,
+                'amount' => number_format($membership->amount/100,2),
                 'user_id' => (($user)?$user->id:null),
                 'entrant_id' => (($entrant)?$entrant->id:''),
                 'entrant_name' => (($entrant)?$entrant->getName():''),
                 'user_name' => (($user)?$user->getName():''),
+                'number' => $membership->getNumber(),
                 'user_address' => (($user)?$user->getAddress():''),
                 'user_telephone' => (($user)?$user->telephone:''),
                 'user_email' => (($user)?$user->email:''),
@@ -55,9 +56,10 @@ class ReportsController extends Controller {
         foreach ($familymembershipsSold as $membership) {
             $user = $membership->user;// Entrant::find($membership->entrant_id);
             $familypurchases[$membership->id] = ['created' => $membership->created_at,
-                'amount' => $membership->amount,
+                'amount' => number_format($membership->amount/100,2),
                 'user_id' => (($user)?$user->id:''),
                 'user_name' => (($user)?$user->getName():''),
+                'number' => $membership->getNumber(),
                 'user_address' => (($user)?$user->getAddress():''),
                 'user_telephone' => (($user)?$user->telephone:''),
                 'user_email' => (($user)?$user->email:''),

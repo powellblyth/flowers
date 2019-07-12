@@ -28,6 +28,7 @@
                                         <tr>
                                             <th>Date</th>
                                             <th>Name</th>
+                                            <th>Number</th>
                                             <th>Paid</th>
                                             <th>Address</th>
                                             <th>Phone</th>
@@ -41,7 +42,8 @@
                                             <td>
                                                 <a href="/entrants/{{$purchase['entrant_id']}}">{{$purchase['entrant_name']}}</a>
                                             </td>
-                                            <td>{{$purchase['amount']}}p</td>
+                                            <td>{{$purchase['number']}}</td>
+                                            <td>£{{$purchase['amount']}}</td>
                                             <td>{{$purchase['user_address']}}</td>
                                             <td>{{$purchase['user_telephone']}}</td>
                                             <td>{{$purchase['user_email']}}</td>
@@ -79,6 +81,7 @@
                                         <tr>
                                             <th>Date</th>
                                             <th>Name</th>
+                                            <th>Number</th>
                                             <th>Paid</th>
                                             <th>Address</th>
                                             <th>Phone</th>
@@ -92,7 +95,8 @@
                                             <td>
                                                 <a href="/entrants/{{$purchase['user_id']}}">{{$purchase['user_name']}}</a>
                                             </td>
-                                            <td>{{$purchase['amount']}}p</td>
+                                            <td>{{$purchase['number']}}</td>
+                                            <td>£{{$purchase['amount']}}</td>
                                             <td>{{$purchase['user_address']}}</td>
                                             <td>{{$purchase['user_telephone']}}</td>
                                             <td>{{$purchase['user_email']}}</td>
