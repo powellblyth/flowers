@@ -25,6 +25,7 @@ services:
       networks:
         - flowers-frontend
         - flowers-backend
+        - db_default
 
 ### PHP-FPM Container #######################################
 
@@ -46,6 +47,7 @@ services:
         - PHP_IDE_CONFIG=serverName=laradock
       networks:
         - flowers-backend
+        - db_default
 
 
 ### NGINX Server Container ##################################
@@ -85,12 +87,15 @@ services:
         - "dockerhost:${DOCKER_HOST_IP}"
       networks:
         - flowers-backend
+        - db_default
 ### Networks Setup ############################################
 
 networks:
   flowers-frontend:
     driver: "bridge"
   flowers-backend:
+    driver: "bridge"
+  db_default:
     driver: "bridge"
 
 ### Volumes Setup #############################################
