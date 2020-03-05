@@ -13,111 +13,88 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome'  , ['isLocked'=>config('app.state') == 'locked'] );
+    return view('welcome', ['isLocked' => config('app.state') == 'locked']);
 });
-Route::post('/categories/storeresults',
-    ['as' => 'categories.storeresults',
-        'uses' => 'CategoryController@storeresults'])->middleware('is_admin');
-Route::get('/categories/resultsentry',
-    ['as' => 'category.resultsentry',
-        'uses' => 'CategoryController@resultsentry'])->middleware('is_admin');
-Route::get('/categories',
-    ['as' => 'category.index',
-        'uses' => 'CategoryController@resultsentry']);
-Route::get('/sections/forwebsite',
-    ['as' => 'section.forwebsite',
-        'uses' => 'SectionController@forwebsite']);
-Route::get('/categories/printtabletop',
-    ['as' => 'category.tabletopprint',
-        'uses' => 'CategoryController@printcards'])->middleware('is_admin');
-Route::get('/categories/printlookup',
-    ['as' => 'category.lookupprint',
-        'uses' => 'CategoryController@printlookups'])->middleware('is_admin');
+Route::group(['middleware' => 'is_admin'], function () {
+    Route::post('/categories/storeresults', ['as' => 'categories.storeresults', 'uses' => 'CategoryController@storeresults']);
+    Route::get('/categories/resultsentry', ['as' => 'category.resultsentry', 'uses' => 'CategoryController@resultsentry']);
+    Route::get('/categories/printtabletop', ['as' => 'category.tabletopprint', 'uses' => 'CategoryController@printcards']);
+    Route::get('/categories/printlookup',
+        ['as'   => 'category.lookupprint',
+         'uses' => 'CategoryController@printlookups'])->middleware('is_admin');
+});
+Route::get('/categories', ['as' => 'category.index', 'uses' => 'CategoryController@resultsentry']);
+Route::get('/sections/forwebsite', ['as' => 'section.forwebsite', 'uses' => 'SectionController@forwebsite']);
 
 Route::resource('categories', 'CategoryController');
 Route::resource('membershippurchases', 'MembershipPurchaseController');
 //Route::resource('cups', 'CupController')->middleware('auth');
-Route::get('/cups',
-    ['as' => 'cups.index',
-        'uses' => 'CupController@index']);
-Route::get('/cups/printableresults',
-    ['as' => 'cup.printableresults',
-        'uses' => 'CupController@printableresults']);
+Route::get('/cups', ['as' => 'cups.index', 'uses' => 'CupController@index']);
+Route::get('/cups/printableresults', ['as' => 'cup.printableresults', 'uses' => 'CupController@printableresults']);
 
-Route::get('/cups/{id}',
-    ['as' => 'cups.show',
-        'uses' => 'CupController@show']);
+Route::get('/cups/{id}', ['as' => 'cups.show', 'uses' => 'CupController@show']);
 //Route::resource('cups', 'CupController');
 
 //Route::post('/taps/{id}/connectToSensor', 
 //        ['as' => 'taps.connectToSensor',
 //    'uses' => 'TapsController@connectToSensor'])->middleware('auth');
+Route::group(['middleware' => 'is_admin'], function () {
 
-Route::post('/cups/{id}/directresultpick',
-    ['as' => 'cup.directResultPick',
-        'uses' => 'CupController@directResultPick'])->middleware('is_admin');
-Route::post('/cups/{id}/directresultsetwinner',
-    ['as' => 'cup.directResultSetWinner',
-        'uses' => 'CupController@directResultSetWinner'])->middleware('is_admin');
-Route::post('/cups/{id}/directResultSetWinnerPerson',
-    ['as' => 'cup.directResultSetWinnerPerson',
-        'uses' => 'CupController@directResultSetWinnerPerson'])->middleware('auth');
+    Route::post('/cups/{id}/directresultpick', ['as' => 'cup.directResultPick', 'uses' => 'CupController@directResultPick']);
+    Route::post(
+        '/cups/{id}/directresultsetwinner',
+        ['as'   => 'cup.directResultSetWinner',
+         'uses' => 'CupController@directResultSetWinner']
+    );
+});
 
-Route::resource('payments', 'PaymentController')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+    Route::post(
+        '/cups/{id}/directResultSetWinnerPerson',
+        ['as' => 'cup.directResultSetWinnerPerson', 'uses' => 'CupController@directResultSetWinnerPerson']
+    );
 
-Route::get('/entrants/search',
-    ['as' => 'entrants.search', 'uses' => 'EntrantController@search'])->middleware('auth');
-Route::post('/entrants/store',
-    ['as' => 'entrants.store', 'uses' => 'EntrantController@store'])->middleware('auth');
-Route::get('/entrants',
-    ['as' => 'entrants.index', 'uses' => 'EntrantController@index'])->middleware('is_admin');
-Route::get('/entrants/create',
-    ['as' => 'entrants.create', 'uses' => 'EntrantController@create'])->middleware('auth');
-Route::get('/entrants/searchall',
-    ['as' => 'entrants.searchall', 'uses' => 'EntrantController@searchall'])->middleware('is_admin');
-Route::get('/entrants/{id}/changecategories',
-    ['as' => 'entrants.changecategories', 'uses' => 'EntrantController@changeCategories'])->middleware('auth')->middleware('is_admin');
-Route::post('/entrants/{id}/changecategories',
-    ['as' => 'entrants.storechangecategories', 'uses' => 'EntrantController@changeCategories'])->middleware('auth')->middleware('is_admin');
-Route::post('/entry/creates',
-    ['as' => 'entry.creates', 'uses' => 'EntryController@creates'])->middleware('auth');
-Route::get('/entrants/{id}/print',
-    ['as' => 'entrant.print', 'uses' => 'EntrantController@printcards'])->middleware('is_admin');
-Route::get('/entrants/{id}/edit',
-    ['as' => 'entrants.edit', 'uses' => 'EntrantController@edit'])->middleware('auth');
-Route::get('/entrants/{id}',
-    ['as' => 'entrants.show', 'uses' => 'EntrantController@show'])->middleware('auth');
+    Route::resource('payments', 'PaymentController');
+
+    Route::get('/entrants/search', ['as' => 'entrants.search', 'uses' => 'EntrantController@search']);
+    Route::post('/entrants/store', ['as' => 'entrants.store', 'uses' => 'EntrantController@store']);
+    Route::get('/entrants', ['as' => 'entrants.index', 'uses' => 'EntrantController@index']);
+    Route::get('/entrants/create', ['as' => 'entrants.create', 'uses' => 'EntrantController@create']);
+});
+
+Route::group(['middleware' => 'is_admin'], function () {
+
+    Route::get('/entrants/searchall', ['as' => 'entrants.searchall', 'uses' => 'EntrantController@searchall']);
+    Route::get('/entrants/{id}/changecategories',
+        ['as' => 'entrants.changecategories', 'uses' => 'EntrantController@changeCategories'])->middleware('auth');
+    Route::post('/entrants/{id}/changecategories',
+        ['as' => 'entrants.storechangecategories', 'uses' => 'EntrantController@changeCategories'])->middleware('auth');
+    Route::get('/entrants/{id}/print', ['as' => 'entrant.print', 'uses' => 'EntrantController@printcards']);
+});
+Route::post('/entry/creates', ['as' => 'entry.creates', 'uses' => 'EntryController@creates'])->middleware('auth');
+Route::get('/entrants/{id}/edit', ['as' => 'entrants.edit', 'uses' => 'EntrantController@edit'])->middleware('auth');
+Route::get('/entrants/{id}', ['as' => 'entrants.show', 'uses' => 'EntrantController@show'])->middleware('auth');
 //Route::resource('entrants', 'EntrantController')->middleware('auth');
 
-Route::post('/entrants/{id}/update',
-    ['as' => 'entrants.update', 'uses' => 'EntrantController@update'])->middleware('auth');
+Route::post('/entrants/{id}/update', ['as' => 'entrants.update', 'uses' => 'EntrantController@update'])->middleware('auth');
 Route::post('/entrants/{id}/optins',
     ['as' => 'entrants.optins', 'uses' => 'EntrantController@optins'])->middleware('auth');
 
-Route::get('/users/',
-    ['as' => 'users.index', 'uses' => 'UserController@index'])->middleware('is_admin');
+Route::get('/users/', ['as' => 'users.index', 'uses' => 'UserController@index'])->middleware('is_admin');
 
-Route::get('/users/{id}',
-    ['as' => 'user.show', 'uses' => 'UserController@family'])->middleware('is_admin');
-Route::get('/users/{id}/print',
-    ['as' => 'user.print', 'uses' => 'UserController@printcards'])->middleware('is_admin');
-Route::get('/family',
-    ['as' => 'user.family', 'uses' => 'UserController@family'])->middleware('auth');
+Route::get('/users/{id}', ['as' => 'user.show', 'uses' => 'UserController@family'])->middleware('is_admin');
+Route::get('/users/{id}/print', ['as' => 'user.print', 'uses' => 'UserController@printcards'])->middleware('is_admin');
+Route::get('/family', ['as' => 'user.family', 'uses' => 'UserController@family'])->middleware('auth');
 
 
-Route::get('/users/{user}/edit',
-    ['as' => 'user.edit', 'uses' => 'UserController@edit'])->middleware('is_admin');
+Route::get('/users/{user}/edit', ['as' => 'user.edit', 'uses' => 'UserController@edit'])->middleware('is_admin');
 
-Route::get('/entries/printall',
-    ['as' => 'entries.printall', 'uses' => 'EntryController@printallcards'])->middleware('is_admin');
+Route::get('/entries/printall', ['as' => 'entries.printall', 'uses' => 'EntryController@printallcards'])->middleware('is_admin');
 
 
-Route::get('/reports/',
-    ['as' => 'reports.index', 'uses' => 'ReportsController@index'])->middleware('is_admin');
-Route::get('/reports/members',
-    ['as' => 'reports.members', 'uses' => 'ReportsController@membershipReport'])->middleware('is_admin');
-Route::get('/reports/entries',
-    ['as' => 'reports.entries', 'uses' => 'ReportsController@entriesReport'])->middleware('is_admin');
+Route::get('/reports/', ['as' => 'reports.index', 'uses' => 'ReportsController@index'])->middleware('is_admin');
+Route::get('/reports/members', ['as' => 'reports.members', 'uses' => 'ReportsController@membershipReport'])->middleware('is_admin');
+Route::get('/reports/entries', ['as' => 'reports.entries', 'uses' => 'ReportsController@entriesReport'])->middleware('is_admin');
 Route::get('/reports/unplacedCategories',
     ['as' => 'reports.categories', 'uses' => 'ReportsController@unplacedcategoriesReport'])->middleware('is_admin');
 Auth::routes();
@@ -157,8 +134,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('user', 'UserController', ['except' => ['show', 'edit']]);
     Route::get('/profile/subscribe',
-        ['as' => 'users.subscribe',
-            'uses' => 'ProfileController@subscribe']);
+        ['as'   => 'users.subscribe',
+         'uses' => 'ProfileController@subscribe']);
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);

@@ -1,20 +1,27 @@
 <?php
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Category extends Model {
+class Category extends Model
+{
 
-    const TYPE_JUNIOR = 'Junior';
-    const TYPE_ADULT = 'Adult';
-    const PRICE_LATE_PRICE = 'lateprice';
+    const TYPE_JUNIOR       = 'Junior';
+    const TYPE_ADULT        = 'Adult';
+    const PRICE_LATE_PRICE  = 'lateprice';
     const PRICE_EARLY_PRICE = 'earlyprice';
 
-    public function getUrl() {
+    public function getUrl()
+    {
         return '/categories/' . $this->id;
     }
 
-    public function getWinningAmount($placement) {
+    public function getWinningAmount($placement)
+    {
         $result = 0;
         if ('1' == $placement) {
             $result = $this->first_prize;
@@ -26,35 +33,42 @@ class Category extends Model {
         return $result;
     }
 
-    public function getNumberedLabel() {
+    public function getNumberedLabel()
+    {
         return $this->number . '. ' . $this->name;
     }
 
-    public function getType() {
-        if (in_array($this->section->number, ['8', '9'])){
-            $type =  self::TYPE_JUNIOR;
-        }
-        else
-        {
+    public function getType()
+    {
+        if (in_array($this->section->number, ['8', '9'])) {
+            $type = self::TYPE_JUNIOR;
+        } else {
             $type = self::TYPE_ADULT;
         }
         return $type;
     }
-    public function getPrice(string $type) {
+
+    public function getPrice(string $type)
+    {
         if ($type == self::PRICE_EARLY_PRICE) {
             return $this->price;
         } else {
             return $this->late_price;
         }
     }
-    public function entries(): \Illuminate\Database\Eloquent\Relations\HasMany {
-        return $this->hasMany('App\Entry');
-    }
-    public function section(): \Illuminate\Database\Eloquent\Relations\BelongsTo {
-        return $this->belongsTo('App\Section');
+
+    public function entries(): HasMany
+    {
+        return $this->hasMany(Entry::class);
     }
 
-    public function cups():\Illuminate\Database\Eloquent\Relations\BelongsToMany {
-        return $this->belongsToMany('App\Cup');
+    public function section(): BelongsTo
+    {
+        return $this->belongsTo(Section::class);
+    }
+
+    public function cups(): BelongsToMany
+    {
+        return $this->belongsToMany(Cup::class);
     }
 }

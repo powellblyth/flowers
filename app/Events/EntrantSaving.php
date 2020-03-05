@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Events;
+
 use App\Entrant;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
@@ -14,14 +15,16 @@ class EntrantSaving
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public $entrant;
+
     /**
      * Create a new event instance.
-     * @param Entrant $entrant
+     * @param  Entrant  $entrant
      *
      * @return void
      */
-    public function __construct(Entrant $entrant) {
-       $this->entrant = $entrant;
+    public function __construct(Entrant $entrant)
+    {
+        $this->entrant = $entrant;
         //
     }
 

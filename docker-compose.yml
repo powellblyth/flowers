@@ -6,16 +6,16 @@ services:
     ports:
       - "3008:80"
     volumes:
-      - .:/code
+      - .:/var/www/html
       - ./site.conf:/etc/nginx/conf.d/site.conf
     links:
-      - php
-  php:
+      - app
+  app:
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
     volumes:
-      - .:/code
+      - .:/var/www/html
 #      - ./docker/php/etc:/usr/local/etc/php
     depends_on:
       - db
@@ -31,7 +31,7 @@ services:
     ports:
       - "30396:3306"
     volumes:
-      - .:/code
+      - .:/var/www/html
       - ./site.conf:/etc/nginx/conf.d/site.conf
       - flowersdata:/var/lib/mysql
 volumes:

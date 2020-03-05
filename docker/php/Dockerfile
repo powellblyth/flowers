@@ -24,6 +24,8 @@ RUN apt-get update && \
     #docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-install intl pdo pdo_mysql zip bcmath pcntl
 
+COPY --from=composer:1.9 /usr/bin/composer /usr/bin/composer
+
 #RUN docker-php-ext-install mysqli
 
 #//ENV APACHE_DOCUMENT_ROOT /var/www/html/docker/php-fpm

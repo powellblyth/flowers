@@ -12,11 +12,12 @@ class Cup extends Model
         return '/cups/'.$this->id;
     }
 
-    public function categories(){
-        return $this->belongsToMany('App\Category');
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
     }
 
-    public function getWinningResults($year=2015)
+    public function getWinningResults($year = 2015)
     {
         return DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
 sum(if(winningplace='2', 3,0) ) as secondplacepoints, 

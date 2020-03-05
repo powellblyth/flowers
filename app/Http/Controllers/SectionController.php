@@ -8,25 +8,32 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
-class SectionController extends Controller {
+class SectionController extends Controller
+{
     protected $templateDir = 'sections';
-    protected $baseClass = 'App\Section';
-    public function index(array $extraData = []): View {
+    protected $baseClass   = 'App\Section';
+
+    public function index(array $extraData = []): View
+    {
         $things = Section::orderBy('number', 'asc')
             ->get();
 
-        return view($this->templateDir . '.index',
+        return view(
+            $this->templateDir . '.index',
             [
-                'things' => $things,
+                'things'  => $things,
                 'isAdmin' => Auth::check() && Auth::User()->isAdmin()
-        ]);
+            ]
+        );
     }    //
-    public function forwebsite(array $extraData = []): View {
-        $winners = array();
-        $results = [];
-        $lastSection = 'notasection';
+
+    public function forwebsite(array $extraData = []): View
+    {
+        $winners      = array();
+        $results      = [];
+        $lastSection  = 'notasection';
         $categoryList = [];
-        $things = Section::orderBy('number', 'asc')
+        $things       = Section::orderBy('number', 'asc')
             ->get();
 
         foreach ($things as $section) {
@@ -43,9 +50,12 @@ class SectionController extends Controller {
 //            $lastSection = $category->section;
         }
 //var_dump(count($categoryList[9]));die();
-        return view($this->templateDir . '.forwebsite', [
-                'things' => $things,
-                'categoryList'=>$categoryList,
+        return view(
+            $this->templateDir . '.forwebsite',
+            [
+                'things'       => $things,
+                'categoryList' => $categoryList,
             ]
         );
-    }}
+    }
+}

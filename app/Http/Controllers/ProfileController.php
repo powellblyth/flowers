@@ -16,13 +16,13 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit', ['privacyContent'=>config('static_content.privacy_content')]);
+        return view('profile.edit', ['privacyContent' => config('static_content.privacy_content')]);
     }
 
     /**
      * Update the profile
      *
-     * @param  \App\Http\Requests\ProfileRequest  $request
+     * @param \App\Http\Requests\ProfileRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(ProfileRequest $request)
@@ -32,14 +32,15 @@ class ProfileController extends Controller
         return back()->withStatus(__('Profile successfully updated.'));
     }
 
-    public function subscribe(){
-        return view('profile.subscribe', ['thing'=>Auth::User()]);
+    public function subscribe()
+    {
+        return view('profile.subscribe', ['thing' => Auth::User()]);
     }
 
     /**
      * Change the password
      *
-     * @param  \App\Http\Requests\PasswordRequest  $request
+     * @param \App\Http\Requests\PasswordRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function password(PasswordRequest $request)

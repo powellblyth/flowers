@@ -21,7 +21,7 @@ class UserSubscriptionListener
     /**
      * Handle the event.
      *
-     * @param  UserSaving  $event
+     * @param UserSaving $event
      * @return void
      */
     public function handle(UserSaving $event)

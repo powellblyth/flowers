@@ -5,10 +5,14 @@ namespace App;
 use App\Events\EntrantSaving;
 use App\Observers\EntrantObserver;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\Notifiable;
+
 //use Laravel\Cashier\Billable;
 
-class Entrant extends Model {
+class Entrant extends Model
+{
     use Notifiable;
 //    use Billable;
 
@@ -16,11 +20,13 @@ class Entrant extends Model {
         'saving' => EntrantSaving::class
     ];
 
-    public function getUrl() {
+    public function getUrl()
+    {
         return route('entrants.show', $this);
     }
 
-    public function getName(bool $printable = null): string {
+    public function getName(bool $printable = null): string
+    {
         if ($printable) {
             return $this->getPrintableName();
         } else {
@@ -32,35 +38,43 @@ class Entrant extends Model {
      * Simple way to get an entrant number
      * @return string
      */
-    public function getEntrantNumber(): string {
-        return 'E-' . str_pad((string)$this->id, 4, '0', STR_PAD_LEFT);
+    public function getEntrantNumber(): string
+    {
+        return 'E-' . str_pad((string) $this->id, 4, '0', STR_PAD_LEFT);
     }
 
-    public function getPrintableName(): string {
+    public function getPrintableName(): string
+    {
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname);
     }
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo {
-        return $this->belongsTo('App\User');
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function entries(): \Illuminate\Database\Eloquent\Relations\HasMany {
-        return $this->hasMany('App\Entry');
+    public function entries(): HasMany
+    {
+        return $this->hasMany(Entry::class);
     }
 
-    public function payments(): \Illuminate\Database\Eloquent\Relations\HasMany {
-        return $this->hasMany('App\Payment');
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
     }
 
-    public function membershipPurchases(): \Illuminate\Database\Eloquent\Relations\HasMany {
-        return $this->hasMany('App\MembershipPurchase');
+    public function membershipPurchases(): HasMany
+    {
+        return $this->hasMany(MembershipPurchase::class);
     }
 
-    public function individualMemberships(): \Illuminate\Database\Eloquent\Relations\HasMany {
-        return $this->hasMany('\App\MembershipPurchase', 'entrant_id');
+    public function individualMemberships(): HasMany
+    {
+        return $this->hasMany(MembershipPurchase::class, 'entrant_id');
     }
 
-    public function familyMembership(): ?MembershipPurchase {
+    public function familyMembership(): ?MembershipPurchase
+    {
         if ($this->user instanceof User) {
             return $this->user->familyMemberships()->first();
         } else {
@@ -68,7 +82,8 @@ class Entrant extends Model {
         }
     }
 
-    public function getCurrentMembership(): ?MembershipPurchase {
+    public function getCurrentMembership(): ?MembershipPurchase
+    {
         $membership = $this->individualMemberships()
             ->orderBy('year', 'desc')
             ->orderBy('created_at', 'desc')
@@ -78,18 +93,20 @@ class Entrant extends Model {
         if (!$membership instanceof MembershipPurchase || $membership->isNotExpired()) {
             $membership = $this->familyMembership();
         }
-        if ($membership instanceof MembershipPurchase  && $membership->isNotExpired()) {
+        if ($membership instanceof MembershipPurchase && $membership->isNotExpired()) {
             return $membership;
         } else {
             return null;
         }
     }
 
-    public function isAMember(): bool {
+    public function isAMember(): bool
+    {
         return $this->individualMemberships->count() > 0 || $this->familyMembership()->count() > 0;
     }
 
-    public function getMemberNumber() {
+    public function getMemberNumber()
+    {
         $membership = $this->getCurrentMembership();
         if ($membership instanceof MembershipPurchase) {
             return $membership->getNumber();

@@ -7,7 +7,8 @@ use App\Entrant;
 
 class MembershipController extends Controller
 {
-    public function hasEntrantGotMembership(Entrant $entrant){
+    public function hasEntrantGotMembership(Entrant $entrant)
+    {
 
     }
     //
