@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        Cashier::useCurrency('gbp', '£');
+//        Cashier::useCurrency('gbp', '£');
     }
 
     /**

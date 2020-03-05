@@ -6,11 +6,11 @@ use App\Events\EntrantSaving;
 use App\Observers\EntrantObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Cashier\Billable;
+//use Laravel\Cashier\Billable;
 
 class Entrant extends Model {
     use Notifiable;
-    use Billable;
+//    use Billable;
 
     protected $dispatchesEvents = [
         'saving' => EntrantSaving::class
