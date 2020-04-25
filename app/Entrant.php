@@ -11,6 +11,11 @@ use Illuminate\Notifications\Notifiable;
 
 //use Laravel\Cashier\Billable;
 
+/**
+ * Class Entrant
+ * @package App
+ * @property User $user
+ */
 class Entrant extends Model
 {
     use Notifiable;
@@ -115,5 +120,39 @@ class Entrant extends Model
         }
     }
 
+    public function anonymise(): Entrant
+    {
+        $this->email         = $this->id . '@' . $this->id . 'phs-anonymised' . (int) rand(0, 100000) . '.com';
+        $this->is_anonymised = true;
+        $this->firstname     = 'Anonymised';
+        $this->familyname    = 'Anonymised';
+        $this->membernumber  = null;
+        $this->age           = null;
+
+        // some of these are legacy fields
+        $this->telephone           = null;
+        $this->address             = null;
+        $this->address2            = null;
+        $this->addresstown         = null;
+        $this->postcode            = null;
+        $this->retain_data_opt_in  = null;
+        $this->retain_data_opt_out = null;
+        $this->email_opt_in        = null;
+        $this->email_opt_out       = null;
+        $this->can_email           = false;
+        $this->phone_opt_in        = null;
+        $this->phone_opt_out       = null;
+        $this->can_phone           = false;
+        $this->sms_opt_in          = null;
+        $this->sms_opt_out         = null;
+        $this->can_sms             = false;
+        $this->post_opt_in         = null;
+        $this->post_opt_out        = null;
+        $this->can_post            = false;
+
+        $this->created_at = null;
+
+        return $this;
+    }
 //    public function
 }

@@ -23,14 +23,16 @@
                                     </div>
                                 </div>
                             @endif
-                            @if(!$isLocked)
-                                <div class="row">
-                                    <div class="col-12 text-right">
-                                        <a href="{{ route('user.create') }}"
-                                           class="btn btn-sm btn-primary">{{ __('Add user') }}</a>
+                            @can('create', \App\User::class)
+                                @if(!$isLocked)
+                                    <div class="row">
+                                        <div class="col-12 text-right">
+                                            <a href="{{ route('users.create') }}"
+                                               class="btn btn-sm btn-primary">{{ __('Add user') }}</a>
+                                        </div>
                                     </div>
-                                </div>
-                            @endif
+                                @endif
+                            @endcan
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class=" text-primary">
@@ -51,13 +53,10 @@
                                     <tbody>
                                     @foreach($users as $user)
                                         <tr>
-                                            <td>
-                                                {{ $user->firstname }} {{ $user->lastname }}
-                                            </td>
+                                            <td>{{ $user->getName() }}</td>
                                             <td>{{ucfirst($user->type)}}</td>
-                                            <td>
-                                                {{ $user->email }}
-                                            </td>
+                                            <td>{{ $user->email }}</td>
+
                                             <td class="td-actions">
                                                 {{ $user->entrants()->count() }}
                                                 <a rel="tooltip" class="btn btn-success btn-link"
@@ -77,12 +76,9 @@
                                                 @endif
                                             </td>
                                             <td class="td-actions text-right">
-                                                @if ($user->id != auth()->id())
-                                                    <form action="{{ route('user.destroy', $user) }}" method="post">
-                                                        @csrf
-                                                        @method('delete')
+                                                <form action="{{ route('users.destroy', $user) }}" method="post">
 
-                                                        @if (!$isLocked)
+                                                    @can('update', $user)
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{ route('user.edit', $user) }}" data-original-title=""
                                                            title="edit {{$user->firstname}}">
@@ -95,22 +91,18 @@
                                                             <i class="material-icons">person</i>
                                                             <div class="ripple-container"></div>
                                                         </a>
+                                                    @endcan
+                                                    @can ('delete', $user)
+                                                            @csrf
+                                                            @method('delete')
                                                         <button type="button" class="btn btn-danger btn-link"
                                                                 data-original-title="" title=""
                                                                 onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
                                                             <i class="material-icons">close</i>
                                                             <div class="ripple-container"></div>
                                                         </button>
-                                                            @endif
-                                                    </form>
-                                                @else
-                                                    <a rel="tooltip" class="btn btn-success btn-link"
-                                                       href="{{ route('profile.edit') }}" data-original-title=""
-                                                       title="edit yourself">
-                                                        <i class="material-icons">edit</i>
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                @endif
+                                                    @endcan
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

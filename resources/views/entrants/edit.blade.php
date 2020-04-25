@@ -5,7 +5,6 @@
 
 
 
-    <div class="content">
         {{  Form::model($thing, array('route' => array('entrants.update', $thing->id))) }}
         <div class="container-fluid">
             <div class="row">
@@ -39,10 +38,18 @@
                             </div>
                             <div class="row">
                                 <div class="col-5">
-                                    {{ Form::label('age', 'Age (Children):', ['class' => 'control-label']) }}
+                                    {{ Form::label('age', 'Age (Children only):', ['class' => 'control-label']) }}
                                 </div>
                                 <div class="col-7">
                                     {{ Form::text('age', null, ['class' => 'form-control']) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    {{ Form::label('team', 'Team:', ['class' => 'control-label']) }}
+                                </div>
+                                <div class="col-7">
+                                    {{ Form::select('age', null, ['class' => 'form-control']) }}
                                 </div>
                             </div>
 {{--                            <div class="row">--}}
@@ -89,7 +96,6 @@
                 </div>
             </div>
         </div>{{ Form::close() }}
-    </div>
 
 
 

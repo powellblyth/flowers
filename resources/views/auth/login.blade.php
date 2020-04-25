@@ -1,7 +1,6 @@
 @extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('PHS Entries')])
 
 @section('content')
-<div class="container" style="height: auto;">
   <div class="row align-items-center">
     <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
       <h3>{{ __('Sign in to create your entries and buy membership for the PHS Summer show') }} </h3>
@@ -83,5 +82,4 @@
       </div>
     </div>
   </div>
-</div>
 @endsection

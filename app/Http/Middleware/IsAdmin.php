@@ -21,6 +21,7 @@ class IsAdmin
             return $next($request);
         }
 //        return view('disallowed');
-        return redirect('/home');
+        return false;
+        return redirect('/family');
     }
 }

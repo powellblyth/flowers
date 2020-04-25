@@ -16,7 +16,7 @@
             @if (Auth::guest())
             <a class="btn btn-default btn-xl js-scroll-trigger" href="/">Back to homepage</a>
             @else
-            <a class="btn btn-default btn-xl js-scroll-trigger" href="/home">Back to dashboard</a>
+            <a class="btn btn-default btn-xl js-scroll-trigger" href="/family">Back to dashboard</a>
             @endif
             <br />
           </div>

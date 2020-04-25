@@ -5,26 +5,29 @@
     @php
         $lastSection = 'no';
         $publishMode = false;
-        $printableNames = !$isAdmin;
-
-
     @endphp
-    <div class="content">
         <div class="container-fluid">
-            @if($isAdmin && $is_current_year)
-            <div class="row">
-                <div class="col-md-12 text-right">
-                    <a href="{{ route('category.tabletopprint') }}" target="_blank" class="btn btn-sm btn-primary">{{ __('Print table-top cards') }}</a>
-                    <a href="{{ route('category.lookupprint') }}" target="_blank" class="btn btn-sm btn-primary">{{ __('Print category lookup sheet') }}</a>
-                </div>
-            </div>
-            @endif
+            @can('printCards', \App\Entry::class)
+                @if($is_current_year)
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <a href="{{ route('category.tabletopprint') }}" target="_blank"
+                               class="btn btn-sm btn-primary">{{ __('Print table-top cards') }}</a>
+                            <a href="{{ route('category.lookupprint') }}" target="_blank"
+                               class="btn btn-sm btn-primary">{{ __('Print category lookup sheet') }}</a>
+                        </div>
+                    </div>
+                @endif
+            @endcan
+
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-success">All categories</div>
                         <div class="card-body">
-                            <p>You can see the categories for this show, along with all winners from the {{$year}} show, if available, here.</p>
+                            <p>You can see the categories for this show, along with all winners from the {{$year}} show,
+                                if available, here.</p>
                         </div>
                     </div>
                 </div>
@@ -40,21 +43,24 @@
                             </div>
 
                             <div class="card-body">
-                                @if (!$publishMode && $isAdmin && $is_current_year && !$isLocked)
+                                @if (!$publishMode && $is_current_year && !$isLocked)
+                                    @can('enterResults', \App\Entry::class)
                                     <p><a class="button btn btn-success"
                                           href="/categories/resultsentry?section={{urlencode($section)}}">Enter Results</a></p>
+                                    @endcan
                                 @endif
                                 @foreach ($categories as $category)
                                     <div class="row">
                                         <div class="col-lg-5 col-md-12">
                                             <p>{{$category->number}}. {{ $category->name }}
                                                 (<b>
-                                                    @if (array_key_exists($category->id, $results) && $results[$category->id]['total_entries'] > 0)
-                                                        {{ $results[$category->id]['total_entries']}}
+                                                    @if (array_key_exists($category->id, $results))
+                                                        {{ (int) $results[$category->id]['total_entries']}}
+                                                        {{\Illuminate\Support\Str::plural('entry',  (int) $results[$category->id]['total_entries'])}})
                                                     @else
-                                                        {{'0'}}
+                                                        0 entries
                                                     @endif
-                                                </b> entries)
+                                                </b>
                                             </p>
                                         </div>
                                         @if(array_key_exists($category->id, $results) && count($results[$category->id]['placements']) > 0)
@@ -73,14 +79,18 @@
                                                             {{ucfirst($result->winningplace)}}
                                                         @endif
                                                     </b>
-                                                    <nobr>{{$winners[$result->entrant_id]->getName($printableNames)}}</nobr>
+                                                    <nobr>
+                                                        @can('seeDetailedInfo',$winners[$result->entrant_id])
+                                                            {{$winners[$result->entrant_id]->getName(false)}}
+                                                        @else
+                                                            {{$winners[$result->entrant_id]->getPrintableName()}}
+                                                        @endcan
+                                                    </nobr>
                                                 @endforeach
+
                                             </div>
                                         @endif
-
                                     </div>
-
-
                                 @endforeach
                             </div>
                         </div>

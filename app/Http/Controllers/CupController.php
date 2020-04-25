@@ -18,16 +18,6 @@ class CupController extends Controller
     protected $templateDir = 'cups';
     protected $baseClass   = 'App\Cup';
 
-    protected function getYearFromRequest(Request $request): int
-    {
-        if ($request->has = ('year') && is_numeric($request->year) && (int) $request->year > 2015 && (int) $request->year < (int) date('Y')) {
-            return (int) $request->year;
-        } else {
-            return config('app.year');
-        }
-    }
-
-
     public function index(Request $request): View
     {
         $year    = $this->getYearFromRequest($request);
@@ -35,11 +25,13 @@ class CupController extends Controller
         $results = array();
 //        $cups = Cup::
         $cups = Cup::orderBy('sort_order', 'asc')->get();
-
         /** dragons here - copied tp printableresults */
         foreach ($cups as $cup) {
+            /**
+             * @var Cup $cup
+             */
             $resultset = $cup->getWinningResults($year);
-//var_dump($resultset);
+//            dd($resultset);
             $thisCupPoints = array();
             foreach ($resultset as $result) {
                 $thisCupPoints[] = ['firstplacepoints'     => $result->firstplacepoints,
@@ -66,10 +58,8 @@ class CupController extends Controller
 
             $results[$cup->id] = array('results'          => $thisCupPoints,
                                        'direct_winner'    => (($cupWinner instanceof CupDirectWinner) ? $cupWinner->entrant_id : null),
-                                       //                var_dump($winningCategory)
                                        'winning_category' => $winningCategory);
         }
-//var_dump($results);
         return view($this->templateDir . '.index', ['cups'    => $cups,
                                                     'results' => $results,
                                                     'winners' => $winners,
@@ -84,9 +74,9 @@ class CupController extends Controller
         $winners              = [];
         $cup                  = Cup::find($id);
         $year                 = $this->getYearFromRequest($request);
-//var_dump($year);
+
         $categories = $cup->categories()->where('year', $year)->orderBy('sortorder')->get();
-//        var_dump(count($categories));
+
         $categoriesArray = [];
         foreach ($categories as $category) {
             $categoriesArray[$category->id] = $category->getNumberedLabel();
@@ -123,10 +113,10 @@ class CupController extends Controller
         } else {
             $validEntries = null;
         }
-//var_dump($categoriesArray);die();
+
         asort($people);
         $thing = $this->baseClass::find($id);
-//        $showData = array_merge($extraData, array('thing' => $thing));
+
         return view($this->templateDir . '.show', [
             'thing'               => $thing,
             'winners'             => $winners,
@@ -147,11 +137,11 @@ class CupController extends Controller
         $winners     = array();
         $results     = array();
         $cups        = Cup::orderBy('sort_order', 'asc')->get();
-//var_dump($year);
+
         /** dragons here - copied from index*/
         foreach ($cups as $cup) {
             $resultset = $cup->getWinningResults($year);
-//var_Dump($resultset);
+
             $thisCupPoints = array();
             foreach ($resultset as $result) {
                 $thisCupPoints[] = ['firstplacepoints'     => $result->firstplacepoints,
@@ -178,10 +168,9 @@ class CupController extends Controller
 
             $results[$cup->id] = array('results'          => $thisCupPoints,
                                        'direct_winner'    => (($cupWinner instanceof CupDirectWinner) ? $cupWinner->entrant_id : null),
-                                       //                var_dump($winningCategory)
                                        'winning_category' => $winningCategory);
         }
-//var_dump($winners);
+
         return view($this->templateDir . '.publishablesnippet', ['cups'        => $cups,
                                                                  'results'     => $results,
                                                                  'winners'     => $winners,
@@ -197,24 +186,20 @@ class CupController extends Controller
 
     public function directResultPick(Request $request, int $id): View
     {
-
-        $thing      = Cup::find($id);
+        $cup        = Cup::find($id);
         $entriesObj = Entry::where('category', $request->category)->where('year', config('app.year'))->get();
         $entries    = [];
         foreach ($entriesObj as $entry) {
             $entrant             = $entry->entrant;
             $entries[$entry->id] = $entrant->getName();
         }
-        return view($this->templateDir . '.directResultPickEntrant', ['entries' => $entries, 'id' => $id, 'thing' => $thing,
+        return view($this->templateDir . '.directResultPickEntrant', ['entries' => $entries, 'id' => $id, 'thing' => $cup,
                                                                       'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
     }
 
     public function directResultSetWinner(Request $request, int $id): \Illuminate\Http\RedirectResponse
     {
-
-        $entry = Entry::find($request->entry);
-//        $thing = Cup::find($id);
-//        $entries = Entrant::where('id', $request->entrant)->first();
+        $entry                                = Entry::find($request->entry);
         $cupDirectWinner                      = new CupDirectWinner();
         $cupDirectWinner->cup                 = $id;
         $cupDirectWinner->winning_entry_id    = $entry->id;
@@ -228,10 +213,6 @@ class CupController extends Controller
 
     public function directResultSetWinnerPerson(Request $request, int $id): \Illuminate\Http\RedirectResponse
     {
-
-//        $entry = Entry::find($request->entry);
-//        $thing = Cup::find($id);
-//        $entries = Entrant::where('id', $request->entrant)->first();
         $cupDirectWinner             = new CupDirectWinner();
         $cupDirectWinner->cup_id     = $id;
         $cupDirectWinner->year       = config('app.year');

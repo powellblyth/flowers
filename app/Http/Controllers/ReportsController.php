@@ -15,18 +15,6 @@ class ReportsController extends Controller
 
     protected $templateDir = 'reports';
 
-    protected function getYearFromRequest(Request $request): int
-    {
-        if ($request->has = ('year')
-                            && is_numeric($request->year)
-                            && (int) $request->year > 2015
-                            && (int) $request->year < (int) date('Y')) {
-            return (int) $request->year;
-        } else {
-            return config('app.year');
-        }
-    }
-
     public function membershipReport(Request $request): View
     {
         $year                  = $this->getYearFromRequest($request);

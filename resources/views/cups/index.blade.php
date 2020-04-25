@@ -8,8 +8,6 @@
         $printableNames = !$isAdmin;
         $shortName = false;
     @endphp
-
-    <div class="content">
         <div class="container-fluid">
             @if($isAdmin )
                 <div class="row">
@@ -153,5 +151,5 @@
                         @endforeach
                     </div>
                 </div>
-        </div>
-@stop
+
+@endsection

@@ -2,8 +2,6 @@
 
 @section('pagetitle', 'Entrant ' . $thing->getName())
 @section('content')
-
-    <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -27,14 +25,14 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-12 text-right">
-                            @if (Auth::User()->isAdmin())
+                            @can('orintCards', \App\Entry::class)
                                 <a href="{{route('entrant.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
-                                @if(!$isLocked)
-                                    <a href="{{route('entrants.edit', $thing)}}"
-                                       class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
-                                @endif
-                            @endif
+                            @endcan
+                            @can('update',$thing)
+                                <a href="{{route('entrants.edit', $thing)}}"
+                                   class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                            @endcan
                             @if ($thing->user)
                                 <a href="{{route('user.show', $thing->user)}}"
                                    class="btn btn-primary">Show Family Manager</a>
@@ -145,7 +143,8 @@
                                         {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
 
                                         @for ($i = 0; $i < 40; $i++)
-                                            <div class="col-sm-3 col-md-2 col-lg-1">{{ Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px']) }}</div>
+                                            <div
+                                                class="col-sm-3 col-md-2 col-lg-1">{{ Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px']) }}</div>
                                         @endfor
                                     </div>
                                     <div class="row">
@@ -162,7 +161,8 @@
                     </div>
                 @endif
 
-                @if($isAdmin && !$isLocked)
+                @can('create',\App\MembershipPurchase::class)
+                @if(!$isLocked)
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="card">
@@ -191,8 +191,8 @@
                         </div>
                     </div>
                 @endif
+                    @endcan
 
             </div>
         </div>
-    </div>
-@stop
+    @endsection

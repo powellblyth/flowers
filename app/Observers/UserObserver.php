@@ -8,7 +8,6 @@ class UserObserver
 {
     public function updating(User $user)
     {
-        event(new OrderShipped($user));
 
     }
 }

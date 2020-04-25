@@ -2635,1325 +2635,13 @@ class CategoryCupTableSeeder extends Seeder
             ),
             327 => 
             array (
-                'id' => 341,
-                'cup_id' => 13,
-                'category_id' => 380,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            328 => 
-            array (
-                'id' => 342,
-                'cup_id' => 30,
-                'category_id' => 380,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            329 => 
-            array (
-                'id' => 343,
-                'cup_id' => 13,
-                'category_id' => 381,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            330 => 
-            array (
-                'id' => 344,
-                'cup_id' => 30,
-                'category_id' => 381,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            331 => 
-            array (
-                'id' => 345,
-                'cup_id' => 13,
-                'category_id' => 382,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            332 => 
-            array (
-                'id' => 346,
-                'cup_id' => 30,
-                'category_id' => 382,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            333 => 
-            array (
-                'id' => 347,
-                'cup_id' => 13,
-                'category_id' => 383,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            334 => 
-            array (
-                'id' => 348,
-                'cup_id' => 30,
-                'category_id' => 383,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            335 => 
-            array (
-                'id' => 349,
-                'cup_id' => 1,
-                'category_id' => 384,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            336 => 
-            array (
-                'id' => 350,
-                'cup_id' => 1,
-                'category_id' => 385,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            337 => 
-            array (
-                'id' => 351,
-                'cup_id' => 1,
-                'category_id' => 386,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            338 => 
-            array (
-                'id' => 352,
-                'cup_id' => 1,
-                'category_id' => 387,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            339 => 
-            array (
-                'id' => 353,
-                'cup_id' => 1,
-                'category_id' => 388,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            340 => 
-            array (
-                'id' => 354,
-                'cup_id' => 1,
-                'category_id' => 389,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            341 => 
-            array (
-                'id' => 355,
-                'cup_id' => 13,
-                'category_id' => 389,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            342 => 
-            array (
-                'id' => 356,
-                'cup_id' => 1,
-                'category_id' => 390,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            343 => 
-            array (
-                'id' => 357,
-                'cup_id' => 13,
-                'category_id' => 390,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            344 => 
-            array (
-                'id' => 358,
-                'cup_id' => 1,
-                'category_id' => 391,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            345 => 
-            array (
-                'id' => 359,
-                'cup_id' => 13,
-                'category_id' => 391,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            346 => 
-            array (
-                'id' => 360,
-                'cup_id' => 1,
-                'category_id' => 392,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            347 => 
-            array (
-                'id' => 361,
-                'cup_id' => 13,
-                'category_id' => 392,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            348 => 
-            array (
-                'id' => 362,
-                'cup_id' => 1,
-                'category_id' => 393,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            349 => 
-            array (
-                'id' => 363,
-                'cup_id' => 13,
-                'category_id' => 393,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            350 => 
-            array (
-                'id' => 364,
-                'cup_id' => 1,
-                'category_id' => 394,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            351 => 
-            array (
-                'id' => 365,
-                'cup_id' => 13,
-                'category_id' => 394,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            352 => 
-            array (
-                'id' => 366,
-                'cup_id' => 1,
-                'category_id' => 395,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            353 => 
-            array (
-                'id' => 367,
-                'cup_id' => 13,
-                'category_id' => 395,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            354 => 
-            array (
-                'id' => 368,
-                'cup_id' => 1,
-                'category_id' => 396,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            355 => 
-            array (
-                'id' => 369,
-                'cup_id' => 13,
-                'category_id' => 396,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            356 => 
-            array (
-                'id' => 370,
-                'cup_id' => 1,
-                'category_id' => 397,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            357 => 
-            array (
-                'id' => 371,
-                'cup_id' => 13,
-                'category_id' => 397,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            358 => 
-            array (
-                'id' => 372,
-                'cup_id' => 1,
-                'category_id' => 398,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            359 => 
-            array (
-                'id' => 373,
-                'cup_id' => 13,
-                'category_id' => 398,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            360 => 
-            array (
-                'id' => 374,
-                'cup_id' => 1,
-                'category_id' => 399,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            361 => 
-            array (
-                'id' => 375,
-                'cup_id' => 13,
-                'category_id' => 399,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            362 => 
-            array (
-                'id' => 376,
-                'cup_id' => 1,
-                'category_id' => 400,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            363 => 
-            array (
-                'id' => 377,
-                'cup_id' => 13,
-                'category_id' => 400,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            364 => 
-            array (
-                'id' => 378,
-                'cup_id' => 1,
-                'category_id' => 401,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            365 => 
-            array (
-                'id' => 379,
-                'cup_id' => 13,
-                'category_id' => 401,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            366 => 
-            array (
-                'id' => 380,
-                'cup_id' => 1,
-                'category_id' => 402,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            367 => 
-            array (
-                'id' => 381,
-                'cup_id' => 13,
-                'category_id' => 402,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            368 => 
-            array (
-                'id' => 382,
-                'cup_id' => 1,
-                'category_id' => 403,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            369 => 
-            array (
-                'id' => 383,
-                'cup_id' => 13,
-                'category_id' => 403,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            370 => 
-            array (
-                'id' => 384,
-                'cup_id' => 1,
-                'category_id' => 404,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            371 => 
-            array (
-                'id' => 385,
-                'cup_id' => 13,
-                'category_id' => 404,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            372 => 
-            array (
-                'id' => 386,
-                'cup_id' => 1,
-                'category_id' => 405,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            373 => 
-            array (
-                'id' => 387,
-                'cup_id' => 13,
-                'category_id' => 405,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            374 => 
-            array (
-                'id' => 388,
-                'cup_id' => 1,
-                'category_id' => 406,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            375 => 
-            array (
-                'id' => 389,
-                'cup_id' => 13,
-                'category_id' => 406,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            376 => 
-            array (
-                'id' => 390,
-                'cup_id' => 1,
-                'category_id' => 407,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            377 => 
-            array (
-                'id' => 391,
-                'cup_id' => 9,
-                'category_id' => 407,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            378 => 
-            array (
-                'id' => 392,
-                'cup_id' => 12,
-                'category_id' => 408,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            379 => 
-            array (
-                'id' => 393,
-                'cup_id' => 2,
-                'category_id' => 409,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            380 => 
-            array (
-                'id' => 394,
-                'cup_id' => 13,
-                'category_id' => 409,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            381 => 
-            array (
-                'id' => 395,
-                'cup_id' => 2,
-                'category_id' => 410,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            382 => 
-            array (
-                'id' => 396,
-                'cup_id' => 13,
-                'category_id' => 410,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            383 => 
-            array (
-                'id' => 397,
-                'cup_id' => 2,
-                'category_id' => 411,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            384 => 
-            array (
-                'id' => 398,
-                'cup_id' => 13,
-                'category_id' => 411,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            385 => 
-            array (
-                'id' => 399,
-                'cup_id' => 2,
-                'category_id' => 412,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            386 => 
-            array (
-                'id' => 400,
-                'cup_id' => 13,
-                'category_id' => 412,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            387 => 
-            array (
-                'id' => 401,
-                'cup_id' => 2,
-                'category_id' => 413,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            388 => 
-            array (
-                'id' => 402,
-                'cup_id' => 13,
-                'category_id' => 413,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            389 => 
-            array (
-                'id' => 403,
-                'cup_id' => 2,
-                'category_id' => 414,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            390 => 
-            array (
-                'id' => 404,
-                'cup_id' => 13,
-                'category_id' => 414,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            391 => 
-            array (
-                'id' => 405,
-                'cup_id' => 2,
-                'category_id' => 415,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            392 => 
-            array (
-                'id' => 406,
-                'cup_id' => 13,
-                'category_id' => 415,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            393 => 
-            array (
-                'id' => 407,
-                'cup_id' => 3,
-                'category_id' => 416,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            394 => 
-            array (
-                'id' => 408,
-                'cup_id' => 13,
-                'category_id' => 416,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            395 => 
-            array (
-                'id' => 409,
-                'cup_id' => 3,
-                'category_id' => 417,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            396 => 
-            array (
-                'id' => 410,
-                'cup_id' => 13,
-                'category_id' => 417,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            397 => 
-            array (
-                'id' => 411,
-                'cup_id' => 3,
-                'category_id' => 418,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            398 => 
-            array (
-                'id' => 412,
-                'cup_id' => 13,
-                'category_id' => 418,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            399 => 
-            array (
-                'id' => 413,
-                'cup_id' => 3,
-                'category_id' => 419,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            400 => 
-            array (
-                'id' => 414,
-                'cup_id' => 13,
-                'category_id' => 419,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            401 => 
-            array (
-                'id' => 415,
-                'cup_id' => 3,
-                'category_id' => 420,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            402 => 
-            array (
-                'id' => 416,
-                'cup_id' => 13,
-                'category_id' => 420,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            403 => 
-            array (
-                'id' => 417,
-                'cup_id' => 3,
-                'category_id' => 421,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            404 => 
-            array (
-                'id' => 418,
-                'cup_id' => 13,
-                'category_id' => 421,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            405 => 
-            array (
-                'id' => 419,
-                'cup_id' => 3,
-                'category_id' => 422,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            406 => 
-            array (
-                'id' => 420,
-                'cup_id' => 13,
-                'category_id' => 422,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            407 => 
-            array (
-                'id' => 421,
-                'cup_id' => 3,
-                'category_id' => 423,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            408 => 
-            array (
-                'id' => 422,
-                'cup_id' => 13,
-                'category_id' => 423,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            409 => 
-            array (
-                'id' => 423,
-                'cup_id' => 3,
-                'category_id' => 424,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            410 => 
-            array (
-                'id' => 424,
-                'cup_id' => 13,
-                'category_id' => 424,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            411 => 
-            array (
-                'id' => 425,
-                'cup_id' => 3,
-                'category_id' => 425,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            412 => 
-            array (
-                'id' => 426,
-                'cup_id' => 13,
-                'category_id' => 425,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            413 => 
-            array (
-                'id' => 427,
-                'cup_id' => 3,
-                'category_id' => 426,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            414 => 
-            array (
-                'id' => 428,
-                'cup_id' => 13,
-                'category_id' => 426,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            415 => 
-            array (
-                'id' => 429,
-                'cup_id' => 3,
-                'category_id' => 427,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            416 => 
-            array (
-                'id' => 430,
-                'cup_id' => 13,
-                'category_id' => 427,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            417 => 
-            array (
-                'id' => 431,
-                'cup_id' => 3,
-                'category_id' => 428,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            418 => 
-            array (
-                'id' => 432,
-                'cup_id' => 13,
-                'category_id' => 428,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            419 => 
-            array (
-                'id' => 433,
-                'cup_id' => 3,
-                'category_id' => 429,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            420 => 
-            array (
-                'id' => 434,
-                'cup_id' => 13,
-                'category_id' => 429,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            421 => 
-            array (
-                'id' => 435,
-                'cup_id' => 3,
-                'category_id' => 430,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            422 => 
-            array (
-                'id' => 436,
-                'cup_id' => 13,
-                'category_id' => 430,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            423 => 
-            array (
-                'id' => 437,
-                'cup_id' => 3,
-                'category_id' => 431,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            424 => 
-            array (
-                'id' => 438,
-                'cup_id' => 13,
-                'category_id' => 431,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            425 => 
-            array (
-                'id' => 439,
-                'cup_id' => 3,
-                'category_id' => 432,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            426 => 
-            array (
-                'id' => 440,
-                'cup_id' => 13,
-                'category_id' => 432,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            427 => 
-            array (
-                'id' => 441,
-                'cup_id' => 3,
-                'category_id' => 433,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            428 => 
-            array (
-                'id' => 442,
-                'cup_id' => 13,
-                'category_id' => 433,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            429 => 
-            array (
-                'id' => 443,
-                'cup_id' => 3,
-                'category_id' => 434,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            430 => 
-            array (
-                'id' => 444,
-                'cup_id' => 13,
-                'category_id' => 434,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            431 => 
-            array (
-                'id' => 445,
-                'cup_id' => 3,
-                'category_id' => 435,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            432 => 
-            array (
-                'id' => 446,
-                'cup_id' => 13,
-                'category_id' => 435,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            433 => 
-            array (
-                'id' => 447,
-                'cup_id' => 3,
-                'category_id' => 436,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            434 => 
-            array (
-                'id' => 448,
-                'cup_id' => 13,
-                'category_id' => 436,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            435 => 
-            array (
-                'id' => 449,
-                'cup_id' => 31,
-                'category_id' => 437,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            436 => 
-            array (
-                'id' => 450,
-                'cup_id' => 11,
-                'category_id' => 438,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            437 => 
-            array (
-                'id' => 451,
-                'cup_id' => 4,
-                'category_id' => 439,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            438 => 
-            array (
-                'id' => 452,
-                'cup_id' => 4,
-                'category_id' => 440,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            439 => 
-            array (
-                'id' => 453,
-                'cup_id' => 4,
-                'category_id' => 441,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            440 => 
-            array (
-                'id' => 454,
-                'cup_id' => 4,
-                'category_id' => 442,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            441 => 
-            array (
-                'id' => 455,
-                'cup_id' => 5,
-                'category_id' => 443,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            442 => 
-            array (
-                'id' => 456,
-                'cup_id' => 5,
-                'category_id' => 444,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            443 => 
-            array (
-                'id' => 457,
-                'cup_id' => 5,
-                'category_id' => 445,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            444 => 
-            array (
-                'id' => 458,
-                'cup_id' => 5,
-                'category_id' => 446,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            445 => 
-            array (
-                'id' => 459,
-                'cup_id' => 5,
-                'category_id' => 447,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            446 => 
-            array (
-                'id' => 460,
-                'cup_id' => 5,
-                'category_id' => 448,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            447 => 
-            array (
-                'id' => 461,
-                'cup_id' => 5,
-                'category_id' => 449,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            448 => 
-            array (
-                'id' => 462,
-                'cup_id' => 5,
-                'category_id' => 450,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            449 => 
-            array (
-                'id' => 463,
-                'cup_id' => 5,
-                'category_id' => 451,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            450 => 
-            array (
-                'id' => 464,
-                'cup_id' => 5,
-                'category_id' => 452,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            451 => 
-            array (
-                'id' => 465,
-                'cup_id' => 5,
-                'category_id' => 453,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            452 => 
-            array (
-                'id' => 466,
-                'cup_id' => 5,
-                'category_id' => 454,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            453 => 
-            array (
-                'id' => 467,
-                'cup_id' => 5,
-                'category_id' => 455,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            454 => 
-            array (
-                'id' => 468,
-                'cup_id' => 6,
-                'category_id' => 456,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            455 => 
-            array (
-                'id' => 469,
-                'cup_id' => 6,
-                'category_id' => 457,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            456 => 
-            array (
-                'id' => 470,
-                'cup_id' => 6,
-                'category_id' => 458,
-                'created_at' => '2019-05-14 05:27:44',
-                'updated_at' => '2019-05-14 05:27:44',
-            ),
-            457 => 
-            array (
-                'id' => 471,
-                'cup_id' => 6,
-                'category_id' => 459,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            458 => 
-            array (
-                'id' => 472,
-                'cup_id' => 6,
-                'category_id' => 460,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            459 => 
-            array (
-                'id' => 473,
-                'cup_id' => 6,
-                'category_id' => 461,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            460 => 
-            array (
-                'id' => 474,
-                'cup_id' => 6,
-                'category_id' => 462,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            461 => 
-            array (
-                'id' => 475,
-                'cup_id' => 6,
-                'category_id' => 463,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            462 => 
-            array (
-                'id' => 476,
-                'cup_id' => 6,
-                'category_id' => 467,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            463 => 
-            array (
-                'id' => 477,
-                'cup_id' => 8,
-                'category_id' => 468,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            464 => 
-            array (
-                'id' => 478,
-                'cup_id' => 8,
-                'category_id' => 469,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            465 => 
-            array (
-                'id' => 479,
-                'cup_id' => 8,
-                'category_id' => 470,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            466 => 
-            array (
-                'id' => 480,
-                'cup_id' => 8,
-                'category_id' => 471,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            467 => 
-            array (
-                'id' => 481,
-                'cup_id' => 8,
-                'category_id' => 472,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            468 => 
-            array (
-                'id' => 482,
-                'cup_id' => 8,
-                'category_id' => 473,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            469 => 
-            array (
-                'id' => 483,
-                'cup_id' => 8,
-                'category_id' => 474,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            470 => 
-            array (
-                'id' => 484,
-                'cup_id' => 8,
-                'category_id' => 475,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            471 => 
-            array (
-                'id' => 485,
-                'cup_id' => 8,
-                'category_id' => 476,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            472 => 
-            array (
-                'id' => 486,
-                'cup_id' => 8,
-                'category_id' => 477,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            473 => 
-            array (
-                'id' => 487,
-                'cup_id' => 8,
-                'category_id' => 478,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            474 => 
-            array (
-                'id' => 488,
-                'cup_id' => 10,
-                'category_id' => 479,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            475 => 
-            array (
-                'id' => 489,
-                'cup_id' => 7,
-                'category_id' => 480,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            476 => 
-            array (
-                'id' => 490,
-                'cup_id' => 7,
-                'category_id' => 481,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            477 => 
-            array (
-                'id' => 491,
-                'cup_id' => 7,
-                'category_id' => 482,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            478 => 
-            array (
-                'id' => 492,
-                'cup_id' => 7,
-                'category_id' => 483,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            479 => 
-            array (
-                'id' => 493,
-                'cup_id' => 7,
-                'category_id' => 484,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            480 => 
-            array (
-                'id' => 494,
-                'cup_id' => 7,
-                'category_id' => 485,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            481 => 
-            array (
-                'id' => 495,
-                'cup_id' => 7,
-                'category_id' => 486,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            482 => 
-            array (
-                'id' => 496,
-                'cup_id' => 7,
-                'category_id' => 487,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            483 => 
-            array (
-                'id' => 497,
-                'cup_id' => 7,
-                'category_id' => 488,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            484 => 
-            array (
-                'id' => 498,
-                'cup_id' => 7,
-                'category_id' => 489,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            485 => 
-            array (
-                'id' => 499,
-                'cup_id' => 7,
-                'category_id' => 490,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            486 => 
-            array (
-                'id' => 500,
-                'cup_id' => 7,
-                'category_id' => 491,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            487 => 
-            array (
-                'id' => 501,
-                'cup_id' => 7,
-                'category_id' => 492,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            488 => 
-            array (
-                'id' => 502,
-                'cup_id' => 7,
-                'category_id' => 493,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            489 => 
-            array (
-                'id' => 503,
-                'cup_id' => 7,
-                'category_id' => 494,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            490 => 
-            array (
-                'id' => 504,
-                'cup_id' => 5,
-                'category_id' => 504,
-                'created_at' => '2019-05-14 05:27:45',
-                'updated_at' => '2019-05-14 05:27:45',
-            ),
-            491 => 
-            array (
                 'id' => 505,
                 'cup_id' => 13,
                 'category_id' => 505,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            492 => 
+            328 => 
             array (
                 'id' => 506,
                 'cup_id' => 30,
@@ -3961,7 +2649,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            493 => 
+            329 => 
             array (
                 'id' => 507,
                 'cup_id' => 13,
@@ -3969,7 +2657,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            494 => 
+            330 => 
             array (
                 'id' => 508,
                 'cup_id' => 30,
@@ -3977,7 +2665,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            495 => 
+            331 => 
             array (
                 'id' => 509,
                 'cup_id' => 13,
@@ -3985,7 +2673,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            496 => 
+            332 => 
             array (
                 'id' => 510,
                 'cup_id' => 30,
@@ -3993,7 +2681,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            497 => 
+            333 => 
             array (
                 'id' => 511,
                 'cup_id' => 13,
@@ -4001,7 +2689,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            498 => 
+            334 => 
             array (
                 'id' => 512,
                 'cup_id' => 30,
@@ -4009,7 +2697,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            499 => 
+            335 => 
             array (
                 'id' => 513,
                 'cup_id' => 1,
@@ -4017,9 +2705,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-        ));
-        \DB::table('category_cup')->insert(array (
-            0 => 
+            336 => 
             array (
                 'id' => 514,
                 'cup_id' => 1,
@@ -4027,7 +2713,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            1 => 
+            337 => 
             array (
                 'id' => 515,
                 'cup_id' => 1,
@@ -4035,7 +2721,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            2 => 
+            338 => 
             array (
                 'id' => 516,
                 'cup_id' => 1,
@@ -4043,7 +2729,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 => 
+            339 => 
             array (
                 'id' => 517,
                 'cup_id' => 1,
@@ -4051,7 +2737,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            4 => 
+            340 => 
             array (
                 'id' => 518,
                 'cup_id' => 1,
@@ -4059,7 +2745,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 => 
+            341 => 
             array (
                 'id' => 519,
                 'cup_id' => 13,
@@ -4067,7 +2753,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            6 => 
+            342 => 
             array (
                 'id' => 520,
                 'cup_id' => 1,
@@ -4075,7 +2761,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            7 => 
+            343 => 
             array (
                 'id' => 521,
                 'cup_id' => 13,
@@ -4083,7 +2769,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            8 => 
+            344 => 
             array (
                 'id' => 522,
                 'cup_id' => 1,
@@ -4091,7 +2777,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            9 => 
+            345 => 
             array (
                 'id' => 523,
                 'cup_id' => 13,
@@ -4099,7 +2785,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            10 => 
+            346 => 
             array (
                 'id' => 524,
                 'cup_id' => 1,
@@ -4107,7 +2793,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            11 => 
+            347 => 
             array (
                 'id' => 525,
                 'cup_id' => 13,
@@ -4115,7 +2801,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            12 => 
+            348 => 
             array (
                 'id' => 526,
                 'cup_id' => 1,
@@ -4123,7 +2809,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            13 => 
+            349 => 
             array (
                 'id' => 527,
                 'cup_id' => 13,
@@ -4131,7 +2817,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            14 => 
+            350 => 
             array (
                 'id' => 528,
                 'cup_id' => 1,
@@ -4139,7 +2825,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            15 => 
+            351 => 
             array (
                 'id' => 529,
                 'cup_id' => 13,
@@ -4147,7 +2833,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            16 => 
+            352 => 
             array (
                 'id' => 530,
                 'cup_id' => 1,
@@ -4155,7 +2841,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            17 => 
+            353 => 
             array (
                 'id' => 531,
                 'cup_id' => 13,
@@ -4163,7 +2849,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            18 => 
+            354 => 
             array (
                 'id' => 532,
                 'cup_id' => 1,
@@ -4171,7 +2857,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            19 => 
+            355 => 
             array (
                 'id' => 533,
                 'cup_id' => 13,
@@ -4179,7 +2865,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            20 => 
+            356 => 
             array (
                 'id' => 534,
                 'cup_id' => 1,
@@ -4187,7 +2873,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            21 => 
+            357 => 
             array (
                 'id' => 535,
                 'cup_id' => 13,
@@ -4195,7 +2881,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            22 => 
+            358 => 
             array (
                 'id' => 536,
                 'cup_id' => 1,
@@ -4203,7 +2889,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            23 => 
+            359 => 
             array (
                 'id' => 537,
                 'cup_id' => 13,
@@ -4211,7 +2897,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            24 => 
+            360 => 
             array (
                 'id' => 538,
                 'cup_id' => 1,
@@ -4219,7 +2905,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            25 => 
+            361 => 
             array (
                 'id' => 539,
                 'cup_id' => 13,
@@ -4227,7 +2913,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            26 => 
+            362 => 
             array (
                 'id' => 540,
                 'cup_id' => 1,
@@ -4235,7 +2921,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            27 => 
+            363 => 
             array (
                 'id' => 541,
                 'cup_id' => 13,
@@ -4243,7 +2929,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            28 => 
+            364 => 
             array (
                 'id' => 542,
                 'cup_id' => 1,
@@ -4251,7 +2937,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            29 => 
+            365 => 
             array (
                 'id' => 543,
                 'cup_id' => 13,
@@ -4259,7 +2945,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            30 => 
+            366 => 
             array (
                 'id' => 544,
                 'cup_id' => 1,
@@ -4267,7 +2953,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            31 => 
+            367 => 
             array (
                 'id' => 545,
                 'cup_id' => 13,
@@ -4275,7 +2961,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            32 => 
+            368 => 
             array (
                 'id' => 546,
                 'cup_id' => 1,
@@ -4283,7 +2969,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            33 => 
+            369 => 
             array (
                 'id' => 547,
                 'cup_id' => 13,
@@ -4291,7 +2977,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            34 => 
+            370 => 
             array (
                 'id' => 548,
                 'cup_id' => 1,
@@ -4299,7 +2985,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            35 => 
+            371 => 
             array (
                 'id' => 549,
                 'cup_id' => 13,
@@ -4307,7 +2993,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            36 => 
+            372 => 
             array (
                 'id' => 550,
                 'cup_id' => 1,
@@ -4315,7 +3001,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            37 => 
+            373 => 
             array (
                 'id' => 551,
                 'cup_id' => 13,
@@ -4323,7 +3009,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            38 => 
+            374 => 
             array (
                 'id' => 552,
                 'cup_id' => 1,
@@ -4331,7 +3017,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            39 => 
+            375 => 
             array (
                 'id' => 553,
                 'cup_id' => 13,
@@ -4339,7 +3025,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            40 => 
+            376 => 
             array (
                 'id' => 554,
                 'cup_id' => 1,
@@ -4347,7 +3033,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            41 => 
+            377 => 
             array (
                 'id' => 555,
                 'cup_id' => 9,
@@ -4355,7 +3041,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            42 => 
+            378 => 
             array (
                 'id' => 556,
                 'cup_id' => 12,
@@ -4363,7 +3049,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            43 => 
+            379 => 
             array (
                 'id' => 557,
                 'cup_id' => 2,
@@ -4371,7 +3057,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            44 => 
+            380 => 
             array (
                 'id' => 558,
                 'cup_id' => 13,
@@ -4379,7 +3065,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            45 => 
+            381 => 
             array (
                 'id' => 559,
                 'cup_id' => 2,
@@ -4387,7 +3073,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            46 => 
+            382 => 
             array (
                 'id' => 560,
                 'cup_id' => 13,
@@ -4395,7 +3081,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            47 => 
+            383 => 
             array (
                 'id' => 561,
                 'cup_id' => 2,
@@ -4403,7 +3089,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            48 => 
+            384 => 
             array (
                 'id' => 562,
                 'cup_id' => 13,
@@ -4411,7 +3097,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            49 => 
+            385 => 
             array (
                 'id' => 563,
                 'cup_id' => 2,
@@ -4419,7 +3105,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            50 => 
+            386 => 
             array (
                 'id' => 564,
                 'cup_id' => 13,
@@ -4427,7 +3113,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            51 => 
+            387 => 
             array (
                 'id' => 565,
                 'cup_id' => 2,
@@ -4435,7 +3121,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            52 => 
+            388 => 
             array (
                 'id' => 566,
                 'cup_id' => 13,
@@ -4443,7 +3129,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            53 => 
+            389 => 
             array (
                 'id' => 567,
                 'cup_id' => 2,
@@ -4451,7 +3137,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            54 => 
+            390 => 
             array (
                 'id' => 568,
                 'cup_id' => 13,
@@ -4459,7 +3145,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            55 => 
+            391 => 
             array (
                 'id' => 569,
                 'cup_id' => 2,
@@ -4467,7 +3153,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            56 => 
+            392 => 
             array (
                 'id' => 570,
                 'cup_id' => 13,
@@ -4475,7 +3161,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            57 => 
+            393 => 
             array (
                 'id' => 571,
                 'cup_id' => 3,
@@ -4483,7 +3169,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            58 => 
+            394 => 
             array (
                 'id' => 572,
                 'cup_id' => 13,
@@ -4491,7 +3177,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            59 => 
+            395 => 
             array (
                 'id' => 573,
                 'cup_id' => 3,
@@ -4499,7 +3185,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            60 => 
+            396 => 
             array (
                 'id' => 574,
                 'cup_id' => 13,
@@ -4507,7 +3193,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            61 => 
+            397 => 
             array (
                 'id' => 575,
                 'cup_id' => 3,
@@ -4515,7 +3201,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            62 => 
+            398 => 
             array (
                 'id' => 576,
                 'cup_id' => 13,
@@ -4523,7 +3209,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            63 => 
+            399 => 
             array (
                 'id' => 577,
                 'cup_id' => 3,
@@ -4531,7 +3217,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            64 => 
+            400 => 
             array (
                 'id' => 578,
                 'cup_id' => 13,
@@ -4539,7 +3225,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            65 => 
+            401 => 
             array (
                 'id' => 579,
                 'cup_id' => 3,
@@ -4547,7 +3233,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            66 => 
+            402 => 
             array (
                 'id' => 580,
                 'cup_id' => 13,
@@ -4555,7 +3241,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            67 => 
+            403 => 
             array (
                 'id' => 581,
                 'cup_id' => 3,
@@ -4563,7 +3249,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            68 => 
+            404 => 
             array (
                 'id' => 582,
                 'cup_id' => 13,
@@ -4571,7 +3257,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            69 => 
+            405 => 
             array (
                 'id' => 583,
                 'cup_id' => 3,
@@ -4579,7 +3265,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            70 => 
+            406 => 
             array (
                 'id' => 584,
                 'cup_id' => 13,
@@ -4587,7 +3273,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            71 => 
+            407 => 
             array (
                 'id' => 585,
                 'cup_id' => 3,
@@ -4595,7 +3281,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            72 => 
+            408 => 
             array (
                 'id' => 586,
                 'cup_id' => 13,
@@ -4603,7 +3289,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            73 => 
+            409 => 
             array (
                 'id' => 587,
                 'cup_id' => 3,
@@ -4611,7 +3297,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            74 => 
+            410 => 
             array (
                 'id' => 588,
                 'cup_id' => 13,
@@ -4619,7 +3305,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            75 => 
+            411 => 
             array (
                 'id' => 589,
                 'cup_id' => 3,
@@ -4627,7 +3313,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            76 => 
+            412 => 
             array (
                 'id' => 590,
                 'cup_id' => 13,
@@ -4635,7 +3321,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            77 => 
+            413 => 
             array (
                 'id' => 591,
                 'cup_id' => 3,
@@ -4643,7 +3329,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            78 => 
+            414 => 
             array (
                 'id' => 592,
                 'cup_id' => 13,
@@ -4651,7 +3337,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            79 => 
+            415 => 
             array (
                 'id' => 593,
                 'cup_id' => 3,
@@ -4659,7 +3345,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            80 => 
+            416 => 
             array (
                 'id' => 594,
                 'cup_id' => 13,
@@ -4667,7 +3353,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            81 => 
+            417 => 
             array (
                 'id' => 595,
                 'cup_id' => 3,
@@ -4675,7 +3361,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            82 => 
+            418 => 
             array (
                 'id' => 596,
                 'cup_id' => 13,
@@ -4683,7 +3369,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            83 => 
+            419 => 
             array (
                 'id' => 597,
                 'cup_id' => 3,
@@ -4691,7 +3377,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            84 => 
+            420 => 
             array (
                 'id' => 598,
                 'cup_id' => 13,
@@ -4699,7 +3385,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            85 => 
+            421 => 
             array (
                 'id' => 599,
                 'cup_id' => 3,
@@ -4707,7 +3393,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            86 => 
+            422 => 
             array (
                 'id' => 600,
                 'cup_id' => 13,
@@ -4715,7 +3401,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            87 => 
+            423 => 
             array (
                 'id' => 601,
                 'cup_id' => 3,
@@ -4723,7 +3409,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            88 => 
+            424 => 
             array (
                 'id' => 602,
                 'cup_id' => 13,
@@ -4731,7 +3417,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            89 => 
+            425 => 
             array (
                 'id' => 603,
                 'cup_id' => 3,
@@ -4739,7 +3425,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            90 => 
+            426 => 
             array (
                 'id' => 604,
                 'cup_id' => 13,
@@ -4747,7 +3433,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            91 => 
+            427 => 
             array (
                 'id' => 605,
                 'cup_id' => 3,
@@ -4755,7 +3441,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            92 => 
+            428 => 
             array (
                 'id' => 606,
                 'cup_id' => 13,
@@ -4763,7 +3449,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            93 => 
+            429 => 
             array (
                 'id' => 607,
                 'cup_id' => 3,
@@ -4771,7 +3457,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            94 => 
+            430 => 
             array (
                 'id' => 608,
                 'cup_id' => 13,
@@ -4779,7 +3465,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            95 => 
+            431 => 
             array (
                 'id' => 609,
                 'cup_id' => 3,
@@ -4787,7 +3473,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            96 => 
+            432 => 
             array (
                 'id' => 610,
                 'cup_id' => 13,
@@ -4795,7 +3481,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            97 => 
+            433 => 
             array (
                 'id' => 611,
                 'cup_id' => 3,
@@ -4803,7 +3489,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            98 => 
+            434 => 
             array (
                 'id' => 612,
                 'cup_id' => 13,
@@ -4811,7 +3497,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            99 => 
+            435 => 
             array (
                 'id' => 613,
                 'cup_id' => 31,
@@ -4819,7 +3505,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            100 => 
+            436 => 
             array (
                 'id' => 614,
                 'cup_id' => 11,
@@ -4827,7 +3513,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            101 => 
+            437 => 
             array (
                 'id' => 615,
                 'cup_id' => 4,
@@ -4835,7 +3521,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            102 => 
+            438 => 
             array (
                 'id' => 616,
                 'cup_id' => 4,
@@ -4843,7 +3529,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            103 => 
+            439 => 
             array (
                 'id' => 617,
                 'cup_id' => 4,
@@ -4851,7 +3537,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            104 => 
+            440 => 
             array (
                 'id' => 618,
                 'cup_id' => 4,
@@ -4859,7 +3545,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            105 => 
+            441 => 
             array (
                 'id' => 619,
                 'cup_id' => 5,
@@ -4867,7 +3553,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            106 => 
+            442 => 
             array (
                 'id' => 620,
                 'cup_id' => 5,
@@ -4875,7 +3561,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            107 => 
+            443 => 
             array (
                 'id' => 621,
                 'cup_id' => 5,
@@ -4883,7 +3569,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            108 => 
+            444 => 
             array (
                 'id' => 622,
                 'cup_id' => 5,
@@ -4891,7 +3577,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            109 => 
+            445 => 
             array (
                 'id' => 623,
                 'cup_id' => 5,
@@ -4899,7 +3585,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            110 => 
+            446 => 
             array (
                 'id' => 624,
                 'cup_id' => 5,
@@ -4907,7 +3593,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            111 => 
+            447 => 
             array (
                 'id' => 625,
                 'cup_id' => 5,
@@ -4915,7 +3601,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            112 => 
+            448 => 
             array (
                 'id' => 626,
                 'cup_id' => 5,
@@ -4923,7 +3609,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            113 => 
+            449 => 
             array (
                 'id' => 627,
                 'cup_id' => 5,
@@ -4931,7 +3617,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            114 => 
+            450 => 
             array (
                 'id' => 628,
                 'cup_id' => 5,
@@ -4939,7 +3625,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            115 => 
+            451 => 
             array (
                 'id' => 629,
                 'cup_id' => 5,
@@ -4947,7 +3633,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            116 => 
+            452 => 
             array (
                 'id' => 630,
                 'cup_id' => 5,
@@ -4955,7 +3641,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            117 => 
+            453 => 
             array (
                 'id' => 631,
                 'cup_id' => 5,
@@ -4963,7 +3649,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            118 => 
+            454 => 
             array (
                 'id' => 632,
                 'cup_id' => 5,
@@ -4971,7 +3657,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            119 => 
+            455 => 
             array (
                 'id' => 633,
                 'cup_id' => 6,
@@ -4979,7 +3665,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            120 => 
+            456 => 
             array (
                 'id' => 634,
                 'cup_id' => 6,
@@ -4987,7 +3673,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            121 => 
+            457 => 
             array (
                 'id' => 635,
                 'cup_id' => 6,
@@ -4995,7 +3681,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            122 => 
+            458 => 
             array (
                 'id' => 636,
                 'cup_id' => 6,
@@ -5003,7 +3689,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            123 => 
+            459 => 
             array (
                 'id' => 637,
                 'cup_id' => 6,
@@ -5011,7 +3697,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            124 => 
+            460 => 
             array (
                 'id' => 638,
                 'cup_id' => 6,
@@ -5019,7 +3705,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            125 => 
+            461 => 
             array (
                 'id' => 639,
                 'cup_id' => 6,
@@ -5027,7 +3713,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            126 => 
+            462 => 
             array (
                 'id' => 640,
                 'cup_id' => 6,
@@ -5035,7 +3721,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            127 => 
+            463 => 
             array (
                 'id' => 641,
                 'cup_id' => 6,
@@ -5043,7 +3729,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            128 => 
+            464 => 
             array (
                 'id' => 642,
                 'cup_id' => 8,
@@ -5051,7 +3737,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            129 => 
+            465 => 
             array (
                 'id' => 643,
                 'cup_id' => 8,
@@ -5059,7 +3745,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            130 => 
+            466 => 
             array (
                 'id' => 644,
                 'cup_id' => 8,
@@ -5067,7 +3753,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            131 => 
+            467 => 
             array (
                 'id' => 645,
                 'cup_id' => 8,
@@ -5075,7 +3761,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            132 => 
+            468 => 
             array (
                 'id' => 646,
                 'cup_id' => 8,
@@ -5083,7 +3769,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            133 => 
+            469 => 
             array (
                 'id' => 647,
                 'cup_id' => 8,
@@ -5091,7 +3777,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            134 => 
+            470 => 
             array (
                 'id' => 648,
                 'cup_id' => 8,
@@ -5099,7 +3785,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            135 => 
+            471 => 
             array (
                 'id' => 649,
                 'cup_id' => 8,
@@ -5107,7 +3793,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            136 => 
+            472 => 
             array (
                 'id' => 650,
                 'cup_id' => 8,
@@ -5115,7 +3801,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            137 => 
+            473 => 
             array (
                 'id' => 651,
                 'cup_id' => 8,
@@ -5123,7 +3809,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            138 => 
+            474 => 
             array (
                 'id' => 652,
                 'cup_id' => 8,
@@ -5131,7 +3817,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            139 => 
+            475 => 
             array (
                 'id' => 653,
                 'cup_id' => 10,
@@ -5139,7 +3825,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            140 => 
+            476 => 
             array (
                 'id' => 654,
                 'cup_id' => 7,
@@ -5147,7 +3833,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            141 => 
+            477 => 
             array (
                 'id' => 655,
                 'cup_id' => 7,
@@ -5155,7 +3841,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            142 => 
+            478 => 
             array (
                 'id' => 656,
                 'cup_id' => 7,
@@ -5163,7 +3849,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            143 => 
+            479 => 
             array (
                 'id' => 657,
                 'cup_id' => 7,
@@ -5171,7 +3857,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            144 => 
+            480 => 
             array (
                 'id' => 658,
                 'cup_id' => 7,
@@ -5179,7 +3865,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            145 => 
+            481 => 
             array (
                 'id' => 659,
                 'cup_id' => 7,
@@ -5187,7 +3873,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            146 => 
+            482 => 
             array (
                 'id' => 660,
                 'cup_id' => 7,
@@ -5195,7 +3881,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            147 => 
+            483 => 
             array (
                 'id' => 661,
                 'cup_id' => 7,
@@ -5203,7 +3889,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            148 => 
+            484 => 
             array (
                 'id' => 662,
                 'cup_id' => 7,
@@ -5211,7 +3897,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            149 => 
+            485 => 
             array (
                 'id' => 663,
                 'cup_id' => 7,
@@ -5219,7 +3905,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            150 => 
+            486 => 
             array (
                 'id' => 664,
                 'cup_id' => 7,
@@ -5227,7 +3913,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            151 => 
+            487 => 
             array (
                 'id' => 665,
                 'cup_id' => 7,
@@ -5235,7 +3921,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            152 => 
+            488 => 
             array (
                 'id' => 666,
                 'cup_id' => 7,
@@ -5243,7 +3929,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            153 => 
+            489 => 
             array (
                 'id' => 667,
                 'cup_id' => 7,
@@ -5251,7 +3937,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            154 => 
+            490 => 
             array (
                 'id' => 668,
                 'cup_id' => 7,
@@ -5259,11 +3945,1333 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            155 => 
+            491 => 
             array (
                 'id' => 669,
                 'cup_id' => 1,
                 'category_id' => 634,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            492 => 
+            array (
+                'id' => 670,
+                'cup_id' => 13,
+                'category_id' => 637,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            493 => 
+            array (
+                'id' => 671,
+                'cup_id' => 30,
+                'category_id' => 637,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            494 => 
+            array (
+                'id' => 672,
+                'cup_id' => 13,
+                'category_id' => 638,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            495 => 
+            array (
+                'id' => 673,
+                'cup_id' => 30,
+                'category_id' => 638,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            496 => 
+            array (
+                'id' => 674,
+                'cup_id' => 13,
+                'category_id' => 639,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            497 => 
+            array (
+                'id' => 675,
+                'cup_id' => 30,
+                'category_id' => 639,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            498 => 
+            array (
+                'id' => 676,
+                'cup_id' => 13,
+                'category_id' => 640,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            499 => 
+            array (
+                'id' => 677,
+                'cup_id' => 30,
+                'category_id' => 640,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+        ));
+        \DB::table('category_cup')->insert(array (
+            0 => 
+            array (
+                'id' => 678,
+                'cup_id' => 1,
+                'category_id' => 641,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            1 => 
+            array (
+                'id' => 679,
+                'cup_id' => 1,
+                'category_id' => 642,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            2 => 
+            array (
+                'id' => 680,
+                'cup_id' => 1,
+                'category_id' => 643,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            3 => 
+            array (
+                'id' => 681,
+                'cup_id' => 1,
+                'category_id' => 644,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            4 => 
+            array (
+                'id' => 682,
+                'cup_id' => 1,
+                'category_id' => 645,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            5 => 
+            array (
+                'id' => 683,
+                'cup_id' => 1,
+                'category_id' => 646,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            6 => 
+            array (
+                'id' => 684,
+                'cup_id' => 13,
+                'category_id' => 646,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 685,
+                'cup_id' => 1,
+                'category_id' => 647,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 686,
+                'cup_id' => 13,
+                'category_id' => 647,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 687,
+                'cup_id' => 1,
+                'category_id' => 648,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 688,
+                'cup_id' => 13,
+                'category_id' => 648,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            11 => 
+            array (
+                'id' => 689,
+                'cup_id' => 1,
+                'category_id' => 649,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            12 => 
+            array (
+                'id' => 690,
+                'cup_id' => 13,
+                'category_id' => 649,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            13 => 
+            array (
+                'id' => 691,
+                'cup_id' => 1,
+                'category_id' => 650,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 692,
+                'cup_id' => 13,
+                'category_id' => 650,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 693,
+                'cup_id' => 1,
+                'category_id' => 651,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            16 => 
+            array (
+                'id' => 694,
+                'cup_id' => 13,
+                'category_id' => 651,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            17 => 
+            array (
+                'id' => 695,
+                'cup_id' => 1,
+                'category_id' => 652,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            18 => 
+            array (
+                'id' => 696,
+                'cup_id' => 13,
+                'category_id' => 652,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            19 => 
+            array (
+                'id' => 697,
+                'cup_id' => 1,
+                'category_id' => 653,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            20 => 
+            array (
+                'id' => 698,
+                'cup_id' => 13,
+                'category_id' => 653,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            21 => 
+            array (
+                'id' => 699,
+                'cup_id' => 1,
+                'category_id' => 654,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            22 => 
+            array (
+                'id' => 700,
+                'cup_id' => 13,
+                'category_id' => 654,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            23 => 
+            array (
+                'id' => 701,
+                'cup_id' => 1,
+                'category_id' => 655,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            24 => 
+            array (
+                'id' => 702,
+                'cup_id' => 13,
+                'category_id' => 655,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            25 => 
+            array (
+                'id' => 703,
+                'cup_id' => 1,
+                'category_id' => 656,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            26 => 
+            array (
+                'id' => 704,
+                'cup_id' => 13,
+                'category_id' => 656,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            27 => 
+            array (
+                'id' => 705,
+                'cup_id' => 1,
+                'category_id' => 657,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            28 => 
+            array (
+                'id' => 706,
+                'cup_id' => 13,
+                'category_id' => 657,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            29 => 
+            array (
+                'id' => 707,
+                'cup_id' => 1,
+                'category_id' => 658,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            30 => 
+            array (
+                'id' => 708,
+                'cup_id' => 13,
+                'category_id' => 658,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            31 => 
+            array (
+                'id' => 709,
+                'cup_id' => 1,
+                'category_id' => 659,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            32 => 
+            array (
+                'id' => 710,
+                'cup_id' => 13,
+                'category_id' => 659,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            33 => 
+            array (
+                'id' => 711,
+                'cup_id' => 1,
+                'category_id' => 660,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            34 => 
+            array (
+                'id' => 712,
+                'cup_id' => 1,
+                'category_id' => 661,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            35 => 
+            array (
+                'id' => 713,
+                'cup_id' => 13,
+                'category_id' => 661,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            36 => 
+            array (
+                'id' => 714,
+                'cup_id' => 1,
+                'category_id' => 662,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            37 => 
+            array (
+                'id' => 715,
+                'cup_id' => 13,
+                'category_id' => 662,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            38 => 
+            array (
+                'id' => 716,
+                'cup_id' => 1,
+                'category_id' => 663,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            39 => 
+            array (
+                'id' => 717,
+                'cup_id' => 13,
+                'category_id' => 663,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            40 => 
+            array (
+                'id' => 718,
+                'cup_id' => 1,
+                'category_id' => 664,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            41 => 
+            array (
+                'id' => 719,
+                'cup_id' => 13,
+                'category_id' => 664,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            42 => 
+            array (
+                'id' => 720,
+                'cup_id' => 1,
+                'category_id' => 665,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            43 => 
+            array (
+                'id' => 721,
+                'cup_id' => 9,
+                'category_id' => 665,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            44 => 
+            array (
+                'id' => 722,
+                'cup_id' => 12,
+                'category_id' => 666,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            45 => 
+            array (
+                'id' => 723,
+                'cup_id' => 2,
+                'category_id' => 667,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            46 => 
+            array (
+                'id' => 724,
+                'cup_id' => 13,
+                'category_id' => 667,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            47 => 
+            array (
+                'id' => 725,
+                'cup_id' => 2,
+                'category_id' => 668,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            48 => 
+            array (
+                'id' => 726,
+                'cup_id' => 13,
+                'category_id' => 668,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            49 => 
+            array (
+                'id' => 727,
+                'cup_id' => 2,
+                'category_id' => 669,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            50 => 
+            array (
+                'id' => 728,
+                'cup_id' => 13,
+                'category_id' => 669,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            51 => 
+            array (
+                'id' => 729,
+                'cup_id' => 2,
+                'category_id' => 670,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            52 => 
+            array (
+                'id' => 730,
+                'cup_id' => 13,
+                'category_id' => 670,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            53 => 
+            array (
+                'id' => 731,
+                'cup_id' => 2,
+                'category_id' => 671,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            54 => 
+            array (
+                'id' => 732,
+                'cup_id' => 13,
+                'category_id' => 671,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            55 => 
+            array (
+                'id' => 733,
+                'cup_id' => 2,
+                'category_id' => 672,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            56 => 
+            array (
+                'id' => 734,
+                'cup_id' => 13,
+                'category_id' => 672,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            57 => 
+            array (
+                'id' => 735,
+                'cup_id' => 2,
+                'category_id' => 673,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            58 => 
+            array (
+                'id' => 736,
+                'cup_id' => 13,
+                'category_id' => 673,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            59 => 
+            array (
+                'id' => 737,
+                'cup_id' => 3,
+                'category_id' => 674,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            60 => 
+            array (
+                'id' => 738,
+                'cup_id' => 13,
+                'category_id' => 674,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            61 => 
+            array (
+                'id' => 739,
+                'cup_id' => 3,
+                'category_id' => 675,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            62 => 
+            array (
+                'id' => 740,
+                'cup_id' => 13,
+                'category_id' => 675,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            63 => 
+            array (
+                'id' => 741,
+                'cup_id' => 3,
+                'category_id' => 676,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            64 => 
+            array (
+                'id' => 742,
+                'cup_id' => 13,
+                'category_id' => 676,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            65 => 
+            array (
+                'id' => 743,
+                'cup_id' => 3,
+                'category_id' => 677,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            66 => 
+            array (
+                'id' => 744,
+                'cup_id' => 13,
+                'category_id' => 677,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            67 => 
+            array (
+                'id' => 745,
+                'cup_id' => 3,
+                'category_id' => 678,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            68 => 
+            array (
+                'id' => 746,
+                'cup_id' => 13,
+                'category_id' => 678,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            69 => 
+            array (
+                'id' => 747,
+                'cup_id' => 3,
+                'category_id' => 679,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            70 => 
+            array (
+                'id' => 748,
+                'cup_id' => 13,
+                'category_id' => 679,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            71 => 
+            array (
+                'id' => 749,
+                'cup_id' => 3,
+                'category_id' => 680,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            72 => 
+            array (
+                'id' => 750,
+                'cup_id' => 13,
+                'category_id' => 680,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            73 => 
+            array (
+                'id' => 751,
+                'cup_id' => 3,
+                'category_id' => 681,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            74 => 
+            array (
+                'id' => 752,
+                'cup_id' => 13,
+                'category_id' => 681,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            75 => 
+            array (
+                'id' => 753,
+                'cup_id' => 3,
+                'category_id' => 682,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            76 => 
+            array (
+                'id' => 754,
+                'cup_id' => 13,
+                'category_id' => 682,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            77 => 
+            array (
+                'id' => 755,
+                'cup_id' => 3,
+                'category_id' => 683,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            78 => 
+            array (
+                'id' => 756,
+                'cup_id' => 13,
+                'category_id' => 683,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            79 => 
+            array (
+                'id' => 757,
+                'cup_id' => 3,
+                'category_id' => 684,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            80 => 
+            array (
+                'id' => 758,
+                'cup_id' => 13,
+                'category_id' => 684,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            81 => 
+            array (
+                'id' => 759,
+                'cup_id' => 3,
+                'category_id' => 685,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            82 => 
+            array (
+                'id' => 760,
+                'cup_id' => 13,
+                'category_id' => 685,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            83 => 
+            array (
+                'id' => 761,
+                'cup_id' => 3,
+                'category_id' => 686,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            84 => 
+            array (
+                'id' => 762,
+                'cup_id' => 13,
+                'category_id' => 686,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            85 => 
+            array (
+                'id' => 763,
+                'cup_id' => 3,
+                'category_id' => 687,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            86 => 
+            array (
+                'id' => 764,
+                'cup_id' => 13,
+                'category_id' => 687,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            87 => 
+            array (
+                'id' => 765,
+                'cup_id' => 3,
+                'category_id' => 688,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            88 => 
+            array (
+                'id' => 766,
+                'cup_id' => 13,
+                'category_id' => 688,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            89 => 
+            array (
+                'id' => 767,
+                'cup_id' => 3,
+                'category_id' => 689,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            90 => 
+            array (
+                'id' => 768,
+                'cup_id' => 13,
+                'category_id' => 689,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            91 => 
+            array (
+                'id' => 769,
+                'cup_id' => 3,
+                'category_id' => 690,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            92 => 
+            array (
+                'id' => 770,
+                'cup_id' => 13,
+                'category_id' => 690,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            93 => 
+            array (
+                'id' => 771,
+                'cup_id' => 3,
+                'category_id' => 691,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            94 => 
+            array (
+                'id' => 772,
+                'cup_id' => 13,
+                'category_id' => 691,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            95 => 
+            array (
+                'id' => 773,
+                'cup_id' => 3,
+                'category_id' => 692,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            96 => 
+            array (
+                'id' => 774,
+                'cup_id' => 13,
+                'category_id' => 692,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            97 => 
+            array (
+                'id' => 775,
+                'cup_id' => 3,
+                'category_id' => 693,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            98 => 
+            array (
+                'id' => 776,
+                'cup_id' => 13,
+                'category_id' => 693,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            99 => 
+            array (
+                'id' => 777,
+                'cup_id' => 3,
+                'category_id' => 694,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            100 => 
+            array (
+                'id' => 778,
+                'cup_id' => 13,
+                'category_id' => 694,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            101 => 
+            array (
+                'id' => 779,
+                'cup_id' => 31,
+                'category_id' => 695,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            102 => 
+            array (
+                'id' => 780,
+                'cup_id' => 11,
+                'category_id' => 696,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            103 => 
+            array (
+                'id' => 781,
+                'cup_id' => 4,
+                'category_id' => 697,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            104 => 
+            array (
+                'id' => 782,
+                'cup_id' => 4,
+                'category_id' => 698,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            105 => 
+            array (
+                'id' => 783,
+                'cup_id' => 4,
+                'category_id' => 699,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            106 => 
+            array (
+                'id' => 784,
+                'cup_id' => 4,
+                'category_id' => 700,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            107 => 
+            array (
+                'id' => 785,
+                'cup_id' => 5,
+                'category_id' => 701,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            108 => 
+            array (
+                'id' => 786,
+                'cup_id' => 5,
+                'category_id' => 702,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            109 => 
+            array (
+                'id' => 787,
+                'cup_id' => 5,
+                'category_id' => 703,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            110 => 
+            array (
+                'id' => 788,
+                'cup_id' => 5,
+                'category_id' => 704,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            111 => 
+            array (
+                'id' => 789,
+                'cup_id' => 5,
+                'category_id' => 705,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            112 => 
+            array (
+                'id' => 790,
+                'cup_id' => 5,
+                'category_id' => 706,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            113 => 
+            array (
+                'id' => 791,
+                'cup_id' => 5,
+                'category_id' => 707,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            114 => 
+            array (
+                'id' => 792,
+                'cup_id' => 5,
+                'category_id' => 708,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            115 => 
+            array (
+                'id' => 793,
+                'cup_id' => 5,
+                'category_id' => 710,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            116 => 
+            array (
+                'id' => 794,
+                'cup_id' => 5,
+                'category_id' => 711,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            117 => 
+            array (
+                'id' => 795,
+                'cup_id' => 5,
+                'category_id' => 712,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            118 => 
+            array (
+                'id' => 796,
+                'cup_id' => 5,
+                'category_id' => 713,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            119 => 
+            array (
+                'id' => 797,
+                'cup_id' => 5,
+                'category_id' => 714,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            120 => 
+            array (
+                'id' => 798,
+                'cup_id' => 5,
+                'category_id' => 715,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            121 => 
+            array (
+                'id' => 799,
+                'cup_id' => 6,
+                'category_id' => 716,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            122 => 
+            array (
+                'id' => 800,
+                'cup_id' => 6,
+                'category_id' => 717,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            123 => 
+            array (
+                'id' => 801,
+                'cup_id' => 6,
+                'category_id' => 718,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            124 => 
+            array (
+                'id' => 802,
+                'cup_id' => 6,
+                'category_id' => 719,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            125 => 
+            array (
+                'id' => 803,
+                'cup_id' => 6,
+                'category_id' => 720,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            126 => 
+            array (
+                'id' => 804,
+                'cup_id' => 6,
+                'category_id' => 721,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            127 => 
+            array (
+                'id' => 805,
+                'cup_id' => 6,
+                'category_id' => 722,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            128 => 
+            array (
+                'id' => 806,
+                'cup_id' => 6,
+                'category_id' => 723,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            129 => 
+            array (
+                'id' => 807,
+                'cup_id' => 6,
+                'category_id' => 727,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            130 => 
+            array (
+                'id' => 808,
+                'cup_id' => 8,
+                'category_id' => 728,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            131 => 
+            array (
+                'id' => 809,
+                'cup_id' => 8,
+                'category_id' => 729,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            132 => 
+            array (
+                'id' => 810,
+                'cup_id' => 8,
+                'category_id' => 730,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            133 => 
+            array (
+                'id' => 811,
+                'cup_id' => 8,
+                'category_id' => 731,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            134 => 
+            array (
+                'id' => 812,
+                'cup_id' => 8,
+                'category_id' => 732,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            135 => 
+            array (
+                'id' => 813,
+                'cup_id' => 8,
+                'category_id' => 733,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            136 => 
+            array (
+                'id' => 814,
+                'cup_id' => 8,
+                'category_id' => 734,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            137 => 
+            array (
+                'id' => 815,
+                'cup_id' => 8,
+                'category_id' => 735,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            138 => 
+            array (
+                'id' => 816,
+                'cup_id' => 8,
+                'category_id' => 736,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            139 => 
+            array (
+                'id' => 817,
+                'cup_id' => 8,
+                'category_id' => 737,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            140 => 
+            array (
+                'id' => 818,
+                'cup_id' => 8,
+                'category_id' => 738,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            141 => 
+            array (
+                'id' => 819,
+                'cup_id' => 10,
+                'category_id' => 739,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            142 => 
+            array (
+                'id' => 820,
+                'cup_id' => 7,
+                'category_id' => 740,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            143 => 
+            array (
+                'id' => 821,
+                'cup_id' => 7,
+                'category_id' => 743,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            144 => 
+            array (
+                'id' => 822,
+                'cup_id' => 7,
+                'category_id' => 744,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            145 => 
+            array (
+                'id' => 823,
+                'cup_id' => 7,
+                'category_id' => 745,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            146 => 
+            array (
+                'id' => 824,
+                'cup_id' => 7,
+                'category_id' => 746,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            147 => 
+            array (
+                'id' => 825,
+                'cup_id' => 7,
+                'category_id' => 747,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            148 => 
+            array (
+                'id' => 826,
+                'cup_id' => 7,
+                'category_id' => 748,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            149 => 
+            array (
+                'id' => 827,
+                'cup_id' => 7,
+                'category_id' => 749,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            150 => 
+            array (
+                'id' => 828,
+                'cup_id' => 7,
+                'category_id' => 750,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            151 => 
+            array (
+                'id' => 829,
+                'cup_id' => 7,
+                'category_id' => 751,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            152 => 
+            array (
+                'id' => 830,
+                'cup_id' => 7,
+                'category_id' => 752,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            153 => 
+            array (
+                'id' => 831,
+                'cup_id' => 7,
+                'category_id' => 753,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            154 => 
+            array (
+                'id' => 832,
+                'cup_id' => 7,
+                'category_id' => 754,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            155 => 
+            array (
+                'id' => 833,
+                'cup_id' => 7,
+                'category_id' => 755,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            156 => 
+            array (
+                'id' => 834,
+                'cup_id' => 7,
+                'category_id' => 756,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

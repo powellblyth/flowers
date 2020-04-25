@@ -64,7 +64,8 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="card card-stats">
-                        <div class="card-header @if((($entry_fee + $membership_fee)/100) - $paid > 0.01)card-header-danger @else  card-header-success @endif card-header-icon">
+                        <div
+                            class="card-header @if((($entry_fee + $membership_fee)/100) - $paid > 0.01)card-header-danger @else  card-header-success @endif card-header-icon">
                             <div class="card-icon">
                                 <i class="material-icons">info_outline</i>
                             </div>
@@ -84,30 +85,25 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-12 text-right">
-                            @if (Auth::User()->isAdmin())
-
+                            @can('printCards', \App\Entry::class)
                                 <a href="{{route('user.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
-                                @if(!$isLocked)
-                                    <a href="{{route('user.edit', $thing)}}"
-                                       class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
-                                @endif
-                            @endif
-                            @if(!$isLocked)
-                                <a href="{{route('entrants.create')}}"
-                                   class="btn btn-primary">Add another family member</a>
-                            @endif
+                            @endcan
+                            @can('update', $thing)
+                                <a href="{{route('user.edit', $thing)}}"
+                                   class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                            @endcan
                         </div>
                     </div>
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
-                                {{$thing->getName()}}
+                                Your PHS Account details
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6  col-md-6 col-sm-12">
-                                        <b>Member Number:</b> {{ $thing->getMemberNumber() }}
+                                        <b>Family Member Number:</b> {{ $thing->getMemberNumber() }}
                                     </div>
                                     <div class="col-lg-6  col-md-6 col-sm-12">
                                         <b>Address:</b> {{ $thing->getAddress() }}
@@ -123,8 +119,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $thing->getName() }}</div>
-
+                                    <div class="col-lg-6 col-md-6  col-sm-12"><b>Name:</b> {{ $thing->getName() }}</div>
+                                    <div class="col-lg-6 col-md-6  col-sm-12"><a class="btn btn-primary"
+                                                                                 href="{{ route('profile.edit') }}">Edit
+                                            my account</a></div>
                                 </div>
                             </div>
                         @endif
@@ -134,7 +132,7 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="card">
-                        <div class="card-header-success">Family</div>
+                        <div class="card-header-success">Entrants</div>
                         <div class="card-body">
                             @if (0 == count($thing->entrants))
                                 <p>There are no family members configured yet. You must have configured at least one
@@ -145,12 +143,13 @@
                                         @if ($entrant->age)
                                             (Age {{$entrant->age}} years)
                                         @endif
-                                        <a href="{{route('entrants.show', $entrant->id)}}"><i
-                                                    class="material-icons">toc</i> Manage Entries / Show</a>
+                                        <a href="{{route('entrants.show', $entrant->id)}}"
+                                           class=" btn-primary btn btn-sm"><i
+                                                class="material-icons">toc</i> Manage Entries</a>
                                         @if (!$isLocked )
 
-                                            <a href="{{route('entrants.edit', $entrant->id)}}"><i
-                                                        class="material-icons">edit</i> edit</a>
+                                            <a href="{{route('entrants.edit', $entrant->id)}}" class="btn btn-sm"><i
+                                                    class="material-icons">edit</i> edit</a>
                                         @endif
                                     </h4>
 
@@ -165,27 +164,33 @@
                                             @php $totalFee += $entry->getActualPrice() @endphp
                                         @endforeach
                                         <p>{{count($entry_data)}}
-                                            entry(ies) TOTAL:£{{number_format($totalFee/100, 2)}}</p>
+                                            {{\Illuminate\Support\Str::plural('entry', count($entry_data))}}
+                                            TOTAL:£{{number_format($totalFee/100, 2)}}</p>
                                         @foreach ($entry_data as $entry)
-
-                                            {{--                                @foreach ($entry_data as $entry)--}}
-
-                                            {{$entry->category->getNumberedLabel()}} ({{$entry->getActualPrice()}}p)
-                                            {{--                                        @if ($entry['is_late'])--}}
-                                            {{--                                            (late)--}}
-
-                                            {{--                                        @endif--}}
-                                            {{--                                        @if ($entry['has_won'])--}}
-                                            {{--                                            <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>--}}
-                                            {{--                                            (&pound;{{number_format($entry['winning_amount']/100,2)}})--}}
-                                            {{--                                        @endif--}}
-                                            <br/>
+                                            <p>
+                                                {{$entry->category->getNumberedLabel()}} ({{$entry->getActualPrice()}}p)
+                                            </p>
                                         @endforeach
                                         {{--                            @endif--}}
                                         {{--                                @endforeach--}}
                                     @endif
+                                    <p>
+                                        @if($entrant->team)
+                                            A member of team {{$entrant->team->name}}
+                                        @else
+{{--                                            Not shown for adults--}}
+                                            @if($entrant->age)
+                                            Not yet a member of any team
+                                                @endif
+                                        @endif
+                                    </p>
+
                                     <hr/>
                                 @endforeach
+                            @endif
+                            @if(!$isLocked)
+                                <a href="{{route('entrants.create')}}"
+                                   class="btn btn-primary">Add someone else</a>
                             @endif
 
                         </div>

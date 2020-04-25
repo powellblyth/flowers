@@ -10,12 +10,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 //use Laravel\Cashier\Billable;
+
+/**
+ * @method static User create(array $array)
+ */
 class User extends Authenticatable
 {
     use Notifiable;
+
 //    use Billable;
 
-    const ADMIN_TYPE = 'admin';
+    const ADMIN_TYPE   = 'admin';
     const DEFAULT_TYPE = 'default';
 
     protected $dispatchesEvents = [
@@ -25,6 +30,7 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->type === self::ADMIN_TYPE;
+//        return false;
     }
 
     /**
@@ -72,18 +78,18 @@ class User extends Authenticatable
         if ($printable) {
             return $this->getPrintableName();
         } else {
-            return trim($this->firstname.' '.$this->lastname);
+            return trim($this->firstname . ' ' . $this->lastname);
         }
     }
 
     public function getAddress(): string
     {
-        $concatted = trim($this->address).', '
-                     .trim($this->address2).', '.trim($this->addresstown);
+        $concatted = trim($this->address) . ', '
+                     . trim($this->address2) . ', ' . trim($this->addresstown);
         $deduped   = str_replace(', , ', ', ',
             str_replace(', , ', ', ',
                 $concatted));
-        return trim(trim($deduped, ', ').' '.trim($this->postcode), ', ');
+        return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
     }
 
     /**
@@ -105,7 +111,7 @@ class User extends Authenticatable
 
     public function getPrintableName(): string
     {
-        return trim(substr($this->firstname, 0, 1).' '.$this->lastname);
+        return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
     }
 
     public function entrants(): HasMany
@@ -149,4 +155,47 @@ class User extends Authenticatable
         }
     }
 
+    public function anonymisePostcode(?string $postcode):?string {
+        $newPostcode = null;
+        if (!is_null($postcode) && !empty($postcode)) {
+            $oldPostcode = explode(' ', trim($postcode));
+            if (2 == count($oldPostcode)) {
+                $newPostcode = $oldPostcode[0] . substr($oldPostcode[1], 0, 1);
+            } else {
+                $newPostcode = substr($postcode, 0, 5);
+            }
+        }
+        return $newPostcode;
+    }
+
+    public function anonymise()
+    {
+        $this->email               = $this->id . '@' . $this->id . 'phs-anonymised' . rand(0, 100000) . '.com';
+        $this->is_anonymised       = true;
+        $this->firstname           = 'Anonymised';
+        $this->lastname            = 'Anonymised';
+        $this->telephone           = null;
+        $this->address             = null;
+        $this->address2            = null;
+        $this->addresstown         = null;
+        $this->retain_data_opt_in  = null;
+        $this->retain_data_opt_out = null;
+        $this->email_opt_in        = null;
+        $this->email_opt_out       = null;
+        $this->can_email           = false;
+        $this->phone_opt_in        = null;
+        $this->phone_opt_out       = null;
+        $this->can_phone           = false;
+        $this->sms_opt_in          = null;
+        $this->sms_opt_out         = null;
+        $this->can_sms             = false;
+        $this->post_opt_in         = null;
+        $this->post_opt_out        = null;
+        $this->can_post            = false;
+
+        $this->postcode   = $this->anonymisePostcode($this->postcode);
+        $this->created_at = null;
+
+        return $this;
+    }
 }

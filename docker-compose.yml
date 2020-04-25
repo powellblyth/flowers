@@ -32,7 +32,6 @@ services:
       - "30396:3306"
     volumes:
       - .:/var/www/html
-      - ./site.conf:/etc/nginx/conf.d/site.conf
       - flowersdata:/var/lib/mysql
 volumes:
   flowersdata:

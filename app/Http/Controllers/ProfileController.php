@@ -26,7 +26,7 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(ProfileRequest $request)
-    {
+    {die('hipdad');
         auth()->user()->update($request->all());
 
         return back()->withStatus(__('Profile successfully updated.'));

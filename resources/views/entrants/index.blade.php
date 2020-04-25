@@ -15,17 +15,13 @@
 @section('pagetitle', $pageTitle)
 @section('content')
 
-
-
-    <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-right">
-                    @if (Auth::User()->isAdmin())
-
+                    @can ('printcards',Entries::class)
                         <a href="{{route('entries.printall')}}" target="_blank"
                            class="btn btn-primary">Print ALL Cards</a>
-                    @endif
+                    @endcan
                 </div>
             </div>
             <div class="row">
@@ -126,6 +122,5 @@
                     </div>
                 </div>
             </div>
-        </div>
 
 @stop

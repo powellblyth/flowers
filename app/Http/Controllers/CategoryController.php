@@ -20,28 +20,6 @@ class CategoryController extends Controller
      *
      * @return Response
      */
-    protected $templateDir = 'categories';
-    protected $baseClass = 'App\Category';
-    protected $sections = [
-        '1 - Novices'                                => '1 - Novices',
-        '2 - Flowers'                                => '2 - Flowers',
-        '3 - Fruit'                                  => '3 - Fruit',
-        '4 - Vegetables'                             => '4 - Vegetables',
-        '5 - Floral Arrangements'                    => '5 - Floral Arrangements',
-        '6 - Cookery'                                => '6 - Cookery',
-        '7 - Arts and Crafts'                        => '7 - Arts and Crafts',
-        '8 - Childrens Floral, Fruit and Vegetables' => '8 - Childrens Floral, Fruit and Vegetables',
-        '9 - Childrens Cookery, Arts & Crafts'       => '9 - Childrens Cookery, Arts & Crafts',
-    ];
-
-    protected function getYearFromRequest(Request $request): int
-    {
-        if ($request->has = ('year') && is_numeric($request->year) && (int) $request->year > 2015 && (int) $request->year < (int) date('Y')) {
-            return (int) $request->year;
-        } else {
-            return config('app.year');
-        }
-    }
 
     public function index(Request $request): View
     {
@@ -53,33 +31,29 @@ class CategoryController extends Controller
         $sectionList  = [];
 
         $sections = Section::orderBy('number', 'asc')->get();
-        $things   = Category::orderBy('sortorder', 'asc')
-            ->where('year', $year)
-            ->get()
-        ;
 
         foreach ($sections as $section) {
-            $sectionList[$section->id]  = $section->id.' '.$section->name;
+            $sectionList[$section->id]  = $section->id . ' ' . $section->name;
             $categoryList[$section->id] = [];
-            $categories                 = $section->categories()->orderBy('sortorder', 'asc')
+            $categories                 = $section->categories()->where('status', 'active')->orderBy('sortorder', 'asc')
                 ->where('year', $year)
-                ->get()
-            ;
+                ->get();
 
             foreach ($categories as $category) {
+                /**
+                 * @var Category $category
+                 */
                 $categoryList[$section->id][$category->id] = $category;
                 $placements                                = $category->entries()
                     ->whereNotNull('winningplace')
                     ->whereNotIn('winningplace', [''])
                     ->where('year', $year)
                     ->orderBy('winningplace')
-                    ->get()
-                ;
-                $total                                     = Entry::where('category_id', $category->id)
+                    ->get();
+                $total                                     = $category->entries()
                     ->where('year', $year)
                     ->select(DB::raw('count(*) as total'))
-                    ->groupBy('category_id')->first()
-                ;
+                    ->groupBy('category_id')->first();
 
                 $results[$category->id] = [
                     'placements'    => $placements,
@@ -93,18 +67,19 @@ class CategoryController extends Controller
                 }
             }
         }
-        return view($this->templateDir.'.index',
+        return view(
+            'categories.index',
             [
-                'things'          => $things,
+                'things'          => $categories,
                 'categoryList'    => $categoryList,
                 'sectionList'     => $sectionList,
                 'results'         => $results,
                 'winners'         => $winners,
                 'year'            => $year,
                 'is_current_year' => ($year == (int) date('Y')),
-                'isAdmin'         => Auth::check() && Auth::User()->isAdmin(),
                 'isLocked'        => config('app.state') == 'locked',
-            ]);
+            ]
+        );
     }
 
     /**
@@ -120,7 +95,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id)
@@ -131,7 +106,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function update($id)
@@ -142,7 +117,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id)
@@ -153,24 +128,23 @@ class CategoryController extends Controller
     public function create(array $extraData = []): View
     {
         $sections = Section::pluck('name', 'id');
-        return view($this->templateDir.'.create', ['sections' => $sections]);
+        return view('categories.create', ['sections' => $sections]);
     }
 
     public function resultsentry(Request $request): View
     {
+        $this->authorize('enterResults', Entry::class);
         $entries    = [];
         $winners    = [];
-        $section    = Section::find($request->section);
+        $section    = Section::findOrFail($request->section);
         $categories = $section->categories()
             ->where('year', config('app.year'))
             ->orderby('sortorder')
-            ->get()
-        ;
+            ->get();
         foreach ($categories as $category) {
             $thisEntries            = $category->entries()
                 ->where('year', config('app.year'))
-                ->orderBy('entrant_id')->get()
-            ;
+                ->orderBy('entrant_id')->get();
             $entries[$category->id] = [];
             $winners[$category->id] = [];
 
@@ -186,12 +160,11 @@ class CategoryController extends Controller
                 ];
             }
         }
-        return view($this->templateDir.'.resultsentry', array(
+        return view('categories.resultsentry', array(
             'categories' => $categories,
             'entries'    => $entries,
             'section'    => $section,
             'winners'    => $winners,
-            'isAdmin'    => Auth::User()->isAdmin()
         ));
     }
 
@@ -202,6 +175,7 @@ class CategoryController extends Controller
      */
     function printcards()
     {
+        $this->authorize('printCards', Entry::class);
         $categories = Category::where('year', config('app.year'))->get();
         $cardFronts = [];
 
@@ -212,7 +186,7 @@ class CategoryController extends Controller
             ];
         }
 
-        return view($this->templateDir.'.printcards', ['card_fronts' => $cardFronts]);
+        return view('categories.printcards', ['card_fronts' => $cardFronts]);
     }
 
     /**
@@ -236,11 +210,12 @@ class CategoryController extends Controller
             ];
         }
 
-        return view($this->templateDir.'.printlookups', ['card_fronts' => $cardFronts]);
+        return view('categories.printlookups', ['card_fronts' => $cardFronts]);
     }
 
     public function storeresults(Request $request): \Illuminate\Http\RedirectResponse
     {
+        $this->authorize('enterResults', Entry::class);
         foreach ($request->positions as $categoryId => $placings) {
             foreach ($placings as $entryId => $result) {
                 if ('0' !== $result && '' != trim($result)) {

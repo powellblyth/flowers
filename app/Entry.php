@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use \Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * Class Entry
+ * @package App
+ * @property Entrant $entrant
+ */
 class Entry extends Model
 {
-
     public function hasWon()
     {
         return !empty(trim($this->winningplace));

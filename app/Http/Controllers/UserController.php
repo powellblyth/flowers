@@ -100,7 +100,7 @@ class UserController extends Controller
             //@todo centralise this
             $tooLateForEntries = time() > strToTime($currentYear . "-07-09 00:00:00");
 
-            $hasFamilySubscription = $thing->subscribed('family');
+//            $hasFamilySubscription = $thing->subscribed('family');
 //var_dump([$currentYear,     $membershipFee]);die();
             return view('users.show', [
                 'thing'                   => $thing,
@@ -113,7 +113,7 @@ class UserController extends Controller
                 'isAdmin'                 => $this->isAdmin(),
                 'payment_types'           => $this->paymentTypes,
                 'membership_types'        => ['family' => 'Family'],
-                'has_family_subscription' => $hasFamilySubscription,
+                'has_family_subscription' => false ,//$hasFamilySubscription,
                 'isLocked'                => config('app.state') == 'locked',
                 'too_late_for_entries'    => $tooLateForEntries,
             ]);
@@ -166,6 +166,7 @@ class UserController extends Controller
      */
     public function store(UserRequest $request, User $model)
     {
+        $this->authorize('update', $model);
         if (empty($request->get('password'))) {
             $newPassword = '';
         } else {
@@ -189,6 +190,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         return view('users.edit', array_merge(compact('user'), ['privacyContent' => config('static_content.privacy_content')]));
     }
 
@@ -201,6 +203,7 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
+        $this->authorize('update', $user);
         $user->update(
             $request->merge(['password' => Hash::make($request->get('password'))])
                 ->except([$request->get('password') ? '' : 'password']
@@ -217,6 +220,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $this->authorize('delete', $user);
         $user->delete();
 
         return redirect()->route('user.index')->withStatus(__('User successfully deleted.'));

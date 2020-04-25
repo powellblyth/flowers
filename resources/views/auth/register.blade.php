@@ -1,7 +1,6 @@
 @extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('PHS Entries')])
 
 @section('content')
-    <div class="container" style="height: auto;">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-8 ml-auto mr-auto">
                 <form class="form" method="POST" action="{{ route('register') }}">
@@ -245,5 +244,5 @@
                 </form>
             </div>
         </div>
-    </div>
+
 @endsection

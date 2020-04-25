@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Route;
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -71,6 +74,11 @@ Route::group(['middleware' => 'is_admin'], function () {
         ['as' => 'entrants.storechangecategories', 'uses' => 'EntrantController@changeCategories'])->middleware('auth');
     Route::get('/entrants/{id}/print', ['as' => 'entrant.print', 'uses' => 'EntrantController@printcards']);
 });
+//Route::post('/teams/creates', ['as' => 'teams.creates', 'uses' => 'tEAMAController@creates'])->middleware('auth');
+//Route::get('/teams', ['as' => 'teams.index', 'uses' => 'TeamsController@index']);
+
+Route::resource('teams', 'TeamsController');
+
 Route::post('/entry/creates', ['as' => 'entry.creates', 'uses' => 'EntryController@creates'])->middleware('auth');
 Route::get('/entrants/{id}/edit', ['as' => 'entrants.edit', 'uses' => 'EntrantController@edit'])->middleware('auth');
 Route::get('/entrants/{id}', ['as' => 'entrants.show', 'uses' => 'EntrantController@show'])->middleware('auth');
@@ -81,10 +89,12 @@ Route::post('/entrants/{id}/optins',
     ['as' => 'entrants.optins', 'uses' => 'EntrantController@optins'])->middleware('auth');
 
 Route::get('/users/', ['as' => 'users.index', 'uses' => 'UserController@index'])->middleware('is_admin');
+Route::get('/users/new', ['as' => 'users.create', 'uses' => 'UserController@create'])->middleware('is_admin');
+Route::delete('/users/{id}', ['as' => 'users.destroy', 'uses' => 'UserController@delete'])->middleware('is_admin');
 
 Route::get('/users/{id}', ['as' => 'user.show', 'uses' => 'UserController@family'])->middleware('is_admin');
 Route::get('/users/{id}/print', ['as' => 'user.print', 'uses' => 'UserController@printcards'])->middleware('is_admin');
-Route::get('/family', ['as' => 'user.family', 'uses' => 'UserController@family'])->middleware('auth');
+Route::get('/family', ['as' => 'home', 'uses' => 'UserController@family'])->middleware('auth');
 
 
 Route::get('/users/{user}/edit', ['as' => 'user.edit', 'uses' => 'UserController@edit'])->middleware('is_admin');
@@ -99,7 +109,7 @@ Route::get('/reports/unplacedCategories',
     ['as' => 'reports.categories', 'uses' => 'ReportsController@unplacedcategoriesReport'])->middleware('is_admin');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+//Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('table-list', function () {
@@ -132,10 +142,11 @@ Route::group(['middleware' => 'auth'], function () {
 });
 //Route::get('')
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('user', 'UserController', ['except' => ['show', 'edit']]);
+//    Route::resource('user', 'UserController', ['except' => ['show', 'edit']]);
     Route::get('/profile/subscribe',
         ['as'   => 'users.subscribe',
-         'uses' => 'ProfileController@subscribe']);
+         'uses' => 'ProfileController@subscribe']
+    );
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);

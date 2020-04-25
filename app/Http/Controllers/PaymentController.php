@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Payment;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -13,14 +14,15 @@ class PaymentController extends Controller
     {
         // Validate the request...
 
-        $thing = new $this->baseClass();
+        $payment = new Payment();
 
-        $thing->amount     = $request->amount;
-        $thing->source     = $request->source;
-        $thing->entrant_id = $request->entrant;
-        $thing->user_id    = $request->user;
-        $thing->year       = (int) config('app.year');
-        $thing->save();
+        $payment->amount     = $request->amount;
+        $payment->source     = $request->source;
+        $payment->entrant_id = $request->entrant;
+        $payment->user_id    = $request->user;
+        $payment->year       = (int) config('app.year');
+        $payment->save();
+
         if ($request->entrant) {
             return redirect()->route('entrants.show', array('thing' => $request->entrant));
         } else {

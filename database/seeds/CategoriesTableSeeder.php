@@ -32,6 +32,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             1 => 
             array (
@@ -48,6 +50,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             2 => 
             array (
@@ -64,6 +68,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             3 => 
             array (
@@ -80,6 +86,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             4 => 
             array (
@@ -96,6 +104,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             5 => 
             array (
@@ -112,6 +122,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             6 => 
             array (
@@ -128,6 +140,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             7 => 
             array (
@@ -144,6 +158,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             8 => 
             array (
@@ -160,6 +176,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             9 => 
             array (
@@ -176,6 +194,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             10 => 
             array (
@@ -192,6 +212,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             11 => 
             array (
@@ -208,6 +230,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             12 => 
             array (
@@ -224,6 +248,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             13 => 
             array (
@@ -240,6 +266,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             14 => 
             array (
@@ -256,6 +284,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             15 => 
             array (
@@ -272,6 +302,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             16 => 
             array (
@@ -288,6 +320,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             17 => 
             array (
@@ -304,6 +338,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             18 => 
             array (
@@ -320,6 +356,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             19 => 
             array (
@@ -336,6 +374,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             20 => 
             array (
@@ -352,6 +392,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             21 => 
             array (
@@ -368,6 +410,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             22 => 
             array (
@@ -384,6 +428,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             23 => 
             array (
@@ -400,6 +446,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             24 => 
             array (
@@ -416,6 +464,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             25 => 
             array (
@@ -432,6 +482,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             26 => 
             array (
@@ -448,6 +500,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             27 => 
             array (
@@ -464,6 +518,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             28 => 
             array (
@@ -480,6 +536,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             29 => 
             array (
@@ -496,6 +554,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             30 => 
             array (
@@ -512,6 +572,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             31 => 
             array (
@@ -528,6 +590,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             32 => 
             array (
@@ -544,6 +608,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             33 => 
             array (
@@ -560,6 +626,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             34 => 
             array (
@@ -576,6 +644,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             35 => 
             array (
@@ -592,6 +662,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             36 => 
             array (
@@ -608,6 +680,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             37 => 
             array (
@@ -624,6 +698,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             38 => 
             array (
@@ -640,6 +716,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             39 => 
             array (
@@ -656,6 +734,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             40 => 
             array (
@@ -672,6 +752,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             41 => 
             array (
@@ -688,6 +770,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             42 => 
             array (
@@ -704,6 +788,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             43 => 
             array (
@@ -720,6 +806,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             44 => 
             array (
@@ -736,6 +824,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             45 => 
             array (
@@ -752,6 +842,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             46 => 
             array (
@@ -768,6 +860,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             47 => 
             array (
@@ -784,6 +878,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             48 => 
             array (
@@ -800,6 +896,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             49 => 
             array (
@@ -816,6 +914,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             50 => 
             array (
@@ -832,6 +932,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             51 => 
             array (
@@ -848,6 +950,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             52 => 
             array (
@@ -864,6 +968,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             53 => 
             array (
@@ -880,6 +986,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             54 => 
             array (
@@ -896,6 +1004,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             55 => 
             array (
@@ -912,6 +1022,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             56 => 
             array (
@@ -928,6 +1040,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             57 => 
             array (
@@ -944,6 +1058,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             58 => 
             array (
@@ -960,6 +1076,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2017,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             59 => 
             array (
@@ -976,6 +1094,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2017,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             60 => 
             array (
@@ -992,6 +1112,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2017,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             61 => 
             array (
@@ -1008,6 +1130,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2017,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             62 => 
             array (
@@ -1024,6 +1148,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2017,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             63 => 
             array (
@@ -1040,6 +1166,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             64 => 
             array (
@@ -1056,6 +1184,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             65 => 
             array (
@@ -1072,6 +1202,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             66 => 
             array (
@@ -1088,6 +1220,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             67 => 
             array (
@@ -1104,6 +1238,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             68 => 
             array (
@@ -1120,6 +1256,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             69 => 
             array (
@@ -1136,6 +1274,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             70 => 
             array (
@@ -1152,6 +1292,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             71 => 
             array (
@@ -1168,6 +1310,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             72 => 
             array (
@@ -1184,6 +1328,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             73 => 
             array (
@@ -1200,6 +1346,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             74 => 
             array (
@@ -1216,6 +1364,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             75 => 
             array (
@@ -1232,6 +1382,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             76 => 
             array (
@@ -1248,6 +1400,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             77 => 
             array (
@@ -1264,6 +1418,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             78 => 
             array (
@@ -1280,6 +1436,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             79 => 
             array (
@@ -1296,6 +1454,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             80 => 
             array (
@@ -1312,6 +1472,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             81 => 
             array (
@@ -1328,6 +1490,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             82 => 
             array (
@@ -1344,6 +1508,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             83 => 
             array (
@@ -1360,6 +1526,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             84 => 
             array (
@@ -1376,6 +1544,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             85 => 
             array (
@@ -1392,6 +1562,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             86 => 
             array (
@@ -1408,6 +1580,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             87 => 
             array (
@@ -1424,6 +1598,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             88 => 
             array (
@@ -1440,6 +1616,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             89 => 
             array (
@@ -1456,6 +1634,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             90 => 
             array (
@@ -1472,6 +1652,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             91 => 
             array (
@@ -1488,6 +1670,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             92 => 
             array (
@@ -1504,6 +1688,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             93 => 
             array (
@@ -1520,6 +1706,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             94 => 
             array (
@@ -1536,6 +1724,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             95 => 
             array (
@@ -1552,6 +1742,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             96 => 
             array (
@@ -1568,6 +1760,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             97 => 
             array (
@@ -1584,6 +1778,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             98 => 
             array (
@@ -1600,6 +1796,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             99 => 
             array (
@@ -1616,6 +1814,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             100 => 
             array (
@@ -1632,6 +1832,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             101 => 
             array (
@@ -1648,6 +1850,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             102 => 
             array (
@@ -1664,6 +1868,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             103 => 
             array (
@@ -1680,6 +1886,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             104 => 
             array (
@@ -1696,6 +1904,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             105 => 
             array (
@@ -1712,6 +1922,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             106 => 
             array (
@@ -1728,6 +1940,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             107 => 
             array (
@@ -1744,6 +1958,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             108 => 
             array (
@@ -1760,6 +1976,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             109 => 
             array (
@@ -1776,6 +1994,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             110 => 
             array (
@@ -1792,6 +2012,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             111 => 
             array (
@@ -1808,6 +2030,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             112 => 
             array (
@@ -1824,6 +2048,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             113 => 
             array (
@@ -1840,6 +2066,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             114 => 
             array (
@@ -1856,6 +2084,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             115 => 
             array (
@@ -1872,6 +2102,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             116 => 
             array (
@@ -1888,6 +2120,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             117 => 
             array (
@@ -1904,6 +2138,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             118 => 
             array (
@@ -1920,6 +2156,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             119 => 
             array (
@@ -1936,6 +2174,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             120 => 
             array (
@@ -1952,6 +2192,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             121 => 
             array (
@@ -1968,6 +2210,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             122 => 
             array (
@@ -1984,6 +2228,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             123 => 
             array (
@@ -2000,6 +2246,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2017,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             124 => 
             array (
@@ -2016,6 +2264,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             125 => 
             array (
@@ -2032,6 +2282,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             126 => 
             array (
@@ -2048,6 +2300,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             127 => 
             array (
@@ -2064,6 +2318,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             128 => 
             array (
@@ -2080,6 +2336,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             129 => 
             array (
@@ -2096,6 +2354,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             130 => 
             array (
@@ -2112,6 +2372,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             131 => 
             array (
@@ -2128,6 +2390,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             132 => 
             array (
@@ -2144,6 +2408,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             133 => 
             array (
@@ -2160,6 +2426,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             134 => 
             array (
@@ -2176,6 +2444,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             135 => 
             array (
@@ -2192,6 +2462,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             136 => 
             array (
@@ -2208,6 +2480,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             137 => 
             array (
@@ -2224,6 +2498,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             138 => 
             array (
@@ -2240,6 +2516,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             139 => 
             array (
@@ -2256,6 +2534,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             140 => 
             array (
@@ -2272,6 +2552,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             141 => 
             array (
@@ -2288,6 +2570,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             142 => 
             array (
@@ -2304,6 +2588,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             143 => 
             array (
@@ -2320,6 +2606,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             144 => 
             array (
@@ -2336,6 +2624,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             145 => 
             array (
@@ -2352,6 +2642,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             146 => 
             array (
@@ -2368,6 +2660,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             147 => 
             array (
@@ -2384,6 +2678,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             148 => 
             array (
@@ -2400,6 +2696,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             149 => 
             array (
@@ -2416,6 +2714,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             150 => 
             array (
@@ -2432,6 +2732,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             151 => 
             array (
@@ -2448,6 +2750,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             152 => 
             array (
@@ -2464,6 +2768,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             153 => 
             array (
@@ -2480,6 +2786,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             154 => 
             array (
@@ -2496,6 +2804,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             155 => 
             array (
@@ -2512,6 +2822,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             156 => 
             array (
@@ -2528,6 +2840,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             157 => 
             array (
@@ -2544,6 +2858,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             158 => 
             array (
@@ -2560,6 +2876,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             159 => 
             array (
@@ -2576,6 +2894,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             160 => 
             array (
@@ -2592,6 +2912,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             161 => 
             array (
@@ -2608,6 +2930,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             162 => 
             array (
@@ -2624,6 +2948,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             163 => 
             array (
@@ -2640,6 +2966,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             164 => 
             array (
@@ -2656,6 +2984,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             165 => 
             array (
@@ -2672,6 +3002,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             166 => 
             array (
@@ -2688,6 +3020,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             167 => 
             array (
@@ -2704,6 +3038,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             168 => 
             array (
@@ -2720,6 +3056,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             169 => 
             array (
@@ -2736,6 +3074,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             170 => 
             array (
@@ -2752,6 +3092,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             171 => 
             array (
@@ -2768,6 +3110,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             172 => 
             array (
@@ -2784,6 +3128,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             173 => 
             array (
@@ -2800,6 +3146,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             174 => 
             array (
@@ -2816,6 +3164,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             175 => 
             array (
@@ -2832,6 +3182,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             176 => 
             array (
@@ -2848,6 +3200,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             177 => 
             array (
@@ -2864,6 +3218,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             178 => 
             array (
@@ -2880,6 +3236,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             179 => 
             array (
@@ -2896,6 +3254,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             180 => 
             array (
@@ -2912,6 +3272,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             181 => 
             array (
@@ -2928,6 +3290,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             182 => 
             array (
@@ -2944,6 +3308,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2018,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             183 => 
             array (
@@ -2960,6 +3326,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2018,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             184 => 
             array (
@@ -2976,6 +3344,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2018,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             185 => 
             array (
@@ -2992,6 +3362,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2018,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             186 => 
             array (
@@ -3008,6 +3380,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 100,
                 'year' => 2018,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             187 => 
             array (
@@ -3024,6 +3398,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             188 => 
             array (
@@ -3040,6 +3416,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             189 => 
             array (
@@ -3056,6 +3434,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             190 => 
             array (
@@ -3072,6 +3452,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             191 => 
             array (
@@ -3088,6 +3470,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             192 => 
             array (
@@ -3104,6 +3488,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             193 => 
             array (
@@ -3120,6 +3506,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             194 => 
             array (
@@ -3136,6 +3524,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             195 => 
             array (
@@ -3152,6 +3542,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             196 => 
             array (
@@ -3168,6 +3560,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             197 => 
             array (
@@ -3184,6 +3578,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             198 => 
             array (
@@ -3200,6 +3596,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             199 => 
             array (
@@ -3216,6 +3614,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             200 => 
             array (
@@ -3232,6 +3632,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             201 => 
             array (
@@ -3248,6 +3650,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             202 => 
             array (
@@ -3264,6 +3668,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             203 => 
             array (
@@ -3280,6 +3686,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             204 => 
             array (
@@ -3296,6 +3704,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             205 => 
             array (
@@ -3312,6 +3722,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             206 => 
             array (
@@ -3328,6 +3740,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             207 => 
             array (
@@ -3344,6 +3758,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             208 => 
             array (
@@ -3360,6 +3776,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             209 => 
             array (
@@ -3376,6 +3794,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             210 => 
             array (
@@ -3392,6 +3812,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             211 => 
             array (
@@ -3408,6 +3830,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             212 => 
             array (
@@ -3424,6 +3848,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             213 => 
             array (
@@ -3440,6 +3866,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             214 => 
             array (
@@ -3456,6 +3884,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             215 => 
             array (
@@ -3472,6 +3902,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             216 => 
             array (
@@ -3488,6 +3920,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             217 => 
             array (
@@ -3504,6 +3938,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             218 => 
             array (
@@ -3520,6 +3956,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             219 => 
             array (
@@ -3536,6 +3974,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             220 => 
             array (
@@ -3552,6 +3992,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             221 => 
             array (
@@ -3568,6 +4010,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             222 => 
             array (
@@ -3584,6 +4028,8 @@ class CategoriesTableSeeder extends Seeder
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             223 => 
             array (
@@ -3602,6 +4048,8 @@ flowers, or a combination of all three',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             224 => 
             array (
@@ -3618,6 +4066,8 @@ flowers, or a combination of all three',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             225 => 
             array (
@@ -3634,6 +4084,8 @@ flowers, or a combination of all three',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             226 => 
             array (
@@ -3650,6 +4102,8 @@ flowers, or a combination of all three',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             227 => 
             array (
@@ -3667,6 +4121,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             228 => 
             array (
@@ -3683,6 +4139,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             229 => 
             array (
@@ -3699,6 +4157,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             230 => 
             array (
@@ -3715,6 +4175,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             231 => 
             array (
@@ -3731,6 +4193,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             232 => 
             array (
@@ -3747,6 +4211,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             233 => 
             array (
@@ -3763,6 +4229,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             234 => 
             array (
@@ -3779,6 +4247,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             235 => 
             array (
@@ -3795,6 +4265,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             236 => 
             array (
@@ -3811,6 +4283,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             237 => 
             array (
@@ -3827,6 +4301,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             238 => 
             array (
@@ -3843,6 +4319,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             239 => 
             array (
@@ -3859,6 +4337,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             240 => 
             array (
@@ -3875,6 +4355,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             241 => 
             array (
@@ -3891,6 +4373,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             242 => 
             array (
@@ -3907,6 +4391,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             243 => 
             array (
@@ -3923,6 +4409,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             244 => 
             array (
@@ -3939,6 +4427,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             245 => 
             array (
@@ -3955,6 +4445,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             246 => 
             array (
@@ -3971,6 +4463,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             247 => 
             array (
@@ -3987,6 +4481,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             248 => 
             array (
@@ -4003,6 +4499,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2018,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             249 => 
             array (
@@ -4019,6 +4517,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             250 => 
             array (
@@ -4035,6 +4535,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             251 => 
             array (
@@ -4051,6 +4553,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             252 => 
             array (
@@ -4067,6 +4571,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 1,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             253 => 
             array (
@@ -4083,6 +4589,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             254 => 
             array (
@@ -4099,6 +4607,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             255 => 
             array (
@@ -4115,6 +4625,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             256 => 
             array (
@@ -4131,6 +4643,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             257 => 
             array (
@@ -4147,6 +4661,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             258 => 
             array (
@@ -4163,6 +4679,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             259 => 
             array (
@@ -4179,6 +4697,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             260 => 
             array (
@@ -4195,6 +4715,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             261 => 
             array (
@@ -4211,6 +4733,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             262 => 
             array (
@@ -4227,6 +4751,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             263 => 
             array (
@@ -4243,6 +4769,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             264 => 
             array (
@@ -4259,6 +4787,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             265 => 
             array (
@@ -4275,6 +4805,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             266 => 
             array (
@@ -4291,6 +4823,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             267 => 
             array (
@@ -4307,6 +4841,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             268 => 
             array (
@@ -4323,6 +4859,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             269 => 
             array (
@@ -4339,6 +4877,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             270 => 
             array (
@@ -4355,6 +4895,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             271 => 
             array (
@@ -4371,6 +4913,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             272 => 
             array (
@@ -4387,6 +4931,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             273 => 
             array (
@@ -4403,6 +4949,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             274 => 
             array (
@@ -4419,6 +4967,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             275 => 
             array (
@@ -4436,6 +4986,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             276 => 
             array (
@@ -4452,6 +5004,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             277 => 
             array (
@@ -4468,6 +5022,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 2,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             278 => 
             array (
@@ -4484,6 +5040,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             279 => 
             array (
@@ -4500,6 +5058,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             280 => 
             array (
@@ -4516,6 +5076,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             281 => 
             array (
@@ -4532,6 +5094,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             282 => 
             array (
@@ -4548,6 +5112,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             283 => 
             array (
@@ -4564,6 +5130,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             284 => 
             array (
@@ -4580,6 +5148,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 3,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             285 => 
             array (
@@ -4596,6 +5166,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             286 => 
             array (
@@ -4612,6 +5184,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             287 => 
             array (
@@ -4628,6 +5202,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             288 => 
             array (
@@ -4644,6 +5220,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             289 => 
             array (
@@ -4660,6 +5238,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             290 => 
             array (
@@ -4676,6 +5256,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             291 => 
             array (
@@ -4692,6 +5274,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             292 => 
             array (
@@ -4708,6 +5292,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             293 => 
             array (
@@ -4724,6 +5310,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             294 => 
             array (
@@ -4740,6 +5328,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             295 => 
             array (
@@ -4756,6 +5346,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             296 => 
             array (
@@ -4772,6 +5364,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             297 => 
             array (
@@ -4788,6 +5382,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             298 => 
             array (
@@ -4804,6 +5400,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             299 => 
             array (
@@ -4820,6 +5418,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             300 => 
             array (
@@ -4836,6 +5436,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             301 => 
             array (
@@ -4852,6 +5454,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             302 => 
             array (
@@ -4868,6 +5472,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             303 => 
             array (
@@ -4884,6 +5490,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             304 => 
             array (
@@ -4900,6 +5508,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             305 => 
             array (
@@ -4916,6 +5526,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             306 => 
             array (
@@ -4932,6 +5544,8 @@ leaves.',
                 'third_prize' => 100,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             307 => 
             array (
@@ -4948,6 +5562,8 @@ leaves.',
                 'third_prize' => 100,
                 'year' => 2019,
                 'section_id' => 4,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             308 => 
             array (
@@ -4964,6 +5580,8 @@ leaves.',
                 'third_prize' => 100,
                 'year' => 2019,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             309 => 
             array (
@@ -4980,6 +5598,8 @@ leaves.',
                 'third_prize' => 100,
                 'year' => 2019,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             310 => 
             array (
@@ -4996,6 +5616,8 @@ leaves.',
                 'third_prize' => 100,
                 'year' => 2019,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             311 => 
             array (
@@ -5012,6 +5634,8 @@ leaves.',
                 'third_prize' => 100,
                 'year' => 2019,
                 'section_id' => 5,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             312 => 
             array (
@@ -5028,6 +5652,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             313 => 
             array (
@@ -5044,6 +5670,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             314 => 
             array (
@@ -5060,6 +5688,8 @@ leaves.',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             315 => 
             array (
@@ -5077,6 +5707,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             316 => 
             array (
@@ -5093,6 +5725,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             317 => 
             array (
@@ -5109,6 +5743,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             318 => 
             array (
@@ -5125,6 +5761,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             319 => 
             array (
@@ -5142,6 +5780,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             320 => 
             array (
@@ -5158,6 +5798,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             321 => 
             array (
@@ -5175,6 +5817,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             322 => 
             array (
@@ -5191,6 +5835,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             323 => 
             array (
@@ -5207,6 +5853,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             324 => 
             array (
@@ -5223,6 +5871,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             325 => 
             array (
@@ -5239,6 +5889,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 6,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             326 => 
             array (
@@ -5255,6 +5907,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             327 => 
             array (
@@ -5271,6 +5925,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             328 => 
             array (
@@ -5287,6 +5943,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             329 => 
             array (
@@ -5303,6 +5961,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             330 => 
             array (
@@ -5319,6 +5979,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             331 => 
             array (
@@ -5335,6 +5997,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             332 => 
             array (
@@ -5351,6 +6015,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             333 => 
             array (
@@ -5367,6 +6033,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             334 => 
             array (
@@ -5383,6 +6051,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             335 => 
             array (
@@ -5399,6 +6069,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             336 => 
             array (
@@ -5415,6 +6087,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             337 => 
             array (
@@ -5431,6 +6105,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 7,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             338 => 
             array (
@@ -5447,6 +6123,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             339 => 
             array (
@@ -5463,6 +6141,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             340 => 
             array (
@@ -5479,6 +6159,8 @@ cookies)',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             341 => 
             array (
@@ -5496,6 +6178,8 @@ Children 7-10 years',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             342 => 
             array (
@@ -5512,6 +6196,8 @@ Children 7-10 years',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             343 => 
             array (
@@ -5528,6 +6214,8 @@ Children 7-10 years',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             344 => 
             array (
@@ -5544,6 +6232,8 @@ Children 7-10 years',
                 'third_prize' => 30,
                 'year' => 2019,
                 'section_id' => 8,
+                'status' => 'active',
+                'cloned_from' => NULL,
             ),
             345 => 
             array (
@@ -5560,6 +6250,8 @@ Children 7-10 years',
                     'third_prize' => 30,
                     'year' => 2019,
                     'section_id' => 8,
+                    'status' => 'active',
+                    'cloned_from' => NULL,
                 ),
                 346 => 
                 array (
@@ -5576,6 +6268,8 @@ Children 7-10 years',
                         'third_prize' => 30,
                         'year' => 2019,
                         'section_id' => 8,
+                        'status' => 'active',
+                        'cloned_from' => NULL,
                     ),
                     347 => 
                     array (
@@ -5592,6 +6286,8 @@ Children 7-10 years',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         348 => 
                         array (
@@ -5608,6 +6304,8 @@ Children 7-10 years',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         349 => 
                         array (
@@ -5625,6 +6323,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         350 => 
                         array (
@@ -5641,6 +6341,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         351 => 
                         array (
@@ -5657,6 +6359,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         352 => 
                         array (
@@ -5673,6 +6377,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         353 => 
                         array (
@@ -5689,6 +6395,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         354 => 
                         array (
@@ -5705,6 +6413,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         355 => 
                         array (
@@ -5721,6 +6431,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         356 => 
                         array (
@@ -5737,6 +6449,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         357 => 
                         array (
@@ -5753,6 +6467,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         358 => 
                         array (
@@ -5769,6 +6485,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         359 => 
                         array (
@@ -5785,6 +6503,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         360 => 
                         array (
@@ -5801,6 +6521,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         361 => 
                         array (
@@ -5817,6 +6539,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         362 => 
                         array (
@@ -5833,6 +6557,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         363 => 
                         array (
@@ -5849,6 +6575,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         364 => 
                         array (
@@ -5865,6 +6593,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         365 => 
                         array (
@@ -5881,6 +6611,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         366 => 
                         array (
@@ -5897,6 +6629,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         367 => 
                         array (
@@ -5913,6 +6647,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         368 => 
                         array (
@@ -5929,6 +6665,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         369 => 
                         array (
@@ -5945,6 +6683,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         370 => 
                         array (
@@ -5961,6 +6701,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         371 => 
                         array (
@@ -5977,6 +6719,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         372 => 
                         array (
@@ -5993,6 +6737,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         373 => 
                         array (
@@ -6009,6 +6755,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         374 => 
                         array (
@@ -6025,6 +6773,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         375 => 
                         array (
@@ -6041,6 +6791,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         376 => 
                         array (
@@ -6057,6 +6809,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         377 => 
                         array (
@@ -6073,6 +6827,8 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
                         378 => 
                         array (
@@ -6089,8 +6845,2358 @@ vegetables or flowers, or a combination of all three',
                             'third_prize' => 30,
                             'year' => 2019,
                             'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => NULL,
                         ),
-                    ));
+                        379 => 
+                        array (
+                            'id' => 636,
+                            'name' => 'A mechanical model',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => 'x',
+                            'price' => 0,
+                            'late_price' => 0,
+                            'sortorder' => 0,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 9,
+                            'status' => 'active',
+                            'cloned_from' => 635,
+                        ),
+                        380 => 
+                        array (
+                            'id' => 637,
+                            'name' => 'One single bloom',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '1',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 1,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 1,
+                            'status' => 'active',
+                            'cloned_from' => 505,
+                        ),
+                        381 => 
+                        array (
+                            'id' => 638,
+                            'name' => 'One vase of flowers, mixed kinds',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '2',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 2,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 1,
+                            'status' => 'active',
+                            'cloned_from' => 506,
+                        ),
+                        382 => 
+                        array (
+                            'id' => 639,
+                            'name' => 'One dish of vegetables, one or more kinds',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '3',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 3,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 1,
+                            'status' => 'active',
+                            'cloned_from' => 507,
+                        ),
+                        383 => 
+                        array (
+                            'id' => 640,
+                        'name' => 'One house plant (floral or foliage) ',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '4',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 4,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 1,
+                            'status' => 'active',
+                            'cloned_from' => 508,
+                        ),
+                        384 => 
+                        array (
+                            'id' => 641,
+                            'name' => 'One red rose with own foliage',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '5',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 5,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 509,
+                        ),
+                        385 => 
+                        array (
+                            'id' => 642,
+                            'name' => 'One pink rose with own foliage',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '6',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 6,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 510,
+                        ),
+                        386 => 
+                        array (
+                            'id' => 643,
+                            'name' => 'One yellow or orange rose with own foliage',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '7',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 7,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 511,
+                        ),
+                        387 => 
+                        array (
+                            'id' => 644,
+                            'name' => 'One white rose, with own foliage',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '8',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 8,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 512,
+                        ),
+                        388 => 
+                        array (
+                            'id' => 645,
+                            'name' => 'Four roses, one or more varieties',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '9',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 9,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 513,
+                        ),
+                        389 => 
+                        array (
+                            'id' => 646,
+                            'name' => 'One vase of miniature roses, 3 sprays',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '10',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 10,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 514,
+                        ),
+                        390 => 
+                        array (
+                            'id' => 647,
+                            'name' => 'One vase of climbing roses, 3 sprays',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '11',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 11,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 515,
+                        ),
+                        391 => 
+                        array (
+                            'id' => 648,
+                            'name' => 'One spike of flowers, one stem only',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '12',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 12,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 516,
+                        ),
+                        392 => 
+                        array (
+                            'id' => 649,
+                            'name' => 'One vase of pinks',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '13',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 13,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 517,
+                        ),
+                        393 => 
+                        array (
+                            'id' => 650,
+                            'name' => 'Two vases of flowers, any two distinct kinds',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '14',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 14,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 518,
+                        ),
+                        394 => 
+                        array (
+                            'id' => 651,
+                            'name' => 'One vase of herbaceous flowers',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '15',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 15,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 519,
+                        ),
+                        395 => 
+                        array (
+                            'id' => 652,
+                            'name' => 'One vase of liliums, 3 spikes',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '16',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 16,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 520,
+                        ),
+                        396 => 
+                        array (
+                            'id' => 653,
+                        'name' => 'One vase of ornamental grass(es) (Max height 80 cm)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '17',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 17,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 521,
+                        ),
+                        397 => 
+                        array (
+                            'id' => 654,
+                            'name' => 'One vase of mixed sweet peas, 12 stems',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '18',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 18,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 522,
+                        ),
+                        398 => 
+                        array (
+                            'id' => 655,
+                            'name' => 'One vase of annuals',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '19',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 19,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 523,
+                        ),
+                        399 => 
+                        array (
+                            'id' => 656,
+                        'name' => 'A spray of a shrub (other than roses) bearing fruit, flowers and/or foliage',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '20',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 20,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 524,
+                        ),
+                        400 => 
+                        array (
+                            'id' => 657,
+                            'name' => 'One bowl of pansies, 6 blooms',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '21',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 21,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 525,
+                        ),
+                        401 => 
+                        array (
+                            'id' => 658,
+                            'name' => 'The most uncommon flower, named if possible',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '22',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 22,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 526,
+                        ),
+                        402 => 
+                        array (
+                            'id' => 659,
+                            'name' => 'An indoor orchid, in flower',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '23',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 23,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 527,
+                        ),
+                        403 => 
+                        array (
+                            'id' => 660,
+                            'name' => 'An African Violet',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '23 (b)',
+                            'price' => 20,
+                            'late_price' => 20,
+                            'sortorder' => 23,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 634,
+                        ),
+                        404 => 
+                        array (
+                            'id' => 661,
+                            'name' => 'One hanging basket',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '24',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 24,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 528,
+                        ),
+                        405 => 
+                        array (
+                            'id' => 662,
+                            'name' => 'A floral pot plant',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '25',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 25,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 529,
+                        ),
+                        406 => 
+                        array (
+                            'id' => 663,
+                        'name' => 'Two pots of cacti or succulents (pots not to exceed 6 inches in diameter)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '26',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 26,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 530,
+                        ),
+                        407 => 
+                        array (
+                            'id' => 664,
+                            'name' => 'One zonal or regal pelargonium/ geranium grown in a pot not exceeding
+6 inches in diameter',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '27',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 27,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 531,
+                        ),
+                        408 => 
+                        array (
+                            'id' => 665,
+                            'name' => 'One vase of mixed garden flowers',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '28',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 28,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 532,
+                        ),
+                        409 => 
+                        array (
+                            'id' => 666,
+                            'name' => 'The The PHS Top Vase sponsored by Petersham Nursery',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '29',
+                            'price' => 50,
+                            'late_price' => 50,
+                            'sortorder' => 29,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 2,
+                            'status' => 'active',
+                            'cloned_from' => 533,
+                        ),
+                        410 => 
+                        array (
+                            'id' => 667,
+                            'name' => 'Dish of red or white currants, 5 strigs',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '30',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 30,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 3,
+                            'status' => 'active',
+                            'cloned_from' => 534,
+                        ),
+                        411 => 
+                        array (
+                            'id' => 668,
+                            'name' => 'Dish of blackcurrants, 5 strigs',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '31',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 31,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 3,
+                            'status' => 'active',
+                            'cloned_from' => 535,
+                        ),
+                        412 => 
+                        array (
+                            'id' => 669,
+                            'name' => 'Dish of gooseberries, of one variety, 10 fruits, with stalks',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '32',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 32,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 3,
+                            'status' => 'active',
+                            'cloned_from' => 536,
+                        ),
+                        413 => 
+                        array (
+                            'id' => 670,
+                            'name' => 'Dish of strawberries, 10 fruits, with stalks',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '33',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 33,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 3,
+                            'status' => 'active',
+                            'cloned_from' => 537,
+                        ),
+                        414 => 
+                        array (
+                            'id' => 671,
+                            'name' => 'Dish of raspberries, 10 fruits, with stalks',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '34',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 34,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 3,
+                            'status' => 'active',
+                            'cloned_from' => 538,
+                        ),
+                        415 => 
+                        array (
+                            'id' => 672,
+                            'name' => 'Dish of loganberries, 10 fruits, with stalks',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '35',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 35,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 3,
+                            'status' => 'active',
+                            'cloned_from' => 539,
+                        ),
+                        416 => 
+                        array (
+                            'id' => 673,
+                            'name' => 'One dish of fruit, any one kind not specified in this section',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '36',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 36,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 3,
+                            'status' => 'active',
+                            'cloned_from' => 540,
+                        ),
+                        417 => 
+                        array (
+                            'id' => 674,
+                            'name' => 'Dish of five potatoes, white of any shape',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '37',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 37,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 541,
+                        ),
+                        418 => 
+                        array (
+                            'id' => 675,
+                            'name' => 'Dish of five potatoes, other than white, of any shape',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '38',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 38,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 542,
+                        ),
+                        419 => 
+                        array (
+                            'id' => 676,
+                            'name' => 'Six pods of peas with stalks',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '39',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 39,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 543,
+                        ),
+                        420 => 
+                        array (
+                            'id' => 677,
+                            'name' => 'Six pods of broad beans with stalks',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '40',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 40,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 544,
+                        ),
+                        421 => 
+                        array (
+                            'id' => 678,
+                            'name' => 'Six pods of dwarf beans with stalks',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '41',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 41,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 545,
+                        ),
+                        422 => 
+                        array (
+                            'id' => 679,
+                        'name' => 'Three onions with full green tops (as grown, no weight limit)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '42',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 42,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 546,
+                        ),
+                        423 => 
+                        array (
+                            'id' => 680,
+                            'name' => 'Three beetroots, globe variety',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '43',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 43,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 547,
+                        ),
+                        424 => 
+                        array (
+                            'id' => 681,
+                            'name' => 'Three carrots, long pointed',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '44',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 44,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 548,
+                        ),
+                        425 => 
+                        array (
+                            'id' => 682,
+                            'name' => 'Two cabbages',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '45',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 45,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 549,
+                        ),
+                        426 => 
+                        array (
+                            'id' => 683,
+                        'name' => 'Nine shallots (pickling; must be able to go through a 30mm ring)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '46',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 46,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 550,
+                        ),
+                        427 => 
+                        array (
+                            'id' => 684,
+                        'name' => 'Nine shallots (exhibition, no size limit)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '47',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 47,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 551,
+                        ),
+                        428 => 
+                        array (
+                            'id' => 685,
+                            'name' => 'Three courgettes of any length/ diameter',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '48',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 48,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 552,
+                        ),
+                        429 => 
+                        array (
+                            'id' => 686,
+                            'name' => 'Two cabbage lettuces',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '49',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 49,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 553,
+                        ),
+                        430 => 
+                        array (
+                            'id' => 687,
+                            'name' => 'Two cos lettuces',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '50',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 50,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 554,
+                        ),
+                        431 => 
+                        array (
+                            'id' => 688,
+                            'name' => 'Three sticks of rhubarb',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '51',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 51,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 555,
+                        ),
+                        432 => 
+                        array (
+                            'id' => 689,
+                            'name' => 'A collection of herbs, three kinds in one container',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '52',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 52,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 556,
+                        ),
+                        433 => 
+                        array (
+                            'id' => 690,
+                            'name' => '3 hens’ eggs',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '53 (a)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 53,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 557,
+                        ),
+                        434 => 
+                        array (
+                            'id' => 691,
+                            'name' => 'Small margarine tub of home produced compost',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '53 (b)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 54,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 558,
+                        ),
+                        435 => 
+                        array (
+                            'id' => 692,
+                            'name' => 'One dish of vegetables of a distinct kind not specified in this section',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '54',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 55,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 559,
+                        ),
+                        436 => 
+                        array (
+                            'id' => 693,
+                            'name' => 'Garlic, three bulbs, no tops',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '55',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 56,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 560,
+                        ),
+                        437 => 
+                        array (
+                            'id' => 694,
+                        'name' => 'A collection of salading or salad vegetables, any 3 distinct kinds (mustard and cress count as one)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '56',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 57,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 561,
+                        ),
+                        438 => 
+                        array (
+                            'id' => 695,
+                            'name' => 'A collection of mixed vegetables, one each of six different kinds.',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '57 (a)',
+                            'price' => 50,
+                            'late_price' => 50,
+                            'sortorder' => 58,
+                            'first_prize' => 250,
+                            'second_prize' => 150,
+                            'third_prize' => 100,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 562,
+                        ),
+                        439 => 
+                        array (
+                            'id' => 696,
+                            'name' => 'The PHS Top Tray Class. Sponsored by Petersham Nursery',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '57 (b)',
+                            'price' => 50,
+                            'late_price' => 50,
+                            'sortorder' => 59,
+                            'first_prize' => 250,
+                            'second_prize' => 150,
+                            'third_prize' => 100,
+                            'year' => 2020,
+                            'section_id' => 4,
+                            'status' => 'active',
+                            'cloned_from' => 563,
+                        ),
+                        440 => 
+                        array (
+                            'id' => 697,
+                            'name' => 'A posy to celebrate The Royal Baby',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '58',
+                            'price' => 50,
+                            'late_price' => 50,
+                            'sortorder' => 60,
+                            'first_prize' => 250,
+                            'second_prize' => 150,
+                            'third_prize' => 100,
+                            'year' => 2020,
+                            'section_id' => 5,
+                            'status' => 'active',
+                            'cloned_from' => 564,
+                        ),
+                        441 => 
+                        array (
+                            'id' => 698,
+                            'name' => 'A headdress for a bridesmaid',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '59',
+                            'price' => 50,
+                            'late_price' => 50,
+                            'sortorder' => 61,
+                            'first_prize' => 250,
+                            'second_prize' => 150,
+                            'third_prize' => 100,
+                            'year' => 2020,
+                            'section_id' => 5,
+                            'status' => 'active',
+                            'cloned_from' => 565,
+                        ),
+                        442 => 
+                        array (
+                            'id' => 699,
+                            'name' => 'A yellow floral table arrangement',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '60',
+                            'price' => 50,
+                            'late_price' => 50,
+                            'sortorder' => 62,
+                            'first_prize' => 250,
+                            'second_prize' => 150,
+                            'third_prize' => 100,
+                            'year' => 2020,
+                            'section_id' => 5,
+                            'status' => 'active',
+                            'cloned_from' => 566,
+                        ),
+                        443 => 
+                        array (
+                            'id' => 700,
+                            'name' => 'A lady’s corsage featuring a found feather',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '61',
+                            'price' => 50,
+                            'late_price' => 50,
+                            'sortorder' => 63,
+                            'first_prize' => 250,
+                            'second_prize' => 150,
+                            'third_prize' => 100,
+                            'year' => 2020,
+                            'section_id' => 5,
+                            'status' => 'active',
+                            'cloned_from' => 567,
+                        ),
+                        444 => 
+                        array (
+                            'id' => 701,
+                        'name' => 'A wedding or other celebration cake single tier not more than 23cm across (decoration judged)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '62',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 64,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 568,
+                        ),
+                        445 => 
+                        array (
+                            'id' => 702,
+                            'name' => 'A treacle Tart',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '63',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 65,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 569,
+                        ),
+                        446 => 
+                        array (
+                            'id' => 703,
+                            'name' => '2 Fruit Scones',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '64',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 66,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 570,
+                        ),
+                        447 => 
+                        array (
+                            'id' => 704,
+                            'name' => '3 Chocolate flavoured biscuits (not
+cookies)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '65',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 67,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 571,
+                        ),
+                        448 => 
+                        array (
+                            'id' => 705,
+                            'name' => 'A vegan pasty',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '66',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 68,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 572,
+                        ),
+                        449 => 
+                        array (
+                            'id' => 706,
+                            'name' => 'A coffee and walnut cake',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '67',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 69,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 573,
+                        ),
+                        450 => 
+                        array (
+                            'id' => 707,
+                        'name' => 'A small loaf (handmade, not with a bread machine, can be any type of bread)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '68',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 70,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 574,
+                        ),
+                        451 => 
+                        array (
+                            'id' => 708,
+                            'name' => 'A bottle of any
+(a) non-alcoholic drink',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '69a',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 71,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 575,
+                        ),
+                        452 => 
+                        array (
+                            'id' => 709,
+                            'name' => 'A bottle of any alcoholic drink',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '69 (b)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 72,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 630,
+                        ),
+                        453 => 
+                        array (
+                            'id' => 710,
+                            'name' => 'One jar of chutney or pickle',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '70',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 73,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 576,
+                        ),
+                        454 => 
+                        array (
+                            'id' => 711,
+                        'name' => '3 slices of Shortbread (any flavour)
+(men only)',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '71',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 74,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 577,
+                        ),
+                        455 => 
+                        array (
+                            'id' => 712,
+                            'name' => 'One jar of jam',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '72 (a)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 75,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 578,
+                        ),
+                        456 => 
+                        array (
+                            'id' => 713,
+                            'name' => 'One jar of marmalade',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '72 (b)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 76,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 579,
+                        ),
+                        457 => 
+                        array (
+                            'id' => 714,
+                            'name' => 'One jar of jelly',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '72 (c)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 77,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 580,
+                        ),
+                        458 => 
+                        array (
+                            'id' => 715,
+                            'name' => 'One jar of lemon curd',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '73 ',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 78,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 6,
+                            'status' => 'active',
+                            'cloned_from' => 581,
+                        ),
+                        459 => 
+                        array (
+                            'id' => 716,
+                            'name' => 'A sewn article',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '74 (a)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 79,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 582,
+                        ),
+                        460 => 
+                        array (
+                            'id' => 717,
+                            'name' => 'An example of needlecraft, e.g. embroidery, tapestry',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '74 (b)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 80,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 583,
+                        ),
+                        461 => 
+                        array (
+                            'id' => 718,
+                            'name' => 'A knitted article',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '75 (a)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 81,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 584,
+                        ),
+                        462 => 
+                        array (
+                            'id' => 719,
+                            'name' => 'A crocheted article',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                        'number' => '75 (b)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 82,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 585,
+                        ),
+                        463 => 
+                        array (
+                            'id' => 720,
+                            'name' => 'An original painting, drawing or collage',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '76',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 83,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 586,
+                        ),
+                        464 => 
+                        array (
+                            'id' => 721,
+                            'name' => 'A piece of pottery',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '77',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 84,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 587,
+                        ),
+                        465 => 
+                        array (
+                            'id' => 722,
+                            'name' => 'A piece of woodwork',
+                            'created_at' => '2020-04-23 08:41:24',
+                            'updated_at' => '2020-04-23 08:41:24',
+                            'number' => '78',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 85,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 588,
+                        ),
+                        466 => 
+                        array (
+                            'id' => 723,
+                            'name' => 'Any other example of handicraft not covered by other Section 7 classes',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                            'number' => '79',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 86,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 589,
+                        ),
+                        467 => 
+                        array (
+                            'id' => 724,
+                            'name' => 'A photographic print: A portrait',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '80 (a)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 87,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 590,
+                        ),
+                        468 => 
+                        array (
+                            'id' => 725,
+                            'name' => 'A photographic print: A local view',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '80 (b)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 88,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 591,
+                        ),
+                        469 => 
+                        array (
+                            'id' => 726,
+                            'name' => 'A photographic print: A skyline',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '80 (c)',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 89,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 592,
+                        ),
+                        470 => 
+                        array (
+                            'id' => 727,
+                        'name' => 'An example of papercraft (e.g. a handmade card; paper jewellery; quilling)',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                            'number' => '81',
+                            'price' => 20,
+                            'late_price' => 50,
+                            'sortorder' => 90,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 7,
+                            'status' => 'active',
+                            'cloned_from' => 593,
+                        ),
+                        471 => 
+                        array (
+                            'id' => 728,
+                            'name' => 'A miniature garden for a fairy - 6 years and under',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '82 (a)',
+                            'price' => 10,
+                            'late_price' => 10,
+                            'sortorder' => 92,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => 594,
+                        ),
+                        472 => 
+                        array (
+                            'id' => 729,
+                            'name' => 'A miniature garden for a fairy - 7-10 years',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '82 (b)',
+                            'price' => 10,
+                            'late_price' => 10,
+                            'sortorder' => 93,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => 595,
+                        ),
+                        473 => 
+                        array (
+                            'id' => 730,
+                            'name' => 'An arrangement of flowers & foliage in a mug Children 6 years and under',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '83 (a)',
+                            'price' => 10,
+                            'late_price' => 10,
+                            'sortorder' => 94,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => 596,
+                        ),
+                        474 => 
+                        array (
+                            'id' => 731,
+                            'name' => 'An arrangement of flowers & foliage in a mug
+Children 7-10 years',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '83 (b)',
+                            'price' => 10,
+                            'late_price' => 10,
+                            'sortorder' => 95,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => 597,
+                        ),
+                        475 => 
+                        array (
+                            'id' => 732,
+                            'name' => 'An arrangement of flowers & foliage in a mug Children 11-16 years',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '83 (c)',
+                            'price' => 10,
+                            'late_price' => 10,
+                            'sortorder' => 96,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => 598,
+                        ),
+                        476 => 
+                        array (
+                            'id' => 733,
+                            'name' => 'The ugliest vegetable',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '84 (a)',
+                            'price' => 10,
+                            'late_price' => 10,
+                            'sortorder' => 97,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => 599,
+                        ),
+                        477 => 
+                        array (
+                            'id' => 734,
+                            'name' => 'A vegetable grown by you',
+                            'created_at' => '2020-04-23 08:41:25',
+                            'updated_at' => '2020-04-23 08:41:25',
+                        'number' => '84 (b)',
+                            'price' => 10,
+                            'late_price' => 10,
+                            'sortorder' => 98,
+                            'first_prize' => 100,
+                            'second_prize' => 50,
+                            'third_prize' => 30,
+                            'year' => 2020,
+                            'section_id' => 8,
+                            'status' => 'active',
+                            'cloned_from' => 600,
+                        ),
+                        478 => 
+                        array (
+                            'id' => 735,
+                            'name' => '3 types of scented flowers or foliage in a recycled container (no more than 15 cm in diameter Children 6 years and under',
+                                'created_at' => '2020-04-23 08:41:25',
+                                'updated_at' => '2020-04-23 08:41:25',
+                            'number' => '85 (a)',
+                                'price' => 10,
+                                'late_price' => 10,
+                                'sortorder' => 99,
+                                'first_prize' => 100,
+                                'second_prize' => 50,
+                                'third_prize' => 30,
+                                'year' => 2020,
+                                'section_id' => 8,
+                                'status' => 'active',
+                                'cloned_from' => 601,
+                            ),
+                            479 => 
+                            array (
+                                'id' => 736,
+                                'name' => '3 types of scented flowers or foliage in a recycled container (no more than 15 cm in diameter Children 7-10 years',
+                                    'created_at' => '2020-04-23 08:41:25',
+                                    'updated_at' => '2020-04-23 08:41:25',
+                                'number' => '85 (b)',
+                                    'price' => 10,
+                                    'late_price' => 10,
+                                    'sortorder' => 100,
+                                    'first_prize' => 100,
+                                    'second_prize' => 50,
+                                    'third_prize' => 30,
+                                    'year' => 2020,
+                                    'section_id' => 8,
+                                    'status' => 'active',
+                                    'cloned_from' => 602,
+                                ),
+                                480 => 
+                                array (
+                                    'id' => 737,
+                                    'name' => '3 types of scented flowers or foliage in a recycled container (no more than 15 cm in diameter Children 11-16 years',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '85 (c)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 101,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 8,
+                                        'status' => 'active',
+                                        'cloned_from' => 603,
+                                    ),
+                                    481 => 
+                                    array (
+                                        'id' => 738,
+                                        'name' => 'A collection of herbs in a mug',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                        'number' => '86',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 102,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 8,
+                                        'status' => 'active',
+                                        'cloned_from' => 604,
+                                    ),
+                                    482 => 
+                                    array (
+                                        'id' => 739,
+                                        'name' => 'A superhero made from fruit,
+vegetables or flowers, or a combination of all three',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                        'number' => '87',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 103,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 8,
+                                        'status' => 'active',
+                                        'cloned_from' => 605,
+                                    ),
+                                    483 => 
+                                    array (
+                                        'id' => 740,
+                                        'name' => 'One decorated cupcake Children 6 years and under',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '88 (a)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 104,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 606,
+                                    ),
+                                    484 => 
+                                    array (
+                                        'id' => 741,
+                                        'name' => 'One decorated cupcake Children 7-10 years',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '88 (b)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 105,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 631,
+                                    ),
+                                    485 => 
+                                    array (
+                                        'id' => 742,
+                                        'name' => 'One decorated cupcake Children 11-16 years',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '88 (c)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 106,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 632,
+                                    ),
+                                    486 => 
+                                    array (
+                                        'id' => 743,
+                                    'name' => '6 homemade sweets (decoration judged)',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                        'number' => '89',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 107,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 607,
+                                    ),
+                                    487 => 
+                                    array (
+                                        'id' => 744,
+                                        'name' => 'A decorated hard-boiled or blown egg',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                        'number' => '90',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 108,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 608,
+                                    ),
+                                    488 => 
+                                    array (
+                                        'id' => 745,
+                                    'name' => 'A woodland picture (involving sticks, petals, seeds and / or grasses etc)',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                        'number' => '91',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 109,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 609,
+                                    ),
+                                    489 => 
+                                    array (
+                                        'id' => 746,
+                                        'name' => 'A decorated gingerbread couple',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                        'number' => '92',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 110,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 610,
+                                    ),
+                                    490 => 
+                                    array (
+                                        'id' => 747,
+                                    'name' => 'A piece of woodwork or a model (not Lego) - 6 years and under',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '93 (a)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 111,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 611,
+                                    ),
+                                    491 => 
+                                    array (
+                                        'id' => 748,
+                                    'name' => 'A piece of woodwork or a mode (not Lego) - 7-12 years',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '93 (b)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 112,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 612,
+                                    ),
+                                    492 => 
+                                    array (
+                                        'id' => 749,
+                                        'name' => 'A home-made greetings card - 6 years and under',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '94 (a)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 113,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 613,
+                                    ),
+                                    493 => 
+                                    array (
+                                        'id' => 750,
+                                        'name' => 'A home-made greetings card - 7-12 years',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '94 (b)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 114,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 614,
+                                    ),
+                                    494 => 
+                                    array (
+                                        'id' => 751,
+                                        'name' => 'An example of needlework, knitting or other textile craft',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '95 (a)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 115,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 615,
+                                    ),
+                                    495 => 
+                                    array (
+                                        'id' => 752,
+                                    'name' => 'An example of any other handicraft not already mentioned (may include Lego)',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '95 (b)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 116,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 616,
+                                    ),
+                                    496 => 
+                                    array (
+                                        'id' => 753,
+                                        'name' => ' An original painting, drawing or collage - 6 years and under',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '96 (a)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 117,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 617,
+                                    ),
+                                    497 => 
+                                    array (
+                                        'id' => 754,
+                                        'name' => ' An original painting, drawing or collage - 7-12 years',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '96 (b)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 118,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 618,
+                                    ),
+                                    498 => 
+                                    array (
+                                        'id' => 755,
+                                        'name' => ' An original painting, drawing or collage - 13 -16 years',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                    'number' => '96 (c)',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 119,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 619,
+                                    ),
+                                    499 => 
+                                    array (
+                                        'id' => 756,
+                                        'name' => 'Your favourite photograph, taken by yourself',
+                                        'created_at' => '2020-04-23 08:41:25',
+                                        'updated_at' => '2020-04-23 08:41:25',
+                                        'number' => '97',
+                                        'price' => 10,
+                                        'late_price' => 10,
+                                        'sortorder' => 120,
+                                        'first_prize' => 100,
+                                        'second_prize' => 50,
+                                        'third_prize' => 30,
+                                        'year' => 2020,
+                                        'section_id' => 9,
+                                        'status' => 'active',
+                                        'cloned_from' => 620,
+                                    ),
+                                ));
+        \DB::table('categories')->insert(array (
+            0 => 
+            array (
+                'id' => 757,
+                'name' => 'An original painting or drawing Sudbrook School',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+            'number' => '98 (a)',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 121,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 621,
+            ),
+            1 => 
+            array (
+                'id' => 758,
+                'name' => 'An original painting or drawing The Russell School',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+            'number' => '98 (b)',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 122,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 622,
+            ),
+            2 => 
+            array (
+                'id' => 759,
+                'name' => 'An original painting or drawing Strathmore School',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+            'number' => '98 (c)',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 123,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 623,
+            ),
+            3 => 
+            array (
+                'id' => 760,
+                'name' => 'An original painting or drawing Grey Court School',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+            'number' => '98 (d)',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 124,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 624,
+            ),
+            4 => 
+            array (
+                'id' => 761,
+                'name' => 'An original painting or drawing The German School',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+            'number' => '98 (e)',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 125,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 625,
+            ),
+            5 => 
+            array (
+                'id' => 762,
+                'name' => 'An original painting or drawing St Richard’s School',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+            'number' => '98 (f)',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 126,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 626,
+            ),
+            6 => 
+            array (
+                'id' => 763,
+                'name' => 'An original painting or drawing Meadlands School',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+            'number' => '98 (g)',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 127,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 627,
+            ),
+            7 => 
+            array (
+                'id' => 764,
+                'name' => 'An original painting or drawing Kish Nursery',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+            'number' => '98 (h)',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 128,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 628,
+            ),
+            8 => 
+            array (
+                'id' => 765,
+            'name' => 'Best display of flowers, fruit and/or vegetables (open to schools and kindergartens)',
+                'created_at' => '2020-04-23 08:41:25',
+                'updated_at' => '2020-04-23 08:41:25',
+                'number' => '99',
+                'price' => 10,
+                'late_price' => 10,
+                'sortorder' => 129,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'year' => 2020,
+                'section_id' => 9,
+                'status' => 'active',
+                'cloned_from' => 629,
+            ),
+        ));
         
         
     }
