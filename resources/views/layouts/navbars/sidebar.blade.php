@@ -63,7 +63,7 @@
                 </li>
                 <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
                     <a class="nav-link" href="{{ route('users.index') }}"><i class="material-icons">dashboard</i>
-                        <p>Users</p></a>
+                        <p>Families</p></a>
                 </li>
                 <li class="nav-item{{ $activePage == 'teams' ? ' active' : '' }}">
                     <a class="nav-link" href="{{route('teams.index')}}"><i class="material-icons">people-outline</i>
@@ -96,7 +96,7 @@
             {{--            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">--}}
             {{--              <a class="nav-link" href="{{ route('user.index') }}">--}}
             {{--                <span class="sidebar-mini"> UM </span>--}}
-            {{--                <span class="sidebar-normal"> {{ __('User Management') }} </span>--}}
+            {{--                <span class="sidebar-normal"> {{ __('Family Management') }} </span>--}}
             {{--              </a>--}}
             {{--            </li>--}}
             {{--          </ul>--}}

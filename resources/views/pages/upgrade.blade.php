@@ -32,17 +32,17 @@
                     <td class="text-center"><i class="fa fa-check text-success"></i></td>
                   </tr>
                   <tr>
-                    <td>User profile</td>
+                    <td>Family profile</td>
                     <td class="text-center"><i class="fa fa-check text-success"></i></td>
                     <td class="text-center"><i class="fa fa-check text-success"></i></td>
                   </tr>
                   <tr>
-                    <td>Users management</td>
+                    <td>Families management</td>
                     <td class="text-center"><i class="fa fa-check text-success"></i></td>
                     <td class="text-center"><i class="fa fa-check text-success"></i></td>
                   </tr>
                   <tr>
-                    <td>User roles management </td>
+                    <td>Family roles management </td>
                     <td class="text-center"><i class="fa fa-times text-danger"></i></td>
                     <td class="text-center"><i class="fa fa-check text-success"></i></td>
                   </tr>

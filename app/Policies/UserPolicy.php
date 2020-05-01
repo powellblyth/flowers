@@ -13,6 +13,7 @@ class UserPolicy
 
     public function before($user, $ability)
     {
+
         if (
             !in_array($ability, ['delete', 'forceDelete'])
             && $user->isAdmin()
@@ -34,11 +35,27 @@ class UserPolicy
 
     /**
      * Allows a user to see other people's detailed info
+     * @param User $user
+     * @param User $model
+     * @return bool
      */
     public function seeDetailedInfo(User $user, User $model)
     {
-        $user->id === $model->id;
+        return $user->id === $model->id;
     }
+
+    /**
+     * Allows a user to add entrants
+     * @param User $user
+     * @param User $model
+     * @return bool
+     */
+    public function addEntrant(User $user, User $model)
+    {
+        return $user->id === $model->id;
+    }
+
+
 
     /**
      * Determine whether the user can view the model.

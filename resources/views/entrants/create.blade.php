@@ -3,9 +3,7 @@
 
 @section('content')
 
-    {{ Form::open([
-        'route' => 'entrants.store'
-    ]) }}
+    {{ Form::open(['route' => 'entrants.store']) }}
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -13,11 +11,9 @@
                     <div class="card-header card-header-success">Enter your Family Member's Entrant details</div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-12"><p>Use this page to add yourself and your family as entrants. No need
-                                    to
-                                    enter the address each time, as you set it when you registered</p>
+                            <div class="col-md-12"><p>Use this page to add yourself and your family as entrants.
+                                    No need to enter the address each time, as you set it when you registered</p>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -26,7 +22,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 {{ Form::label('familyname', 'Family Name: *', ['class' => 'control-label']) }}
-                                {{ Form::text('familyname', Auth::User()->lastname, ['class' => 'form-control']) }}
+                                {{ Form::text('familyname',$defaultFamilyName, ['class' => 'form-control']) }}
                             </div>
                         </div>
                         <div class="row">

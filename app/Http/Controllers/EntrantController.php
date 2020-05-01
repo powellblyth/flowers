@@ -58,7 +58,7 @@ class EntrantController extends Controller
 
     public function search(Request $request): View
     {
-        $searchTerm = $request->input('searchterm');
+        $searchTerm      = $request->input('searchterm');
         $entrantsBuilder = Auth::User()->entrants();
         if ($request->has('searchterm')) {
             $entrantsBuilder = $entrantsBuilder
@@ -103,26 +103,26 @@ class EntrantController extends Controller
             ]);
     }
 
-    public function create(Request $request): View
+    public function create(Request $request, ?int $family = null): View
     {
-        $this->authorize('create', Entrant::class);
+        if ($family) {
+            $family = User::findOrFail($family);
+        } else {
+            $family = Auth::user();
+        }
+        $this->authorize('addEntrant', $family);
         $indicatedAdmin = null;
 
-        $allUsers = null;
+        $allUsers = collect($family);
 
-        if (Auth::user()->can('viewAny', Entrant::class)) {
-            if ($request->has('user_id') && 0 < (int) $request->get('user_id')) {
-                $indicatedAdmin = (int) $request->get('user_id');
-            } else {
-                $indicatedAdmin = Auth::User()->id;
-            }
-
+        if (Auth::user()->can('viewAny', User::class)) {
             $allUsers = User::Select(DB::raw('id, concat(lastname, \', \', firstname) as the_name'))
                 ->where('is_anonymised', false)
                 ->orderBy('lastname', 'asc')
                 ->orderBy('firstname')
                 ->pluck('the_name', 'id');
         }
+
         $allTeams = Team::where('status', 'active')
             ->orderBy('min_age')
             ->orderBy('max_age')
@@ -134,7 +134,8 @@ class EntrantController extends Controller
             'privacyContent' => config('static_content.privacy_content'),
             'allUsers'       => $allUsers,
             'teams'          => $allTeams,
-            'indicatedAdmin' => $indicatedAdmin,
+            'indicatedAdmin' => $family->id,
+            'defaultFamilyName' => $family->lastname,
         ]);
     }
 

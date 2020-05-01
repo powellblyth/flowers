@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'user-management', 'titlePage' => __('User Management')])
+@extends('layouts.app', ['activePage' => 'user-management', 'titlePage' => __('Family Management')])
 
 @section('content')
     <div class="content">
@@ -7,8 +7,8 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title ">{{ __('Users') }}</h4>
-                            <p class="card-category"> {{ __('Here you can manage users') }}</p>
+                            <h4 class="card-title ">{{ __('Families') }}</h4>
+                            <p class="card-category"> {{ __('Here you can manage families') }}</p>
                         </div>
                         <div class="card-body">
                             @if (session('status'))
@@ -28,7 +28,7 @@
                                     <div class="row">
                                         <div class="col-12 text-right">
                                             <a href="{{ route('users.create') }}"
-                                               class="btn btn-sm btn-primary">{{ __('Add user') }}</a>
+                                               class="btn btn-sm btn-primary">{{ __('Add family') }}</a>
                                         </div>
                                     </div>
                                 @endif

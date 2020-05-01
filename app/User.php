@@ -86,9 +86,11 @@ class User extends Authenticatable
     {
         $concatted = trim($this->address) . ', '
                      . trim($this->address2) . ', ' . trim($this->addresstown);
-        $deduped   = str_replace(', , ', ', ',
-            str_replace(', , ', ', ',
-                $concatted));
+        $deduped   = str_replace(
+            ', , ',
+            ', ',
+            str_replace(', , ', ', ', $concatted)
+        );
         return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
     }
 
@@ -138,6 +140,12 @@ class User extends Authenticatable
         return $this->hasMany(MembershipPurchase::class);
     }
 
+    public function teamMemberships($year = null)
+    {
+        $year ??= config('app.year');
+        return $this->hasManyThrough(TeamMembership::class, TeamMembership::class);
+    }
+
     public function routeNotificationForMail()
     {
         return $this->email;
@@ -146,16 +154,15 @@ class User extends Authenticatable
     public function getMemberNumber(): ?string
     {
         $membership = $this->memberships()->where('year', config('app.year'))->first();
-//        var_dump($membership);die();
         if ($membership instanceof \App\MembershipPurchase) {
-//            die('moo');
             return $membership->getNumber();
         } else {
             return null;
         }
     }
 
-    public function anonymisePostcode(?string $postcode):?string {
+    public function anonymisePostcode(?string $postcode): ?string
+    {
         $newPostcode = null;
         if (!is_null($postcode) && !empty($postcode)) {
             $oldPostcode = explode(' ', trim($postcode));

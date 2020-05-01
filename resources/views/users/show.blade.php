@@ -1,7 +1,7 @@
 @php
     $activePage = 'entrants';
     if ($thing->id <> Auth::User()->id){
-    $activePage = 'users';
+    $activePage = 'families';
     }
 @endphp
 @extends('layouts.app', ['activePage' => $activePage, 'titlePage' =>  $thing->getName() ])
@@ -120,9 +120,11 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6  col-sm-12"><b>Name:</b> {{ $thing->getName() }}</div>
-                                    <div class="col-lg-6 col-md-6  col-sm-12"><a class="btn btn-primary"
-                                                                                 href="{{ route('profile.edit') }}">Edit
-                                            my account</a></div>
+                                    <div class="col-lg-6 col-md-6  col-sm-12">
+                                        <a class="btn btn-primary"href="{{ route('profile.edit') }}">
+                                            Edit my account
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         @endif
@@ -178,10 +180,10 @@
                                         @if($entrant->team)
                                             A member of team {{$entrant->team->name}}
                                         @else
-{{--                                            Not shown for adults--}}
+                                            {{--                                            Not shown for adults--}}
                                             @if($entrant->age)
-                                            Not yet a member of any team
-                                                @endif
+                                                Not yet a member of any team
+                                            @endif
                                         @endif
                                     </p>
 
@@ -189,8 +191,7 @@
                                 @endforeach
                             @endif
                             @if(!$isLocked)
-                                <a href="{{route('entrants.create')}}"
-                                   class="btn btn-primary">Add someone else</a>
+                                <a href="{{route('users.createentrant', ['user'=>$thing])}}" class="btn btn-primary">Add someone else</a>
                             @endif
 
                         </div>

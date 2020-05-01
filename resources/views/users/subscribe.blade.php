@@ -1,7 +1,7 @@
 @php
     $activePage = 'entrants';
     if ($thing->id <> Auth::User()->id){
-    $activePage = 'users';
+    $activePage = 'families';
     }
 @endphp
 @extends('layouts.app', ['activePage' => $activePage, 'titlePage' =>  $thing->getName() ])

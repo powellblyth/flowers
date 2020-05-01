@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Category;
+use Symfony\Component\Console\Exception\InvalidArgumentException;
 
 class CreateNewYearDataCommand extends Command
 {
@@ -13,7 +14,6 @@ class CreateNewYearDataCommand extends Command
      *
      * @var string
      */
-//    protected $name = 'data:create-new-year-data {year-from} {year-to}';
     protected $signature = 'data:create-new-year-data {year-from} {year-to}';
 
     /**
@@ -22,16 +22,6 @@ class CreateNewYearDataCommand extends Command
      * @var string
      */
     protected $description = 'copies all the data from one year to another';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.
@@ -44,30 +34,32 @@ class CreateNewYearDataCommand extends Command
         $yearFrom = $this->argument('year-from');
         $yearTo   = $this->argument('year-to');
         if (!is_numeric($yearFrom)) {
-            throw new \Symfony\Component\Console\Exception\InvalidArgumentException('From Year must be numeric');
+            throw new InvalidArgumentException('From Year must be numeric');
         }
         if (!is_numeric($yearTo)) {
-            throw new \Symfony\Component\Console\Exception\InvalidArgumentException('To Year must be numeric');
+            throw new InvalidArgumentException('To Year must be numeric');
         }
         if ((int) $yearTo == (int) $yearFrom) {
-            throw new \Symfony\Component\Console\Exception\InvalidArgumentException('You have to specify different years');
+            throw new InvalidArgumentException('You have to specify different years');
         }
 
         if (Category::where('year', $yearTo)->first() instanceof Category) {
-            throw new \Symfony\Component\Console\Exception\InvalidArgumentException('Looks like that Year To has already been created.');
+            throw new InvalidArgumentException('Looks like that Year To has already been created.');
         }
 
         if (!Category::where('year', $yearFrom)->first() instanceof Category) {
-            throw new \Symfony\Component\Console\Exception\InvalidArgumentException('Looks like that Year From doesn\'t exist');
+            throw new InvalidArgumentException('Looks like that Year From doesn\'t exist');
         }
 
         // Gather all categories from the old year
-        $categories = Category::where('year', (int) $yearFrom)->orderBy('sortorder', 'asc')->get();
+        $categories = Category::where('year', (int) $yearFrom)
+            ->where('status', '<>', 'deleted')
+            ->orderBy('sortorder', 'asc')
+            ->get();
         foreach ($categories as $category) {
             $newCategory       = new Category();
             $newCategory->year = $yearTo;
             $newCategory->name = $category->name;
-//            $newCategory->section = $category->section;
             $newCategory->number       = $category->number;
             $newCategory->price        = $category->price;
             $newCategory->late_price   = $category->late_price;
@@ -83,9 +75,5 @@ class CreateNewYearDataCommand extends Command
             $newCategory->cups()->attach($category->cups);
 
         }
-
-
-//        var_dump($this->arguments());
-//        die();
     }
 }
