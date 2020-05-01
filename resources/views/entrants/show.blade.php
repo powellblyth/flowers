@@ -34,7 +34,7 @@
                                    class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
                             @endcan
                             @if ($thing->user)
-                                <a href="{{route('user.show', $thing->user)}}"
+                                <a href="{{route('users.show', $thing->user)}}"
                                    class="btn btn-primary">Show Family Manager</a>
                             @endif
                         </div>

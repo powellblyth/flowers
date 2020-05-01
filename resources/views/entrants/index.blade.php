@@ -97,7 +97,7 @@
                                                         @if (!is_null($thing->user ))
 
                                                             <a rel="tooltip" class="btn btn-success btn-link"
-                                                               href="{{route('user.show', $thing->user)}}"
+                                                               href="{{route('users.show', $thing->user)}}"
                                                                data-original-title=""
                                                                title="Show {{$thing->user->getName()}}'s Family">
                                                                 <i class="material-icons">people</i>
