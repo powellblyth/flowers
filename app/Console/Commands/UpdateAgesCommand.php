@@ -20,14 +20,6 @@ class UpdateAgesCommand extends Command {
      */
     protected $description = 'Updates all children\'s ages by one year';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.

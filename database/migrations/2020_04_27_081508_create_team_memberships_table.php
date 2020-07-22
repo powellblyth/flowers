@@ -15,9 +15,9 @@ class CreateTeamMembershipsTable extends Migration
     {
         Schema::create('team_memberships', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('entrant_id');
             $table->unsignedBigInteger('team_id');
-            $table->integer('year');
+            $table->integer('show_id');
             $table->timestamps();
         });
     }

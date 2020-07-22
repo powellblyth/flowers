@@ -14,6 +14,9 @@ class CreateMembershipPurchasesTable extends Migration {
     public function up() {
         Schema::create('membership_purchases', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('entrant');
+            $table->integer('amount');
+            $table->string('type');
             $table->timestamps();
         });
     }

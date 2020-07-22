@@ -30,6 +30,8 @@ Route::get('/categories', ['as' => 'category.index', 'uses' => 'CategoryControll
 Route::get('/sections/forwebsite', ['as' => 'section.forwebsite', 'uses' => 'SectionController@forwebsite']);
 
 Route::resource('categories', 'CategoryController');
+
+
 Route::resource('membershippurchases', 'MembershipPurchaseController');
 //Route::resource('cups', 'CupController')->middleware('auth');
 Route::get('/cups', ['as' => 'cups.index', 'uses' => 'CupController@index']);
@@ -78,24 +80,28 @@ Route::group(['middleware' => 'is_admin'], function () {
 //Route::get('/teams', ['as' => 'teams.index', 'uses' => 'TeamsController@index']);
 
 Route::resource('teams', 'TeamsController');
+Route::resource('shows', 'ShowsController');
+Route::resource('memberships', 'MembershipsController');
+Route::get('/shows/{show}/duplicate',['as'=>'shows.duplicate', 'uses'=>'ShowsController@duplicate']);
 
 Route::post('/entry/creates', ['as' => 'entry.creates', 'uses' => 'EntryController@creates'])->middleware('auth');
-Route::get('/entrants/{id}/edit', ['as' => 'entrants.edit', 'uses' => 'EntrantController@edit'])->middleware('auth');
-Route::get('/entrants/{id}', ['as' => 'entrants.show', 'uses' => 'EntrantController@show'])->middleware('auth');
+Route::get('/entrants/{entrant}/edit', ['as' => 'entrants.edit', 'uses' => 'EntrantController@edit'])->middleware('auth');
+Route::get('/entrants/{entrant}', ['as' => 'entrants.show', 'uses' => 'EntrantController@show'])->middleware('auth');
 Route::get('/users/{user}/entrants/create', ['as' => 'users.createentrant', 'uses' => 'EntrantController@create'])->middleware('auth');
 //Route::resource('entrants', 'EntrantController')->create('auth');
 
-Route::post('/entrants/{id}/update', ['as' => 'entrants.update', 'uses' => 'EntrantController@update'])->middleware('auth');
+Route::post('/entrants/{entrant}/update', ['as' => 'entrants.update', 'uses' => 'EntrantController@update'])->middleware('auth');
 Route::post('/entrants/{id}/optins',
     ['as' => 'entrants.optins', 'uses' => 'EntrantController@optins'])->middleware('auth');
 
 Route::resource('users', 'UserController');
-Route::get('/users/', ['as' => 'users.index', 'uses' => 'UserController@index'])->middleware('is_admin');
+Route::get('/users/{user}/{show?}', ['as' => 'users.showfiltered', 'uses' => 'UserController@show']);
+Route::get('/users', ['as' => 'users.index', 'uses' => 'UserController@index'])->middleware('is_admin');
 //Route::get('/users/new', ['as' => 'users.create', 'uses' => 'UserController@create'])->middleware('is_admin');
 Route::delete('/users/{id}', ['as' => 'users.destroy', 'uses' => 'UserController@delete'])->middleware('is_admin');
 
 Route::get('/users/{id}/print', ['as' => 'user.print', 'uses' => 'UserController@printcards'])->middleware('is_admin');
-Route::get('/family', ['as' => 'home', 'uses' => 'UserController@family'])->middleware('auth');
+Route::get('/family', ['as' => 'home', 'uses' => 'UserController@show'])->middleware('auth');
 
 
 Route::get('/users/{user}/edit', ['as' => 'user.edit', 'uses' => 'UserController@edit'])->middleware('is_admin');
@@ -103,7 +109,7 @@ Route::get('/users/{user}/edit', ['as' => 'user.edit', 'uses' => 'UserController
 Route::get('/entries/printall', ['as' => 'entries.printall', 'uses' => 'EntryController@printallcards'])->middleware('is_admin');
 
 
-Route::get('/reports/', ['as' => 'reports.index', 'uses' => 'ReportsController@index'])->middleware('is_admin');
+Route::get('/reports/', ['as' => 'reports.index', 'uses' => 'ReportsController@index'])->middleware('auth')->middleware('is_admin');
 Route::get('/reports/members', ['as' => 'reports.members', 'uses' => 'ReportsController@membershipReport'])->middleware('is_admin');
 Route::get('/reports/entries', ['as' => 'reports.entries', 'uses' => 'ReportsController@entriesReport'])->middleware('is_admin');
 Route::get('/reports/unplacedCategories',

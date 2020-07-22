@@ -58,7 +58,8 @@
                             @endif
                     @endif
 {{--                        @if(Auth::User()->isAdmin())--}}
-                            <a href="{{route('teams.index')}}">All Teams</a>
+                        <a href="{{route('teams.index')}}">All Teams</a>
+                        <a href="{{route('shows.index')}}">All Shows</a>
 {{--                        @endif--}}
                         <a href="{{route('categories.index')}}">Categories / Results</a>
                     <a href="{{ url('/cups') }}">Cups</a>

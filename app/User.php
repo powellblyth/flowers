@@ -27,12 +27,6 @@ class User extends Authenticatable
         'saving' => UserSaving::class
     ];
 
-    public function isAdmin()
-    {
-        return $this->type === self::ADMIN_TYPE;
-//        return false;
-    }
-
     /**
      * The attributes that are mass assignable.
      *
@@ -54,6 +48,32 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 'auth_token', 'password_reset_token'
     ];
+
+    public function entrants(): HasMany
+    {
+        return $this->hasMany(Entrant::class);
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function membership_purchases(): HasMany
+    {
+        return $this->hasMany(MembershipPurchase::class);
+    }
+
+    public function getFullNameAttribute():string
+    {
+        return $this->getName();
+    }
+
+    public function isAdmin()
+    {
+        return $this->type === self::ADMIN_TYPE;
+    }
+
 
     /**
      * If we are not on production then return a sensible false string
@@ -116,16 +136,6 @@ class User extends Authenticatable
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
     }
 
-    public function entrants(): HasMany
-    {
-        return $this->hasMany(Entrant::class);
-    }
-
-    public function payments(): HasMany
-    {
-        return $this->hasMany(Payment::class);
-    }
-
     public function familyMemberships(bool $current = true)
     {
         $memberships = $this->hasMany(MembershipPurchase::class, 'user_id')->where('type', 'family');
@@ -133,11 +143,6 @@ class User extends Authenticatable
             $memberships = $memberships->where('year', config('app.year'));
         }
         return $memberships;
-    }
-
-    public function memberships(): HasMany
-    {
-        return $this->hasMany(MembershipPurchase::class);
     }
 
     public function teamMemberships($year = null)
@@ -153,7 +158,7 @@ class User extends Authenticatable
 
     public function getMemberNumber(): ?string
     {
-        $membership = $this->memberships()->where('year', config('app.year'))->first();
+        $membership = $this->membership_purchases()->where('end_date','<',date('Y-m-d 11:39:39'))->first();
         if ($membership instanceof \App\MembershipPurchase) {
             return $membership->getNumber();
         } else {

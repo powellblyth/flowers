@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property float late_price
+ * @property float price
+ */
 class Category extends Model
 {
 
@@ -14,6 +18,33 @@ class Category extends Model
     const TYPE_ADULT        = 'Adult';
     const PRICE_LATE_PRICE  = 'lateprice';
     const PRICE_EARLY_PRICE = 'earlyprice';
+
+
+
+    public function show(): BelongsTo
+    {
+        return $this->belongsTo(Show::class);
+    }
+
+    public function entries(): HasMany
+    {
+        return $this->hasMany(Entry::class);
+    }
+
+    public function section(): BelongsTo
+    {
+        return $this->belongsTo(Section::class);
+    }
+
+    public function cups(): BelongsToMany
+    {
+        return $this->belongsToMany(Cup::class);
+    }
+
+    public function getNumberedNameAttribute():string
+    {
+        return $this->getNumberedLabel();
+    }
 
     public function getUrl()
     {
@@ -57,18 +88,4 @@ class Category extends Model
         }
     }
 
-    public function entries(): HasMany
-    {
-        return $this->hasMany(Entry::class);
-    }
-
-    public function section(): BelongsTo
-    {
-        return $this->belongsTo(Section::class);
-    }
-
-    public function cups(): BelongsToMany
-    {
-        return $this->belongsToMany(Cup::class);
-    }
 }

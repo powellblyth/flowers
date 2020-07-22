@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Entrant;
 use App\Http\Requests\UserRequest;
+use App\MembershipPurchase;
+use App\Show;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,40 +67,46 @@ class UserController extends Controller
      * @param User $model
      * @return \Illuminate\View\View
      */
-    public function show(int $id = null): View
+    public function show(User $user = null, Show $show = null): View
     {
-        if (is_null($id)) {
-            $id = Auth::user()->id;
+        if (is_null($user)) {
+            $user = Auth::user();
+        }
+        /**
+         * Default show
+         */
+        if (is_null($show)) {
+            $show = Show::where('status', 'current')->first();
         }
 
-        $user = User::findOrFail($id);
         $this->authorize('view', $user);
         $membershipFee = 0;
         $entryFee      = 0;
         $totalPaid     = 0;
-        $currentYear   = config('app.year');
 
         foreach ($user->entrants as $entrant) {
-            $entries = $entrant->entries()->where('year', $currentYear)->get();
+            $entries = $entrant->entries()->where('show_id', $show->id)->get();
             foreach ($entries as $entry) {
                 $price    = $entry->category->getPrice($entry->getPriceType());
                 $entryFee += $price;
             }
         }
 
-        $payments = $user->payments()->where('year', $currentYear)->get();
+        $payments = $user->payments()->where('show_id', $show->id)->get();
         foreach ($payments as $payment) {
             $totalPaid += $payment->amount;
         }
 
         $memberNumber = $user->getMemberNumber();
-        $memberships  = $user->memberships()->where('year', $currentYear)->get();
+        $memberships  = $user->membership_purchases()
+            ->where('end_date', '<', Carbon::now())
+            ->get();
         foreach ($memberships as $membership) {
             $membershipFee += $membership->amount;
         }
 
         //@todo centralise this
-        $tooLateForEntries = time() > strToTime($currentYear . "-07-09 00:00:00");
+        $tooLateForEntries = Carbon::now() > $show->entries_closed_deadline;
 
         return view('users.show', [
             'thing'                   => $user,
@@ -106,10 +115,10 @@ class UserController extends Controller
             'entry_fee'               => $entryFee,
             'total_paid'              => $totalPaid,
             'payments'                => $payments,
-            'membership_purchases'    => $memberships,
             'isAdmin'                 => $this->isAdmin(),
+            'showId'                  => $show->id,
             'payment_types'           => $this->paymentTypes,
-            'membership_types'        => ['family' => 'Family'],
+            'membership_types'        => [MembershipPurchase::TYPE_FAMILY => 'Family'],
             'has_family_subscription' => false,//$hasFamilySubscription,
             'isLocked'                => config('app.state') == 'locked',
             'too_late_for_entries'    => $tooLateForEntries,

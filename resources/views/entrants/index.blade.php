@@ -61,7 +61,11 @@
                                             </thead>
                                             @foreach ($things as $thing)
                                                 <tr>
-                                                    <td>{{ ucwords($thing->getName()) }}</td>
+                                                    <td>{{ $thing->getName() }}
+                                                    @if ($thing->age)
+                                                        ({{$thing->age}} yrs)
+                                                        @endif
+                                                    </td>
                                                     <td class="td-actions">
                                                         @if(!$isLocked)
                                                             <a rel="tooltip" class="btn btn-success btn-link"
@@ -74,7 +78,7 @@
                                                         @endif
 
                                                         <a rel="tooltip" class="btn btn-success btn-link"
-                                                           href="{{ route('entrants.show', $thing) }}"
+                                                           href="{{ $thing->getUrl() }}"
                                                            data-original-title=""
                                                            title="manage {{$thing->firstname}}'s entries">
                                                             <i class="material-icons">build</i>

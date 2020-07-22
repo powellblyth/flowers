@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Notifications\Notifiable;
 
 //use Laravel\Cashier\Billable;
@@ -26,8 +26,23 @@ class Team extends Model
         return route('teams.show', $this);
     }
 
-    public function entrants(): HasMany
+    public function team_memberships(): HasMany
     {
-        return $this->hasMany(Entrant::class);
+        return $this->hasMany(TeamMembership::class);
+    }
+
+//    public function entrants(): HasMany
+//    {
+//        return $this->hasMany(Entrant::class);
+//    }
+
+    public function entrants2(): HasManyThrough
+    {
+        return $this->hasManyThrough(Entrant::class, TeamMembership::class);
+    }
+
+    public function entrantsForShow(Show $show)
+    {
+        return $this->team_memberships()->where('show_id', $show->id)->where('');
     }
 }

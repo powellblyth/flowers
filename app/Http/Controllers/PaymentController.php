@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class PaymentController extends Controller
 {
     protected $templateDir = 'payments';
-    protected $baseClass   = 'App\Payment';
 
     public function store(Request $request)
     {
@@ -24,9 +23,9 @@ class PaymentController extends Controller
         $payment->save();
 
         if ($request->entrant) {
-            return redirect()->route('entrants.show', array('thing' => $request->entrant));
+            return redirect()->route('entrants.show', ['entrant' => $request->entrant]);
         } else {
-            return redirect()->route('user.show', array('thing' => $request->user));
+            return redirect()->route('users.show', array('thing' => $request->user));
         }
     }
 }

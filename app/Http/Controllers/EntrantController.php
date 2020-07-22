@@ -7,20 +7,23 @@ use App\Entrant;
 use App\Entry;
 use App\MembershipPurchase;
 use App\Payment;
+use App\Show;
 use App\Team;
+use App\TeamMembership;
 use App\User;
 use DB;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Input;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use \Illuminate\View\View;
 
 class EntrantController extends Controller
 {
 
     protected $templateDir  = 'entrants';
-    protected $baseClass    = 'App\Entrant';
     protected $paymentTypes = array('cash'          => 'cash',
                                     'cheque'        => 'cheque',
                                     'online'        => 'online',
@@ -131,10 +134,10 @@ class EntrantController extends Controller
             ->pluck('name', 'id')->toArray();
 
         return view('entrants.create', [
-            'privacyContent' => config('static_content.privacy_content'),
-            'allUsers'       => $allUsers,
-            'teams'          => $allTeams,
-            'indicatedAdmin' => $family->id,
+            'privacyContent'    => config('static_content.privacy_content'),
+            'allUsers'          => $allUsers,
+            'teams'             => $allTeams,
+            'indicatedAdmin'    => $family->id,
             'defaultFamilyName' => $family->lastname,
         ]);
     }
@@ -149,7 +152,8 @@ class EntrantController extends Controller
         $entrant->familyname   = $request->familyname;
         $entrant->membernumber = $request->membernumber;
         $entrant->team_id      = $request->team_id;
-        $entrant->age          = $request->age;
+        dd('TODO relate to team');
+        $entrant->age = $request->age;
 
         $entrant->can_retain_data = (int) $request->can_retain_data;
 
@@ -169,16 +173,44 @@ class EntrantController extends Controller
         }
     }
 
-    public function update(Request $request)
+    public function update(Request $request, Entrant $entrant)
     {
-        $entrant = Entrant::where('id', $request->id)->firstOrFail();
+//        $entrant = Entrant::where('id', $request->id)->firstOrFail();
         $this->authorize('update', $entrant);
-
+        $age = (int) $request->age;
+        $request->validate(
+            [
+                'firstname'  => 'string|required|min:1',
+                'familyname' => 'string|required|min:1',
+                'age'        => 'integer|nullable|min:0|',
+                'team_id'    => ['nullable',
+                                 'integer',
+                                 Rule::exists('teams', 'id')->where(function ($query) use ($age) {
+                                     $query
+                                         ->where('min_age', '<=', $age)
+                                         ->where('max_age', '>=', $age);
+                                     return $query;
+                                 })],
+            ]
+        );
         $entrant->firstname    = $request->firstname;
         $entrant->familyname   = $request->familyname;
         $entrant->membernumber = $request->membernumber;
-        $entrant->team_id      = $request->team_id;
-        $entrant->age          = $request->age;
+        // No point eding
+        $showId = Show::where('status', 'current')->first()->id;
+
+        $entrant->age = $request->age;
+
+        // Make sure we don't make duplicate show entries in a given year
+        if ($request->team_id) {
+            $team           = Team::findOrFail($request->team_id);
+            $teamMembership = TeamMembership::firstOrNew(['show_id' => $showId, 'entrant_id' => $entrant->id]);
+            $teamMembership->team()->associate($team);
+            $teamMembership->save();
+        } else {
+            $entrant->team_memberships()->where('show_id', $showId)->delete();
+        }
+
 
         $entrant->can_retain_data = (int) $request->can_retain_data;
         $entrant->can_email       = (int) $request->can_email;
@@ -196,7 +228,6 @@ class EntrantController extends Controller
             $request->session()->flash('error', 'Something went wrong saving the Family Member');
             return back();
         }
-//        return view($this->templateDir . '.saved', array('thing' => $thing));
     }
 
 
@@ -207,7 +238,6 @@ class EntrantController extends Controller
         } else {
             $entrant = Entrant::where('id', $id)->first();
             if ($entrant instanceof Entrant) {
-                var_dump($entrant->getName());
             } else {
                 die('bust' . $id);
             }
@@ -221,8 +251,9 @@ class EntrantController extends Controller
      *
      * @param int $id
      * @return Response
+     * @throws AuthorizationException
      */
-    public function show(int $id, array $showData = [])
+    public function show(Entrant $entrant, array $showData = [])
     {
         $totalPrizes   = 0;
         $membershipFee = 0;
@@ -230,7 +261,6 @@ class EntrantController extends Controller
 
         $currentYear = config('app.year');
 
-        $entrant = Entrant::where('id', $id)->firstOrFail();
         $this->authorize('seeDetailedInfo', $entrant);
 
         $categoriesAry = [0 => 'Select...'];
@@ -332,16 +362,13 @@ class EntrantController extends Controller
      * @param int $id
      * @return Response
      */
-    public function edit(int $id)
+    public function edit(Entrant $entrant)
     {
-        if (Auth::User()->isAdmin()) {
-            $entrant = Entrant::where('id', $id)->firstOrFail();
-        } else {
-            $entrant = Auth::User()->entrants()->where('id', $id)->firstOrFail();
-        }
+        $this->authorize('update', $entrant);
 
         return view('entrants.edit', array(
             'thing'          => $entrant,
+            'teams'          => $entrant->getValidTeamOptions(),
             'privacyContent' => config('static_content.privacy_content'),
             'isAdmin'        => $this->isAdmin()));
     }

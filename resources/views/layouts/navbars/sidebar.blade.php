@@ -57,18 +57,22 @@
             </li>
 
             @if(Auth::check() && Auth::User()->isAdmin())
-                <li class="nav-item{{ $activePage == 'reports' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{ route('reports.index') }}"><i class="material-icons">dashboard</i>
-                        <p>Reports</p></a>
-                </li>
-                <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{ route('users.index') }}"><i class="material-icons">dashboard</i>
-                        <p>Families</p></a>
-                </li>
-                <li class="nav-item{{ $activePage == 'teams' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{route('teams.index')}}"><i class="material-icons">people-outline</i>
-                        <p>Teams</p></a>
-                </li>
+            <li class="nav-item{{ $activePage == 'reports' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('reports.index') }}"><i class="material-icons">dashboard</i>
+                    <p>Reports</p></a>
+            </li>
+            <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('users.index') }}"><i class="material-icons">dashboard</i>
+                    <p>Families</p></a>
+            </li>
+            <li class="nav-item{{ $activePage == 'teams' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('teams.index')}}"><i class="material-icons">people-outline</i>
+                    <p>Teams</p></a>
+            </li>
+            <li class="nav-item{{ $activePage == 'shows' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('shows.index')}}"><i class="material-icons">people-outline</i>
+                    <p>Shows</p></a>
+            </li>
 
             @endif
 

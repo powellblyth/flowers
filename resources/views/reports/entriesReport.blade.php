@@ -4,18 +4,18 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                @for ($x=2017; $x<=date('Y'); $x++)
+                @foreach ($shows as $showNav)
                     <div class="col-1">
-                        <a href="{{route('reports.entries')}}?year={{$x}}">{{$x}}</a>
+                        <a href="{{route('reports.entries')}}?show_id={{$showNav->id}}">{{$showNav->name}}</a>
                     </div>
-                @endfor
+                @endforeach
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
-                                {{__('Entries Purchased')}} in {{$year}}
+                                {{__('Entries Purchased')}} for {{$show->name}}
                             </div>
                             <div class="card-body">
                                 <div class="card-body">

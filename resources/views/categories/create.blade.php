@@ -21,7 +21,7 @@
     </table>
 </div>
 
-{{ Form::submit('Create New Cateory', ['class' => 'btn btn-primary']) }}
+{{ Form::submit('Create New Category', ['class' => 'btn btn-primary']) }}
 
 {{ Form::close() }}
 

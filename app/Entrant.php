@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 //use Laravel\Cashier\Billable;
 
@@ -19,6 +20,11 @@ use Illuminate\Notifications\Notifiable;
 class Entrant extends Model
 {
     use Notifiable;
+
+    protected $casts = [
+        'age' => 'int',
+    ];
+
 //    use Billable;
 
     protected $dispatchesEvents = [
@@ -27,7 +33,12 @@ class Entrant extends Model
 
     public function getUrl()
     {
-        return route('entrants.show', $this);
+        return route('entrants.show', ['entrant'=>$this]);
+    }
+
+    public function getFullNameAttribute(): string
+    {
+        return $this->getName();
     }
 
     public function getName(bool $printable = null): string
@@ -35,7 +46,7 @@ class Entrant extends Model
         if ($printable) {
             return $this->getPrintableName();
         } else {
-            return trim($this->firstname . ' ' . $this->familyname);
+            return Str::title(trim($this->firstname . ' ' . $this->familyname));
         }
     }
 
@@ -58,6 +69,16 @@ class Entrant extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function canJoin(Team $team): bool
+    {
+        return ($this->age <= $team->max_age && $this->age >= $team->min_age);
+    }
+
+    public function team_memberships(): HasMany
+    {
+        return $this->hasMany(TeamMembership::class);
+    }
+
     public function entries(): HasMany
     {
         return $this->hasMany(Entry::class);
@@ -76,6 +97,26 @@ class Entrant extends Model
     public function individualMemberships(): HasMany
     {
         return $this->hasMany(MembershipPurchase::class, 'entrant_id');
+    }
+
+    public function getValidTeamOptions(): array
+    {
+        $entrant = $this;
+
+        if (!$this->age) {
+            $teamQuery = Team::query();
+        } else {
+            $teamQuery = Team::where('max_age', '>=', (int) $this->age);
+        }
+        $res = $teamQuery
+            ->orderBy('min_age')
+            ->orderBy('max_age')
+            ->orderBy('name')
+            ->get()->reject(function (Team $team) use ($entrant) {
+                return !$entrant->canJoin($team);
+            })
+            ->pluck('name', 'id')->toArray();
+        return $res;
     }
 
     public function familyMembership(): ?MembershipPurchase

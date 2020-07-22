@@ -20,15 +20,7 @@ class CreateTeamsTable extends Migration
             $table->tinyInteger('min_age')->unsigned()->nullable();
             $table->tinyInteger('max_age')->unsigned()->nullable();
             $table->timestamps();
-        });
-
-        Schema::create('entrant_team_year', function(Blueprint $table){
-            $table->id();
-
-        });
-
-        Schema::table('entrants', function (Blueprint $table) {
-            $table->unsignedInteger('team_id')->nullable();
+            $table->softDeletes();
         });
     }
 
@@ -40,8 +32,5 @@ class CreateTeamsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('teams');
-        Schema::table('entrants', function (Blueprint $table) {
-            $table->dropColumn(['team_id']);
-        });
     }
 }

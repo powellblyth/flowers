@@ -21,14 +21,18 @@ class TeamsController extends Controller
      * @return Response
      * @throws AuthorizationException
      */
-    public function index()
+    public function index(Request $request)
     {
-        if (Auth::user() && Auth::user()->can('viewAll')) {
-            $teams = Team::get();
+        $show = $this->getShowFromRequest($request);
+
+        if (Auth::user() && Auth::user()->can('viewAny', Team::class)) {
+            $teams = Team::with('team_memberships.entrant')->get();
         } else {
-            $teams = Team::where('status', Team::STATUS_ACTIVE)->orderBy('name')->get();
+            $teams = Team::with('team_memberships.entrant')
+                ->where('status', Team::STATUS_ACTIVE)
+                ->orderBy('name')->get();
         }
-        return response()->view('teams.index', ['teams' => $teams]);
+        return response()->view('teams.index', ['teams' => $teams, 'show_id'=>$show->id]);
     }
 
     /**

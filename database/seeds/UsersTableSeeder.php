@@ -1,7 +1,12 @@
 <?php
 
 use App\Category;
+use App\Membership;
+use App\MembershipPurchase;
+use App\Show;
 use App\Team;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -19,6 +24,7 @@ class UsersTableSeeder extends Seeder
         DB::table('entries')->truncate();
         DB::table('entrants')->truncate();
         DB::table('users')->insert([
+            'id'                   => 1,
             'firstname'            => 'Admin',
             'lastname'             => 'Admin',
             'email'                => 'admin@material.com',
@@ -30,7 +36,9 @@ class UsersTableSeeder extends Seeder
             'auth_token'           => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => ''
         ]);
+        User::find(1)->makeDefaultEntrant();
         DB::table('users')->insert([
+            'id'                   => 2,
             'firstname'            => 'Toby',
             'lastname'             => 'Powell-Blyth',
             'email'                => 'toby@powellblyth.com',
@@ -42,7 +50,10 @@ class UsersTableSeeder extends Seeder
             'auth_token'           => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => ''
         ]);
+        User::find(2)->makeDefaultEntrant();
+
         DB::table('users')->insert([
+            'id'                   => 3,
             'firstname'            => 'ES Toby',
             'lastname'             => 'Powell-Blyth',
             'email'                => 'toby.powell-blyth@elasticstage.com',
@@ -54,9 +65,11 @@ class UsersTableSeeder extends Seeder
             'auth_token'           => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => ''
         ]);
+        User::find(3)->makeDefaultEntrant();
 
         $faker = Faker\Factory::create('en_GB');
         for ($userNumber = 0; $userNumber < 100; $userNumber++) {
+
             $user = App\User::create([
                 'firstname'            => $faker->firstName,
                 'lastname'             => $faker->lastName,
@@ -75,45 +88,106 @@ class UsersTableSeeder extends Seeder
 
 
             $user->makeDefaultEntrant();
-            for ($entrantNumber = 0; $entrantNumber < $faker->biasedNumberBetween(0, 5, 'Faker\Provider\Biased::linearLow'); $entrantNumber++) {
-                $age  = null;
-                $teamId = null;
-                $isChild = $entrantNumber > 0;
-                // If this is a third person it looks like a child. Only children need ages
-                if ($isChild) {
-                    $age  = floor(rand(1, 18));
-                    $team = Team::where('min_age', '<=', $age)->where('max_age', '>=', $age)->get()->shuffle()->first();
-                    if ($team instanceof Team){
-                        $teamId = $team->id;
-                    }
-                }
 
-                /**
-                 * @var \App\Entrant $entrant
-                 */
-                $entrant = $user->entrants()->create([
+            $numChildren = $faker->biasedNumberBetween(0, 5, 'Faker\Provider\Biased::linearLow');
+
+            for ($entrantNumber = 0; $entrantNumber < $numChildren; $entrantNumber++) {
+                $age = floor(rand(1, 18));
+
+                $user->entrants()->create([
                     'firstname'  => $faker->firstname,
+                    // In our world, every child has the same name as their parent. Makes testing easier
                     'familyname' => $user->lastname,
                     'age'        => $age,
-                    'team_id'    => $teamId,
                 ]);
-                // Create some historical data
-                for ($year = config('app.year') - 2; $year <= config('app.year'); $year++) {
+            }
 
-                    for ($entryNumber = 0; $entryNumber < $faker->biasedNumberBetween(0, 20, 'Faker\Provider\Biased::linearLow'); $entryNumber++) {
-                        // Chooses a random set of categoreies to enter
-                        $categories = Category::where('year', $year)
-                            ->get()
-                            ->shuffle()
-                            ->take(floor(rand(0, 15)))
-                            ->each(function (Category $category) use ($entrant, $year) {
-                                // Creates an entry for that year
-                                $entrant->entries()->create(['category_id' => $category->id, 'year' => $year]);
-                            });
+            $membershipType = null;
+
+            // No children? Probably would choose a non family member
+            if ($numChildren === 0) {
+                $memberships    = Membership::where('applies_to', Membership::APPLIES_TO_ENTRANT);
+                $membershipType = MembershipPurchase::TYPE_INDIVIDUAL;
+            } else {
+                $memberships    = Membership::where('applies_to', Membership::APPLIES_TO_USER);
+                $membershipType = MembershipPurchase::TYPE_FAMILY;
+            }
+            foreach ($memberships->get() as $membership) {
+                if ($faker->boolean(90)) {
+                    dump($membership->id .' - ' . $membership->applies_to . ' ['.$membershipType.']');
+                    $membershipPurchase         = new MembershipPurchase();
+                    $membershipPurchase->membership()->associate($membership);
+                    $membershipPurchase->type   = $membershipType;
+                    $membershipPurchase->amount = $membership->price_gbp;
+                    $membershipPurchase->user()->associate($user);
+                    if ($numChildren === 0) {
+                        dump('associating ' . $user->entrants()->first()->id);
+                        $membershipPurchase->entrant()->associate($user->entrants()->first());
                     }
+                    else{
+                        dump('THat was family');
+                    }
+                    $membershipPurchase->save();
+                    dump(' that was purchase ID '.$membershipPurchase->id);
                 }
             }
 
+
+            /////////////////////////////////////////////////////////////
+
+            // Cache the information about sticky teams
+            // Reset the array for memory reasons each new user
+            $stickyTeams    = [];
+            // Create some historical data
+            foreach (Show::get() as $show) {
+                /**
+                 * @var Show $show
+                 */
+
+                // reload the entrants to include the user's entrant
+                foreach ($user->entrants as $entrant) {
+
+                    // Teams are only for juniors
+                    if ($entrant->age != null) {
+                        if (!array_key_exists($entrant->id, $stickyTeams)) {
+                            $team = Team::where('min_age', '<=', $entrant->age)->where('max_age', '>=', $entrant->age)->get()->shuffle()->first();
+                        } else {
+                            $team = $stickyTeams[$entrant->id];
+                        }
+
+                        // Team membership is for each show, but repeats
+                        if ($team instanceof Team) {
+                            $teamMembership = new \App\TeamMembership();
+                            $teamMembership->show()->associate($show);
+                            $teamMembership->entrant()->associate($entrant);
+                            $teamMembership->team()->associate($team);
+                            $teamMembership->save();
+                        }
+                    }
+
+
+                    // Chooses a random set of categoreies to enter
+                    Category::where('show_id', $show->id)
+                        ->get()
+                        ->shuffle()
+                        ->take(floor(rand(0, $faker->biasedNumberBetween(0, 17, 'Faker\Provider\Biased::linearLow'))))
+                        ->each(function (Category $category) use ($entrant, $show, $faker) {
+                            // Creates an entry for that year
+                            $isLate     = $faker->boolean(20);
+                            $isPaid     = $faker->boolean(90);
+                            $paidAmount = 0;
+                            if ($isPaid) {
+                                $paidAmount = ($isLate) ? $category->late_price : $category->price;
+                            }
+                            if ($isLate) {
+                                $created_date = $show->late_entry_deadline->addDay();
+                            } else {
+                                $created_date = $show->late_entry_deadline->subHour();
+                            }
+                            $entrant->entries()->create(['category_id' => $category->id, 'show_id' => $show->id, 'paid' => $paidAmount, 'created_at' => $created_date]);
+                        });
+                }
+            }
             // This ensures that we know if the 'user' was opted in or not
             //
             if ($faker->boolean(4)) {
@@ -123,8 +197,11 @@ class UsersTableSeeder extends Seeder
                 $user->anonymise()->save();
             }
         }
+        $currentShow = Show::where('status', Show::STATUS_CURRENT)->first();
 
-        Category::get()->each(function (Category $category) {
+        // Choose a winner regardless of year
+        // BUT NOT the current year
+        Category::where('show_id', '<>', $currentShow->id)->get()->each(function (Category $category) {
             $winners = $category->entries()->get()->shuffle()->take(4);
             foreach ($winners as $counter => $winner) {
                 /**

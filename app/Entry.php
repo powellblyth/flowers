@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use \Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,12 +11,19 @@ use \Illuminate\Database\Eloquent\Relations\BelongsTo;
  * Class Entry
  * @package App
  * @property Entrant $entrant
+ * @property Show show
  */
 class Entry extends Model
 {
+
     public function hasWon()
     {
         return !empty(trim($this->winningplace));
+    }
+
+    public function show(): BelongsTo
+    {
+        return $this->belongsTo(Entry::class);
     }
 
     public function getPlacementName()
@@ -50,10 +58,9 @@ class Entry extends Model
     {
         $created = new \DateTime($this->created_at);
 
-        $cutoffDate = new \DateTime($this->getCutoffDate($this->year));
+        $cutoffDate = new \DateTime($this->show->late_entry_deadline);
 
         return $created > $cutoffDate;
-
     }
 
     public function getCardBackData(): array
@@ -78,25 +85,7 @@ class Entry extends Model
 
     public function getActualPrice()
     {
-//        die(var_dump([$this->getPriceType(),$this->category->getPrice($this->getPriceType()) ]));
         return $this->category->getPrice($this->getPriceType());
-    }
-
-    public function getCutoffDate(int $year): string
-    {
-        $date = '';
-        switch ($year) {
-            case 2019:
-                $date = '3 July 2019 23:59:59';
-                break;
-            case 2018:
-                $date = '4 July 2018 23:59:59';
-                break;
-            case 2017:
-            default:
-                $date = '6 July 2017 12:00:59';
-        }
-        return $date;
     }
 
     public function entrant(): BelongsTo

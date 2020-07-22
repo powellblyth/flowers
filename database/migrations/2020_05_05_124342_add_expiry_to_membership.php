@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class MembershipPurchaseFields extends Migration
+class AddExpiryToMembership extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,10 @@ class MembershipPurchaseFields extends Migration
     public function up()
     {
         Schema::table('membership_purchases', function (Blueprint $table) {
-    $table->integer('entrant');
-    $table->integer('amount');
-    $table->string('type');
-
-        });//
+            $table->datetime('start_date')->nullable();
+            $table->datetime('end_date')->nullable();
+            //
+        });
     }
 
     /**
@@ -29,7 +28,7 @@ class MembershipPurchaseFields extends Migration
     public function down()
     {
         Schema::table('membership_purchases', function (Blueprint $table) {
-         $table->dropColumn(['entrant','amount','type', 'created']);
+            $table->dropColumn(['start_date', 'end_date']);
         });
     }
 }

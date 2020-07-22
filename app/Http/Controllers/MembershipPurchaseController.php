@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class MembershipPurchaseController extends Controller
 {
     protected $templateDir = 'payments';
-    protected $baseClass   = 'App\MembershipPurchase';
 
     public function getAmount($type)
     {
@@ -37,9 +36,9 @@ class MembershipPurchaseController extends Controller
         $thing->save();
 
         if ('single' == $request->type) {
-            return redirect()->route('entrants.show', array('thing' => $request->entrant));
+            return redirect()->route($request->entrant->getUrl());
         } else {
-            return redirect()->route('user.show', array('thing' => $request->user));
+            return redirect()->route('users.show', ['user' => $request->user]);
         }
     }
 

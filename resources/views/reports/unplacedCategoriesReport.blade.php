@@ -4,22 +4,22 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                @for ($x=2017; $x<=date('Y'); $x++)
+                @foreach ($shows as $showNav)
                     <div class="col-1">
-                        <a href="{{route('reports.categories')}}?year={{$x}}">{{$x}}</a>
+                        <a href="{{route('reports.categories')}}?show_id={{$showNav->id}}">{{$showNav->name}}</a>
                     </div>
-                @endfor
+                @endforeach
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
-                                {{__('Unattached Categories')}} in {{$year}}
+                                {{__('Unattached Categories')}} in {{$show->name}}
 
                             </div>
                             <div class="card-body">
-                                These {{config('app.year')}} categories have not yet had a cup associated with them.
+                                These {{$show->name}} categories have not yet had a cup associated with them.
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead class=" default text-primary">

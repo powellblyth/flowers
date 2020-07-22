@@ -7,7 +7,9 @@ use App\Cup;
 use App\CupDirectWinner;
 use App\Entrant;
 use App\Entry;
+use App\Show;
 use DB;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \Illuminate\View\View;
@@ -16,21 +18,19 @@ class CupController extends Controller
 {
 
     protected $templateDir = 'cups';
-    protected $baseClass   = 'App\Cup';
 
     public function index(Request $request): View
     {
-        $year    = $this->getYearFromRequest($request);
+        $show    = $this->getShowFromRequest($request);
         $winners = array();
         $results = array();
-//        $cups = Cup::
-        $cups = Cup::orderBy('sort_order', 'asc')->get();
+        $cups    = Cup::orderBy('sort_order', 'asc')->get();
         /** dragons here - copied tp printableresults */
         foreach ($cups as $cup) {
             /**
              * @var Cup $cup
              */
-            $resultset = $cup->getWinningResults($year);
+            $resultset = $cup->getWinningResults($show);
 //            dd($resultset);
             $thisCupPoints = array();
             foreach ($resultset as $result) {
@@ -48,12 +48,12 @@ class CupController extends Controller
             $winningCategory = null;
 
             // Gather up more winners if needed
-            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('year', $year)->first();
+            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('show_id', $show->id)->first();
             if ($cupWinner instanceof CupDirectWinner) {
                 if (!array_key_exists($cupWinner->entrant_id, $winners)) {
                     $winners[$cupWinner->entrant_id] = ['entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0];
                 }
-                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('year', $year)->first();
+                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('show_id', $show->id)->first();
             }
 
             $results[$cup->id] = array('results'          => $thisCupPoints,
@@ -63,7 +63,7 @@ class CupController extends Controller
         return view($this->templateDir . '.index', ['cups'    => $cups,
                                                     'results' => $results,
                                                     'winners' => $winners,
-                                                    'year'    => $year,
+                                                    'show'    => $show,
                                                     'isAdmin' => Auth::check() && Auth::User()->isAdmin()
         ]);
     }
@@ -72,19 +72,17 @@ class CupController extends Controller
     {
         $winnerDataByCategory = [];
         $winners              = [];
-        $cup                  = Cup::find($id);
-        $year                 = $this->getYearFromRequest($request);
+        $cup                  = Cup::findOrFail($id);
+        $show                 = $this->getShowFromRequest($request);
 
-        $categories = $cup->categories()->where('year', $year)->orderBy('sortorder')->get();
+        $categories = $cup->categories()->where('show_id', $show->id)->orderBy('sortorder')->get();
 
-        $categoriesArray = [];
         foreach ($categories as $category) {
-            $categoriesArray[$category->id] = $category->getNumberedLabel();
-            $resultset                      = $category
+            $resultset = $category
                 ->entries()
                 ->selectRaw('if(winningplace=\'1\', 4,if(winningplace=\'2\',3, if(winningplace=\'3\',2, if(winningplace=\'commended\',1, 0 ) ) )) as points, winningplace, entrant_id')
                 ->whereIn('winningplace', ['1', '2', '3', 'commended'])
-                ->where('year', $year)
+                ->where('show_id', $show->id)
                 ->orderBy('winningplace', 'asc')
                 ->get();
 
@@ -97,42 +95,36 @@ class CupController extends Controller
             }
         }
 
-        $isCurrentYear = ($year === (int) date('Y'));
-        $people        = [];
-        if ($isCurrentYear) {
-            $validEntries = Entry::where('year', $year)->get();
-            foreach ($validEntries as $entry) {
-                if ($entry->entrant instanceof Entrant) {
-                    $person              = $entry->entrant;
-                    $people[$person->id] = $person->getName();
-                } else {
-                    $people[$entry->entrant_id] = 'Unknown';
-                }
-            }
-            unset($person);
+        $people = [];
+        if (Auth::user() && Auth::user()->can('storeResults', $show)) {
+            $people = Entrant::whereHas('entries', function (Builder $query) use ($show) {
+                $query->where('show_id', $show->id);
+            })
+                ->orderBy('familyname')
+                ->orderBy('firstname')
+                ->get()
+                ->pluck('full_name','id')
+                ->toArray();
+
         } else {
             $validEntries = null;
         }
 
-        asort($people);
-        $thing = $this->baseClass::find($id);
 
         return view($this->templateDir . '.show', [
-            'thing'               => $thing,
+            'thing'               => $cup,
             'winners'             => $winners,
             'winners_by_category' => $winnerDataByCategory,
-            'categories'          => $categoriesArray,
+            'categories'          => $categories->pluck('numbered_name','id')->toArray(),
             'people'              => $people,
             'isAdmin'             => Auth::check() && Auth::User()->isAdmin(),
-            'year'                => $year,
-            'is_current_year'     => $isCurrentYear,
+            'show'                => $show,
         ]);
-
     }
 
     public function printableresults(Request $request)
     {
-        $year        = $this->getYearFromRequest($request);
+        $show        = $this->getShowFromRequest($request);
         $showAddress = $request->has('show_address') || $request->has('showaddress') || $request->has('showAddress');
         $winners     = array();
         $results     = array();
@@ -140,7 +132,7 @@ class CupController extends Controller
 
         /** dragons here - copied from index*/
         foreach ($cups as $cup) {
-            $resultset = $cup->getWinningResults($year);
+            $resultset = $cup->getWinningResults($show);
 
             $thisCupPoints = array();
             foreach ($resultset as $result) {
@@ -158,12 +150,12 @@ class CupController extends Controller
             $winningCategory = null;
 
             // Gather up more winners if needed
-            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('year', $year)->first();
+            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('show_id', $show->id)->first();
             if ($cupWinner instanceof CupDirectWinner) {
                 if (!array_key_exists($cupWinner->entrant_id, $winners)) {
                     $winners[$cupWinner->entrant_id] = ['entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0];
                 }
-                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('year', $year)->first();
+                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('show_id', $show)->first();
             }
 
             $results[$cup->id] = array('results'          => $thisCupPoints,
@@ -174,7 +166,7 @@ class CupController extends Controller
         return view($this->templateDir . '.publishablesnippet', ['cups'        => $cups,
                                                                  'results'     => $results,
                                                                  'winners'     => $winners,
-                                                                 'year'        => $year,
+                                                                 'show'        => $show,
                                                                  'isAdmin'     => Auth::check() && Auth::User()->isAdmin(),
                                                                  'showAddress' => $showAddress,
 

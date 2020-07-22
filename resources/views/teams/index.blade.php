@@ -1,12 +1,7 @@
-@extends('layouts.app', ['activePage' => 'cups', 'titlePage' => __('All Teams')])
+@extends('layouts.app', ['activePage' => 'teams', 'titlePage' => __('All Teams')])
 @section('pagetitle', 'All Teams ')
 
 @section('content')
-    @php
-        $publishMode = false;
-        $shortName = false;
-    @endphp
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -35,15 +30,10 @@
 
                             <div class="row">
                                 <div class="col-md-9">
-                                    {{ $team->name }}
-                                    @if ( ! $publishMode)
-                                        <i class="material-icons">eye</i>
-                                    @else
                                         <b><big>{{ $team->name }} ({{$team->min_age}}-  {{$team->max_age}} yrs)</big></b>
-                                    @endif
                                 </div>
                                 <div class="col-md-3 ">
-                                    {{$team->entrants()->count()}}
+                                    {{$team->team_memberships()->where('show_id',$show_id)->count()}}
                                 </div>
                             </div>
                         @endforeach

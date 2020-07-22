@@ -6,6 +6,7 @@ use App\Category;
 use App\Entrant;
 use App\Entry;
 use App\Section;
+use App\Show;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -23,7 +24,7 @@ class CategoryController extends Controller
 
     public function index(Request $request): View
     {
-        $year = $this->getYearFromRequest($request);
+        $show = $this->getShowFromRequest($request);
 
         $winners      = array();
         $results      = [];
@@ -35,8 +36,10 @@ class CategoryController extends Controller
         foreach ($sections as $section) {
             $sectionList[$section->id]  = $section->id . ' ' . $section->name;
             $categoryList[$section->id] = [];
-            $categories                 = $section->categories()->where('status', 'active')->orderBy('sortorder', 'asc')
-                ->where('year', $year)
+            $categories                 = $section->categories()
+                ->where('status', 'active')
+                ->orderBy('sortorder', 'asc')
+                ->where('show_id', $show->id)
                 ->get();
 
             foreach ($categories as $category) {
@@ -47,11 +50,11 @@ class CategoryController extends Controller
                 $placements                                = $category->entries()
                     ->whereNotNull('winningplace')
                     ->whereNotIn('winningplace', [''])
-                    ->where('year', $year)
+                    ->where('show_id', $show->id)
                     ->orderBy('winningplace')
                     ->get();
                 $total                                     = $category->entries()
-                    ->where('year', $year)
+                    ->where('show_id', $show->id)
                     ->select(DB::raw('count(*) as total'))
                     ->groupBy('category_id')->first();
 
@@ -67,17 +70,17 @@ class CategoryController extends Controller
                 }
             }
         }
+
         return view(
             'categories.index',
             [
-                'things'          => $categories,
-                'categoryList'    => $categoryList,
-                'sectionList'     => $sectionList,
-                'results'         => $results,
-                'winners'         => $winners,
-                'year'            => $year,
-                'is_current_year' => ($year == (int) date('Y')),
-                'isLocked'        => config('app.state') == 'locked',
+                'things'       => $categories,
+                'categoryList' => $categoryList,
+                'sectionList'  => $sectionList,
+                'results'      => $results,
+                'winners'      => $winners,
+                'show'         => $show,
+                'isLocked'     => config('app.state') == 'locked',
             ]
         );
     }
@@ -125,38 +128,50 @@ class CategoryController extends Controller
         //
     }
 
+    /**
+     * @param array $extraData
+     * @return View
+     */
     public function create(array $extraData = []): View
     {
         $sections = Section::pluck('name', 'id');
         return view('categories.create', ['sections' => $sections]);
     }
 
+    /**
+     * @param Request $request
+     * @return View
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function resultsentry(Request $request): View
     {
+        $show = $this->getShowFromRequest($request);
         $this->authorize('enterResults', Entry::class);
         $entries    = [];
         $winners    = [];
         $section    = Section::findOrFail($request->section);
         $categories = $section->categories()
-            ->where('year', config('app.year'))
+            ->where('show_id', $show->id)
             ->orderby('sortorder')
             ->get();
+
         foreach ($categories as $category) {
-            $thisEntries            = $category->entries()
-                ->where('year', config('app.year'))
-                ->orderBy('entrant_id')->get();
+            $thisEntries = $category
+                    ->entries()
+                    ->orderBy('entrant_id')
+                    ->get();
+
             $entries[$category->id] = [];
             $winners[$category->id] = [];
 
             foreach ($thisEntries as $entry) {
-                $entrant = Entrant::find($entry->entrant_id);
-                if ('' != trim($entry->winningplace)) {
-                    $winners[$category->id][$entry->entrant_id] = $entry->winningplace;
+                if (!empty($entry->winningplace)) {
+                    $winners[$category->id][$entry->entrant->id] = $entry->winningplace;
                 }
                 $entries[$category->id][$entry->id] = [
-                    'entrant_id'     => $entry->entrant_id,
-                    'entrant_name'   => $entrant->getName(),
-                    'entrant_number' => $entrant->getEntrantNumber(),
+                    'entrant_id'     => $entry->entrant->id,
+                    'entrant_name'   => $entry->entrant->getName(),
+                    'entrant_number' => $entry->entrant->getEntrantNumber(),
                 ];
             }
         }
@@ -170,10 +185,10 @@ class CategoryController extends Controller
 
     /**
      * This prints all the category cards for the show entries to put on the tabless
-     * @param $id
      * @return \Illuminate\Contracts\View\Factory|View
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    function printcards()
+    public function printcards()
     {
         $this->authorize('printCards', Entry::class);
         $categories = Category::where('year', config('app.year'))->get();

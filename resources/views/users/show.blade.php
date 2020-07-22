@@ -156,7 +156,7 @@
                                     </h4>
 
                                     @php
-                                        $entry_data = $entrant->entries()->where('year', config('app.year'))->get();
+                                        $entry_data = $entrant->entries()->where('show_id', $showId)->get();
                                         $totalFee = 0;
                                     @endphp
                                     @if (count($entry_data ) <= 0)
@@ -220,12 +220,12 @@
                     <div class="card">
                         <div class="card-header-success">Membership Purchases</div>
                         <div class="card-body">
-                            @if (count($membership_purchases) <= 0)
+                            @if (count($thing->membership_purchases) <= 0)
                                 {{$thing->firstname}} has not made any membership purchases yet
                             @else
-                                @foreach ($membership_purchases as $purchase)
+                                @foreach ($thing->membership_purchases as $purchase)
                                     <p>
-                                        {{ucfirst($purchase['type'])}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
+                                        {{ucfirst($purchase->membership->label)}} &pound;{{number_format($purchase['amount']/100,2)}}</p>
                                 @endforeach
                             @endif
 

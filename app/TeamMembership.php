@@ -7,13 +7,22 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class TeamMembership extends Model
 {
-    public function user():BelongsTo
+    protected $fillable = [
+        'entrant_id',
+        'team_id',
+        'show_id'
+    ];
+    public function entrant():BelongsTo
     {
-        return $this-> belongsTo(User::class);
+        return $this-> belongsTo(Entrant::class);
     }
     public function team():BelongsTo
     {
         return $this-> belongsTo(Team::class);
+    }
+    public function show():BelongsTo
+    {
+        return $this->belongsTo(Show::class);
     }
     //
 }

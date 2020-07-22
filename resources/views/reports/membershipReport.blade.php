@@ -5,25 +5,23 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                @for ($x=2017; $x<=date('Y'); $x++)
+                @foreach ($memberships as $membershipNavigator)
                     <div class="col-1">
-                        <a href="{{route('reports.members')}}?year={{$x}}">{{$x}}</a>
+                        <a href="{{route('reports.members')}}?membership_id={{$membershipNavigator->id}}">{{$membershipNavigator->label}}</a>
                     </div>
-                    @endfor
+                @endforeach
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
-                                {{__('Memberships Purchased')}} in {{$year}}
+                                {{$membership->label}}
 
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table">
-                                        <h2>Single Membership Purchases in {{$year}}
-                                        </h2>
                                         <thead class=" text-primary">
                                         <tr>
                                             <th>Date</th>
@@ -33,21 +31,26 @@
                                             <th>Address</th>
                                             <th>Phone</th>
                                             <th>Email</th>
-                                            <th>email opt in</th>
+                                            <th>Email opt in</th>
                                         </tr>
                                         </thead>
                                         <Tbody>
-                                        @foreach ($singlepurchases as $purchase)
-                                            <td>{{$purchase['created']}}</td>
+                                        @foreach ($purchases as $purchase)
+                                            <td>{{$purchase->created_at->format('d M Y')}}</td>
                                             <td>
-                                                <a href="/entrants/{{$purchase['entrant_id']}}">{{$purchase['entrant_name']}}</a>
+                                                @if($membership->isEntrant() )
+                                                    <a href="{{$purchase->entrant->getUrl()}}">{{$purchase->entrant->getName()}}</a>
+                                                @else
+                                                    <a href="{{route('users.show', ['user'=>$purchase->user])}}">{{$purchase->user->getname()}}</a>
+                                                @endif
                                             </td>
-                                            <td>{{$purchase['number']}}</td>
-                                            <td>£{{$purchase['amount']}}</td>
-                                            <td>{{$purchase['user_address']}}</td>
-                                            <td>{{$purchase['user_telephone']}}</td>
-                                            <td>{{$purchase['user_email']}}</td>
-                                            <td>{{$purchase['user_can_email']}}</td>
+
+                                            <td>{{$purchase->number}}</td>
+                                            <td>£{{$purchase->amount / 100}}</td>
+                                            <td>{{$purchase->user->getAddress()}}</td>
+                                            <td>{{$purchase->user->telephone}}</td>
+                                            <td>{{$purchase->user->email}}</td>
+                                            <td>{{$purchase->user->can_email}}</td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -58,10 +61,10 @@
                                             <th>&nbsp;</th>
                                         </tr>
                                         <tr>
-                                            <th>Single Membership Purchases
+                                            <th>Purchases
                                             </th>
-                                            <td>{{$totals['count_single']}}
-                                                (&pound;{{number_format($totals['amount_single']/100, 2)}})
+                                            <td>{{$totals['count']}}
+                                                (&pound;{{number_format($totals['amount']/100, 2)}})
                                             </td>
                                         </tr>
                                         <tr>
@@ -73,77 +76,13 @@
                                     </table>
 
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <h2>Family Membership Purchases in {{$year}}
-                                        </h2>
-                                        <thead class=" text-primary">
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Name</th>
-                                            <th>Number</th>
-                                            <th>Paid</th>
-                                            <th>Address</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                            <th>email opt in</th>
-                                        </tr>
-                                        </thead>
-                                        <Tbody>
-                                        @foreach ($familypurchases as $purchase)
-                                            <td>{{$purchase['created']}}</td>
-                                            <td>
-                                                <a href="/entrants/{{$purchase['user_id']}}">{{$purchase['user_name']}}</a>
-                                            </td>
-                                            <td>{{$purchase['number']}}</td>
-                                            <td>£{{$purchase['amount']}}</td>
-                                            <td>{{$purchase['user_address']}}</td>
-                                            <td>{{$purchase['user_telephone']}}</td>
-                                            <td>{{$purchase['user_email']}}</td>
-                                            <td>{{$purchase['user_can_email']}}</td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-                                    <Table>
-                                        <tr>
-                                            <th>Totals</th>
-                                            <th>&nbsp;</th>
-                                        </tr>
-                                        <tr>
-                                            <th>Family Purchases</th>
-                                            <td>{{$totals['count_family']}}
-                                                (&pound;{{number_format($totals['amount_family']/100, 2)}})
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <hr/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>ALL Membership Purchases
-                                            </th>
-                                            <td>{{$totals['count']}} (&pound;{{number_format($totals['amount']/100, 2)}}
-                                                )
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <hr/>
-                                            </td>
-                                        </tr>
-                                        </tfoot>
-                                    </table>
 
-                                </div>
+                                @endif
                             </div>
-                        @endif
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 @stop

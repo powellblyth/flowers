@@ -11,17 +11,16 @@ use Illuminate\View\View;
 class SectionController extends Controller
 {
     protected $templateDir = 'sections';
-    protected $baseClass   = 'App\Section';
 
     public function index(array $extraData = []): View
     {
-        $things = Section::orderBy('number', 'asc')
+        $sections = Section::orderBy('number', 'asc')
             ->get();
 
         return view(
             $this->templateDir . '.index',
             [
-                'things'  => $things,
+                'things'  => $sections,
                 'isAdmin' => Auth::check() && Auth::User()->isAdmin()
             ]
         );
@@ -33,10 +32,10 @@ class SectionController extends Controller
         $results      = [];
         $lastSection  = 'notasection';
         $categoryList = [];
-        $things       = Section::orderBy('number', 'asc')
+        $sections       = Section::orderBy('number', 'asc')
             ->get();
 
-        foreach ($things as $section) {
+        foreach ($sections as $section) {
             $categoryList[$section->id] = $section->categories()
                 ->where('year', config('app.year'))
                 ->orderBy('sortorder', 'asc')
@@ -53,7 +52,7 @@ class SectionController extends Controller
         return view(
             $this->templateDir . '.forwebsite',
             [
-                'things'       => $things,
+                'things'       => $sections,
                 'categoryList' => $categoryList,
             ]
         );

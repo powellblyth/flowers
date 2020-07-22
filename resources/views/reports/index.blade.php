@@ -12,9 +12,13 @@
                                 {{__('Reports')}}
                             </div>
                             <div class="card-body">
-                                <a href="{{route('reports.members')}}">&raquo; Memberships Purchased report</a><br/>
+                                @can('viewAny',\App\MembershipPurchase::class)
+                                    <a href="{{route('reports.members')}}">&raquo; Memberships Purchased report</a><br/>
+                            @endcan
+                                    @can('viewAny',\App\Entry::class)
                                 <a href="{{route('reports.entries')}}">&raquo; Entries report</a><br/>
                                 <a href="{{route('reports.categories')}}">&raquo; Unplaced categories report</a>
+                                    @endcan
 
                             </div>
                         @endif

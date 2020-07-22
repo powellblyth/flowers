@@ -30,7 +30,7 @@ class WinnerDataForEntries extends Migration
      */
     public function down()
     {
-        Schema::table('entrants', function (Blueprint $table) {
+        Schema::table('entries', function (Blueprint $table) {
          $table->dropColumn(['winningplace']);
         });
         Schema::table('categories', function (Blueprint $table) {

@@ -21,7 +21,7 @@ class EntryController extends Controller
                 }
             }
         }
-        return redirect()->route('entrants.show', (int) $request->input('entrant'));
+        return redirect()->route('entrants.show', ['entrant'=> $request->input('entrant')]);
     }
 
     public function printallcards()

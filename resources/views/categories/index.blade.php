@@ -8,7 +8,7 @@
     @endphp
         <div class="container-fluid">
             @can('printCards', \App\Entry::class)
-                @if($is_current_year)
+                @if($show->isCurrent())
                     <div class="row">
                         <div class="col-md-12 text-right">
                             <a href="{{ route('category.tabletopprint') }}" target="_blank"
@@ -26,7 +26,7 @@
                     <div class="card">
                         <div class="card-header card-header-success">All categories</div>
                         <div class="card-body">
-                            <p>You can see the categories for this show, along with all winners from the {{$year}} show,
+                            <p>You can see the categories for this show, along with all winners from the {{$show->name}} show,
                                 if available, here.</p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="card-body">
-                                @if (!$publishMode && $is_current_year && !$isLocked)
+                                @if (!$publishMode && $show->isCurrent() && !$isLocked)
                                     @can('enterResults', \App\Entry::class)
                                     <p><a class="button btn btn-success"
                                           href="/categories/resultsentry?section={{urlencode($section)}}">Enter Results</a></p>

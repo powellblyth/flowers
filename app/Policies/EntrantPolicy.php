@@ -104,10 +104,7 @@ class EntrantPolicy
      * Allows a user to see other people's detailed info
      */
     public function seeDetailedInfo(User $user, Entrant $entrant){
-       return $entrant->user instanceof User && (
-        $user->id
-        ===
-        $entrant->user->id);
+       return  $user->isAdmin() || $entrant->user instanceof User && ($user->id === $entrant->user->id);
     }
 
 }

@@ -19,6 +19,7 @@ class Kernel extends ConsoleKernel
         Commands\UpdateAgesCommand::class,
         Commands\resetPasswordResetsCommand::class,
         Commands\AnonymiseEntrantsCommand::class,
+        Commands\ConvertYearToShow::class,
         Commands\SendMailchimpSubscribesCommand::class,
         Commands\ScruffyCommand::class,
         Commands\SendEmailToUnpasswordedPeopleCommand::class,
