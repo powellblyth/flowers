@@ -145,12 +145,12 @@
                                         @if ($entrant->age)
                                             (Age {{$entrant->age}} years)
                                         @endif
-                                        <a href="{{route('entrants.show', $entrant->id)}}"
+                                        <a href="{{route('entrants.show', $entrant)}}"
                                            class=" btn-primary btn btn-sm"><i
                                                 class="material-icons">toc</i> Manage Entries</a>
                                         @if (!$isLocked )
 
-                                            <a href="{{route('entrants.edit', $entrant->id)}}" class="btn btn-sm"><i
+                                            <a href="{{route('entrants.edit', $entrant)}}" class="btn btn-sm"><i
                                                     class="material-icons">edit</i> edit</a>
                                         @endif
                                     </h4>

@@ -51,6 +51,10 @@ class Category extends Model
         return '/categories/' . $this->id;
     }
 
+    public function __toString():string
+    {
+        return $this->getNumberedLabel();
+    }
     public function getWinningAmount($placement)
     {
         $result = 0;

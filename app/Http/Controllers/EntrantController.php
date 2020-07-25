@@ -253,27 +253,22 @@ class EntrantController extends Controller
      * @return Response
      * @throws AuthorizationException
      */
-    public function show(Entrant $entrant, array $showData = [])
+    public function show(Request $request, Entrant $entrant, array $showData = [])
     {
         $totalPrizes   = 0;
         $membershipFee = 0;
         $entryFee      = 0;
 
+        $show = $this->getShowFromRequest($request);
         $currentYear = config('app.year');
 
         $this->authorize('seeDetailedInfo', $entrant);
 
-        $categoriesAry = [0 => 'Select...'];
-        $categories    = Category::orderBy('sortorder')
-            ->where('year', $currentYear)
+        $categories    = $show->categories()->orderBy('sortorder')
             ->where('status', 'active')
             ->get();
 
-        foreach ($categories as $category) {
-            $categoriesAry[$category->id] = $category->getNumberedLabel();
-        }
-
-        $membershipPurchases   = $entrant->membershipPurchases()->where('year', $currentYear)->get();
+        $membershipPurchases   = $entrant->membershipPurchases()->get();
         $membershipPaymentData = [];
         foreach ($membershipPurchases as $membershipPurchase) {
             $amount                  = (($membershipPurchase->type == 'single' ? 300 : 500));
@@ -281,8 +276,7 @@ class EntrantController extends Controller
             $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
         }
 
-        $entries   = $entrant->entries()->where('year', $currentYear)->get();
-        $entryData = [];
+        $entries   = $entrant->entries()->where('show_id', $show->id)->with('category')->get();
 
         foreach ($entries as $entry) {
             if ($entry->category instanceof Category) {
@@ -293,19 +287,9 @@ class EntrantController extends Controller
 
                 $entryFee += $price;
 
-                if ('' !== trim($entry->winningplace)) {
+                if ($entry->hasWon()) {
                     $totalPrizes += $category->getWinningAmount($entry->winningplace);
                 }
-                $entryData[$entry->id] = [
-                    'name'           => $category->getNumberedLabel(),
-                    'has_won'        => $entry->hasWon(),
-                    'winning_place'  => $entry->winningplace,
-                    'winning_amount' => $category->getWinningAmount($entry->winningplace),
-                    'category_id'    => $entry->category,
-                    'placement_name' => $entry->getPlacementName(),
-                    'price'          => $price,
-                    'is_late'        => ($entry->getPriceType() == Category::PRICE_LATE_PRICE),
-                ];
             }
 
         }
@@ -315,9 +299,8 @@ class EntrantController extends Controller
         $tooLateForEntries = time() > strToTime($currentYear . "-07-09 00:00:00");
 
         return response()->view('entrants.show', array_merge($showData, array(
-                'entry_data'           => $entryData,
                 'entries'              => $entries,
-                'categories'           => $categoriesAry,
+                'categories'           => $categories,
                 'membership_purchases' => $membershipPaymentData,
                 'entry_fee'            => $entryFee,
                 'total_price'          => $entryFee + $membershipFee,
@@ -330,8 +313,6 @@ class EntrantController extends Controller
                 'too_late_for_entries' => $tooLateForEntries,
             ))
         );
-
-//        return parent::show($id, );
     }
 
     function printcards($id)

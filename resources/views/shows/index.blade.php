@@ -24,21 +24,26 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">Name</div>
+                            @can('vieAll',\App\Entry::class)
                             <div class="col-md-3">Entries</div>
+                            @endcan
                             <div class="col-md-3">Categories</div>
                         </div>
                         @foreach ($shows as $show)
 
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <b><big>{{ $show->name }}</big> : {{$show->start_date->format('Y-m-d H:i')}}</b>
+                                        <b><big>{{ $show->name }}</big> : {{$show->start_date->format('d M Y H:i')}}</b>
                                     </div>
+                                    @can('vieAll',\App\Entry::class)
                                     <div class="col-md-3 ">
                                         {{$show->entries()->count()}}
                                     </div>
+                                    @endcan
                                     <div class="col-md-3 ">
                                         {{$show->categories()->count()}}
                                     </div>
+
 
                                     @can('create', \App\Show::class)
                                         <div class="col-md-2">

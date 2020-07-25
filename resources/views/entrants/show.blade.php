@@ -81,19 +81,19 @@
                     <div class="card">
                         <div class="card-header-success">Entries</div>
                         <div class="card-body">
-                            @if (count($entry_data ) <= 0)
+                            @if (count($entries ) <= 0)
                                 {{$thing->firstname}} has not entered any categories yet
                             @else
-                                @foreach ($entry_data as $entry)
+                                @foreach ($entries as $entry)
 
-                                    {{$entry['name']}} ({{$entry['price']}}p)
+                                   {{$entry->category->getNumberedLabel()}} ({{$entry->paid}}p)
                                     @if ($entry['is_late'])
                                         (late)
 
                                     @endif
-                                    @if ($entry['has_won'])
-                                        <b class="badge-success"><u>{{$entry['placement_name']}}</u></b>
-                                        (&pound;{{number_format($entry['winning_amount']/100,2)}})
+                                    @if ($entry->hasWon())
+                                        <b class="badge-success"><u>{{$entry->getPlacementName()}}</u></b>
+                                        (&pound;{{number_format($entry->category->getWinningAmount($entry->winningplace) / 100,2)}})
                                     @endif
                                     <br/>
                                 @endforeach
@@ -144,7 +144,8 @@
 
                                         @for ($i = 0; $i < 40; $i++)
                                             <div
-                                                class="col-sm-3 col-md-2 col-lg-1">{{ Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px']) }}</div>
+                                                class="col-sm-3 col-md-2 col-lg-1">{{
+    Form::select('categories[]', $categories, null, ['class' => 'form-control','style'=>'width:100px', 'placeholder'=>'Please Select...']) }}</div>
                                         @endfor
                                     </div>
                                     <div class="row">

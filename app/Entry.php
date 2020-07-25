@@ -2,9 +2,9 @@
 
 namespace App;
 
+use App\Category;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use App\Category;
 use \Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
@@ -24,6 +24,16 @@ class Entry extends Model
     public function show(): BelongsTo
     {
         return $this->belongsTo(Entry::class);
+    }
+
+    public function entrant(): BelongsTo
+    {
+        return $this->belongsTo(Entrant::class);
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function getPlacementName()
@@ -88,13 +98,4 @@ class Entry extends Model
         return $this->category->getPrice($this->getPriceType());
     }
 
-    public function entrant(): BelongsTo
-    {
-        return $this->belongsTo(Entrant::class);
-    }
-
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(Category::class);
-    }
 }

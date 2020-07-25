@@ -64,8 +64,10 @@ class UserController extends Controller
     /**
      * Display a listing of the users
      *
-     * @param User $model
+     * @param User|null $user
+     * @param Show|null $show
      * @return \Illuminate\View\View
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function show(User $user = null, Show $show = null): View
     {
