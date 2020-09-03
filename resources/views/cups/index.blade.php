@@ -9,14 +9,21 @@
         $shortName = false;
     @endphp
         <div class="container-fluid">
-            @if($isAdmin )
+            <div class="row">
+                @foreach ($shows as $showNav)
+                    <div class="col-1">
+                        <a href="{{route('cups.index')}}?show_id={{$showNav->id}}">{{$showNav->name}}</a>
+                    </div>
+                @endforeach
+            </div>
+            @can('viewAll', App\Entries::class)
                 <div class="row">
                     <div class="col-md-12 text-right">
                         <a href="{{ route('cup.printableresults') }}" target="_blank"
                            class="btn btn-sm btn-primary">{{ __('Get Results For Website') }}</a>
                     </div>
                 </div>
-            @endif
+            @endcan
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">

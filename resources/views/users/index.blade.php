@@ -58,7 +58,7 @@
                                             <td>{{ $user->email }}</td>
 
                                             <td class="td-actions">
-                                                {{ $user->entrants()->count() }}
+                                                {{ $user->entrants_count }}
                                                 <a rel="tooltip" class="btn btn-success btn-link"
                                                    href="{{ route('users.show', $user) }}" data-original-title=""
                                                    title="show family members">

@@ -48,7 +48,7 @@ class CupController extends Controller
             $winningCategory = null;
 
             // Gather up more winners if needed
-            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('show_id', $show->id)->first();
+            $cupWinner = CupDirectWinner::with('entrant')->where('cup_id', $cup->id)->where('show_id', $show->id)->first();
             if ($cupWinner instanceof CupDirectWinner) {
                 if (!array_key_exists($cupWinner->entrant_id, $winners)) {
                     $winners[$cupWinner->entrant_id] = ['entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0];
@@ -64,7 +64,8 @@ class CupController extends Controller
                                                     'results' => $results,
                                                     'winners' => $winners,
                                                     'show'    => $show,
-                                                    'isAdmin' => Auth::check() && Auth::User()->isAdmin()
+                                                    'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
+                                                    'shows'   => Show::orderBy('start_date')->get(),
         ]);
     }
 

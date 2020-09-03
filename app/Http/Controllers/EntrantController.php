@@ -43,8 +43,10 @@ class EntrantController extends Controller
 
     public function index(Request $request): View
     {
-        $entrants = Entrant::where('is_anonymised', false)
+        $entrants = Entrant::with('user')
+            ->where('is_anonymised', false)
             ->orderBy('familyname', 'asc')
+            ->orderBy('user_id', 'asc')
             ->orderBy('firstname', 'asc')
             ->get();
         // OVerride parent method - this prevents the same query running twice
@@ -52,7 +54,7 @@ class EntrantController extends Controller
         return view(
             'entrants.index',
             [
-                'things'   => $entrants,
+                'entrants' => $entrants,
                 'all'      => false,
                 'isLocked' => config('app.state') == 'locked',
             ]
@@ -93,17 +95,21 @@ class EntrantController extends Controller
                 ->get();
         } else {
             $entrants = Entrant::where('is_anonymised', false)
+                ->with('user')
                 ->orderBy('familyname', 'asc')
                 ->orderBy('firstname', 'asc')
                 ->get();
         }
-        return view($this->templateDir . '.index',
-            ['things'     => $entrants,
-             'searchterm' => $searchterm,
-             'all'        => true,
-             'isAdmin'    => $this->isAdmin(),
-             'isLocked'   => config('app.state') == 'locked',
-            ]);
+        return view(
+            $this->templateDir . '.index',
+            [
+                'entrants'   => $entrants,
+                'searchterm' => $searchterm,
+                'all'        => true,
+                'isAdmin'    => $this->isAdmin(),
+                'isLocked'   => config('app.state') == 'locked',
+            ]
+        );
     }
 
     public function create(Request $request, ?int $family = null): View
@@ -259,12 +265,12 @@ class EntrantController extends Controller
         $membershipFee = 0;
         $entryFee      = 0;
 
-        $show = $this->getShowFromRequest($request);
+        $show        = $this->getShowFromRequest($request);
         $currentYear = config('app.year');
 
         $this->authorize('seeDetailedInfo', $entrant);
 
-        $categories    = $show->categories()->orderBy('sortorder')
+        $categories = $show->categories()->orderBy('sortorder')
             ->where('status', 'active')
             ->get();
 
@@ -276,7 +282,7 @@ class EntrantController extends Controller
             $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
         }
 
-        $entries   = $entrant->entries()->where('show_id', $show->id)->with('category')->get();
+        $entries = $entrant->entries()->where('show_id', $show->id)->with('category')->get();
 
         foreach ($entries as $entry) {
             if ($entry->category instanceof Category) {

@@ -7,6 +7,13 @@
         $publishMode = false;
     @endphp
         <div class="container-fluid">
+            <div class="row">
+                @foreach ($shows as $showNav)
+                    <div class="col-1">
+                        <a href="{{route('reports.entries')}}?show_id={{$showNav->id}}">{{$showNav->name}}</a>
+                    </div>
+                @endforeach
+            </div>
             @can('printCards', \App\Entry::class)
                 @if($show->isCurrent())
                     <div class="row">

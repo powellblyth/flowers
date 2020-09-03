@@ -50,7 +50,7 @@
                             </div>
                             {{ Form::close() }}
                             <div class="row">
-                                @if(count($things )> 0)
+                                @if(count($entrants )> 0)
                                     <div class="table-responsive col-lg-8 col-md-12 col-sm-12">
                                         <table class="table ">
                                             <thead>
@@ -59,51 +59,52 @@
                                             <th>Family Manager</th>
                                             <th class="text-right">Actions</th>
                                             </thead>
-                                            @foreach ($things as $thing)
+                                            @foreach ($entrants as $entrant)
                                                 <tr>
-                                                    <td>{{ $thing->getName() }}
-                                                    @if ($thing->age)
-                                                        ({{$thing->age}} yrs)
+                                                    <td>{{ $entrant->getName() }}
+                                                    @if ($entrant->age)
+                                                        ({{$entrant->age}} yrs)
                                                         @endif
                                                     </td>
                                                     <td class="td-actions">
                                                         @if(!$isLocked)
                                                             <a rel="tooltip" class="btn btn-success btn-link"
-                                                               href="{{ route('entrants.edit', $thing) }}"
+                                                               href="{{ route('entrants.edit', $entrant) }}"
                                                                data-original-title=""
-                                                               title="edit {{$thing->firstname}}">
+                                                               title="edit {{$entrant->firstname}}">
                                                                 <i class="material-icons">edit</i>
                                                                 <div class="ripple-container"></div>
                                                             </a>
                                                         @endif
 
                                                         <a rel="tooltip" class="btn btn-success btn-link"
-                                                           href="{{ $thing->getUrl() }}"
+                                                           href="{{ $entrant->getUrl() }}"
                                                            data-original-title=""
-                                                           title="manage {{$thing->firstname}}'s entries">
+                                                           title="manage {{$entrant->firstname}}'s entries">
                                                             <i class="material-icons">build</i>
                                                             <div class="ripple-container"></div>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        @if (!is_null($thing->user ))
+                                                        @if (!is_null($entrant->user ))
                                                             <a rel="tooltip" class="default "
-                                                               href="{{route('user.edit', $thing->user)}}"
+                                                               href="{{route('user.edit', $entrant->user)}}"
                                                                data-original-title=""
-                                                               title="Edit {{$thing->user->getName()}} (Family Manager)">
-                                                                {{$thing->user->getName()}}
+                                                               title="Edit {{$entrant->user->getName()}} (Family Manager)">
+                                                                {{$entrant->user->getName()}}
                                                             </a>
                                                         @endif
                                                     </td>
                                                     <td class="text-right td-actions">
                                                         {{--                                                                <a href="{{ route('user.edit', $owner) }}" class="btn btn-sm btn-primary">Edit {{$owner->firstname}}</a>--}}
+
                                                         {{--                                                                <a href="{{ route('entrants.index') }}?user_id={{$owner->id}}" class="btn btn-sm btn-primary">{{ __('See all Family Members') }}</a>--}}
-                                                        @if (!is_null($thing->user ))
+                                                        @if (!is_null($entrant->user ))
 
                                                             <a rel="tooltip" class="btn btn-success btn-link"
-                                                               href="{{route('users.show', $thing->user)}}"
+                                                               href="{{route('users.show', $entrant->user)}}"
                                                                data-original-title=""
-                                                               title="Show {{$thing->user->getName()}}'s Family">
+                                                               title="Show {{$entrant->user->getName()}}'s Family">
                                                                 <i class="material-icons">people</i>
                                                                 <div class="ripple-container"></div>
 

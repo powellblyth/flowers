@@ -38,6 +38,8 @@ class UserController extends Controller
     {
         return view('users.index', [
             'users'    => $model::where('is_anonymised', false)
+                ->with('entrants')
+                ->withCount('entrants')
                 ->orderBy('lastname')
                 ->orderBy('firstname')
                 ->get(),
@@ -87,7 +89,7 @@ class UserController extends Controller
         $totalPaid     = 0;
 
         foreach ($user->entrants as $entrant) {
-            $entries = $entrant->entries()->where('show_id', $show->id)->get();
+            $entries = $entrant->entries()->with(['show','category'])->where('show_id', $show->id)->get();
             foreach ($entries as $entry) {
                 $price    = $entry->category->getPrice($entry->getPriceType());
                 $entryFee += $price;

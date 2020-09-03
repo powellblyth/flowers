@@ -32,7 +32,7 @@ class TeamsController extends Controller
                 ->where('status', Team::STATUS_ACTIVE)
                 ->orderBy('name')->get();
         }
-        return response()->view('teams.index', ['teams' => $teams, 'show_id'=>$show->id]);
+        return response()->view('teams.index', ['teams' => $teams, 'show_id' => $show->id]);
     }
 
     /**

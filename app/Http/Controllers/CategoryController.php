@@ -31,7 +31,7 @@ class CategoryController extends Controller
         $categoryList = [];
         $sectionList  = [];
 
-        $sections = Section::orderBy('number', 'asc')->get();
+        $sections = Section::orderBy('number', 'asc')->with('categories')->get();
 
         foreach ($sections as $section) {
             $sectionList[$section->id]  = $section->id . ' ' . $section->name;
@@ -81,6 +81,7 @@ class CategoryController extends Controller
                 'winners'      => $winners,
                 'show'         => $show,
                 'isLocked'     => config('app.state') == 'locked',
+                'shows'   => Show::orderBy('start_date')->get(),
             ]
         );
     }

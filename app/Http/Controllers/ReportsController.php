@@ -29,7 +29,7 @@ class ReportsController extends Controller
     public function membershipReport(Request $request): View
     {
         $membership      = $this->getMembershipFromRequest($request);
-        $membershipsSold = $membership->membershipsSold();
+        $membershipsSold = $membership->membershipsSold()->with('entrant')->with('user');
 //dd( $membership->membershipsSold()->count());
 //        foreach ($membershipsSold as $membershipPurchase) {
 //            $user                                     = $membershipPurchase->user;// Entrant::find($membership->entrant_id);
