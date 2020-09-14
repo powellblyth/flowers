@@ -1,11 +1,14 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Category;
 use App\Membership;
 use App\MembershipPurchase;
 use App\Show;
 use App\Team;
 use App\User;
+use Faker\Factory;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -36,6 +39,7 @@ class UsersTableSeeder extends Seeder
             'auth_token'           => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => ''
         ]);
+        // Makes an entrant for the user
         User::find(1)->makeDefaultEntrant();
         DB::table('users')->insert([
             'id'                   => 2,
@@ -67,10 +71,10 @@ class UsersTableSeeder extends Seeder
         ]);
         User::find(3)->makeDefaultEntrant();
 
-        $faker = Faker\Factory::create('en_GB');
-        for ($userNumber = 0; $userNumber < 100; $userNumber++) {
+        $faker = Factory::create('en_GB');
 
-            $user = App\User::create([
+        for ($userNumber = 0; $userNumber < 100; $userNumber++) {
+            $user = User::create([
                 'firstname'            => $faker->firstName,
                 'lastname'             => $faker->lastName,
                 'email'                => $faker->email,
@@ -114,8 +118,8 @@ class UsersTableSeeder extends Seeder
             }
             foreach ($memberships->get() as $membership) {
                 if ($faker->boolean(90)) {
-                    dump($membership->id .' - ' . $membership->applies_to . ' ['.$membershipType.']');
-                    $membershipPurchase         = new MembershipPurchase();
+                    dump($membership->id . ' - ' . $membership->applies_to . ' [' . $membershipType . ']');
+                    $membershipPurchase = new MembershipPurchase();
                     $membershipPurchase->membership()->associate($membership);
                     $membershipPurchase->type   = $membershipType;
                     $membershipPurchase->amount = $membership->price_gbp;
@@ -123,12 +127,11 @@ class UsersTableSeeder extends Seeder
                     if ($numChildren === 0) {
                         dump('associating ' . $user->entrants()->first()->id);
                         $membershipPurchase->entrant()->associate($user->entrants()->first());
-                    }
-                    else{
+                    } else {
                         dump('THat was family');
                     }
                     $membershipPurchase->save();
-                    dump(' that was purchase ID '.$membershipPurchase->id);
+                    dump(' that was purchase ID ' . $membershipPurchase->id);
                 }
             }
 
@@ -137,7 +140,7 @@ class UsersTableSeeder extends Seeder
 
             // Cache the information about sticky teams
             // Reset the array for memory reasons each new user
-            $stickyTeams    = [];
+            $stickyTeams = [];
             // Create some historical data
             foreach (Show::get() as $show) {
                 /**

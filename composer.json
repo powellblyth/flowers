@@ -8,10 +8,9 @@
         "php": ">=7.4.0",
         "aws/aws-sdk-php": "^3.87",
         "doctrine/dbal": "~2.3",
-        "laravel-frontend-presets/material-dashboard": "^1.0",
-        "laravel/framework": "^7.0",
+        "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0",
+        "laravel/ui": "^3.0",
         "laravelcollective/html": "^6.0",
         "nztim/mailchimp": "^3.10",
         "orangehill/iseed": "^2.6"
@@ -21,15 +20,14 @@
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "^1.9",
         "mockery/mockery": "~1.0",
-        "phpunit/phpunit": "~9.0",
+        "phpunit/phpunit": "^9.0",
         "squizlabs/php_codesniffer": "^3.5"
     },
     "autoload": {
-        "classmap": [
-            "database"
-        ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {

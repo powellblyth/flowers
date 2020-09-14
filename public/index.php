@@ -21,6 +21,9 @@
 
 require __DIR__.'/../bootstrap/autoload.php';
 
+if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
+    require __DIR__.'/../storage/framework/maintenance.php';
+}
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights

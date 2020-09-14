@@ -10,12 +10,12 @@ class EntrantTest extends TestCase {
 
     public function providergetName() {
         return [
-            ['first second', 'first', 'second', null],
-            ['first second', 'first', 'second', false],
+            ['First Second', 'first', 'second', null],
+            ['First Second', 'first', 'second', false],
             ['f second', 'first', 'second', true],
-            ['first', 'first', '', null],
-            ['second', '', 'second', null],
-            ['first second', 'first', 'second ', null],
+            ['First', 'first', '', null],
+            ['Second', '', 'second', null],
+            ['First Second', 'first', 'second ', null],
             ['', '', '']
         ];
     }

@@ -1,5 +1,5 @@
 <?php
-
+namespace Database\Factories;
 /*
 |--------------------------------------------------------------------------
 | Model Factories

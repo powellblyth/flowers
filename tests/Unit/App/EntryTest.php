@@ -1,4 +1,5 @@
 <?php
+
 namespace Tests\Unit;
 
 use Tests\TestCase;
@@ -6,7 +7,8 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use \App\Entry;
 
-class EntryTest extends TestCase {
+class EntryTest extends TestCase
+{
 
 //    public function providerGetAddress() {
 //        return [
@@ -33,7 +35,8 @@ class EntryTest extends TestCase {
 //        $this->assertSame($expected, $this->sut->getAddress());
 //    }
 
-    public function providergetPriceType() {
+    public function providergetPriceType()
+    {
         return [
             [true, \App\Category::PRICE_LATE_PRICE],
             [false, \App\Category::PRICE_EARLY_PRICE],
@@ -43,18 +46,22 @@ class EntryTest extends TestCase {
     /**
      * A basic test example.
      * @dataProvider providergetPriceType
+     * @param $isLate
+     * @param $expected
      * @return void
      */
-    public function testgetPriceType($isLate, $expected) {
+    public function testgetPriceType($isLate, $expected)
+    {
         $this->sut = $this->getMockBuilder(Entry::class)->setMethods(['isLate'])->getMock();
         $this->sut->expects($this->once())->method('isLate')->will($this->returnValue($isLate));
-        
+
         $this->assertSame($expected, $this->sut->getPriceType());
     }
 
-    public function providergetPlacementName() {
+    public function providergetPlacementName()
+    {
         return [
-            [1, '1'],
+            [1, 'First Place'],
             ['Fish', 'Fish'],
             ['1', 'First Place'],
             ['2', 'Second Place'],
@@ -67,21 +74,26 @@ class EntryTest extends TestCase {
     /**
      * A basic test example.
      * @dataProvider providergetPlacementName
+     * @param $placement
+     * @param $expected
      * @return void
      */
-    public function testgetgetPlacementName($placement, $expected) {
-        $this->sut = new Entry();
+    public function testgetgetPlacementName($placement, $expected)
+    {
+        $this->sut               = new Entry();
         $this->sut->winningplace = $placement;
-        
+
         $this->assertSame($expected, $this->sut->getPlacementName());
     }
-    public function providerhasWon() {
+
+    public function providerhasWon()
+    {
         return [
             [1, true],
-            ['fish',  true],
-            ['',  false],
-            ['    ',  false],
-            ['commended',  true],
+            ['fish', true],
+            ['', false],
+            ['    ', false],
+            ['commended', true],
             ['-1', true],
         ];
     }
@@ -91,8 +103,9 @@ class EntryTest extends TestCase {
      * @dataProvider providerhasWon
      * @return void
      */
-    public function testhasWon($id, $expected) {
-        $this->sut = new Entry();
+    public function testhasWon($id, $expected)
+    {
+        $this->sut               = new Entry();
         $this->sut->winningplace = $id;
 
         $this->assertSame($expected, $this->sut->hasWon());

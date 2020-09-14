@@ -39,14 +39,19 @@ class Entry extends Model
     public function getPlacementName()
     {
         $result = 0;
-        if ('1' === $this->winningplace) {
-            $result = 'First Place';
-        } elseif ('2' === $this->winningplace) {
-            $result = 'Second Place';
-        } elseif ('3' === $this->winningplace) {
-            $result = 'Third Place';
-        } else {
-            $result = ucwords($this->winningplace);
+        switch ($this->winningplace) {
+            case '1':
+                $result = 'First Place';
+                break;
+            case '2':
+                $result = 'Second Place';
+                break;
+            case '3':
+                $result = 'Third Place';
+                break;
+            default:
+                $result = ucwords($this->winningplace);
+                break;
         }
         return $result;
     }
