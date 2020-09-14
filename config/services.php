@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
+        'model' => \App\Models\User::class,
         'key' => env('STRIPE_API_KEY_PUBLISHABLE'),
         'secret' => env('STRIPE_API_KEY_SECRET'),
         'webhook' => [

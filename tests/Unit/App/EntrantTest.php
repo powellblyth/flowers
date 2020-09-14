@@ -4,7 +4,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use \App\Entrant;
+use App\Models\Entrant;
 
 class EntrantTest extends TestCase {
 

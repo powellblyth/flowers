@@ -25,7 +25,7 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-12 text-right">
-                            @can('orintCards', \App\Entry::class)
+                            @can('orintCards', \App\Models\Entry::class)
                                 <a href="{{route('entrant.print', $thing)}}" target="_blank"
                                    class="btn btn-primary">Print Cards</a>
                             @endcan
@@ -162,7 +162,7 @@
                     </div>
                 @endif
 
-                @can('create',\App\MembershipPurchase::class)
+                @can('create',\App\Models\MembershipPurchase::class)
                 @if(!$isLocked)
                     <div class="row">
                         <div class="col-md-6 col-sm-12">

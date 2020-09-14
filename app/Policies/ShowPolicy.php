@@ -2,9 +2,9 @@
 
 namespace App\Policies;
 
-use App\Category;
-use App\Show;
-use App\User;
+use App\Models\Category;
+use App\Models\Show;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ShowPolicy

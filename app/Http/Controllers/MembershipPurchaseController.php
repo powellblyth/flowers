@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\MembershipPurchase;
+use App\Models\MembershipPurchase;
 use Illuminate\Http\Request;
 
 class MembershipPurchaseController extends Controller

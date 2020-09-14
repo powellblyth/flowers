@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Entrant;
+use App\Models\Entrant;
 use Illuminate\Http\Request;
-use App\Entry;
+use App\Models\Entry;
 
 class EntryController extends Controller
 {

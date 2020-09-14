@@ -84,7 +84,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-12 text-right">
-                        @can('printCards',\App\Entry::class)
+                        @can('printCards',\App\Models\Entry::class)
 
                             <a href="{{route('user.print', $thing)}}" target="_blank"
                                class="btn btn-primary">Print Cards</a>

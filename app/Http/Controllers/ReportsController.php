@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Entrant;
-use App\Entry;
-use App\Membership;
-use App\MembershipPurchase;
-use App\Show;
-use App\User;
+use App\Models\Category;
+use App\Models\Entrant;
+use App\Models\Entry;
+use App\Models\Membership;
+use App\Models\MembershipPurchase;
+use App\Models\Show;
+use App\Models\User;
 use Illuminate\Http\Request;
 use \Illuminate\View\View;
 

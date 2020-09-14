@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header card-header-success">Teams</div>
                     <div class="card-body">
-                        @can('create', \App\Team::class)
+                        @can('create', \App\Models\Team::class)
                             <div class="row">
                                 <div class="col-12 text-right">
                                     <a href="{{ route('teams.create') }}"

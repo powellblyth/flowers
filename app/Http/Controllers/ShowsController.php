@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Show;
-use App\Team;
+use App\Models\Show;
+use App\Models\Team;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -53,7 +53,7 @@ class ShowsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('update', Show::class);
+        $this->authorize('create', Show::class);
         $request->validate(
             [
                 'name'    => 'string|required',

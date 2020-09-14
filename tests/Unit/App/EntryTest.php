@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use \App\Entry;
+use App\Models\Entry;
 
 class EntryTest extends TestCase
 {
@@ -38,8 +38,8 @@ class EntryTest extends TestCase
     public function providergetPriceType()
     {
         return [
-            [true, \App\Category::PRICE_LATE_PRICE],
-            [false, \App\Category::PRICE_EARLY_PRICE],
+            [true, \App\Models\Category::PRICE_LATE_PRICE],
+            [false, \App\Models\Category::PRICE_EARLY_PRICE],
         ];
     }
 

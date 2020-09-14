@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Entrant;
-use App\User;
+use App\Models\Entrant;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class EntrantPolicy

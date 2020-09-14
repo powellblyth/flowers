@@ -18,14 +18,14 @@
                         <p>Home</p></a>
                 </li>
 
-                @can('viewAny',\App\Entrant::class)
+                @can('viewAny',\App\Models\Entrant::class)
                     <li class="nav-item{{ $activePage == 'allentrants' ? ' active' : '' }}">
                         <a class="nav-link" href="{{route('entrants.searchall')}}"><i class="material-icons">people-outline</i>
                             <p>All Entrants</p></a>
                     </li>
                 @endcan
 
-                @can('create',\App\Entrant::class)
+                @can('create',\App\Models\Entrant::class)
                     <li class="nav-item{{ $activePage == 'add-entrant' ? ' active' : '' }}">
                         <a class="nav-link" href="{{route('entrants.create')}}"><i class="material-icons">group_add</i>
                             <p>Add a family member</p></a>

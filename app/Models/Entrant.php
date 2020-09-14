@@ -1,9 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Events\EntrantSaving;
-use App\Observers\EntrantObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -33,7 +32,7 @@ class Entrant extends Model
 
     public function getUrl()
     {
-        return route('entrants.show', ['entrant'=>$this]);
+        return route('entrants.show', ['entrant' => $this]);
     }
 
     public function getFullNameAttribute(): string

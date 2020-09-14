@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Cup;
-use App\User;
+use App\Models\Cup;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CupPolicy

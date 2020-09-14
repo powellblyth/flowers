@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Entrant;
+use App\Models\Entrant;
 use App\Http\Requests\UserRequest;
-use App\MembershipPurchase;
-use App\Show;
-use App\User;
+use App\Models\MembershipPurchase;
+use App\Models\Show;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

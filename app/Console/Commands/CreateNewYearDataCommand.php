@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Category;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 

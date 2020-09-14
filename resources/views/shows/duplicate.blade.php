@@ -75,16 +75,16 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="row">
-                            <div
-                                class="col-2">{{ Form::label('max_age', 'Max Age:', ['class' => 'control-label']) }}</div>
-                            <div class="col-6">
-                                {{ Form::text('max_age', null, ['class' => 'form-control']) }}
-                                @error('max_age')
-                                <p class="error text-danger">{{ $errors->first('max_age') }}</p>
-                                @enderror
-                            </div>
-                        </div>
+{{--                        <div class="row">--}}
+{{--                            <div--}}
+{{--                                class="col-2">{{ Form::label('max_age', 'Max Age:', ['class' => 'control-label']) }}</div>--}}
+{{--                            <div class="col-6">--}}
+{{--                                {{ Form::text('max_age', null, ['class' => 'form-control']) }}--}}
+{{--                                @error('max_age')--}}
+{{--                                <p class="error text-danger">{{ $errors->first('max_age') }}</p>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                     <div class="row">
                         <div class="col-12">

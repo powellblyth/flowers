@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Events\UserSaving;
 use App\Notifications\MustChangePasswordNotification;
@@ -64,7 +64,7 @@ class User extends Authenticatable
         return $this->hasMany(MembershipPurchase::class);
     }
 
-    public function getFullNameAttribute():string
+    public function getFullNameAttribute(): string
     {
         return $this->getName();
     }
@@ -158,8 +158,8 @@ class User extends Authenticatable
 
     public function getMemberNumber(): ?string
     {
-        $membership = $this->membership_purchases()->where('end_date','<',date('Y-m-d 11:39:39'))->first();
-        if ($membership instanceof \App\MembershipPurchase) {
+        $membership = $this->membership_purchases()->where('end_date', '<', date('Y-m-d 11:39:39'))->first();
+        if ($membership instanceof Models\MembershipPurchase) {
             return $membership->getNumber();
         } else {
             return null;

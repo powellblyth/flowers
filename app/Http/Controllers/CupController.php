@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Cup;
-use App\CupDirectWinner;
-use App\Entrant;
-use App\Entry;
-use App\Show;
+use App\Models\Category;
+use App\Models\Cup;
+use App\Models\CupDirectWinner;
+use App\Models\Entrant;
+use App\Models\Entry;
+use App\Models\Show;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;

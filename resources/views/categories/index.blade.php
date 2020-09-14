@@ -14,7 +14,7 @@
                     </div>
                 @endforeach
             </div>
-            @can('printCards', \App\Entry::class)
+            @can('printCards', \App\Models\Entry::class)
                 @if($show->isCurrent())
                     <div class="row">
                         <div class="col-md-12 text-right">
@@ -51,7 +51,7 @@
 
                             <div class="card-body">
                                 @if (!$publishMode && $show->isCurrent() && !$isLocked)
-                                    @can('enterResults', \App\Entry::class)
+                                    @can('enterResults', \App\Models\Entry::class)
                                     <p><a class="button btn btn-success"
                                           href="/categories/resultsentry?section={{urlencode($section)}}">Enter Results</a></p>
                                     @endcan

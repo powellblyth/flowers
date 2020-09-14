@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Entrant;
-use App\Entry;
-use App\Section;
-use App\Show;
+use App\Models\Category;
+use App\Models\Entrant;
+use App\Models\Entry;
+use App\Models\Section;
+use App\Models\Show;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;

@@ -1,7 +1,7 @@
 @extends('layouts/main')
 @section('pagetitle', 'Team ' . $team->name)
 @section('content')
-    @can('viewAny', \App\Team::class)
+    @can('viewAny', \App\Models\Team::class)
         <a href="{{route('teams.index')}}">Teams</a>
         <br/>
     @endcan

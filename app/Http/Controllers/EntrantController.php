@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Entrant;
-use App\Entry;
-use App\MembershipPurchase;
-use App\Payment;
-use App\Show;
-use App\Team;
-use App\TeamMembership;
-use App\User;
+use App\Models\Category;
+use App\Models\Entrant;
+use App\Models\Entry;
+use App\Models\MembershipPurchase;
+use App\Models\Payment;
+use App\Models\Show;
+use App\Models\Team;
+use App\Models\TeamMembership;
+use App\Models\User;
 use DB;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;

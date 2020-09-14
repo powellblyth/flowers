@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Team;
+use App\Models\Team;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;

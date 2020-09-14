@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
                             @endif
-                            @can('create', \App\User::class)
+                            @can('create', \App\Models\User::class)
                                 @if(!$isLocked)
                                     <div class="row">
                                         <div class="col-12 text-right">

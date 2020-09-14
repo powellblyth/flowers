@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -18,7 +18,6 @@ class Category extends Model
     const TYPE_ADULT        = 'Adult';
     const PRICE_LATE_PRICE  = 'lateprice';
     const PRICE_EARLY_PRICE = 'earlyprice';
-
 
 
     public function show(): BelongsTo
@@ -41,7 +40,7 @@ class Category extends Model
         return $this->belongsToMany(Cup::class);
     }
 
-    public function getNumberedNameAttribute():string
+    public function getNumberedNameAttribute(): string
     {
         return $this->getNumberedLabel();
     }
@@ -51,11 +50,12 @@ class Category extends Model
         return '/categories/' . $this->id;
     }
 
-    public function __toString():string
+    public function __toString(): string
     {
         return $this->getNumberedLabel();
     }
-    public function getWinningAmount($placement)
+
+    public function getWinningAmount(string $placement)
     {
         $result = 0;
         if ('1' == $placement) {
@@ -85,7 +85,7 @@ class Category extends Model
 
     public function getPrice(string $type)
     {
-        if ($type == self::PRICE_EARLY_PRICE) {
+        if ($type === self::PRICE_EARLY_PRICE) {
             return $this->price;
         } else {
             return $this->late_price;

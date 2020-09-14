@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header card-header-success">Shows</div>
                     <div class="card-body">
-                        @can('create', \App\Show::class)
+                        @can('create', \App\Models\Show::class)
                             <div class="row">
                                 <div class="col-12 text-right">
                                     <a href="{{ route('shows.create') }}"
@@ -24,7 +24,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">Name</div>
-                            @can('vieAll',\App\Entry::class)
+                            @can('vieAll',\App\Models\Entry::class)
                             <div class="col-md-3">Entries</div>
                             @endcan
                             <div class="col-md-3">Categories</div>
@@ -35,7 +35,7 @@
                                     <div class="col-md-3">
                                         <b><big>{{ $show->name }}</big> : {{$show->start_date->format('d M Y H:i')}}</b>
                                     </div>
-                                    @can('vieAll',\App\Entry::class)
+                                    @can('vieAll',\App\Models\Entry::class)
                                     <div class="col-md-3 ">
                                         {{$show->entries()->count()}}
                                     </div>
@@ -45,7 +45,7 @@
                                     </div>
 
 
-                                    @can('create', \App\Show::class)
+                                    @can('create', \App\Models\Show::class)
                                         <div class="col-md-2">
 
                                             <a href="{{ route('shows.duplicate', ['show'=>$show]) }}"

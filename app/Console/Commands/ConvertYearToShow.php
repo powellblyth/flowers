@@ -2,13 +2,13 @@
 
 namespace App\Console\Commands;
 
-use App\Category;
-use App\CupDirectWinner;
-use App\Entry;
-use App\Payment;
-use App\Show;
-use App\User;
-use App\Entrant;
+use App\Models\Category;
+use App\Models\CupDirectWinner;
+use App\Models\Entry;
+use App\Models\Payment;
+use App\Models\Show;
+use App\Models\User;
+use App\Models\Entrant;
 use Illuminate\Console\Command;
 
 class ConvertYearToShow extends Command

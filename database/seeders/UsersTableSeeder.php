@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Category;
-use App\Membership;
-use App\MembershipPurchase;
-use App\Show;
-use App\Team;
-use App\User;
+use App\Models\Category;
+use App\Models\Membership;
+use App\Models\MembershipPurchase;
+use App\Models\Show;
+use App\Models\Team;
+use App\Models\User;
 use Faker\Factory;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
@@ -160,7 +160,7 @@ class UsersTableSeeder extends Seeder
 
                         // Team membership is for each show, but repeats
                         if ($team instanceof Team) {
-                            $teamMembership = new \App\TeamMembership();
+                            $teamMembership = new \App\Models\TeamMembership();
                             $teamMembership->show()->associate($show);
                             $teamMembership->entrant()->associate($entrant);
                             $teamMembership->team()->associate($team);
@@ -194,7 +194,7 @@ class UsersTableSeeder extends Seeder
             // This ensures that we know if the 'user' was opted in or not
             //
             if ($faker->boolean(4)) {
-                $user->entrants()->each(function (\App\Entrant $entrant) {
+                $user->entrants()->each(function (\App\Models\Entrant $entrant) {
                     $entrant->anonymise()->save();
                 });
                 $user->anonymise()->save();
@@ -208,7 +208,7 @@ class UsersTableSeeder extends Seeder
             $winners = $category->entries()->get()->shuffle()->take(4);
             foreach ($winners as $counter => $winner) {
                 /**
-                 * @var \App\Entry $winner
+                 * @var \App\Models\Entry $winner
                  */
                 // First prize for first entrant
                 switch ($counter) {

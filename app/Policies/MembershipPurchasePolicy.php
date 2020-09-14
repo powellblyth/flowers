@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\MembershipPurchase;
-use App\User;
+use App\Models\MembershipPurchase;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class MembershipPurchasePolicy

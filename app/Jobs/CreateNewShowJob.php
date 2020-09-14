@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
-use App\Category;
-use App\Show;
+use App\Models\Category;
+use App\Models\Show;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

@@ -35,7 +35,7 @@
                                 {{ Form::text('membernumber', null, ['class' => 'form-control']) }}
                             </div>
                         </div>
-                        @can('viewAny',\App\User::class)
+                        @can('viewAny',\App\Models\User::class)
                             <div class="row">
                                 <div class="col-lg-12">
                                     {{ Form::label('user_id', 'Family Manager:', ['class' => 'control-label']) }}

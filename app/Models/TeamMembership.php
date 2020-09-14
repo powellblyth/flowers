@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -12,15 +12,18 @@ class TeamMembership extends Model
         'team_id',
         'show_id'
     ];
-    public function entrant():BelongsTo
+
+    public function entrant(): BelongsTo
     {
-        return $this-> belongsTo(Entrant::class);
+        return $this->belongsTo(Entrant::class);
     }
-    public function team():BelongsTo
+
+    public function team(): BelongsTo
     {
-        return $this-> belongsTo(Team::class);
+        return $this->belongsTo(Team::class);
     }
-    public function show():BelongsTo
+
+    public function show(): BelongsTo
     {
         return $this->belongsTo(Show::class);
     }
