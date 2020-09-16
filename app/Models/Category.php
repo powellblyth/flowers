@@ -68,7 +68,7 @@ class Category extends Model
         return $result;
     }
 
-    public function getNumberedLabel()
+    public function getNumberedLabel(): string
     {
         return $this->number . '. ' . $this->name;
     }

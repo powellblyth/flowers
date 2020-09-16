@@ -23,10 +23,15 @@ class Show extends Model
         'late_entry_deadline'     => 'datetime',
         'entries_closed_deadline' => 'datetime',
         'ends_date'               => 'datetime',
-        'start_date'              => 'datetime',
+        'start_date'              => 'datetime:Y-m-d H:i',
     ];
 
+    protected $attributes = [
+        'status' => self::STATUS_PLANNED,
+    ];
     const STATUS_CURRENT = 'current';
+    const STATUS_PASSED = 'passed';
+    const STATUS_PLANNED = 'planned';
 
     public function isCurrent(): bool
     {

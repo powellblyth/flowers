@@ -49,7 +49,9 @@
                                         <div class="col-md-2">
 
                                             <a href="{{ route('shows.duplicate', ['show'=>$show]) }}"
-                                               class="btn btn-sm btn-primary">{{ __('Duplicate this Show') }}</a>
+                                               class="btn btn-sm btn-primary">{{ __('Make a Duplicate') }}</a>
+                                            <a href="{{ route('shows.show', ['show'=>$show]) }}"
+                                               class="btn btn-sm btn-primary">Details</a>
                                         </div>
                                     @endcan
                                 </div>

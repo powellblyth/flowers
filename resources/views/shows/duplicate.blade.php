@@ -2,6 +2,7 @@
 @section('pagetitle', 'Duplicate a Show')
 
 @section('content')
+        {{dump($errors)}}
 {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
     <script defer="defer">
@@ -47,7 +48,7 @@
                         </div>
                         <div class="row">
                             <div
-                                class="col-2">{{ Form::label('end_date', 'Ends Date:', ['class' => 'control-label']) }}</div>
+                                class="col-2">{{ Form::label('ends_date', 'Ends Date:', ['class' => 'control-label']) }}</div>
                             <div class="col-2">
                                 {{ Form::datetime('ends_date', $show->ends_date, ['class' => 'form-control']) }}
                                 @error('ends_date')
@@ -57,7 +58,7 @@
                         </div>
                         <div class="row">
                             <div
-                                class="col-2">{{ Form::label('end_date', 'Late Entry Deadline:', ['class' => 'control-label']) }}</div>
+                                class="col-2">{{ Form::label('late_entry_deadline', 'Late Entry Deadline:', ['class' => 'control-label']) }}</div>
                             <div class="col-2">
                                 {{ Form::datetime('late_entry_deadline', $show->late_entry_deadline, ['class' => 'form-control']) }}
                                 @error('late_entry_deadline')
@@ -67,7 +68,7 @@
                         </div>
                         <div class="row">
                             <div
-                                class="col-2">{{ Form::label('end_date', 'Entries Closed Deadline:', ['class' => 'control-label']) }}</div>
+                                class="col-2">{{ Form::label('entries_closed_deadline', 'Entries Closed Deadline:', ['class' => 'control-label']) }}</div>
                             <div class="col-2">
                                 {{ Form::datetime('entries_closed_deadline', $show->late_entry_deadline, ['class' => 'form-control']) }}
                                 @error('entries_closed_deadline')

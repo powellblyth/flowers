@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Show;
-use App\Models\Team;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -56,16 +55,21 @@ class ShowsController extends Controller
         $this->authorize('create', Show::class);
         $request->validate(
             [
-                'name'    => 'string|required',
-                'min_age' => 'integer|min:0|',
-                'max_age' => 'integer|min:' . (int) $request->min_age,
+                'name'                    => 'string|required',
+                'start_date'              => 'required|date|',
+                'ends_date'               => 'required|date|',
+                'late_entry_deadline'     => 'required|date|',
+                'entries_closed_deadline' => 'required|date|',
             ]
         );
 
-        $show          = new Show();
-        $show->name    = $request->name;
-        $show->min_age = $request->min_age;
-        $show->max_age = $request->max_age;
+        $show = new Show();
+
+        $show->name                    = $request->name;
+        $show->start_date              = $request->start_date;
+        $show->ends_date               = $request->ends_date;
+        $show->late_entry_deadline     = $request->late_entry_deadline;
+        $show->entries_closed_deadline = $request->entries_closed_deadline;
         $show->save();
         return response()->redirectTo(route('shows.show', ['show' => $show->id]));
     }
@@ -79,8 +83,14 @@ class ShowsController extends Controller
      */
     public function show(Show $show)
     {
-        $this->authorize('view', Show::class);
-        return response()->view('shows.show', ['show' => $show]);
+        $this->authorize('view', $show);
+        return response()->view(
+            'shows.show',
+            [
+                'show'       => $show,
+//                'categories' => $show->categories()->orderBy('sortorder')->get()
+            ]
+        );
     }
 
     /**

@@ -146,10 +146,8 @@ class UsersTableSeeder extends Seeder
                 /**
                  * @var Show $show
                  */
-
                 // reload the entrants to include the user's entrant
                 foreach ($user->entrants as $entrant) {
-
                     // Teams are only for juniors
                     if ($entrant->age != null) {
                         if (!array_key_exists($entrant->id, $stickyTeams)) {
