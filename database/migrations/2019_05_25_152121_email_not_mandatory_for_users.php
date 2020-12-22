@@ -11,7 +11,8 @@ class EmailNotMandatoryForUsers extends Migration
      *
      * @return void
      */
-    public function up() {
+    public function up()
+    {
         DB::statement('ALTER TABLE `users` MODIFY `email` VARCHAR(255) NULL;');
     }
 
@@ -20,7 +21,8 @@ class EmailNotMandatoryForUsers extends Migration
      *
      * @return void
      */
-    public function down() {
+    public function down()
+    {
         //
     }
 }

@@ -5,6 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * Class TeamMembership
+ * @package App\Models
+ * @property int id
+ * @method static TeamMembership firstOrNew(array $array)
+ */
 class TeamMembership extends Model
 {
     protected $fillable = [

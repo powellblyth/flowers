@@ -1,8 +1,8 @@
 <?php
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use DB;
+use Illuminate\Console\Command;
 
 class UpdateAgesCommand extends Command {
 

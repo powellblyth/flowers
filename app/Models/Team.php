@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -10,11 +10,16 @@ use Illuminate\Notifications\Notifiable;
 
 //use Laravel\Cashier\Billable;
 
+/**
+ * @method static Builder where(string $string, string $string1, $age)
+ * @method static Team findOrFail(mixed $team_id)
+ * @property int max_age
+ * @property int min_age
+ * @property int id
+ */
 class Team extends Model
 {
     use Notifiable;
-
-//    use Billable;
 
     const STATUS_ACTIVE = 'active';
 

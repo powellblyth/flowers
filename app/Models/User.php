@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use App\Events\UserSaving;
-use App\Notifications\MustChangePasswordNotification;
-use App\Observers\UserObserver;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -14,7 +15,36 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @method static User create(array $array)
+ * @method static User find(int $int)
  * @property Collection entrants
+ * @property string type
+ * @property string firstname
+ * @property string lastname
+ * @property string telephone
+ * @property string address
+ * @property string address2
+ * @property string addresstown
+ * @property string postcode
+ * @property Carbon created_at
+ * @property Carbon updated_at
+ * @property Carbon post_opt_in
+ * @property Carbon post_opt_out
+ * @property Carbon sms_opt_out
+ * @property Carbon sms_opt_in
+ * @property Carbon retain_data_opt_out
+ * @property Carbon retain_data_opt_in
+ * @property Carbon phone_opt_out
+ * @property Carbon phone_opt_in
+ * @property Carbon email_opt_out
+ * @property Carbon email_opt_in
+ * @property int id
+ * @property bool can_retain_data
+ * @property bool is_anonymised
+ * @property bool can_sms
+ * @property bool can_phone
+ * @property bool can_post
+ * @property bool can_email
+ * @property string email
  */
 class User extends Authenticatable
 {
@@ -71,7 +101,7 @@ class User extends Authenticatable
         return $this->getName();
     }
 
-    public function isAdmin()
+    public function isAdmin(): bool
     {
         return $this->type === self::ADMIN_TYPE;
     }
@@ -138,7 +168,7 @@ class User extends Authenticatable
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
     }
 
-    public function familyMemberships(bool $current = true)
+    public function familyMemberships(bool $current = true): Builder
     {
         $memberships = $this->hasMany(MembershipPurchase::class, 'user_id')->where('type', 'family');
         if ($current) {
@@ -147,13 +177,13 @@ class User extends Authenticatable
         return $memberships;
     }
 
-    public function teamMemberships($year = null)
+    public function teamMemberships($year = null): HasManyThrough
     {
         $year ??= config('app.year');
         return $this->hasManyThrough(TeamMembership::class, TeamMembership::class);
     }
 
-    public function routeNotificationForMail()
+    public function routeNotificationForMail(): string
     {
         return $this->email;
     }
@@ -182,7 +212,7 @@ class User extends Authenticatable
         return $newPostcode;
     }
 
-    public function anonymise()
+    public function anonymise(): User
     {
         $this->email               = $this->id . '@' . $this->id . 'phs-anonymised' . rand(0, 100000) . '.com';
         $this->is_anonymised       = true;

@@ -6,17 +6,12 @@ use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\Membership;
-use App\Models\MembershipPurchase;
 use App\Models\Show;
-use App\Models\User;
 use Illuminate\Http\Request;
-use \Illuminate\View\View;
+use Illuminate\View\View;
 
 class ReportsController extends Controller
 {
-
-    protected $templateDir = 'reports';
-
     protected function getMembershipFromRequest(Request $request): Membership
     {
         if ($request->filled('membership_id')) {
@@ -28,7 +23,7 @@ class ReportsController extends Controller
 
     public function membershipReport(Request $request): View
     {
-        $membership      = $this->getMembershipFromRequest($request);
+        $membership = $this->getMembershipFromRequest($request);
         $membershipsSold = $membership->membershipsSold()->with('entrant')->with('user');
 //dd( $membership->membershipsSold()->count());
 //        foreach ($membershipsSold as $membershipPurchase) {
@@ -75,56 +70,56 @@ class ReportsController extends Controller
 //                   'count_single'  => $countSingle];
 //        $membershipsSold->sum('amount');
         $totals = [
-            'amount'=> $membershipsSold->sum('amount'),
-            'count'=> $membershipsSold->count(),
+            'amount' => $membershipsSold->sum('amount'),
+            'count' => $membershipsSold->count(),
         ];
-        return view($this->templateDir . '.membershipReport',
+        return view('reports.membershipReport',
             [
-                'totals'          => $totals,
-                'membership'            => $membership,
-                'memberships'           => Membership::orderBy('valid_to', 'DESC')->get(),
+                'totals' => $totals,
+                'membership' => $membership,
+                'memberships' => Membership::orderBy('valid_to', 'DESC')->get(),
                 'purchases' => $membershipsSold->get(),
-//                'familypurchases' => $familypurchases,
+                //                'familypurchases' => $familypurchases,
             ]);
     }
 
     public function entriesReport(Request $request): View
     {
-        $show        = $this->getShowFromRequest($request);
+        $show = $this->getShowFromRequest($request);
         $entriesSold = $show->entries;
-        $purchases   = [];
+        $purchases = [];
         $amountChild = 0;
         $amountAdult = 0;
-        $countChild  = 0;
-        $countAdult  = 0;
-        $entrants    = [];
-        $users       = [];
+        $countChild = 0;
+        $countAdult = 0;
+        $entrants = [];
+        $users = [];
         foreach ($entriesSold as $entry) {
             /**
              * @var Entry $entry
              */
-            $entrant      = $entry->entrant;
-            $entrant_id   = null;
+            $entrant = $entry->entrant;
+            $entrant_id = null;
             $entrant_name = null;
 
             if ($entrant instanceof Entrant) {
-                $entrant_id               = $entrant->id;
-                $entrant_name             = $entrant->getName();
-                $entrants[$entrant_id]    = 'yo ho ho and a bottle of rum';
+                $entrant_id = $entrant->id;
+                $entrant_name = $entrant->getName();
+                $entrants[$entrant_id] = 'yo ho ho and a bottle of rum';
                 $users[$entrant->user_id] = 'Vittals for johnnie';
             }
 
             $category = $entry->category;
-            $price    = $category->getPrice($entry->getPriceType());
+            $price = $category->getPrice($entry->getPriceType());
 
             $purchases[$entry->id] = [
-                'created'         => $entry->created_at,
-                'type'            => $category->getType(),
-                'is_late'         => $entry->isLate(),
+                'created' => $entry->created_at,
+                'type' => $category->getType(),
+                'is_late' => $entry->isLate(),
                 'category_number' => $entry->category->number,
-                'amount'          => $price,
-                'entrant_id'      => $entrant_id,
-                'entrant_name'    => $entrant_name];
+                'amount' => $price,
+                'entrant_id' => $entrant_id,
+                'entrant_name' => $entrant_name];
 
             if (Category::TYPE_ADULT == $category->getType()) {
                 $amountAdult += $price;
@@ -134,22 +129,22 @@ class ReportsController extends Controller
                 $countChild++;
             }
         }
-        $totals = ['amount'        => $amountAdult + $amountChild,
-                   'count'         => $countAdult + $countChild,
-                   'amount_adult'  => $amountAdult,
-                   'amount_child'  => $amountChild,
+        $totals = ['amount' => $amountAdult + $amountChild,
+                   'count' => $countAdult + $countChild,
+                   'amount_adult' => $amountAdult,
+                   'amount_child' => $amountChild,
                    'count_entrant' => count($entrants),
-                   'count_user'    => count($users),
-                   'count_adult'   => $countAdult,
-                   'count_child'   => $countChild];
+                   'count_user' => count($users),
+                   'count_adult' => $countAdult,
+                   'count_child' => $countChild];
 //dd($show->name);
         return view(
-            $this->templateDir . '.entriesReport',
+            'reports.entriesReport',
             [
-                'totals'    => $totals,
+                'totals' => $totals,
                 'purchases' => $purchases,
-                'show'      => $show,
-                'shows'     => Show::orderBy('start_date')->get(),
+                'show' => $show,
+                'shows' => Show::orderBy('start_date')->get(),
             ]
         );
     }
@@ -159,7 +154,7 @@ class ReportsController extends Controller
         $show = $this->getShowFromRequest($request);
 //        $year               = $this->getYearFromRequest($request);
         $unplacedCategories = [];
-        $categories         = $show->categories()->orderby('sortorder')->get();
+        $categories = $show->categories()->orderby('sortorder')->get();
 
         foreach ($categories as $category) {
             $cups = $category->cups()->count();
@@ -169,17 +164,17 @@ class ReportsController extends Controller
         }
 
         return view(
-            $this->templateDir . '.unplacedCategoriesReport',
+            'reports.unplacedCategoriesReport',
             [
                 'unplaced_categories' => $unplacedCategories,
-                'show'                => $show,
-                'shows'               => Show::orderBy('start_date')->get(),
+                'show' => $show,
+                'shows' => Show::orderBy('start_date')->get(),
             ]
         );
     }
 
     public function index(array $extraData = []): View
     {
-        return view($this->templateDir . '.index', $extraData = []);
+        return view('reports.index', $extraData = []);
     }
 }

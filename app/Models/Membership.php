@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @method static orderBy(string $string)
+ * @method static Builder where(string $string, string $APPLIES_TO_ENTRANT)
+ * @property int id
  */
 class Membership extends Model
 {

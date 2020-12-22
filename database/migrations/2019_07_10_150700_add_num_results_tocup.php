@@ -11,7 +11,8 @@ class AddNumResultsTocup extends Migration
      *
      * @return void
      */
-    public function up() {
+    public function up()
+    {
         Schema::table('cups', function (Blueprint $table) {
             $table->unsignedInteger('num_display_results')->default(2)->nullable();
         });
@@ -26,7 +27,8 @@ class AddNumResultsTocup extends Migration
      *
      * @return void
      */
-    public function down() {
+    public function down()
+    {
         Schema::table('cups', function (Blueprint $table) {
             $table->dropColumn(['num_display_results']);
         });

@@ -3,20 +3,29 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @method static where(string $column, string $value)
+ * @method static Builder where(string $column, string $value)
+ * @method static Show findOrFail(int $param)
  * @property Carbon late_entry_deadline
  * @property Carbon entries_closed_deadline
  * @property Carbon end_date
  * @property Carbon start_date
+ * @property string status
+ * @property int id
  */
 class Show extends Model
 {
     protected $fillable = [
-        'name', 'start_date', 'ends_date', 'late_entry_deadline', 'entries_closed_deadline', 'status'
+        'name',
+        'start_date',
+        'ends_date',
+        'late_entry_deadline',
+        'entries_closed_deadline',
+        'status'
     ];
 
     protected $casts = [
@@ -30,7 +39,7 @@ class Show extends Model
         'status' => self::STATUS_PLANNED,
     ];
     const STATUS_CURRENT = 'current';
-    const STATUS_PASSED = 'passed';
+    const STATUS_PASSED  = 'passed';
     const STATUS_PLANNED = 'planned';
 
     public function isCurrent(): bool

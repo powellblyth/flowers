@@ -2,23 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Section;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class SectionController extends Controller
 {
-    protected $templateDir = 'sections';
-
     public function index(array $extraData = []): View
     {
         $sections = Section::orderBy('number', 'asc')
             ->get();
 
         return view(
-            $this->templateDir . '.index',
+            'sections.index',
             [
                 'things'  => $sections,
                 'isAdmin' => Auth::check() && Auth::User()->isAdmin()
@@ -50,7 +46,7 @@ class SectionController extends Controller
         }
 //var_dump(count($categoryList[9]));die();
         return view(
-            $this->templateDir . '.forwebsite',
+            'sections.forwebsite',
             [
                 'things'       => $sections,
                 'categoryList' => $categoryList,

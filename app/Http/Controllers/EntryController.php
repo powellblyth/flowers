@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entrant;
-use Illuminate\Http\Request;
 use App\Models\Entry;
+use Illuminate\Http\Request;
 
 class EntryController extends Controller
 {
@@ -44,8 +43,5 @@ class EntryController extends Controller
             'card_fronts' => $cardFronts,
             'card_backs'  => $cardBacks,
         ]);
-
     }
-
-
 }

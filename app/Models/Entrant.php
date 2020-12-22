@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use App\Events\EntrantSaving;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -15,6 +18,36 @@ use Illuminate\Support\Str;
  * Class Entrant
  * @package App
  * @property User $user
+ * @property string firstname
+ * @property string familyname
+ * @property bool can_retain_data
+ * @property bool can_sms
+ * @property bool can_email
+ * @property bool can_post
+ * @property int age
+ * @property Collection individualMemberships
+ * @property string telephone
+ * @property string address
+ * @property string address2
+ * @property string addresstown
+ * @property string postcode
+ * @property bool can_phone
+ * @property Carbon created_at
+ * @property Carbon updated_at
+ * @property Carbon post_opt_in
+ * @property Carbon post_opt_out
+ * @property Carbon sms_opt_out
+ * @property Carbon sms_opt_in
+ * @property Carbon retain_data_opt_out
+ * @property Carbon retain_data_opt_in
+ * @property Carbon phone_opt_out
+ * @property Carbon phone_opt_in
+ * @property Carbon email_opt_out
+ * @property Carbon email_opt_in
+ * @property int id
+ * @property string membernumber
+ * @method static Builder where(string $string, int $id)
+ * @method static find($id)
  */
 class Entrant extends Model
 {
@@ -107,7 +140,7 @@ class Entrant extends Model
         } else {
             $teamQuery = Team::where('max_age', '>=', (int) $this->age);
         }
-        $res = $teamQuery
+        return $teamQuery
             ->orderBy('min_age')
             ->orderBy('max_age')
             ->orderBy('name')
@@ -115,7 +148,6 @@ class Entrant extends Model
                 return !$entrant->canJoin($team);
             })
             ->pluck('name', 'id')->toArray();
-        return $res;
     }
 
     public function familyMembership(): ?MembershipPurchase

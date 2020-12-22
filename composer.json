@@ -13,12 +13,13 @@
         "laravel/ui": "^3.0",
         "laravelcollective/html": "^6.0",
         "nztim/mailchimp": "^3.10",
-        "orangehill/iseed": "^2.6"
+        "orangehill/iseed": "^3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "^1.9",
+        "laravel/sail": "^0.0.10",
         "mockery/mockery": "~1.0",
         "phpunit/phpunit": "^9.0",
         "squizlabs/php_codesniffer": "^3.5"

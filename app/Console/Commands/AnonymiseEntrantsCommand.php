@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
 use App\Models\Entrant;
+use App\Models\User;
 use Illuminate\Console\Command;
 
 class AnonymiseEntrantsCommand extends Command

@@ -7,11 +7,10 @@ use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\Section;
 use App\Models\Show;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
-use \Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class CategoryController extends Controller
 {
@@ -19,24 +18,25 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @param Request $request
+     * @return View
      */
 
     public function index(Request $request): View
     {
         $show = $this->getShowFromRequest($request);
 
-        $winners      = array();
-        $results      = [];
+        $winners = array();
+        $results = [];
         $categoryList = [];
-        $sectionList  = [];
+        $sectionList = [];
 
         $sections = Section::orderBy('number', 'asc')->with('categories')->get();
 
         foreach ($sections as $section) {
-            $sectionList[$section->id]  = $section->id . ' ' . $section->name;
+            $sectionList[$section->id] = $section->id . ' ' . $section->name;
             $categoryList[$section->id] = [];
-            $categories                 = $section->categories()
+            $categories = $section->categories()
                 ->where('status', 'active')
                 ->orderBy('sortorder', 'asc')
                 ->where('show_id', $show->id)
@@ -47,19 +47,19 @@ class CategoryController extends Controller
                  * @var Category $category
                  */
                 $categoryList[$section->id][$category->id] = $category;
-                $placements                                = $category->entries()
+                $placements = $category->entries()
                     ->whereNotNull('winningplace')
                     ->whereNotIn('winningplace', [''])
                     ->where('show_id', $show->id)
                     ->orderBy('winningplace')
                     ->get();
-                $total                                     = $category->entries()
+                $total = $category->entries()
                     ->where('show_id', $show->id)
                     ->select(DB::raw('count(*) as total'))
                     ->groupBy('category_id')->first();
 
                 $results[$category->id] = [
-                    'placements'    => $placements,
+                    'placements' => $placements,
                     'total_entries' => (($total !== null) ? $total->total : 0)
                 ];
 
@@ -74,14 +74,14 @@ class CategoryController extends Controller
         return view(
             'categories.index',
             [
-                'things'       => $categories,
+                'things' => $categories,
                 'categoryList' => $categoryList,
-                'sectionList'  => $sectionList,
-                'results'      => $results,
-                'winners'      => $winners,
-                'show'         => $show,
-                'isLocked'     => config('app.state') == 'locked',
-                'shows'   => Show::orderBy('start_date')->get(),
+                'sectionList' => $sectionList,
+                'results' => $results,
+                'winners' => $winners,
+                'show' => $show,
+                'isLocked' => config('app.state') == 'locked',
+                'shows' => Show::orderBy('start_date')->get(),
             ]
         );
     }
@@ -148,9 +148,9 @@ class CategoryController extends Controller
     {
         $show = $this->getShowFromRequest($request);
         $this->authorize('enterResults', Entry::class);
-        $entries    = [];
-        $winners    = [];
-        $section    = Section::findOrFail($request->section);
+        $entries = [];
+        $winners = [];
+        $section = Section::findOrFail($request->section);
         $categories = $section->categories()
             ->where('show_id', $show->id)
             ->orderby('sortorder')
@@ -158,9 +158,9 @@ class CategoryController extends Controller
 
         foreach ($categories as $category) {
             $thisEntries = $category
-                    ->entries()
-                    ->orderBy('entrant_id')
-                    ->get();
+                ->entries()
+                ->orderBy('entrant_id')
+                ->get();
 
             $entries[$category->id] = [];
             $winners[$category->id] = [];
@@ -170,17 +170,17 @@ class CategoryController extends Controller
                     $winners[$category->id][$entry->entrant->id] = $entry->winningplace;
                 }
                 $entries[$category->id][$entry->id] = [
-                    'entrant_id'     => $entry->entrant->id,
-                    'entrant_name'   => $entry->entrant->getName(),
+                    'entrant_id' => $entry->entrant->id,
+                    'entrant_name' => $entry->entrant->getName(),
                     'entrant_number' => $entry->entrant->getEntrantNumber(),
                 ];
             }
         }
         return view('categories.resultsentry', array(
             'categories' => $categories,
-            'entries'    => $entries,
-            'section'    => $section,
-            'winners'    => $winners,
+            'entries' => $entries,
+            'section' => $section,
+            'winners' => $winners,
         ));
     }
 
@@ -198,7 +198,7 @@ class CategoryController extends Controller
         foreach ($categories as $category) {
             $cardFronts[] = [
                 'class_number' => $category->number,
-                'class_name'   => $category->name
+                'class_name' => $category->name
             ];
         }
 
@@ -217,12 +217,12 @@ class CategoryController extends Controller
         $cardFronts = [];
 
         foreach ($categories as $category) {
-            $section      = $category->section;
+            $section = $category->section;
             $cardFronts[] = [
-                'section'      => $section->id,
+                'section' => $section->id,
                 'section_name' => $section->name,
                 'class_number' => $category->number,
-                'class_name'   => $category->name
+                'class_name' => $category->name
             ];
         }
 
@@ -235,7 +235,7 @@ class CategoryController extends Controller
         foreach ($request->positions as $categoryId => $placings) {
             foreach ($placings as $entryId => $result) {
                 if ('0' !== $result && '' != trim($result)) {
-                    $entry               = Entry::where(['id' => $entryId, 'category_id' => $categoryId])->first();
+                    $entry = Entry::where(['id' => $entryId, 'category_id' => $categoryId])->first();
                     $entry->winningplace = $result;
                     $entry->save();
                 }

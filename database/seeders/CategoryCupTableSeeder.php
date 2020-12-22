@@ -23,1304 +23,1304 @@ class CategoryCupTableSeeder extends Seeder
                 'id' => 1,
                 'cup_id' => 1,
                 'category_id' => 6,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             1 => 
             array (
                 'id' => 2,
                 'cup_id' => 1,
                 'category_id' => 7,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             2 => 
             array (
                 'id' => 3,
                 'cup_id' => 1,
                 'category_id' => 8,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             3 => 
             array (
                 'id' => 4,
                 'cup_id' => 1,
                 'category_id' => 9,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             4 => 
             array (
                 'id' => 5,
                 'cup_id' => 1,
                 'category_id' => 10,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             5 => 
             array (
                 'id' => 6,
                 'cup_id' => 1,
                 'category_id' => 11,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             6 => 
             array (
                 'id' => 7,
                 'cup_id' => 1,
                 'category_id' => 12,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             7 => 
             array (
                 'id' => 8,
                 'cup_id' => 1,
                 'category_id' => 13,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             8 => 
             array (
                 'id' => 9,
                 'cup_id' => 1,
                 'category_id' => 14,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             9 => 
             array (
                 'id' => 10,
                 'cup_id' => 1,
                 'category_id' => 15,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             10 => 
             array (
                 'id' => 11,
                 'cup_id' => 1,
                 'category_id' => 16,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             11 => 
             array (
                 'id' => 12,
                 'cup_id' => 1,
                 'category_id' => 17,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             12 => 
             array (
                 'id' => 13,
                 'cup_id' => 1,
                 'category_id' => 18,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             13 => 
             array (
                 'id' => 14,
                 'cup_id' => 1,
                 'category_id' => 19,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             14 => 
             array (
                 'id' => 15,
                 'cup_id' => 1,
                 'category_id' => 20,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             15 => 
             array (
                 'id' => 16,
                 'cup_id' => 1,
                 'category_id' => 21,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             16 => 
             array (
                 'id' => 17,
                 'cup_id' => 1,
                 'category_id' => 22,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             17 => 
             array (
                 'id' => 18,
                 'cup_id' => 1,
                 'category_id' => 23,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             18 => 
             array (
                 'id' => 19,
                 'cup_id' => 1,
                 'category_id' => 24,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             19 => 
             array (
                 'id' => 20,
                 'cup_id' => 1,
                 'category_id' => 25,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             20 => 
             array (
                 'id' => 21,
                 'cup_id' => 1,
                 'category_id' => 26,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             21 => 
             array (
                 'id' => 22,
                 'cup_id' => 1,
                 'category_id' => 27,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             22 => 
             array (
                 'id' => 23,
                 'cup_id' => 1,
                 'category_id' => 28,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             23 => 
             array (
                 'id' => 24,
                 'cup_id' => 1,
                 'category_id' => 29,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             24 => 
             array (
                 'id' => 25,
                 'cup_id' => 2,
                 'category_id' => 31,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             25 => 
             array (
                 'id' => 26,
                 'cup_id' => 2,
                 'category_id' => 32,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             26 => 
             array (
                 'id' => 27,
                 'cup_id' => 2,
                 'category_id' => 33,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             27 => 
             array (
                 'id' => 28,
                 'cup_id' => 2,
                 'category_id' => 34,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             28 => 
             array (
                 'id' => 29,
                 'cup_id' => 2,
                 'category_id' => 35,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             29 => 
             array (
                 'id' => 30,
                 'cup_id' => 2,
                 'category_id' => 36,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             30 => 
             array (
                 'id' => 31,
                 'cup_id' => 2,
                 'category_id' => 37,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             31 => 
             array (
                 'id' => 32,
                 'cup_id' => 3,
                 'category_id' => 38,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             32 => 
             array (
                 'id' => 33,
                 'cup_id' => 3,
                 'category_id' => 39,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             33 => 
             array (
                 'id' => 34,
                 'cup_id' => 3,
                 'category_id' => 40,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             34 => 
             array (
                 'id' => 35,
                 'cup_id' => 3,
                 'category_id' => 41,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             35 => 
             array (
                 'id' => 36,
                 'cup_id' => 3,
                 'category_id' => 42,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             36 => 
             array (
                 'id' => 37,
                 'cup_id' => 3,
                 'category_id' => 43,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             37 => 
             array (
                 'id' => 38,
                 'cup_id' => 3,
                 'category_id' => 44,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             38 => 
             array (
                 'id' => 39,
                 'cup_id' => 3,
                 'category_id' => 45,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             39 => 
             array (
                 'id' => 40,
                 'cup_id' => 3,
                 'category_id' => 46,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             40 => 
             array (
                 'id' => 41,
                 'cup_id' => 3,
                 'category_id' => 47,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             41 => 
             array (
                 'id' => 42,
                 'cup_id' => 3,
                 'category_id' => 48,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             42 => 
             array (
                 'id' => 43,
                 'cup_id' => 3,
                 'category_id' => 49,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             43 => 
             array (
                 'id' => 44,
                 'cup_id' => 3,
                 'category_id' => 50,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             44 => 
             array (
                 'id' => 45,
                 'cup_id' => 3,
                 'category_id' => 51,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             45 => 
             array (
                 'id' => 46,
                 'cup_id' => 3,
                 'category_id' => 52,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             46 => 
             array (
                 'id' => 47,
                 'cup_id' => 3,
                 'category_id' => 53,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             47 => 
             array (
                 'id' => 48,
                 'cup_id' => 3,
                 'category_id' => 54,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             48 => 
             array (
                 'id' => 49,
                 'cup_id' => 3,
                 'category_id' => 55,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             49 => 
             array (
                 'id' => 50,
                 'cup_id' => 3,
                 'category_id' => 56,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             50 => 
             array (
                 'id' => 51,
                 'cup_id' => 3,
                 'category_id' => 57,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             51 => 
             array (
                 'id' => 52,
                 'cup_id' => 3,
                 'category_id' => 58,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             52 => 
             array (
                 'id' => 54,
                 'cup_id' => 4,
                 'category_id' => 61,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             53 => 
             array (
                 'id' => 55,
                 'cup_id' => 4,
                 'category_id' => 62,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             54 => 
             array (
                 'id' => 56,
                 'cup_id' => 4,
                 'category_id' => 63,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             55 => 
             array (
                 'id' => 57,
                 'cup_id' => 4,
                 'category_id' => 64,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             56 => 
             array (
                 'id' => 58,
                 'cup_id' => 5,
                 'category_id' => 65,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             57 => 
             array (
                 'id' => 59,
                 'cup_id' => 5,
                 'category_id' => 66,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             58 => 
             array (
                 'id' => 60,
                 'cup_id' => 5,
                 'category_id' => 67,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             59 => 
             array (
                 'id' => 61,
                 'cup_id' => 5,
                 'category_id' => 68,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             60 => 
             array (
                 'id' => 62,
                 'cup_id' => 5,
                 'category_id' => 69,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             61 => 
             array (
                 'id' => 63,
                 'cup_id' => 5,
                 'category_id' => 70,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             62 => 
             array (
                 'id' => 64,
                 'cup_id' => 5,
                 'category_id' => 71,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             63 => 
             array (
                 'id' => 65,
                 'cup_id' => 5,
                 'category_id' => 72,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             64 => 
             array (
                 'id' => 66,
                 'cup_id' => 5,
                 'category_id' => 73,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             65 => 
             array (
                 'id' => 67,
                 'cup_id' => 5,
                 'category_id' => 74,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             66 => 
             array (
                 'id' => 68,
                 'cup_id' => 5,
                 'category_id' => 75,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             67 => 
             array (
                 'id' => 69,
                 'cup_id' => 5,
                 'category_id' => 76,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             68 => 
             array (
                 'id' => 70,
                 'cup_id' => 5,
                 'category_id' => 77,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             69 => 
             array (
                 'id' => 71,
                 'cup_id' => 6,
                 'category_id' => 78,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             70 => 
             array (
                 'id' => 72,
                 'cup_id' => 6,
                 'category_id' => 79,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             71 => 
             array (
                 'id' => 73,
                 'cup_id' => 6,
                 'category_id' => 80,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             72 => 
             array (
                 'id' => 74,
                 'cup_id' => 6,
                 'category_id' => 81,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             73 => 
             array (
                 'id' => 75,
                 'cup_id' => 6,
                 'category_id' => 82,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             74 => 
             array (
                 'id' => 76,
                 'cup_id' => 6,
                 'category_id' => 83,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             75 => 
             array (
                 'id' => 77,
                 'cup_id' => 6,
                 'category_id' => 84,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             76 => 
             array (
                 'id' => 78,
                 'cup_id' => 6,
                 'category_id' => 85,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             77 => 
             array (
                 'id' => 79,
                 'cup_id' => 7,
                 'category_id' => 103,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             78 => 
             array (
                 'id' => 80,
                 'cup_id' => 7,
                 'category_id' => 104,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             79 => 
             array (
                 'id' => 81,
                 'cup_id' => 7,
                 'category_id' => 105,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             80 => 
             array (
                 'id' => 82,
                 'cup_id' => 7,
                 'category_id' => 106,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             81 => 
             array (
                 'id' => 83,
                 'cup_id' => 7,
                 'category_id' => 107,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             82 => 
             array (
                 'id' => 84,
                 'cup_id' => 7,
                 'category_id' => 108,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             83 => 
             array (
                 'id' => 85,
                 'cup_id' => 7,
                 'category_id' => 109,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             84 => 
             array (
                 'id' => 86,
                 'cup_id' => 7,
                 'category_id' => 110,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             85 => 
             array (
                 'id' => 87,
                 'cup_id' => 7,
                 'category_id' => 111,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             86 => 
             array (
                 'id' => 88,
                 'cup_id' => 7,
                 'category_id' => 112,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             87 => 
             array (
                 'id' => 89,
                 'cup_id' => 7,
                 'category_id' => 113,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             88 => 
             array (
                 'id' => 90,
                 'cup_id' => 7,
                 'category_id' => 114,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             89 => 
             array (
                 'id' => 91,
                 'cup_id' => 7,
                 'category_id' => 115,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             90 => 
             array (
                 'id' => 92,
                 'cup_id' => 7,
                 'category_id' => 116,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             91 => 
             array (
                 'id' => 93,
                 'cup_id' => 7,
                 'category_id' => 117,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             92 => 
             array (
                 'id' => 95,
                 'cup_id' => 8,
                 'category_id' => 91,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             93 => 
             array (
                 'id' => 96,
                 'cup_id' => 8,
                 'category_id' => 92,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             94 => 
             array (
                 'id' => 97,
                 'cup_id' => 8,
                 'category_id' => 93,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             95 => 
             array (
                 'id' => 98,
                 'cup_id' => 8,
                 'category_id' => 94,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             96 => 
             array (
                 'id' => 99,
                 'cup_id' => 8,
                 'category_id' => 95,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             97 => 
             array (
                 'id' => 100,
                 'cup_id' => 8,
                 'category_id' => 96,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             98 => 
             array (
                 'id' => 101,
                 'cup_id' => 8,
                 'category_id' => 97,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             99 => 
             array (
                 'id' => 102,
                 'cup_id' => 8,
                 'category_id' => 98,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             100 => 
             array (
                 'id' => 103,
                 'cup_id' => 8,
                 'category_id' => 99,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             101 => 
             array (
                 'id' => 104,
                 'cup_id' => 8,
                 'category_id' => 100,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             102 => 
             array (
                 'id' => 105,
                 'cup_id' => 8,
                 'category_id' => 101,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             103 => 
             array (
                 'id' => 107,
                 'cup_id' => 9,
                 'category_id' => 29,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             104 => 
             array (
                 'id' => 109,
                 'cup_id' => 10,
                 'category_id' => 102,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             105 => 
             array (
                 'id' => 110,
                 'cup_id' => 11,
                 'category_id' => 60,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             106 => 
             array (
                 'id' => 111,
                 'cup_id' => 12,
                 'category_id' => 30,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             107 => 
             array (
                 'id' => 112,
                 'cup_id' => 13,
                 'category_id' => 2,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             108 => 
             array (
                 'id' => 113,
                 'cup_id' => 13,
                 'category_id' => 3,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             109 => 
             array (
                 'id' => 114,
                 'cup_id' => 13,
                 'category_id' => 4,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             110 => 
             array (
                 'id' => 115,
                 'cup_id' => 13,
                 'category_id' => 5,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             111 => 
             array (
                 'id' => 121,
                 'cup_id' => 13,
                 'category_id' => 11,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             112 => 
             array (
                 'id' => 122,
                 'cup_id' => 13,
                 'category_id' => 12,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             113 => 
             array (
                 'id' => 123,
                 'cup_id' => 13,
                 'category_id' => 13,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             114 => 
             array (
                 'id' => 124,
                 'cup_id' => 13,
                 'category_id' => 14,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             115 => 
             array (
                 'id' => 125,
                 'cup_id' => 13,
                 'category_id' => 15,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             116 => 
             array (
                 'id' => 126,
                 'cup_id' => 13,
                 'category_id' => 16,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             117 => 
             array (
                 'id' => 127,
                 'cup_id' => 13,
                 'category_id' => 17,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             118 => 
             array (
                 'id' => 128,
                 'cup_id' => 13,
                 'category_id' => 18,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             119 => 
             array (
                 'id' => 129,
                 'cup_id' => 13,
                 'category_id' => 19,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             120 => 
             array (
                 'id' => 130,
                 'cup_id' => 13,
                 'category_id' => 20,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             121 => 
             array (
                 'id' => 131,
                 'cup_id' => 13,
                 'category_id' => 21,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             122 => 
             array (
                 'id' => 132,
                 'cup_id' => 13,
                 'category_id' => 22,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             123 => 
             array (
                 'id' => 133,
                 'cup_id' => 13,
                 'category_id' => 23,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             124 => 
             array (
                 'id' => 134,
                 'cup_id' => 13,
                 'category_id' => 24,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             125 => 
             array (
                 'id' => 135,
                 'cup_id' => 13,
                 'category_id' => 25,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             126 => 
             array (
                 'id' => 136,
                 'cup_id' => 13,
                 'category_id' => 26,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             127 => 
             array (
                 'id' => 137,
                 'cup_id' => 13,
                 'category_id' => 27,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             128 => 
             array (
                 'id' => 138,
                 'cup_id' => 13,
                 'category_id' => 28,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             129 => 
             array (
                 'id' => 140,
                 'cup_id' => 13,
                 'category_id' => 31,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             130 => 
             array (
                 'id' => 141,
                 'cup_id' => 13,
                 'category_id' => 32,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             131 => 
             array (
                 'id' => 142,
                 'cup_id' => 13,
                 'category_id' => 33,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             132 => 
             array (
                 'id' => 143,
                 'cup_id' => 13,
                 'category_id' => 34,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             133 => 
             array (
                 'id' => 144,
                 'cup_id' => 13,
                 'category_id' => 35,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             134 => 
             array (
                 'id' => 145,
                 'cup_id' => 13,
                 'category_id' => 36,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             135 => 
             array (
                 'id' => 146,
                 'cup_id' => 13,
                 'category_id' => 37,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             136 => 
             array (
                 'id' => 147,
                 'cup_id' => 13,
                 'category_id' => 38,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             137 => 
             array (
                 'id' => 148,
                 'cup_id' => 13,
                 'category_id' => 39,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             138 => 
             array (
                 'id' => 149,
                 'cup_id' => 13,
                 'category_id' => 40,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             139 => 
             array (
                 'id' => 150,
                 'cup_id' => 13,
                 'category_id' => 41,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             140 => 
             array (
                 'id' => 151,
                 'cup_id' => 13,
                 'category_id' => 42,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             141 => 
             array (
                 'id' => 152,
                 'cup_id' => 13,
                 'category_id' => 43,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             142 => 
             array (
                 'id' => 153,
                 'cup_id' => 13,
                 'category_id' => 44,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             143 => 
             array (
                 'id' => 154,
                 'cup_id' => 13,
                 'category_id' => 45,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             144 => 
             array (
                 'id' => 155,
                 'cup_id' => 13,
                 'category_id' => 46,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             145 => 
             array (
                 'id' => 156,
                 'cup_id' => 13,
                 'category_id' => 47,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             146 => 
             array (
                 'id' => 157,
                 'cup_id' => 13,
                 'category_id' => 48,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             147 => 
             array (
                 'id' => 158,
                 'cup_id' => 13,
                 'category_id' => 49,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             148 => 
             array (
                 'id' => 159,
                 'cup_id' => 13,
                 'category_id' => 50,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             149 => 
             array (
                 'id' => 160,
                 'cup_id' => 13,
                 'category_id' => 51,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             150 => 
             array (
                 'id' => 161,
                 'cup_id' => 13,
                 'category_id' => 52,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             151 => 
             array (
                 'id' => 162,
                 'cup_id' => 13,
                 'category_id' => 53,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             152 => 
             array (
                 'id' => 163,
                 'cup_id' => 13,
                 'category_id' => 54,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             153 => 
             array (
                 'id' => 164,
                 'cup_id' => 13,
                 'category_id' => 55,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             154 => 
             array (
                 'id' => 165,
                 'cup_id' => 13,
                 'category_id' => 56,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             155 => 
             array (
                 'id' => 166,
                 'cup_id' => 13,
                 'category_id' => 57,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             156 => 
             array (
                 'id' => 167,
                 'cup_id' => 13,
                 'category_id' => 58,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             157 => 
             array (
                 'id' => 171,
                 'cup_id' => 6,
                 'category_id' => 89,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             158 => 
             array (
                 'id' => 172,
                 'cup_id' => 30,
                 'category_id' => 2,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             159 => 
             array (
                 'id' => 173,
                 'cup_id' => 30,
                 'category_id' => 3,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             160 => 
             array (
                 'id' => 174,
                 'cup_id' => 30,
                 'category_id' => 4,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             161 => 
             array (
                 'id' => 175,
                 'cup_id' => 30,
                 'category_id' => 5,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             162 => 
             array (
                 'id' => 176,
                 'cup_id' => 31,
                 'category_id' => 59,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             163 => 
             array (
@@ -2631,1392 +2631,1392 @@ class CategoryCupTableSeeder extends Seeder
                 'id' => 340,
                 'cup_id' => 5,
                 'category_id' => 379,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             327 => 
             array (
                 'id' => 505,
                 'cup_id' => 13,
                 'category_id' => 505,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             328 => 
             array (
                 'id' => 506,
                 'cup_id' => 30,
                 'category_id' => 505,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             329 => 
             array (
                 'id' => 507,
                 'cup_id' => 13,
                 'category_id' => 506,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             330 => 
             array (
                 'id' => 508,
                 'cup_id' => 30,
                 'category_id' => 506,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             331 => 
             array (
                 'id' => 509,
                 'cup_id' => 13,
                 'category_id' => 507,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             332 => 
             array (
                 'id' => 510,
                 'cup_id' => 30,
                 'category_id' => 507,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             333 => 
             array (
                 'id' => 511,
                 'cup_id' => 13,
                 'category_id' => 508,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             334 => 
             array (
                 'id' => 512,
                 'cup_id' => 30,
                 'category_id' => 508,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             335 => 
             array (
                 'id' => 513,
                 'cup_id' => 1,
                 'category_id' => 509,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             336 => 
             array (
                 'id' => 514,
                 'cup_id' => 1,
                 'category_id' => 510,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             337 => 
             array (
                 'id' => 515,
                 'cup_id' => 1,
                 'category_id' => 511,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             338 => 
             array (
                 'id' => 516,
                 'cup_id' => 1,
                 'category_id' => 512,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             339 => 
             array (
                 'id' => 517,
                 'cup_id' => 1,
                 'category_id' => 513,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             340 => 
             array (
                 'id' => 518,
                 'cup_id' => 1,
                 'category_id' => 514,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             341 => 
             array (
                 'id' => 519,
                 'cup_id' => 13,
                 'category_id' => 514,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             342 => 
             array (
                 'id' => 520,
                 'cup_id' => 1,
                 'category_id' => 515,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             343 => 
             array (
                 'id' => 521,
                 'cup_id' => 13,
                 'category_id' => 515,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             344 => 
             array (
                 'id' => 522,
                 'cup_id' => 1,
                 'category_id' => 516,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             345 => 
             array (
                 'id' => 523,
                 'cup_id' => 13,
                 'category_id' => 516,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             346 => 
             array (
                 'id' => 524,
                 'cup_id' => 1,
                 'category_id' => 517,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             347 => 
             array (
                 'id' => 525,
                 'cup_id' => 13,
                 'category_id' => 517,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             348 => 
             array (
                 'id' => 526,
                 'cup_id' => 1,
                 'category_id' => 518,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             349 => 
             array (
                 'id' => 527,
                 'cup_id' => 13,
                 'category_id' => 518,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             350 => 
             array (
                 'id' => 528,
                 'cup_id' => 1,
                 'category_id' => 519,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             351 => 
             array (
                 'id' => 529,
                 'cup_id' => 13,
                 'category_id' => 519,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             352 => 
             array (
                 'id' => 530,
                 'cup_id' => 1,
                 'category_id' => 520,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             353 => 
             array (
                 'id' => 531,
                 'cup_id' => 13,
                 'category_id' => 520,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             354 => 
             array (
                 'id' => 532,
                 'cup_id' => 1,
                 'category_id' => 521,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             355 => 
             array (
                 'id' => 533,
                 'cup_id' => 13,
                 'category_id' => 521,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             356 => 
             array (
                 'id' => 534,
                 'cup_id' => 1,
                 'category_id' => 522,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             357 => 
             array (
                 'id' => 535,
                 'cup_id' => 13,
                 'category_id' => 522,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             358 => 
             array (
                 'id' => 536,
                 'cup_id' => 1,
                 'category_id' => 523,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             359 => 
             array (
                 'id' => 537,
                 'cup_id' => 13,
                 'category_id' => 523,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             360 => 
             array (
                 'id' => 538,
                 'cup_id' => 1,
                 'category_id' => 524,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             361 => 
             array (
                 'id' => 539,
                 'cup_id' => 13,
                 'category_id' => 524,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             362 => 
             array (
                 'id' => 540,
                 'cup_id' => 1,
                 'category_id' => 525,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             363 => 
             array (
                 'id' => 541,
                 'cup_id' => 13,
                 'category_id' => 525,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             364 => 
             array (
                 'id' => 542,
                 'cup_id' => 1,
                 'category_id' => 526,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             365 => 
             array (
                 'id' => 543,
                 'cup_id' => 13,
                 'category_id' => 526,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             366 => 
             array (
                 'id' => 544,
                 'cup_id' => 1,
                 'category_id' => 527,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             367 => 
             array (
                 'id' => 545,
                 'cup_id' => 13,
                 'category_id' => 527,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             368 => 
             array (
                 'id' => 546,
                 'cup_id' => 1,
                 'category_id' => 528,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             369 => 
             array (
                 'id' => 547,
                 'cup_id' => 13,
                 'category_id' => 528,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             370 => 
             array (
                 'id' => 548,
                 'cup_id' => 1,
                 'category_id' => 529,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             371 => 
             array (
                 'id' => 549,
                 'cup_id' => 13,
                 'category_id' => 529,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             372 => 
             array (
                 'id' => 550,
                 'cup_id' => 1,
                 'category_id' => 530,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             373 => 
             array (
                 'id' => 551,
                 'cup_id' => 13,
                 'category_id' => 530,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             374 => 
             array (
                 'id' => 552,
                 'cup_id' => 1,
                 'category_id' => 531,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             375 => 
             array (
                 'id' => 553,
                 'cup_id' => 13,
                 'category_id' => 531,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             376 => 
             array (
                 'id' => 554,
                 'cup_id' => 1,
                 'category_id' => 532,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             377 => 
             array (
                 'id' => 555,
                 'cup_id' => 9,
                 'category_id' => 532,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             378 => 
             array (
                 'id' => 556,
                 'cup_id' => 12,
                 'category_id' => 533,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             379 => 
             array (
                 'id' => 557,
                 'cup_id' => 2,
                 'category_id' => 534,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             380 => 
             array (
                 'id' => 558,
                 'cup_id' => 13,
                 'category_id' => 534,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             381 => 
             array (
                 'id' => 559,
                 'cup_id' => 2,
                 'category_id' => 535,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             382 => 
             array (
                 'id' => 560,
                 'cup_id' => 13,
                 'category_id' => 535,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             383 => 
             array (
                 'id' => 561,
                 'cup_id' => 2,
                 'category_id' => 536,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             384 => 
             array (
                 'id' => 562,
                 'cup_id' => 13,
                 'category_id' => 536,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             385 => 
             array (
                 'id' => 563,
                 'cup_id' => 2,
                 'category_id' => 537,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             386 => 
             array (
                 'id' => 564,
                 'cup_id' => 13,
                 'category_id' => 537,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             387 => 
             array (
                 'id' => 565,
                 'cup_id' => 2,
                 'category_id' => 538,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             388 => 
             array (
                 'id' => 566,
                 'cup_id' => 13,
                 'category_id' => 538,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             389 => 
             array (
                 'id' => 567,
                 'cup_id' => 2,
                 'category_id' => 539,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             390 => 
             array (
                 'id' => 568,
                 'cup_id' => 13,
                 'category_id' => 539,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             391 => 
             array (
                 'id' => 569,
                 'cup_id' => 2,
                 'category_id' => 540,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             392 => 
             array (
                 'id' => 570,
                 'cup_id' => 13,
                 'category_id' => 540,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             393 => 
             array (
                 'id' => 571,
                 'cup_id' => 3,
                 'category_id' => 541,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             394 => 
             array (
                 'id' => 572,
                 'cup_id' => 13,
                 'category_id' => 541,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             395 => 
             array (
                 'id' => 573,
                 'cup_id' => 3,
                 'category_id' => 542,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             396 => 
             array (
                 'id' => 574,
                 'cup_id' => 13,
                 'category_id' => 542,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             397 => 
             array (
                 'id' => 575,
                 'cup_id' => 3,
                 'category_id' => 543,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             398 => 
             array (
                 'id' => 576,
                 'cup_id' => 13,
                 'category_id' => 543,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             399 => 
             array (
                 'id' => 577,
                 'cup_id' => 3,
                 'category_id' => 544,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             400 => 
             array (
                 'id' => 578,
                 'cup_id' => 13,
                 'category_id' => 544,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             401 => 
             array (
                 'id' => 579,
                 'cup_id' => 3,
                 'category_id' => 545,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             402 => 
             array (
                 'id' => 580,
                 'cup_id' => 13,
                 'category_id' => 545,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             403 => 
             array (
                 'id' => 581,
                 'cup_id' => 3,
                 'category_id' => 546,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             404 => 
             array (
                 'id' => 582,
                 'cup_id' => 13,
                 'category_id' => 546,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             405 => 
             array (
                 'id' => 583,
                 'cup_id' => 3,
                 'category_id' => 547,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             406 => 
             array (
                 'id' => 584,
                 'cup_id' => 13,
                 'category_id' => 547,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             407 => 
             array (
                 'id' => 585,
                 'cup_id' => 3,
                 'category_id' => 548,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             408 => 
             array (
                 'id' => 586,
                 'cup_id' => 13,
                 'category_id' => 548,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             409 => 
             array (
                 'id' => 587,
                 'cup_id' => 3,
                 'category_id' => 549,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             410 => 
             array (
                 'id' => 588,
                 'cup_id' => 13,
                 'category_id' => 549,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             411 => 
             array (
                 'id' => 589,
                 'cup_id' => 3,
                 'category_id' => 550,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             412 => 
             array (
                 'id' => 590,
                 'cup_id' => 13,
                 'category_id' => 550,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             413 => 
             array (
                 'id' => 591,
                 'cup_id' => 3,
                 'category_id' => 551,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             414 => 
             array (
                 'id' => 592,
                 'cup_id' => 13,
                 'category_id' => 551,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             415 => 
             array (
                 'id' => 593,
                 'cup_id' => 3,
                 'category_id' => 552,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             416 => 
             array (
                 'id' => 594,
                 'cup_id' => 13,
                 'category_id' => 552,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             417 => 
             array (
                 'id' => 595,
                 'cup_id' => 3,
                 'category_id' => 553,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             418 => 
             array (
                 'id' => 596,
                 'cup_id' => 13,
                 'category_id' => 553,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             419 => 
             array (
                 'id' => 597,
                 'cup_id' => 3,
                 'category_id' => 554,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             420 => 
             array (
                 'id' => 598,
                 'cup_id' => 13,
                 'category_id' => 554,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             421 => 
             array (
                 'id' => 599,
                 'cup_id' => 3,
                 'category_id' => 555,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             422 => 
             array (
                 'id' => 600,
                 'cup_id' => 13,
                 'category_id' => 555,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             423 => 
             array (
                 'id' => 601,
                 'cup_id' => 3,
                 'category_id' => 556,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             424 => 
             array (
                 'id' => 602,
                 'cup_id' => 13,
                 'category_id' => 556,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             425 => 
             array (
                 'id' => 603,
                 'cup_id' => 3,
                 'category_id' => 557,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             426 => 
             array (
                 'id' => 604,
                 'cup_id' => 13,
                 'category_id' => 557,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             427 => 
             array (
                 'id' => 605,
                 'cup_id' => 3,
                 'category_id' => 558,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             428 => 
             array (
                 'id' => 606,
                 'cup_id' => 13,
                 'category_id' => 558,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             429 => 
             array (
                 'id' => 607,
                 'cup_id' => 3,
                 'category_id' => 559,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             430 => 
             array (
                 'id' => 608,
                 'cup_id' => 13,
                 'category_id' => 559,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             431 => 
             array (
                 'id' => 609,
                 'cup_id' => 3,
                 'category_id' => 560,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             432 => 
             array (
                 'id' => 610,
                 'cup_id' => 13,
                 'category_id' => 560,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             433 => 
             array (
                 'id' => 611,
                 'cup_id' => 3,
                 'category_id' => 561,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             434 => 
             array (
                 'id' => 612,
                 'cup_id' => 13,
                 'category_id' => 561,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             435 => 
             array (
                 'id' => 613,
                 'cup_id' => 31,
                 'category_id' => 562,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             436 => 
             array (
                 'id' => 614,
                 'cup_id' => 11,
                 'category_id' => 563,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             437 => 
             array (
                 'id' => 615,
                 'cup_id' => 4,
                 'category_id' => 564,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             438 => 
             array (
                 'id' => 616,
                 'cup_id' => 4,
                 'category_id' => 565,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             439 => 
             array (
                 'id' => 617,
                 'cup_id' => 4,
                 'category_id' => 566,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             440 => 
             array (
                 'id' => 618,
                 'cup_id' => 4,
                 'category_id' => 567,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             441 => 
             array (
                 'id' => 619,
                 'cup_id' => 5,
                 'category_id' => 568,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             442 => 
             array (
                 'id' => 620,
                 'cup_id' => 5,
                 'category_id' => 569,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             443 => 
             array (
                 'id' => 621,
                 'cup_id' => 5,
                 'category_id' => 570,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             444 => 
             array (
                 'id' => 622,
                 'cup_id' => 5,
                 'category_id' => 571,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             445 => 
             array (
                 'id' => 623,
                 'cup_id' => 5,
                 'category_id' => 572,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             446 => 
             array (
                 'id' => 624,
                 'cup_id' => 5,
                 'category_id' => 573,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             447 => 
             array (
                 'id' => 625,
                 'cup_id' => 5,
                 'category_id' => 574,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             448 => 
             array (
                 'id' => 626,
                 'cup_id' => 5,
                 'category_id' => 575,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             449 => 
             array (
                 'id' => 627,
                 'cup_id' => 5,
                 'category_id' => 576,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             450 => 
             array (
                 'id' => 628,
                 'cup_id' => 5,
                 'category_id' => 577,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             451 => 
             array (
                 'id' => 629,
                 'cup_id' => 5,
                 'category_id' => 578,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             452 => 
             array (
                 'id' => 630,
                 'cup_id' => 5,
                 'category_id' => 579,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             453 => 
             array (
                 'id' => 631,
                 'cup_id' => 5,
                 'category_id' => 580,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             454 => 
             array (
                 'id' => 632,
                 'cup_id' => 5,
                 'category_id' => 581,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             455 => 
             array (
                 'id' => 633,
                 'cup_id' => 6,
                 'category_id' => 582,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             456 => 
             array (
                 'id' => 634,
                 'cup_id' => 6,
                 'category_id' => 583,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             457 => 
             array (
                 'id' => 635,
                 'cup_id' => 6,
                 'category_id' => 584,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             458 => 
             array (
                 'id' => 636,
                 'cup_id' => 6,
                 'category_id' => 585,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             459 => 
             array (
                 'id' => 637,
                 'cup_id' => 6,
                 'category_id' => 586,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             460 => 
             array (
                 'id' => 638,
                 'cup_id' => 6,
                 'category_id' => 587,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             461 => 
             array (
                 'id' => 639,
                 'cup_id' => 6,
                 'category_id' => 588,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             462 => 
             array (
                 'id' => 640,
                 'cup_id' => 6,
                 'category_id' => 589,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             463 => 
             array (
                 'id' => 641,
                 'cup_id' => 6,
                 'category_id' => 593,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             464 => 
             array (
                 'id' => 642,
                 'cup_id' => 8,
                 'category_id' => 594,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             465 => 
             array (
                 'id' => 643,
                 'cup_id' => 8,
                 'category_id' => 595,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             466 => 
             array (
                 'id' => 644,
                 'cup_id' => 8,
                 'category_id' => 596,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             467 => 
             array (
                 'id' => 645,
                 'cup_id' => 8,
                 'category_id' => 597,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             468 => 
             array (
                 'id' => 646,
                 'cup_id' => 8,
                 'category_id' => 598,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             469 => 
             array (
                 'id' => 647,
                 'cup_id' => 8,
                 'category_id' => 599,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             470 => 
             array (
                 'id' => 648,
                 'cup_id' => 8,
                 'category_id' => 600,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             471 => 
             array (
                 'id' => 649,
                 'cup_id' => 8,
                 'category_id' => 601,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             472 => 
             array (
                 'id' => 650,
                 'cup_id' => 8,
                 'category_id' => 602,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             473 => 
             array (
                 'id' => 651,
                 'cup_id' => 8,
                 'category_id' => 603,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             474 => 
             array (
                 'id' => 652,
                 'cup_id' => 8,
                 'category_id' => 604,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             475 => 
             array (
                 'id' => 653,
                 'cup_id' => 10,
                 'category_id' => 605,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             476 => 
             array (
                 'id' => 654,
                 'cup_id' => 7,
                 'category_id' => 606,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             477 => 
             array (
                 'id' => 655,
                 'cup_id' => 7,
                 'category_id' => 607,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             478 => 
             array (
                 'id' => 656,
                 'cup_id' => 7,
                 'category_id' => 608,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             479 => 
             array (
                 'id' => 657,
                 'cup_id' => 7,
                 'category_id' => 609,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             480 => 
             array (
                 'id' => 658,
                 'cup_id' => 7,
                 'category_id' => 610,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             481 => 
             array (
                 'id' => 659,
                 'cup_id' => 7,
                 'category_id' => 611,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             482 => 
             array (
                 'id' => 660,
                 'cup_id' => 7,
                 'category_id' => 612,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             483 => 
             array (
                 'id' => 661,
                 'cup_id' => 7,
                 'category_id' => 613,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             484 => 
             array (
                 'id' => 662,
                 'cup_id' => 7,
                 'category_id' => 614,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             485 => 
             array (
                 'id' => 663,
                 'cup_id' => 7,
                 'category_id' => 615,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             486 => 
             array (
                 'id' => 664,
                 'cup_id' => 7,
                 'category_id' => 616,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             487 => 
             array (
                 'id' => 665,
                 'cup_id' => 7,
                 'category_id' => 617,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             488 => 
             array (
                 'id' => 666,
                 'cup_id' => 7,
                 'category_id' => 618,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             489 => 
             array (
                 'id' => 667,
                 'cup_id' => 7,
                 'category_id' => 619,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             490 => 
             array (
                 'id' => 668,
                 'cup_id' => 7,
                 'category_id' => 620,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             491 => 
             array (
                 'id' => 669,
                 'cup_id' => 1,
                 'category_id' => 634,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             492 => 
             array (
                 'id' => 670,
                 'cup_id' => 13,
                 'category_id' => 637,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             493 => 
             array (
                 'id' => 671,
                 'cup_id' => 30,
                 'category_id' => 637,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             494 => 
             array (
                 'id' => 672,
                 'cup_id' => 13,
                 'category_id' => 638,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             495 => 
             array (
                 'id' => 673,
                 'cup_id' => 30,
                 'category_id' => 638,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             496 => 
             array (
                 'id' => 674,
                 'cup_id' => 13,
                 'category_id' => 639,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             497 => 
             array (
                 'id' => 675,
                 'cup_id' => 30,
                 'category_id' => 639,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             498 => 
             array (
                 'id' => 676,
                 'cup_id' => 13,
                 'category_id' => 640,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             499 => 
             array (
                 'id' => 677,
                 'cup_id' => 30,
                 'category_id' => 640,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
         ));
         \DB::table('category_cup')->insert(array (
@@ -4025,1256 +4025,1256 @@ class CategoryCupTableSeeder extends Seeder
                 'id' => 678,
                 'cup_id' => 1,
                 'category_id' => 641,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             1 => 
             array (
                 'id' => 679,
                 'cup_id' => 1,
                 'category_id' => 642,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             2 => 
             array (
                 'id' => 680,
                 'cup_id' => 1,
                 'category_id' => 643,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             3 => 
             array (
                 'id' => 681,
                 'cup_id' => 1,
                 'category_id' => 644,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             4 => 
             array (
                 'id' => 682,
                 'cup_id' => 1,
                 'category_id' => 645,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             5 => 
             array (
                 'id' => 683,
                 'cup_id' => 1,
                 'category_id' => 646,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             6 => 
             array (
                 'id' => 684,
                 'cup_id' => 13,
                 'category_id' => 646,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             7 => 
             array (
                 'id' => 685,
                 'cup_id' => 1,
                 'category_id' => 647,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             8 => 
             array (
                 'id' => 686,
                 'cup_id' => 13,
                 'category_id' => 647,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             9 => 
             array (
                 'id' => 687,
                 'cup_id' => 1,
                 'category_id' => 648,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             10 => 
             array (
                 'id' => 688,
                 'cup_id' => 13,
                 'category_id' => 648,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             11 => 
             array (
                 'id' => 689,
                 'cup_id' => 1,
                 'category_id' => 649,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             12 => 
             array (
                 'id' => 690,
                 'cup_id' => 13,
                 'category_id' => 649,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             13 => 
             array (
                 'id' => 691,
                 'cup_id' => 1,
                 'category_id' => 650,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             14 => 
             array (
                 'id' => 692,
                 'cup_id' => 13,
                 'category_id' => 650,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             15 => 
             array (
                 'id' => 693,
                 'cup_id' => 1,
                 'category_id' => 651,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             16 => 
             array (
                 'id' => 694,
                 'cup_id' => 13,
                 'category_id' => 651,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             17 => 
             array (
                 'id' => 695,
                 'cup_id' => 1,
                 'category_id' => 652,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             18 => 
             array (
                 'id' => 696,
                 'cup_id' => 13,
                 'category_id' => 652,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             19 => 
             array (
                 'id' => 697,
                 'cup_id' => 1,
                 'category_id' => 653,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             20 => 
             array (
                 'id' => 698,
                 'cup_id' => 13,
                 'category_id' => 653,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             21 => 
             array (
                 'id' => 699,
                 'cup_id' => 1,
                 'category_id' => 654,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             22 => 
             array (
                 'id' => 700,
                 'cup_id' => 13,
                 'category_id' => 654,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             23 => 
             array (
                 'id' => 701,
                 'cup_id' => 1,
                 'category_id' => 655,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             24 => 
             array (
                 'id' => 702,
                 'cup_id' => 13,
                 'category_id' => 655,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             25 => 
             array (
                 'id' => 703,
                 'cup_id' => 1,
                 'category_id' => 656,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             26 => 
             array (
                 'id' => 704,
                 'cup_id' => 13,
                 'category_id' => 656,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             27 => 
             array (
                 'id' => 705,
                 'cup_id' => 1,
                 'category_id' => 657,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             28 => 
             array (
                 'id' => 706,
                 'cup_id' => 13,
                 'category_id' => 657,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             29 => 
             array (
                 'id' => 707,
                 'cup_id' => 1,
                 'category_id' => 658,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             30 => 
             array (
                 'id' => 708,
                 'cup_id' => 13,
                 'category_id' => 658,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             31 => 
             array (
                 'id' => 709,
                 'cup_id' => 1,
                 'category_id' => 659,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             32 => 
             array (
                 'id' => 710,
                 'cup_id' => 13,
                 'category_id' => 659,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             33 => 
             array (
                 'id' => 711,
                 'cup_id' => 1,
                 'category_id' => 660,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             34 => 
             array (
                 'id' => 712,
                 'cup_id' => 1,
                 'category_id' => 661,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             35 => 
             array (
                 'id' => 713,
                 'cup_id' => 13,
                 'category_id' => 661,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             36 => 
             array (
                 'id' => 714,
                 'cup_id' => 1,
                 'category_id' => 662,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             37 => 
             array (
                 'id' => 715,
                 'cup_id' => 13,
                 'category_id' => 662,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             38 => 
             array (
                 'id' => 716,
                 'cup_id' => 1,
                 'category_id' => 663,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             39 => 
             array (
                 'id' => 717,
                 'cup_id' => 13,
                 'category_id' => 663,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             40 => 
             array (
                 'id' => 718,
                 'cup_id' => 1,
                 'category_id' => 664,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             41 => 
             array (
                 'id' => 719,
                 'cup_id' => 13,
                 'category_id' => 664,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             42 => 
             array (
                 'id' => 720,
                 'cup_id' => 1,
                 'category_id' => 665,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             43 => 
             array (
                 'id' => 721,
                 'cup_id' => 9,
                 'category_id' => 665,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             44 => 
             array (
                 'id' => 722,
                 'cup_id' => 12,
                 'category_id' => 666,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             45 => 
             array (
                 'id' => 723,
                 'cup_id' => 2,
                 'category_id' => 667,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             46 => 
             array (
                 'id' => 724,
                 'cup_id' => 13,
                 'category_id' => 667,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             47 => 
             array (
                 'id' => 725,
                 'cup_id' => 2,
                 'category_id' => 668,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             48 => 
             array (
                 'id' => 726,
                 'cup_id' => 13,
                 'category_id' => 668,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             49 => 
             array (
                 'id' => 727,
                 'cup_id' => 2,
                 'category_id' => 669,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             50 => 
             array (
                 'id' => 728,
                 'cup_id' => 13,
                 'category_id' => 669,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             51 => 
             array (
                 'id' => 729,
                 'cup_id' => 2,
                 'category_id' => 670,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             52 => 
             array (
                 'id' => 730,
                 'cup_id' => 13,
                 'category_id' => 670,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             53 => 
             array (
                 'id' => 731,
                 'cup_id' => 2,
                 'category_id' => 671,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             54 => 
             array (
                 'id' => 732,
                 'cup_id' => 13,
                 'category_id' => 671,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             55 => 
             array (
                 'id' => 733,
                 'cup_id' => 2,
                 'category_id' => 672,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             56 => 
             array (
                 'id' => 734,
                 'cup_id' => 13,
                 'category_id' => 672,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             57 => 
             array (
                 'id' => 735,
                 'cup_id' => 2,
                 'category_id' => 673,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             58 => 
             array (
                 'id' => 736,
                 'cup_id' => 13,
                 'category_id' => 673,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             59 => 
             array (
                 'id' => 737,
                 'cup_id' => 3,
                 'category_id' => 674,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             60 => 
             array (
                 'id' => 738,
                 'cup_id' => 13,
                 'category_id' => 674,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             61 => 
             array (
                 'id' => 739,
                 'cup_id' => 3,
                 'category_id' => 675,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             62 => 
             array (
                 'id' => 740,
                 'cup_id' => 13,
                 'category_id' => 675,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             63 => 
             array (
                 'id' => 741,
                 'cup_id' => 3,
                 'category_id' => 676,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             64 => 
             array (
                 'id' => 742,
                 'cup_id' => 13,
                 'category_id' => 676,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             65 => 
             array (
                 'id' => 743,
                 'cup_id' => 3,
                 'category_id' => 677,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             66 => 
             array (
                 'id' => 744,
                 'cup_id' => 13,
                 'category_id' => 677,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             67 => 
             array (
                 'id' => 745,
                 'cup_id' => 3,
                 'category_id' => 678,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             68 => 
             array (
                 'id' => 746,
                 'cup_id' => 13,
                 'category_id' => 678,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             69 => 
             array (
                 'id' => 747,
                 'cup_id' => 3,
                 'category_id' => 679,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             70 => 
             array (
                 'id' => 748,
                 'cup_id' => 13,
                 'category_id' => 679,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             71 => 
             array (
                 'id' => 749,
                 'cup_id' => 3,
                 'category_id' => 680,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             72 => 
             array (
                 'id' => 750,
                 'cup_id' => 13,
                 'category_id' => 680,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             73 => 
             array (
                 'id' => 751,
                 'cup_id' => 3,
                 'category_id' => 681,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             74 => 
             array (
                 'id' => 752,
                 'cup_id' => 13,
                 'category_id' => 681,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             75 => 
             array (
                 'id' => 753,
                 'cup_id' => 3,
                 'category_id' => 682,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             76 => 
             array (
                 'id' => 754,
                 'cup_id' => 13,
                 'category_id' => 682,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             77 => 
             array (
                 'id' => 755,
                 'cup_id' => 3,
                 'category_id' => 683,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             78 => 
             array (
                 'id' => 756,
                 'cup_id' => 13,
                 'category_id' => 683,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             79 => 
             array (
                 'id' => 757,
                 'cup_id' => 3,
                 'category_id' => 684,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             80 => 
             array (
                 'id' => 758,
                 'cup_id' => 13,
                 'category_id' => 684,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             81 => 
             array (
                 'id' => 759,
                 'cup_id' => 3,
                 'category_id' => 685,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             82 => 
             array (
                 'id' => 760,
                 'cup_id' => 13,
                 'category_id' => 685,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             83 => 
             array (
                 'id' => 761,
                 'cup_id' => 3,
                 'category_id' => 686,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             84 => 
             array (
                 'id' => 762,
                 'cup_id' => 13,
                 'category_id' => 686,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             85 => 
             array (
                 'id' => 763,
                 'cup_id' => 3,
                 'category_id' => 687,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             86 => 
             array (
                 'id' => 764,
                 'cup_id' => 13,
                 'category_id' => 687,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             87 => 
             array (
                 'id' => 765,
                 'cup_id' => 3,
                 'category_id' => 688,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             88 => 
             array (
                 'id' => 766,
                 'cup_id' => 13,
                 'category_id' => 688,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             89 => 
             array (
                 'id' => 767,
                 'cup_id' => 3,
                 'category_id' => 689,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             90 => 
             array (
                 'id' => 768,
                 'cup_id' => 13,
                 'category_id' => 689,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             91 => 
             array (
                 'id' => 769,
                 'cup_id' => 3,
                 'category_id' => 690,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             92 => 
             array (
                 'id' => 770,
                 'cup_id' => 13,
                 'category_id' => 690,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             93 => 
             array (
                 'id' => 771,
                 'cup_id' => 3,
                 'category_id' => 691,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             94 => 
             array (
                 'id' => 772,
                 'cup_id' => 13,
                 'category_id' => 691,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             95 => 
             array (
                 'id' => 773,
                 'cup_id' => 3,
                 'category_id' => 692,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             96 => 
             array (
                 'id' => 774,
                 'cup_id' => 13,
                 'category_id' => 692,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             97 => 
             array (
                 'id' => 775,
                 'cup_id' => 3,
                 'category_id' => 693,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             98 => 
             array (
                 'id' => 776,
                 'cup_id' => 13,
                 'category_id' => 693,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             99 => 
             array (
                 'id' => 777,
                 'cup_id' => 3,
                 'category_id' => 694,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             100 => 
             array (
                 'id' => 778,
                 'cup_id' => 13,
                 'category_id' => 694,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             101 => 
             array (
                 'id' => 779,
                 'cup_id' => 31,
                 'category_id' => 695,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             102 => 
             array (
                 'id' => 780,
                 'cup_id' => 11,
                 'category_id' => 696,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             103 => 
             array (
                 'id' => 781,
                 'cup_id' => 4,
                 'category_id' => 697,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             104 => 
             array (
                 'id' => 782,
                 'cup_id' => 4,
                 'category_id' => 698,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             105 => 
             array (
                 'id' => 783,
                 'cup_id' => 4,
                 'category_id' => 699,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             106 => 
             array (
                 'id' => 784,
                 'cup_id' => 4,
                 'category_id' => 700,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             107 => 
             array (
                 'id' => 785,
                 'cup_id' => 5,
                 'category_id' => 701,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             108 => 
             array (
                 'id' => 786,
                 'cup_id' => 5,
                 'category_id' => 702,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             109 => 
             array (
                 'id' => 787,
                 'cup_id' => 5,
                 'category_id' => 703,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             110 => 
             array (
                 'id' => 788,
                 'cup_id' => 5,
                 'category_id' => 704,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             111 => 
             array (
                 'id' => 789,
                 'cup_id' => 5,
                 'category_id' => 705,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             112 => 
             array (
                 'id' => 790,
                 'cup_id' => 5,
                 'category_id' => 706,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             113 => 
             array (
                 'id' => 791,
                 'cup_id' => 5,
                 'category_id' => 707,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             114 => 
             array (
                 'id' => 792,
                 'cup_id' => 5,
                 'category_id' => 708,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             115 => 
             array (
                 'id' => 793,
                 'cup_id' => 5,
                 'category_id' => 710,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             116 => 
             array (
                 'id' => 794,
                 'cup_id' => 5,
                 'category_id' => 711,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             117 => 
             array (
                 'id' => 795,
                 'cup_id' => 5,
                 'category_id' => 712,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             118 => 
             array (
                 'id' => 796,
                 'cup_id' => 5,
                 'category_id' => 713,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             119 => 
             array (
                 'id' => 797,
                 'cup_id' => 5,
                 'category_id' => 714,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             120 => 
             array (
                 'id' => 798,
                 'cup_id' => 5,
                 'category_id' => 715,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             121 => 
             array (
                 'id' => 799,
                 'cup_id' => 6,
                 'category_id' => 716,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             122 => 
             array (
                 'id' => 800,
                 'cup_id' => 6,
                 'category_id' => 717,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             123 => 
             array (
                 'id' => 801,
                 'cup_id' => 6,
                 'category_id' => 718,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             124 => 
             array (
                 'id' => 802,
                 'cup_id' => 6,
                 'category_id' => 719,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             125 => 
             array (
                 'id' => 803,
                 'cup_id' => 6,
                 'category_id' => 720,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             126 => 
             array (
                 'id' => 804,
                 'cup_id' => 6,
                 'category_id' => 721,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             127 => 
             array (
                 'id' => 805,
                 'cup_id' => 6,
                 'category_id' => 722,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             128 => 
             array (
                 'id' => 806,
                 'cup_id' => 6,
                 'category_id' => 723,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             129 => 
             array (
                 'id' => 807,
                 'cup_id' => 6,
                 'category_id' => 727,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             130 => 
             array (
                 'id' => 808,
                 'cup_id' => 8,
                 'category_id' => 728,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             131 => 
             array (
                 'id' => 809,
                 'cup_id' => 8,
                 'category_id' => 729,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             132 => 
             array (
                 'id' => 810,
                 'cup_id' => 8,
                 'category_id' => 730,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             133 => 
             array (
                 'id' => 811,
                 'cup_id' => 8,
                 'category_id' => 731,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             134 => 
             array (
                 'id' => 812,
                 'cup_id' => 8,
                 'category_id' => 732,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             135 => 
             array (
                 'id' => 813,
                 'cup_id' => 8,
                 'category_id' => 733,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             136 => 
             array (
                 'id' => 814,
                 'cup_id' => 8,
                 'category_id' => 734,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             137 => 
             array (
                 'id' => 815,
                 'cup_id' => 8,
                 'category_id' => 735,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             138 => 
             array (
                 'id' => 816,
                 'cup_id' => 8,
                 'category_id' => 736,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             139 => 
             array (
                 'id' => 817,
                 'cup_id' => 8,
                 'category_id' => 737,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             140 => 
             array (
                 'id' => 818,
                 'cup_id' => 8,
                 'category_id' => 738,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             141 => 
             array (
                 'id' => 819,
                 'cup_id' => 10,
                 'category_id' => 739,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             142 => 
             array (
                 'id' => 820,
                 'cup_id' => 7,
                 'category_id' => 740,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             143 => 
             array (
                 'id' => 821,
                 'cup_id' => 7,
                 'category_id' => 743,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             144 => 
             array (
                 'id' => 822,
                 'cup_id' => 7,
                 'category_id' => 744,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             145 => 
             array (
                 'id' => 823,
                 'cup_id' => 7,
                 'category_id' => 745,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             146 => 
             array (
                 'id' => 824,
                 'cup_id' => 7,
                 'category_id' => 746,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             147 => 
             array (
                 'id' => 825,
                 'cup_id' => 7,
                 'category_id' => 747,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             148 => 
             array (
                 'id' => 826,
                 'cup_id' => 7,
                 'category_id' => 748,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             149 => 
             array (
                 'id' => 827,
                 'cup_id' => 7,
                 'category_id' => 749,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             150 => 
             array (
                 'id' => 828,
                 'cup_id' => 7,
                 'category_id' => 750,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             151 => 
             array (
                 'id' => 829,
                 'cup_id' => 7,
                 'category_id' => 751,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             152 => 
             array (
                 'id' => 830,
                 'cup_id' => 7,
                 'category_id' => 752,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             153 => 
             array (
                 'id' => 831,
                 'cup_id' => 7,
                 'category_id' => 753,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             154 => 
             array (
                 'id' => 832,
                 'cup_id' => 7,
                 'category_id' => 754,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             155 => 
             array (
                 'id' => 833,
                 'cup_id' => 7,
                 'category_id' => 755,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
             156 => 
             array (
                 'id' => 834,
                 'cup_id' => 7,
                 'category_id' => 756,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => null,
+                'updated_at' => null,
             ),
         ));
         

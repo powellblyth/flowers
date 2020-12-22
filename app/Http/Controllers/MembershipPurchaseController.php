@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class MembershipPurchaseController extends Controller
 {
-    protected $templateDir = 'payments';
-
     public function getAmount($type)
     {
         if ('single' === $type) {

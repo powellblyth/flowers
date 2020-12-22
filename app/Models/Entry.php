@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use \Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Entry
  * @package App
  * @property Entrant $entrant
  * @property Show show
+ * @property string winningplace
+ * @property Category category
+ * @property int category_id
  */
 class Entry extends Model
 {

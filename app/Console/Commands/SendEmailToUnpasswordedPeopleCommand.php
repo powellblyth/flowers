@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Notifications\MustChangePasswordNotification;
 use App\Models\User;
+use App\Notifications\MustChangePasswordNotification;
 use Illuminate\Console\Command;
 
 class SendEmailToUnpasswordedPeopleCommand extends Command

@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
-use App\Models\MembershipPurchase;
-use App\Models\Payment;
 use App\Models\Show;
 use App\Models\Team;
 use App\Models\TeamMembership;
@@ -18,19 +16,17 @@ use Illuminate\Http\Response;
 use Illuminate\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
-use \Illuminate\View\View;
+use Illuminate\View\View;
 
 class EntrantController extends Controller
 {
-
-    protected $templateDir  = 'entrants';
-    protected $paymentTypes = array('cash'          => 'cash',
-                                    'cheque'        => 'cheque',
-                                    'online'        => 'online',
-                                    'debit'         => 'debit',
-                                    'refund_cash'   => 'refund_cash',
-                                    'refund_online' => 'refund_online',
-                                    'refund_cheque' => 'refund_cheque');
+    protected array $paymentTypes = array('cash' => 'cash',
+                                          'cheque' => 'cheque',
+                                          'online' => 'online',
+                                          'debit' => 'debit',
+                                          'refund_cash' => 'refund_cash',
+                                          'refund_online' => 'refund_online',
+                                          'refund_cheque' => 'refund_cheque');
 
     protected $membershipTypes = array(
         'single' => 'single',
@@ -45,9 +41,9 @@ class EntrantController extends Controller
     {
         $entrants = Entrant::with('user')
             ->where('is_anonymised', false)
-            ->orderBy('familyname', 'asc')
-            ->orderBy('user_id', 'asc')
-            ->orderBy('firstname', 'asc')
+            ->orderBy('familyname')
+            ->orderBy('user_id')
+            ->orderBy('firstname')
             ->get();
         // OVerride parent method - this prevents the same query running twice
         // and producing too much data
@@ -55,7 +51,7 @@ class EntrantController extends Controller
             'entrants.index',
             [
                 'entrants' => $entrants,
-                'all'      => false,
+                'all' => false,
                 'isLocked' => config('app.state') == 'locked',
             ]
         );
@@ -63,7 +59,7 @@ class EntrantController extends Controller
 
     public function search(Request $request): View
     {
-        $searchTerm      = $request->input('searchterm');
+        $searchTerm = $request->input('searchterm');
         $entrantsBuilder = Auth::User()->entrants();
         if ($request->has('searchterm')) {
             $entrantsBuilder = $entrantsBuilder
@@ -77,9 +73,9 @@ class EntrantController extends Controller
         return view(
             'entrants.index',
             [
-                'things'     => $entrants,
+                'things' => $entrants,
                 'searchterm' => $searchTerm,
-                'all'        => false,
+                'all' => false,
             ]
         );
     }
@@ -89,7 +85,7 @@ class EntrantController extends Controller
         $searchterm = null;
         if ($request->has('searchterm')) {
             $searchterm = $request->input('searchterm');
-            $entrants   = Entrant::where('entrants.firstname', 'LIKE', "%$searchterm%")
+            $entrants = Entrant::where('entrants.firstname', 'LIKE', "%$searchterm%")
                 ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
                 ->orWhere('entrants.id', '=', "%$searchterm%")
                 ->get();
@@ -101,13 +97,13 @@ class EntrantController extends Controller
                 ->get();
         }
         return view(
-            $this->templateDir . '.index',
+            'entrants.index',
             [
-                'entrants'   => $entrants,
+                'entrants' => $entrants,
                 'searchterm' => $searchterm,
-                'all'        => true,
-                'isAdmin'    => $this->isAdmin(),
-                'isLocked'   => config('app.state') == 'locked',
+                'all' => true,
+                'isAdmin' => $this->isAdmin(),
+                'isLocked' => config('app.state') == 'locked',
             ]
         );
     }
@@ -140,10 +136,10 @@ class EntrantController extends Controller
             ->pluck('name', 'id')->toArray();
 
         return view('entrants.create', [
-            'privacyContent'    => config('static_content.privacy_content'),
-            'allUsers'          => $allUsers,
-            'teams'             => $allTeams,
-            'indicatedAdmin'    => $family->id,
+            'privacyContent' => config('static_content.privacy_content'),
+            'allUsers' => $allUsers,
+            'teams' => $allTeams,
+            'indicatedAdmin' => $family->id,
             'defaultFamilyName' => $family->lastname,
         ]);
     }
@@ -154,10 +150,10 @@ class EntrantController extends Controller
 
         $entrant = new Entrant();
 
-        $entrant->firstname    = $request->firstname;
-        $entrant->familyname   = $request->familyname;
+        $entrant->firstname = $request->firstname;
+        $entrant->familyname = $request->familyname;
         $entrant->membernumber = $request->membernumber;
-        $entrant->team_id      = $request->team_id;
+        $entrant->team_id = $request->team_id;
         dd('TODO relate to team');
         $entrant->age = $request->age;
 
@@ -186,21 +182,21 @@ class EntrantController extends Controller
         $age = (int) $request->age;
         $request->validate(
             [
-                'firstname'  => 'string|required|min:1',
+                'firstname' => 'string|required|min:1',
                 'familyname' => 'string|required|min:1',
-                'age'        => 'integer|nullable|min:0|',
-                'team_id'    => ['nullable',
-                                 'integer',
-                                 Rule::exists('teams', 'id')->where(function ($query) use ($age) {
-                                     $query
-                                         ->where('min_age', '<=', $age)
-                                         ->where('max_age', '>=', $age);
-                                     return $query;
-                                 })],
+                'age' => 'integer|nullable|min:0|',
+                'team_id' => ['nullable',
+                              'integer',
+                              Rule::exists('teams', 'id')->where(function ($query) use ($age) {
+                                  $query
+                                      ->where('min_age', '<=', $age)
+                                      ->where('max_age', '>=', $age);
+                                  return $query;
+                              })],
             ]
         );
-        $entrant->firstname    = $request->firstname;
-        $entrant->familyname   = $request->familyname;
+        $entrant->firstname = $request->firstname;
+        $entrant->familyname = $request->familyname;
         $entrant->membernumber = $request->membernumber;
         // No point eding
         $showId = Show::where('status', 'current')->first()->id;
@@ -209,7 +205,7 @@ class EntrantController extends Controller
 
         // Make sure we don't make duplicate show entries in a given year
         if ($request->team_id) {
-            $team           = Team::findOrFail($request->team_id);
+            $team = Team::findOrFail($request->team_id);
             $teamMembership = TeamMembership::firstOrNew(['show_id' => $showId, 'entrant_id' => $entrant->id]);
             $teamMembership->team()->associate($team);
             $teamMembership->save();
@@ -219,9 +215,9 @@ class EntrantController extends Controller
 
 
         $entrant->can_retain_data = (int) $request->can_retain_data;
-        $entrant->can_email       = (int) $request->can_email;
-        $entrant->can_sms         = (int) $request->can_sms;
-        $entrant->can_post        = (int) $request->can_post;
+        $entrant->can_email = (int) $request->can_email;
+        $entrant->can_sms = (int) $request->can_sms;
+        $entrant->can_post = (int) $request->can_post;
 
         if ($entrant->save()) {
             $request->session()->flash('success', 'Family Member Saved');
@@ -242,11 +238,7 @@ class EntrantController extends Controller
         if ($request->isMethod('POST')) {
             return redirect()->route('entrants.index');
         } else {
-            $entrant = Entrant::where('id', $id)->first();
-            if ($entrant instanceof Entrant) {
-            } else {
-                die('bust' . $id);
-            }
+            $entrant = Entrant::where('id', $id)->firstOrFail();
             die();
         }
     }
@@ -255,17 +247,19 @@ class EntrantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param Request $request
+     * @param Entrant $entrant
+     * @param array $showData
      * @return Response
      * @throws AuthorizationException
      */
     public function show(Request $request, Entrant $entrant, array $showData = [])
     {
-        $totalPrizes   = 0;
+        $totalPrizes = 0;
         $membershipFee = 0;
-        $entryFee      = 0;
+        $entryFee = 0;
 
-        $show        = $this->getShowFromRequest($request);
+        $show = $this->getShowFromRequest($request);
         $currentYear = config('app.year');
 
         $this->authorize('seeDetailedInfo', $entrant);
@@ -274,11 +268,11 @@ class EntrantController extends Controller
             ->where('status', 'active')
             ->get();
 
-        $membershipPurchases   = $entrant->membershipPurchases()->get();
+        $membershipPurchases = $entrant->membershipPurchases()->get();
         $membershipPaymentData = [];
         foreach ($membershipPurchases as $membershipPurchase) {
-            $amount                  = (($membershipPurchase->type == 'single' ? 300 : 500));
-            $membershipFee           += $amount;
+            $amount = (($membershipPurchase->type == 'single' ? 300 : 500));
+            $membershipFee += $amount;
             $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
         }
 
@@ -304,59 +298,68 @@ class EntrantController extends Controller
         //@todo centralise this
         $tooLateForEntries = time() > strToTime($currentYear . "-07-09 00:00:00");
 
-        return response()->view('entrants.show', array_merge($showData, array(
-                'entries'              => $entries,
-                'categories'           => $categories,
-                'membership_purchases' => $membershipPaymentData,
-                'entry_fee'            => $entryFee,
-                'total_price'          => $entryFee + $membershipFee,
-                'payment_types'        => $this->paymentTypes,
-                'total_prizes'         => $totalPrizes,
-                'membership_types'     => ['single' => 'Single'],
-                'thing'                => $entrant,
-                'member_number'        => $memberNumber,
-                'isLocked'             => config('app.state') == 'locked',
-                'too_late_for_entries' => $tooLateForEntries,
-            ))
+        return response()->view(
+            'entrants.show',
+            array_merge(
+                $showData,
+                [
+                    'entries' => $entries,
+                    'categories' => $categories,
+                    'membership_purchases' => $membershipPaymentData,
+                    'entry_fee' => $entryFee,
+                    'total_price' => $entryFee + $membershipFee,
+                    'payment_types' => $this->paymentTypes,
+                    'total_prizes' => $totalPrizes,
+                    'membership_types' => ['single' => 'Single'],
+                    'thing' => $entrant,
+                    'member_number' => $memberNumber,
+                    'isLocked' => config('app.state') == 'locked',
+                    'too_late_for_entries' => $tooLateForEntries,
+                ]
+            )
         );
     }
 
-    function printcards($id)
+    public function printcards($id)
     {
         $categoryData = [];
-        $entrant      = Entrant::find($id);
-        $entries      = $entrant->entries()->where('year', config('app.year'))->get();
-        $cardFronts   = [];
-        $cardBacks    = [];
+        $entrant = Entrant::findOrFail($id);
+        $entries = $entrant->entries()->where('year', config('app.year'))->get();
+        $cardFronts = [];
+        $cardBacks = [];
 
         foreach ($entries as $entry) {
             if ($entry->category) {
+                /**
+                 * @var Entry $entry
+                 */
                 $categoryData[$entry->category->id] = $entry->category;
-                $cardFronts[]                       = $entry->getCardFrontData();
-                $cardBacks[]                        = $entry->getCardBackData();
+                $cardFronts[] = $entry->getCardFrontData();
+                $cardBacks[] = $entry->getCardBackData();
             }
         }
 
         return view('cards.printcards', [
             'card_fronts' => $cardFronts,
-            'card_backs'  => $cardBacks,
+            'card_backs' => $cardBacks,
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param Entrant $entrant
      * @return Response
+     * @throws AuthorizationException
      */
     public function edit(Entrant $entrant)
     {
         $this->authorize('update', $entrant);
 
         return view('entrants.edit', array(
-            'thing'          => $entrant,
-            'teams'          => $entrant->getValidTeamOptions(),
+            'thing' => $entrant,
+            'teams' => $entrant->getValidTeamOptions(),
             'privacyContent' => config('static_content.privacy_content'),
-            'isAdmin'        => $this->isAdmin()));
+            'isAdmin' => $this->isAdmin()));
     }
 }

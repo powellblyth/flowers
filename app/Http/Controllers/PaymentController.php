@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    protected $templateDir = 'payments';
-
     public function store(Request $request)
     {
         // Validate the request...

@@ -5,6 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * Class MembershipPurchase
+ * @package App\Models
+ * @property int id
+ * @property int year
+ * @property string type
+ */
 class MembershipPurchase extends Model
 {
     const TYPE_FAMILY     = 'family';
@@ -52,5 +59,4 @@ class MembershipPurchase extends Model
     {
         return $this->belongsTo(Membership::class);
     }
-
 }

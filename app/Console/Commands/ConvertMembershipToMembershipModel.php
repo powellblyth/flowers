@@ -2,18 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Category;
-use App\Models\CupDirectWinner;
-use App\Models\Entry;
 use App\Models\Membership;
 use App\Models\MembershipPurchase;
-use App\Models\Payment;
-use App\Models\Show;
-use App\Models\User;
-use App\Models\Entrant;
 use Illuminate\Console\Command;
-use NZTim\Mailchimp\Member;
-use SebastianBergmann\Environment\Console;
 
 class ConvertYearToShow extends Command
 {

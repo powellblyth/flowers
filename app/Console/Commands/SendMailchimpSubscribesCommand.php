@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Console\Command;
 use NZTim\Mailchimp\Mailchimp;
 use NZTim\Mailchimp\Member;
+
 class SendMailchimpSubscribesCommand extends Command {
     /**
      * The name and signature of the console command.

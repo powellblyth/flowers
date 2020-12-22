@@ -7,8 +7,6 @@ use App\Models\CupDirectWinner;
 use App\Models\Entry;
 use App\Models\Payment;
 use App\Models\Show;
-use App\Models\User;
-use App\Models\Entrant;
 use Illuminate\Console\Command;
 
 class ConvertYearToShow extends Command

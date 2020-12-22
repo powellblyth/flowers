@@ -2,8 +2,6 @@
 
 namespace App\Console;
 
-use App\Console\Commands\AnonymiseEntrantsCommand;
-use App\Console\Commands\ScruffyCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 

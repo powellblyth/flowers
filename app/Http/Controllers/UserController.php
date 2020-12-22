@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entrant;
 use App\Http\Requests\UserRequest;
 use App\Models\MembershipPurchase;
 use App\Models\Show;
@@ -12,7 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use \Illuminate\View\View;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {

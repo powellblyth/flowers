@@ -1,14 +1,15 @@
 <?php
-namespace Tests\Unit;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+namespace Tests\Unit\App;
+
 use App\Models\Entrant;
+use Tests\TestCase;
 
-class EntrantTest extends TestCase {
+class EntrantTest extends TestCase
+{
 
-    public function providergetName() {
+    public function providergetName()
+    {
         return [
             ['First Second', 'first', 'second', null],
             ['First Second', 'first', 'second', false],
@@ -25,15 +26,17 @@ class EntrantTest extends TestCase {
      * @dataProvider providergetName
      * @return void
      */
-    public function testgetName(string $expected, string $first, string $second, ?bool $printable=null) {
-        $sut = new Entrant();
-        $sut->firstname = $first;
+    public function testgetName(string $expected, string $first, string $second, ?bool $printable = null)
+    {
+        $sut             = new Entrant();
+        $sut->firstname  = $first;
         $sut->familyname = $second;
 
         $this->assertSame($expected, $sut->getName($printable));
     }
 
-    public function providergetPrintableName() {
+    public function providergetPrintableName()
+    {
         return [
             ['first', 'second', 'f second'],
             ['first', '', 'f'],
@@ -46,16 +49,22 @@ class EntrantTest extends TestCase {
     /**
      * A basic test example.
      * @dataProvider providergetPrintableName
+     * @param $first
+     * @param $second
+     * @param $expected
      * @return void
      */
-    public function testgetPrintableName($first, $second, $expected) {
-        $sut = new Entrant();
-        $sut->firstname = $first;
+    public function testgetPrintableName($first, $second, $expected)
+    {
+        $sut             = new Entrant();
+        $sut->firstname  = $first;
         $sut->familyname = $second;
 
         $this->assertSame($expected, $sut->getPrintableName());
     }
-    public function providergetUrl() {
+
+    public function providergetUrl()
+    {
         return [
             ['/entrants/1', 1],
             ['/entrants/0', 'fish'],
@@ -66,29 +75,36 @@ class EntrantTest extends TestCase {
     /**
      * A basic test example.
      * @dataProvider providergetUrl
+     * @param $expected
+     * @param $id
      * @return void
      */
-    public function testgetUrl($expected, $id) {
-        $sut = new Entrant();
+    public function testgetUrl($expected, $id)
+    {
+        $sut     = new Entrant();
         $sut->id = $id;
 
         $this->assertNotFalse(strpos($sut->getUrl(), $expected));
     }
 
-    public function providergetEntrantNumber() {
+    public function providergetEntrantNumber():array
+    {
         return [
             ['E-0001', 1],
-            ['E-0032',  32],
+            ['E-0032', 32],
         ];
     }
 
     /**
      * A basic test example.
      * @dataProvider providergetEntrantNumber
+     * @param $expected
+     * @param $id
      * @return void
      */
-    public function testgetEntrantNumber($expected, $id) {
-        $sut = new Entrant();
+    public function testgetEntrantNumber($expected, $id)
+    {
+        $sut     = new Entrant();
         $sut->id = $id;
 
         $this->assertSame($expected, $sut->getEntrantNumber());

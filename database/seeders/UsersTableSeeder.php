@@ -3,13 +3,14 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Entry;
 use App\Models\Membership;
 use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\Team;
+use App\Models\TeamMembership;
 use App\Models\User;
 use Faker\Factory;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -27,46 +28,46 @@ class UsersTableSeeder extends Seeder
         DB::table('entries')->truncate();
         DB::table('entrants')->truncate();
         DB::table('users')->insert([
-            'id'                   => 1,
-            'firstname'            => 'Admin',
-            'lastname'             => 'Admin',
-            'email'                => 'admin@material.com',
-            'email_verified_at'    => now(),
-            'type'                 => 'admin',
-            'password'             => Hash::make('secret'),
-            'created_at'           => now(),
-            'updated_at'           => now(),
-            'auth_token'           => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
+            'id' => 1,
+            'firstname' => 'Admin',
+            'lastname' => 'Admin',
+            'email' => 'admin@material.com',
+            'email_verified_at' => now(),
+            'type' => 'admin',
+            'password' => Hash::make('secret'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => ''
         ]);
         // Makes an entrant for the user
         User::find(1)->makeDefaultEntrant();
         DB::table('users')->insert([
-            'id'                   => 2,
-            'firstname'            => 'Toby',
-            'lastname'             => 'Powell-Blyth',
-            'email'                => 'toby@powellblyth.com',
-            'email_verified_at'    => now(),
-            'type'                 => 'admin',
-            'password'             => Hash::make('moomoomoo'),
-            'created_at'           => now(),
-            'updated_at'           => now(),
-            'auth_token'           => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
+            'id' => 2,
+            'firstname' => 'Toby',
+            'lastname' => 'Powell-Blyth',
+            'email' => 'toby@powellblyth.com',
+            'email_verified_at' => now(),
+            'type' => 'admin',
+            'password' => Hash::make('moomoomoo'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => ''
         ]);
         User::find(2)->makeDefaultEntrant();
 
         DB::table('users')->insert([
-            'id'                   => 3,
-            'firstname'            => 'ES Toby',
-            'lastname'             => 'Powell-Blyth',
-            'email'                => 'toby.powell-blyth@elasticstage.com',
-            'type'                 => 'admin',
-            'email_verified_at'    => now(),
-            'password'             => Hash::make('MooMooMoo1'),
-            'created_at'           => now(),
-            'updated_at'           => now(),
-            'auth_token'           => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
+            'id' => 3,
+            'firstname' => 'ES Toby',
+            'lastname' => 'Powell-Blyth',
+            'email' => 'toby.powell-blyth@elasticstage.com',
+            'type' => 'admin',
+            'email_verified_at' => now(),
+            'password' => Hash::make('MooMooMoo1'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => ''
         ]);
         User::find(3)->makeDefaultEntrant();
@@ -75,18 +76,18 @@ class UsersTableSeeder extends Seeder
 
         for ($userNumber = 0; $userNumber < 100; $userNumber++) {
             $user = User::create([
-                'firstname'            => $faker->firstName,
-                'lastname'             => $faker->lastName,
-                'email'                => $faker->email,
-                'address'              => $faker->streetAddress(),
-                'addresstown'          => $faker->city(),
-                'postcode'             => $faker->postcode(),
-                'can_email'            => $faker->boolean(75),
-                'can_retain_data'      => $faker->boolean(90),
-                'type'                 => 'default',
-                'created_at'           => now(),
-                'updated_at'           => now(),
-                'auth_token'           => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
+                'firstname' => $faker->firstName,
+                'lastname' => $faker->lastName,
+                'email' => $faker->email,
+                'address' => $faker->streetAddress,
+                'addresstown' => $faker->city,
+                'postcode' => $faker->postcode,
+                'can_email' => $faker->boolean(75),
+                'can_retain_data' => $faker->boolean(90),
+                'type' => 'default',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
                 'password_reset_token' => ''
             ]);
 
@@ -99,10 +100,10 @@ class UsersTableSeeder extends Seeder
                 $age = floor(rand(1, 18));
 
                 $user->entrants()->create([
-                    'firstname'  => $faker->firstname,
+                    'firstname' => $faker->firstname,
                     // In our world, every child has the same name as their parent. Makes testing easier
                     'familyname' => $user->lastname,
-                    'age'        => $age,
+                    'age' => $age,
                 ]);
             }
 
@@ -110,10 +111,10 @@ class UsersTableSeeder extends Seeder
 
             // No children? Probably would choose a non family member
             if ($numChildren === 0) {
-                $memberships    = Membership::where('applies_to', Membership::APPLIES_TO_ENTRANT);
+                $memberships = Membership::where('applies_to', Membership::APPLIES_TO_ENTRANT);
                 $membershipType = MembershipPurchase::TYPE_INDIVIDUAL;
             } else {
-                $memberships    = Membership::where('applies_to', Membership::APPLIES_TO_USER);
+                $memberships = Membership::where('applies_to', Membership::APPLIES_TO_USER);
                 $membershipType = MembershipPurchase::TYPE_FAMILY;
             }
             foreach ($memberships->get() as $membership) {
@@ -121,7 +122,7 @@ class UsersTableSeeder extends Seeder
                     dump($membership->id . ' - ' . $membership->applies_to . ' [' . $membershipType . ']');
                     $membershipPurchase = new MembershipPurchase();
                     $membershipPurchase->membership()->associate($membership);
-                    $membershipPurchase->type   = $membershipType;
+                    $membershipPurchase->type = $membershipType;
                     $membershipPurchase->amount = $membership->price_gbp;
                     $membershipPurchase->user()->associate($user);
                     if ($numChildren === 0) {
@@ -142,7 +143,7 @@ class UsersTableSeeder extends Seeder
             // Reset the array for memory reasons each new user
             $stickyTeams = [];
             // Create some historical data
-            foreach (Show::get() as $show) {
+            foreach (Show::all() as $show) {
                 /**
                  * @var Show $show
                  */
@@ -151,14 +152,18 @@ class UsersTableSeeder extends Seeder
                     // Teams are only for juniors
                     if ($entrant->age != null) {
                         if (!array_key_exists($entrant->id, $stickyTeams)) {
-                            $team = Team::where('min_age', '<=', $entrant->age)->where('max_age', '>=', $entrant->age)->get()->shuffle()->first();
+                            $team = Team::where('min_age', '<=', $entrant->age)
+                                ->where('max_age', '>=', $entrant->age)
+                                ->get()
+                                ->shuffle()
+                                ->first();
                         } else {
                             $team = $stickyTeams[$entrant->id];
                         }
 
                         // Team membership is for each show, but repeats
                         if ($team instanceof Team) {
-                            $teamMembership = new \App\Models\TeamMembership();
+                            $teamMembership = new TeamMembership();
                             $teamMembership->show()->associate($show);
                             $teamMembership->entrant()->associate($entrant);
                             $teamMembership->team()->associate($team);
@@ -174,8 +179,8 @@ class UsersTableSeeder extends Seeder
                         ->take(floor(rand(0, $faker->biasedNumberBetween(0, 17, 'Faker\Provider\Biased::linearLow'))))
                         ->each(function (Category $category) use ($entrant, $show, $faker) {
                             // Creates an entry for that year
-                            $isLate     = $faker->boolean(20);
-                            $isPaid     = $faker->boolean(90);
+                            $isLate = $faker->boolean(20);
+                            $isPaid = $faker->boolean(90);
                             $paidAmount = 0;
                             if ($isPaid) {
                                 $paidAmount = ($isLate) ? $category->late_price : $category->price;
@@ -185,7 +190,14 @@ class UsersTableSeeder extends Seeder
                             } else {
                                 $created_date = $show->late_entry_deadline->subHour();
                             }
-                            $entrant->entries()->create(['category_id' => $category->id, 'show_id' => $show->id, 'paid' => $paidAmount, 'created_at' => $created_date]);
+                            $entrant->entries()
+                                ->create(
+                                    ['category_id' => $category->id,
+                                     'show_id' => $show->id,
+                                     'paid' => $paidAmount,
+                                     'created_at' => $created_date
+                                    ]
+                                );
                         });
                 }
             }
@@ -206,7 +218,7 @@ class UsersTableSeeder extends Seeder
             $winners = $category->entries()->get()->shuffle()->take(4);
             foreach ($winners as $counter => $winner) {
                 /**
-                 * @var \App\Models\Entry $winner
+                 * @var Entry $winner
                  */
                 // First prize for first entrant
                 switch ($counter) {

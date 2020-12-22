@@ -2,10 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Notifications\MustChangePasswordNotification;
 use App\Models\User;
+use App\Notifications\MustChangePasswordNotification;
 use Illuminate\Console\Command;
-use Illuminate\Http\Request;
 
 class ScruffyCommand extends Command {
     /**

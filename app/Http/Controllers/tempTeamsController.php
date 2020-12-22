@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entrant;
 use App\Models\Team;
 use Illuminate\Http\Request;
-use App\Models\Entry;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
