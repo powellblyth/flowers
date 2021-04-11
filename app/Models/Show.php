@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
@@ -13,9 +13,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property Carbon late_entry_deadline
  * @property Carbon entries_closed_deadline
  * @property Carbon end_date
+ * @property Carbon ends_date
  * @property Carbon start_date
  * @property string status
  * @property int id
+ * @property string name
+ * @property Collection entries
  */
 class Show extends Model
 {
@@ -38,8 +41,8 @@ class Show extends Model
     protected $attributes = [
         'status' => self::STATUS_PLANNED,
     ];
+
     const STATUS_CURRENT = 'current';
-    const STATUS_PASSED  = 'passed';
     const STATUS_PLANNED = 'planned';
 
     public function isCurrent(): bool

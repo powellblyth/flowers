@@ -83,6 +83,9 @@ class ReportsController extends Controller
             ]);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function entriesReport(Request $request): View
     {
         $show = $this->getShowFromRequest($request);
@@ -152,7 +155,6 @@ class ReportsController extends Controller
     public function unplacedCategoriesReport(Request $request): View
     {
         $show = $this->getShowFromRequest($request);
-//        $year               = $this->getYearFromRequest($request);
         $unplacedCategories = [];
         $categories = $show->categories()->orderby('sortorder')->get();
 

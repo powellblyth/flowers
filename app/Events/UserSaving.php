@@ -8,18 +8,17 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class UserSaving {
+class UserSaving
+{
     use Dispatchable, InteractsWithSockets, SerializesModels;
-public $user;
+
     /**
      * Create a new event instance.
-     * @param User $user
      *
      * @return void
      */
-    public function __construct(User $user) {
-        $this->user = $user;
-        //
+    public function __construct(public User $user)
+    {
     }
 
     /**
@@ -27,7 +26,8 @@ public $user;
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn() {
+    public function broadcastOn()
+    {
         return new PrivateChannel('channel-name');
     }
 }

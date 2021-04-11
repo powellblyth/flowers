@@ -25,10 +25,6 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-12 text-right">
-                            @can('orintCards', \App\Models\Entry::class)
-                                <a href="{{route('entrant.print', $thing)}}" target="_blank"
-                                   class="btn btn-primary">Print Cards</a>
-                            @endcan
                             @can('update',$thing)
                                 <a href="{{route('entrants.edit', $thing)}}"
                                    class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
@@ -64,7 +60,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6  col-sm-12">Family Manager:</b>
                                         @if(!is_null($thing->user))
-                                            <a href="{{$thing->user->getUrl()}}">{{ $thing->user->getName() }}</a>
+                                            <a href="{{route('users.show',['user'=>$thing->user])}}">{{ $thing->user->getName() }}</a>
                                         @else
                                             None Set
                                         @endif
@@ -127,7 +123,6 @@
                 {{--</table>--}}
                 {{--{{ Form::submit('Store Preferences', ['class' => 'button btn btn-primary']) }}--}}
                 {{--{{ Form::close()}}--}}
-                @if(!$isLocked && !$too_late_for_entries)
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="card">
@@ -160,10 +155,8 @@
                             </div>
                         </div>
                     </div>
-                @endif
 
                 @can('create',\App\Models\MembershipPurchase::class)
-                @if(!$isLocked)
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="card">
@@ -191,7 +184,6 @@
                             </div>
                         </div>
                     </div>
-                @endif
                     @endcan
 
             </div>

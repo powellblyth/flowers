@@ -2,13 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class CupDirectWinner
  * @package App\Models
- * @property int id
+ * @property Show $show
+ * @property int winning_category_id
+ * @property Category winningCategory
+ * @property int winning_entry_id
+ * @property Entry winningEntry
+ * @property int year
  */
 class CupDirectWinner extends Model
 {
@@ -16,5 +20,14 @@ class CupDirectWinner extends Model
     {
         return $this->belongsTo(Entry::class);
     }
-    //
+
+    public function winningCategory(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'winning_category_id');
+    }
+
+    public function winningEntry(): BelongsTo
+    {
+        return $this->belongsTo(Entry::class, 'winning_entry_id');
+    }
 }

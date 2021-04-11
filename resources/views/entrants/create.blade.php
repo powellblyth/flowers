@@ -35,14 +35,6 @@
                                 {{ Form::text('membernumber', null, ['class' => 'form-control']) }}
                             </div>
                         </div>
-                        @can('viewAny',\App\Models\User::class)
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    {{ Form::label('user_id', 'Family Manager:', ['class' => 'control-label']) }}
-                                    {{ Form::select('user_id', $allUsers, old('user_id', (int)$indicatedAdmin), ['class' => 'form-control']) }}
-                                </div>
-                            </div>
-                        @endcan
                         @if(!empty($teams))
                             <div class="row">
                                 <div class="col-lg-12">

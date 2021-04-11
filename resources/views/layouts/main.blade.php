@@ -45,27 +45,10 @@
 
                 <div class="links">
                     @if (Auth::check())
-                        <a href="{{ url('/family') }}">Home</a>
-    @if(Auth::User()->isAdmin())
-                    <a href="{{route('entrants.searchall')}}">All Entrants</a>
-    @endif
-                        <a href="{{route('entrants.index')}}">Entrants</a>
-                        <a href="{{route('entrants.create')}}">Add an entrant</a>
+                        <a href="{{ url('/admin') }}">Home</a>
                     @else
                         <a href="{{ url('/login') }}">Log in</a>
-                        @if(config('app.state') !== 'locked')
-                        <a href="{{ url('/register') }}">Register</a>
-                            @endif
                     @endif
-{{--                        @if(Auth::User()->isAdmin())--}}
-                        <a href="{{route('teams.index')}}">All Teams</a>
-                        <a href="{{route('shows.index')}}">All Shows</a>
-{{--                        @endif--}}
-                        <a href="{{route('categories.index')}}">Categories / Results</a>
-                    <a href="{{ url('/cups') }}">Cups</a>
-                        @if(Auth::check() && Auth::User()->isAdmin())
-                        <a href="{{ route('reports.index') }}">Reports</a>
-                            @endif
                 </div>
                 <div id="content" class="content">
                     @yield('content')

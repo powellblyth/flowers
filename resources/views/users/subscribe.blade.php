@@ -55,8 +55,6 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            {{--                                <i class="material-icons text-danger">warning</i>--}}
-                            {{--                                <a href="{{route('entrants.create')}}">Add another</a>--}}
                         </div>
                     </div>
                 </div>
@@ -84,11 +82,6 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-12 text-right">
-                        @can('printCards',\App\Models\Entry::class)
-
-                            <a href="{{route('user.print', $thing)}}" target="_blank"
-                               class="btn btn-primary">Print Cards</a>
-                        @endcan
                         @can('edit', $thing)
                             <a href="{{route('user.edit', $thing)}}"
                                class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>

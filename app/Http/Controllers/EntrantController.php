@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
+use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\Team;
 use App\Models\TeamMembership;
@@ -35,77 +36,6 @@ class EntrantController extends Controller
     public function isAdmin(): bool
     {
         return Auth::check() && Auth::User()->isAdmin();
-    }
-
-    public function index(Request $request): View
-    {
-        $entrants = Entrant::with('user')
-            ->where('is_anonymised', false)
-            ->orderBy('familyname')
-            ->orderBy('user_id')
-            ->orderBy('firstname')
-            ->get();
-        // OVerride parent method - this prevents the same query running twice
-        // and producing too much data
-        return view(
-            'entrants.index',
-            [
-                'entrants' => $entrants,
-                'all' => false,
-                'isLocked' => config('app.state') == 'locked',
-            ]
-        );
-    }
-
-    public function search(Request $request): View
-    {
-        $searchTerm = $request->input('searchterm');
-        $entrantsBuilder = Auth::User()->entrants();
-        if ($request->has('searchterm')) {
-            $entrantsBuilder = $entrantsBuilder
-                ->whereRaw("(entrants.firstname LIKE '%$searchTerm%' OR entrants.familyname LIKE '%$searchTerm%' OR entrants.id = '%$searchTerm%') ");
-        }
-
-        $entrants = $entrantsBuilder->orderBy('familyname', 'asc')
-            ->orderBy('firstname', 'asc')
-            ->get();
-
-        return view(
-            'entrants.index',
-            [
-                'things' => $entrants,
-                'searchterm' => $searchTerm,
-                'all' => false,
-            ]
-        );
-    }
-
-    public function searchAll(Request $request): View
-    {
-        $searchterm = null;
-        if ($request->has('searchterm')) {
-            $searchterm = $request->input('searchterm');
-            $entrants = Entrant::where('entrants.firstname', 'LIKE', "%$searchterm%")
-                ->orWhere('entrants.familyname', 'LIKE', "%$searchterm%")
-                ->orWhere('entrants.id', '=', "%$searchterm%")
-                ->get();
-        } else {
-            $entrants = Entrant::where('is_anonymised', false)
-                ->with('user')
-                ->orderBy('familyname', 'asc')
-                ->orderBy('firstname', 'asc')
-                ->get();
-        }
-        return view(
-            'entrants.index',
-            [
-                'entrants' => $entrants,
-                'searchterm' => $searchterm,
-                'all' => true,
-                'isAdmin' => $this->isAdmin(),
-                'isLocked' => config('app.state') == 'locked',
-            ]
-        );
     }
 
     public function create(Request $request, ?int $family = null): View
@@ -147,28 +77,23 @@ class EntrantController extends Controller
     public function store(Request $request)
     {
         // Validate the request...
-
+        $show = $this->getShowFromRequest($request);
         $entrant = new Entrant();
-
         $entrant->firstname = $request->firstname;
         $entrant->familyname = $request->familyname;
         $entrant->membernumber = $request->membernumber;
-        $entrant->team_id = $request->team_id;
-        dd('TODO relate to team');
+//        dd('TODO relate to team');
         $entrant->age = $request->age;
 
-        $entrant->can_retain_data = (int) $request->can_retain_data;
+        $entrant->can_retain_data = (bool) $request->can_retain_data;
 
         if ($entrant->save()) {
             $request->session()->flash('success', 'Family Member Saved');
-            if (!$this->isAdmin()) {
-                Auth::User()->entrants()->save($entrant);
-                return redirect()->route('user.family');
-            } elseif ($request->has('user_id')) {
-                $user = User::find((int) $request->user_id);
-                $user->entrants()->save($entrant);
-                return redirect()->route('entrants.index');
-            }
+
+            $entrant->teams()->save(Team::findOrFail($request->team_id), ['show_id' => $show->id]);
+
+            Auth::User()->entrants()->save($entrant);
+            return redirect()->route('home');
         } else {
             $request->session()->flash('error', 'Something went wrong saving the Family Member');
             return back();
@@ -206,26 +131,19 @@ class EntrantController extends Controller
         // Make sure we don't make duplicate show entries in a given year
         if ($request->team_id) {
             $team = Team::findOrFail($request->team_id);
-            $teamMembership = TeamMembership::firstOrNew(['show_id' => $showId, 'entrant_id' => $entrant->id]);
-            $teamMembership->team()->associate($team);
-            $teamMembership->save();
+//            $teamMembership = $entrant->teams()->delete(['show_id' => $showId]);
+            $entrant->teams()->save($team, ['show_id' => $showId]);
         } else {
-            $entrant->team_memberships()->where('show_id', $showId)->delete();
+            //TODO how do we delete them?
+//            $entrant->teams()->pivot->where('show_id', $showId)->delete();
         }
 
 
         $entrant->can_retain_data = (int) $request->can_retain_data;
-        $entrant->can_email = (int) $request->can_email;
-        $entrant->can_sms = (int) $request->can_sms;
-        $entrant->can_post = (int) $request->can_post;
 
         if ($entrant->save()) {
             $request->session()->flash('success', 'Family Member Saved');
-            if ($this->isAdmin()) {
-                return redirect()->route('entrants.index');
-            } else {
-                return redirect()->route('user.family');
-            }
+            return redirect()->route('home');
         } else {
             $request->session()->flash('error', 'Something went wrong saving the Family Member');
             return back();
@@ -247,9 +165,6 @@ class EntrantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Request $request
-     * @param Entrant $entrant
-     * @param array $showData
      * @return Response
      * @throws AuthorizationException
      */
@@ -271,6 +186,9 @@ class EntrantController extends Controller
         $membershipPurchases = $entrant->membershipPurchases()->get();
         $membershipPaymentData = [];
         foreach ($membershipPurchases as $membershipPurchase) {
+            /**
+             * @var MembershipPurchase $membershipPurchase
+             */
             $amount = (($membershipPurchase->type == 'single' ? 300 : 500));
             $membershipFee += $amount;
             $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
@@ -279,16 +197,16 @@ class EntrantController extends Controller
         $entries = $entrant->entries()->where('show_id', $show->id)->with('category')->get();
 
         foreach ($entries as $entry) {
+            /**
+             * @var Entry $entry
+             */
             if ($entry->category instanceof Category) {
-                // Hydrate
-                $category = $entry->category;
-
-                $price = $category->getPrice($entry->getPriceType());
+                $price = $entry->category->getPrice($entry->category->getPriceType());
 
                 $entryFee += $price;
 
                 if ($entry->hasWon()) {
-                    $totalPrizes += $category->getWinningAmount($entry->winningplace);
+                    $totalPrizes += $entry->category->getWinningAmount($entry->winningplace);
                 }
             }
 
@@ -320,35 +238,9 @@ class EntrantController extends Controller
         );
     }
 
-    public function printcards($id)
-    {
-        $categoryData = [];
-        $entrant = Entrant::findOrFail($id);
-        $entries = $entrant->entries()->where('year', config('app.year'))->get();
-        $cardFronts = [];
-        $cardBacks = [];
-
-        foreach ($entries as $entry) {
-            if ($entry->category) {
-                /**
-                 * @var Entry $entry
-                 */
-                $categoryData[$entry->category->id] = $entry->category;
-                $cardFronts[] = $entry->getCardFrontData();
-                $cardBacks[] = $entry->getCardBackData();
-            }
-        }
-
-        return view('cards.printcards', [
-            'card_fronts' => $cardFronts,
-            'card_backs' => $cardBacks,
-        ]);
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Entrant $entrant
      * @return Response
      * @throws AuthorizationException
      */

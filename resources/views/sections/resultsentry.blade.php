@@ -1,13 +1,15 @@
-@extends('layouts/main')
+@extends('layouts.main')
 @section('pagetitle', 'Results section for ' . $section->name)
 @section('content')
 <a href="/categories">&laquo; Categories</a>
 <br />
 
 <div style="text-align:left;vertical-align:middle">
-{{ Form::open([
-    'route' => 'categories.storeresults'
-]) }}
+
+    {{Form::open(['route'=>array('sections.storeresults',$show)])}}
+{{--    {{ Form::open([--}}
+{{--    'route' => 'sections.storeresults', 'parameters'=>['show'=>'']--}}
+{{--]) }}--}}
 @foreach ($categories as $category)
     {{$category->getNumberedLabel()}}<br />
     <b>Entrants:</b>

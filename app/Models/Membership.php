@@ -2,19 +2,33 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+
 /**
- * @method static orderBy(string $string)
- * @method static Builder where(string $string, string $APPLIES_TO_ENTRANT)
- * @property int id
+ * @property string applies_to
+ * @property string description
+ * @property Carbon valid_from
+ * @property Carbon valid_to
+ * @property Carbon purchasable_from
+ * @property Carbon purchasable_to
+ * @property int price_gbp
+ * @property string sku
+ * @property string label
  */
 class Membership extends Model
 {
-    const APPLIES_TO_ENTRANT = 'entrant';
-    const APPLIES_TO_USER    = 'user';
+    public const APPLIES_TO_ENTRANT = 'entrant';
+    public const APPLIES_TO_USER = 'user';
+
+    protected $casts = [
+        'purchasable_from' => 'datetime',
+        'purchasable_to' => 'datetime',
+        'valid_from' => 'datetime',
+        'valid_to' => 'datetime',
+    ];
+
     protected $fillable = [
         'sku',
         'label',
@@ -33,8 +47,9 @@ class Membership extends Model
         return $this->hasMany(MembershipPurchase::class);
     }
 
+
     public function isEntrant(): bool
     {
-        return $this->applies_to === self::APPLIES_TO_ENTRANT;
+        return $this->applies_to === Membership::APPLIES_TO_ENTRANT;
     }
 }

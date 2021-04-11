@@ -16,20 +16,11 @@ class CreateNewShowJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected Show $oldShow;
-    protected Show $newShow;
-
     /**
      * Create a new job instance.
-     *
-     * @param Show $oldShow
-     * @param Show $newShow
      */
-    public function __construct(Show $oldShow, Show $newShow)
+    public function __construct(protected Show $oldShow, protected Show $newShow)
     {
-        $this->oldShow = $oldShow;
-        $this->newShow = $newShow;
-        //
     }
 
     /**
@@ -54,30 +45,18 @@ class CreateNewShowJob implements ShouldQueue
 
         // Gather all categories from the old year
         $categories = $this->oldShow->categories()
-            ->where('status', '<>', 'deleted')
-            ->orderBy('sortorder', 'asc')
+            ->orderBy('sortorder')
             ->get();
         foreach ($categories as $category) {
-            $newCategory = new Category();
-            $newCategory->show()->associate($this->newShow);
-            $newCategory->name         = $category->name;
-            $newCategory->number       = $category->number;
-            $newCategory->price        = $category->price;
-            $newCategory->late_price   = $category->late_price;
-            $newCategory->sortorder    = $category->sortorder;
-            $newCategory->first_prize  = $category->first_prize;
-            $newCategory->second_prize = $category->second_prize;
-            $newCategory->third_prize  = $category->third_prize;
-            $newCategory->section_id   = $category->section_id;
-            $newCategory->cloned_from  = $category->id;
-            $newCategory->status       = $category->status;
+            /**
+             * @var Category $category
+             */
+            $newCategory = $category->replicate(['show_id']);
             $newCategory->save();
-
             $newCategory->cups()->attach($category->cups);
-
+            $newCategory->show()->associate($this->newShow);
+            $newCategory->cloned_from = $category->id;
+            $newCategory->save();
         }
-
-
-        DB::table('entrants')->whereNotNull('age')->increment('age', 1);        //
     }
 }

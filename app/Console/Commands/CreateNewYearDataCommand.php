@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class CreateNewYearDataCommand extends Command
 {
@@ -28,7 +29,6 @@ class CreateNewYearDataCommand extends Command
      */
     public function handle()
     {
-
-
+        DB::table('entrants')->whereNotNull('age')->increment('age', 1);        //
     }
 }

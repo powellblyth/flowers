@@ -24,14 +24,12 @@
                                 </div>
                             @endif
                             @can('create', \App\Models\User::class)
-                                @if(!$isLocked)
                                     <div class="row">
                                         <div class="col-12 text-right">
                                             <a href="{{ route('users.create') }}"
                                                class="btn btn-sm btn-primary">{{ __('Add family') }}</a>
                                         </div>
                                     </div>
-                                @endif
                             @endcan
                             <div class="table-responsive">
                                 <table class="table">
@@ -65,15 +63,13 @@
                                                     <i class="material-icons">people</i>
                                                     <div class="ripple-container"></div>
                                                 </a>
-                                                @if(!$isLocked)
                                                     <a rel="tooltip" class="btn btn-success btn-link"
-                                                       href="{{ route('entrants.create') }}?user_id={{$user->id}}"
+                                                       href="{{ route('users.createentrant', ['user'=>$user]) }}"
                                                        data-original-title=""
                                                        title="add a new family member">
                                                         <i class="material-icons">add</i>
                                                         <div class="ripple-container"></div>
                                                     </a>
-                                                @endif
                                             </td>
                                             <td class="td-actions text-right">
                                                 <form action="{{ route('users.destroy', $user) }}" method="post">

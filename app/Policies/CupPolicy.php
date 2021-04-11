@@ -11,12 +11,6 @@ class CupPolicy
 
     use HandlesAuthorization;
 
-    public function before($user, $ability)
-    {
-        if ($user->isAdmin()) {
-            return true;
-        }
-    }
 
     /**
      * Determine whether the user can view any models.
@@ -73,7 +67,7 @@ class CupPolicy
      */
     public function delete(User $user, Cup $cup)
     {
-        return $user->isAdmin();
+        return false;
     }
 
     /**
@@ -85,7 +79,7 @@ class CupPolicy
      */
     public function restore(User $user, Cup $cup)
     {
-        return $user->isAdmin();
+        return false;
     }
 
     /**
@@ -97,6 +91,6 @@ class CupPolicy
      */
     public function forceDelete(User $user, Cup $cup)
     {
-        return $user->isAdmin();
+        return false;
     }
 }

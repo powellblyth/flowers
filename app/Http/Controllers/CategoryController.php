@@ -17,11 +17,7 @@ class CategoryController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
-     * @param Request $request
-     * @return View
      */
-
     public function index(Request $request): View
     {
         $show = $this->getShowFromRequest($request);
@@ -99,10 +95,9 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
      * @return Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
     }
@@ -110,10 +105,9 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param int $id
      * @return Response
      */
-    public function update($id)
+    public function update()
     {
         //
     }
@@ -121,102 +115,62 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy()
     {
         //
     }
 
-    /**
-     * @param array $extraData
-     * @return View
-     */
-    public function create(array $extraData = []): View
+    public function create(): View
     {
         $sections = Section::pluck('name', 'id');
         return view('categories.create', ['sections' => $sections]);
     }
 
     /**
-     * @param Request $request
-     * @return View
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
-    public function resultsentry(Request $request): View
-    {
-        $show = $this->getShowFromRequest($request);
-        $this->authorize('enterResults', Entry::class);
-        $entries = [];
-        $winners = [];
-        $section = Section::findOrFail($request->section);
-        $categories = $section->categories()
-            ->where('show_id', $show->id)
-            ->orderby('sortorder')
-            ->get();
-
-        foreach ($categories as $category) {
-            $thisEntries = $category
-                ->entries()
-                ->orderBy('entrant_id')
-                ->get();
-
-            $entries[$category->id] = [];
-            $winners[$category->id] = [];
-
-            foreach ($thisEntries as $entry) {
-                if (!empty($entry->winningplace)) {
-                    $winners[$category->id][$entry->entrant->id] = $entry->winningplace;
-                }
-                $entries[$category->id][$entry->id] = [
-                    'entrant_id' => $entry->entrant->id,
-                    'entrant_name' => $entry->entrant->getName(),
-                    'entrant_number' => $entry->entrant->getEntrantNumber(),
-                ];
-            }
-        }
-        return view('categories.resultsentry', array(
-            'categories' => $categories,
-            'entries' => $entries,
-            'section' => $section,
-            'winners' => $winners,
-        ));
-    }
-
-    /**
-     * This prints all the category cards for the show entries to put on the tabless
+     * This prints all the category cards for the show entries to put on the tables
      * @return \Illuminate\Contracts\View\Factory|View
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function printcards()
+    public function printcards(Request $request)
     {
+        $show = $this->getShowFromRequest($request);
         $this->authorize('printCards', Entry::class);
-        $categories = Category::where('year', config('app.year'))->get();
+        $categories = Category::where('show_id', $show->id)->get();
         $cardFronts = [];
 
         foreach ($categories as $category) {
+            /**
+             * @var Category $category
+             */
             $cardFronts[] = [
                 'class_number' => $category->number,
                 'class_name' => $category->name
             ];
         }
 
-        return view('categories.printcards', ['card_fronts' => $cardFronts]);
+        return view('categories.printcards', ['show'=>$show, 'card_fronts' => $cardFronts]);
     }
 
     /**
      *
      * This prints the lookup sheet to look up where entry categories are
-     * @param $id
      * @return \Illuminate\Contracts\View\Factory|View
      */
-    function printlookups()
+    public function printlookups(Request $request)
     {
-        $categories = Category::where('year', config('app.year'))->orderBy('section_id')->orderBy('sortorder')->get();
+        $show = $this->getShowFromRequest($request);
+        $categories = Category::where('show_id', $show->id)
+            ->orderBy('section_id')
+            ->orderBy('sortorder')
+            ->get();
         $cardFronts = [];
 
         foreach ($categories as $category) {
+            /**
+             * @var Category $category
+             */
             $section = $category->section;
             $cardFronts[] = [
                 'section' => $section->id,
@@ -228,20 +182,4 @@ class CategoryController extends Controller
 
         return view('categories.printlookups', ['card_fronts' => $cardFronts]);
     }
-
-    public function storeresults(Request $request): \Illuminate\Http\RedirectResponse
-    {
-        $this->authorize('enterResults', Entry::class);
-        foreach ($request->positions as $categoryId => $placings) {
-            foreach ($placings as $entryId => $result) {
-                if ('0' !== $result && '' != trim($result)) {
-                    $entry = Entry::where(['id' => $entryId, 'category_id' => $categoryId])->first();
-                    $entry->winningplace = $result;
-                    $entry->save();
-                }
-            }
-        }
-        return redirect()->route('categories.index');
-    }
-
 }

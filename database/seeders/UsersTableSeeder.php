@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\Membership;
 use App\Models\MembershipPurchase;
@@ -27,7 +28,10 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->truncate();
         DB::table('entries')->truncate();
         DB::table('entrants')->truncate();
-        DB::table('users')->insert([
+
+        $faker = Factory::create('en_GB');
+
+        $user = User::factory()->create([
             'id' => 1,
             'firstname' => 'Admin',
             'lastname' => 'Admin',
@@ -35,79 +39,47 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'type' => 'admin',
             'password' => Hash::make('secret'),
-            'created_at' => now(),
-            'updated_at' => now(),
-            'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
-            'password_reset_token' => ''
         ]);
         // Makes an entrant for the user
-        User::find(1)->makeDefaultEntrant();
-        DB::table('users')->insert([
-            'id' => 2,
+        $user->makeDefaultEntrant();
+
+        $user = User::factory()->create([
             'firstname' => 'Toby',
             'lastname' => 'Powell-Blyth',
             'email' => 'toby@powellblyth.com',
             'email_verified_at' => now(),
             'type' => 'admin',
             'password' => Hash::make('moomoomoo'),
-            'created_at' => now(),
-            'updated_at' => now(),
-            'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
-            'password_reset_token' => ''
         ]);
-        User::find(2)->makeDefaultEntrant();
+        $user->makeDefaultEntrant();
 
-        DB::table('users')->insert([
-            'id' => 3,
+        $user = User::factory()->create([
             'firstname' => 'ES Toby',
             'lastname' => 'Powell-Blyth',
             'email' => 'toby.powell-blyth@elasticstage.com',
             'type' => 'admin',
             'email_verified_at' => now(),
             'password' => Hash::make('MooMooMoo1'),
-            'created_at' => now(),
-            'updated_at' => now(),
-            'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
-            'password_reset_token' => ''
         ]);
-        User::find(3)->makeDefaultEntrant();
-
-        $faker = Factory::create('en_GB');
+        $user->makeDefaultEntrant();
 
         for ($userNumber = 0; $userNumber < 100; $userNumber++) {
-            $user = User::create([
-                'firstname' => $faker->firstName,
-                'lastname' => $faker->lastName,
-                'email' => $faker->email,
-                'address' => $faker->streetAddress,
-                'addresstown' => $faker->city,
-                'postcode' => $faker->postcode,
-                'can_email' => $faker->boolean(75),
-                'can_retain_data' => $faker->boolean(90),
-                'type' => 'default',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'auth_token' => md5(random_int(PHP_INT_MIN, PHP_INT_MAX)),
-                'password_reset_token' => ''
-            ]);
-
+            /**
+             * @var User $user
+             */
+            $user = User::factory()->create();
 
             $user->makeDefaultEntrant();
 
             $numChildren = $faker->biasedNumberBetween(0, 5, 'Faker\Provider\Biased::linearLow');
 
             for ($entrantNumber = 0; $entrantNumber < $numChildren; $entrantNumber++) {
-                $age = floor(rand(1, 18));
-
-                $user->entrants()->create([
-                    'firstname' => $faker->firstname,
+                Entrant::factory()->create([
                     // In our world, every child has the same name as their parent. Makes testing easier
                     'familyname' => $user->lastname,
-                    'age' => $age,
+                    'user_id' => $user->id,
                 ]);
             }
-
-            $membershipType = null;
 
             // No children? Probably would choose a non family member
             if ($numChildren === 0) {
@@ -118,12 +90,17 @@ class UsersTableSeeder extends Seeder
                 $membershipType = MembershipPurchase::TYPE_FAMILY;
             }
             foreach ($memberships->get() as $membership) {
-                if ($faker->boolean(90)) {
+                /**
+                 * @var Membership $membership
+                 */
+                if ($faker->boolean(80)) {
                     dump($membership->id . ' - ' . $membership->applies_to . ' [' . $membershipType . ']');
                     $membershipPurchase = new MembershipPurchase();
                     $membershipPurchase->membership()->associate($membership);
                     $membershipPurchase->type = $membershipType;
                     $membershipPurchase->amount = $membership->price_gbp;
+                    $membershipPurchase->start_date = $membership->valid_from;
+                    $membershipPurchase->end_date = $membership->valid_to;
                     $membershipPurchase->user()->associate($user);
                     if ($numChildren === 0) {
                         dump('associating ' . $user->entrants()->first()->id);
@@ -149,6 +126,9 @@ class UsersTableSeeder extends Seeder
                  */
                 // reload the entrants to include the user's entrant
                 foreach ($user->entrants as $entrant) {
+                    /**
+                     * @var Entrant $entrant
+                     */
                     // Teams are only for juniors
                     if ($entrant->age != null) {
                         if (!array_key_exists($entrant->id, $stickyTeams)) {
@@ -160,14 +140,9 @@ class UsersTableSeeder extends Seeder
                         } else {
                             $team = $stickyTeams[$entrant->id];
                         }
-
-                        // Team membership is for each show, but repeats
+                        // If you are 1 there is no team
                         if ($team instanceof Team) {
-                            $teamMembership = new TeamMembership();
-                            $teamMembership->show()->associate($show);
-                            $teamMembership->entrant()->associate($entrant);
-                            $teamMembership->team()->associate($team);
-                            $teamMembership->save();
+                            $entrant->teams()->save($team, ['show_id' => $show->id]);
                         }
                     }
 
@@ -204,12 +179,15 @@ class UsersTableSeeder extends Seeder
             // This ensures that we know if the 'user' was opted in or not
             //
             if ($faker->boolean(4)) {
-                $user->entrants()->each(function (\App\Models\Entrant $entrant) {
+                $user->entrants()->each(function (Entrant $entrant) {
                     $entrant->anonymise()->save();
                 });
                 $user->anonymise()->save();
             }
         }
+        /**
+         * @var Show $currentShow
+         */
         $currentShow = Show::where('status', Show::STATUS_CURRENT)->first();
 
         // Choose a winner regardless of year

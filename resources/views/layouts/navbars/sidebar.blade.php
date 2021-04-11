@@ -18,16 +18,9 @@
                         <p>Home</p></a>
                 </li>
 
-                @can('viewAny',\App\Models\Entrant::class)
-                    <li class="nav-item{{ $activePage == 'allentrants' ? ' active' : '' }}">
-                        <a class="nav-link" href="{{route('entrants.searchall')}}"><i class="material-icons">people-outline</i>
-                            <p>All Entrants</p></a>
-                    </li>
-                @endcan
-
                 @can('create',\App\Models\Entrant::class)
                     <li class="nav-item{{ $activePage == 'add-entrant' ? ' active' : '' }}">
-                        <a class="nav-link" href="{{route('entrants.create')}}"><i class="material-icons">group_add</i>
+                        <a class="nav-link" href="{{route('users.createentrant', ['user'=>\Illuminate\Support\Facades\Auth::user()])}}"><i class="material-icons">group_add</i>
                             <p>Add a family member</p></a>
                     </li>
                 @endcan
@@ -38,12 +31,10 @@
                         <p>Log in</p></a>
                 </li>
 
-                @if(config('app.state') !== 'locked')
                     <li class="nav-item{{ $activePage == 'register' ? ' active' : '' }}">
                         <a class="nav-link" href="{{ url('/register') }}"><i class="material-icons">dashboard</i>
                             <p>Register</p></a>
                     </li>
-                @endif
 
             @endif
             <li class="nav-item{{ $activePage == 'categories' ? ' active' : '' }}">
@@ -55,27 +46,18 @@
                 <a class="nav-link" href="{{ url('/cups') }}"><i class="material-icons">new_releases</i>
                     <p>Cups</p></a>
             </li>
-
-            @if(Auth::check() && Auth::User()->isAdmin())
-            <li class="nav-item{{ $activePage == 'reports' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ route('reports.index') }}"><i class="material-icons">dashboard</i>
-                    <p>Reports</p></a>
-            </li>
-            <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ route('users.index') }}"><i class="material-icons">dashboard</i>
-                    <p>Families</p></a>
-            </li>
-            <li class="nav-item{{ $activePage == 'teams' ? ' active' : '' }}">
-                <a class="nav-link" href="{{route('teams.index')}}"><i class="material-icons">people-outline</i>
-                    <p>Teams</p></a>
-            </li>
-            <li class="nav-item{{ $activePage == 'shows' ? ' active' : '' }}">
-                <a class="nav-link" href="{{route('shows.index')}}"><i class="material-icons">people-outline</i>
-                    <p>Shows</p></a>
-            </li>
-
-            @endif
-
+               @if(Auth::check() && Auth::User()->isAdmin())
+                   <li class="nav-item">
+                           <a class="nav-link" href="{{ config('nova.url') }}"><i class="material-icons">dashboard</i>
+                                   <p>admin</p></a>
+                       </li>
+                @endif
+{{--               @if(Auth::check())--}}
+{{--                   <li class="nav-item{{ $activePage == 'reports' ? ' active' : '' }}">--}}
+{{--                           <a class="nav-link" href="{{ route('user.payment') }}"><i class="material-icons">dashboard</i>--}}
+{{--                                   <p>Online Payment</p></a>--}}
+{{--                       </li>--}}
+{{--                @endif--}}
             {{--      <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">--}}
             {{--        <a class="nav-link" href="{{ route('home') }}">--}}
             {{--          <i class="material-icons">dashboard</i>--}}

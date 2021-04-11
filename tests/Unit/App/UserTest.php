@@ -91,28 +91,6 @@ class UserTest extends TestCase
         $this->assertSame($expected, $sut->getPrintableName());
     }
 
-    public function providergetUrl()
-    {
-        return [
-            ['/users/1', 1],
-            ['/users/0', 'fish'],
-            ['/users/-1', '-1'],
-        ];
-    }
-
-    /**
-     * A basic test example.
-     * @dataProvider providergetUrl
-     * @return void
-     */
-    public function testgetUrl($expected, $id)
-    {
-        $sut     = new User();
-        $sut->id = $id;
-
-        $this->assertNotFalse(strpos($sut->getUrl(), $expected));
-    }
-
 
 }
 //$this->getMockBuilder(SampleClass::class)->setMethods(null)->setConstructorArgs([4, 8, 15])->getMock()

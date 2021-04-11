@@ -13,12 +13,13 @@ class CreateTeamMembershipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('team_memberships', function (Blueprint $table) {
+        Schema::create('entrant_team', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('entrant_id');
             $table->unsignedBigInteger('team_id');
-            $table->integer('show_id');
+            $table->unsignedInteger('show_id');
             $table->timestamps();
+            $table->index(['entrant_id', 'team_id', 'show_id']);
         });
     }
 
@@ -29,6 +30,6 @@ class CreateTeamMembershipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team_memberships');
+        Schema::dropIfExists('entrant_team');
     }
 }

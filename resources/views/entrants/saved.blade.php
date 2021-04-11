@@ -1,7 +1,7 @@
 @extends('layouts/main')
 @section('pagetitle', 'Entrant ' . $thing->firstname. ' ' .  $thing->familyname)
 @section('content')
-{{$thing->firstname}} {{$thing->lastname}} was saved!
+    {{$thing->full_name}} was saved!
 
-<a href="{{$thing->getUrl()}}">View {{$thing->firstname}}</a>
+    <a href="{{route('entrants.show',['entrant'=>$thing])}}">View {{$thing->firstname}}</a>
 @stop

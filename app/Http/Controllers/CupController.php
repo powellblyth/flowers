@@ -29,7 +29,6 @@ class CupController extends Controller
              * @var Cup $cup
              */
             $resultset = $cup->getWinningResults($show);
-//            dd($resultset);
             $thisCupPoints = array();
             foreach ($resultset as $result) {
                 $thisCupPoints[] = ['firstplacepoints' => $result->firstplacepoints,
@@ -56,15 +55,18 @@ class CupController extends Controller
                 ->first();
             if ($cupWinner instanceof CupDirectWinner) {
                 /**
-                 * @vat CupDirectWinner $cupWinner
+                 * @var CupDirectWinner $cupWinner
                  */
-                if (!array_key_exists($cupWinner->entrant_id, $winners)) {
-                    $winners[$cupWinner->entrant_id] =
+                if (!array_key_exists($cupWinner->winningEntry->entrant->id, $winners)) {
+                    $winners[$cupWinner->winningEntry->entrant->id] =
                         [
-                            'entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0
+                            'entrant' => $cupWinner->winningEntry->entrant,
+                            'points' => 0,
                         ];
                 }
-                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('show_id', $show->id)->first();
+                $winningCategory = $cupWinner->winningCategory()
+                    ->where('show_id', $show->id)
+                    ->first();
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
@@ -80,11 +82,10 @@ class CupController extends Controller
         ]);
     }
 
-    public function show(int $id, Request $request): View
+    public function show(Cup $cup, Request $request): View
     {
         $winnerDataByCategory = [];
         $winners = [];
-        $cup = Cup::findOrFail($id);
         $show = $this->getShowFromRequest($request);
 
         $categories = $cup->categories()->where('show_id', $show->id)->orderBy('sortorder')->get();
@@ -129,7 +130,7 @@ class CupController extends Controller
 
 
         return view('cups.show', [
-            'thing' => $cup,
+            'cup' => $cup,
             'winners' => $winners,
             'winners_by_category' => $winnerDataByCategory,
             'categories' => $categories->pluck('numbered_name', 'id')->toArray(),

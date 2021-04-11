@@ -22,13 +22,11 @@ class ProfileController extends Controller
     /**
      * Update the profile
      *
-     * @param \App\Http\Requests\ProfileRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(ProfileRequest $request)
-    {die('hipdad');
+    {
         auth()->user()->update($request->all());
-
         return back()->withStatus(__('Profile successfully updated.'));
     }
 
@@ -40,7 +38,6 @@ class ProfileController extends Controller
     /**
      * Change the password
      *
-     * @param \App\Http\Requests\PasswordRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function password(PasswordRequest $request)

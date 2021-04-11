@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,17 +10,22 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property float late_price
  * @property float price
- * @method static Builder where(string $string, mixed $id, mixed $otherParam)
- * @property int id
+ * @property Collection cups
+ * @property string number
+ * @property string name
+ * @property Section section
+ * @property int first_prize
+ * @property int second_prize
+ * @property int third_prize
+ * @property Show show
  */
-class Category extends Model
+class Category extends Model implements \Stringable
 {
 
-    const TYPE_JUNIOR       = 'Junior';
-    const TYPE_ADULT        = 'Adult';
-    const PRICE_LATE_PRICE  = 'lateprice';
-    const PRICE_EARLY_PRICE = 'earlyprice';
-
+    public const TYPE_JUNIOR = 'Junior';
+    public const TYPE_ADULT = 'Adult';
+    public const PRICE_LATE_PRICE = 'lateprice';
+    public const PRICE_EARLY_PRICE = 'earlyprice';
 
     public function show(): BelongsTo
     {
@@ -48,17 +52,12 @@ class Category extends Model
         return $this->getNumberedLabel();
     }
 
-    public function getUrl()
-    {
-        return '/categories/' . $this->id;
-    }
-
     public function __toString(): string
     {
         return $this->getNumberedLabel();
     }
 
-    public function getWinningAmount(string $placement)
+    public function getWinningAmount(string $placement): int
     {
         $result = 0;
         if ('1' == $placement) {
@@ -76,19 +75,19 @@ class Category extends Model
         return $this->number . '. ' . $this->name;
     }
 
-    public function getType()
+    public function getType(): string
     {
         if (in_array($this->section->number, ['8', '9'])) {
-            $type = self::TYPE_JUNIOR;
+            $type = Category::TYPE_JUNIOR;
         } else {
-            $type = self::TYPE_ADULT;
+            $type = Category::TYPE_ADULT;
         }
         return $type;
     }
 
-    public function getPrice(string $type)
+    public function getPrice(string $type): float
     {
-        if ($type === self::PRICE_EARLY_PRICE) {
+        if ($type === Category::PRICE_EARLY_PRICE) {
             return $this->price;
         } else {
             return $this->late_price;

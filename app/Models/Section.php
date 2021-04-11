@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Section
  * @package App\Models
- * @property int id
+  * @property string number
+ * @property string name
+ * @property string judges
+ * @property string image
  */
 class Section extends Model
 {

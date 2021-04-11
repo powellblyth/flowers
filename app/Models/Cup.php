@@ -2,24 +2,16 @@
 
 namespace App\Models;
 
-use DB;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Cup
  * @package App\Models
- * @property int id
- * @method static Builder orderBy(string $string, string $string1)
  */
 class Cup extends Model
 {
-    public function getUrl(): string
-    {
-        return '/cups/' . $this->id;
-    }
-
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
@@ -30,7 +22,7 @@ class Cup extends Model
         /**
          * @TODO imrove this with more laravelness
          */
-        return \Illuminate\Support\Facades\DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
+        return DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
 sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
 sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
 sum(if(winningplace='commended', 1,0)) as commendedplacepoints, 

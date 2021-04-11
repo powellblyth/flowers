@@ -9,10 +9,9 @@ class WebhookController extends CashierController
     /**
      * Handle invoice payment succeeded.
      *
-     * @param array $payload
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function handleInvoicePaymentSucceeded($payload)
+    public function handleInvoicePaymentSucceeded()
     {
         // Handle The Event
     }

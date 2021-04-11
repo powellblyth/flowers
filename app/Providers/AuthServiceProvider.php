@@ -28,15 +28,15 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model'                     => 'App\Policies\ModelPolicy',
-        Category::class                 => CategoryPolicy::class,
-        Cup::class                      => CupPolicy::class,
-        Entrant::class                  => EntrantPolicy::class,
-        Entry::class                    => EntryPolicy::class,
+        'App\Model' => 'App\Policies\ModelPolicy',
+        Category::class => CategoryPolicy::class,
+        Cup::class => CupPolicy::class,
+        Entrant::class => EntrantPolicy::class,
+        Entry::class => EntryPolicy::class,
         MembershipPurchasePolicy::class => MembershipPurchase::class,
-        Show::class                     => ShowPolicy::class,
-        Team::class                     => TeamPolicy::class,
-        User::class                     => UserPolicy::class,
+        Show::class => ShowPolicy::class,
+        Team::class => TeamPolicy::class,
+        User::class => UserPolicy::class,
     ];
 
     /**

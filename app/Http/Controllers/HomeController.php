@@ -19,17 +19,14 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
-     * @return \Illuminate\View\View
      */
-    public function index(array $extraData = []): View
+    public function index(): View
     {
         $totalEntries = 0;
         $entrantCount = Auth::User()->entrants()->count();
         foreach (Auth::User()->entrants as $entrant) {
             $totalEntries += $entrant->entries()->count();
         }
-//die();
         return view('dashboard', [
             'entrantCount' => $entrantCount,
             'entryCount'   => $totalEntries,

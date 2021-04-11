@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Resources\Entry;
+use App\Models\Entrant;
 use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\User;
@@ -15,48 +17,28 @@ use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    protected $paymentTypes    = array('cash'          => 'cash',
-                                       'cheque'        => 'cheque',
-                                       'online'        => 'online',
-                                       'debit'         => 'debit',
-                                       'refund_cash'   => 'refund_cash',
-                                       'refund_online' => 'refund_online',
-                                       'refund_cheque' => 'refund_cheque');
-    protected $membershipTypes = array(
+    protected array $paymentTypes = array('cash' => 'cash',
+                                          'cheque' => 'cheque',
+                                          'online' => 'online',
+                                          'debit' => 'debit',
+                                          'refund_cash' => 'refund_cash',
+                                          'refund_online' => 'refund_online',
+                                          'refund_cheque' => 'refund_cheque');
+    protected array $membershipTypes = array(
         'single' => 'single',
         'family' => 'family');
-
-
-    /**
-     * Display a listing of the users
-     *
-     * @param User $model
-     * @return \Illuminate\View\View
-     */
-    public function index(User $model): View
-    {
-        return view('users.index', [
-            'users'    => $model::where('is_anonymised', false)
-                ->with('entrants')
-                ->withCount('entrants')
-                ->orderBy('lastname')
-                ->orderBy('firstname')
-                ->get(),
-            'isLocked' => config('app.state') == 'locked',
-        ]);
-    }
 
     public function isAdmin(): bool
     {
         return Auth::check() && Auth::User()->isAdmin();
     }
 
-    public function subscribe(Request $request)
+    public function subscribe()
     {
         return view(
             'users.subscribe',
             [
-                'thing'   => Auth::User(),
+                'thing' => Auth::User(),
                 'api_key' => config('stripe.api_key_publishable')
             ]
         );
@@ -67,106 +49,91 @@ class UserController extends Controller
      *
      * @param User|null $user
      * @param Show|null $show
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function show(User $user = null, Show $show = null): View
+    public function show(Request $request, User $user = null): View
     {
         if (is_null($user)) {
             $user = Auth::user();
         }
+
+        $user->load(['entrants', 'entrants.entries']);
         /**
          * Default show
          */
-        if (is_null($show)) {
-            $show = Show::where('status', 'current')->first();
-        }
+        $show = $this->getShowFromRequest($request);
 
         $this->authorize('view', $user);
         $membershipFee = 0;
-        $entryFee      = 0;
-        $totalPaid     = 0;
+        $entryFee = 0;
+        $totalPaid = 0;
 
-        foreach ($user->entrants as $entrant) {
-            $entries = $entrant->entries()->with(['show','category'])->where('show_id', $show->id)->get();
-            foreach ($entries as $entry) {
-                $price    = $entry->category->getPrice($entry->getPriceType());
-                $entryFee += $price;
+        $entryFee = $user->entrants->reduce(
+            function (?int $price, Entrant $entrant) use ($show) {
+                return ($price ?? 0) + $entrant->entries()
+                        ->where('show_id', $show->id)
+                        ->get()
+                        ->reduce(
+                            function ($price, \App\Models\Entry $entry): int {
+                                return ($price ?? 0) + $entry->getActualPrice();
+                            }
+                        );
             }
-        }
+        );
 
         $payments = $user->payments()->where('show_id', $show->id)->get();
         foreach ($payments as $payment) {
             $totalPaid += $payment->amount;
         }
 
-        $memberNumber = $user->getMemberNumber();
-        $memberships  = $user->membership_purchases()
+//        $memberNumber = $user->getMemberNumber();
+        $memberships = $user->membershipPurchases()
             ->where('end_date', '<', Carbon::now())
             ->get();
         foreach ($memberships as $membership) {
             $membershipFee += $membership->amount;
         }
-
+//dump( (new \App\Http\Resources\User($user))->toArray(new Request()));
         //@todo centralise this
         $tooLateForEntries = Carbon::now() > $show->entries_closed_deadline;
-
+        dump((new \App\Http\Resources\User($user))->toArray(new Request(['show'=>$show->id])));
         return view('users.show', [
-            'thing'                   => $user,
-            'paid'                    => $totalPaid,
-            'membership_fee'          => $membershipFee,
-            'entry_fee'               => $entryFee,
-            'total_paid'              => $totalPaid,
-            'payments'                => $payments,
-            'isAdmin'                 => $this->isAdmin(),
-            'showId'                  => $show->id,
-            'payment_types'           => $this->paymentTypes,
-            'membership_types'        => [MembershipPurchase::TYPE_FAMILY => 'Family'],
+            'user' => (new \App\Http\Resources\User($user))->toArray(new Request(['show'=>$show->id])),
+            //            'user' => $user,
+            'paid' => $totalPaid,
+            'membership_fee' => $membershipFee,
+            'entry_fee' => $entryFee,
+            'total_paid' => $totalPaid,
+            'payments' => $payments,
+            'payment_methods' => $user->paymentMethods(),
+            'needs_payment_method' => !$user->hasPaymentMethod(),
+            'isAdmin' => $this->isAdmin(),
+            'show' => $show,
+            'showId' => $show->id,
+            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
+            'payment_types' => $this->paymentTypes,
+            'membership_types' => [MembershipPurchase::TYPE_FAMILY => 'Family'],
             'has_family_subscription' => false,//$hasFamilySubscription,
-            'isLocked'                => config('app.state') == 'locked',
-            'too_late_for_entries'    => $tooLateForEntries,
+            'isLocked' => config('app.state') == 'locked',
+            'too_late_for_entries' => $tooLateForEntries,
         ]);
     }
 
     /**
      * Show the form for creating a new user
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
-    public function create(array $extraData = []): View
+    public function create(): View
     {
         $this->authorize('create', User::class);
         return view('users.create', ['privacyContent' => config('static_content.privacy_content')]);
     }
 
-    function printcards($id)
-    {
-        $categoryData = [];
-        $thing        = User::find($id);
-        $entrants     = $thing->entrants;
-        $cardFronts   = [];
-        $cardBacks    = [];
-        foreach ($entrants as $entrant) {
-            $entries = $entrant->entries()->where('year', config('app.year'))->get();
-
-            foreach ($entries as $entry) {
-                if ($entry->category) {
-                    $categoryData[$entry->category->id] = $entry->category;
-                    $cardFronts[]                       = $entry->getCardFrontData();
-                    $cardBacks[]                        = $entry->getCardBackData();
-                }
-            }
-        }
-        return view('cards.printcards', [
-            'card_fronts' => $cardFronts,
-            'card_backs'  => $cardBacks,
-        ]);
-    }
-
     /**
      * Store a newly created user in storage
      *
-     * @param UserRequest $request
      * @param User $model
      * @return RedirectResponse
      */
@@ -182,14 +149,13 @@ class UserController extends Controller
             $request->merge(
                 [
                     'password_reset_token' => '',
-                    'password'             => $newPassword,
-                    'auth_token'           => md5((string) random_int(PHP_INT_MIN, PHP_INT_MAX))]
+                    'password' => $newPassword,
+                    'auth_token' => md5((string) random_int(PHP_INT_MIN, PHP_INT_MAX))]
             )->all()
         );
         $user->makeDefaultEntrant();
 
         if ($request->has('another')) {
-
             return redirect()->route('users.create')
                 ->withStatus(__('Family :Family successfully created.', ['family' => $user->lastname]));
 
@@ -200,8 +166,8 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified user
      *
-     * @param User $user
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function edit(User $user)
     {
@@ -218,17 +184,16 @@ class UserController extends Controller
     /**
      * Update the specified user in storage
      *
-     * @param UserRequest $request
-     * @param User $user
      * @return RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(UserRequest $request, User $user)
     {
         $this->authorize('update', $user);
         $user->update(
             $request->merge(['password' => Hash::make($request->get('password'))])
-                ->except([$request->get('password') ? '' : 'password']
-                ));
+                ->except([$request->get('password') ? '' : 'password'])
+        );
 
         return redirect()->route('users.index')->withStatus(__('Family successfully updated.'));
     }
@@ -236,8 +201,8 @@ class UserController extends Controller
     /**
      * Remove the specified user from storage
      *
-     * @param User $user
      * @return RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function destroy(User $user)
     {

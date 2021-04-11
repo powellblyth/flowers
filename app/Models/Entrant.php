@@ -6,8 +6,9 @@ use App\Events\EntrantSaving;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
@@ -21,39 +22,27 @@ use Illuminate\Support\Str;
  * @property string firstname
  * @property string familyname
  * @property bool can_retain_data
- * @property bool can_sms
- * @property bool can_email
- * @property bool can_post
+ * @property bool is_anonymised
  * @property int age
  * @property Collection individualMemberships
- * @property string telephone
- * @property string address
- * @property string address2
- * @property string addresstown
- * @property string postcode
- * @property bool can_phone
- * @property Carbon created_at
- * @property Carbon updated_at
- * @property Carbon post_opt_in
- * @property Carbon post_opt_out
- * @property Carbon sms_opt_out
- * @property Carbon sms_opt_in
  * @property Carbon retain_data_opt_out
  * @property Carbon retain_data_opt_in
- * @property Carbon phone_opt_out
- * @property Carbon phone_opt_in
- * @property Carbon email_opt_out
- * @property Carbon email_opt_in
+ * @property Carbon created_at
+ * @property Carbon updated_at
  * @property int id
  * @property string membernumber
- * @method static Builder where(string $string, int $id)
- * @method static find($id)
+ * @property int user_id
  */
 class Entrant extends Model
 {
     use Notifiable;
+    use HasFactory;
 
     protected $casts = [
+        'can_retain_data' => 'bool',
+        'retain_data_opt_in' => 'datetime',
+        'retain_data_opt_out' => 'datetime',
+        'is_anonymised' => 'bool',
         'age' => 'int',
     ];
 
@@ -62,11 +51,6 @@ class Entrant extends Model
     protected $dispatchesEvents = [
         'saving' => EntrantSaving::class
     ];
-
-    public function getUrl()
-    {
-        return route('entrants.show', ['entrant' => $this]);
-    }
 
     public function getFullNameAttribute(): string
     {
@@ -84,7 +68,6 @@ class Entrant extends Model
 
     /**
      * Simple way to get an entrant number
-     * @return string
      */
     public function getEntrantNumber(): string
     {
@@ -106,9 +89,11 @@ class Entrant extends Model
         return ($this->age <= $team->max_age && $this->age >= $team->min_age);
     }
 
-    public function team_memberships(): HasMany
+    public function teams(): BelongsToMany
     {
-        return $this->hasMany(TeamMembership::class);
+        return $this->belongsToMany(Team::class)
+            ->withTimestamps()
+            ->withPivot('show_id');
     }
 
     public function entries(): HasMany
@@ -194,33 +179,15 @@ class Entrant extends Model
 
     public function anonymise(): Entrant
     {
-        $this->email         = $this->id . '@' . $this->id . 'phs-anonymised' . (int) rand(0, 100000) . '.com';
         $this->is_anonymised = true;
-        $this->firstname     = 'Anonymised';
-        $this->familyname    = 'Anonymised';
-        $this->membernumber  = null;
-        $this->age           = null;
+        $this->firstname = 'Anonymised';
+        $this->familyname = 'Anonymised';
+        $this->membernumber = null;
+        $this->age = null;
 
         // some of these are legacy fields
-        $this->telephone           = null;
-        $this->address             = null;
-        $this->address2            = null;
-        $this->addresstown         = null;
-        $this->postcode            = null;
-        $this->retain_data_opt_in  = null;
+        $this->retain_data_opt_in = null;
         $this->retain_data_opt_out = null;
-        $this->email_opt_in        = null;
-        $this->email_opt_out       = null;
-        $this->can_email           = false;
-        $this->phone_opt_in        = null;
-        $this->phone_opt_out       = null;
-        $this->can_phone           = false;
-        $this->sms_opt_in          = null;
-        $this->sms_opt_out         = null;
-        $this->can_sms             = false;
-        $this->post_opt_in         = null;
-        $this->post_opt_out        = null;
-        $this->can_post            = false;
 
         $this->created_at = null;
 

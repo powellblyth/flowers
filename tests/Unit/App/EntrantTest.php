@@ -63,30 +63,6 @@ class EntrantTest extends TestCase
         $this->assertSame($expected, $sut->getPrintableName());
     }
 
-    public function providergetUrl()
-    {
-        return [
-            ['/entrants/1', 1],
-            ['/entrants/0', 'fish'],
-            ['/entrants/-1', '-1'],
-        ];
-    }
-
-    /**
-     * A basic test example.
-     * @dataProvider providergetUrl
-     * @param $expected
-     * @param $id
-     * @return void
-     */
-    public function testgetUrl($expected, $id)
-    {
-        $sut     = new Entrant();
-        $sut->id = $id;
-
-        $this->assertNotFalse(strpos($sut->getUrl(), $expected));
-    }
-
     public function providergetEntrantNumber():array
     {
         return [

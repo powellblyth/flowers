@@ -9,15 +9,18 @@ class PaymentController extends Controller
 {
     public function store(Request $request)
     {
+        $show = $this->getShowFromRequest($request);
         // Validate the request...
 
         $payment = new Payment();
 
-        $payment->amount     = $request->amount;
-        $payment->source     = $request->source;
-        $payment->entrant_id = $request->entrant;
-        $payment->user_id    = $request->user;
-        $payment->year       = (int) config('app.year');
+        $payment->amount = $request->amount;
+        $payment->source = $request->source;
+        $payment->user()->associate($request->user);
+        if ($request->entrant) {
+            $payment->enrant()->associate($request->entrant);
+        }
+        $payment->year = (int) config('app.year');
         $payment->save();
 
         if ($request->entrant) {

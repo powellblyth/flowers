@@ -1,15 +1,15 @@
 @extends('layouts/main')
-@section('pagetitle', 'Cup ' . $thing->name . ' '.$show->name)
+@section('pagetitle', 'Cup ' . $cup->name . ' '.$show->name)
 @section('content')
     @php
         $printableNames = !$isAdmin
     @endphp
-    <a href="/cups">&laquo; Cups</a>
+    <a href="{{route('cups.index')}}">&laquo; Cups</a>
     <br/>
     <ul>
-        <li>Name: {{ $thing->name }}</li>
+        <li>Name: {{ $cup->name }}</li>
         <li>Show: {{ $show->name }}</li>
-        <li>Criteria: {{ $thing->winning_criteria }}</li>
+        <li>Criteria: {{ $cup->winning_criteria }}</li>
     </ul>
 
     @if (count($categories) > 0)
@@ -72,20 +72,20 @@
     @else
         @can('storeResults', $show)
             <h2>Pick a winner from an entry</h2>
-            {{ Form::open([
-                'route' => ['cup.directResultPick','id'=>$thing->id]
-            ]) }}
-{{--            {{dd($categories)}}--}}
-            {{ Form::select('category', $categories)}}
-            {{ Form::submit('Find Entrants', ['class' => 'button btn btn-primary']) }}
-            {{Form::close()}}
-            <h2>Pick a winner from a list of entrants</h2>
-            {{ Form::open([
-                'route' => ['cup.directResultSetWinnerPerson','id'=>$thing->id]
-            ]) }}
-            {{ Form::select('person', $people)}}
-            {{ Form::submit('Set Winner', ['class' => 'button btn btn-primary']) }}
-            {{Form::close()}}
+{{--            {{ Form::open([--}}
+{{--                'route' => ['cup.directResultPick','cup'=>$cup]--}}
+{{--            ]) }}--}}
+{{--                        {{dd($categories)}}--}}
+{{--            {{ Form::select('category', $categories)}}--}}
+{{--            {{ Form::submit('Find Entrants', ['class' => 'button btn btn-primary']) }}--}}
+{{--            {{Form::close()}}--}}
+{{--            <h2>Pick a winner from a list of entrants</h2>--}}
+{{--            {{ Form::open([--}}
+{{--                'route' => ['cup.directResultSetWinnerPerson','id'=>$cup->id]--}}
+{{--            ]) }}--}}
+{{--            {{ Form::select('person', $people)}}--}}
+{{--            {{ Form::submit('Set Winner', ['class' => 'button btn btn-primary']) }}--}}
+{{--            {{Form::close()}}--}}
         @endif
     @endif
 @stop

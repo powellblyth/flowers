@@ -10,33 +10,31 @@ use Illuminate\Support\Facades\Lang;
 class MustChangePasswordNotification extends Notification
 {
     use Queueable;
-    /**
-     * The password reset token.
-     *
-     * @var string
-     */
-    public $token;
-    public $firstname;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($token, $firstname)
+    public function __construct(
+        /**
+         * The password reset token.
+         *
+         * @var string
+         */
+        public $token,
+        public $firstname
+    )
     {
-        $this->token     = $token;
-        $this->firstname = $firstname;
     }
 
 
     /**
      * Get the notification's delivery channels.
      *
-     * @param mixed $notifiable
      * @return array
      */
-    public function via($notifiable)
+    public function via()
     {
         return ['mail'];
     }
@@ -74,10 +72,9 @@ class MustChangePasswordNotification extends Notification
     /**
      * Get the array representation of the notification.
      *
-     * @param mixed $notifiable
      * @return array
      */
-    public function toArray($notifiable)
+    public function toArray()
     {
         return [
             //

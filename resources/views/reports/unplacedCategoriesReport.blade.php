@@ -6,7 +6,7 @@
             <div class="row">
                 @foreach ($shows as $showNav)
                     <div class="col-1">
-                        <a href="{{route('reports.categories')}}?show_id={{$showNav->id}}">{{$showNav->name}}</a>
+                        <a href="{{route('reports.categories', ['show'=>$showNav])}}">{{$showNav->name}}</a>
                     </div>
                 @endforeach
             </div>

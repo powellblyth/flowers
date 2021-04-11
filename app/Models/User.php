@@ -6,16 +6,24 @@ use App\Events\UserSaving;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Cashier\Billable;
 
 //use Laravel\Cashier\Billable;
 
 /**
  * @method static User create(array $array)
- * @method static User find(int $int)
+ * @method static User find(int $userId)
+ * @method static Builder orderBy(string $column, ?string $direction = null)
+ * @method static Builder where(string|array $column, ?string $valueOrComparator, ?string $value = null)
+ * @method static User firstWhere(int $userId)
+ * @method static User findOrFail(int $userId)
+ * @method static User firstOrNew(int $userId)
+ * @method static User firstOrCreate(array $array, array $array)
  * @property Collection entrants
  * @property string type
  * @property string firstname
@@ -49,11 +57,30 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasFactory;
 
-//    use Billable;
+    use Billable;
 
-    const ADMIN_TYPE   = 'admin';
+    const ADMIN_TYPE = 'admin';
     const DEFAULT_TYPE = 'default';
+
+    protected $casts = [
+        'retain_data_opt_in' => 'datetime',
+        'retain_data_opt_out' => 'datetime',
+        'email_opt_in' => 'datetime',
+        'email_opt_out' => 'datetime',
+        'sms_opt_in' => 'datetime',
+        'sms_opt_out' => 'datetime',
+        'phone_opt_in' => 'datetime',
+        'phone_opt_out' => 'datetime',
+        'post_opt_in' => 'datetime',
+        'post_opt_out' => 'datetime',
+        'can_retain_data' => 'bool',
+        'can_email' => 'bool',
+        'can_sms' => 'bool',
+        'can_post' => 'bool',
+        'is_anonymised' => 'bool',
+    ];
 
     protected $dispatchesEvents = [
         'saving' => UserSaving::class
@@ -91,7 +118,7 @@ class User extends Authenticatable
         return $this->hasMany(Payment::class);
     }
 
-    public function membership_purchases(): HasMany
+    public function membershipPurchases(): HasMany
     {
         return $this->hasMany(MembershipPurchase::class);
     }
@@ -109,7 +136,6 @@ class User extends Authenticatable
 
     /**
      * If we are not on production then return a sensible false string
-     * @return string
      */
     public function getSafeEmail(): string
     {
@@ -118,11 +144,6 @@ class User extends Authenticatable
             $email = str_replace(substr($email, strpos($email, '@')), '@powellblyth.com', $email);
         }
         return $email;
-    }
-
-    public function getUrl()
-    {
-        return route('user.edit', $this);
     }
 
     public function getName(bool $printable = null): string
@@ -138,7 +159,7 @@ class User extends Authenticatable
     {
         $concatted = trim($this->address) . ', '
                      . trim($this->address2) . ', ' . trim($this->addresstown);
-        $deduped   = str_replace(
+        $deduped = str_replace(
             ', , ',
             ', ',
             str_replace(', , ', ', ', $concatted)
@@ -151,13 +172,10 @@ class User extends Authenticatable
      */
     public function makeDefaultEntrant()
     {
-        $entrant                  = new Entrant();
-        $entrant->firstname       = $this->firstname;
-        $entrant->familyname      = $this->lastname;
+        $entrant = new Entrant();
+        $entrant->firstname = $this->firstname;
+        $entrant->familyname = $this->lastname;
         $entrant->can_retain_data = $this->can_retain_data;
-        $entrant->can_sms         = $this->can_sms;
-        $entrant->can_email       = $this->can_email;
-        $entrant->can_post        = $this->can_post;
         if ($entrant->save()) {
             $this->entrants()->save($entrant);
         }
@@ -168,13 +186,9 @@ class User extends Authenticatable
         return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
     }
 
-    public function familyMemberships(bool $current = true): Builder
+    public function familyMemberships(): HasMany
     {
-        $memberships = $this->hasMany(MembershipPurchase::class, 'user_id')->where('type', 'family');
-        if ($current) {
-            $memberships = $memberships->where('year', config('app.year'));
-        }
-        return $memberships;
+        return $memberships = $this->hasMany(MembershipPurchase::class, 'user_id')->where('type', 'family');
     }
 
     public function teamMemberships($year = null): HasManyThrough
@@ -190,8 +204,10 @@ class User extends Authenticatable
 
     public function getMemberNumber(): ?string
     {
-        $membership = $this->membership_purchases()->where('end_date', '<', date('Y-m-d 11:39:39'))->first();
-        if ($membership instanceof Models\MembershipPurchase) {
+        $membership = $this->membershipPurchases()
+            ->where('end_date', '<', date('Y-m-d 11:39:39'))
+            ->first();
+        if ($membership instanceof MembershipPurchase) {
             return $membership->getNumber();
         } else {
             return null;
@@ -214,30 +230,30 @@ class User extends Authenticatable
 
     public function anonymise(): User
     {
-        $this->email               = $this->id . '@' . $this->id . 'phs-anonymised' . rand(0, 100000) . '.com';
-        $this->is_anonymised       = true;
-        $this->firstname           = 'Anonymised';
-        $this->lastname            = 'Anonymised';
-        $this->telephone           = null;
-        $this->address             = null;
-        $this->address2            = null;
-        $this->addresstown         = null;
-        $this->retain_data_opt_in  = null;
+        $this->email = $this->id . '@' . $this->id . 'phs-anonymised' . rand(0, 100000) . '.com';
+        $this->is_anonymised = true;
+        $this->firstname = 'Anonymised';
+        $this->lastname = 'Anonymised';
+        $this->telephone = null;
+        $this->address = null;
+        $this->address2 = null;
+        $this->addresstown = null;
+        $this->retain_data_opt_in = null;
         $this->retain_data_opt_out = null;
-        $this->email_opt_in        = null;
-        $this->email_opt_out       = null;
-        $this->can_email           = false;
-        $this->phone_opt_in        = null;
-        $this->phone_opt_out       = null;
-        $this->can_phone           = false;
-        $this->sms_opt_in          = null;
-        $this->sms_opt_out         = null;
-        $this->can_sms             = false;
-        $this->post_opt_in         = null;
-        $this->post_opt_out        = null;
-        $this->can_post            = false;
+        $this->email_opt_in = null;
+        $this->email_opt_out = null;
+        $this->can_email = false;
+        $this->phone_opt_in = null;
+        $this->phone_opt_out = null;
+        $this->can_phone = false;
+        $this->sms_opt_in = null;
+        $this->sms_opt_out = null;
+        $this->can_sms = false;
+        $this->post_opt_in = null;
+        $this->post_opt_out = null;
+        $this->can_post = false;
 
-        $this->postcode   = $this->anonymisePostcode($this->postcode);
+        $this->postcode = $this->anonymisePostcode($this->postcode);
         $this->created_at = null;
 
         return $this;
