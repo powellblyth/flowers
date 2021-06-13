@@ -94,12 +94,12 @@ class UserController extends Controller
         foreach ($memberships as $membership) {
             $membershipFee += $membership->amount;
         }
-//dump( (new \App\Http\Resources\User($user))->toArray(new Request()));
+//dump( (new \App\Http\Resources\UserResource($user))->toArray(new Request()));
         //@todo centralise this
         $tooLateForEntries = Carbon::now() > $show->entries_closed_deadline;
-        dump((new \App\Http\Resources\User($user))->toArray(new Request(['show'=>$show->id])));
+//        dd((new \App\Http\Resources\UserResource($user))->toArray(new Request(['show'=>$show->id])));
         return view('users.show', [
-            'user' => (new \App\Http\Resources\User($user))->toArray(new Request(['show'=>$show->id])),
+            'user' => (new \App\Http\Resources\UserResource($user))->toArray(new Request(['show'=>$show])),
             //            'user' => $user,
             'paid' => $totalPaid,
             'membership_fee' => $membershipFee,

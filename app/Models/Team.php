@@ -30,7 +30,7 @@ class Team extends Model
 
 //    public function entrants(): HasMany
 //    {
-//        return $this->hasMany(Entrant::class);
+//        return $this->hasMany(EntrantResource::class);
 //    }
 
     public function entrants(): HasManyThrough

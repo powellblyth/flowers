@@ -44,9 +44,10 @@
                 </div>
 
                 <div class="links">
-                    @if (Auth::check())
-                        <a href="{{ url('/admin') }}">Home</a>
-                    @else
+                    @auth()
+                        <a href="{{ url(route('dashboard')) }}">Dashboard</a>
+                    @endauth()
+                    @guest()
                         <a href="{{ url('/login') }}">Log in</a>
                     @endif
                 </div>

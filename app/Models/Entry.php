@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * Class Entry
  * @package App
  * @property Entrant $entrant
- * @property Show show
- * @property string winningplace
- * @property Category category
- * @property int category_id
- * @property int entrant_id
- * @property int year
+ * @property Show $show
+ * @property string $winningplace
+ * @property Category $category
+ * @property int $category_id
+ * @property int $entrant_id
+ * @property int $year
  */
 class Entry extends Model
 {

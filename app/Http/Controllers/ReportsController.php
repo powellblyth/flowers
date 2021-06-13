@@ -27,7 +27,7 @@ class ReportsController extends Controller
         $membershipsSold = $membership->membershipsSold()->with('entrant')->with('user');
 //dd( $membership->membershipsSold()->count());
 //        foreach ($membershipsSold as $membershipPurchase) {
-//            $user                                     = $membershipPurchase->user;// Entrant::find($membership->entrant_id);
+//            $user                                     = $membershipPurchase->user;// EntrantResource::find($membership->entrant_id);
 //            $entrant                                  = $membershipPurchase->entrant;
 //            $singlepurchases[$membershipPurchase->id] = ['created'        => $membershipPurchase->created_at,
 //                                                         'amount'         => number_format($membershipPurchase->amount / 100, 2),
@@ -47,7 +47,7 @@ class ReportsController extends Controller
 //
 //        }
 //        foreach ($familymembershipsSold as $membershipPurchase) {
-//            $user                                     = $membershipPurchase->user;// Entrant::find($membership->entrant_id);
+//            $user                                     = $membershipPurchase->user;// EntrantResource::find($membership->entrant_id);
 //            $familypurchases[$membershipPurchase->id] = ['created'        => $membershipPurchase->created_at,
 //                                                         'amount'         => number_format($membershipPurchase->amount / 100, 2),
 //                                                         'user_id'        => (($user) ? $user->id : ''),

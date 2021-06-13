@@ -5,11 +5,11 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * Class Entrant
+ * Class EntrantResource
  * @package App\Http\Resources
  * @mixin \App\Models\User
  */
-class User extends JsonResource
+class UserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,9 +19,11 @@ class User extends JsonResource
      */
     public function toArray($request)
     {
-dump('user says');
-dump($request->show);
-        return [
+//        dd($this->entrants);
+//dump('user says');
+//dd($request->show);
+
+        $res = [
             'id' => $this->id,
             'firstname' => $this->firstname,
             'familyname' => $this->lastname,
@@ -40,8 +42,11 @@ dump($request->show);
             'can_retain_data' => $this->can_retain_data,
             'telephone' => $this->telephone,
             'status' => $this->status,
-            'entrants' => Entrant::collection($this->entrants)->with($request),
+            'entrants' => EntrantResource::collection($this->entrants)->toArray($request),//->with($request),
             'membershipPurchases' => $this->membershipPurchases(),
         ];
+
+//        dd($res);
+        return $res;
     }
 }

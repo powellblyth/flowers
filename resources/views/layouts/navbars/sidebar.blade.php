@@ -18,10 +18,10 @@
                         <p>Home</p></a>
                 </li>
 
-                @can('create',\App\Models\Entrant::class)
+                @can('create',\App\Models\EntrantResource::class)
                     <li class="nav-item{{ $activePage == 'add-entrant' ? ' active' : '' }}">
-                        <a class="nav-link" href="{{route('users.createentrant', ['user'=>\Illuminate\Support\Facades\Auth::user()])}}"><i class="material-icons">group_add</i>
-                            <p>Add a family member</p></a>
+                        <a class="nav-link" href="{{route('entrants.create')}}"><i class="material-icons">group_add</i>
+                            <p>@lang('Add another family member')</p></a>
                     </li>
                 @endcan
 
@@ -76,7 +76,7 @@
             {{--            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">--}}
             {{--              <a class="nav-link" href="{{ route('profile.edit') }}">--}}
             {{--                <span class="sidebar-mini"> UP </span>--}}
-            {{--                <span class="sidebar-normal">{{ __('User profile') }} </span>--}}
+            {{--                <span class="sidebar-normal">{{ __('UserResource profile') }} </span>--}}
             {{--              </a>--}}
             {{--            </li>--}}
             {{--            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">--}}

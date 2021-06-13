@@ -54,14 +54,14 @@ class MembershipPurchase extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('User'),
+            BelongsTo::make('UserResource'),
 
-            BelongsTo::make('Entrant'),
+            BelongsTo::make('EntrantResource'),
 
             Select::make('Type')
                 ->sortable()
                 ->options([
-                    \App\Models\Membership::APPLIES_TO_ENTRANT => 'Entrant',
+                    \App\Models\Membership::APPLIES_TO_ENTRANT => 'EntrantResource',
                     \App\Models\Membership::APPLIES_TO_USER => 'Family',
                 ]),
 

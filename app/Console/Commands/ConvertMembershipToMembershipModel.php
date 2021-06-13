@@ -6,7 +6,7 @@ use App\Models\Membership;
 use App\Models\MembershipPurchase;
 use Illuminate\Console\Command;
 
-class ConvertYearToShow extends Command
+class ConvertMembershipToMembershipModel extends Command
 {
     /**
      * The name and signature of the console command.

@@ -62,7 +62,7 @@ class Membership extends Resource
             Select::make('Applies To')
                 ->sortable()
                 ->options([
-                    \App\Models\Membership::APPLIES_TO_ENTRANT => 'Entrant',
+                    \App\Models\Membership::APPLIES_TO_ENTRANT => 'EntrantResource',
                     \App\Models\Membership::APPLIES_TO_USER => 'Family',
                 ]),
 

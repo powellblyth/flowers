@@ -38,5 +38,4 @@ class MembershipPurchaseController extends Controller
             return redirect()->route('users.show', ['user' => $request->user]);
         }
     }
-
 }

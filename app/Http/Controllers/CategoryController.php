@@ -77,7 +77,6 @@ class CategoryController extends Controller
                 'winners' => $winners,
                 'show' => $show,
                 'isLocked' => config('app.state') == 'locked',
-                'shows' => Show::orderBy('start_date')->get(),
             ]
         );
     }
