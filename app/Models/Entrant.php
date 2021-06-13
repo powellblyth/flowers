@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
 //use Laravel\Cashier\Billable;
 
 /**
- * Class Entrant
+ * Class EntrantResource
  * @package App
  * @property User $user
  * @property string firstname

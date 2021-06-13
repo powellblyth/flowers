@@ -6,7 +6,7 @@
 @endphp
 @extends('layouts.app', ['activePage' => $activePage, 'titlePage' =>  $thing->getName() ])
 
-@section('pagetitle', 'Entrant ' . $thing->getName())
+@section('pagetitle', 'EntrantResource ' . $thing->getName())
 @section('content')
 
     <div class="container-fluid">
@@ -259,9 +259,9 @@
                         <div class="card-body">
 
 
-                            {{ Form::open([
-                                'route' => 'payments.store'
-                            ]) }}
+{{--                            {{ Form::open([--}}
+{{--                                'route' => 'payments.store'--}}
+{{--                            ]) }}--}}
 
                             {{ Form::hidden('user', $thing->id, ['class' => 'form-control']) }}
                             {{ Form::label('amount', 'Amount: &pound;', ['class' => 'control-label']) }}

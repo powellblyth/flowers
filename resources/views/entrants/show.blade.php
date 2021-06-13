@@ -1,6 +1,6 @@
 @extends('layouts.app', ['activePage' => 'entrants', 'titlePage' =>  $thing->getName() ])
 
-@section('pagetitle', 'Entrant ' . $thing->getName())
+@section('pagetitle', 'EntrantResource ' . $thing->getName())
 @section('content')
         <div class="container-fluid">
             <div class="row">
@@ -43,7 +43,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <b>Entrant Number: {{ $thing->getEntrantNumber() }}</b>
+                                        <b>EntrantResource Number: {{ $thing->getEntrantNumber() }}</b>
                                     </div>
                                     <div class="col-lg-6  col-md-6 col-sm-12">
                                         <b>Member Number:</b> {{ $thing->getMemberNumber() }}

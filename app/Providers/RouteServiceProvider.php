@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
+    public const HOME  ='/dashboard';
     /**
      * This namespace is applied to your controller routes.
      *
@@ -14,7 +15,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = null;
 
     /**
      * Define your route model bindings, pattern filters, etc.

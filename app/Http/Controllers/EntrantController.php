@@ -38,25 +38,13 @@ class EntrantController extends Controller
         return Auth::check() && Auth::User()->isAdmin();
     }
 
-    public function create(Request $request, ?int $family = null): View
+    public function create(Request $request): View
     {
-        if ($family) {
-            $family = User::findOrFail($family);
-        } else {
-            $family = Auth::user();
-        }
-        $this->authorize('addEntrant', $family);
+        $user = Auth::user();
+        $this->authorize('addEntrant', $user);
         $indicatedAdmin = null;
 
-        $allUsers = collect($family);
-
-        if (Auth::user()->can('viewAny', User::class)) {
-            $allUsers = User::Select(DB::raw('id, concat(lastname, \', \', firstname) as the_name'))
-                ->where('is_anonymised', false)
-                ->orderBy('lastname', 'asc')
-                ->orderBy('firstname')
-                ->pluck('the_name', 'id');
-        }
+        $allUsers = collect($user);
 
         $allTeams = Team::where('status', 'active')
             ->orderBy('min_age')
@@ -67,10 +55,8 @@ class EntrantController extends Controller
 
         return view('entrants.create', [
             'privacyContent' => config('static_content.privacy_content'),
-            'allUsers' => $allUsers,
             'teams' => $allTeams,
-            'indicatedAdmin' => $family->id,
-            'defaultFamilyName' => $family->lastname,
+            'defaultFamilyName' => $user->lastname,
         ]);
     }
 
@@ -80,20 +66,22 @@ class EntrantController extends Controller
         $show = $this->getShowFromRequest($request);
         $entrant = new Entrant();
         $entrant->firstname = $request->firstname;
-        $entrant->familyname = $request->familyname;
+        $entrant->familyname = $request->familyname ?? $request->lastname;
         $entrant->membernumber = $request->membernumber;
 //        dd('TODO relate to team');
         $entrant->age = $request->age;
-
         $entrant->can_retain_data = (bool) $request->can_retain_data;
+        if (is_numeric($request->team_id)) {
+            $entrant->teams()->save(Team::findOrFail($request->team_id), ['show_id' => $show->id]);
+        }
+
 
         if ($entrant->save()) {
             $request->session()->flash('success', 'Family Member Saved');
 
-            $entrant->teams()->save(Team::findOrFail($request->team_id), ['show_id' => $show->id]);
 
             Auth::User()->entrants()->save($entrant);
-            return redirect()->route('home');
+            return redirect()->route('family');
         } else {
             $request->session()->flash('error', 'Something went wrong saving the Family Member');
             return back();
@@ -102,7 +90,7 @@ class EntrantController extends Controller
 
     public function update(Request $request, Entrant $entrant)
     {
-//        $entrant = Entrant::where('id', $request->id)->firstOrFail();
+//        $entrant = EntrantResource::where('id', $request->id)->firstOrFail();
         $this->authorize('update', $entrant);
         $age = (int) $request->age;
         $request->validate(
@@ -118,11 +106,13 @@ class EntrantController extends Controller
                                       ->where('max_age', '>=', $age);
                                   return $query;
                               })],
+                'can_retain_data' => 'boolean',
             ]
         );
         $entrant->firstname = $request->firstname;
         $entrant->familyname = $request->familyname;
         $entrant->membernumber = $request->membernumber;
+        $entrant->can_retain_data = (bool) $request->can_retain_data;
         // No point eding
         $showId = Show::where('status', 'current')->first()->id;
 
@@ -248,10 +238,12 @@ class EntrantController extends Controller
     {
         $this->authorize('update', $entrant);
 
-        return view('entrants.edit', array(
-            'thing' => $entrant,
-            'teams' => $entrant->getValidTeamOptions(),
-            'privacyContent' => config('static_content.privacy_content'),
-            'isAdmin' => $this->isAdmin()));
+        return view('entrants.edit',
+            [
+                'entrant' => $entrant,
+                'teams' => $entrant->getValidTeamOptions(),
+                'privacyContent' => config('static_content.privacy_content'),
+                'isAdmin' => $this->isAdmin()]
+        );
     }
 }

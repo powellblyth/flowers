@@ -8,7 +8,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class RegisterController extends Controller {
+class RegisterController extends Controller
+{
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -34,12 +35,14 @@ class RegisterController extends Controller {
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('guest');
     }
 
-    public function showRegistrationForm() {
-        return view('auth.register', ['privacyContent'=>config('static_content.privacy_content')]);
+    public function showRegistrationForm()
+    {
+        return view('auth.register', ['privacyContent' => config('static_content.privacy_content')]);
     }
 
     /**
@@ -48,7 +51,8 @@ class RegisterController extends Controller {
      * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data) {
+    protected function validator(array $data)
+    {
         return Validator::make($data, [
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
@@ -56,7 +60,7 @@ class RegisterController extends Controller {
             'address' => 'required_without:email|max:255',
             'postcode' => 'required_without:email|max:10',
             'password' => 'required|string|min:2|confirmed',
-            
+
         ]);
     }
 
@@ -66,7 +70,8 @@ class RegisterController extends Controller {
      * @param array $data
      * @return User
      */
-    public function create( $extraData = []) {
+    public function create($extraData = [])
+    {
         $data = [
             'firstname' => $extraData['firstname'],
             'lastname' => $extraData['lastname'],
@@ -76,27 +81,28 @@ class RegisterController extends Controller {
             'addresstown' => $extraData['addresstown'],
             'postcode' => $extraData['postcode'],
             'password' => Hash::make($extraData['password']),
-            'auth_token' => md5((string) random_int(PHP_INT_MIN,PHP_INT_MAX)),
+            'auth_token' => md5((string) random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => '',
             'type' => User::DEFAULT_TYPE,
         ];
-        $canRetainData = array_key_exists('can_retain_data', $extraData) && 1 == (int)$extraData['can_retain_data'];
-        $canEmail = array_key_exists('can_email', $extraData) && 1 == (int)$extraData['can_email'];
-        $canSms = array_key_exists('can_sms', $extraData) && 1 == (int)$extraData['can_sms'];
-        $canPost = array_key_exists('can_post', $extraData) && 1 == (int)$extraData['can_post'];
+        $canRetainData = array_key_exists('can_retain_data', $extraData) && 1 == (int) $extraData['can_retain_data'];
+        $canEmail = array_key_exists('can_email', $extraData) && 1 == (int) $extraData['can_email'];
+        $canSms = array_key_exists('can_sms', $extraData) && 1 == (int) $extraData['can_sms'];
+        $canPost = array_key_exists('can_post', $extraData) && 1 == (int) $extraData['can_post'];
 
-        $data['can_retain_data'] = (int)$canRetainData;
-        $data['can_email'] = (int)$canEmail;
-        $data['can_sms'] = (int)$canSms;
-        $data['can_post'] = (int)$canPost;
+        $data['can_retain_data'] = (int) $canRetainData;
+        $data['can_email'] = (int) $canEmail;
+        $data['can_sms'] = (int) $canSms;
+        $data['can_post'] = (int) $canPost;
 
         $res = User::create($data);
         $res->makeDefaultEntrant();
         return $res;
     }
+
     public function dcreate($extraData = [])
     {
-        return view($this->templateDir  .'.create', $extraData);
+        return view($this->templateDir . '.create', $extraData);
     }
 
 }

@@ -62,7 +62,7 @@ class Entry extends Resource
             BelongsTo::make('Category'),
 //            BelongsTo::make('Show')->sortable()->required(),
             BelongsTo::make('Show'),
-            BelongsTo::make('Entrant'),
+            BelongsTo::make('EntrantResource'),
             Text::make('Paid'),
             DateTime::make('Created At')
                 ->onlyOnDetail()->readonly(),

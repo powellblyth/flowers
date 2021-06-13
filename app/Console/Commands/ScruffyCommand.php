@@ -38,7 +38,7 @@ class ScruffyCommand extends Command {
     public function handle() {
 
         config(['auth.passwords.users.expire' => 71280]);
-//        $user = User::where('email', 'toby.powellblyth@gmail.com')->first();
+//        $user = UserResource::where('email', 'toby.powellblyth@gmail.com')->first();
         $user = User::where('email', 'toby@powellblyth.com')->first();
         $token = \Password::getRepository()->create( $user );
         $user->password_reset_token = $token;

@@ -78,7 +78,6 @@ class CupController extends Controller
                                    'winners' => $winners,
                                    'show' => $show,
                                    'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
-                                   'shows' => Show::orderBy('start_date')->get(),
         ]);
     }
 

@@ -1,97 +1,117 @@
-@extends('layouts.app', ['activePage' => 'categories', 'titlePage' => __('Show Categories'), 'title' => __('')])
-@section('pagetitle', 'All categories ')
+<x-app-layout>
 
-@section('content')
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        @media (min-width: 640px) {
+            table {
+                display: inline-table !important;
+            }
+
+            thead tr:not(:first-child) {
+                display: none;
+            }
+        }
+
+        td:not(:last-child) {
+            border-bottom: 0;
+        }
+
+        th:not(:last-child) {
+            border-bottom: 2px solid rgba(0, 0, 0, .1);
+        }
+    </style>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Cups') }}
+        </h2>
+    </x-slot>
+    <x-navigation.show :show="$show"/>
+
+    <div class="py-4">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <p>You can see the categories for this show, along with all winners from the {{$show->name}}
+                        show, if available, here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     @php
-        $lastSection = 'no';
         $publishMode = false;
+//        $showaddress = $isAdmin;
+//        $printableNames = !$isAdmin;
+        $shortName = false;
     @endphp
-    <div class="container-fluid">
-        <div class="row">
-            @foreach ($shows as $showNav)
-                <div class="col-1">
-                    <a href="{{route('categories.index', ['show'=>$showNav])}}">{{$showNav->name}}</a>
-                </div>
-            @endforeach
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-success">All categories</div>
-                    <div class="card-body">
-                        <p>You can see the categories for this show, along with all winners from the {{$show->name}}
-                            show,
-                            if available, here.</p>
+    @foreach ($categoryList as $section => $categories)
+        {{--    <div class="py-12">--}}
+        <div class="py-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <div class="rounded-l-lg  title text-xl font-medium">
+                        Section {{$sectionList[$section]}}
                     </div>
+                    <table
+                        class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                        <thead class="text-white">
+                        @foreach ($categories as $category)
+
+                            <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                <th class="p-3 text-left">Category</th>
+                                <th class="p-3 text-left">Entries</th>
+                                <th class="p-3 text-left" width="110px">Winner</th>
+                            </tr>
+                        @endforeach
+                        </thead>
+                        <tbody class="flex-1 sm:flex-none">
+                        @foreach ($categories as $category)
+                            <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                                <td class="border-grey-light border hover:bg-gray-100 p-3">
+                                    {{$category->number}}. {{ $category->name }}
+                                </td>
+                                <td class="border-grey-light border hover:bg-gray-100 p-3">
+                                    (<b>
+                                        @if (array_key_exists($category->id, $results))
+                                            {{ (int) $results[$category->id]['total_entries']}}
+                                            {{\Illuminate\Support\Str::plural('entry',  (int) $results[$category->id]['total_entries'])}}
+                                        @else
+                                            0 entries
+                                        @endif
+                                    </b>
+                                    )
+                                </td>
+                                @if(array_key_exists($category->id, $results) && count($results[$category->id]['placements']) > 0)
+
+
+                                    @foreach ($results[$category->id]['placements'] as $result)
+
+                                        <td class="border-grey-light border hover:bg-gray-100 p-3">
+                                            @if($result->winningplace == 1)
+                                                First:
+                                            @elseif ($result->winningplace == 2)
+                                                Second:
+                                            @elseif ($result->winningplace == 3)
+                                                Third:
+                                            @else
+                                                {{ucfirst($result->winningplace)}}
+                                            @endif
+                                            <br/>{{$winners[$result->entrant_id]->getName(true)}}
+                                        </td>
+                                    @endforeach
+                                @endif
+                            </tr>
+                        @endforeach
+                    </table>
+
                 </div>
+
             </div>
         </div>
 
-
-        @foreach ($categoryList as $section => $categories)
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="card">
-                        <div class="card-header card-header-success">
-                            Section {{$sectionList[$section]}}
-                        </div>
-
-                        <div class="card-body">
-                            @foreach ($categories as $category)
-                                <div class="row">
-                                    <div class="col-lg-5 col-md-12">
-                                        <p>{{$category->number}}. {{ $category->name }}
-                                            (<b>
-                                                @if (array_key_exists($category->id, $results))
-                                                    {{ (int) $results[$category->id]['total_entries']}}
-                                                    {{\Illuminate\Support\Str::plural('entry',  (int) $results[$category->id]['total_entries'])}}
-                                                    )
-                                                @else
-                                                    0 entries
-                                                @endif
-                                            </b>
-                                        </p>
-                                    </div>
-                                    @if(array_key_exists($category->id, $results) && count($results[$category->id]['placements']) > 0)
-
-                                        <div class="col-lg-7">
-                                            <b><u>Results:</u></b>
-                                            <table class="results-table">
-                                                <tr>
-                                                    @foreach ($results[$category->id]['placements'] as $result)
-
-                                                        @if($result->winningplace == 1)
-                                                            <th class="badge-success">First</th>
-                                                        @elseif ($result->winningplace == 2)
-                                                            <th class="badge-warning">Second</th>
-                                                        @elseif ($result->winningplace == 3)
-                                                            <th class="badge-danger">Third</th>
-                                                        @else
-                                                            <th>  {{ucfirst($result->winningplace)}}</th>
-                                                        @endif
-                                                        <td>
-                                                            @can('seeDetailedInfo',$winners[$result->entrant_id])
-                                                                {{$winners[$result->entrant_id]->getName(false)}}
-                                                            @else
-                                                                {{$winners[$result->entrant_id]->getPrintableName()}}
-                                                            @endcan
-                                                        </td>
-                                                    @endforeach
-                                                </tr>
-                                            </table>
-
-                                        </div>
-                                    @endif
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-
-    </div>
-    </div>
-
-@stop
+        {{--    </div>--}}
+    @endforeach
+</x-app-layout>

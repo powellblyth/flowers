@@ -1,13 +1,16 @@
-@extends('layouts.app', ['activePage' => 'user-management', 'titlePage' => __('Family Management')])
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('My Family') }}
+        </h2>
+    </x-slot>
 
-@section('content')
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title ">{{ __('Families') }}</h4>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+
+                    <h4 class="card-title ">{{ __('Families') }}</h4>
                             <p class="card-category"> {{ __('Here you can manage families') }}</p>
                         </div>
                         <div class="card-body">
@@ -23,14 +26,6 @@
                                     </div>
                                 </div>
                             @endif
-                            @can('create', \App\Models\User::class)
-                                    <div class="row">
-                                        <div class="col-12 text-right">
-                                            <a href="{{ route('users.create') }}"
-                                               class="btn btn-sm btn-primary">{{ __('Add family') }}</a>
-                                        </div>
-                                    </div>
-                            @endcan
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class=" text-primary">
@@ -64,9 +59,9 @@
                                                     <div class="ripple-container"></div>
                                                 </a>
                                                     <a rel="tooltip" class="btn btn-success btn-link"
-                                                       href="{{ route('users.createentrant', ['user'=>$user]) }}"
+                                                       href="{{ route('entrants.create'}}"
                                                        data-original-title=""
-                                                       title="add a new family member">
+                                                       title="@lang('Add another family member')">
                                                         <i class="material-icons">add</i>
                                                         <div class="ripple-container"></div>
                                                     </a>
@@ -111,4 +106,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-app-layout>>

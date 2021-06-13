@@ -19,7 +19,7 @@
                                 <div class="frontpage">
                                     <div class="class_number_box">CLASS <span class="class_number">{{$card_fronts[$cardcounter]['class_number']}}</span></div>
                                     <div class="entrant_number_box">
-                                        Entrant's No. <span class="entrant_number">{{ $card_fronts[$cardcounter]['entrant_number'] }}</span>
+                                        EntrantResource's No. <span class="entrant_number">{{ $card_fronts[$cardcounter]['entrant_number'] }}</span>
                                         @if ($card_fronts[$cardcounter]['entrant_age'])
                                         <span class="age">Age {{$card_fronts[$cardcounter]['entrant_age']}}</span>
                                         @endif
@@ -76,7 +76,7 @@
                                     <td colspan="2">
                                             <div class="card_row class_number"><b>Class</b> {{$card_backs[$y]['class_number']}}</div>
                                             <div class="card_row class_name"><b>Description</b> {{$card_backs[$y]['class_name']}}</div>
-                                            <div class="card_row exhibitor_name"><b>Exhibitor name</b> {{$card_backs[$y]['entrant_name']}} (Entrant #{{$card_backs[$y]['entrant_number']}})</div>
+                                            <div class="card_row exhibitor_name"><b>Exhibitor name</b> {{$card_backs[$y]['entrant_name']}} (EntrantResource #{{$card_backs[$y]['entrant_number']}})</div>
                                             <div class="card_row gardener_name"><b>Gardener</b> (if any) </div><br />
                                     </td>
                                 </tr>

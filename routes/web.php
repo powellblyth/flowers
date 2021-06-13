@@ -1,6 +1,17 @@
 <?php
 
+use App\Http\Controllers\EntrantController;
+use App\Http\Controllers\EntryController;
+use App\Http\Controllers\MembershipPurchaseController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShowsController;
+use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\CategoryController;
+use \App\Http\Controllers\CupController;
+use App\Http\Controllers\SectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,133 +25,86 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome', ['isLocked' => config('app.state') == 'locked']);
-});
-Route::group(['middleware' => 'is_admin'], function () {
-    Route::post('/categories/storeresults', ['as' => 'categories.storeresults', 'uses' => 'CategoryController@storeresults']);
-    Route::get('/categories/resultsentry', ['as' => 'category.resultsentry', 'uses' => 'CategoryController@resultsentry']);
-    Route::get('/categories/printtabletop', ['as' => 'category.tabletopprint', 'uses' => 'CategoryController@printcards']);
-    Route::get('/categories/printlookup',
-        ['as'   => 'category.lookupprint',
-         'uses' => 'CategoryController@printlookups'])->middleware('is_admin');
-});
-Route::get('/categories', ['as' => 'category.index', 'uses' => 'CategoryController@resultsentry']);
-Route::get('/sections/forwebsite', ['as' => 'section.forwebsite', 'uses' => 'SectionController@forwebsite']);
+    return view('welcome');
+})->name('home');
 
-Route::resource('categories', 'CategoryController');
+Route::resource('categories', CategoryController::class)->only(['index','show']);
+
+//Route::resource('categories', 'CategoryController');
+Route::get('/sections/forwebsite', [SectionController::class, 'forwebsite'])->name('section.forwebsite');
+
+Route::resource('membershippurchases', MembershipPurchaseController::class);
+Route::get('/cups', [CupController::class, 'index'])
+    ->name('cups.index');
+Route::get('/cups/printableresults', [CupController::class, 'printableresults'])
+    ->name('cup.printableresults');
+Route::get('/cups/{id}', [CupController::class, 'name'])->name('cups.show');
 
 
-Route::resource('membershippurchases', 'MembershipPurchaseController');
-//Route::resource('cups', 'CupController')->middleware('auth');
-Route::get('/cups', ['as' => 'cups.index', 'uses' => 'CupController@index']);
-Route::get('/cups/printableresults', ['as' => 'cup.printableresults', 'uses' => 'CupController@printableresults']);
-
-Route::get('/cups/{id}', ['as' => 'cups.show', 'uses' => 'CupController@show']);
-//Route::resource('cups', 'CupController');
-
-//Route::post('/taps/{id}/connectToSensor', 
-//        ['as' => 'taps.connectToSensor',
-//    'uses' => 'TapsController@connectToSensor'])->middleware('auth');
 Route::group(['middleware' => 'is_admin'], function () {
 
-    Route::post('/cups/{id}/directresultpick', ['as' => 'cup.directResultPick', 'uses' => 'CupController@directResultPick']);
-    Route::post(
-        '/cups/{id}/directresultsetwinner',
-        ['as'   => 'cup.directResultSetWinner',
-         'uses' => 'CupController@directResultSetWinner']
-    );
+    Route::post('/cups/{id}/directresultpick', [CupController::class, 'directResultPick'])
+        ->name('cup.directResultPick');
+    Route::post('/cups/{id}/directresultsetwinner', [CupController::class, 'directResultSetWinner'])
+        ->name('cup.directResultSetWinner');
+
+    Route::post('/categories/storeresults', [CategoryController::class, 'storeresults'])
+        ->name('categories.storeresults');
+    Route::get('/categories/resultsentry', [CategoryController::class, 'resultsentry'])
+        ->name('category.resultsentry');
+    Route::get('/categories/printtabletop', [CategoryController::class, 'printcards'])
+        ->name('category.tabletopprint');
+    Route::get('/categories/printlookup', [CategoryController::class, 'printlookups'])
+        ->name('category.lookupprint');
+    Route::get('/entries/printall', [EntryController::class, 'printallcards'])
+        ->name('entries.printall');
+
+    Route::get('/users/{id}/print', [UserController::class, 'printcards'])
+        ->name('user.print');
 });
 
-Route::group(['middleware' => 'is_admin'], function () {
-    Route::post('/categories/storeresults', ['as' => 'categories.storeresults', 'uses' => 'CategoryController@storeresults']);
-    Route::get('/categories/resultsentry', ['as' => 'category.resultsentry', 'uses' => 'CategoryController@resultsentry']);
-    Route::get('/categories/printtabletop', ['as' => 'category.tabletopprint', 'uses' => 'CategoryController@printcards']);
-    Route::get('/categories/printlookup',
-        ['as'   => 'category.lookupprint',
-         'uses' => 'CategoryController@printlookups'])->middleware('is_admin');
-});
-Route::get('/categories', ['as' => 'category.index', 'uses' => 'CategoryController@resultsentry']);
-Route::get('/sections/forwebsite', ['as' => 'section.forwebsite', 'uses' => 'SectionController@forwebsite']);
 
-Route::resource('categories', 'CategoryController');
+Route::resource('teams', TeamsController::class);
+Route::resource('shows', ShowsController::class);
 
-
-Route::resource('membershippurchases', 'MembershipPurchaseController');
-//Route::resource('cups', 'CupController')->middleware('auth');
-Route::get('/cups', ['as' => 'cups.index', 'uses' => 'CupController@index']);
-Route::get('/cups/printableresults', ['as' => 'cup.printableresults', 'uses' => 'CupController@printableresults']);
-
-Route::get('/cups/{id}', ['as' => 'cups.show', 'uses' => 'CupController@show']);
-//Route::resource('cups', 'CupController');
-
-//Route::post('/taps/{id}/connectToSensor',
-//        ['as' => 'taps.connectToSensor',
-//    'uses' => 'TapsController@connectToSensor'])->middleware('auth');
-Route::group(['middleware' => 'is_admin'], function () {
-
-    Route::post('/cups/{id}/directresultpick', ['as' => 'cup.directResultPick', 'uses' => 'CupController@directResultPick']);
-    Route::post(
-        '/cups/{id}/directresultsetwinner',
-        ['as' => 'cup.directResultSetWinner',
-         'uses' => 'CupController@directResultSetWinner']
-    );
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::resource('teams', 'TeamsController');
-Route::resource('shows', 'ShowsController');
-Route::resource('memberships', 'MembershipsController');
-Route::get('/shows/{show}/duplicate',['as'=>'shows.duplicate', 'uses'=>'ShowsController@duplicate']);
-
-Route::post('/entry/creates', ['as' => 'entry.creates', 'uses' => 'EntryController@creates'])->middleware('auth');
-Route::get('/entrants/{entrant}/edit', ['as' => 'entrants.edit', 'uses' => 'EntrantController@edit'])->middleware('auth');
-Route::get('/entrants/{entrant}', ['as' => 'entrants.show', 'uses' => 'EntrantController@show'])->middleware('auth');
-Route::get('/users/{user}/entrants/create', ['as' => 'users.createentrant', 'uses' => 'EntrantController@create'])->middleware('auth');
-//Route::resource('entrants', 'EntrantController')->create('auth');
-
-Route::post('/entrants/{entrant}/update', ['as' => 'entrants.update', 'uses' => 'EntrantController@update'])->middleware('auth');
-Route::post('/entrants/{id}/optins',
-    ['as' => 'entrants.optins', 'uses' => 'EntrantController@optins'])->middleware('auth');
-
-Route::resource('users', 'UserController');
-Route::get('/users/{user}/{show?}', ['as' => 'users.showfiltered', 'uses' => 'UserController@show']);
-Route::get('/users', ['as' => 'users.index', 'uses' => 'UserController@index'])->middleware('is_admin');
-//Route::get('/users/new', ['as' => 'users.create', 'uses' => 'UserController@create'])->middleware('is_admin');
-Route::delete('/users/{id}', ['as' => 'users.destroy', 'uses' => 'UserController@delete'])->middleware('is_admin');
-
-Route::get('/users/{id}/print', ['as' => 'user.print', 'uses' => 'UserController@printcards'])->middleware('is_admin');
-Route::get('/family', ['as' => 'home', 'uses' => 'UserController@show'])->middleware('auth');
-
-
-Route::get('/users/{user}/edit', ['as' => 'user.edit', 'uses' => 'UserController@edit'])->middleware('is_admin');
-
-Route::get('/entries/printall', ['as' => 'entries.printall', 'uses' => 'EntryController@printallcards'])->middleware('is_admin');
-
-Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-
-//Route::get('')
+require __DIR__ . '/auth.php';
 Route::group(['middleware' => 'auth'], function () {
-//    Route::resource('user', 'UserController', ['except' => ['show', 'edit']]);
-    Route::get('/profile/subscribe',
-        ['as'   => 'users.subscribe',
-         'uses' => 'ProfileController@subscribe']
-    );
-    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-    Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth'])->name('dashboard');
+
+    Route::post('/entry/creates', [EntryController::class, 'creates'])->name('entry.creates');
+//    Route::get('/entrants/{entrant}/edit', [EntrantController::class, 'edit'])->name('entrants.edit');
+
+    Route::resource('entrants', EntrantController::class);
+//    Route::get('/entrants/{entrant}', [EntrantController::class, 'show'])->name('entrants.show');
+//    Route::get('/entrants/create', [EntrantController::class, 'create'])->name('entrants.create');
+//    Route::post('/entrants', [EntrantController::class, 'store'])->name('users.entrants.store');
+
+    Route::resource('users', UserController::class)->except(['index']);
+
+//    Route::post('/entrants/{entrant}/update', [EntrantController::class, 'update'])
+//        ->name('entrants.update');
+    Route::post('/entrants/{id}/optins', [EntrantController::class, 'optins'])
+        ->name('entrants.optins');
+
+    Route::get('/users/{user}/{show?}', [UserController::class, 'show'])->name('users.showfiltered');
+
+    Route::get('/family', [UserController::class, 'show'])->name('family');
+
+    Route::get('/profile/subscribe', [ProfileController::class, 'subscribe'])
+        ->name('users.subscribe');
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
 });
 
 
 Route::post(
     'stripe/webhook',
-    '\App\Http\Controllers\WebhookController@handleWebhook'
+    [WebhookController::class, 'handleWebhook']
 );
-Route::post(
-    'stripe/webhook',
-    '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
-);
+//Route::post(
+//    'stripe/webhook',
+//    '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
+//);

@@ -1,4 +1,7 @@
 <!-- Navbar -->
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white">
     <div class="container">
         <div class="navbar-wrapper">
@@ -13,18 +16,30 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
-                @if(config('app.state') !== 'locked')
-                <li class="nav-item{{ $activePage == 'register' ? ' active' : '' }}">
-                    <a href="{{ route('register') }}" class="nav-link">
-                        <i class="material-icons">person_add</i> {{ __('Register') }}
-                    </a>
-                </li>
-                @endif
-                <li class="nav-item{{ $activePage == 'login' ? ' active' : '' }}">
-                    <a href="{{ route('login') }}" class="nav-link">
-                        <i class="material-icons">fingerprint</i> {{ __('Log in') }}
-                    </a>
-                </li>
+                @guest()
+                    <li class="nav-item">
+                        <a href="{{ route('register') }}" class="nav-link">
+                            <i class="material-icons">person_add</i> {{ __('Register') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('login') }}" class="nav-link">
+                            <i class="material-icons">fingerprint</i> {{ __('Log in') }}
+                        </a>
+                    </li>
+                @endguest()
+                @auth()
+                    <li class="nav-item">
+                        <a href="{{ route('dashboard') }}" class="nav-link">
+                            <i class="material-icons">dashboard</i> {{ __('Dashboard') }}
+                        </a>
+                    </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="document.getElementById('logout-form').submit();return false;">
+                                <i class="material-icons">fingerprint</i> {{ __('Log Out') }}
+                            </a>
+                        </li>
+                    @endauth()
             </ul>
         </div>
     </div>
