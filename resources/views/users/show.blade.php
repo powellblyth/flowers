@@ -4,6 +4,7 @@
             {{ __('My Family') }}
         </h2>
     </x-slot>
+    <x-navigation.show :show="$show"/>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -35,6 +36,9 @@
 
 
                 </div>
+                <div class="w-full h-20">
+                    <a href="{{route('users.entryCard')}}" class="bg-green-200 12m-4 p-4 rounded-xl">@lang('Our Entry Card for :show', ['show'=>$show->name])</a>
+                </div>
 
                 <div class="table border-4 p-4">
                     <div class="table-header-group">
@@ -44,7 +48,6 @@
                         <div class="table-cell p-2">Team</div>
                         <div class="table-cell p-2"></div>
                     </div>
-{{--@dd($user['entrants'])--}}
                     @forelse ($user['entrants'] as $entrant)
 
                         <div class="table-row">

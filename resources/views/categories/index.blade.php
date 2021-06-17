@@ -29,7 +29,7 @@
             {{ __('Cups') }}
         </h2>
     </x-slot>
-    <x-navigation.show :show="$show"/>
+    <x-navigation.show route="categories.index" :show="$show"/>
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

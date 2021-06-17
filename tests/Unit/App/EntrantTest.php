@@ -28,8 +28,8 @@ class EntrantTest extends TestCase
      */
     public function testgetName(string $expected, string $first, string $second, ?bool $printable = null)
     {
-        $sut             = new Entrant();
-        $sut->firstname  = $first;
+        $sut = new Entrant();
+        $sut->firstname = $first;
         $sut->familyname = $second;
 
         $this->assertSame($expected, $sut->getName($printable));
@@ -56,14 +56,14 @@ class EntrantTest extends TestCase
      */
     public function testgetPrintableName($first, $second, $expected)
     {
-        $sut             = new Entrant();
-        $sut->firstname  = $first;
+        $sut = new Entrant();
+        $sut->firstname = $first;
         $sut->familyname = $second;
 
         $this->assertSame($expected, $sut->getPrintableName());
     }
 
-    public function providergetEntrantNumber():array
+    public function providergetEntrantNumber(): array
     {
         return [
             ['E-0001', 1],
@@ -80,12 +80,31 @@ class EntrantTest extends TestCase
      */
     public function testgetEntrantNumber($expected, $id)
     {
-        $sut     = new Entrant();
+        $sut = new Entrant();
         $sut->id = $id;
 
         $this->assertSame($expected, $sut->getEntrantNumber());
     }
 
+    public function providerDescribeAge():array{
+        return [
+            ['',null],
+            ['',88],
+            ['',18],
+            ['12 years',12],
+        ];
+    }
+    /**
+     * @param $expected
+     * @param $age
+     * @dataProvider providerDescribeAge
+     */
+    public function testDescribeAge($expected, $age)
+    {
+        $sut = new Entrant(['age'=>$age]);
+        $this->assertSame($expected, $sut->getAgeDescriptionAttribute());
+        $this->assertSame($expected, $sut->age_description);
+    }
 
 }
 //$this->getMockBuilder(SampleClass::class)->setMethods(null)->setConstructorArgs([4, 8, 15])->getMock()

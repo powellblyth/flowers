@@ -8,7 +8,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
 
                 <form method="POST" action="{{ route('entrants.store') }}">
                 @csrf
@@ -16,13 +16,11 @@
                 <!-- Name -->
                     <div class="py-4">
                         <x-label for="firstname" :value="__('First Name')" />
-                        {{ $entrant->firstname }}
-                        {{ $entrant->familyname }}
-                        <x-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname', '')" required autofocus />
+                        <x-input id="firstname" v-model="entrant.firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname', '')" required autofocus />
                     </div>
                     <div class="py-4">
                         <x-label for="familyname" :value="__('Last Name')" />
-                        <x-input id="familyname" class="block mt-1 w-full" type="text" name="familyname" :value=" {{ $entrant->familyname }}" required autofocus />
+                        <x-input id="familyname" class="block mt-1 w-full" type="text" name="familyname" value="{{ $entrant->familyname }}" required autofocus />
                     </div>
                     <div class="py-4">
                         <x-label for="age" :value="__('Age in years (Children only)')" />
@@ -30,11 +28,11 @@
                     </div>
                     <div class="py-4">
                         <x-label for="membernumber" :value="__('Member Number (If Known)')" />
-                        <x-input id="membernumber" class="block mt-1 w-full" type="text" name="membernumber" :value="old('membernumber')"  autofocus />
+                        <x-input id="membernumber" class="block mt-1 w-full" type="text" name="membernumber" :value="old('membernumber')" autofocus />
                     </div>
                     <div class="py-4">
                         <x-label for="team" :value="__('Team (optional)')" />
-                        <select name=""team_id" class="px-4 py-3 rounded-full">
+                        <select name="team_id" class="px-4 py-3 rounded-full">
                         <option value="" selected="selected">None</option>
                         @foreach($teams as $teamId =>$teamName)
                             <option value="{{$teamId}}">{{$teamName}}</option>
@@ -74,10 +72,10 @@
 
 
 
-                    <div>
-                        <a href="{{route('entrants.create')}}"
-                           class="bg-primary-200 hover:bg-primary text-white font-bold py-2 px-4 rounded">@lang('Add another family member')</a>
-                    </div>
+{{--                    <div>--}}
+{{--                        <a href="{{route('entrants.create')}}"--}}
+{{--                           class="bg-primary-200 hover:bg-primary text-white font-bold py-2 px-4 rounded">@lang('Add another family member')</a>--}}
+{{--                    </div>--}}
 
 
                     {{--                <div class="row">--}}
@@ -311,134 +309,104 @@
                     {{ Form::close() }}
                 </div>
             </div>
-    {{--    @if ($needs_payment_method)--}}
-    {{--        <script defer="defer">--}}
-    {{--            const stripe = Stripe('{{config('cashier.key')}}');--}}
-
-    {{--            const elements = stripe.elements();--}}
-    {{--            const cardElement = elements.create('card');--}}
-
-    {{--            cardElement.mount('#card-element');--}}
-
-    {{--            const cardHolderName = document.getElementById('card-holder-name');--}}
-    {{--            const cardButton = document.getElementById('card-button');--}}
-    {{--            const clientSecret = cardButton.dataset.secret;--}}
-    {{--            // alert(clientSecret);--}}
-    {{--            cardButton.addEventListener('click', async (e) => {--}}
-    {{--                const {setupIntent, error} = await stripe.confirmCardSetup(--}}
-    {{--                    clientSecret, {--}}
-    {{--                        payment_method: {--}}
-    {{--                            card: cardElement,--}}
-    {{--                            billing_details: {name: cardHolderName.value}--}}
-    {{--                        }--}}
-    {{--                    }--}}
-    {{--                );--}}
-
-    {{--                if (error) {--}}
-    {{--                    alert(error.message)--}}
-    {{--                } else {--}}
-    {{--                    alert('succeeded')--}}
-    {{--                }--}}
-    {{--            });--}}
-    {{--        </script>--}}
-    {{--    @endif--}}
+    </div>
 </x-app-layout>>
 
 {{--    {{dump($errors)}}--}}
 
-    {{  Form::model($entrant, array('route' => array('entrants.update', $entrant->id))) }}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 col-lg-8">
-                <div class="card">
-                    <div class="card-header card-header-success">{{__('Family Members')}}</div>
-                    <div class="card-body">
-                        @error('firstname')
-                        <div class="row">
-                            <div class="col-5"></div>
-                            <div class=" col-7 alert alert-danger">{{ $message }}</div>
-                        </div>
-                        @enderror
-                        <div class="row">
-                            <div class="col-5">
-                                {{ Form::label('firstname', 'First Name:', ['class' => 'control-label']) }}
-                            </div>
-                            <div class="col-7">
-                                {{ Form::text('firstname', null, ['class' => 'form-control']) }}
-                            </div>
-                        </div>
-                        @error('familyname')
-                        <div class="row">
-                            <div class="col-5"></div>
-                            <div class=" col-7 alert alert-danger">{{ $message }}</div>
-                        </div>
-                        @enderror
-                        <div class="row">
-                            <div class="col-5">
-                                {{ Form::label('familyname', 'Family Name:', ['class' => 'control-label']) }}
-                            </div>
-                            <div class="col-7">
-                                {{ Form::text('familyname', null, ['class' => 'form-control']) }}
-                            </div>
-                        </div>
-                        @error('membernumber')
-                        <div class="row">
-                            <div class="col-5"></div>
-                            <div class=" col-7 alert alert-danger">{{ $message }}</div>
-                        </div>
-                        @enderror
-                        <div class="row">
-                            <div class="col-5">
-                                {{ Form::label('membernumber', 'Member Number:', ['class' => 'control-label']) }}
-                            </div>
-                            <div class="col-7">
-                                {{ Form::text('membernumber', null, ['class' => 'form-control']) }}
-                            </div>
-                        </div>
-                        @error('age')
-                        <div class="row">
-                            <div class="col-5"></div>
-                            <div class=" col-7 alert alert-danger">{{ $message }}</div>
-                        </div>
-                        @enderror
-                        <div class="row">
-                            <div class="col-5">
-                                {{ Form::label('age', 'Age (Children only):', ['class' => 'control-label']) }}
-                            </div>
-                            <div class="col-7">
-                                {{ Form::text('age', null, ['class' => 'form-control']) }}
-                            </div>
-                        </div>
-                        @error('team_id')
-                        <div class="row">
-                            <div class="col-5"></div>
-                            <div class=" col-7 alert alert-danger">{{ $message }}</div>
-                        </div>
-                        @enderror
-                        <div class="row">
-                            <div class="col-5">
-                                {{ Form::label('team_id', 'Team:', ['class' => 'control-label']) }}
-                            </div>
-                            <div class="col-7">
-                                {{ Form::select('team_id', [''=>'Please Select..'] + $teams, ['class' => 'form-control']) }}
-                            </div>
-                        </div>
+{{--    {{  Form::model($entrant, array('route' => array('entrants.update', $entrant->id))) }}--}}
+{{--    <div class="container-fluid">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12 col-lg-8">--}}
+{{--                <div class="card">--}}
+{{--                    <div class="card-header card-header-success">{{__('Family Members')}}</div>--}}
+{{--                    <div class="card-body">--}}
+{{--                        @error('firstname')--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5"></div>--}}
+{{--                            <div class=" col-7 alert alert-danger">{{ $message }}</div>--}}
+{{--                        </div>--}}
+{{--                        @enderror--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5">--}}
+{{--                                {{ Form::label('firstname', 'First Name:', ['class' => 'control-label']) }}--}}
+{{--                            </div>--}}
+{{--                            <div class="col-7">--}}
+{{--                                {{ Form::text('firstname', null, ['class' => 'form-control']) }}--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        @error('familyname')--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5"></div>--}}
+{{--                            <div class=" col-7 alert alert-danger">{{ $message }}</div>--}}
+{{--                        </div>--}}
+{{--                        @enderror--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5">--}}
+{{--                                {{ Form::label('familyname', 'Family Name:', ['class' => 'control-label']) }}--}}
+{{--                            </div>--}}
+{{--                            <div class="col-7">--}}
+{{--                                {{ Form::text('familyname', null, ['class' => 'form-control']) }}--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        @error('membernumber')--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5"></div>--}}
+{{--                            <div class=" col-7 alert alert-danger">{{ $message }}</div>--}}
+{{--                        </div>--}}
+{{--                        @enderror--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5">--}}
+{{--                                {{ Form::label('membernumber', 'Member Number:', ['class' => 'control-label']) }}--}}
+{{--                            </div>--}}
+{{--                            <div class="col-7">--}}
+{{--                                {{ Form::text('membernumber', null, ['class' => 'form-control']) }}--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        @error('age')--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5"></div>--}}
+{{--                            <div class=" col-7 alert alert-danger">{{ $message }}</div>--}}
+{{--                        </div>--}}
+{{--                        @enderror--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5">--}}
+{{--                                {{ Form::label('age', 'Age (Children only):', ['class' => 'control-label']) }}--}}
+{{--                            </div>--}}
+{{--                            <div class="col-7">--}}
+{{--                                {{ Form::text('age', null, ['class' => 'form-control']) }}--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        @error('team_id')--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5"></div>--}}
+{{--                            <div class=" col-7 alert alert-danger">{{ $message }}</div>--}}
+{{--                        </div>--}}
+{{--                        @enderror--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-5">--}}
+{{--                                {{ Form::label('team_id', 'Team:', ['class' => 'control-label']) }}--}}
+{{--                            </div>--}}
+{{--                            <div class="col-7">--}}
+{{--                                {{ Form::select('team_id', [''=>'Please Select..'] + $teams, ['class' => 'form-control']) }}--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="row">
-                            <div class="col-12">
-                                {!!  $privacyContent  !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                {{ Form::checkbox('can_retain_data', 1) }} {{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}
-                            </div>
+{{--                        <div class="row">--}}
+{{--                            <div class="col-12">--}}
+{{--                                {!!  $privacyContent  !!}--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-12">--}}
+{{--                                {{ Form::checkbox('can_retain_data', 1) }} {{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}--}}
+{{--                            </div>--}}
 
-                        </div>
-                        {{ Form::submit('Save Family Member', ['class' => 'button btn btn-primary']) }}
+{{--                        </div>--}}
+{{--                        {{ Form::submit('Save Family Member', ['class' => 'button btn btn-primary']) }}--}}
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>{{ Form::close() }}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>{{ Form::close() }}--}}

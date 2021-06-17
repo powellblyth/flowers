@@ -12,7 +12,7 @@ class ScruffyCommand extends Command {
      *
      * @var string
      */
-    protected $signature = 'go:scruffy';
+    protected $signature = 'scruffy';
 
     /**
      * The console command description.

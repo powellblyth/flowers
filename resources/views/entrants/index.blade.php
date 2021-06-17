@@ -47,9 +47,7 @@
                                         @foreach ($entrants as $entrant)
                                             <tr>
                                                 <td>{{ $entrant->getName() }}
-                                                    @if ($entrant->age)
-                                                        ({{$entrant->age}} yrs)
-                                                    @endif
+                                                    {{$entrant->age_description}}
                                                 </td>
                                                 <td class="td-actions">
                                                         <a rel="tooltip" class="btn btn-success btn-link"
