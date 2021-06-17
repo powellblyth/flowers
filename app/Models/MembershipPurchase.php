@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * Class MembershipPurchase
  * @package App\Models
- * @property int year
- * @property string type
- * @property int entrant_id
- * @property int amount
- * @property string number
- * @property int user_id
- * @property Carbon start_date
- * @property Carbon end_date
+ * @property int $year
+ * @property string $type
+ * @property int $entrant_id
+ * @property int $amount
+ * @property string $number
+ * @property int $user_id
+ * @property Carbon $start_date
+ * @property Carbon $end_date
  */
 class MembershipPurchase extends Model
 {

@@ -46,10 +46,10 @@ class UserFactory extends Factory
             'type' => 'default',
             'created_at' => now(),
             'updated_at' => now(),
-            'password_reset_token' => '',
-            'email_verified_at' => now(),
+//            'password_reset_token' => '',
+//            'email_verified_at' => now(),
             'remember_token' => Str::random(10),
-            'auth_token' => $this->faker->md5,
+//            'auth_token' => $this->faker->md5,
         ];
     }
 }

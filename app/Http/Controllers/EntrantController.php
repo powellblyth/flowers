@@ -176,9 +176,7 @@ class EntrantController extends Controller
         $membershipPurchases = $entrant->membershipPurchases()->get();
         $membershipPaymentData = [];
         foreach ($membershipPurchases as $membershipPurchase) {
-            /**
-             * @var MembershipPurchase $membershipPurchase
-             */
+            /** @var MembershipPurchase $membershipPurchase */
             $amount = (($membershipPurchase->type == 'single' ? 300 : 500));
             $membershipFee += $amount;
             $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
@@ -187,9 +185,7 @@ class EntrantController extends Controller
         $entries = $entrant->entries()->where('show_id', $show->id)->with('category')->get();
 
         foreach ($entries as $entry) {
-            /**
-             * @var Entry $entry
-             */
+            /** @var Entry $entry */
             if ($entry->category instanceof Category) {
                 $price = $entry->category->getPrice($entry->category->getPriceType());
 
@@ -219,7 +215,7 @@ class EntrantController extends Controller
                     'payment_types' => $this->paymentTypes,
                     'total_prizes' => $totalPrizes,
                     'membership_types' => ['single' => 'Single'],
-                    'thing' => $entrant,
+                    'entrant' => $entrant,
                     'member_number' => $memberNumber,
                     'isLocked' => config('app.state') == 'locked',
                     'too_late_for_entries' => $tooLateForEntries,

@@ -1,8 +1,10 @@
-@extends('layouts.app', ['activePage' => 'entrants', 'titlePage' =>  $thing->getName() ])
-
-@section('pagetitle', 'EntrantResource ' . $thing->getName())
-@section('content')
-        <div class="container-fluid">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ $entrant->name }}
+        </h2>
+    </x-slot>
+    <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="card card-stats">
@@ -25,12 +27,12 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-12 text-right">
-                            @can('update',$thing)
-                                <a href="{{route('entrants.edit', $thing)}}"
-                                   class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                            @can('update',$entrant)
+                                <a href="{{route('entrants.edit', $entrant)}}"
+                                   class="btn btn-primary">Edit {{ucfirst($entrant->firstname)}}</a>
                             @endcan
-                            @if ($thing->user)
-                                <a href="{{route('users.show', $thing->user)}}"
+                            @if ($entrant->user)
+                                <a href="{{route('users.show', $entrant->user)}}"
                                    class="btn btn-primary">Show Family Manager</a>
                             @endif
                         </div>
@@ -38,29 +40,29 @@
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
-                                {{$thing->getName()}}
+                                {{$entrant->getName()}}
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <b>EntrantResource Number: {{ $thing->getEntrantNumber() }}</b>
+                                        <b>EntrantResource Number: {{ $entrant->getEntrantNumber() }}</b>
                                     </div>
                                     <div class="col-lg-6  col-md-6 col-sm-12">
-                                        <b>Member Number:</b> {{ $thing->getMemberNumber() }}
+                                        <b>Member Number:</b> {{ $entrant->getMemberNumber() }}
                                     </div>
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $thing->getName() }}</div>
-                                    @if(!is_null($thing->age))
-                                        <div class="col-lg-6 col-md-6  col-sm-12">Age:</b> {{ $thing->age }}</div>
+                                    <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $entrant->getName() }}</div>
+                                    @if(!is_null($entrant->age))
+                                        <div class="col-lg-6 col-md-6  col-sm-12">Age:</b> {{ $entrant->age_description }}</div>
                                     @endif
 
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6  col-sm-12">Family Manager:</b>
-                                        @if(!is_null($thing->user))
-                                            <a href="{{route('users.show',['user'=>$thing->user])}}">{{ $thing->user->getName() }}</a>
+                                        @if(!is_null($entrant->user))
+                                            <a href="{{route('users.show',['user'=>$entrant->user])}}">{{ $entrant->user->getName() }}</a>
                                         @else
                                             None Set
                                         @endif
@@ -78,7 +80,7 @@
                         <div class="card-header-success">Entries</div>
                         <div class="card-body">
                             @if (count($entries ) <= 0)
-                                {{$thing->firstname}} has not entered any categories yet
+                                {{$entrant->firstname}} has not entered any categories yet
                             @else
                                 @foreach ($entries as $entry)
 
@@ -99,7 +101,7 @@
                 </div>
 
                 {{--<h2>Opt-in</h2>--}}
-                {{--{{  Form::model($thing, array('route' => array('entrants.optins', $thing->id))) }}--}}
+                {{--{{  Form::model($entrant, array('route' => array('entrants.optins', $entrant->id))) }}--}}
                 {{--<table border="0">--}}
                 {{--<tr>--}}
                 {{--            <td colspan="3"><b>We would like permission to retain your personal data within our data entry system for a period of 3 years after--}}
@@ -135,7 +137,7 @@
                                     ]) }}
                                     <div class="row">
 
-                                        {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
+                                        {{ Form::hidden('entrant', $entrant->id, ['class' => 'form-control']) }}
 
                                         @for ($i = 0; $i < 40; $i++)
                                             <div
@@ -168,8 +170,8 @@
                                         'route' => 'membershippurchases.store'
                                     ]) }}
 
-                                    {{ Form::hidden('entrant', $thing->id, ['class' => 'form-control']) }}
-                                    {{ Form::hidden('user', $thing->user_id, ['class' => 'form-control']) }}
+                                    {{ Form::hidden('entrant', $entrant->id, ['class' => 'form-control']) }}
+                                    {{ Form::hidden('user', $entrant->user_id, ['class' => 'form-control']) }}
 
                                     {{ Form::label('number', 'Number:', ['class' => 'control-label']) }}
                                     {{ Form::text('number', null,['class' => 'form-control','style'=>'width:150px'])}}
@@ -187,5 +189,5 @@
                     @endcan
 
             </div>
-        </div>
-    @endsection
+    </div>
+</x-app-layout>>

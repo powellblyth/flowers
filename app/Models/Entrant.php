@@ -19,19 +19,20 @@ use Illuminate\Support\Str;
  * Class EntrantResource
  * @package App
  * @property User $user
- * @property string firstname
- * @property string familyname
- * @property bool can_retain_data
- * @property bool is_anonymised
- * @property int age
- * @property Collection individualMemberships
- * @property Carbon retain_data_opt_out
- * @property Carbon retain_data_opt_in
- * @property Carbon created_at
- * @property Carbon updated_at
- * @property int id
- * @property string membernumber
- * @property int user_id
+ * @property string $firstname
+ * @property string $familyname
+ * @property bool $can_retain_data
+ * @property bool $is_anonymised
+ * @property int $age
+ * @property Collection $individualMemberships
+ * @property Carbon $retain_data_opt_out
+ * @property Carbon $retain_data_opt_in
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @property int $id
+ * @property string $membernumber
+ * @property string $age_description
+ * @property int $user_id
  */
 class Entrant extends Model
 {
@@ -46,6 +47,11 @@ class Entrant extends Model
         'age' => 'int',
     ];
 
+    public $fillable = [
+        'age',
+    ];
+
+
 //    use Billable;
 
     protected $dispatchesEvents = [
@@ -55,6 +61,17 @@ class Entrant extends Model
     public function getFullNameAttribute(): string
     {
         return $this->getName();
+    }
+
+    public function getAgeDescriptionAttribute(): string
+    {
+        if (!$this->age) {
+            return '';
+        }
+        if ($this->age >= 18) {
+            return '';
+        }
+        return __(':age years', ['age' => $this->age]);
     }
 
     public function getName(bool $printable = null): string
@@ -87,6 +104,11 @@ class Entrant extends Model
     public function canJoin(Team $team): bool
     {
         return ($this->age <= $team->max_age && $this->age >= $team->min_age);
+    }
+
+    public function isChild(): bool
+    {
+        return $this->age && $this->age < 18;
     }
 
     public function teams(): BelongsToMany
@@ -129,7 +151,8 @@ class Entrant extends Model
             ->orderBy('min_age')
             ->orderBy('max_age')
             ->orderBy('name')
-            ->get()->reject(function (Team $team) use ($entrant) {
+            ->get()
+            ->reject(function (Team $team) use ($entrant) {
                 return !$entrant->canJoin($team);
             })
             ->pluck('name', 'id')->toArray();
