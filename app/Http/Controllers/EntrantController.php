@@ -33,11 +33,6 @@ class EntrantController extends Controller
         'single' => 'single',
         'family' => 'family');
 
-    public function isAdmin(): bool
-    {
-        return Auth::check() && Auth::User()->isAdmin();
-    }
-
     public function create(Request $request): View
     {
         $user = Auth::user();
@@ -90,7 +85,6 @@ class EntrantController extends Controller
 
     public function update(Request $request, Entrant $entrant)
     {
-//        $entrant = EntrantResource::where('id', $request->id)->firstOrFail();
         $this->authorize('update', $entrant);
         $age = (int) $request->age;
         $request->validate(
@@ -133,7 +127,7 @@ class EntrantController extends Controller
 
         if ($entrant->save()) {
             $request->session()->flash('success', 'Family Member Saved');
-            return redirect()->route('home');
+            return redirect()->route('family');
         } else {
             $request->session()->flash('error', 'Something went wrong saving the Family Member');
             return back();
@@ -239,7 +233,7 @@ class EntrantController extends Controller
                 'entrant' => $entrant,
                 'teams' => $entrant->getValidTeamOptions(),
                 'privacyContent' => config('static_content.privacy_content'),
-                'isAdmin' => $this->isAdmin()]
+            ]
         );
     }
 }

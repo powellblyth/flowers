@@ -98,4 +98,8 @@ class ShowPolicy
     {
         return $user->isAdmin() && $show->isCurrent();
     }
+    public function enterCategories(User $user, Show $show)
+    {
+        return $user->isAdmin() && $show->isCurrent();
+    }
 }
