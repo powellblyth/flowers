@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Entry;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class EntryController extends Controller
 {
@@ -65,6 +68,31 @@ class EntryController extends Controller
         return view('cards.printcards', [
             'card_fronts' => $cardFronts,
             'card_backs' => $cardBacks,
+        ]);
+    }
+
+    public function entryCard(Request $request, User $user = null): View
+    {
+        if (is_null($user)) {
+            $user = Auth::user();
+        }
+
+        $user->load(['entrants', 'entrants.entries']);
+        /**
+         * Default show
+         */
+        $show = $this->getShowFromRequest($request);
+
+        $this->authorize('view', $user);
+
+        //@todo centralise this
+        $tooLateForEntries = Carbon::now() > $show->entries_closed_deadline;
+//        dd((new \App\Http\Resources\UserResource($user))->toArray(new Request(['show'=>$show->id])));
+        return view('entries.entryCard', [
+            'user' => $user,
+            'show' => $show,
+            'showId' => $show->id,
+            'too_late_for_entries' => $tooLateForEntries,
         ]);
     }
 }

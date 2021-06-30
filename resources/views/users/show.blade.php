@@ -37,7 +37,7 @@
 
                 </div>
                 <div class="w-full h-20">
-                    <a href="{{route('users.entryCard')}}" class="bg-green-200 12m-4 p-4 rounded-xl">@lang('Our Entry Card for :show', ['show'=>$show->name])</a>
+                    <a href="{{route('entries.entryCard')}}" class="bg-green-200 12m-4 p-4 rounded-xl">@lang('Our Entry Card for :show', ['show'=>$show->name])</a>
                 </div>
 
                 <div class="table border-4 p-4">

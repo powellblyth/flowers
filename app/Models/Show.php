@@ -50,6 +50,11 @@ class Show extends Model
         return $this->status == self::STATUS_CURRENT;
     }
 
+    public function isClosedToEntries(): bool
+    {
+        return $this->entries_closed_deadline <= Carbon::now();
+    }
+
     public function entries(): HasMany
     {
         return $this->hasMany(Entry::class);

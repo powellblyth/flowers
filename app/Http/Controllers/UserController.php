@@ -181,31 +181,6 @@ class UserController extends Controller
         );
     }
 
-    public function entryCard(Request $request, User $user = null): View
-    {
-        if (is_null($user)) {
-            $user = Auth::user();
-        }
-
-        $user->load(['entrants', 'entrants.entries']);
-        /**
-         * Default show
-         */
-        $show = $this->getShowFromRequest($request);
-
-        $this->authorize('view', $user);
-
-        //@todo centralise this
-        $tooLateForEntries = Carbon::now() > $show->entries_closed_deadline;
-//        dd((new \App\Http\Resources\UserResource($user))->toArray(new Request(['show'=>$show->id])));
-        return view('users.entryCard', [
-            'user' => $user,
-            'show' => $show,
-            'showId' => $show->id,
-            'too_late_for_entries' => $tooLateForEntries,
-        ]);
-    }
-
     /**
      * Update the specified user in storage
      *

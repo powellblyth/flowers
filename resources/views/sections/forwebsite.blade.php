@@ -13,7 +13,7 @@
     @foreach ($things as $section)
         <tr>
             <td>
-                <h4> Section {{$section->number}} - {{$section->name}}<br /> Judges: {{$section->judges}}
+                <h4> Section {{$section->display_name}}<br /> Judges: {{$section->judges}}
                     <p>{!! $section->image !!}</p>
                 </h4><br/>
 
