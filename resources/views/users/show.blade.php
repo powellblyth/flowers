@@ -4,7 +4,7 @@
             {{ __('My Family') }}
         </h2>
     </x-slot>
-    <x-navigation.show :show="$show"/>
+    <x-navigation.show route="family" :show="$show"/>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -37,7 +37,7 @@
 
                 </div>
                 <div class="w-full h-20">
-                    <a href="{{route('entries.entryCard')}}" class="bg-green-200 12m-4 p-4 rounded-xl">@lang('Our Entry Card for :show', ['show'=>$show->name])</a>
+                    <a href="{{route('entries.entryCard', ['show'=>$show])}}" class="bg-green-200 12m-4 p-4 rounded-xl">@lang('Our Entry Card for :show', ['show'=>$show->name])</a>
                 </div>
 
                 <div class="table border-4 p-4">

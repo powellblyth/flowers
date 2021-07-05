@@ -4,21 +4,26 @@
             {{ __('Entries for :show', ['show'=>$show->name]) }}
         </h2>
     </x-slot>
+    <x-navigation.show route="entries.entryCard" :show="$show"/>
 
-    {{ Form::open(
-    [
-        'route' => ['entries.store']]
-        )
-        }}
+    @if ($can_enter)
+        {{ Form::open(
+        [
+            'route' => ['entries.store']]
+            )
+            }}
+    @endif
     <div class="p-20">
         <div class=" bg-white w-full top-0 sticky p-2 float-right"><h3
                 class="inline-block w-1/2 text-xl ">@lang('The :family family entry card for :show', ['family'=>$user->lastname,'show'=>$show->name])</h3>
+            @if ($can_enter)
             <div class="w-1/2 inline-block float-right"><input type="submit" value="Save"
                                                                class="text-white bg-green-500 px-3 py-1 rounded"></div>
+                @endif
         </div>
         @forelse ($user->entrants as $entrant)
             <div class="bg-white p-3 m-4">
-                <h3 class=" bg-white text-xl sticky w-full top-10 p-2">@lang(':name\'s entry card', ['name'=>$entrant->full_name]) {{$entrant->age_description}}</h3>
+                <h3 class=" bg-white text-xl sticky w-full top-10 p-2 font-bold">@lang(':name\'s entry card', ['name'=>$entrant->full_name]) {{$entrant->age_description}}</h3>
                 <div>
                     <div class=" p-2 px-4">
                         @if($entrant->teams()->wherePivot('show_id', $show->id)->first())
@@ -31,16 +36,24 @@
                     </div>
                     <div>
                         @foreach(\App\Models\Section::all() as $section)
-                            <div class="text-xl">{{$section->display_name}}</div>
+                            <div class="px-2 text-xl font-bold bg-pink-200 rounded-md">{{$section->display_name}}</div>
                             <div class="flex flex-wrap">
                                 @foreach($show->categories()->where('section_id', $section->id)->get() as $category)
-                                    <div class="flex-initial w-1/5 p-2  flex bg-green-200 m-4 rounded-xl">
+                                    <!-- TODO dont bother showing unentered historic categories -->
+                                    <div class="flex-initial w-1/4 ">
+                                        <div class="p-2  flex bg-green-200 mx-2 my-3 rounded-xl">
                                         <label for="{{'cb_' . $category->id . '_' . $entrant->id}}"
                                                class="flex-auto w-80 px-2">{{$category->numbered_name}}</label>
                                         <div class="flex-1 2xl:text-xl"><input
                                                 id="{{'cb_' . $category->id . '_' . $entrant->id}}"
+                                                @if(!$can_enter)
+                                                    disabled="disabled"
+                                                @endif
+                                                @if($entrant->entries()->where('category_id', $category->id)->first()) checked="checked"
+                                                @endif
                                                 type="checkbox" name="entries[{{$entrant->id}}][{{$category->id}}]"
                                                 class="w-8 h-8 m-2"/></div>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -57,9 +70,11 @@
 
         @endforelse
 
-        {{ Form::close() }}
+        @if ($can_enter)
 
+            {{ Form::close() }}
 
+        @endif
         <div class="row">
 
         </div>

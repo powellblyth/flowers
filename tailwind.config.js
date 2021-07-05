@@ -18,9 +18,11 @@ module.exports = {
             primary: colors.indigo,
             secondary: colors.yellow,
             neutral: colors.gray,
+            blue: colors.blue,
             gray: colors.trueGray,
             green: colors.green,
             indigo: colors.indigo,
+            pink: colors.pink,
             white: colors.white,
         }
     },

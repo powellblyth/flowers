@@ -100,11 +100,17 @@ class EntrantPolicy
         return $user->isAdmin();
     }
 
+    public function createEntries(User $user, Entrant $entrant)
+    {
+        return $user->isAdmin() || $entrant->user->is($user);
+    }
+
     /**
      * Allows a user to see other people's detailed info
      */
-    public function seeDetailedInfo(User $user, Entrant $entrant){
-       return  $user->isAdmin() || $entrant->user instanceof User && ($user->id === $entrant->user->id);
+    public function seeDetailedInfo(User $user, Entrant $entrant)
+    {
+        return $user->isAdmin() || $entrant->user instanceof User && ($user->id === $entrant->user->id);
     }
 
 }

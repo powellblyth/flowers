@@ -49,7 +49,7 @@ class EntryController extends Controller
             $entriesQuery->whereIn('entrants.id', (array) $request->entrants);
         }
         if ($request->filled('since')) {
-            $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int)$request->since));
+            $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
         }
         $cardFronts = [];
         $cardBacks = [];
@@ -85,9 +85,47 @@ class EntryController extends Controller
 
         $this->authorize('view', $user);
 
+        return view('entries.entryCard', [
+            'user' => $user,
+            'show' => $show,
+            'showId' => $show->id,
+            'can_enter' => !$show->isClosedToEntries(),
+        ]);
+    }
+
+    public function update(Request $request, User $user = null)
+    {
+        if (is_null($user)) {
+            $user = Auth::user();
+        }
+
+        $user->load(['entrants', 'entrants.entries']);
+        /**
+         * Default show
+         */
+        $show = $this->getShowFromRequest($request);
+
+        $this->authorize('enterCategories', $show);
+        foreach ($request->entries as $entrantId => $entries) {
+            $entrant = $user->entrants()->where('id', $entrantId)->firstOrFail();
+            $this->authorize('createEntries', $entrant);
+            $entrant->entries()->where('show_id', $show->id)->whereNotIn('category_id', array_keys($entries))->delete();
+            foreach ($entries as $categoryId => $discarded) {
+                $entry = Entry::firstOrCreate(
+                    [
+                        'category_id' => $categoryId,
+                        'entrant_id' => $entrant->id,
+                        'show_id' => $show->id,
+                    ]
+                );
+            }
+        }
+        return redirect(route('entries.entryCard', ['show_id' => $show->id]));
+
+        $this->authorize('view', $user);
+
         //@todo centralise this
         $tooLateForEntries = Carbon::now() > $show->entries_closed_deadline;
-//        dd((new \App\Http\Resources\UserResource($user))->toArray(new Request(['show'=>$show->id])));
         return view('entries.entryCard', [
             'user' => $user,
             'show' => $show,

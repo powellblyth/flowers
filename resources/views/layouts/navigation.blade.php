@@ -18,7 +18,7 @@
                     <x-nav-link :href="route('family')" :active="request()->routeIs('family')">
                         {{ __('My Family') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories')">
+                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
                         {{ __('Categories / Results') }}
                     </x-nav-link>
                     <x-nav-link :href="route('cups.index')" :active="request()->routeIs('cups.index')">

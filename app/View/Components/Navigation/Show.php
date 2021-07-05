@@ -11,7 +11,7 @@ class Show extends Component
      *
      * @return void
      */
-    public function __construct(public ?\App\Models\Show $show = null)
+    public function __construct(public ?\App\Models\Show $show = null, public string $route='cups.index')
     {
         //
     }
@@ -25,6 +25,7 @@ class Show extends Component
     {
         return view('components.navigation.show', [
             'shows' => \App\Models\Show::orderBy('start_date')->get(),
+            'route' => $this->route,
             'show' => $this->show,
         ]);
     }

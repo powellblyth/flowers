@@ -26,10 +26,10 @@
     </style>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cups') }}
+            {{ __('Categories for the '  . $show->name . ' show') }}
         </h2>
     </x-slot>
-    <x-navigation.show route="categories.index" :show="$show"/>
+    <x-navigation.show route="categories.index" :show="$show" />
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

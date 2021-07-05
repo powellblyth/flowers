@@ -18,6 +18,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Entry extends Model
 {
 
+    public $fillable = [
+        'entrant_id',
+        'show_id',
+        'category_id',
+    ];
+
     public function hasWon(): bool
     {
         return !empty(trim($this->winningplace));

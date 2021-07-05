@@ -100,6 +100,6 @@ class ShowPolicy
     }
     public function enterCategories(User $user, Show $show)
     {
-        return $user->isAdmin() && $show->isCurrent();
+        return !$show->isClosedToEntries();
     }
 }
