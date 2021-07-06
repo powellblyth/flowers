@@ -1,0 +1,36 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class {{ class }}
+ *
+ * @package App\Models
+ * @mixin \Eloquent
+*/
+class {{ class }} extends Model
+{
+    use HasFactory;
+
+    public $attributes = [
+    ];
+
+    public $casts = [
+    ];
+
+    /****   Attributes   ****/
+
+    /****   Scopes   ****/
+
+    /****   Relations   ****/
+
+    /****   Checks   ****/
+
+    /****   Methods   ****/
+
+    /****   Statics   ****/
+
+}
