@@ -71,10 +71,10 @@
                         @foreach ($categories as $category)
                             <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                                 <td class="border-grey-light border hover:bg-gray-100 p-3">
-                                    {{$category->number}}. {{ $category->name }}
+                                    {{$category->numbered_name}}
                                 </td>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3">
-                                    (<b>
+                                <td class="border-grey-light border hover:bg-gray-100 p-3 font-weight-bold">
+                                    <b>
                                         @if (array_key_exists($category->id, $results))
                                             {{ (int) $results[$category->id]['total_entries']}}
                                             {{\Illuminate\Support\Str::plural('entry',  (int) $results[$category->id]['total_entries'])}}
@@ -82,13 +82,10 @@
                                             0 entries
                                         @endif
                                     </b>
-                                    )
+
                                 </td>
                                 @if(array_key_exists($category->id, $results) && count($results[$category->id]['placements']) > 0)
-
-
                                     @foreach ($results[$category->id]['placements'] as $result)
-
                                         <td class="border-grey-light border hover:bg-gray-100 p-3">
                                             @if($result->winningplace == 1)
                                                 First:

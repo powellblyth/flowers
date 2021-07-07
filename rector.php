@@ -13,8 +13,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // Define what rule sets will be applied
     $parameters->set(Option::SETS, [
-        SetList::PHP_80,
-        SetList::DEAD_CODE,
+//        SetList::PHP_74,
+            \Rector\Set\ValueObject\DowngradeSetList::PHP_74,
+//        SetList::DEAD_CODE,
     ]);
 
     // get services (needed for register a single rule)

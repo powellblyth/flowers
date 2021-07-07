@@ -54,10 +54,14 @@ class CupController extends Controller
                 ->where('show_id', $show->id)
                 ->first();
             if ($cupWinner instanceof CupDirectWinner) {
+//                dd($cupWinner->winningEntry);
                 /**
                  * @var CupDirectWinner $cupWinner
                  */
-                if (!array_key_exists($cupWinner->winningEntry->entrant->id, $winners)) {
+//                if(!$cupWinner->winningEntry) {
+//                   dd($cupWinner->winning_entry_id);
+//                }
+                if ($cupWinner->winningEntry && !array_key_exists($cupWinner->winningEntry->entrant->id, $winners)) {
                     $winners[$cupWinner->winningEntry->entrant->id] =
                         [
                             'entrant' => $cupWinner->winningEntry->entrant,

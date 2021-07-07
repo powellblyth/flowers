@@ -47,9 +47,13 @@ class PrintAllCardsRedirector extends Action
         $params = ['since' => $fields->since];
         // Can only do one at once.
         foreach ($shows as $model) {
-            $params['users'] = match (get_class($model)) {
-                Show::class => $model,
-                User::class => array_merge($params['users'] ?? [], [$model->id]),
+            switch (get_class($model)) {
+                case Show::class:
+                    $params['users'] = $model;
+                    break;
+                case User::class:
+                    $params['users'] = array_merge($params['users'] ?? [], [$model->id]);
+                    break;
             };
 
         }

@@ -21,6 +21,7 @@ class Kernel extends ConsoleKernel
         Commands\SendMailchimpSubscribesCommand::class,
         Commands\ScruffyCommand::class,
         Commands\SendEmailToUnpasswordedPeopleCommand::class,
+        Commands\ConvertMembershipToMembershipModelCommand::class,
 
     ];
 

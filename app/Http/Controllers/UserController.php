@@ -17,14 +17,20 @@ use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    protected array $paymentTypes = array('cash' => 'cash',
+    /**
+     * @var mixed[]
+     */
+    protected $paymentTypes = array('cash' => 'cash',
                                           'cheque' => 'cheque',
                                           'online' => 'online',
                                           'debit' => 'debit',
                                           'refund_cash' => 'refund_cash',
                                           'refund_online' => 'refund_online',
                                           'refund_cheque' => 'refund_cheque');
-    protected array $membershipTypes = array(
+    /**
+     * @var mixed[]
+     */
+    protected $membershipTypes = array(
         'single' => 'single',
         'family' => 'family');
 
@@ -86,7 +92,6 @@ class UserController extends Controller
         foreach ($payments as $payment) {
             $totalPaid += $payment->amount;
         }
-
 //        $memberNumber = $user->getMemberNumber();
         $memberships = $user->membershipPurchases()
             ->where('end_date', '<', Carbon::now())

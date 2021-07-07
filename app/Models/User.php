@@ -193,7 +193,7 @@ class User extends Authenticatable
 
     public function teamMemberships($year = null): HasManyThrough
     {
-        $year ??= config('app.year');
+        $year = $year ?? config('app.year');
         return $this->hasManyThrough(TeamMembership::class, TeamMembership::class);
     }
 

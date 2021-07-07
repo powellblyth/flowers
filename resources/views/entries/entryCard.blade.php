@@ -38,7 +38,7 @@
                         @foreach(\App\Models\Section::all() as $section)
                             <div class="px-2 text-xl font-bold bg-pink-200 rounded-md">{{$section->display_name}}</div>
                             <div class="flex flex-wrap">
-                                @foreach($show->categories()->where('section_id', $section->id)->get() as $category)
+                                @forelse($show->categories()->where('section_id', $section->id)->get() as $category)
                                     <!-- TODO dont bother showing unentered historic categories -->
                                     <div class="flex-initial w-1/4 ">
                                         <div class="p-2  flex bg-green-200 mx-2 my-3 rounded-xl">
@@ -55,7 +55,11 @@
                                                 class="w-8 h-8 m-2"/></div>
                                         </div>
                                     </div>
-                                @endforeach
+                                @empty
+                                   <div class="p-2">
+                                       @lang('No categories have been created for this section yet. Watch this space!')
+                                   </div>
+                                @endforelse
                             </div>
                         @endforeach
                     </div>

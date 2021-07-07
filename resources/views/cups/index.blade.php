@@ -80,9 +80,9 @@
                         <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                             <td class="border-grey-light border hover:bg-gray-100 p-3">
                                 @if(0 == $x || $lastResult === $totalPoints)
-                                    Winner
+                                    @lang('Winner')
                                 @else
-                                    Proxime Accessit
+                                    @lang('Proxime Accessit')
                                 @endif
 
                             </td>
@@ -117,7 +117,7 @@
                                     , {{$winners[$directWinnerId]['entrant']->user->email}}
                                 @endif
                             </b>
-                        @else
+                        @elseif(array_key_exists($directWinnerId, $winners))
                             <big><b>{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</b></big>
                         @endif
                         @if (is_object($results[$cup->id]['winning_category']))

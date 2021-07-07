@@ -26,6 +26,11 @@ class CupDirectWinner extends Model
         return $this->belongsTo(Category::class, 'winning_category_id');
     }
 
+    public function entrant(): BelongsTo
+    {
+        return $this->belongsTo(Entrant::class);
+    }
+
     public function winningEntry(): BelongsTo
     {
         return $this->belongsTo(Entry::class, 'winning_entry_id');

@@ -10,7 +10,10 @@ namespace App\Nova\Fields;
  */
 class Badge extends \Laravel\Nova\Fields\Badge
 {
-    public string $defaultClass = 'info';
+    /**
+     * @var string
+     */
+    public $defaultClass = 'info';
 
     public function defaultClass(string $default): void
     {

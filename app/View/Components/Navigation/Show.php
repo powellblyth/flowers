@@ -6,13 +6,17 @@ use Illuminate\View\Component;
 
 class Show extends Component
 {
+    public ?\App\Models\Show $show = null;
+    public string $route='cups.index';
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(public ?\App\Models\Show $show = null, public string $route='cups.index')
+    public function __construct( \App\Models\Show $show = null, string $route='cups.index')
     {
+        $this->show = $show;
+        $this->route = $route;
         //
     }
 

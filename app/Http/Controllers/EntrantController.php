@@ -21,7 +21,10 @@ use Illuminate\View\View;
 
 class EntrantController extends Controller
 {
-    protected array $paymentTypes = array('cash' => 'cash',
+    /**
+     * @var mixed[]
+     */
+    protected $paymentTypes = array('cash' => 'cash',
                                           'cheque' => 'cheque',
                                           'online' => 'online',
                                           'debit' => 'debit',
