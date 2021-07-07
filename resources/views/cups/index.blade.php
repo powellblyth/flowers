@@ -60,65 +60,70 @@
                     <div>{{$cup->winning_criteria}}</div>
 
                     @if ((int)$results[$cup->id]['direct_winner'] == 0)
-                    <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-                        <thead class="text-white">
-                        <!-- one for each row - required for mobile view -->
-                        @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
-                        <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                            <th class="p-3 text-left">Position</th>
-                            <th class="p-3 text-left">Name</th>
-                            <th class="p-3 text-left" width="110px">Points</th>
-                        </tr>
-                        @endfor
-                        </thead>
-                        <tbody class="flex-1 sm:flex-none">
-                        @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
-                            @php
-                                $totalPoints = $results[$cup->id]['results'][$x]['totalpoints'];
-                                $winningEntrantId = $results[$cup->id]['results'][$x]['entrant'];
-                            @endphp
-                        <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                            <td class="border-grey-light border hover:bg-gray-100 p-3">
-                                @if(0 == $x || $lastResult === $totalPoints)
-                                    @lang('Winner')
-                                @else
-                                    @lang('Proxime Accessit')
-                                @endif
+                        <table
+                            class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                            <thead class="text-white">
+                            <!-- one for each row - required for mobile view -->
+                            @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
+                                <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                    <th class="p-3 text-left">Position</th>
+                                    <th class="p-3 text-left">Name</th>
+                                    <th class="p-3 text-left" width="110px">Points</th>
+                                </tr>
+                            @endfor
+                            </thead>
+                            <tbody class="flex-1 sm:flex-none">
+                            @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
+                                @php
+                                    $totalPoints = $results[$cup->id]['results'][$x]['totalpoints'];
+                                    $winningEntrantId = $results[$cup->id]['results'][$x]['entrant'];
+                                @endphp
+                                <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                                    <td class="border-grey-light border hover:bg-gray-100 p-3">
+                                        @if(0 == $x || $lastResult === $totalPoints)
+                                            @lang('Winner')
+                                        @else
+                                            @lang('Proxime Accessit')
+                                        @endif
 
-                            </td>
-                            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$winners[$winningEntrantId]['entrant']->getName(true)}}</td>
-                            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$results[$cup->id]['results'][$x]['totalpoints'] }} points</td>
-                        </tr>
-                            @php
-                                // If we have a matching point then add one to the iterator
-                                //if ($lastResult == $totalPoints)
-                                //{
-                                //    $maxResults++;
-                                //}
-                                //reset the last result counter
-                                //$lastResult = $totalPoints;
-                            @endphp
-                        @endfor
-                        </tbody>
-                    </table>
+                                    </td>
+                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$winners[$winningEntrantId]['entrant']->getName(true)}}</td>
+                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$results[$cup->id]['results'][$x]['totalpoints'] }}
+                                        points
+                                    </td>
+                                </tr>
+                                @php
+                                    // If we have a matching point then add one to the iterator
+                                    //if ($lastResult == $totalPoints)
+                                    //{
+                                    //    $maxResults++;
+                                    //}
+                                    //reset the last result counter
+                                    //$lastResult = $totalPoints;
+                                @endphp
+                            @endfor
+                            </tbody>
+                        </table>
 
                     @else
                         <i>Winner:</i>
                         @php
                             $directWinnerId = $results[$cup->id]['direct_winner'];
                         @endphp
-                        @if ( ! $publishMode && $isAdmin)
-                            <b>
-                                <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</a>
-                                @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
-                                    {{$winners[$directWinnerId]['entrant']->user->getAddress()}}
-                                    <br/>
-                                    {{$winners[$directWinnerId]['entrant']->user->telephone}}
-                                    , {{$winners[$directWinnerId]['entrant']->user->email}}
-                                @endif
-                            </b>
-                        @elseif(array_key_exists($directWinnerId, $winners))
-                            <big><b>{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</b></big>
+                        @if(array_key_exists($directWinnerId, $winners))
+                            @if ( ! $publishMode && $isAdmin)
+                                <b>
+                                    <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</a>
+                                    @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
+                                        {{$winners[$directWinnerId]['entrant']->user->getAddress()}}
+                                        <br/>
+                                        {{$winners[$directWinnerId]['entrant']->user->telephone}}
+                                        , {{$winners[$directWinnerId]['entrant']->user->email}}
+                                    @endif
+                                </b>
+                            @else
+                                <big><b>{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</b></big>
+                            @endif
                         @endif
                         @if (is_object($results[$cup->id]['winning_category']))
                             for category
