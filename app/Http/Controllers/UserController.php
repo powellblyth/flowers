@@ -113,7 +113,7 @@ class UserController extends Controller
             'payments' => $payments,
 //            'payment_methods' => $user->paymentMethods(),
 //            'needs_payment_method' => !$user->hasPaymentMethod(),
-            'isAdmin' => $this->isAdmin(),
+            'isAdmin' => $this``->isAdmin(),
             'show' => $show,
             'showId' => $show->id,
 //            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
