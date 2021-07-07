@@ -87,6 +87,9 @@ class Show extends Resource
             DateTime::make('End Date', 'ends_date')
                 ->sortable()->format('Y-MM-DD HH:m'),
 
+            DateTime::make('Entries Closed Deadline', 'entries_closed_deadline')
+                ->sortable()->format('Y-MM-DD HH:m'),
+
             DateTime::make('Late Entry Deadline')
                 ->sortable()->format('Y-MM-DD HH:m'),
 
