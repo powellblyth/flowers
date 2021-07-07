@@ -116,7 +116,7 @@ class UserController extends Controller
             'isAdmin' => $this->isAdmin(),
             'show' => $show,
             'showId' => $show->id,
-            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
+//            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
             'payment_types' => $this->paymentTypes,
             'membership_types' => [MembershipPurchase::TYPE_FAMILY => 'Family'],
             'has_family_subscription' => false,//$hasFamilySubscription,
