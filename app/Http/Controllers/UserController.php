@@ -112,7 +112,7 @@ class UserController extends Controller
             'total_paid' => $totalPaid,
             'payments' => $payments,
 //            'payment_methods' => $user->paymentMethods(),
-            'needs_payment_method' => !$user->hasPaymentMethod(),
+//            'needs_payment_method' => !$user->hasPaymentMethod(),
             'isAdmin' => $this->isAdmin(),
             'show' => $show,
             'showId' => $show->id,
