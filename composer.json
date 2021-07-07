@@ -20,7 +20,8 @@
         "laravel/tinker": "^2.0",
         "laravelcollective/html": "^6.0",
         "livewire/livewire": "^2.3",
-        "nztim/mailchimp": "^3.10"
+        "nztim/mailchimp": "^3.10",
+        "laravel/telescope": "^4.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",
@@ -28,7 +29,6 @@
         "filp/whoops": "~2.0",
         "laravel/breeze": "^1.1",
         "laravel/sail": "^1.0",
-        "laravel/telescope": "^4.5",
         "mockery/mockery": "~1.0",
         "nunomaduro/collision": "^5.4",
         "orangehill/iseed": "^3.0",
