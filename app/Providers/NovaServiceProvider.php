@@ -34,9 +34,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function (User $user) {
-            return in_array($user->isAdmin(), [
-                //
-            ]);
+            return $user->isAdmin();
         });
     }
 
