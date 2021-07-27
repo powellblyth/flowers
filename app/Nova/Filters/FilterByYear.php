@@ -48,11 +48,14 @@ class FilterByYear extends Filter
         $startYear = 2020;
         $endYear = (int) date('Y');
         try {
-            /**
-             * @var MembershipPurchase $earliestMembershipYear
-             */
+            /** @var MembershipPurchase $earliestMembershipYear */
             $earliestMembershipYear = MembershipPurchase::orderBy('start_date')->firstOrFail();
-            $startYear = (int) $earliestMembershipYear->start_date->format('Y');
+
+            if ($earliestMembershipYear && $earliestMembershipYear->start_date) {
+                $startYear = (int) $earliestMembershipYear->start_date->format('Y');
+            } else {
+                $earliestMembershipYear = date('Y');
+            }
         } catch (ModelNotFoundException $e) {
             ;// don't care
         }

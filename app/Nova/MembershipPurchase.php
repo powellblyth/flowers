@@ -19,6 +19,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 
+/** @mixin \App\Models\MembershipPurchase */
 class MembershipPurchase extends Resource
 {
     /**
@@ -54,19 +55,19 @@ class MembershipPurchase extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('UserResource'),
-
-            BelongsTo::make('EntrantResource'),
-
+            BelongsTo::make('User'),
+            BelongsTo::make('Entrant'),
             Select::make('Type')
                 ->sortable()
                 ->options([
-                    \App\Models\Membership::APPLIES_TO_ENTRANT => 'EntrantResource',
+                    \App\Models\Membership::APPLIES_TO_ENTRANT => 'Entrant',
                     \App\Models\Membership::APPLIES_TO_USER => 'Family',
                 ]),
 
             Number::make('Year')->readonly()->displayUsing(function ($value) {
-                return $this->model()->start_date->format('Y');
+                if ( $this->start_date) {
+                    return $this->start_date->format('Y');
+                }
             })->exceptOnForms(),
             Currency::make('Amount')->required()
                 ->hideFromIndex()

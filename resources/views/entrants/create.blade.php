@@ -20,11 +20,11 @@
             <div class="py-4">
                 <x-label for="firstname" :value="__('First Name')" />
 
-                <x-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus />
+                <input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus />
             </div>
             <div class="py-4">
                 <x-label for="familyname" :value="__('Last Name')" />
-                <x-input id="familyname" class="block mt-1 w-full" type="text" name="familyname" :value="old('familyname')" required autofocus />
+                <input id="familyname" class="block mt-1 w-full" type="text" name="familyname" :value="old('familyname')" required autofocus />
             </div>
             <div class="py-4">
                 <x-label for="age" :value="__('Age in years (Children only)')" />
