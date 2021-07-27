@@ -52,7 +52,7 @@ class ConvertMembershipToMembershipModelCommand extends Command
             $twentyTwentyMembershipSingle    = Membership::firstOrCreate(['sku' => 'SINGLE_2020'], ['label' => 'Single Membership 2020', 'description' => '2020 Single Membership', 'price_gbp' => 300, 'applies_to' => Membership::APPLIES_TO_ENTRANT, 'purchasable_from' => '2020-05-01 00:00:00', 'purchasable_to' => '2021-04-30 23:59:59', 'valid_from' => '2020-06-01 00:00:00', 'valid_to' => '2021-05-31 23:59:59']);
         }
         $membershipTypes = [
-            Membership::APPLIES_TO_ENTRANT => MembershipPurchase::TYPE_INDIVIDUAL,
+            Membership::APPLIES_TO_ENTRANT => 'single',//MembershipPurchase::TYPE_INDIVIDUAL,
             Membership::APPLIES_TO_USER => MembershipPurchase::TYPE_FAMILY
         ];
         foreach (Membership::all() as $membership) {
@@ -60,12 +60,12 @@ class ConvertMembershipToMembershipModelCommand extends Command
             // Find any membership that matches the type (using the type mapper above)
             // And update it to point to the first one
             $this->info('applies_to '.$membership->applies_to);
-//            $this->info('finding memberships where end_date > \''.$membership->valid_from
-//                        .'\' AND type=\''.$membershipTypes[$membership->applies_to]
-//                        .'\' AND start_date < '.$membership->valid_to);
+            $this->info('finding memberships where year=\''.$membership->valid_from->format('Y')
+                        .'\' AND type = '.$membershipTypes[$membership->applies_to]);
             $membershipPurchases = MembershipPurchase::
                 where('year', '=', $membership->valid_from->format('Y'))
                 ->where('type', $membershipTypes[$membership->applies_to])
+                ->whereNull('membership_id')
                 ->get();
             $membershipPurchases->each(function (MembershipPurchase $purchase) use ($membership) {
                 $this->info("updating membership purchase  " . $membership->label . ' : ' . $purchase->type
