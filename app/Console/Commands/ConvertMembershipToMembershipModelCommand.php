@@ -60,15 +60,16 @@ class ConvertMembershipToMembershipModelCommand extends Command
             // Find any membership that matches the type (using the type mapper above)
             // And update it to point to the first one
             $this->info('applies_to '.$membership->applies_to);
-            $this->info('finding memberships where end_date > \''.$membership->valid_from
-                        .'\' AND type=\''.$membershipTypes[$membership->applies_to]
-                        .'\' AND start_date < '.$membership->valid_to);
-            $membershipPurchases = MembershipPurchase::where('start_date', '<', $membership->valid_to)
-                ->where('end_date', '>', $membership->valid_from)
+//            $this->info('finding memberships where end_date > \''.$membership->valid_from
+//                        .'\' AND type=\''.$membershipTypes[$membership->applies_to]
+//                        .'\' AND start_date < '.$membership->valid_to);
+            $membershipPurchases = MembershipPurchase::
+                where('year', '=', $membership->valid_from->format('Y'))
                 ->where('type', $membershipTypes[$membership->applies_to])
                 ->get();
             $membershipPurchases->each(function (MembershipPurchase $purchase) use ($membership) {
-                $this->info("updating membership purchase  " . $membership->label . ' : ' . $purchase->type . ' for member ' . $purchase->user_id . ' entrant ' . $purchase->entrant_id);
+                $this->info("updating membership purchase  " . $membership->label . ' : ' . $purchase->type
+                            . ' for member ' . $purchase->user_id . ' entrant ' . $purchase->entrant_id);
                 $purchase->membership()->associate($membership);
                 $purchase->save();
             });

@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\MembershipPurchase;
 use App\Models\User;
 use App\Notifications\MustChangePasswordNotification;
 use Illuminate\Console\Command;
@@ -36,7 +37,10 @@ class ScruffyCommand extends Command {
      * @return mixed
      */
     public function handle() {
-
+$purchases = MembershipPurchase::all();
+$purchases->each(function (MembershipPurchase $purchase){
+//    echo "UPDATE membership_purchases set YEAR='".$purchase->year."',  "
+});
         config(['auth.passwords.users.expire' => 71280]);
 //        $user = UserResource::where('email', 'toby.powellblyth@gmail.com')->first();
         $user = User::where('email', 'toby@powellblyth.com')->first();
