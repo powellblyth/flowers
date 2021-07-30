@@ -11,48 +11,100 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Cashier\Billable;
 
 //use Laravel\Cashier\Billable;
 
 /**
- * @method static User create(array $array)
- * @method static User find(int $userId)
- * @method static Builder orderBy(string $column, ?string $direction = null)
- * @method static Builder where(string|array $column, ?string $valueOrComparator, ?string $value = null)
- * @method static User firstWhere(int $userId)
- * @method static User findOrFail(int $userId)
- * @method static User firstOrNew(int $userId)
- * @method static User firstOrCreate(array $array, array $array)
- * @property Collection entrants
- * @property string type
- * @property string firstname
- * @property string lastname
- * @property string telephone
- * @property string address
- * @property string address2
- * @property string addresstown
- * @property string postcode
- * @property Carbon created_at
- * @property Carbon updated_at
- * @property Carbon post_opt_in
- * @property Carbon post_opt_out
- * @property Carbon sms_opt_out
- * @property Carbon sms_opt_in
- * @property Carbon retain_data_opt_out
- * @property Carbon retain_data_opt_in
- * @property Carbon phone_opt_out
- * @property Carbon phone_opt_in
- * @property Carbon email_opt_out
- * @property Carbon email_opt_in
- * @property int id
- * @property bool can_retain_data
- * @property bool is_anonymised
- * @property bool can_sms
- * @property bool can_phone
- * @property bool can_post
- * @property bool can_email
- * @property string email
+ * App\Models\User
+ *
+ * @property int $id
+ * @property string|null $email
+ * @property string|null $password
+ * @property string|null $remember_token
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string $firstname
+ * @property string $lastname
+ * @property string $status
+ * @property string $type
+ * @property string|null $address
+ * @property string|null $address2
+ * @property string|null $addresstown
+ * @property string|null $postcode
+ * @property bool|null $can_retain_data
+ * @property \Illuminate\Support\Carbon|null $retain_data_opt_in
+ * @property bool|null $can_email
+ * @property \Illuminate\Support\Carbon|null $email_opt_in
+ * @property int|null $can_phone
+ * @property \Illuminate\Support\Carbon|null $phone_opt_in
+ * @property bool|null $can_sms
+ * @property \Illuminate\Support\Carbon|null $sms_opt_in
+ * @property string|null $email_verified_at
+ * @property bool $is_anonymised
+ * @property bool|null $can_post
+ * @property \Illuminate\Support\Carbon|null $post_opt_in
+ * @property \Illuminate\Support\Carbon|null $post_opt_out
+ * @property \Illuminate\Support\Carbon|null $sms_opt_out
+ * @property \Illuminate\Support\Carbon|null $retain_data_opt_out
+ * @property \Illuminate\Support\Carbon|null $phone_opt_out
+ * @property \Illuminate\Support\Carbon|null $email_opt_out
+ * @property string|null $telephone
+ * @property string|null $stripe_id
+ * @property string|null $card_brand
+ * @property string|null $card_last_four
+ * @property string|null $trial_ends_at
+ * @property-read Collection|\App\Models\Entrant[] $entrants
+ * @property-read int|null $entrants_count
+ * @property-read Collection|\App\Models\MembershipPurchase[] $familyMemberships
+ * @property-read int|null $family_memberships_count
+ * @property-read string $full_name
+ * @property-read Collection|\App\Models\MembershipPurchase[] $membershipPurchases
+ * @property-read int|null $membership_purchases_count
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read int|null $notifications_count
+ * @property-read Collection|\App\Models\Payment[] $payments
+ * @property-read int|null $payments_count
+ * @method static \Database\Factories\UserFactory factory(...$parameters)
+ * @method static Builder|User newModelQuery()
+ * @method static Builder|User newQuery()
+ * @method static Builder|User query()
+ * @method static Builder|User whereAddress($value)
+ * @method static Builder|User whereAddress2($value)
+ * @method static Builder|User whereAddresstown($value)
+ * @method static Builder|User whereCanEmail($value)
+ * @method static Builder|User whereCanPhone($value)
+ * @method static Builder|User whereCanPost($value)
+ * @method static Builder|User whereCanRetainData($value)
+ * @method static Builder|User whereCanSms($value)
+ * @method static Builder|User whereCardBrand($value)
+ * @method static Builder|User whereCardLastFour($value)
+ * @method static Builder|User whereCreatedAt($value)
+ * @method static Builder|User whereEmail($value)
+ * @method static Builder|User whereEmailOptIn($value)
+ * @method static Builder|User whereEmailOptOut($value)
+ * @method static Builder|User whereEmailVerifiedAt($value)
+ * @method static Builder|User whereFirstname($value)
+ * @method static Builder|User whereId($value)
+ * @method static Builder|User whereIsAnonymised($value)
+ * @method static Builder|User whereLastname($value)
+ * @method static Builder|User wherePassword($value)
+ * @method static Builder|User wherePhoneOptIn($value)
+ * @method static Builder|User wherePhoneOptOut($value)
+ * @method static Builder|User wherePostOptIn($value)
+ * @method static Builder|User wherePostOptOut($value)
+ * @method static Builder|User wherePostcode($value)
+ * @method static Builder|User whereRememberToken($value)
+ * @method static Builder|User whereRetainDataOptIn($value)
+ * @method static Builder|User whereRetainDataOptOut($value)
+ * @method static Builder|User whereSmsOptIn($value)
+ * @method static Builder|User whereSmsOptOut($value)
+ * @method static Builder|User whereStatus($value)
+ * @method static Builder|User whereStripeId($value)
+ * @method static Builder|User whereTelephone($value)
+ * @method static Builder|User whereTrialEndsAt($value)
+ * @method static Builder|User whereType($value)
+ * @method static Builder|User whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class User extends Authenticatable
 {

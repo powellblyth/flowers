@@ -7,7 +7,6 @@ use App\Nova\Actions\PrintAllCardsRedirector;
 use App\Nova\Actions\PrintLookupSheetsRedirector;
 use App\Nova\Actions\PrintTableTopCardsRedirector;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;

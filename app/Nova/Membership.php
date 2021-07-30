@@ -3,16 +3,12 @@
 namespace App\Nova;
 
 use App\Nova\Actions\DuplicateMembership;
-use App\Nova\Filters\FilterByShow;
 use App\Nova\Filters\FilterByYear;
 use App\Nova\Metrics\MembershipPriceByMembershipType;
 use App\Nova\Metrics\MembershipsByMembershipType;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 

@@ -11,21 +11,18 @@ class MustChangePasswordNotification extends Notification
 {
     use Queueable;
 
+    public string $token;
+    public string $firstname;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
     public function __construct(
-        /**
-         * The password reset token.
-         *
-         * @var string
-         */
-        public $token,
-        public $firstname
-    )
-    {
+        string $token,
+        string $firstname
+    ) {
     }
 
 

@@ -2,20 +2,44 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
- * Class MembershipPurchase
- * @package App\Models
- * @property int $year
- * @property string $type
- * @property int $entrant_id
+ * App\Models\MembershipPurchase
+ *
+ * @property int $id
+ * @property int|null $entrant_id
  * @property int $amount
- * @property string $number
- * @property int $user_id
- * @property Carbon $start_date
- * @property Carbon $end_date
+ * @property string $type
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property int|null $year
+ * @property int|null $user_id
+ * @property string|null $number
+ * @property Carbon|null $start_date
+ * @property Carbon|null $end_date
+ * @property int|null $membership_id
+ * @property-read Entrant|null $entrant
+ * @property-read Membership|null $membership
+ * @property-read User|null $user
+ * @method static Builder|MembershipPurchase newModelQuery()
+ * @method static Builder|MembershipPurchase newQuery()
+ * @method static Builder|MembershipPurchase query()
+ * @method static Builder|MembershipPurchase whereAmount($value)
+ * @method static Builder|MembershipPurchase whereCreatedAt($value)
+ * @method static Builder|MembershipPurchase whereEndDate($value)
+ * @method static Builder|MembershipPurchase whereEntrantId($value)
+ * @method static Builder|MembershipPurchase whereId($value)
+ * @method static Builder|MembershipPurchase whereMembershipId($value)
+ * @method static Builder|MembershipPurchase whereNumber($value)
+ * @method static Builder|MembershipPurchase whereStartDate($value)
+ * @method static Builder|MembershipPurchase whereType($value)
+ * @method static Builder|MembershipPurchase whereUpdatedAt($value)
+ * @method static Builder|MembershipPurchase whereUserId($value)
+ * @method static Builder|MembershipPurchase whereYear($value)
+ * @mixin \Eloquent
  */
 class MembershipPurchase extends Model
 {

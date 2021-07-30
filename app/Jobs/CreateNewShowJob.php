@@ -9,18 +9,22 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 
 class CreateNewShowJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    protected Show $oldShow;
+    protected Show $newShow;
+
     /**
      * Create a new job instance.
      */
-    public function __construct(protected Show $oldShow, protected Show $newShow)
+    public function __construct( Show $oldShow,  Show $newShow)
     {
+        $this->oldShow = $oldShow;
+        $this->newShow = $newShow;
     }
 
     /**

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Events\EntrantSaving;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,23 +15,52 @@ use Illuminate\Support\Str;
 //use Laravel\Cashier\Billable;
 
 /**
- * Class EntrantResource
- * @package App
- * @property User $user
+ * App\Models\Entrant
+ *
+ * @property int $id
  * @property string $firstname
  * @property string $familyname
- * @property bool $can_retain_data
+ * @property string|null $membernumber
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int|null $age
+ * @property bool|null $can_retain_data
+ * @property \Illuminate\Support\Carbon|null $retain_data_opt_in
+ * @property int|null $user_id
  * @property bool $is_anonymised
- * @property int $age
- * @property Collection $individualMemberships
- * @property Carbon $retain_data_opt_out
- * @property Carbon $retain_data_opt_in
- * @property Carbon $created_at
- * @property Carbon $updated_at
- * @property int $id
- * @property string $membernumber
- * @property string $age_description
- * @property int $user_id
+ * @property \Illuminate\Support\Carbon|null $retain_data_opt_out
+ * @property-read Collection|\App\Models\Entry[] $entries
+ * @property-read int|null $entries_count
+ * @property-read string $age_description
+ * @property-read string $full_name
+ * @property-read Collection|\App\Models\MembershipPurchase[] $individualMemberships
+ * @property-read int|null $individual_memberships_count
+ * @property-read Collection|\App\Models\MembershipPurchase[] $membershipPurchases
+ * @property-read int|null $membership_purchases_count
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read int|null $notifications_count
+ * @property-read Collection|\App\Models\Payment[] $payments
+ * @property-read int|null $payments_count
+ * @property-read Collection|\App\Models\Team[] $teams
+ * @property-read int|null $teams_count
+ * @property-read \App\Models\User|null $user
+ * @method static \Database\Factories\EntrantFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereAge($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereCanRetainData($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereFamilyname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereFirstname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereIsAnonymised($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereMembernumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereRetainDataOptIn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereRetainDataOptOut($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereUserId($value)
+ * @mixin \Eloquent
  */
 class Entrant extends Model
 {

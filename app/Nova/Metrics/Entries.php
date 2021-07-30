@@ -3,7 +3,6 @@
 namespace App\Nova\Metrics;
 
 use App\Models\Membership;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\TrendResult;
 use Laravel\Nova\Metrics\Value;
 

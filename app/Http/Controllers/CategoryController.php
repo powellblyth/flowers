@@ -6,7 +6,6 @@ use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\Section;
-use App\Models\Show;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;

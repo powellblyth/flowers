@@ -2,8 +2,6 @@
 
 namespace App\Nova\Dashboards;
 
-use App\Nova\Metrics\Entries;
-use App\Nova\Metrics\EntriesByEntrantType;
 use App\Nova\Metrics\MembershipPriceByMembershipType;
 use App\Nova\Metrics\MembershipsByMembershipType;
 use Laravel\Nova\Dashboard;

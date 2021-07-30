@@ -4,9 +4,6 @@ namespace App\Nova\Metrics;
 
 use App\Models\Membership;
 use App\Models\MembershipPurchase;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Partition;
 

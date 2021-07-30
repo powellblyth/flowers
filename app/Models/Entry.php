@@ -5,15 +5,33 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * Class Entry
- * @package App
- * @property Entrant $entrant
- * @property Show $show
- * @property string $winningplace
- * @property Category $category
+ * App\Models\Entry
+ *
+ * @property int $id
  * @property int $category_id
  * @property int $entrant_id
- * @property int $year
+ * @property int $paid
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $winningplace
+ * @property int|null $year
+ * @property int|null $show_id
+ * @property-read \App\Models\Category $category
+ * @property-read \App\Models\Entrant $entrant
+ * @property-read \App\Models\Show|null $show
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry whereEntrantId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry wherePaid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry whereShowId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry whereWinningplace($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Entry whereYear($value)
+ * @mixin \Eloquent
  */
 class Entry extends Model
 {

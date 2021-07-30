@@ -2,18 +2,14 @@
 
 namespace App\Nova\Actions;
 
-use App\Jobs\CreateNewShowJob;
 use App\Models\Show;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Text;
 
 class PrintAllCardsRedirector extends Action
 {

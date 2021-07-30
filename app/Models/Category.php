@@ -8,16 +8,53 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property float late_price
- * @property float price
- * @property Collection cups
- * @property string number
- * @property string name
- * @property Section section
- * @property int first_prize
- * @property int second_prize
- * @property int third_prize
- * @property Show show
+ * App\Models\Category
+ *
+ * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string $number
+ * @property int $price
+ * @property int $late_price
+ * @property int $sortorder
+ * @property int|null $first_prize
+ * @property int|null $second_prize
+ * @property int|null $third_prize
+ * @property int|null $year
+ * @property int|null $show_id
+ * @property int|null $section_id
+ * @property string $status
+ * @property int|null $cloned_from
+ * @property string|null $deleted_at
+ * @property-read Collection|\App\Models\Cup[] $cups
+ * @property-read int|null $cups_count
+ * @property-read Collection|\App\Models\Entry[] $entries
+ * @property-read int|null $entries_count
+ * @property-read string $numbered_name
+ * @property-read \App\Models\Section|null $section
+ * @property-read \App\Models\Show|null $show
+ * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereClonedFrom($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereFirstPrize($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereLatePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereSecondPrize($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereSectionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereShowId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereSortorder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereThirdPrize($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereYear($value)
+ * @mixin \Eloquent
  */
 class Category extends Model implements \Stringable
 {

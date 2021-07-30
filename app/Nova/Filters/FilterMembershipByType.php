@@ -3,11 +3,7 @@
 namespace App\Nova\Filters;
 
 use App\Models\MembershipPurchase;
-use App\Models\Show;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Filters\Filter;
 
 class FilterMembershipByType extends Filter

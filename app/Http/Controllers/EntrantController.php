@@ -8,8 +8,6 @@ use App\Models\Entry;
 use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\Team;
-use App\Models\TeamMembership;
-use App\Models\User;
 use DB;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
