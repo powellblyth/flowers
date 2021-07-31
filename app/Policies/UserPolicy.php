@@ -126,4 +126,8 @@ class UserPolicy
     {
         return false;
     }
+
+    public function logInToNova(User $user){
+        return $user->isAdmin();
+    }
 }

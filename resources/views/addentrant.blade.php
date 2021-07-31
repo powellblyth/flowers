@@ -1,4 +1,4 @@
 @extends('layouts/main')
 
 
-@section('pagetitle', 'Add EntrantResource')
+@section('pagetitle', 'Add Entrant')

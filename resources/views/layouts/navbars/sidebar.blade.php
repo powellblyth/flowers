@@ -18,7 +18,7 @@
                         <p>Home</p></a>
                 </li>
 
-                @can('create',\App\Models\EntrantResource::class)
+                @can('create',\App\Models\Entrant::class)
                     <li class="nav-item{{ $activePage == 'add-entrant' ? ' active' : '' }}">
                         <a class="nav-link" href="{{route('entrants.create')}}"><i class="material-icons">group_add</i>
                             <p>@lang('Add another family member')</p></a>

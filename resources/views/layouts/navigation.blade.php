@@ -25,6 +25,12 @@
                         {{ __('Cups') }}
                     </x-nav-link>
 
+                    @can('logInToNova', Auth::user())
+                    <x-nav-link :href="config('nova.url')" >
+                        {{ __('Admin') }}
+                    </x-nav-link>
+
+                        @endcan
                 </div>
             </div>
 

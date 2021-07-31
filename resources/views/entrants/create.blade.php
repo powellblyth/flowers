@@ -61,7 +61,7 @@
 {{--        <div class="row">--}}
 {{--            <div class="col-md-12">--}}
 {{--                <div class="card">--}}
-{{--                    <div class="card-header card-header-success">Enter your Family Member's EntrantResource details</div>--}}
+{{--                    <div class="card-header card-header-success">Enter your Family Member's Entrant details</div>--}}
 {{--                    <div class="card-body">--}}
 {{--                        <div class="row">--}}
 {{--                            <div class="col-md-12"><p>Use this page to add yourself and your family as entrants.--}}

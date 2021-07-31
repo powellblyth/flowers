@@ -69,6 +69,7 @@ class MembershipPurchase extends Resource
             Text::make('End Date')->displayUsing(function () {
                 return $this->membership->valid_to->format('d M Y');
             })->readonly(),
+            DateTime::make(__('Created At'), 'created_at')->readonly(),
         ];
     }
 

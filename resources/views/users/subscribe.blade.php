@@ -6,7 +6,7 @@
 @endphp
 @extends('layouts.app', ['activePage' => $activePage, 'titlePage' =>  $thing->getName() ])
 
-@section('pagetitle', 'EntrantResource ' . $thing->getName())
+@section('pagetitle', 'Entrant ' . $thing->getName())
 @section('content')
 
     <div class="container-fluid">

@@ -18,7 +18,7 @@
                      <p>There's no real limit to the number of entrants you can represent, but remember, only
                         one entrant can win any given cup, points are not aggregated to your user account.
                          </p>
-                        <p>Getting Started - Simply go to "Add An EntrantResource" in the top menu and create your own
+                        <p>Getting Started - Simply go to "My Family" in the top menu and create your own
                         personal details, then begin to create the rest of your clan</p>
                      <p>Once you have created them all, you can create Entries (i.e. choose which categories you
                         would like to enter) for <em><b>each</b></em> entrant.</p>

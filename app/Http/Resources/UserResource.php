@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * Class EntrantResource
+ * Class UserResource
  * @package App\Http\Resources
  * @mixin \App\Models\User
  */

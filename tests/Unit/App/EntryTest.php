@@ -24,7 +24,7 @@ class EntryTest extends TestCase
 //     * @return void
 //     */
 //    public function testgetAddress($first, $second, $town, $postcode, $expected) {
-//        $this->sut = new EntrantResource();
+//        $this->sut = new Entrant();
 //        $this->sut->address = $first;
 //        $this->sut->address2 = $second;
 //        $this->sut->addresstown = $town;
