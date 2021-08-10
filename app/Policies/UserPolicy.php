@@ -55,7 +55,6 @@ class UserPolicy
     }
 
 
-
     /**
      * Determine whether the user can view the model.
      *
@@ -127,7 +126,8 @@ class UserPolicy
         return false;
     }
 
-    public function logInToNova(User $user){
+    public function logInToNova(User $user, User $model)
+    {
         return $user->isAdmin();
     }
 }
