@@ -18,7 +18,6 @@ class Kernel extends ConsoleKernel
         Commands\resetPasswordResetsCommand::class,
         Commands\AnonymiseEntrantsCommand::class,
         Commands\ConvertYearToShow::class,
-        Commands\SendMailchimpSubscribesCommand::class,
         Commands\ScruffyCommand::class,
         Commands\SendEmailToUnpasswordedPeopleCommand::class,
         Commands\ConvertMembershipToMembershipModelCommand::class,
@@ -32,7 +31,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('mailchimp:subscribeusers')->cron('*/5 9,11,12,13,15,17,19,21 * * *');
 //         $schedule->command('inspire')->hourly();
     }
 

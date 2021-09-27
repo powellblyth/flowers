@@ -105,6 +105,7 @@ use Illuminate\Notifications\Notifiable;
  * @method static Builder|User whereType($value)
  * @method static Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read string $safe_email
  */
 class User extends Authenticatable
 {
@@ -113,8 +114,17 @@ class User extends Authenticatable
 
 //    use Billable;
 
-    const ADMIN_TYPE = 'admin';
-    const DEFAULT_TYPE = 'default';
+    const TYPE_ADMIN = 'admin';
+    const TYPE_DEFAULT = 'default';
+
+    const STATUS_ACTIVE = 'active';
+    const STATUS_INACTIVE = 'inactive';
+    const STATUS_DELETED = 'deleted';
+
+    protected $attributes = [
+        'type' => User::TYPE_DEFAULT,
+        'status' => User::STATUS_ACTIVE,
+    ];
 
     protected $casts = [
         'retain_data_opt_in' => 'datetime',
@@ -160,36 +170,17 @@ class User extends Authenticatable
         'password', 'remember_token', 'auth_token', 'password_reset_token'
     ];
 
-    public function entrants(): HasMany
-    {
-        return $this->hasMany(Entrant::class);
-    }
-
-    public function payments(): HasMany
-    {
-        return $this->hasMany(Payment::class);
-    }
-
-    public function membershipPurchases(): HasMany
-    {
-        return $this->hasMany(MembershipPurchase::class);
-    }
-
     public function getFullNameAttribute(): string
     {
         return $this->getName();
     }
 
-    public function isAdmin(): bool
+    public function getPrintableNameAttribute(): string
     {
-        return $this->type === self::ADMIN_TYPE;
+        return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
     }
 
-
-    /**
-     * If we are not on production then return a sensible false string
-     */
-    public function getSafeEmail(): string
+    public function getSafeEmailAttribute(): string
     {
         $email = $this->email;
         if ('production' !== env('APP_ENV')) {
@@ -198,10 +189,30 @@ class User extends Authenticatable
         return $email;
     }
 
+    public function entrants(): HasMany
+    {
+        return $this->hasMany(Entrant::class);
+    }
+
+    public function membershipPurchases(): HasMany
+    {
+        return $this->hasMany(MembershipPurchase::class);
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->type === self::TYPE_ADMIN;
+    }
+
     public function getName(bool $printable = null): string
     {
         if ($printable) {
-            return $this->getPrintableName();
+            return $this->printable_name;
         } else {
             return trim($this->firstname . ' ' . $this->lastname);
         }
@@ -233,14 +244,9 @@ class User extends Authenticatable
         }
     }
 
-    public function getPrintableName(): string
-    {
-        return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
-    }
-
     public function familyMemberships(): HasMany
     {
-        return $memberships = $this->hasMany(MembershipPurchase::class, 'user_id')->where('type', 'family');
+        return $this->hasMany(MembershipPurchase::class, 'user_id')->where('type', 'family');
     }
 
     public function teamMemberships($year = null): HasManyThrough
@@ -269,7 +275,7 @@ class User extends Authenticatable
     public function anonymisePostcode(?string $postcode): ?string
     {
         $newPostcode = null;
-        if (!is_null($postcode) && !empty($postcode)) {
+        if (!empty($postcode)) {
             $oldPostcode = explode(' ', trim($postcode));
             if (2 == count($oldPostcode)) {
                 $newPostcode = $oldPostcode[0] . substr($oldPostcode[1], 0, 1);
@@ -309,5 +315,15 @@ class User extends Authenticatable
         $this->created_at = null;
 
         return $this;
+    }
+
+    public static function getAllStatuses(): array
+    {
+        return ['active' => 'Active', 'inactive' => 'Inactive', 'deleted' => 'Deleted'];
+    }
+
+    public static function getAllTypes(): array
+    {
+        return ['default' => 'Default', 'admin' => 'Admin'];
     }
 }

@@ -83,7 +83,7 @@ class RegisterController extends Controller
             'password' => Hash::make($extraData['password']),
             'auth_token' => md5((string) random_int(PHP_INT_MIN, PHP_INT_MAX)),
             'password_reset_token' => '',
-            'type' => User::DEFAULT_TYPE,
+            'type' => User::TYPE_DEFAULT,
         ];
         $canRetainData = array_key_exists('can_retain_data', $extraData) && 1 == (int) $extraData['can_retain_data'];
         $canEmail = array_key_exists('can_email', $extraData) && 1 == (int) $extraData['can_email'];

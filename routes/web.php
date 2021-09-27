@@ -28,7 +28,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::resource('categories', CategoryController::class)->only(['index','show']);
+Route::resource('categories', CategoryController::class)->only(['index']);
 
 //Route::resource('categories', 'CategoryController');
 Route::get('/sections/forwebsite', [SectionController::class, 'forwebsite'])->name('section.forwebsite');

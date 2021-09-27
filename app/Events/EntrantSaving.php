@@ -11,13 +11,15 @@ use Illuminate\Queue\SerializesModels;
 class EntrantSaving
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+
     public Entrant $entrant;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct( Entrant $entrant)
+    public function __construct(Entrant $entrant)
     {
         $this->entrant = $entrant;
     }

@@ -10,6 +10,7 @@ use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 
 class DuplicateShowAction extends Action
@@ -19,7 +20,7 @@ class DuplicateShowAction extends Action
     public $showOnTableRow = true;
     public $showOnIndex = false;
     public $confirmButtonText = 'Duplicate!';
-public $name ='Duplicate Show';
+    public $name ='Duplicate Show';
     /**
      * The text to be used for the action's cancel button.
      *

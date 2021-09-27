@@ -4,11 +4,15 @@ namespace App\Models;
 
 use App\Events\EntrantSaving;
 use Carbon\Carbon;
+use Database\Factories\EntrantFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 
@@ -29,7 +33,7 @@ use Illuminate\Support\Str;
  * @property int|null $user_id
  * @property bool $is_anonymised
  * @property \Illuminate\Support\Carbon|null $retain_data_opt_out
- * @property-read Collection|\App\Models\Entry[] $entries
+ * @property-read Collection|Entry[] $entries
  * @property-read int|null $entries_count
  * @property-read string $age_description
  * @property-read string $full_name
@@ -37,30 +41,32 @@ use Illuminate\Support\Str;
  * @property-read int|null $individual_memberships_count
  * @property-read Collection|\App\Models\MembershipPurchase[] $membershipPurchases
  * @property-read int|null $membership_purchases_count
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
  * @property-read Collection|\App\Models\Payment[] $payments
  * @property-read int|null $payments_count
  * @property-read Collection|\App\Models\Team[] $teams
  * @property-read int|null $teams_count
  * @property-read \App\Models\User|null $user
- * @method static \Database\Factories\EntrantFactory factory(...$parameters)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant query()
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereAge($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereCanRetainData($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereFamilyname($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereFirstname($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereIsAnonymised($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereMembernumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereRetainDataOptIn($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereRetainDataOptOut($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entrant whereUserId($value)
+ * @method static EntrantFactory factory(...$parameters)
+ * @method static Builder|Entrant newModelQuery()
+ * @method static Builder|Entrant newQuery()
+ * @method static Builder|Entrant query()
+ * @method static Builder|Entrant whereAge($value)
+ * @method static Builder|Entrant whereCanRetainData($value)
+ * @method static Builder|Entrant whereCreatedAt($value)
+ * @method static Builder|Entrant whereFamilyname($value)
+ * @method static Builder|Entrant whereFirstname($value)
+ * @method static Builder|Entrant whereId($value)
+ * @method static Builder|Entrant whereIsAnonymised($value)
+ * @method static Builder|Entrant whereMembernumber($value)
+ * @method static Builder|Entrant whereRetainDataOptIn($value)
+ * @method static Builder|Entrant whereRetainDataOptOut($value)
+ * @method static Builder|Entrant whereUpdatedAt($value)
+ * @method static Builder|Entrant whereUserId($value)
  * @mixin \Eloquent
+ * @property int|null $approx_birth_year
+ * @method static Builder|Entrant whereApproxBirthYear($value)
  */
 class Entrant extends Model
 {
@@ -91,6 +97,11 @@ class Entrant extends Model
         return $this->getName();
     }
 
+    public function getPrintableNameAttribute(): string
+    {
+        return trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname);
+    }
+
     public function getAgeDescriptionAttribute(): string
     {
         if (!$this->age) {
@@ -105,7 +116,7 @@ class Entrant extends Model
     public function getName(bool $printable = null): string
     {
         if ($printable) {
-            return $this->getPrintableName();
+            return $this->printable_name;
         } else {
             return Str::title(trim($this->firstname . ' ' . $this->familyname));
         }
@@ -117,11 +128,6 @@ class Entrant extends Model
     public function getEntrantNumber(): string
     {
         return 'E-' . str_pad((string) $this->id, 4, '0', STR_PAD_LEFT);
-    }
-
-    public function getPrintableName(): string
-    {
-        return trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname);
     }
 
     public function user(): BelongsTo

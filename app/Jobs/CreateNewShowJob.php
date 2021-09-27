@@ -21,7 +21,7 @@ class CreateNewShowJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct( Show $oldShow,  Show $newShow)
+    public function __construct(Show $oldShow, Show $newShow)
     {
         $this->oldShow = $oldShow;
         $this->newShow = $newShow;
@@ -44,7 +44,7 @@ class CreateNewShowJob implements ShouldQueue
         }
 
         if ($this->oldShow->categories()->count() == 0) {
-            throw new InvalidArgumentException('Looks like source Show doesn\'t exist');
+            throw new InvalidArgumentException('Looks like source Show doesn\'t have any categories');
         }
 
         // Gather all categories from the old year

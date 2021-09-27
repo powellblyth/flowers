@@ -41,7 +41,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('secret'),
         ]);
         // Makes an entrant for the user
-        $user->makeDefaultEntrant();
+//        $user->makeDefaultEntrant();
 
         $user = User::factory()->create([
             'firstname' => 'Toby',
@@ -51,7 +51,7 @@ class UsersTableSeeder extends Seeder
             'type' => 'admin',
             'password' => Hash::make('moomoomoo'),
         ]);
-        $user->makeDefaultEntrant();
+//        $user->makeDefaultEntrant();
 
         $user = User::factory()->create([
             'firstname' => 'ES Toby',
@@ -61,7 +61,7 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('MooMooMoo1'),
         ]);
-        $user->makeDefaultEntrant();
+//        $user->makeDefaultEntrant();
 
         for ($userNumber = 0; $userNumber < 100; $userNumber++) {
             /**
@@ -69,7 +69,7 @@ class UsersTableSeeder extends Seeder
              */
             $user = User::factory()->create();
 
-            $user->makeDefaultEntrant();
+//            $user->makeDefaultEntrant();
 
             $numChildren = $faker->biasedNumberBetween(0, 5, 'Faker\Provider\Biased::linearLow');
 

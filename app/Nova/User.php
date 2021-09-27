@@ -57,9 +57,7 @@ class User extends Resource
     {
         return [
             ID::make()->sortable(),
-
             Gravatar::make()->maxWidth(50),
-
             Text::make('First Name', 'firstname')
                 ->sortable()
                 ->rules('required', 'max:255'),
@@ -68,13 +66,14 @@ class User extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Status')
+            Select::make('Status')
                 ->sortable()
-                ->rules('required', 'max:255'),
+                ->rules('required', 'max:255')
+                ->options(\App\Models\User::getAllStatuses()),
 
             Select::make('Type')
                 ->sortable()
-                ->options(['default' => 'Default', 'admin' => 'Admin']),
+                ->options(\App\Models\User::getAllTypes()),
 
             Text::make('Email')
                 ->sortable()
@@ -86,58 +85,23 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
-
-            Text::make('Address')
-                ->hideFromIndex(),
-
-            Text::make('Address2')
-                ->hideFromIndex(),
-
-            Text::make('Town', 'addresstown')
-                ->hideFromIndex(),
-
-            Text::make('Postcode')
-                ->hideFromIndex(),
-
-            Text::make('Telephone')
-                ->hideFromIndex(),
-
-            Boolean::make('Can Retain Data')
-                ->hideFromIndex(),
-
-            DateTime::make('Retain Data Opt in')
-                ->onlyOnDetail()->readonly(),
-
-            DateTime::make('Retain Data Opt out')
-                ->onlyOnDetail()->readonly(),
-
-            Boolean::make('Can Email')
-                ->hideFromIndex(),
-
-            DateTime::make('Email Opt in')
-                ->onlyOnDetail()->readonly(),
-
-            DateTime::make('Email Opt Out')
-                ->onlyOnDetail()->readonly(),
-
-            Boolean::make('Can Phone')
-                ->hideFromIndex(),
-
-            DateTime::make('Phone Opt in')
-                ->onlyOnDetail()->readonly(),
-
-            DateTime::make('Phone Opt out')
-                ->onlyOnDetail()->readonly(),
-
-            Boolean::make('Can SMS', 'can_sms')
-                ->hideFromIndex(),
-
-            DateTime::make('SMS Opt out', 'sms_opt_in')
-                ->onlyOnDetail()->readonly(),
-            DateTime::make('SMS Opt out', 'sms_opt_out')
-                ->onlyOnDetail()->readonly(),
-
-
+            Text::make('Address')->hideFromIndex(),
+            Text::make('Address2')->hideFromIndex(),
+            Text::make('Town', 'addresstown')->hideFromIndex(),
+            Text::make('Postcode')->hideFromIndex(),
+            Text::make('Telephone')->hideFromIndex(),
+            Boolean::make('Can Retain Data')->hideFromIndex(),
+            DateTime::make('Retain Data Opt in')->onlyOnDetail()->readonly(),
+            DateTime::make('Retain Data Opt out')->onlyOnDetail()->readonly(),
+            Boolean::make('Can Email')->hideFromIndex(),
+            DateTime::make('Email Opt in')->onlyOnDetail()->readonly(),
+            DateTime::make('Email Opt Out')->onlyOnDetail()->readonly(),
+            Boolean::make('Can Phone')->hideFromIndex(),
+            DateTime::make('Phone Opt in')->onlyOnDetail()->readonly(),
+            DateTime::make('Phone Opt out')->onlyOnDetail()->readonly(),
+            Boolean::make('Can SMS', 'can_sms')->hideFromIndex(),
+            DateTime::make('SMS Opt out', 'sms_opt_in')->onlyOnDetail()->readonly(),
+            DateTime::make('SMS Opt out', 'sms_opt_out')->onlyOnDetail()->readonly(),
             HasMany::make('Entrants'),
         ];
     }
