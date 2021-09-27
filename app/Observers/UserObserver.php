@@ -20,14 +20,14 @@ class UserObserver
         if ($user->isDirty('email')) {
             $listID = env('MC_LIST');
             $mailchimp = new Mailchimp(env('MC_KEY'));
-            Log::debug('unsubscribing ' . $user->getOriginal($email));
-            $mailchimp->unsubscribe($listID, $user->getOriginal($email));
+            Log::debug('unsubscribing ' . $user->getOriginal('email'));
+            $mailchimp->unsubscribe($listID, $user->getOriginal('email'));
         }
         if ($user->isDirty('status') && $user->status !== User::STATUS_INACTIVE) {
             $listID = env('MC_LIST');
             $mailchimp = new Mailchimp(env('MC_KEY'));
-            Log::debug('unsubscribing ' . $user->getOriginal($email));
-            $mailchimp->unsubscribe($listID, $user->getOriginal($email));
+            Log::debug('unsubscribing ' . $user->getOriginal('email'));
+            $mailchimp->unsubscribe($listID, $user->getOriginal('email'));
         }
 
     }
