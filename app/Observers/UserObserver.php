@@ -38,7 +38,7 @@ class UserObserver
         Log::debug('user  ' . $user->id . ' saving');
 
 
-        if ($user->isDirty('can_email') || $user->isDirty('can_retain_data') || $emailChanged) {
+        if ($user->isDirty('can_email') || $user->isDirty('can_retain_data') || $user->isDirty('emaail')) {
             $listID = env('MC_LIST');
             $mailchimp = new Mailchimp(env('MC_KEY'));
 
