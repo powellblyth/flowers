@@ -20,7 +20,7 @@ class UserObserver
     public function updated(User $user)
     {
         $listID = config('flowers.mailchimp.mailing_list_id');
-        if ($user->isDirty('email')) {
+        if ($user->isDirty('email') && !empty($user->getOriginal('email'))) {
             $mailchimp = new Mailchimp(config('flowers.mailchimp.mailing_list_key'));
             Log::debug('unsubscribing ' . $user->getOriginal('email'));
             $mailchimp->unsubscribe($listID, $user->getOriginal('email'));

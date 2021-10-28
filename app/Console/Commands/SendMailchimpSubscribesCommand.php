@@ -46,8 +46,6 @@ class SendMailchimpSubscribesCommand extends Command
 
 
             try {
-
-
                 if ($user->can_retain_data && $user->can_email) {
                     $member = (new Member($email))->language('en');
                     $member = $member->confirm(false)->status('subscribed');
