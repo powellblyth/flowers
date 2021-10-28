@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\User;
 use Illuminate\Console\Command;
+use NZTim\Mailchimp\Exception\MailchimpBadRequestException;
 use NZTim\Mailchimp\Mailchimp;
 use NZTim\Mailchimp\Member;
 
@@ -43,18 +44,27 @@ class SendMailchimpSubscribesCommand extends Command
             $email = $user->safe_email;
             echo $user->firstname . ' ' . $user->lastname . ' ' . $email . "\n";
 
-            if ($user->can_retain_data && $user->can_email) {
-                $member = (new Member($email))->language('en');
-                $member = $member->confirm(false)->status('subscribed');
-                $mailchimp->addUpdateMember($listID, $member);
-                echo "subscribing\n";
-            } elseif ($mailchimp->check($listID, $email)) {
-                // If the user is unsubscrbed, we cannot add them as unsubscribed
-                // so we only change them if they already exist
-                $mailchimp->unsubscribe($listID, $email);
-                echo "doing unsubscribing\n";
+
+            try {
+
+
+                if ($user->can_retain_data && $user->can_email) {
+                    $member = (new Member($email))->language('en');
+                    $member = $member->confirm(false)->status('subscribed');
+                    $mailchimp->addUpdateMember($listID, $member);
+                    echo "subscribing\n";
+                } elseif ($mailchimp->check($listID, $email)) {
+                    // If the user is unsubscrbed, we cannot add them as unsubscribed
+                    // so we only change them if they already exist
+                    $mailchimp->unsubscribe($listID, $email);
+                    echo "doing unsubscribing\n";
+                }
+            } catch
+            (MailchimpBadRequestException $e) {
+                echo $e->getMessage();
             }
-        });
+        }
+        );
     }
 
 }
