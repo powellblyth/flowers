@@ -30,9 +30,9 @@ class SendMailchimpSubscribesCommand extends Command
      */
     public function handle()
     {
-        $listID = env('MC_LIST');
+        $listID = config('flowers.mailchimp.mailing_list_id');
         $counter = 0;
-        $mailchimp = new Mailchimp(env('MC_KEY'));
+        $mailchimp = new Mailchimp(config('flowers.mailchimp.mailing_list_key'));
 
         $userList = User::where('email', '<>', '')
             ->whereNotNull('email')

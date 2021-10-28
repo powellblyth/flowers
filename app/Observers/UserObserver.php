@@ -15,32 +15,30 @@ class UserObserver
         $user->makeDefaultEntrant();
     }
 
+    // if the user email changed, remove the old address
+    // if the user is removed remove them
     public function updated(User $user)
     {
+        $listID = config('flowers.mailchimp.mailing_list_id');
         if ($user->isDirty('email')) {
-            $listID = env('MC_LIST');
-            $mailchimp = new Mailchimp(env('MC_KEY'));
+            $mailchimp = new Mailchimp(config('flowers.mailchimp.mailing_list_key'));
             Log::debug('unsubscribing ' . $user->getOriginal('email'));
             $mailchimp->unsubscribe($listID, $user->getOriginal('email'));
         }
         if ($user->isDirty('status') && $user->status !== User::STATUS_INACTIVE) {
-            $listID = env('MC_LIST');
-            $mailchimp = new Mailchimp(env('MC_KEY'));
+            $mailchimp = new Mailchimp(config('flowers.mailchimp.mailing_list_key'));
             Log::debug('unsubscribing ' . $user->getOriginal('email'));
             $mailchimp->unsubscribe($listID, $user->getOriginal('email'));
         }
-
     }
 
     public function saved(User $user)
     {
-//        die('hi');
         Log::debug('user  ' . $user->id . ' saving');
 
-
-        if ($user->isDirty('can_email') || $user->isDirty('can_retain_data') || $user->isDirty('emaail')) {
-            $listID = env('MC_LIST');
-            $mailchimp = new Mailchimp(env('MC_KEY'));
+        if ($user->isDirty('can_email') || $user->isDirty('can_retain_data') || $user->isDirty('email')) {
+            $listID = config('flowers.mailchimp.mailing_list_id');
+            $mailchimp = new Mailchimp(config('flowers.mailchimp.mailing_list_key'));
 
             $email = $user->safe_email;
             $emailChanged = false;

@@ -3,14 +3,17 @@
 namespace App\Models;
 
 use App\Events\UserSaving;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\App;
 
 //use Laravel\Cashier\Billable;
 
@@ -21,8 +24,8 @@ use Illuminate\Notifications\Notifiable;
  * @property string|null $email
  * @property string|null $password
  * @property string|null $remember_token
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property string $firstname
  * @property string $lastname
  * @property string $status
@@ -32,37 +35,37 @@ use Illuminate\Notifications\Notifiable;
  * @property string|null $addresstown
  * @property string|null $postcode
  * @property bool|null $can_retain_data
- * @property \Illuminate\Support\Carbon|null $retain_data_opt_in
+ * @property Carbon|null $retain_data_opt_in
  * @property bool|null $can_email
- * @property \Illuminate\Support\Carbon|null $email_opt_in
+ * @property Carbon|null $email_opt_in
  * @property int|null $can_phone
- * @property \Illuminate\Support\Carbon|null $phone_opt_in
+ * @property Carbon|null $phone_opt_in
  * @property bool|null $can_sms
- * @property \Illuminate\Support\Carbon|null $sms_opt_in
+ * @property Carbon|null $sms_opt_in
  * @property string|null $email_verified_at
  * @property bool $is_anonymised
  * @property bool|null $can_post
- * @property \Illuminate\Support\Carbon|null $post_opt_in
- * @property \Illuminate\Support\Carbon|null $post_opt_out
- * @property \Illuminate\Support\Carbon|null $sms_opt_out
- * @property \Illuminate\Support\Carbon|null $retain_data_opt_out
- * @property \Illuminate\Support\Carbon|null $phone_opt_out
- * @property \Illuminate\Support\Carbon|null $email_opt_out
+ * @property Carbon|null $post_opt_in
+ * @property Carbon|null $post_opt_out
+ * @property Carbon|null $sms_opt_out
+ * @property Carbon|null $retain_data_opt_out
+ * @property Carbon|null $phone_opt_out
+ * @property Carbon|null $email_opt_out
  * @property string|null $telephone
  * @property string|null $stripe_id
  * @property string|null $card_brand
  * @property string|null $card_last_four
  * @property string|null $trial_ends_at
- * @property-read Collection|\App\Models\Entrant[] $entrants
+ * @property-read Collection|Entrant[] $entrants
  * @property-read int|null $entrants_count
- * @property-read Collection|\App\Models\MembershipPurchase[] $familyMemberships
+ * @property-read Collection|MembershipPurchase[] $familyMemberships
  * @property-read int|null $family_memberships_count
  * @property-read string $full_name
- * @property-read Collection|\App\Models\MembershipPurchase[] $membershipPurchases
+ * @property-read Collection|MembershipPurchase[] $membershipPurchases
  * @property-read int|null $membership_purchases_count
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
- * @property-read Collection|\App\Models\Payment[] $payments
+ * @property-read Collection|Payment[] $payments
  * @property-read int|null $payments_count
  * @method static \Database\Factories\UserFactory factory(...$parameters)
  * @method static Builder|User newModelQuery()
@@ -183,7 +186,7 @@ class User extends Authenticatable
     public function getSafeEmailAttribute(): string
     {
         $email = $this->email;
-        if ('production' !== env('APP_ENV')) {
+        if ('production' !== App::environment()) {
             $email = str_replace(substr($email, strpos($email, '@')), '@powellblyth.com', $email);
         }
         return $email;
