@@ -1,5 +1,5 @@
 {
-  "version" : "1.1",
+  "version" : "1.2",
   "profiles" : [ {
     "id" : "cb14ac39-f2ce-40b9-aff2-957baf1c882f",
     "name" : "Laravel (PHP, BLADE)",
@@ -20,7 +20,8 @@
       "type" : "php",
       "scopeName" : "i18n Ally: Laravel/PHP source",
       "scopePattern" : "file[flowers]:app//*&&!file[flowers]:app/Broadcasting//*&&!file[flowers]:app/Console//*&&!file[flowers]:app/Events//*&&!file[flowers]:app/Exceptions//*&&!file[flowers]:app/Models//*&&!file[flowers]:app/Providers//*",
-      "replacementTemplate" : "trans('%namespace%.%key%', %map%)",
+      "defaultReplacementTemplate" : "trans('%namespace%.%key%', %map%)",
+      "recognizedReplacementTemplates" : [ ],
       "skipDefaultNamespace" : false,
       "sprintfMode" : false
     }, {
@@ -28,7 +29,10 @@
       "type" : "blade",
       "scopeName" : "i18n Ally: Laravel/Blade templates",
       "scopePattern" : "file[flowers]:resources/views//*",
-      "replacementTemplate" : "trans('%namespace%.%key%', %map%)",
+      "defaultReplacementTemplate" : "trans('%namespace%.%key%', %map%)",
+      "attributeReplacementTemplate" : "trans('%namespace%.%key%', %map%)",
+      "inlineTagsReplacementTemplate" : "trans('%namespace%.%key%', %map%)",
+      "recognizedReplacementTemplates" : [ ],
       "inlineTagNames" : [ "a", "abbr", "acronym", "b", "bdi", "bdo", "big", "br", "cite", "code", "data", "del", "dfn", "em", "i", "img", "input", "ins", "kbd", "label", "mark", "meter", "output", "progress", "q", "ruby", "s", "samp", "slot", "small", "span", "strong", "sub", "sup", "time", "u", "tt", "var", "wbr" ],
       "translatableAttributeNames" : [ "title", "alt", "placeholder", "label", "aria-label" ],
       "skipDefaultNamespace" : false
