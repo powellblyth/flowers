@@ -128,10 +128,9 @@ class CategoryController extends Controller
 
     /**
      * This prints all the category cards for the show entries to put on the tables
-     * @return \Illuminate\Contracts\View\Factory|View
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function printcards(Request $request)
+    public function printcards(Request $request): \Illuminate\Contracts\View\Factory|\Illuminate\View\View
     {
         $show = $this->getShowFromRequest($request);
         $this->authorize('printCards', Entry::class);
@@ -154,9 +153,8 @@ class CategoryController extends Controller
     /**
      *
      * This prints the lookup sheet to look up where entry categories are
-     * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function printlookups(Request $request)
+    public function printlookups(Request $request): \Illuminate\Contracts\View\Factory|\Illuminate\View\View
     {
         $show = $this->getShowFromRequest($request);
         $categories = Category::where('show_id', $show->id)

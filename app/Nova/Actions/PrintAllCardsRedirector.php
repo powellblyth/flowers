@@ -43,7 +43,7 @@ class PrintAllCardsRedirector extends Action
         $params = ['since' => $fields->since];
         // Can only do one at once.
         foreach ($shows as $model) {
-            switch (get_class($model)) {
+            switch ($model::class) {
                 case Show::class:
                     $params['users'] = $model;
                     break;

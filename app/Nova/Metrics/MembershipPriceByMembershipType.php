@@ -34,10 +34,8 @@ class MembershipPriceByMembershipType extends Partition
 
     /**
      * Determine for how many minutes the metric should be cached.
-     *
-     * @return  \DateTimeInterface|\DateInterval|float|int
      */
-    public function cacheFor()
+    public function cacheFor(): \DateInterval|\DateTimeInterface|float|int
     {
         // return now()->addMinutes(5);
     }

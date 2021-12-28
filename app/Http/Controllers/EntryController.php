@@ -26,10 +26,9 @@ class EntryController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      * referenced by nova
      */
-    public function printallcards(Request $request)
+    public function printallcards(Request $request): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $show = $this->getShowFromRequest($request);
 

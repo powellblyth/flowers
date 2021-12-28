@@ -53,7 +53,7 @@ class FilterByYear extends Filter
             } else {
                 $earliestMembershipYear = date('Y');
             }
-        } catch (ModelNotFoundException $e) {
+        } catch (ModelNotFoundException) {
             ;// don't care
         }
 //dd([$startYear, $endYear]);

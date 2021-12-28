@@ -44,8 +44,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Membership extends Model
 {
-    public const APPLIES_TO_ENTRANT = 'entrant';
-    public const APPLIES_TO_USER = 'user';
+    public final const APPLIES_TO_ENTRANT = 'entrant';
+    public final const APPLIES_TO_USER = 'user';
 
     protected $casts = [
         'purchasable_from' => 'datetime',

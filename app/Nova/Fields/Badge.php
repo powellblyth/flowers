@@ -30,7 +30,7 @@ class Badge extends \Laravel\Nova\Fields\Badge
     {
         try {
             $string = parent::resolveBadgeClasses();
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             $string = $this->types[$this->defaultClass];
         } finally {
             return $string;

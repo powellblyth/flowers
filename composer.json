@@ -17,11 +17,12 @@
         "laravel/cashier": "^12.6",
         "laravel/framework": "^8.0",
         "laravel/nova": "~3.0",
+        "laravel/telescope": "^4.5",
         "laravel/tinker": "^2.0",
         "laravelcollective/html": "^6.0",
         "livewire/livewire": "^2.3",
         "nztim/mailchimp": "^3.10",
-        "laravel/telescope": "^4.5"
+        "rector/rector": "^0.12.9"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

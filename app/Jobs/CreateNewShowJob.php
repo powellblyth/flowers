@@ -15,16 +15,11 @@ class CreateNewShowJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected Show $oldShow;
-    protected Show $newShow;
-
     /**
      * Create a new job instance.
      */
-    public function __construct(Show $oldShow, Show $newShow)
+    public function __construct(protected Show $oldShow, protected Show $newShow)
     {
-        $this->oldShow = $oldShow;
-        $this->newShow = $newShow;
     }
 
     /**

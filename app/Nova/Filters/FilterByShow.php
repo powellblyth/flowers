@@ -19,7 +19,6 @@ class FilterByShow extends Filter
     /**
      * Apply the filter to the given query.
      *
-     * @param Request $request
      * @param Builder $query
      * @param mixed $value
      * @return Builder

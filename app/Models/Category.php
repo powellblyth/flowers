@@ -62,10 +62,10 @@ use Illuminate\Support\Carbon;
 class Category extends Model implements \Stringable
 {
 
-    public const TYPE_JUNIOR = 'Junior';
-    public const TYPE_ADULT = 'Adult';
-    public const PRICE_LATE_PRICE = 'lateprice';
-    public const PRICE_EARLY_PRICE = 'earlyprice';
+    public final const TYPE_JUNIOR = 'Junior';
+    public final const TYPE_ADULT = 'Adult';
+    public final const PRICE_LATE_PRICE = 'lateprice';
+    public final const PRICE_EARLY_PRICE = 'earlyprice';
 
     public function show(): BelongsTo
     {

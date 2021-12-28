@@ -19,7 +19,6 @@ class EntrantSubscriptionListener
     /**
      * Handle the event.
      *
-     * @param EntrantSaving $event
      * @return void
      */
     public function handle(EntrantSaving $event)

@@ -43,7 +43,7 @@ class Team extends Model
 {
     use Notifiable;
 
-    const STATUS_ACTIVE = 'active';
+    final const STATUS_ACTIVE = 'active';
 
     protected $attributes = [
         'status' => 'active',

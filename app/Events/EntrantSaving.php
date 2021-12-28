@@ -12,24 +12,19 @@ class EntrantSaving
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public Entrant $entrant;
-
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Entrant $entrant)
+    public function __construct(public Entrant $entrant)
     {
-        $this->entrant = $entrant;
     }
 
     /**
      * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn()
+    public function broadcastOn(): array|\Illuminate\Broadcasting\Channel
     {
         return new PrivateChannel('channel-name');
     }

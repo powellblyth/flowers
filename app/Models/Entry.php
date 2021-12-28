@@ -65,13 +65,12 @@ class Entry extends Model
     public function getPlacementName(): string
     {
         $result = 0;
-        switch ($this->winningplace)
-        {
-            case '1':return 'First Place'; break;
-            case '2':return 'Second Place';break;
-            case '3':return 'Third Place';break;
-            default :return ucwords($this->winningplace);break;
-        };
+        return match ($this->winningplace) {
+            '1' => 'First Place',
+            '2' => 'Second Place',
+            '3' => 'Third Place',
+            default => ucwords($this->winningplace),
+        };;
         return $result;
     }
 

@@ -117,12 +117,12 @@ class User extends Authenticatable
 
 //    use Billable;
 
-    const TYPE_ADMIN = 'admin';
-    const TYPE_DEFAULT = 'default';
+    final const TYPE_ADMIN = 'admin';
+    final const TYPE_DEFAULT = 'default';
 
-    const STATUS_ACTIVE = 'active';
-    const STATUS_INACTIVE = 'inactive';
-    const STATUS_DELETED = 'deleted';
+    final const STATUS_ACTIVE = 'active';
+    final const STATUS_INACTIVE = 'inactive';
+    final const STATUS_DELETED = 'deleted';
 
     protected $attributes = [
         'type' => User::TYPE_DEFAULT,

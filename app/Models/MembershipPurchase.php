@@ -43,8 +43,8 @@ use Illuminate\Support\Carbon;
  */
 class MembershipPurchase extends Model
 {
-    const TYPE_FAMILY = 'family';
-    const TYPE_INDIVIDUAL = 'individual';
+    final const TYPE_FAMILY = 'family';
+    final const TYPE_INDIVIDUAL = 'individual';
     protected $fillable = [
         'entrant_id', 'type', 'year', 'user_id', 'number',
     ];
@@ -57,17 +57,11 @@ class MembershipPurchase extends Model
     {
         $membershipNumber = null;
         if (!empty($this->number)) {
-            $membershipNumber = $this->number;
         } else {
-            switch ($this->type) {
-                case self::TYPE_FAMILY:
-                    $membershipNumber = 'FM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT);
-                    break;
-                case self::TYPE_INDIVIDUAL:
-                default:
-                    $membershipNumber = 'SM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT);
-                    break;
-            }
+            $membershipNumber = match ($this->type) {
+                self::TYPE_FAMILY => 'FM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT),
+                default => 'SM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT),
+            };
         }
         return $membershipNumber;
     }

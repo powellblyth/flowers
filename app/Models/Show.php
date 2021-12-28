@@ -59,8 +59,8 @@ class Show extends Model
         'status' => self::STATUS_PLANNED,
     ];
 
-    const STATUS_CURRENT = 'current';
-    const STATUS_PLANNED = 'planned';
+    final const STATUS_CURRENT = 'current';
+    final const STATUS_PLANNED = 'planned';
 
     public function isCurrent(): bool
     {
