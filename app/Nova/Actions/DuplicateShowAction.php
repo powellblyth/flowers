@@ -10,7 +10,6 @@ use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 
 class DuplicateShowAction extends Action

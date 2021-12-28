@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Events\EntrantSaving;
-use Carbon\Carbon;
 use Database\Factories\EntrantFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
