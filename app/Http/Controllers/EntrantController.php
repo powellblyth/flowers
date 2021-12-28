@@ -38,7 +38,6 @@ class EntrantController extends Controller
     {
         $user = Auth::user();
         $this->authorize('addEntrant', $user);
-        $indicatedAdmin = null;
 
         $allUsers = collect($user);
 
@@ -140,9 +139,6 @@ class EntrantController extends Controller
     {
         if ($request->isMethod('POST')) {
             return redirect()->route('entrants.index');
-        } else {
-            $entrant = Entrant::where('id', $id)->firstOrFail();
-            die();
         }
     }
 

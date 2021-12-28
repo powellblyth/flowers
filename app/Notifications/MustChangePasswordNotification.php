@@ -19,10 +19,8 @@ class MustChangePasswordNotification extends Notification
      *
      * @return void
      */
-    public function __construct(
-        string $token,
-        string $firstname
-    ) {
+    public function __construct()
+    {
     }
 
 

@@ -18,7 +18,7 @@ class ShowsController extends Controller
      */
     public function index(Request $request)
     {
-        $show = $this->getShowFromRequest($request);
+        $this->getShowFromRequest($request);
 
         $this->authorize('viewAny', Show::class);
         $shows = Show::all();

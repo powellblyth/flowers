@@ -10,10 +10,11 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 return static function (ContainerConfigurator $containerConfigurator): void {
     // get parameters
     $parameters = $containerConfigurator->parameters();
-    $containerConfigurator->import(\Rector\Laravel\Set\LaravelSetList::LARAVEL_80);
+//    $containerConfigurator->import(\Rector\Laravel\Set\LaravelSetList::LARAVEL_80);
     // Define what rule sets will be applied
-    $containerConfigurator->import(SetList::PHP_80);
-    $containerConfigurator->import(SetList::PHP_81);
+//    $containerConfigurator->import(SetList::PHP_80);
+//    $containerConfigurator->import(SetList::PHP_81);
+    $containerConfigurator->import(SetList::DEAD_CODE);
     // get services (needed for register a single rule)
     // $services = $containerConfigurator->services();
 

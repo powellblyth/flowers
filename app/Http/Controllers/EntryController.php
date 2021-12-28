@@ -110,7 +110,7 @@ class EntryController extends Controller
             $this->authorize('createEntries', $entrant);
             $entrant->entries()->where('show_id', $show->id)->whereNotIn('category_id', array_keys($entries))->delete();
             foreach ($entries as $categoryId => $discarded) {
-                $entry = Entry::firstOrCreate(
+                Entry::firstOrCreate(
                     [
                         'category_id' => $categoryId,
                         'entrant_id' => $entrant->id,
@@ -120,16 +120,5 @@ class EntryController extends Controller
             }
         }
         return redirect(route('entries.entryCard', ['show_id' => $show->id]));
-
-        $this->authorize('view', $user);
-
-        //@todo centralise this
-        $tooLateForEntries = Carbon::now() > $show->entries_closed_deadline;
-        return view('entries.entryCard', [
-            'user' => $user,
-            'show' => $show,
-            'showId' => $show->id,
-            'too_late_for_entries' => $tooLateForEntries,
-        ]);
     }
 }

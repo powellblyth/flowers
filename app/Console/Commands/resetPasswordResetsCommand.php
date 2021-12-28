@@ -21,15 +21,6 @@ class resetPasswordResetsCommand extends Command {
     protected $description = 'Nasty shuffle for users';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed

@@ -61,16 +61,6 @@ class CurrentShow extends Lens
     }
 
     /**
-     * Get the actions available on the lens.
-     *
-     * @return array
-     */
-    public function actions(Request $request)
-    {
-        return parent::actions($request);
-    }
-
-    /**
      * Get the URI key for the lens.
      *
      * @return string

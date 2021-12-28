@@ -95,9 +95,6 @@ class SectionController extends Controller
 
     public function forwebsite(): View
     {
-        $winners = array();
-        $results = [];
-        $lastSection = 'notasection';
         $categoryList = [];
         $sections = Section::orderBy('number', 'asc')
             ->get();

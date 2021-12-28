@@ -70,8 +70,7 @@ class Entry extends Model
             '2' => 'Second Place',
             '3' => 'Third Place',
             default => ucwords($this->winningplace),
-        };;
-        return $result;
+        };
     }
 
     /**

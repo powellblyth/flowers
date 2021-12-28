@@ -23,16 +23,6 @@ class AnonymiseEntrantsCommand extends Command
     protected $description = 'Anonymises all users and entrants if they are not opted in to retain';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed

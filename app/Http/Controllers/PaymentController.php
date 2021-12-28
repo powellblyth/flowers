@@ -9,7 +9,7 @@ class PaymentController extends Controller
 {
     public function store(Request $request)
     {
-        $show = $this->getShowFromRequest($request);
+        $this->getShowFromRequest($request);
         // Validate the request...
 
         $payment = new Payment();

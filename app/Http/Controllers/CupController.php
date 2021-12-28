@@ -122,10 +122,7 @@ class CupController extends Controller
                 ->pluck('full_name', 'id')
                 ->toArray();
 
-        } else {
-            $validEntries = null;
         }
-
 
         return view('cups.show', [
             'cup' => $cup,

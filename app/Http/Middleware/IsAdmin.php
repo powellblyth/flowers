@@ -20,6 +20,5 @@ class IsAdmin
         }
 //        return view('disallowed');
         return false;
-        return redirect('/family');
     }
 }

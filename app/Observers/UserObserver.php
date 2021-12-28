@@ -41,7 +41,6 @@ class UserObserver
             $mailchimp = new Mailchimp(config('flowers.mailchimp.mailing_list_key'));
 
             $email = $user->safe_email;
-            $emailChanged = false;
             Log::debug($user->full_name . ' ' . $email . ' (' . $user->email . ') has changed');
             if ($user->can_retain_data && $user->can_email) {
                 $member = (new Member($email))->language('en');

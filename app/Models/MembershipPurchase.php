@@ -56,8 +56,7 @@ class MembershipPurchase extends Model
     public function getNumber(): ?string
     {
         $membershipNumber = null;
-        if (!empty($this->number)) {
-        } else {
+        if (empty($this->number)) {
             $membershipNumber = match ($this->type) {
                 self::TYPE_FAMILY => 'FM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT),
                 default => 'SM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT),

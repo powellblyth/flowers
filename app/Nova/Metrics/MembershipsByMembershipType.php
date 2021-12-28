@@ -16,9 +16,6 @@ class MembershipsByMembershipType extends Partition
      */
     public function calculate(NovaRequest $request)
     {
-        /**
-         * @var Membership $membership
-         */
         $sales = MembershipPurchase::with(['entrant', 'user', 'membership']);
         return
             $this->count(
