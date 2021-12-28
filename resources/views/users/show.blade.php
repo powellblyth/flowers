@@ -93,7 +93,7 @@
                         {{--                            {{\Illuminate\Support\Str::plural('entry', count($entry_data))}}--}}
                         {{--                            TOTAL:£{{number_format($totalFee/100, 2)}}</p>--}}
                         {{--                        @forelse ($entry_data as $entry)--}}
-                        {{--                            {{$entry->category->getNumberedLabel()}} ({{$entry->getActualPrice()}}p)--}}
+                        {{--                            {{$entry->category->numbered_name}} ({{$entry->getActualPrice()}}p)--}}
                         {{--                        @empty--}}
                         {{--                            No entries yet--}}
 
@@ -239,7 +239,7 @@
                     {{--                                        TOTAL:£{{number_format($totalFee/100, 2)}}</p>--}}
                     {{--                                    @forelse ($entry_data as $entry)--}}
                     {{--                                        <p>--}}
-                    {{--                                            {{$entry->category->getNumberedLabel()}} ({{$entry->getActualPrice()}}p)--}}
+                    {{--                                            {{$entry->category->numbered_name}} ({{$entry->getActualPrice()}}p)--}}
                     {{--                                        </p>--}}
                     {{--                                    @empty--}}
                     {{--                                        <p>{{$entrant->firstname}} has not entered any categories yet</p>--}}

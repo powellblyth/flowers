@@ -79,7 +79,7 @@
         <big><b>{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</b></big>
         @if (is_object($results[$cup->id]['winning_category']))
             for category
-            <i><b>{{$results[$cup->id]['winning_category']->getNumberedLabel()}}</b></i>
+            <i><b>{{$results[$cup->id]['winning_category']->numbered_name}}</b></i>
             @endif
             @endif
             </p>

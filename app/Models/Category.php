@@ -2,18 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Category
  *
  * @property int $id
  * @property string $name
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property string $number
  * @property int $price
  * @property int $late_price
@@ -27,33 +30,33 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $status
  * @property int|null $cloned_from
  * @property string|null $deleted_at
- * @property-read Collection|\App\Models\Cup[] $cups
+ * @property-read Collection|Cup[] $cups
  * @property-read int|null $cups_count
- * @property-read Collection|\App\Models\Entry[] $entries
+ * @property-read Collection|Entry[] $entries
  * @property-read int|null $entries_count
  * @property-read string $numbered_name
  * @property-read \App\Models\Section|null $section
  * @property-read \App\Models\Show|null $show
- * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Category query()
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereClonedFrom($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereFirstPrize($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereLatePrice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category wherePrice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereSecondPrize($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereSectionId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereShowId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereSortorder($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereStatus($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereThirdPrize($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereYear($value)
+ * @method static Builder|Category newModelQuery()
+ * @method static Builder|Category newQuery()
+ * @method static Builder|Category query()
+ * @method static Builder|Category whereClonedFrom($value)
+ * @method static Builder|Category whereCreatedAt($value)
+ * @method static Builder|Category whereDeletedAt($value)
+ * @method static Builder|Category whereFirstPrize($value)
+ * @method static Builder|Category whereId($value)
+ * @method static Builder|Category whereLatePrice($value)
+ * @method static Builder|Category whereName($value)
+ * @method static Builder|Category whereNumber($value)
+ * @method static Builder|Category wherePrice($value)
+ * @method static Builder|Category whereSecondPrize($value)
+ * @method static Builder|Category whereSectionId($value)
+ * @method static Builder|Category whereShowId($value)
+ * @method static Builder|Category whereSortorder($value)
+ * @method static Builder|Category whereStatus($value)
+ * @method static Builder|Category whereThirdPrize($value)
+ * @method static Builder|Category whereUpdatedAt($value)
+ * @method static Builder|Category whereYear($value)
  * @mixin \Eloquent
  */
 class Category extends Model implements \Stringable
@@ -84,14 +87,16 @@ class Category extends Model implements \Stringable
         return $this->belongsToMany(Cup::class);
     }
 
-    public function getNumberedNameAttribute(): string
+    public function numberedName(): Attribute
     {
-        return $this->getNumberedLabel();
+        return new Attribute(
+            get: fn($value) => $this->number . '. ' . $this->name
+        );
     }
 
     public function __toString(): string
     {
-        return $this->getNumberedLabel();
+        return (string) $this->numbered_name;
     }
 
     public function getWinningAmount(string $placement): int
@@ -105,11 +110,6 @@ class Category extends Model implements \Stringable
             $result = $this->third_prize;
         }
         return $result;
-    }
-
-    public function getNumberedLabel(): string
-    {
-        return $this->number . '. ' . $this->name;
     }
 
     public function getType(): string

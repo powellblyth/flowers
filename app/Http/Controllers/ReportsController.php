@@ -159,9 +159,10 @@ class ReportsController extends Controller
         $categories = $show->categories()->orderby('sortorder')->get();
 
         foreach ($categories as $category) {
+            /** @var Category $category */
             $cups = $category->cups()->count();
             if (0 == $cups) {
-                $unplacedCategories[$category->id] = $category->getNumberedLabel();
+                $unplacedCategories[$category->id] = $category->numbered_name;
             }
         }
 

@@ -84,7 +84,7 @@
                             @else
                                 @foreach ($entries as $entry)
 
-                                   {{$entry->category->getNumberedLabel()}} ({{$entry->paid}}p)
+                                   {{$entry->category->numbered_name}} ({{$entry->paid}}p)
                                     @if ($entry['is_late'])
                                         (late)
 

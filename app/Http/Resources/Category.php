@@ -21,9 +21,9 @@ class Category extends JsonResource
     {
 
         return [
-            'name' => $this->category_id,
+            'name' => $this->name,
             'number' => $this->paid,
-            'numbered_name' => $this->numbered_name(),
+            'numbered_name' => $this->numbered_name,
             'membernumber' => $this->membernumber,
             'price' => $this->price,
             'late_price' => $this->late_price,

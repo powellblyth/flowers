@@ -75,11 +75,10 @@ class Category extends Resource
     {
         return [
 
-            Text::make('Name', 'name')
+            Text::make('Name', 'numbered_name')
                 ->sortable()
-                ->rules('required', 'max:255')
-            ->hideFromIndex(),
-            Text::make('Name', 'name')
+            ->onlyOnDetail(),
+            Text::make('Name', 'numbered_name')
                 ->sortable()
                 ->displayUsing(function ($value) {
                     return substr($value, 0, 50) . '...';
@@ -88,7 +87,12 @@ class Category extends Resource
 
             Text::make('Number')
                 ->sortable()
-                ->rules('required', 'max:255')->required(),
+                ->rules('required', 'max:255')->required()
+                ->onlyOnForms(),
+
+            Text::make('Name', 'name')
+                ->rules('required', 'max:255')->required()
+            ->onlyOnForms(),
 
             Number::make('Sort Order', 'sortorder')
                 ->required()

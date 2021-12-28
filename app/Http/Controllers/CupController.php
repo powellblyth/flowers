@@ -24,9 +24,7 @@ class CupController extends Controller
         $cups = Cup::orderBy('sort_order', 'asc')->get();
         /** dragons here - copied tp printableresults */
         foreach ($cups as $cup) {
-            /**
-             * @var Cup $cup
-             */
+            /** @var Cup $cup */
             $resultset = $cup->getWinningResults($show);
             $thisCupPoints = array();
             foreach ($resultset as $result) {
@@ -54,9 +52,7 @@ class CupController extends Controller
                 ->first();
             if ($cupWinner instanceof CupDirectWinner) {
 //                dd($cupWinner->winningEntry);
-                /**
-                 * @var CupDirectWinner $cupWinner
-                 */
+                /** @var CupDirectWinner $cupWinner */
 //                if(!$cupWinner->winningEntry) {
 //                   dd($cupWinner->winning_entry_id);
 //                }

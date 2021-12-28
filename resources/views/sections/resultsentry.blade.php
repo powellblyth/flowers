@@ -11,7 +11,7 @@
 {{--    'route' => 'sections.storeresults', 'parameters'=>['show'=>'']--}}
 {{--]) }}--}}
 @foreach ($categories as $category)
-    {{$category->getNumberedLabel()}}<br />
+    {{$category->numbered_name}}<br />
     <b>Entrants:</b>
     @foreach ($entries[$category->id] as $entryId => $entrantAry)
         <div style="display:inline-block;background-color:#d9edf7; margin:2px; padding:2px;">
