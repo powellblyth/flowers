@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 
 //use Laravel\Cashier\Billable;
@@ -22,32 +23,32 @@ use Illuminate\Support\Str;
  * App\Models\Entrant
  *
  * @property int $id
- * @property string $firstname
- * @property string $familyname
+ * @property string $first_name
+ * @property string $family_name
  * @property string|null $membernumber
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property int|null $age
  * @property bool|null $can_retain_data
- * @property \Illuminate\Support\Carbon|null $retain_data_opt_in
+ * @property Carbon|null $retain_data_opt_in
  * @property int|null $user_id
  * @property bool $is_anonymised
- * @property \Illuminate\Support\Carbon|null $retain_data_opt_out
+ * @property Carbon|null $retain_data_opt_out
  * @property-read Collection|Entry[] $entries
  * @property-read int|null $entries_count
  * @property-read string $age_description
  * @property-read string $full_name
- * @property-read Collection|\App\Models\MembershipPurchase[] $individualMemberships
+ * @property-read Collection|MembershipPurchase[] $individualMemberships
  * @property-read int|null $individual_memberships_count
- * @property-read Collection|\App\Models\MembershipPurchase[] $membershipPurchases
+ * @property-read Collection|MembershipPurchase[] $membershipPurchases
  * @property-read int|null $membership_purchases_count
  * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
- * @property-read Collection|\App\Models\Payment[] $payments
+ * @property-read Collection|Payment[] $payments
  * @property-read int|null $payments_count
- * @property-read Collection|\App\Models\Team[] $teams
+ * @property-read Collection|Team[] $teams
  * @property-read int|null $teams_count
- * @property-read \App\Models\User|null $user
+ * @property-read User|null $user
  * @method static EntrantFactory factory(...$parameters)
  * @method static Builder|Entrant newModelQuery()
  * @method static Builder|Entrant newQuery()
@@ -55,8 +56,8 @@ use Illuminate\Support\Str;
  * @method static Builder|Entrant whereAge($value)
  * @method static Builder|Entrant whereCanRetainData($value)
  * @method static Builder|Entrant whereCreatedAt($value)
- * @method static Builder|Entrant whereFamilyname($value)
- * @method static Builder|Entrant whereFirstname($value)
+ * @method static Builder|Entrant whereFamilyName($value)
+ * @method static Builder|Entrant whereFirstName($value)
  * @method static Builder|Entrant whereId($value)
  * @method static Builder|Entrant whereIsAnonymised($value)
  * @method static Builder|Entrant whereMembernumber($value)
@@ -95,14 +96,14 @@ class Entrant extends Model
     public function printableName(): Attribute
     {
         return new Attribute(
-            get: fn($value) => trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname)
+            get: fn($value) => trim(substr($this->first_name, 0, 1) . ' ' . $this->family_name)
         );
     }
 
     public function fullName(): Attribute
     {
         return new Attribute(
-            get: fn($value) => Str::title(trim($this->firstname . ' ' . $this->familyname))
+            get: fn($value) => Str::title(trim($this->first_name . ' ' . $this->family_name))
         );
     }
 
@@ -237,8 +238,8 @@ class Entrant extends Model
     public function anonymise(): Entrant
     {
         $this->is_anonymised = true;
-        $this->firstname = 'Anonymised';
-        $this->familyname = 'Anonymised';
+        $this->first_name = 'Anonymised';
+        $this->family_name = 'Anonymised';
         $this->membernumber = null;
         $this->age = null;
 

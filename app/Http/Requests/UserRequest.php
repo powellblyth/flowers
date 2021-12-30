@@ -24,18 +24,18 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'firstname' => [
+            'first_name' => [
                 'required', 'min:2'
             ],
-            'lastname' => [
+            'last_name' => [
                 'required', 'min:2'
             ],
             'email' => [
-                'required_without_all:address,postcode', 'max:255',
+                'required_without_all:address_1,postcode', 'max:255',
 //                'required', 'email', Rule::unique((new UserResource)->getTable())->ignore($this->route()->user->id ?? null)
             ],
-            'address' => ['required_without:email', 'max:255'],
-            'addresstown' => ['required_without:email', 'max:255'],
+            'address_1' => ['required_without:email', 'max:255'],
+            'address_town' => ['required_without:email', 'max:255'],
             'postcode' => ['required_without:email', 'max:10'],
         ];
     }

@@ -33,8 +33,8 @@ class UsersTableSeeder extends Seeder
 
         $user = User::factory()->create([
             'id' => 1,
-            'firstname' => 'Admin',
-            'lastname' => 'Admin',
+            'first_name' => 'Admin',
+            'last_name' => 'Admin',
             'email' => 'admin@material.com',
             'email_verified_at' => now(),
             'type' => 'admin',
@@ -44,8 +44,8 @@ class UsersTableSeeder extends Seeder
 //        $user->makeDefaultEntrant();
 
         $user = User::factory()->create([
-            'firstname' => 'Toby',
-            'lastname' => 'Powell-Blyth',
+            'first_name' => 'Toby',
+            'last_name' => 'Powell-Blyth',
             'email' => 'toby@powellblyth.com',
             'email_verified_at' => now(),
             'type' => 'admin',
@@ -53,20 +53,8 @@ class UsersTableSeeder extends Seeder
         ]);
 //        $user->makeDefaultEntrant();
 
-        $user = User::factory()->create([
-            'firstname' => 'ES Toby',
-            'lastname' => 'Powell-Blyth',
-            'email' => 'toby.powell-blyth@elasticstage.com',
-            'type' => 'admin',
-            'email_verified_at' => now(),
-            'password' => Hash::make('MooMooMoo1'),
-        ]);
-//        $user->makeDefaultEntrant();
-
         for ($userNumber = 0; $userNumber < 100; $userNumber++) {
-            /**
-             * @var User $user
-             */
+            /** @var User $user */
             $user = User::factory()->create();
 
 //            $user->makeDefaultEntrant();
@@ -76,7 +64,7 @@ class UsersTableSeeder extends Seeder
             for ($entrantNumber = 0; $entrantNumber < $numChildren; $entrantNumber++) {
                 Entrant::factory()->create([
                     // In our world, every child has the same name as their parent. Makes testing easier
-                    'familyname' => $user->lastname,
+                    'family_name' => $user->last_name,
                     'user_id' => $user->id,
                 ]);
             }

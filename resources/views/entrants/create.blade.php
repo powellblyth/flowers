@@ -18,13 +18,13 @@
 
         <!-- Name -->
             <div class="py-4">
-                <x-label for="firstname" :value="__('First Name')" />
+                <x-label for="first_name" :value="__('First Name')" />
 
-                <input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus />
+                <input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus />
             </div>
             <div class="py-4">
-                <x-label for="familyname" :value="__('Last Name')" />
-                <input id="familyname" class="block mt-1 w-full" type="text" name="familyname" :value="old('familyname')" required autofocus />
+                <x-label for="family_name" :value="__('Last Name')" />
+                <input id="family_name" class="block mt-1 w-full" type="text" name="family_name" :value="old('family_name')" required autofocus />
             </div>
             <div class="py-4">
                 <x-label for="age" :value="__('Age in years (Children only)')" />
@@ -70,12 +70,12 @@
 {{--                        </div>--}}
 {{--                        <div class="row">--}}
 {{--                            <div class="col-lg-6 col-md-6 col-sm-12">--}}
-{{--                                {{ Form::label('firstname', 'First Name: * ', ['class' => 'control-label']) }}--}}
-{{--                                {{ Form::text('firstname', null, ['class' => 'form-control']) }}--}}
+{{--                                {{ Form::label('first_name', 'First Name: * ', ['class' => 'control-label']) }}--}}
+{{--                                {{ Form::text('first_name', null, ['class' => 'form-control']) }}--}}
 {{--                            </div>--}}
 {{--                            <div class="col-lg-6 col-md-6 col-sm-12">--}}
-{{--                                {{ Form::label('familyname', 'Family Name: *', ['class' => 'control-label']) }}--}}
-{{--                                {{ Form::text('familyname',$defaultFamilyName, ['class' => 'form-control']) }}--}}
+{{--                                {{ Form::label('family_name', 'Family Name: *', ['class' => 'control-label']) }}--}}
+{{--                                {{ Form::text('family_name',$defaultfamily_name, ['class' => 'form-control']) }}--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
 {{--                        <div class="row">--}}

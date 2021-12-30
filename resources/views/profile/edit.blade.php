@@ -32,15 +32,15 @@
                                 <div class="row">
                                     <label class="col-sm-2 col-form-label">{{ __('First Name') }}</label>
                                     <div class="col-sm-7">
-                                        <div class="form-group{{ $errors->has('firstname') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}"
-                                                   name="firstname" id="input-firstname" type="text"
+                                        <div class="form-group{{ $errors->has('first_name') ? ' has-danger' : '' }}">
+                                            <input class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}"
+                                                   name="first_name" id="input-first_name" type="text"
                                                    placeholder="{{ __('First Name') }}"
-                                                   value="{{ old('firstname', auth()->user()->firstname) }}"
+                                                   value="{{ old('first_name', auth()->user()->first_name) }}"
                                                    required="true" aria-required="true"/>
-                                            @if ($errors->has('firstname'))
-                                                <span id="firstname-error" class="error text-danger"
-                                                      for="input-firstname">{{ $errors->first('firstname') }}</span>
+                                            @if ($errors->has('first_name'))
+                                                <span id="first_name-error" class="error text-danger"
+                                                      for="input-first_name">{{ $errors->first('first_name') }}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -48,15 +48,15 @@
                                 <div class="row">
                                     <label class="col-sm-2 col-form-label">{{ __('Last Name') }}</label>
                                     <div class="col-sm-7">
-                                        <div class="form-group{{ $errors->has('lastname') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}"
-                                                   name="lastname" id="input-lastname" type="text"
+                                        <div class="form-group{{ $errors->has('last_name') ? ' has-danger' : '' }}">
+                                            <input class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}"
+                                                   name="last_name" id="input-last_name" type="text"
                                                    placeholder="{{ __('Last Name') }}"
-                                                   value="{{ old('lastname', auth()->user()->lastname) }}"
+                                                   value="{{ old('last_name', auth()->user()->last_name) }}"
                                                    required="true" aria-required="true"/>
-                                            @if ($errors->has('lastname'))
-                                                <span id="lastname-error" class="error text-danger"
-                                                      for="input-lastname">{{ $errors->first('lastname') }}</span>
+                                            @if ($errors->has('last_name'))
+                                                <span id="last_name-error" class="error text-danger"
+                                                      for="input-last_name">{{ $errors->first('last_name') }}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -79,15 +79,15 @@
                                 <div class="row">
                                     <label class="col-sm-2 col-form-label">{{ __('Address') }}</label>
                                     <div class="col-sm-8">
-                                        <div class="form-group{{ $errors->has('address') ? ' has-danger' : '' }}">
+                                        <div class="form-group{{ $errors->has('address_1') ? ' has-danger' : '' }}">
                                             <input autocomplete="new-user-address"
-                                                   class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}"
-                                                   name="address" id="input-address" type="text"
+                                                   class="form-control{{ $errors->has('address_1') ? ' is-invalid' : '' }}"
+                                                   name="address_1" id="input-address" type="text"
                                                    placeholder="{{ __('Address') }}"
-                                                   value="{{ old('address', auth()->user()->address) }}"/>
-                                            @if ($errors->has('address'))
-                                                <span id="email-address2" class="error text-danger"
-                                                      for="input-address">{{ $errors->first('address') }}</span>
+                                                   value="{{ old('address_1', auth()->user()->address_1) }}"/>
+                                            @if ($errors->has('address_1'))
+                                                <span id="email-address_2" class="error text-danger"
+                                                      for="input-address">{{ $errors->first('address_1') }}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -95,15 +95,15 @@
                                 <div class="row">
                                     <label class="col-sm-2 col-form-label">{{ __('Address Line 2') }}</label>
                                     <div class="col-sm-8">
-                                        <div class="form-group{{ $errors->has('address2') ? ' has-danger' : '' }}">
+                                        <div class="form-group{{ $errors->has('address_2') ? ' has-danger' : '' }}">
                                             <input autocomplete="new-user-details"
-                                                   class="form-control{{ $errors->has('address2') ? ' is-invalid' : '' }}"
-                                                   name="address2" id="input-address2" type="text"
+                                                   class="form-control{{ $errors->has('address_2') ? ' is-invalid' : '' }}"
+                                                   name="address_2" id="input-address_2" type="text"
                                                    placeholder="{{ __('Address Line 2') }}"
-                                                   value="{{ old('address2', auth()->user()->address2) }}"/>
-                                            @if ($errors->has('address2'))
-                                                <span id="address2-error" class="error text-danger"
-                                                      for="input-address2">{{ $errors->first('address2') }}</span>
+                                                   value="{{ old('address_2', auth()->user()->address_2) }}"/>
+                                            @if ($errors->has('address_2'))
+                                                <span id="address_2-error" class="error text-danger"
+                                                      for="input-address_2">{{ $errors->first('address_2') }}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -111,14 +111,14 @@
                                 <div class="row">
                                     <label class="col-sm-2 col-form-label">{{ __('Town / City') }}</label>
                                     <div class="col-sm-8">
-                                        <div class="form-group{{ $errors->has('addresstown') ? ' has-danger' : '' }}">
-                                            <input class="form-control{{ $errors->has('addresstown') ? ' is-invalid' : '' }}"
-                                                   name="addresstown" id="input-addresstown" type="text"
+                                        <div class="form-group{{ $errors->has('address_town') ? ' has-danger' : '' }}">
+                                            <input class="form-control{{ $errors->has('address_town') ? ' is-invalid' : '' }}"
+                                                   name="address_town" id="input-address_town" type="text"
                                                    placeholder="{{ __('Town / City') }}"
-                                                   value="{{ old('addresstown', auth()->user()->addresstown) }}"/>
-                                            @if ($errors->has('addresstown'))
+                                                   value="{{ old('address_town', auth()->user()->address_town) }}"/>
+                                            @if ($errors->has('address_town'))
                                                 <span id="town-error" class="error text-danger"
-                                                      for="input-town">{{ $errors->first('addresstown') }}</span>
+                                                      for="input-town">{{ $errors->first('address_town') }}</span>
                                             @endif
                                         </div>
                                     </div>

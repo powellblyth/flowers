@@ -53,7 +53,7 @@
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{ route('entrants.edit', $entrant) }}"
                                                            data-original-title=""
-                                                           title="edit {{$entrant->firstname}}">
+                                                           title="edit {{$entrant->first_name}}">
                                                             <i class="material-icons">edit</i>
                                                             <div class="ripple-container"></div>
                                                         </a>
@@ -61,7 +61,7 @@
                                                     <a rel="tooltip" class="btn btn-success btn-link"
                                                        href="{{ route('entrants.show',['entrant'=>$entrant]) }}"
                                                        data-original-title=""
-                                                       title="manage {{$entrant->firstname}}'s entries">
+                                                       title="manage {{$entrant->first_name}}'s entries">
                                                         <i class="material-icons">build</i>
                                                         <div class="ripple-container"></div>
                                                     </a>

@@ -33,7 +33,7 @@ class Entrant extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'firstname', 'familyname','membernumber'
+        'id', 'first_name', 'family_name', 'membernumber'
     ];
 
     /**
@@ -44,11 +44,11 @@ class Entrant extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('First Name', 'firstname')
+            Text::make('First Name', 'first_name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Family Name', 'familyname')
+            Text::make('Family Name', 'family_name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 

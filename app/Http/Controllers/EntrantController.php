@@ -51,7 +51,7 @@ class EntrantController extends Controller
         return view('entrants.create', [
             'privacyContent' => config('static_content.privacy_content'),
             'teams' => $allTeams,
-            'defaultFamilyName' => $user->lastname,
+            'defaultFamilyName' => $user->last_name,
         ]);
     }
 
@@ -60,8 +60,8 @@ class EntrantController extends Controller
         // Validate the request...
         $show = $this->getShowFromRequest($request);
         $entrant = new Entrant();
-        $entrant->firstname = $request->firstname;
-        $entrant->familyname = $request->familyname ?? $request->lastname;
+        $entrant->first_name = $request->first_name;
+        $entrant->family_name = $request->family_name ?? $request->last_name;
         $entrant->membernumber = $request->membernumber;
 //        dd('TODO relate to team');
         $entrant->age = $request->age;
@@ -89,8 +89,8 @@ class EntrantController extends Controller
         $age = (int) $request->age;
         $request->validate(
             [
-                'firstname' => 'string|required|min:1',
-                'familyname' => 'string|required|min:1',
+                'first_name' => 'string|required|min:1',
+                'family_name' => 'string|required|min:1',
                 'age' => 'integer|nullable|min:0|',
                 'team_id' => ['nullable',
                               'integer',
@@ -103,8 +103,8 @@ class EntrantController extends Controller
                 'can_retain_data' => 'boolean',
             ]
         );
-        $entrant->firstname = $request->firstname;
-        $entrant->familyname = $request->familyname;
+        $entrant->first_name = $request->first_name;
+        $entrant->family_name = $request->family_name;
         $entrant->membernumber = $request->membernumber;
         $entrant->can_retain_data = (bool) $request->can_retain_data;
         // No point eding

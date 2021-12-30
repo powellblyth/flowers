@@ -149,6 +149,7 @@ class UserController extends Controller
         } else {
             $newPassword = Hash::make($request->get('password'));
         }
+        /** @var User $user */
         $user = User::create(
             $request->merge(
                 [
@@ -161,7 +162,7 @@ class UserController extends Controller
 
         if ($request->has('another')) {
             return redirect()->route('users.create')
-                ->withStatus(__('Family :Family successfully created.', ['family' => $user->lastname]));
+                ->withStatus(__('Family :Family successfully created.', ['family' => $user->last_name]));
 
         }
         return redirect()->route('users.show', ['user' => $user])->withStatus(__('Family successfully created.'));

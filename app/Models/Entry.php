@@ -105,7 +105,7 @@ class Entry extends Model
             'entrant_name' => $this->entrant->full_name,
             'entrant_number' => $this->entrant->entrant_number,
             'entrant_age' => $this->entrant->age_description,
-            'user_sort_letter' => strtoupper(substr($this->entrant->user->lastname, 0, 1)),
+            'user_sort_letter' => strtoupper(substr($this->entrant->user->last_name, 0, 1)),
         ];
     }
 

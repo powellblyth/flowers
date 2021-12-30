@@ -39,11 +39,11 @@ class User extends Resource
     public static $search = [
         'id',
         'email',
-        'firstname',
-        'lastname',
-        'address',
-        'address2',
-        'addresstown',
+        'first_name',
+        'last_name',
+        'address_1',
+        'address_2',
+        'address_town',
         'postcode',
         'telephone',
     ];
@@ -58,11 +58,11 @@ class User extends Resource
         return [
             ID::make()->sortable(),
             Gravatar::make()->maxWidth(50),
-            Text::make('First Name', 'firstname')
+            Text::make('First Name', 'first_name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Family Name', 'lastname')
+            Text::make('Family Name', 'last_name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
@@ -85,9 +85,9 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
-            Text::make('Address')->hideFromIndex(),
-            Text::make('Address2')->hideFromIndex(),
-            Text::make('Town', 'addresstown')->hideFromIndex(),
+            Text::make('Address 1')->hideFromIndex(),
+            Text::make('Address 2')->hideFromIndex(),
+            Text::make('Town', 'address_town')->hideFromIndex(),
             Text::make('Postcode')->hideFromIndex(),
             Text::make('Telephone')->hideFromIndex(),
             Boolean::make('Can Retain Data')->hideFromIndex(),

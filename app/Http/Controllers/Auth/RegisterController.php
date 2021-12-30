@@ -53,10 +53,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'firstname' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'email' => 'required_without_all:address,postcode|unique:users|string|email|max:255',
-            'address' => 'required_without:email|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required_without_all:address_1,postcode|unique:users|string|email|max:255',
+            'address_1' => 'required_without:email|max:255',
             'postcode' => 'required_without:email|max:10',
             'password' => 'required|string|min:2|confirmed',
 
@@ -72,12 +72,12 @@ class RegisterController extends Controller
     public function create($extraData = [])
     {
         $data = [
-            'firstname' => $extraData['firstname'],
-            'lastname' => $extraData['lastname'],
+            'first_name' => $extraData['first_name'],
+            'last_name' => $extraData['last_name'],
             'email' => $extraData['email'],
-            'address' => $extraData['address'],
-            'address2' => $extraData['address2'],
-            'addresstown' => $extraData['addresstown'],
+            'address_1' => $extraData['address_1'],
+            'address_2' => $extraData['address_2'],
+            'address_town' => $extraData['address_town'],
             'postcode' => $extraData['postcode'],
             'password' => Hash::make($extraData['password']),
             'auth_token' => md5((string) random_int(PHP_INT_MIN, PHP_INT_MAX)),

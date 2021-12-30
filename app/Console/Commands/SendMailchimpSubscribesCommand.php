@@ -42,7 +42,7 @@ class SendMailchimpSubscribesCommand extends Command
 
             echo ++$counter . ':';
             $email = $user->safe_email;
-            echo $user->firstname . ' ' . $user->lastname . ' ' . $email . "\n";
+            echo $user->first_name . ' ' . $user->last_name . ' ' . $email . "\n";
 
 
             try {

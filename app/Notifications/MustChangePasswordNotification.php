@@ -12,7 +12,7 @@ class MustChangePasswordNotification extends Notification
     use Queueable;
 
     public string $token;
-    public string $firstname;
+    public string $first_name;
 
     /**
      * Create a new notification instance.
@@ -42,8 +42,8 @@ class MustChangePasswordNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        if (!empty($this->firstname)) {
-            $greeting = "Hello " . $this->firstname . ",";
+        if (!empty($this->first_name)) {
+            $greeting = "Hello " . $this->first_name . ",";
         } else {
             $greeting = "Hi There!";
         }

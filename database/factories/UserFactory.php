@@ -35,11 +35,11 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'firstname' => $this->faker->firstName,
-            'lastname' => $this->faker->lastName,
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
             'email' => $this->faker->unique()->safeEmail,
-            'address' => $this->faker->streetAddress,
-            'addresstown' => $this->faker->city,
+            'address_1' => $this->faker->streetAddress,
+            'address_town' => $this->faker->city,
             'postcode' => $this->faker->postcode,
             'can_email' => $this->faker->boolean(75),
             'can_retain_data' => $this->faker->boolean(90),

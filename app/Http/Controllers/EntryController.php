@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\User;
 use Carbon\Carbon;
@@ -37,8 +38,8 @@ class EntryController extends Controller
             ->join('users', 'users.id', '=', 'entrants.user_id')
             ->join('categories', 'categories.id', '=', 'entries.category_id')
             ->where('categories.show_id', $show->id)
-            ->orderBy('users.lastname')
-            ->orderBy('entrants.familyname')
+            ->orderBy('users.last_name')
+            ->orderBy('entrants.family_name')
             ->orderBy('entrant_id');
 
         if ($request->filled('users')) {
@@ -81,6 +82,7 @@ class EntryController extends Controller
          * Default show
          */
         $show = $this->getShowFromRequest($request);
+//        $show->load('categories');
 
         $this->authorize('view', $user);
 
@@ -89,6 +91,7 @@ class EntryController extends Controller
             'show' => $show,
             'showId' => $show->id,
             'can_enter' => !$show->isClosedToEntries(),
+            'sections' => \App\Models\Section::all(),
         ]);
     }
 
@@ -106,6 +109,7 @@ class EntryController extends Controller
 
         $this->authorize('enterCategories', $show);
         foreach ($request->entries as $entrantId => $entries) {
+            /** @var Entrant $entrant */
             $entrant = $user->entrants()->where('id', $entrantId)->firstOrFail();
             $this->authorize('createEntries', $entrant);
             $entrant->entries()->where('show_id', $show->id)->whereNotIn('category_id', array_keys($entries))->delete();

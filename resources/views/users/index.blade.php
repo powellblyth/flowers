@@ -72,13 +72,13 @@
                                                     @can('update', $user)
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{ route('user.edit', $user) }}" data-original-title=""
-                                                           title="edit {{$user->firstname}}">
+                                                           title="edit {{$user->first_name}}">
                                                             <i class="material-icons">edit</i>
                                                             <div class="ripple-container"></div>
                                                         </a>
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{ route('users.show', $user) }}" data-original-title=""
-                                                           title="show {{$user->firstname}}">
+                                                           title="show {{$user->first_name}}">
                                                             <i class="material-icons">person</i>
                                                             <div class="ripple-container"></div>
                                                         </a>

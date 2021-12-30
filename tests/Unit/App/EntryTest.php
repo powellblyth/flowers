@@ -7,32 +7,6 @@ use Tests\TestCase;
 
 class EntryTest extends TestCase
 {
-
-//    public function providerGetAddress() {
-//        return [
-//            ['first', 'second', 'town', 'postcode', 'first, second, town postcode'],
-//            ['first', '', 'town', 'postcode', 'first, town postcode'],
-//            ['', 'second', 'town', 'postcode', 'second, town postcode'],
-//            ['first', 'second', '', 'postcode', 'first, second postcode'],
-//            ['', '', '', 'postcode', 'postcode']
-//        ];
-//    }
-//
-//    /**
-//     * A basic test example.
-//     * @dataProvider providerGetAddress
-//     * @return void
-//     */
-//    public function testgetAddress($first, $second, $town, $postcode, $expected) {
-//        $this->sut = new Entrant();
-//        $this->sut->address = $first;
-//        $this->sut->address2 = $second;
-//        $this->sut->addresstown = $town;
-//        $this->sut->postcode = $postcode;
-//
-//        $this->assertSame($expected, $this->sut->getAddress());
-//    }
-
     public function providergetPriceType()
     {
         return [

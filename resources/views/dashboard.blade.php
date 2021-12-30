@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                      <h1 class="siz">Welcome, {{Auth::User()->firstname}}</h1>
+                      <h1 class="siz">Welcome, {{Auth::User()->first_name}}</h1>
                         <p>This is the <a href="http://www.petershamhorticulturalsociety.org.uk" target="_blank">Petersham
                             Horticultural Society</a>'s system for self-registering membership and entries to the
                         show. Your user account allows you to manage Show Entrants, who are people you

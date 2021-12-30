@@ -47,7 +47,7 @@
 
                                             <td>{{$purchase->number}}</td>
                                             <td>£{{$purchase->amount / 100}}</td>
-                                            <td>{{$purchase->user->getAddress()}}</td>
+                                            <td>{{$purchase->user->address}}</td>
                                             <td>{{$purchase->user->telephone}}</td>
                                             <td>{{$purchase->user->email}}</td>
                                             <td>{{$purchase->user->can_email}}</td>

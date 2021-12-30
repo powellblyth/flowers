@@ -116,8 +116,8 @@ class CupController extends Controller
             $people = Entrant::whereHas('entries', function (Builder $query) use ($show) {
                 $query->where('show_id', $show->id);
             })
-                ->orderBy('familyname')
-                ->orderBy('firstname')
+                ->orderBy('family_name')
+                ->orderBy('first_name')
                 ->get()
                 ->pluck('full_name', 'id')
                 ->toArray();

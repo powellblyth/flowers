@@ -84,7 +84,7 @@
                     <div class="col-12 text-right">
                         @can('edit', $thing)
                             <a href="{{route('user.edit', $thing)}}"
-                               class="btn btn-primary">Edit {{ucfirst($thing->firstname)}}</a>
+                               class="btn btn-primary">Edit {{ucfirst($thing->first_name)}}</a>
                         @endcan
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                                     <b>Member Number:</b> {{ $thing->getMemberNumber() }}
                                 </div>
                                 <div class="col-lg-6  col-md-6 col-sm-12">
-                                    <b>Address:</b> {{ $thing->getAddress() }}
+                                    <b>Address:</b> {{ $thing->address }}
                                 </div>
 
                             </div>
@@ -140,7 +140,7 @@
                                     $totalFee = 0;
                                 @endphp
                                 @if (count($entry_data ) <= 0)
-                                    <p>{{$entrant->firstname}} has not entered any categories yet</p>
+                                    <p>{{$entrant->first_name}} has not entered any categories yet</p>
                                 @else
                                     @foreach ($entry_data as $entry)
                                         @php $totalFee += $entry->getActualPrice() @endphp
@@ -179,7 +179,7 @@
                     <div class="card-header-success">Payments</div>
                     <div class="card-body">
                         @if (count($payments) <= 0)
-                            {{$thing->firstname}} has not made any payments yet
+                            {{$thing->first_name}} has not made any payments yet
                         @else
                             @foreach ($payments as $payment)
                                 <p>
@@ -196,7 +196,7 @@
                     <div class="card-header-success">Membership Purchases</div>
                     <div class="card-body">
                         @if (count($membership_purchases) <= 0)
-                            {{$thing->firstname}} has not made any membership purchases yet
+                            {{$thing->first_name}} has not made any membership purchases yet
                         @else
                             @foreach ($membership_purchases as $purchase)
                                 <p>
@@ -222,33 +222,6 @@
             </div>
         </div>
 
-        {{--<h2>Opt-in</h2>--}}
-        {{--{{  Form::model($thing, array('route' => array('entrants.optins', $thing->id))) }}--}}
-        {{--<table border="0">--}}
-        {{--<tr>--}}
-        {{--            <td colspan="3"><b>We would like permission to retain your personal data within our data entry system for a period of 3 years after--}}
-        {{--            your last entry to the show. This includes your name, telephone number, email address, and age (children only).<br />--}}
-        {{--            The reason to retain this is for the purposes of <br />--}}
-        {{--            <ol>--}}
-        {{--                <li>Making it faster for you to enter next year, as you would not need to provide your data again (unless it changed)</li>--}}
-        {{--                <li>Sending you reminders up to three times per year to remind you about the show, and invite you to our events.</li>--}}
-        {{--                <li> we will <i> NOT </i> share this data with any third parties, beyond communication systems under our control used to send the messages (e.g. email sending software).</li>--}}
-        {{--                <li>You can opt out of this at any time by emailing enquiries@petershamhorticulturalsociety.org.uk</li>--}}
-        {{--            </ol></b></td>--}}
-        {{--        </tr>--}}
-        {{--        <tr>--}}
-        {{--            <td>{{ Form::label('can_retain_data', 'Can we retain your data?:', ['class' => 'control-label']) }}--}}
-        {{--                {{ Form::checkbox('can_retain_data', 1, $can_retain_data) }}</td>--}}
-        {{--            <td>{{ Form::label('can_email', 'Can we contact you by email?:', ['class' => 'control-label']) }}--}}
-        {{--                {{ Form::checkbox('can_email', 1,$can_email) }}</td>--}}
-        {{--            <td>{{ Form::label('can_sms', 'Can we contact you by SMS?:', ['class' => 'control-label']) }}--}}
-        {{--                {{ Form::checkbox('can_sms', 1, $can_sms) }}</td>--}}
-        {{--        </tr>--}}
-        {{--</table>--}}
-        {{--{{ Form::submit('Store Preferences', ['class' => 'button btn btn-primary']) }}--}}
-        {{--{{ Form::close()}}--}}
-
-
         {{ Form::close() }}
         <div class="row">
             @if($isAdmin)
@@ -259,9 +232,6 @@
                         <div class="card-body">
 
 
-{{--                            {{ Form::open([--}}
-{{--                                'route' => 'payments.store'--}}
-{{--                            ]) }}--}}
 
                             {{ Form::hidden('user', $thing->id, ['class' => 'form-control']) }}
                             {{ Form::label('amount', 'Amount: &pound;', ['class' => 'control-label']) }}

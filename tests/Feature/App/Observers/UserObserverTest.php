@@ -21,8 +21,8 @@ class UserObserverTest extends TestCase
         $this->assertSame(1, $user->entrants->count());
         /** @var Entrant $firstEntrant */
         $firstEntrant = $user->entrants->first();
-        $this->assertSame($user->firstname, $firstEntrant->firstname);
-        $this->assertSame($user->lastname, $firstEntrant->familyname);
+        $this->assertSame($user->first_name, $firstEntrant->first_name);
+        $this->assertSame($user->last_name, $firstEntrant->family_name);
         $this->assertSame($user->can_retain_data, $firstEntrant->can_retain_data);
     }
 }

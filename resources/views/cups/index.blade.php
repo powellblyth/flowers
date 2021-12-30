@@ -115,7 +115,7 @@
                                 <b>
                                     <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</a>
                                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
-                                        {{$winners[$directWinnerId]['entrant']->user->getAddress()}}
+                                        {{$winners[$directWinnerId]['entrant']->user->address}}
                                         <br/>
                                         {{$winners[$directWinnerId]['entrant']->user->telephone}}
                                         , {{$winners[$directWinnerId]['entrant']->user->email}}

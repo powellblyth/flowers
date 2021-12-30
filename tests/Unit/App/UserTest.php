@@ -27,12 +27,12 @@ class UserTest extends TestCase
     public function testgetAddress($first, $second, $town, $postcode, $expected)
     {
         $sut              = new User();
-        $sut->address     = $first;
-        $sut->address2    = $second;
-        $sut->addresstown = $town;
+        $sut->address_1     = $first;
+        $sut->address_2    = $second;
+        $sut->address_town = $town;
         $sut->postcode    = $postcode;
 
-        $this->assertSame($expected, $sut->getAddress());
+        $this->assertSame($expected, $sut->address);
     }
 
     public function providergetName()
@@ -60,8 +60,8 @@ class UserTest extends TestCase
     public function testgetName(string $expected, string $first, string $second, ?bool $printable = null)
     {
         $sut            = new User();
-        $sut->firstname = $first;
-        $sut->lastname  = $second;
+        $sut->first_name = $first;
+        $sut->last_name  = $second;
 
         $this->assertSame($expected, $sut->getName($printable));
     }
@@ -85,8 +85,8 @@ class UserTest extends TestCase
     public function testgetPrintableName($first, $second, $expected)
     {
         $sut            = new User();
-        $sut->firstname = $first;
-        $sut->lastname  = $second;
+        $sut->first_name = $first;
+        $sut->last_name  = $second;
 
         $this->assertSame($expected, $sut->printable_name);
     }

@@ -23,8 +23,8 @@ class EntrantResource extends JsonResource
 //        dd($request->show);
         return [
             'id' => $this->id,
-            'firstname' => $this->firstname,
-            'familyname' => $this->familyname,
+            'first_name' => $this->first_name,
+            'family_name' => $this->family_name,
             'name' => $this->full_name,
             'membernumber' => $this->membernumber,
             'entries' => Entry::collection($this->whenLoaded('entries')),

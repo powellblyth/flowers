@@ -15,11 +15,12 @@
     @endif
     <div class="p-20">
         <div class=" bg-white w-full top-0 sticky p-2 float-right"><h3
-                class="inline-block w-1/2 text-xl ">@lang('The :family family entry card for :show', ['family'=>$user->lastname,'show'=>$show->name])</h3>
+                class="inline-block w-1/2 text-xl ">@lang('The :family family entry card for :show', ['family'=>$user->last_name,'show'=>$show->name])</h3>
             @if ($can_enter)
-            <div class="w-1/2 inline-block float-right"><input type="submit" value="Save"
-                                                               class="text-white bg-green-500 px-3 py-1 rounded"></div>
-                @endif
+                <div class="w-1/2 inline-block float-right"><input type="submit" value="Save"
+                                                                   class="text-white bg-green-500 px-3 py-1 rounded">
+                </div>
+            @endif
         </div>
         @forelse ($user->entrants as $entrant)
             <div class="bg-white p-3 m-4">
@@ -35,30 +36,30 @@
                         @endif
                     </div>
                     <div>
-                        @foreach(\App\Models\Section::all() as $section)
+                        @foreach($sections as $section)
                             <div class="px-2 text-xl font-bold bg-pink-200 rounded-md">{{$section->display_name}}</div>
                             <div class="flex flex-wrap">
-                                @forelse($show->categories()->where('section_id', $section->id)->get() as $category)
-                                    <!-- TODO dont bother showing unentered historic categories -->
+                            @forelse($show->categories->where('section_id', $section->id)->sortBy('sortorder') as $category)
+                                <!-- TODO dont bother showing unentered historic categories -->
                                     <div class="flex-initial w-1/4 ">
                                         <div class="p-2  flex bg-green-200 mx-2 my-3 rounded-xl">
-                                        <label for="{{'cb_' . $category->id . '_' . $entrant->id}}"
-                                               class="flex-auto w-80 px-2">{{$category->numbered_name}}</label>
-                                        <div class="flex-1 2xl:text-xl"><input
-                                                id="{{'cb_' . $category->id . '_' . $entrant->id}}"
-                                                @if(!$can_enter)
-                                                    disabled="disabled"
-                                                @endif
-                                                @if($entrant->entries()->where('category_id', $category->id)->first()) checked="checked"
-                                                @endif
-                                                type="checkbox" name="entries[{{$entrant->id}}][{{$category->id}}]"
-                                                class="w-8 h-8 m-2"/></div>
+                                            <label for="{{'cb_' . $category->id . '_' . $entrant->id}}"
+                                                   class="flex-auto w-80 px-2">{{$category->numbered_name}}</label>
+                                            <div class="flex-1 2xl:text-xl"><input
+                                                    id="{{'cb_' . $category->id . '_' . $entrant->id}}"
+                                                    @if(!$can_enter)
+                                                        disabled="disabled"
+                                                    @endif
+                                                    @if($entrant->entries->where('category_id', $category->id)->first()) checked="checked"
+                                                    @endif
+                                                    type="checkbox" name="entries[{{$entrant->id}}][{{$category->id}}]"
+                                                    class="w-8 h-8 m-2"/></div>
                                         </div>
                                     </div>
                                 @empty
-                                   <div class="p-2">
-                                       @lang('No categories have been created for this section yet. Watch this space!')
-                                   </div>
+                                    <div class="p-2">
+                                        @lang('No categories have been created for this section yet. Watch this space!')
+                                    </div>
                                 @endforelse
                             </div>
                         @endforeach

@@ -38,11 +38,12 @@ class SendEmailToUnpasswordedPeopleCommand extends Command
             ->get();
 
         foreach ($users as $user) {
+            /** @var User $user */
             $token = \Password::getRepository()->create($user);
             $user->password_reset_token = $token;
             if ($user->save()) {
-                $notification = new MustChangePasswordNotification($token, $user->firstname);
-                echo $user->firstname ." " . $user->lastname . ": " .$user->email ."\n";
+                $notification = new MustChangePasswordNotification($token, $user->first_name);
+                echo $user->first_name ." " . $user->last_name . ": " .$user->email ."\n";
                 $user->notify($notification);
             }        //
         }

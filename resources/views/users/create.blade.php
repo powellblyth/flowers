@@ -35,10 +35,10 @@
                 <div class="row">
                   <label class="col-sm-2 col-form-label">{{ __('First Name') }}</label>
                   <div class="col-sm-7">
-                    <div class="form-group{{ $errors->has('firstname') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" id="input-firstname" type="text" placeholder="{{ __('First Name') }}" value="{{ old('firstname') }}" required="true" aria-required="true"/>
-                      @if ($errors->has('firstname'))
-                        <span id="firstname-error" class="error text-danger" for="input-firstname">{{ $errors->first('firstname') }}</span>
+                    <div class="form-group{{ $errors->has('first_name') ? ' has-danger' : '' }}">
+                      <input class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" id="input-first_name" type="text" placeholder="{{ __('First Name') }}" value="{{ old('first_name') }}" required="true" aria-required="true"/>
+                      @if ($errors->has('first_name'))
+                        <span id="first_name-error" class="error text-danger" for="input-first_name">{{ $errors->first('first_name') }}</span>
                       @endif
                     </div>
                   </div>
@@ -46,10 +46,10 @@
                 <div class="row">
                   <label class="col-sm-2 col-form-label">{{ __('Last Name') }}</label>
                   <div class="col-sm-7">
-                    <div class="form-group{{ $errors->has('lastname') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" id="input-lastname" type="text" placeholder="{{ __('Last Name') }}" value="{{ old('lastname') }}" required="true" aria-required="true"/>
-                      @if ($errors->has('lastname'))
-                        <span id="lastname-error" class="error text-danger" for="input-lastname">{{ $errors->first('lastname') }}</span>
+                    <div class="form-group{{ $errors->has('last_name') ? ' has-danger' : '' }}">
+                      <input class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" id="input-last_name" type="text" placeholder="{{ __('Last Name') }}" value="{{ old('last_name') }}" required="true" aria-required="true"/>
+                      @if ($errors->has('last_name'))
+                        <span id="last_name-error" class="error text-danger" for="input-last_name">{{ $errors->first('last_name') }}</span>
                       @endif
                     </div>
                   </div>
@@ -68,32 +68,32 @@
                 <div class="row">
                   <label class="col-sm-2 col-form-label" for="input-address">{{ __('Address') }}</label>
                   <div class="col-sm-8">
-                    <div class="form-group{{ $errors->has('address') ? ' has-danger' : '' }}">
-                      <input autocomplete="new-user-address" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" id="input-address" type="text" placeholder="{{ __('Address') }}" value="{{ old('address') }}"  />
-                      @if ($errors->has('address'))
-                        <span id="address-error" class="error text-danger" for="input-address">{{ $errors->first('address') }}</span>
+                    <div class="form-group{{ $errors->has('address_1') ? ' has-danger' : '' }}">
+                      <input autocomplete="new-user-address" class="form-control{{ $errors->has('address_1') ? ' is-invalid' : '' }}" name="address" id="input-address" type="text" placeholder="{{ __('address_1') }}" value="{{ old('address_1') }}"  />
+                      @if ($errors->has('address_1'))
+                        <span id="address-error" class="error text-danger" for="input-address">{{ $errors->first('address_1') }}</span>
                       @endif
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label" for="input-address2">{{ __('Address Line 2') }}</label>
+                  <label class="col-sm-2 col-form-label" for="input-address_2">{{ __('Address Line 2') }}</label>
                   <div class="col-sm-8">
-                    <div class="form-group{{ $errors->has('address2') ? ' has-danger' : '' }}">
-                      <input autocomplete="new-user-details" class="form-control{{ $errors->has('address2') ? ' is-invalid' : '' }}" name="address2" id="input-address2" type="text" placeholder="{{ __('Address Line 2') }}" value="{{ old('address2') }}"  />
-                      @if ($errors->has('address2'))
-                        <span id="address2-error" class="error text-danger" for="input-address2">{{ $errors->first('address2') }}</span>
+                    <div class="form-group{{ $errors->has('address_2') ? ' has-danger' : '' }}">
+                      <input autocomplete="new-user-details" class="form-control{{ $errors->has('address_2') ? ' is-invalid' : '' }}" name="address_2" id="input-address_2" type="text" placeholder="{{ __('Address Line 2') }}" value="{{ old('address_2') }}"  />
+                      @if ($errors->has('address_2'))
+                        <span id="address_2-error" class="error text-danger" for="input-address_2">{{ $errors->first('address_2') }}</span>
                       @endif
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label" for="addresstown">{{ __('Town / City') }}</label>
+                  <label class="col-sm-2 col-form-label" for="address_town">{{ __('Town / City') }}</label>
                   <div class="col-sm-8">
-                    <div class="form-group{{ $errors->has('addresstown') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('addresstown') ? ' is-invalid' : '' }}" name="addresstown" id="input-addresstown" type="text" placeholder="{{ __('Town / City') }}" value="{{ old('addresstown') }}"  />
-                      @if ($errors->has('addresstown'))
-                        <span id="town-error" class="error text-danger" for="input-town">{{ $errors->first('addresstown') }}</span>
+                    <div class="form-group{{ $errors->has('address_town') ? ' has-danger' : '' }}">
+                      <input class="form-control{{ $errors->has('address_town') ? ' is-invalid' : '' }}" name="address_town" id="input-address_town" type="text" placeholder="{{ __('Town / City') }}" value="{{ old('address_town') }}"  />
+                      @if ($errors->has('address_town'))
+                        <span id="town-error" class="error text-danger" for="input-town">{{ $errors->first('address_town') }}</span>
                       @endif
                     </div>
                   </div>

@@ -16,11 +16,11 @@ class Controller extends BaseController
     protected function getShowFromRequest(Request $request): Show
     {
         if ($request->filled('show_id')) {
-            $show = Show::findOrFail((int) $request->show_id);
+            $show = Show::with('categories')->findOrFail((int) $request->show_id);
         } elseif ($request->filled('show')) {
-            $show = Show::findOrFail((int) $request->show);
+            $show = Show::with('categories')->findOrFail((int) $request->show);
         } else {
-            $show = Show::where('status', 'current')
+            $show = Show::with('categories')->where('status', 'current')
                 ->first();
         }
         return $show;

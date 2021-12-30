@@ -31,15 +31,15 @@
             <br/>
             @if ($showAddress && (0 == $x || $lastResult == $totalPoints))
                 @if (!is_null($winners[$winningEntrantId]['entrant']->user))
-                    @if(empty($winners[$winningEntrantId]['entrant']->user->getAddress()))
+                    @if(empty($winners[$winningEntrantId]['entrant']->user->address))
                         <table border>
                             <tr>
-                                <td>PLEASE PROVIDE ADDRESS:</td>
+                                <td>PLEASE PROVIDE AN ADDRESS:</td>
                                 <td style="width:220px"></td>
                             </tr>
                         </table>
                     @endif
-                    {{$winners[$winningEntrantId]['entrant']->user->getAddress()}}<br/>
+                    {{$winners[$winningEntrantId]['entrant']->user->address}}<br/>
                     @if(empty($winners[$winningEntrantId]['entrant']->user->telephone))
                         <table border>
                             <tr>

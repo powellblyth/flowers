@@ -36,8 +36,8 @@ class EntrantFactory extends Factory
     public function definition()
     {
         return [
-            'firstname' => $this->faker->firstName,
-            'familyname' => $this->faker->lastName,
+            'first_name' => $this->faker->firstName,
+            'family_name' => $this->faker->lastName,
             // In our world, every child has the same name as their parent. Makes testing easier
             'age' => $this->faker->numberBetween(1, 18),
             'can_retain_data' => $this->faker->boolean(90),

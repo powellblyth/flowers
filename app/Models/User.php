@@ -28,13 +28,13 @@ use Illuminate\Support\Str;
  * @property string|null $remember_token
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property string $firstname
- * @property string $lastname
+ * @property string $first_name
+ * @property string $last_name
  * @property string $status
  * @property string $type
- * @property string|null $address
- * @property string|null $address2
- * @property string|null $addresstown
+ * @property string|null $address_1
+ * @property string|null $address_2
+ * @property string|null $address_town
  * @property string|null $postcode
  * @property bool|null $can_retain_data
  * @property Carbon|null $retain_data_opt_in
@@ -73,9 +73,9 @@ use Illuminate\Support\Str;
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
  * @method static Builder|User query()
- * @method static Builder|User whereAddress($value)
+ * @method static Builder|User whereAddress1($value)
  * @method static Builder|User whereAddress2($value)
- * @method static Builder|User whereAddresstown($value)
+ * @method static Builder|User whereAddressTown($value)
  * @method static Builder|User whereCanEmail($value)
  * @method static Builder|User whereCanPhone($value)
  * @method static Builder|User whereCanPost($value)
@@ -88,10 +88,10 @@ use Illuminate\Support\Str;
  * @method static Builder|User whereEmailOptIn($value)
  * @method static Builder|User whereEmailOptOut($value)
  * @method static Builder|User whereEmailVerifiedAt($value)
- * @method static Builder|User whereFirstname($value)
+ * @method static Builder|User whereFirstName($value)
  * @method static Builder|User whereId($value)
  * @method static Builder|User whereIsAnonymised($value)
- * @method static Builder|User whereLastname($value)
+ * @method static Builder|User whereLastName($value)
  * @method static Builder|User wherePassword($value)
  * @method static Builder|User wherePhoneOptIn($value)
  * @method static Builder|User wherePhoneOptOut($value)
@@ -159,8 +159,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password', 'auth_token', 'password_reset_token',
-        'telephone', 'address', 'address2', 'addresstown', 'postcode', 'retain_data_opt_in',
+        'first_name', 'last_name', 'email', 'password', 'auth_token', 'password_reset_token',
+        'telephone', 'address_1', 'address_2', 'address_town', 'postcode', 'retain_data_opt_in',
         'can_retain_data', 'email_opt_in', 'can_email', 'sms_opt_in', 'can_sms', 'sms_opt_in', 'can_post',
         'post_opt_in',
 
@@ -175,17 +175,32 @@ class User extends Authenticatable
         'password', 'remember_token', 'auth_token', 'password_reset_token'
     ];
 
+    public function address(): Attribute
+    {
+        return new Attribute(
+            get: function ($value) {
+                $words = new Collection([$this->address_1, $this->address_2, $this->address_town]);
+                $address = implode(
+                    ', ',
+                    $words->reject(fn($value) => empty(trim($value)))
+                        ->toArray()
+                );
+                return trim($address . ' ' . trim($this->postcode), ', ');
+            }
+        );
+    }
+
     public function fullName(): Attribute
     {
         return new Attribute(
-            get: fn($value) => trim($this->firstname . ' ' . $this->lastname)
+            get: fn($value) => trim($this->first_name . ' ' . $this->last_name)
         );
     }
 
     public function printableName(): Attribute
     {
         return new Attribute(
-            get: fn($value) => trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname)
+            get: fn($value) => trim(substr($this->first_name, 0, 1) . ' ' . $this->last_name)
         );
     }
 
@@ -221,26 +236,14 @@ class User extends Authenticatable
         return $this->type === self::TYPE_ADMIN;
     }
 
-    public function getAddress(): string
-    {
-        $concatted = trim($this->address) . ', '
-                     . trim($this->address2) . ', ' . trim($this->addresstown);
-        $deduped = str_replace(
-            ', , ',
-            ', ',
-            str_replace(', , ', ', ', $concatted)
-        );
-        return trim(trim($deduped, ', ') . ' ' . trim($this->postcode), ', ');
-    }
-
     /**
      * This creates a single entrant matching the user's data
      */
     public function makeDefaultEntrant()
     {
         $entrant = new Entrant();
-        $entrant->firstname = $this->firstname;
-        $entrant->familyname = $this->lastname;
+        $entrant->first_name = $this->first_name;
+        $entrant->family_name = $this->last_name;
         $entrant->can_retain_data = $this->can_retain_data;
         if ($entrant->save()) {
             $this->entrants()->save($entrant);
@@ -293,12 +296,12 @@ class User extends Authenticatable
     {
         $this->email = $this->id . '@' . $this->id . 'phs-anonymised' . rand(0, 100000) . '.com';
         $this->is_anonymised = true;
-        $this->firstname = 'Anonymised';
-        $this->lastname = 'Anonymised';
+        $this->first_name = 'Anonymised';
+        $this->last_name = 'Anonymised';
         $this->telephone = null;
-        $this->address = null;
-        $this->address2 = null;
-        $this->addresstown = null;
+        $this->address_1 = null;
+        $this->address_2 = null;
+        $this->address_town = null;
         $this->retain_data_opt_in = null;
         $this->retain_data_opt_out = null;
         $this->email_opt_in = null;

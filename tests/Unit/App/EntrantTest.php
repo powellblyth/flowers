@@ -28,8 +28,8 @@ class EntrantTest extends TestCase
     public function testFullName(string $expected, string $first, string $second, ?bool $printable = null)
     {
         $sut = new Entrant();
-        $sut->firstname = $first;
-        $sut->familyname = $second;
+        $sut->first_name = $first;
+        $sut->family_name = $second;
 
         $this->assertSame($expected, $sut->full_name);
     }
@@ -56,8 +56,8 @@ class EntrantTest extends TestCase
     public function testgetPrintableName($first, $second, $expected)
     {
         $sut = new Entrant();
-        $sut->firstname = $first;
-        $sut->familyname = $second;
+        $sut->first_name = $first;
+        $sut->family_name = $second;
 
         $this->assertSame($expected, $sut->printable_name);
         $this->assertSame($expected, $sut->printableName);
