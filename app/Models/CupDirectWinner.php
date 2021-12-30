@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\CupDirectWinner
@@ -12,24 +14,24 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $year
  * @property int|null $show_id
  * @property int|null $winning_category_id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property int|null $winning_entry_id
- * @property-read \App\Models\Entrant $entrant
- * @property-read \App\Models\Entry|null $show
- * @property-read \App\Models\Category|null $winningCategory
- * @property-read \App\Models\Entry|null $winningEntry
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner query()
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner whereCupId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner whereShowId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner whereWinningCategoryId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner whereWinningEntryId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CupDirectWinner whereYear($value)
+ * @property-read Entrant $entrant
+ * @property-read Entry|null $show
+ * @property-read Category|null $winningCategory
+ * @property-read Entry|null $winningEntry
+ * @method static Builder|CupDirectWinner newModelQuery()
+ * @method static Builder|CupDirectWinner newQuery()
+ * @method static Builder|CupDirectWinner query()
+ * @method static Builder|CupDirectWinner whereCreatedAt($value)
+ * @method static Builder|CupDirectWinner whereCupId($value)
+ * @method static Builder|CupDirectWinner whereId($value)
+ * @method static Builder|CupDirectWinner whereShowId($value)
+ * @method static Builder|CupDirectWinner whereUpdatedAt($value)
+ * @method static Builder|CupDirectWinner whereWinningCategoryId($value)
+ * @method static Builder|CupDirectWinner whereWinningEntryId($value)
+ * @method static Builder|CupDirectWinner whereYear($value)
  * @mixin \Eloquent
  */
 class CupDirectWinner extends Model

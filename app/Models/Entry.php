@@ -102,11 +102,9 @@ class Entry extends Model
         return [
             'class_number' => $this->category->number,
             'class_name' => $this->category->name,
-            'entrant_name' => $this->entrant->getName(),
-            'entrant_number' => $this->entrant->getEntrantNumber(),
-            'entrant_age' => (($this->entrant->age && 18 > (int) $this->entrant->age)
-                ? $this->entrant->age
-                : ''),
+            'entrant_name' => $this->entrant->full_name,
+            'entrant_number' => $this->entrant->entrant_number,
+            'entrant_age' => $this->entrant->age_description,
             'user_sort_letter' => strtoupper(substr($this->entrant->user->lastname, 0, 1)),
         ];
     }
@@ -114,10 +112,8 @@ class Entry extends Model
     public function getCardFrontData(): array
     {
         return ['class_number' => $this->category->number,
-                'entrant_number' => $this->entrant->getEntrantNumber(),
-                'entrant_age' => (($this->entrant->age && 18 > (int) $this->entrant->age)
-                    ? $this->entrant->age
-                    : ''),
+                'entrant_number' => $this->entrant->entrant_number,
+                'entrant_age' => $this->entrant->age_description,
         ];
     }
 

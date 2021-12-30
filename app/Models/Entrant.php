@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Events\EntrantSaving;
 use Database\Factories\EntrantFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -91,34 +92,33 @@ class Entrant extends Model
         'saving' => EntrantSaving::class
     ];
 
-    public function getFullNameAttribute(): string
+    public function printableName(): Attribute
     {
-        return $this->getName();
+        return new Attribute(
+            get: fn($value) => trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname)
+        );
     }
 
-    public function getPrintableNameAttribute(): string
+    public function fullName(): Attribute
     {
-        return trim(substr($this->firstname, 0, 1) . ' ' . $this->familyname);
+        return new Attribute(
+            get: fn($value) => Str::title(trim($this->firstname . ' ' . $this->familyname))
+        );
     }
 
-    public function getAgeDescriptionAttribute(): string
+    public function ageDescription(): Attribute
     {
-        if (!$this->age) {
-            return '';
-        }
-        if ($this->age >= 18) {
-            return '';
-        }
-        return __(':age years', ['age' => $this->age]);
-    }
-
-    public function getName(bool $printable = null): string
-    {
-        if ($printable) {
-            return $this->printable_name;
-        } else {
-            return Str::title(trim($this->firstname . ' ' . $this->familyname));
-        }
+        return new Attribute(
+            get: function ($value) {
+                if (!$this->age) {
+                    return '';
+                }
+                if ($this->age >= 18) {
+                    return '';
+                }
+                return __(':age years', ['age' => $this->age]);
+            }
+        );
     }
 
     /**
@@ -128,6 +128,7 @@ class Entrant extends Model
     {
         return 'E-' . str_pad((string) $this->id, 4, '0', STR_PAD_LEFT);
     }
+
 
     public function user(): BelongsTo
     {

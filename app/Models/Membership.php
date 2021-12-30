@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 
 /**
@@ -14,31 +17,31 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string|null $description
  * @property int|null $price_gbp
  * @property string|null $applies_to
- * @property \Illuminate\Support\Carbon|null $purchasable_from
- * @property \Illuminate\Support\Carbon|null $purchasable_to
- * @property \Illuminate\Support\Carbon|null $valid_from
- * @property \Illuminate\Support\Carbon|null $valid_to
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $purchasable_from
+ * @property Carbon|null $purchasable_to
+ * @property Carbon|null $valid_from
+ * @property Carbon|null $valid_to
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\MembershipPurchase[] $membershipsSold
+ * @property-read Collection|MembershipPurchase[] $membershipsSold
  * @property-read int|null $memberships_sold_count
- * @method static \Illuminate\Database\Eloquent\Builder|Membership newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Membership newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Membership query()
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereAppliesTo($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereLabel($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership wherePriceGbp($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership wherePurchasableFrom($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership wherePurchasableTo($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereSku($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereValidFrom($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Membership whereValidTo($value)
+ * @method static Builder|Membership newModelQuery()
+ * @method static Builder|Membership newQuery()
+ * @method static Builder|Membership query()
+ * @method static Builder|Membership whereAppliesTo($value)
+ * @method static Builder|Membership whereCreatedAt($value)
+ * @method static Builder|Membership whereDeletedAt($value)
+ * @method static Builder|Membership whereDescription($value)
+ * @method static Builder|Membership whereId($value)
+ * @method static Builder|Membership whereLabel($value)
+ * @method static Builder|Membership wherePriceGbp($value)
+ * @method static Builder|Membership wherePurchasableFrom($value)
+ * @method static Builder|Membership wherePurchasableTo($value)
+ * @method static Builder|Membership whereSku($value)
+ * @method static Builder|Membership whereUpdatedAt($value)
+ * @method static Builder|Membership whereValidFrom($value)
+ * @method static Builder|Membership whereValidTo($value)
  * @mixin \Eloquent
  */
 class Membership extends Model

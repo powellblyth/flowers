@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Events\UserSaving;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -14,6 +15,7 @@ use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 
 //use Laravel\Cashier\Billable;
 
@@ -173,23 +175,30 @@ class User extends Authenticatable
         'password', 'remember_token', 'auth_token', 'password_reset_token'
     ];
 
-    public function getFullNameAttribute(): string
+    public function fullName(): Attribute
     {
-        return $this->getName();
+        return new Attribute(
+            get: fn($value) => trim($this->firstname . ' ' . $this->lastname)
+        );
     }
 
-    public function getPrintableNameAttribute(): string
+    public function printableName(): Attribute
     {
-        return trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname);
+        return new Attribute(
+            get: fn($value) => trim(substr($this->firstname, 0, 1) . ' ' . $this->lastname)
+        );
     }
 
-    public function getSafeEmailAttribute(): string
+    public function safeEmail(): Attribute
     {
-        $email = $this->email;
-        if ('production' !== App::environment()) {
-            $email = str_replace(substr($email, strpos($email, '@')), '@powellblyth.com', $email);
-        }
-        return $email;
+        return new Attribute(
+            get: function ($value) {
+                if ('production' === App::environment()) {
+                    return $this->email;
+                }
+                return Str::beforeLast($this->email, '@') . '@powellblyth.com';
+            }
+        );
     }
 
     public function entrants(): HasMany
@@ -210,15 +219,6 @@ class User extends Authenticatable
     public function isAdmin(): bool
     {
         return $this->type === self::TYPE_ADMIN;
-    }
-
-    public function getName(bool $printable = null): string
-    {
-        if ($printable) {
-            return $this->printable_name;
-        } else {
-            return trim($this->firstname . ' ' . $this->lastname);
-        }
     }
 
     public function getAddress(): string

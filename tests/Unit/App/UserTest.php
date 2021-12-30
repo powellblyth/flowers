@@ -89,8 +89,6 @@ class UserTest extends TestCase
         $sut->lastname  = $second;
 
         $this->assertSame($expected, $sut->printable_name);
-        $this->assertSame($expected, $sut->printableName);
-        $this->assertSame($expected, $sut->getPrintableNameAttribute());
     }
 
 

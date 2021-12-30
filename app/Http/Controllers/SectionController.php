@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Entry;
 use App\Models\Section;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -60,8 +61,8 @@ class SectionController extends Controller
                 }
                 $entries[$category->id][$entry->id] = [
                     'entrant_id' => $entry->entrant->id,
-                    'entrant_name' => $entry->entrant->getName(),
-                    'entrant_number' => $entry->entrant->getEntrantNumber(),
+                    'entrant_name' => $entry->entrant->full_name,
+                    'entrant_number' => $entry->entrant->entrant_number,
                 ];
             }
         }
@@ -74,7 +75,7 @@ class SectionController extends Controller
         ));
     }
 
-    public function storeresults(Request $request): \Illuminate\Http\RedirectResponse
+    public function storeresults(Request $request): RedirectResponse
     {
         $this->authorize('enterResults', Entry::class);
         foreach ($request->positions as $categoryId => $placings) {

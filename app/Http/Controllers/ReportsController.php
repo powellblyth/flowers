@@ -98,16 +98,14 @@ class ReportsController extends Controller
         $entrants = [];
         $users = [];
         foreach ($entriesSold as $entry) {
-            /**
-             * @var Entry $entry
-             */
+            /** @var Entry $entry */
             $entrant = $entry->entrant;
             $entrant_id = null;
             $entrant_name = null;
 
             if ($entrant instanceof Entrant) {
                 $entrant_id = $entrant->id;
-                $entrant_name = $entrant->getName();
+                $entrant_name = $entrant->full_name;
                 $entrants[$entrant_id] = 'yo ho ho and a bottle of rum';
                 $users[$entrant->user_id] = 'Vittals for johnnie';
             }

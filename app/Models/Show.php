@@ -19,9 +19,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read Collection|\App\Models\Category[] $categories
+ * @property-read Collection|Category[] $categories
  * @property-read int|null $categories_count
- * @property-read Collection|\App\Models\Entry[] $entries
+ * @property-read Collection|Entry[] $entries
  * @property-read int|null $entries_count
  * @method static Builder|Show newModelQuery()
  * @method static Builder|Show newQuery()

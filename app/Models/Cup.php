@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -10,29 +13,29 @@ use Illuminate\Support\Facades\DB;
  *
  * @property int $id
  * @property string $name
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property int|null $direct_winner
  * @property string|null $winning_category
  * @property int|null $calculated_winner
  * @property string|null $winning_criteria
  * @property int|null $sort_order
  * @property int|null $num_display_results
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Category[] $categories
+ * @property-read Collection|\App\Models\Category[] $categories
  * @property-read int|null $categories_count
- * @method static \Illuminate\Database\Eloquent\Builder|Cup newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Cup newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Cup query()
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereCalculatedWinner($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereDirectWinner($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereNumDisplayResults($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereSortOrder($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereWinningCategory($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Cup whereWinningCriteria($value)
+ * @method static Builder|Cup newModelQuery()
+ * @method static Builder|Cup newQuery()
+ * @method static Builder|Cup query()
+ * @method static Builder|Cup whereCalculatedWinner($value)
+ * @method static Builder|Cup whereCreatedAt($value)
+ * @method static Builder|Cup whereDirectWinner($value)
+ * @method static Builder|Cup whereId($value)
+ * @method static Builder|Cup whereName($value)
+ * @method static Builder|Cup whereNumDisplayResults($value)
+ * @method static Builder|Cup whereSortOrder($value)
+ * @method static Builder|Cup whereUpdatedAt($value)
+ * @method static Builder|Cup whereWinningCategory($value)
+ * @method static Builder|Cup whereWinningCriteria($value)
  * @mixin \Eloquent
  */
 class Cup extends Model

@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\TeamMembership
@@ -11,20 +13,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $entrant_id
  * @property int $team_id
  * @property int $show_id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Entrant $entrant
- * @property-read \App\Models\Show $show
- * @property-read \App\Models\Team $team
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership query()
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership whereEntrantId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership whereShowId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership whereTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TeamMembership whereUpdatedAt($value)
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read Entrant $entrant
+ * @property-read Show $show
+ * @property-read Team $team
+ * @method static Builder|TeamMembership newModelQuery()
+ * @method static Builder|TeamMembership newQuery()
+ * @method static Builder|TeamMembership query()
+ * @method static Builder|TeamMembership whereCreatedAt($value)
+ * @method static Builder|TeamMembership whereEntrantId($value)
+ * @method static Builder|TeamMembership whereId($value)
+ * @method static Builder|TeamMembership whereShowId($value)
+ * @method static Builder|TeamMembership whereTeamId($value)
+ * @method static Builder|TeamMembership whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class TeamMembership extends Model

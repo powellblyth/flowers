@@ -8,12 +8,11 @@ use Tests\TestCase;
 class EntrantTest extends TestCase
 {
 
-    public function providergetName()
+    public function providergetFullName()
     {
         return [
             ['First Second', 'first', 'second', null],
             ['First Second', 'first', 'second', false],
-            ['f second', 'first', 'second', true],
             ['First', 'first', '', null],
             ['Second', '', 'second', null],
             ['First Second', 'first', 'second ', null],
@@ -23,16 +22,16 @@ class EntrantTest extends TestCase
 
     /**
      * A basic test example.
-     * @dataProvider providergetName
+     * @dataProvider providergetFullName
      * @return void
      */
-    public function testgetName(string $expected, string $first, string $second, ?bool $printable = null)
+    public function testFullName(string $expected, string $first, string $second, ?bool $printable = null)
     {
         $sut = new Entrant();
         $sut->firstname = $first;
         $sut->familyname = $second;
 
-        $this->assertSame($expected, $sut->getName($printable));
+        $this->assertSame($expected, $sut->full_name);
     }
 
     public function providergetPrintableName()
@@ -104,7 +103,6 @@ class EntrantTest extends TestCase
     public function testDescribeAge($expected, $age)
     {
         $sut = new Entrant(['age'=>$age]);
-        $this->assertSame($expected, $sut->getAgeDescriptionAttribute());
         $this->assertSame($expected, $sut->age_description);
     }
 

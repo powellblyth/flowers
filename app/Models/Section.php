@@ -2,7 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Section
@@ -13,29 +17,31 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string|null $notes
  * @property string|null $judges
  * @property string|null $image
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Category[] $categories
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read Collection|Category[] $categories
  * @property-read int|null $categories_count
  * @property-read string $display_name
- * @method static \Illuminate\Database\Eloquent\Builder|Section newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Section newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Section query()
- * @method static \Illuminate\Database\Eloquent\Builder|Section whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Section whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Section whereImage($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Section whereJudges($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Section whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Section whereNotes($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Section whereNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Section whereUpdatedAt($value)
+ * @method static Builder|Section newModelQuery()
+ * @method static Builder|Section newQuery()
+ * @method static Builder|Section query()
+ * @method static Builder|Section whereCreatedAt($value)
+ * @method static Builder|Section whereId($value)
+ * @method static Builder|Section whereImage($value)
+ * @method static Builder|Section whereJudges($value)
+ * @method static Builder|Section whereName($value)
+ * @method static Builder|Section whereNotes($value)
+ * @method static Builder|Section whereNumber($value)
+ * @method static Builder|Section whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Section extends Model
 {
-    public function getDisplayNameAttribute(): string
+    public function displayName(): Attribute
     {
-        return $this->number . ' - ' . $this->name;
+        return new Attribute(
+            get: fn($value) => $this->number . ' - ' . $this->name
+        );
     }
 
     public function categories(): HasMany
