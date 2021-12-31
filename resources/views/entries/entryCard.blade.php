@@ -53,7 +53,7 @@
                                                     @if($entrant->entries->where('category_id', $category->id)->first()) checked="checked"
                                                     @endif
                                                     type="checkbox" name="entries[{{$entrant->id}}][{{$category->id}}]"
-                                                    class="w-8 h-8 m-2"/></div>
+                                                    class="w-8 h-8 m-2"/>com</div>
                                         </div>
                                     </div>
                                 @empty

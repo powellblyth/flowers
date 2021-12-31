@@ -84,6 +84,11 @@ class Entrant extends Model
 
     public $fillable = [
         'age',
+        'first_name',
+        'family_name',
+        'membernumber',
+        'age',
+        'can_retain_data',
     ];
 
 

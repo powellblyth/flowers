@@ -77,9 +77,6 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/entrants/{entrant}/edit', [EntrantController::class, 'edit'])->name('entrants.edit');
 
     Route::resource('entrants', EntrantController::class);
-//    Route::get('/entrants/{entrant}', [EntrantController::class, 'show'])->name('entrants.show');
-//    Route::get('/entrants/create', [EntrantController::class, 'create'])->name('entrants.create');
-//    Route::post('/entrants', [EntrantController::class, 'store'])->name('users.entrants.store');
 
     Route::resource('users', UserController::class)->except(['index']);
 

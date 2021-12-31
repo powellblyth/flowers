@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EntrantRequest;
 use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\Team;
-use DB;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Input;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class EntrantController extends Controller
@@ -23,12 +21,12 @@ class EntrantController extends Controller
      * @var mixed[]
      */
     protected $paymentTypes = array('cash' => 'cash',
-                                          'cheque' => 'cheque',
-                                          'online' => 'online',
-                                          'debit' => 'debit',
-                                          'refund_cash' => 'refund_cash',
-                                          'refund_online' => 'refund_online',
-                                          'refund_cheque' => 'refund_cheque');
+                                    'cheque' => 'cheque',
+                                    'online' => 'online',
+                                    'debit' => 'debit',
+                                    'refund_cash' => 'refund_cash',
+                                    'refund_online' => 'refund_online',
+                                    'refund_cheque' => 'refund_cheque');
 
     protected $membershipTypes = array(
         'single' => 'single',
@@ -39,37 +37,33 @@ class EntrantController extends Controller
         $user = Auth::user();
         $this->authorize('addEntrant', $user);
 
-        $allUsers = collect($user);
-
         $allTeams = Team::where('status', 'active')
             ->orderBy('min_age')
             ->orderBy('max_age')
             ->orderBy('name')
             ->get()
             ->pluck('name', 'id')->toArray();
-
-        return view('entrants.create', [
+        return view('entrants.edit', [
             'privacyContent' => config('static_content.privacy_content'),
             'teams' => $allTeams,
+            'entrant' => new Entrant(),
             'defaultFamilyName' => $user->last_name,
         ]);
     }
 
-    public function store(Request $request)
+    public function store(EntrantRequest $request)
     {
-        // Validate the request...
-        $show = $this->getShowFromRequest($request);
-        $entrant = new Entrant();
-        $entrant->first_name = $request->first_name;
-        $entrant->family_name = $request->family_name ?? $request->last_name;
-        $entrant->membernumber = $request->membernumber;
-//        dd('TODO relate to team');
-        $entrant->age = $request->age;
-        $entrant->can_retain_data = (bool) $request->can_retain_data;
+        $entrant = Entrant::create(
+            $request->validated()
+            + [
+                'user_id' => auth()->id(),
+            ]
+        );
+
         if (is_numeric($request->team_id)) {
+            $show = $this->getShowFromRequest($request);
             $entrant->teams()->save(Team::findOrFail($request->team_id), ['show_id' => $show->id]);
         }
-
 
         if ($entrant->save()) {
             $request->session()->flash('success', 'Family Member Saved');
@@ -83,34 +77,14 @@ class EntrantController extends Controller
         }
     }
 
-    public function update(Request $request, Entrant $entrant)
+    public function update(EntrantRequest $request, Entrant $entrant)
     {
         $this->authorize('update', $entrant);
-        $age = (int) $request->age;
-        $request->validate(
-            [
-                'first_name' => 'string|required|min:1',
-                'family_name' => 'string|required|min:1',
-                'age' => 'integer|nullable|min:0|',
-                'team_id' => ['nullable',
-                              'integer',
-                              Rule::exists('teams', 'id')->where(function ($query) use ($age) {
-                                  $query
-                                      ->where('min_age', '<=', $age)
-                                      ->where('max_age', '>=', $age);
-                                  return $query;
-                              })],
-                'can_retain_data' => 'boolean',
-            ]
-        );
-        $entrant->first_name = $request->first_name;
-        $entrant->family_name = $request->family_name;
-        $entrant->membernumber = $request->membernumber;
-        $entrant->can_retain_data = (bool) $request->can_retain_data;
+
+        $entrant->update($request->validated());
+
         // No point eding
         $showId = Show::where('status', 'current')->first()->id;
-
-        $entrant->age = $request->age;
 
         // Make sure we don't make duplicate show entries in a given year
         if ($request->team_id) {
@@ -122,9 +96,6 @@ class EntrantController extends Controller
 //            $entrant->teams()->pivot->where('show_id', $showId)->delete();
         }
 
-
-        $entrant->can_retain_data = (int) $request->can_retain_data;
-
         if ($entrant->save()) {
             $request->session()->flash('success', 'Family Member Saved');
             return redirect()->route('family');
@@ -133,15 +104,6 @@ class EntrantController extends Controller
             return back();
         }
     }
-
-
-    public function changeCategories(Request $request, int $id)
-    {
-        if ($request->isMethod('POST')) {
-            return redirect()->route('entrants.index');
-        }
-    }
-
 
     /**
      * Display the specified resource.
@@ -156,7 +118,6 @@ class EntrantController extends Controller
         $entryFee = 0;
 
         $show = $this->getShowFromRequest($request);
-        $currentYear = config('app.year');
 
         $this->authorize('seeDetailedInfo', $entrant);
 
@@ -190,9 +151,6 @@ class EntrantController extends Controller
         }
         $memberNumber = $entrant->getMemberNumber() ?? 'Not currently a member';
 
-        //@todo centralise this
-        $tooLateForEntries = time() > strToTime($currentYear . "-07-09 00:00:00");
-
         return response()->view(
             'entrants.show',
             array_merge(
@@ -209,7 +167,6 @@ class EntrantController extends Controller
                     'entrant' => $entrant,
                     'member_number' => $memberNumber,
                     'isLocked' => config('app.state') == 'locked',
-                    'too_late_for_entries' => $tooLateForEntries,
                 ]
             )
         );

@@ -98,10 +98,7 @@ class UserController extends Controller
         foreach ($memberships as $membership) {
             $membershipFee += $membership->amount;
         }
-//dump( (new \App\Http\Resources\UserResource($user))->toArray(new Request()));
-        //@todo centralise this
-        $tooLateForEntries = Carbon::now() > $show->entries_closed_deadline;
-//        dd((new \App\Http\Resources\UserResource($user))->toArray(new Request(['show'=>$show->id])));
+
         return view('users.show', [
             'user' => (new \App\Http\Resources\UserResource($user))->toArray(new Request(['show' => $show])),
             //            'user' => $user,
@@ -118,9 +115,7 @@ class UserController extends Controller
 //            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
             'payment_types' => $this->paymentTypes,
             'membership_types' => [MembershipPurchase::TYPE_FAMILY => 'Family'],
-            'has_family_subscription' => false,//$hasFamilySubscription,
             'isLocked' => config('app.state') == 'locked',
-            'too_late_for_entries' => $tooLateForEntries,
         ]);
     }
 
