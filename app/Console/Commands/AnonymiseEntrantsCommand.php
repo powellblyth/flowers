@@ -38,7 +38,6 @@ class AnonymiseEntrantsCommand extends Command
             ->where('created_at', '<', '2018-08-08 00:00:00')->get();
         foreach ($entrants as $entrant) {
             $entrant->anonymise()->save();
-//            echo $entrant->getName() . "\n";
             $entrant->save();
         }
         $users = User::where('can_retain_data', 0)
@@ -47,8 +46,7 @@ class AnonymiseEntrantsCommand extends Command
             ->get();
         foreach ($users as $user) {
             $user->anonymise()->save();
-            var_dump($user);
-            echo $user->getName() . "\n";
+            echo $user->full_name . "\n";
             $user->save();
         }
         parent::__construct();

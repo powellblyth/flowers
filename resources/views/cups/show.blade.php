@@ -30,7 +30,7 @@
                     @if (array_key_exists($categoryId, $winners_by_category) && count($winners_by_category[$categoryId]) > 0)
                         <td>
                             @if (array_key_exists('1', $winners_by_category[$categoryId]))
-                                {{$winners[$winners_by_category[$categoryId]['1']['entrant']]->getName($printableNames)}}
+                                {{$winners[$winners_by_category[$categoryId]['1']['entrant']]->printable_name}}
                                 ({{$winners_by_category[$categoryId]['1']['points']}} points)
                             @else
                                 -
@@ -38,7 +38,7 @@
                         </td>
                         <td>
                             @if (array_key_exists('2', $winners_by_category[$categoryId]))
-                                {{$winners[$winners_by_category[$categoryId]['2']['entrant']]->getName($printableNames)}}
+                                {{$winners[$winners_by_category[$categoryId]['2']['entrant']]->printable_name}}
                                 ({{$winners_by_category[$categoryId]['2']['points']}} points)
                             @else
                                 -
@@ -46,7 +46,7 @@
                         </td>
                         <td>
                             @if (array_key_exists('3', $winners_by_category[$categoryId]))
-                                {{$winners[$winners_by_category[$categoryId]['3']['entrant']]->getName($printableNames)}}
+                                {{$winners[$winners_by_category[$categoryId]['3']['entrant']]->printable_name}}
                                 ({{$winners_by_category[$categoryId]['3']['points']}} points)
                             @else
                                 -
@@ -54,7 +54,7 @@
                         </td>
                         <td>
                             @if (array_key_exists('commended', $winners_by_category[$categoryId]))
-                                {{$winners[$winners_by_category[$categoryId]['commended']['entrant']]->getName($printableNames)}}
+                                {{$winners[$winners_by_category[$categoryId]['commended']['entrant']]->printable_name}}
                                 ({{$winners_by_category[$categoryId]['commended']['points']}} points)
                             @else
                                 -

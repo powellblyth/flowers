@@ -46,7 +46,7 @@
                                     <tbody>
                                     @foreach($users as $user)
                                         <tr>
-                                            <td>{{ $user->getName() }}</td>
+                                            <td>{{ $user->full_name }}</td>
                                             <td>{{ucfirst($user->type)}}</td>
                                             <td>{{ $user->email }}</td>
 

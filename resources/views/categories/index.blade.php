@@ -63,7 +63,7 @@
                             <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                                 <th class="p-3 text-left">Category</th>
                                 <th class="p-3 text-left">Entries</th>
-                                <th class="p-3 text-left" width="110px">Winner</th>
+                                <th class="p-3 text-left" colspan="4" width="110px">Winner</th>
                             </tr>
                         @endforeach
                         </thead>
@@ -75,12 +75,14 @@
                                 </td>
                                 <td class="border-grey-light border hover:bg-gray-100 p-3 font-weight-bold">
                                     <b>
+                                        <nobr>
                                         @if (array_key_exists($category->id, $results))
                                             {{ (int) $results[$category->id]['total_entries']}}
                                             {{\Illuminate\Support\Str::plural('entry',  (int) $results[$category->id]['total_entries'])}}
                                         @else
                                             0 entries
                                         @endif
+                                        </nobr>
                                     </b>
 
                                 </td>
@@ -96,7 +98,7 @@
                                             @else
                                                 {{ucfirst($result->winningplace)}}
                                             @endif
-                                            <br/>{{$winners[$result->entrant_id]->getName(true)}}
+                                            <br/>{{$winners[$result->entrant_id]->printable_name}}
                                         </td>
                                     @endforeach
                                 @endif

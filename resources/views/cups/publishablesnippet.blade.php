@@ -26,7 +26,7 @@
                 $winningEntrantId = $results[$cup->id]['results'][$x]['entrant'];
             @endphp
 
-            <span style="font-size:18pt">{{$winners[$winningEntrantId]['entrant']->getName($printableNames)}}</span>
+            <span style="font-size:18pt">{{$winners[$winningEntrantId]['entrant']->printable_name}}</span>
 
             <br/>
             @if ($showAddress && (0 == $x || $lastResult == $totalPoints))
@@ -76,7 +76,7 @@
         @php
             $directWinnerId = $results[$cup->id]['direct_winner'];
         @endphp
-        <big><b>{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</b></big>
+        <big><b>{{$winners[$directWinnerId]['entrant']->printable_name}}</b></big>
         @if (is_object($results[$cup->id]['winning_category']))
             for category
             <i><b>{{$results[$cup->id]['winning_category']->numbered_name}}</b></i>

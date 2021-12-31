@@ -46,7 +46,7 @@
                                         </thead>
                                         @foreach ($entrants as $entrant)
                                             <tr>
-                                                <td>{{ $entrant->getName() }}
+                                                <td>{{ $entrant->full_name }}
                                                     {{$entrant->age_description}}
                                                 </td>
                                                 <td class="td-actions">
@@ -71,8 +71,8 @@
                                                         <a rel="tooltip" class="default "
                                                            href="{{route('user.profile', $entrant->user)}}"
                                                            data-original-title=""
-                                                           title="Edit {{$entrant->user->getName()}} (Family Manager)">
-                                                            {{$entrant->user->getName()}}
+                                                           title="Edit {{$entrant->user->full_name}} (Family Manager)">
+                                                            {{$entrant->user->full_name}}
                                                         </a>
                                                     @endif
                                                 </td>
@@ -82,7 +82,7 @@
                                                         <a rel="tooltip" class="btn btn-success btn-link"
                                                            href="{{route('users.show', $entrant->user)}}"
                                                            data-original-title=""
-                                                           title="Show {{$entrant->user->getName()}}'s Family">
+                                                           title="Show {{$entrant->user->full_name}}'s Family">
                                                             <i class="material-icons">people</i>
                                                             <div class="ripple-container"></div>
 

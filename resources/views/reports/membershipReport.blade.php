@@ -39,9 +39,9 @@
                                             <td>{{$purchase->created_at->format('d M Y')}}</td>
                                             <td>
                                                 @if($membership->isEntrant() )
-                                                    <a href="{{route('entrants.show', ['entrant'=>$purchase->entrant])}}">{{$purchase->entrant->getName()}}</a>
+                                                    <a href="{{route('entrants.show', ['entrant'=>$purchase->entrant])}}">{{$purchase->entrant->full_name}}</a>
                                                 @else
-                                                    <a href="{{route('users.show', ['user'=>$purchase->user])}}">{{$purchase->user->getname()}}</a>
+                                                    <a href="{{route('users.show', ['user'=>$purchase->user])}}">{{$purchase->user->full_name}}</a>
                                                 @endif
                                             </td>
 

@@ -33,7 +33,7 @@ class resetPasswordResetsCommand extends Command {
             ->where('can_email', true)
             ->get();
         foreach ($users as $user){
-            echo $user->getName()."\n";
+            echo $user->full_name."\n";
             echo 'UPDATE password_resets set created_at= \''.gmdate('Y-m-d H:i:s').'\' WHERE email=\''.$user->email.'\''."\n";
             \DB::statement('UPDATE password_resets set created_at= \''.gmdate('Y-m-d H:i:s').'\' WHERE email=\''.$user->email.'\'');
 

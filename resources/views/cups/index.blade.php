@@ -87,7 +87,7 @@
                                         @endif
 
                                     </td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$winners[$winningEntrantId]['entrant']->getName(true)}}</td>
+                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$winners[$winningEntrantId]['entrant']->printable_name}}</td>
                                     <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$results[$cup->id]['results'][$x]['totalpoints'] }}
                                         points
                                     </td>
@@ -113,7 +113,7 @@
                         @if(array_key_exists($directWinnerId, $winners))
                             @if ( ! $publishMode && $isAdmin)
                                 <b>
-                                    <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</a>
+                                    <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->printable_name}}</a>
                                     @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
                                         {{$winners[$directWinnerId]['entrant']->user->address}}
                                         <br/>
@@ -122,7 +122,7 @@
                                     @endif
                                 </b>
                             @else
-                                <big><b>{{$winners[$directWinnerId]['entrant']->getName($printableNames)}}</b></big>
+                                <big><b>{{$winners[$directWinnerId]['entrant']->printable_name}}</b></big>
                             @endif
                         @endif
                         @if (is_object($results[$cup->id]['winning_category']))

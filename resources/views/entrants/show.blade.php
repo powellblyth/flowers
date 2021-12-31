@@ -40,7 +40,7 @@
                     <div class="card">
                         @if(Auth::check())
                             <div class="card-header card-header-success">
-                                {{$entrant->getName()}}
+                                {{$entrant->full_name}}
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -53,7 +53,7 @@
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $entrant->getName() }}</div>
+                                    <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $entrant->full_name }}</div>
                                     @if(!is_null($entrant->age))
                                         <div class="col-lg-6 col-md-6  col-sm-12">Age:</b> {{ $entrant->age_description }}</div>
                                     @endif

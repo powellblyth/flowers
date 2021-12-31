@@ -4,9 +4,9 @@
     $activePage = 'families';
     }
 @endphp
-@extends('layouts.app', ['activePage' => $activePage, 'titlePage' =>  $thing->getName() ])
+@extends('layouts.app', ['activePage' => $activePage, 'titlePage' =>  $thing->full_name ])
 
-@section('pagetitle', 'Entrant ' . $thing->getName())
+@section('pagetitle', 'Entrant ' . $thing->full_name)
 @section('content')
 
     <div class="container-fluid">
@@ -91,7 +91,7 @@
                 <div class="card">
                     @if(Auth::check())
                         <div class="card-header card-header-success">
-                            {{$thing->getName()}}
+                            {{$thing->full_name}}
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $thing->getName() }}</div>
+                                <div class="col-lg-6 col-md-6  col-sm-12">Name:</b> {{ $thing->full_name }}</div>
 
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                                 family member before you can add any show entries</p>
                         @else
                             @foreach ($thing->entrants as $entrant)
-                                <h4>{{$entrant->getName()}} <a href="{{route('entrants.show', $entrant->id)}}"><i
+                                <h4>{{$entrant->full_name}} <a href="{{route('entrants.show', $entrant->id)}}"><i
                                             class="material-icons">person</i> show</a> <a
                                         href="{{route('entrants.edit', $entrant->id)}}"><i
                                             class="material-icons">edit</i>

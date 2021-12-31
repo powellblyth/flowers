@@ -196,7 +196,7 @@ class CupController extends Controller
         $entries = [];
         foreach ($entriesObj as $entry) {
             $entrant = $entry->entrant;
-            $entries[$entry->id] = $entrant->getName();
+            $entries[$entry->id] = $entrant->full_name;
         }
         return view('cups.directResultPickEntrant', ['entries' => $entries, 'id' => $id, 'thing' => $cup,
                                                      'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);

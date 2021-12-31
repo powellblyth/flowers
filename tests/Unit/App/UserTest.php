@@ -40,7 +40,6 @@ class UserTest extends TestCase
         return [
             ['first second', 'first', 'second', null],
             ['first second', 'first', 'second', false],
-            ['f second', 'first', 'second', true],
             ['first', 'first', '', null],
             ['second', '', 'second', null],
             ['first second', 'first', 'second ', null],
@@ -63,7 +62,7 @@ class UserTest extends TestCase
         $sut->first_name = $first;
         $sut->last_name  = $second;
 
-        $this->assertSame($expected, $sut->getName($printable));
+        $this->assertSame($expected, $sut->full_name);
     }
 
     public function providergetPrintableName()
