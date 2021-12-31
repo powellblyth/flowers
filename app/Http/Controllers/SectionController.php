@@ -36,14 +36,13 @@ class SectionController extends Controller
         $winners = [];
         $section = Section::findOrFail($request->section);
         $categories = $section->categories()
+            ->with(['entries', 'entries.entrant'])
             ->where('show_id', $show->id)
             ->orderby('sortorder')
             ->get();
 
         foreach ($categories as $category) {
-            /**
-             * @var Category $category
-             */
+            /** @var Category $category */
             $thisEntries = $category
                 ->entries()
                 ->orderBy('entrant_id')
@@ -53,9 +52,7 @@ class SectionController extends Controller
             $winners[$category->id] = [];
 
             foreach ($thisEntries as $entry) {
-                /**
-                 * @var Entry $entry
-                 */
+                /** @var Entry $entry */
                 if (!empty($entry->winningplace)) {
                     $winners[$category->id][$entry->entrant->id] = $entry->winningplace;
                 }
