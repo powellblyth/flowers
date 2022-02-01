@@ -86,9 +86,12 @@ Route::group(['middleware' => 'auth'], function () {
         ->name('entrants.optins');
 
     Route::get('/users/{user}/{show?}', [UserController::class, 'show'])->name('users.showfiltered');
-    Route::get('/entries', [EntryController::class, 'entryCard'])->name('entries.entryCard');
-    Route::post('/entries', [EntryController::class, 'update'])->name('entries.store');
 
+    Route::controller(EntryController::class)
+        ->group(function () {
+            Route::get('/entries', 'entryCard')->name('entries.entryCard');
+            Route::post('/entries', 'update')->name('entries.store');
+        });
     Route::get('/family', [UserController::class, 'show'])->name('family');
 
     Route::get('/profile/subscribe', [ProfileController::class, 'subscribe'])
