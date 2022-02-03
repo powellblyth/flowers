@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use App\Nova\Filters\FilterByShow;
-use App\Nova\Lenses\CurrentShow;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
@@ -147,7 +146,7 @@ class Category extends Resource
      */
     public function lenses(Request $request)
     {
-        return [CurrentShow::make()];
+        return [];
     }
 
     /**

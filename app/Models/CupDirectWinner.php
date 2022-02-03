@@ -36,6 +36,11 @@ use Illuminate\Support\Carbon;
  */
 class CupDirectWinner extends Model
 {
+    public function scopeForShow(Builder $query, Show $show)
+    {
+        return $query->where('show_id', $show->id);
+    }
+
     public function show(): BelongsTo
     {
         return $this->belongsTo(Entry::class);
@@ -49,6 +54,11 @@ class CupDirectWinner extends Model
     public function entrant(): BelongsTo
     {
         return $this->belongsTo(Entrant::class);
+    }
+
+    public function cup(): BelongsTo
+    {
+        return $this->belongsTo(Cup::class);
     }
 
     public function winningEntry(): BelongsTo

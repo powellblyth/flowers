@@ -81,7 +81,7 @@
             for category
             <i><b>{{$results[$cup->id]['winning_category']->numbered_name}}</b></i>
             @endif
-            @endif
-            </p>
-            <hr/>
-            @endforeach
+    @endif
+</p>
+<hr/>
+@endforeach

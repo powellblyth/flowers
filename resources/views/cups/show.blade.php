@@ -71,7 +71,7 @@
         </table>
     @else
         @can('storeResults', $show)
-            <h2>Pick a winner from an entry</h2>
+{{--            <h2>Pick a winner from an entry</h2>--}}
 {{--            {{ Form::open([--}}
 {{--                'route' => ['cup.directResultPick','cup'=>$cup]--}}
 {{--            ]) }}--}}

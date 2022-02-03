@@ -9,6 +9,7 @@ use App\Models\Entrant;
 use App\Models\Entry;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -28,35 +29,33 @@ class CupController extends Controller
             $resultset = $cup->getWinningResults($show);
             $thisCupPoints = array();
             foreach ($resultset as $result) {
-                $thisCupPoints[] = ['firstplacepoints' => $result->firstplacepoints,
-                                    'secondplacepoints' => $result->secondplacepoints,
-                                    'thirdplacepoints' => $result->thirdplacepoints,
-                                    'commendedplacepoints' => $result->commendedplacepoints,
-                                    'totalpoints' => $result->totalpoints,
-                                    'entrant' => $result->entrant_id];
+                $thisCupPoints[] = [
+                    'firstplacepoints' => $result->firstplacepoints,
+                    'secondplacepoints' => $result->secondplacepoints,
+                    'thirdplacepoints' => $result->thirdplacepoints,
+                    'commendedplacepoints' => $result->commendedplacepoints,
+                    'totalpoints' => $result->totalpoints,
+                    'entrant' => $result->entrant_id,
+                ];
                 if (!array_key_exists($result->entrant_id, $winners)) {
-                    $winners[$result->entrant_id] =
-                        [
-                            'entrant' => Entrant::find($result->entrant_id),
-                            'points' => $result->totalpoints
-                        ];
+                    $winners[$result->entrant_id] = [
+                        'entrant' => Entrant::find($result->entrant_id),
+                        'points' => $result->totalpoints
+                    ];
                 }
             }
 
             $winningCategory = null;
 
-            // Gather up more winners if needed
-            $cupWinner = CupDirectWinner::with('entrant')
-                ->where('cup_id', $cup->id)
-                ->where('show_id', $show->id)
-                ->first();
+            /** @var CupDirectWinner $cupWinner */
+            $cupWinner = $cup->cupDirectWinner()->forShow($show)->first();
+
             if ($cupWinner instanceof CupDirectWinner) {
 //                dd($cupWinner->winningEntry);
-                /** @var CupDirectWinner $cupWinner */
 //                if(!$cupWinner->winningEntry) {
 //                   dd($cupWinner->winning_entry_id);
 //                }
-                if ($cupWinner->winningEntry && !array_key_exists($cupWinner->winningEntry->entrant->id, $winners)) {
+                if ($cupWinner?->winningEntry && !array_key_exists($cupWinner->winningEntry->entrant->id, $winners)) {
                     $winners[$cupWinner->winningEntry->entrant->id] =
                         [
                             'entrant' => $cupWinner->winningEntry->entrant,
@@ -69,7 +68,7 @@ class CupController extends Controller
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
-                                       'direct_winner' => (($cupWinner instanceof CupDirectWinner) ? $cupWinner->entrant_id : null),
+                                       'direct_winner' => $cupWinner?->entrant_id,
                                        'winning_category' => $winningCategory);
         }
         return view('cups.index', ['cups' => $cups,
@@ -93,7 +92,7 @@ class CupController extends Controller
                 ->entries()
                 ->selectRaw('if(winningplace=\'1\', 4,if(winningplace=\'2\',3, if(winningplace=\'3\',2, if(winningplace=\'commended\',1, 0 ) ) )) as points, winningplace, entrant_id')
                 ->whereIn('winningplace', ['1', '2', '3', 'commended'])
-                ->where('show_id', $show->id)
+                ->forShow($show->id)
                 ->orderBy('winningplace', 'asc')
                 ->get();
 
@@ -139,15 +138,15 @@ class CupController extends Controller
     {
         $show = $this->getShowFromRequest($request);
         $showAddress = $request->has('show_address') || $request->has('showaddress') || $request->has('showAddress');
-        $winners = array();
-        $results = array();
+        $winners = [];
+        $results = [];
         $cups = Cup::orderBy('sort_order', 'asc')->get();
 
         /** dragons here - copied from index*/
         foreach ($cups as $cup) {
             $resultset = $cup->getWinningResults($show);
 
-            $thisCupPoints = array();
+            $thisCupPoints = [];
             foreach ($resultset as $result) {
                 $thisCupPoints[] = ['firstplacepoints' => $result->firstplacepoints,
                                     'secondplacepoints' => $result->secondplacepoints,
@@ -156,19 +155,28 @@ class CupController extends Controller
                                     'totalpoints' => $result->totalpoints,
                                     'entrant' => $result->entrant_id];
                 if (!array_key_exists($result->entrant_id, $winners)) {
-                    $winners[$result->entrant_id] = ['entrant' => Entrant::find($result->entrant_id), 'points' => $result->totalpoints];
+                    $winners[$result->entrant_id] = [
+                        'entrant' => Entrant::find($result->entrant_id),
+                        'points' => $result->totalpoints,
+                    ];
                 }
             }
 
             $winningCategory = null;
 
             // Gather up more winners if needed
-            $cupWinner = CupDirectWinner::where('cup_id', $cup->id)->where('show_id', $show->id)->first();
-            if ($cupWinner instanceof CupDirectWinner) {
+            try {
+                $cupWinner = $cup->cupDirectWinner()->forShow($show)->firstOrFail();
                 if (!array_key_exists($cupWinner->entrant_id, $winners)) {
-                    $winners[$cupWinner->entrant_id] = ['entrant' => Entrant::find($cupWinner->entrant_id), 'points' => 0];
+                    $winners[$cupWinner->entrant_id] = [
+                        'entrant' => Entrant::find($cupWinner->entrant_id),
+                        'points' => 0,
+                    ];
                 }
-                $winningCategory = Category::where('id', $cupWinner->winning_category_id)->where('show_id', $show)->first();
+                $winningCategory = $cupWinner->winningCategory()->forShow($show)
+                    ->first();
+            } catch (ModelNotFoundException) {
+                ;
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
@@ -186,9 +194,6 @@ class CupController extends Controller
         ]);
     }
 
-//        public function storeresults(Request $request) {
-//        foreach ($request->positions as $categoryId => $placings) {
-
     public function directResultPick(Request $request, int $id): View
     {
         $cup = Cup::find($id);
@@ -202,28 +207,24 @@ class CupController extends Controller
                                                      'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
     }
 
-    public function directResultSetWinner(Request $request, int $id): \Illuminate\Http\RedirectResponse
+    public function directResultSetWinner(Request $request, Cup $cup): \Illuminate\Http\RedirectResponse
     {
-        $entry = Entry::find($request->entry);
+        $entry = Entry::findOrFail($request->entry);
         $cupDirectWinner = new CupDirectWinner();
-        $cupDirectWinner->cup = $id;
-        $cupDirectWinner->winning_entry_id = $entry->id;
-        $cupDirectWinner->year = config('app.year');
-        $cupDirectWinner->entrant_id = $entry->entrant_id;
-        $cupDirectWinner->winning_category_id = $entry->category_id;
+        $cupDirectWinner->cup()->associate($cup);
+        $cupDirectWinner->winningEntry()->associate($entry);
+        $cupDirectWinner->winningCategory()->associate($entry->category);
         $cupDirectWinner->save();
 
-        return redirect('/cups/' . $id);
+        return redirect(route('cups.show', $cup));
     }
 
-    public function directResultSetWinnerPerson(Request $request, int $id): \Illuminate\Http\RedirectResponse
+    public function directResultSetWinnerPerson(Request $request, Cup $cup): \Illuminate\Http\RedirectResponse
     {
         $cupDirectWinner = new CupDirectWinner();
-        $cupDirectWinner->cup_id = $id;
-        $cupDirectWinner->year = config('app.year');
-        $cupDirectWinner->entrant_id = $request->person;
+        $cupDirectWinner->cup()->associate($cup);
         $cupDirectWinner->save();
 
-        return redirect('/cups/' . $id);
+        return redirect(route('cups.show', $cup));
     }
 }

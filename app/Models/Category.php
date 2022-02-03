@@ -67,6 +67,16 @@ class Category extends Model implements \Stringable
     public final const PRICE_LATE_PRICE = 'lateprice';
     public final const PRICE_EARLY_PRICE = 'earlyprice';
 
+    public function scopeForShow(Builder $query, Show $show)
+    {
+        return $query->where('show_id', $show->id);
+    }
+
+    public function scopeInOrder(Builder $query)
+    {
+        return $query->orderby('sortorder');
+    }
+
     public function show(): BelongsTo
     {
         return $this->belongsTo(Show::class);

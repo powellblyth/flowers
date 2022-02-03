@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -45,10 +46,20 @@ class Cup extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function cupDirectWinner(): HasMany
+    {
+        return $this->hasMany(CupDirectWinner::class);
+    }
+
+//    public function winner(): HasMany
+//    {
+//        return $this->hasMany(Entrant::class, CupDirectWinner::class);
+//    }
+
     public function getWinningResults(Show $show)
     {
         /**
-         * @TODO imrove this with more laravelness
+         * @TODO improve this with more laravelness
          */
         return DB::select("select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
 sum(if(winningplace='2', 3,0) ) as secondplacepoints, 

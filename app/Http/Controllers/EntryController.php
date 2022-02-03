@@ -110,7 +110,7 @@ class EntryController extends Controller
         $this->authorize('enterCategories', $show);
         foreach ($request->entries as $entrantId => $entries) {
             /** @var Entrant $entrant */
-            $entrant = $user->entrants()->where('id', $entrantId)->firstOrFail();
+            $entrant = $user->entrants->where('id', $entrantId)->firstOrFail();
             $this->authorize('createEntries', $entrant);
             $entrant->entries()->where('show_id', $show->id)->whereNotIn('category_id', array_keys($entries))->delete();
             foreach ($entries as $categoryId => $discarded) {

@@ -44,8 +44,6 @@
     @php
         $publishMode = false;
         $showaddress = $isAdmin;
-        $printableNames = !$isAdmin;
-        $shortName = false;
     @endphp
     @foreach ($cups as $cup)
         {{--    <div class="py-12">--}}
@@ -87,20 +85,13 @@
                                         @endif
 
                                     </td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$winners[$winningEntrantId]['entrant']->printable_name}}</td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">{{$results[$cup->id]['results'][$x]['totalpoints'] }}
-                                        points
+                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                                        {{$winners[$winningEntrantId]['entrant']->printable_name}}
+                                    </td>
+                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                                        {{$results[$cup->id]['results'][$x]['totalpoints'] }} points
                                     </td>
                                 </tr>
-                                @php
-                                    // If we have a matching point then add one to the iterator
-                                    //if ($lastResult == $totalPoints)
-                                    //{
-                                    //    $maxResults++;
-                                    //}
-                                    //reset the last result counter
-                                    //$lastResult = $totalPoints;
-                                @endphp
                             @endfor
                             </tbody>
                         </table>

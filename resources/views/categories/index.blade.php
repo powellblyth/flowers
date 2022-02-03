@@ -47,28 +47,25 @@
 //        $printableNames = !$isAdmin;
         $shortName = false;
     @endphp
-    @foreach ($categoryList as $section => $categories)
+    @foreach ($sections as $section)
         {{--    <div class="py-12">--}}
         <div class="py-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="rounded-l-lg  title text-xl font-medium">
-                        Section {{$sectionList[$section]}}
+                        Section {{$section->display_name}}
                     </div>
                     <table
                         class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                         <thead class="text-white">
-                        @foreach ($categories as $category)
-
                             <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                                 <th class="p-3 text-left">Category</th>
                                 <th class="p-3 text-left">Entries</th>
                                 <th class="p-3 text-left" colspan="4" width="110px">Winner</th>
                             </tr>
-                        @endforeach
                         </thead>
                         <tbody class="flex-1 sm:flex-none">
-                        @foreach ($categories as $category)
+                        @foreach ($section->categories->where('show_id', $show->id)->sortBy('sortorder') as $category)
                             <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                                 <td class="border-grey-light border hover:bg-gray-100 p-3">
                                     {{$category->numbered_name}}
@@ -76,32 +73,36 @@
                                 <td class="border-grey-light border hover:bg-gray-100 p-3 font-weight-bold">
                                     <b>
                                         <nobr>
-                                        @if (array_key_exists($category->id, $results))
-                                            {{ (int) $results[$category->id]['total_entries']}}
-                                            {{\Illuminate\Support\Str::plural('entry',  (int) $results[$category->id]['total_entries'])}}
-                                        @else
-                                            0 entries
-                                        @endif
+                                            {{$category->entries->count()}}
+                                            {{\Illuminate\Support\Str::plural('entry', $category->entries->count())}}
                                         </nobr>
                                     </b>
 
                                 </td>
-                                @if(array_key_exists($category->id, $results) && count($results[$category->id]['placements']) > 0)
-                                    @foreach ($results[$category->id]['placements'] as $result)
-                                        <td class="border-grey-light border hover:bg-gray-100 p-3">
-                                            @if($result->winningplace == 1)
-                                                First:
-                                            @elseif ($result->winningplace == 2)
-                                                Second:
-                                            @elseif ($result->winningplace == 3)
-                                                Third:
-                                            @else
-                                                {{ucfirst($result->winningplace)}}
-                                            @endif
-                                            <br/>{{$winners[$result->entrant_id]->printable_name}}
-                                        </td>
-                                    @endforeach
-                                @endif
+                                @foreach ($category->entries->whereNotNull('winningplace')->sortBy(
+    function ($entry, $key){
+        if ($entry->winningplace === 'commended'){
+            return 4;
+        }
+        if (empty($entry->winningplace)){
+            return 5;
+        }
+        return $entry->winningplace;
+    }
+) as $entry)
+                                    <td class="border-grey-light border hover:bg-gray-100 p-3">
+                                        @if($entry->winningplace == 1)
+                                            First:
+                                        @elseif ($entry->winningplace == 2)
+                                            Second:
+                                        @elseif ($entry->winningplace == 3)
+                                            Third:
+                                        @else
+                                            {{ucfirst($entry->winningplace)}}
+                                        @endif
+                                        <br/>{{$entry->entrant->printable_name}}
+                                    </td>
+                                @endforeach
                             </tr>
                         @endforeach
                     </table>

@@ -21,59 +21,19 @@ class CategoryController extends Controller
     {
         $show = $this->getShowFromRequest($request);
 
-        $winners = array();
-        $results = [];
-        $categoryList = [];
-        $sectionList = [];
+        $sections = Section::orderBy('number', 'asc')->with(
+            [
+                'categories',
+                'categories.entries',
+            ]
+        )
+            ->get();
 
-        $sections = Section::orderBy('number', 'asc')->with('categories')->get();
-
-        foreach ($sections as $section) {
-            $sectionList[$section->id] = $section->id . ' ' . $section->name;
-            $categoryList[$section->id] = [];
-            $categories = $section->categories()
-                ->where('status', 'active')
-                ->orderBy('sortorder', 'asc')
-                ->where('show_id', $show->id)
-                ->get();
-
-            foreach ($categories as $category) {
-                /**
-                 * @var Category $category
-                 */
-                $categoryList[$section->id][$category->id] = $category;
-                $placements = $category->entries()
-                    ->whereNotNull('winningplace')
-                    ->whereNotIn('winningplace', [''])
-                    ->where('show_id', $show->id)
-                    ->orderBy('winningplace')
-                    ->get();
-                $total = $category->entries()
-                    ->where('show_id', $show->id)
-                    ->select(DB::raw('count(*) as total'))
-                    ->groupBy('category_id')->first();
-
-                $results[$category->id] = [
-                    'placements' => $placements,
-                    'total_entries' => (($total !== null) ? $total->total : 0)
-                ];
-
-                foreach ($placements as $placement) {
-                    if (empty($winners[$placement->entrant_id])) {
-                        $winners[$placement->entrant_id] = Entrant::find($placement->entrant_id);
-                    }
-                }
-            }
-        }
 
         return view(
             'categories.index',
             [
-                'things' => $categories,
-                'categoryList' => $categoryList,
-                'sectionList' => $sectionList,
-                'results' => $results,
-                'winners' => $winners,
+                'sections' => $sections,
                 'show' => $show,
                 'isLocked' => config('app.state') == 'locked',
             ]
@@ -147,7 +107,7 @@ class CategoryController extends Controller
             ];
         }
 
-        return view('categories.printcards', ['show'=>$show, 'card_fronts' => $cardFronts]);
+        return view('categories.printcards', ['show' => $show, 'card_fronts' => $cardFronts]);
     }
 
     /**

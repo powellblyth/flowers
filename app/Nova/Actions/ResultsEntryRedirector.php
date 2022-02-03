@@ -28,13 +28,14 @@ class ResultsEntryRedirector extends Action
      *
      * @var string
      */
-    public $confirmText = 'Ent4er Results for this category';
+    public $confirmText = 'Enter Results for this category';
 
     /**
      * Perform the action on the given models.
      *
-     * @param \Illuminate\Support\Collection $models
-     * @return mixed
+     * @param ActionFields $fields
+     * @param Collection $sections
+     * @return array|string[]
      */
     public function handle(ActionFields $fields, Collection $sections)
     {

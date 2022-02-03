@@ -48,9 +48,9 @@ Route::group(['middleware' => 'is_admin'], function () {
     Route::post('/cups/{id}/directresultsetwinner', [CupController::class, 'directResultSetWinner'])
         ->name('cup.directResultSetWinner');
 
-    Route::post('/sections/storeresults', [SectionController::class, 'storeresults'])
+    Route::post('/sections/{section}/storeresults', [SectionController::class, 'storeresults'])
         ->name('sections.storeresults');
-    Route::get('/sections/resultsentry', [SectionController::class, 'resultsentry'])
+    Route::get('/sections/{section}/resultsentry', [SectionController::class, 'resultsentry'])
         ->name('sections.resultsentry');
     Route::get('/categories/printtabletop', [CategoryController::class, 'printcards'])
         ->name('category.tabletopprint');

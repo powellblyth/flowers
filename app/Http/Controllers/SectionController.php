@@ -28,64 +28,43 @@ class SectionController extends Controller
     /**
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function resultsentry(Request $request): View
+    public function resultsentry(Request $request, Section $section): View
     {
         $show = $this->getShowFromRequest($request);
         $this->authorize('enterResults', Entry::class);
-        $entries = [];
-        $winners = [];
-        $section = Section::findOrFail($request->section);
-        $categories = $section->categories()
-            ->with(['entries', 'entries.entrant'])
-            ->where('show_id', $show->id)
-            ->orderby('sortorder')
-            ->get();
-
-        foreach ($categories as $category) {
-            /** @var Category $category */
-            $thisEntries = $category
-                ->entries()
-                ->orderBy('entrant_id')
-                ->get();
-
-            $entries[$category->id] = [];
-            $winners[$category->id] = [];
-
-            foreach ($thisEntries as $entry) {
-                /** @var Entry $entry */
-                if (!empty($entry->winningplace)) {
-                    $winners[$category->id][$entry->entrant->id] = $entry->winningplace;
-                }
-                $entries[$category->id][$entry->id] = [
-                    'entrant_id' => $entry->entrant->id,
-                    'entrant_name' => $entry->entrant->full_name,
-                    'entrant_number' => $entry->entrant->entrant_number,
-                ];
-            }
-        }
+        $section->load([
+            'categories',
+            'categories.entries',
+            'categories.entries.entrant',
+        ]);
         return view('sections.resultsentry', array(
-            'categories' => $categories,
-            'entries' => $entries,
             'section' => $section,
-            'winners' => $winners,
-            'show' => $show
+            'winning_places' => [
+                'Choose...',
+                'First Place',
+                'Second Place',
+                'Third Place',
+                'commended' => 'Commended',
+            ],
+            'show' => $show,
         ));
     }
 
-    public function storeresults(Request $request): RedirectResponse
+    public function storeresults(Request $request, Section $section): RedirectResponse
     {
+        $winningPlaces = [
+            'Choose...',
+            'First Place',
+            'Second Place',
+            'Third Place',
+            'commended' => 'Commended',
+        ];
         $this->authorize('enterResults', Entry::class);
-        foreach ($request->positions as $categoryId => $placings) {
-            foreach ($placings as $entryId => $result) {
-                if ('0' !== $result && '' != trim($result)) {
-                    $entry = Entry::where(
-                        [
-                            'id' => $entryId,
-                            'category_id' => $categoryId
-                        ])->first();
-                    $entry->winningplace = $result;
-                    $entry->save();
-                }
+        foreach ($request->entries as $entryId => $placing) {
+            if (in_array($placing, $winningPlaces)) {
+                $entry = Entry::findOrFail($entryId);
+                $entry->winningplace = $placing;
+                $entry->save();
             }
         }
         return redirect()->route('categories.index');

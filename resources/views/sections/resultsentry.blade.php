@@ -1,45 +1,36 @@
 @extends('layouts.main')
 @section('pagetitle', 'Results section for ' . $section->name)
 @section('content')
-<a href="/categories">&laquo; Categories</a>
-<br />
+    <a href="{{route('categories.index')}}">&laquo; Categories</a>
+    <br/>
 
-<div style="text-align:left;vertical-align:middle">
+    <div style="text-align:left;vertical-align:middle">
 
-    {{Form::open(['route'=>array('sections.storeresults',$show)])}}
-{{--    {{ Form::open([--}}
-{{--    'route' => 'sections.storeresults', 'parameters'=>['show'=>'']--}}
-{{--]) }}--}}
-@foreach ($categories as $category)
-    {{$category->numbered_name}}<br />
-    <b>Entrants:</b>
-    @foreach ($entries[$category->id] as $entryId => $entrantAry)
-        <div style="display:inline-block;background-color:#d9edf7; margin:2px; padding:2px;">
-        {{ Form::label('first_place', $entrantAry['entrant_number'] . ' ' .$entrantAry['entrant_name'], ['class' => 'control-label']) }}<br />
-        {{Form::select('positions['.$category->id.']['.$entryId.']',
-                array(0=>'Choose...',
-                    1=>'First Place',
-                    2=>'Second Place',
-                    3=>'Third Place',
-                    'commended'=>'Commended'),
+        {{Form::open(['route'=>array('sections.storeresults',$show)])}}
+        @foreach ($section->categories->where('show_id', $show->id)->sortBy('sortorder') as $category)
+            {{$category->numbered_name}}<br/>
+            <b>Entrants:</b>
+            @foreach ($category->entries->sortBy('winningplace') as $entry)
+                <div style="display:inline-block;background-color:#d9edf7; margin:2px; padding:2px;">
+                    {{ Form::label('first_place', $entry->entrant->entrant_number . ' ' .$entry->entrant->full_name, ['class' => 'control-label']) }}
+                    <br/>
+                    {{Form::select('entries['.$entry->id.']',
+                            $winning_places,
 
-                (array_key_exists($entrantAry['entrant_id'], $winners[$category->id])
-                    ? $winners[$category->id][$entrantAry['entrant_id']]
-                     :null),
-                ['disabled' => array_key_exists($entrantAry['entrant_id'],
-                        $winners[$category->id]),
-                'class' => 'form-control',
-                'style'=>'width:200px'])}}
-        </div>
-    @endforeach
-    <hr />
-@endforeach
+                            in_array($entry->winningplace, $winning_places ) ? $entry->winningPlace:null,
+                            ['disabled' => !empty($entry->winningplace),
+                            'class' => 'form-control',
+                            'style'=>'width:200px'])}}
+                </div>
+            @endforeach
+            <hr/>
+        @endforeach
 
 
-{{ Form::submit('Store Results', ['class' => 'button btn btn-primary']) }}
-<br /><br /><br />
-{{ Form::close() }}
-</div>
+        {{ Form::submit('Store Results', ['class' => 'button btn btn-primary']) }}
+        <br/><br/><br/>
+        {{ Form::close() }}
+    </div>
 
 
 @stop
