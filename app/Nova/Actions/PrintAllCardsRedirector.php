@@ -45,7 +45,7 @@ class PrintAllCardsRedirector extends Action
         foreach ($shows as $model) {
             switch ($model::class) {
                 case Show::class:
-                    $params['users'] = $model;
+                    $params['show'] = $model;
                     break;
                 case User::class:
                     $params['users'] = array_merge($params['users'] ?? [], [$model->id]);

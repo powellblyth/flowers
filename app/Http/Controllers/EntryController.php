@@ -6,6 +6,8 @@ use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -29,7 +31,7 @@ class EntryController extends Controller
     /**
      * referenced by nova
      */
-    public function printallcards(Request $request): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+    public function printallcards(Request $request): Application|Factory|\Illuminate\Contracts\View\View
     {
         $show = $this->getShowFromRequest($request);
 
@@ -55,9 +57,7 @@ class EntryController extends Controller
         $cardBacks = [];
 
         foreach ($entriesQuery->get() as $entry) {
-            /**
-             * @var Entry $entry
-             */
+            /** @var Entry $entry */
             if ($entry->category) {
                 $categoryData[$entry->category->id] = $entry->category;
                 $cardFronts[] = $entry->getCardFrontData();
