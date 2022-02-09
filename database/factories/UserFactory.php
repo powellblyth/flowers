@@ -18,6 +18,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 |
 */
 
+/**
+ * @extends Factory
+ */
 class UserFactory extends Factory
 {
     /**

@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Entry
@@ -11,26 +13,26 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $category_id
  * @property int $entrant_id
  * @property int $paid
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property string|null $winningplace
  * @property int|null $year
  * @property int|null $show_id
- * @property-read \App\Models\Category $category
- * @property-read \App\Models\Entrant $entrant
- * @property-read \App\Models\Show|null $show
- * @method static \Illuminate\Database\Eloquent\Builder|Entry newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Entry newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Entry query()
- * @method static \Illuminate\Database\Eloquent\Builder|Entry whereCategoryId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entry whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entry whereEntrantId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entry whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entry wherePaid($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entry whereShowId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entry whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entry whereWinningplace($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Entry whereYear($value)
+ * @property-read Category $category
+ * @property-read Entrant $entrant
+ * @property-read Show|null $show
+ * @method static Builder|Entry newModelQuery()
+ * @method static Builder|Entry newQuery()
+ * @method static Builder|Entry query()
+ * @method static Builder|Entry whereCategoryId($value)
+ * @method static Builder|Entry whereCreatedAt($value)
+ * @method static Builder|Entry whereEntrantId($value)
+ * @method static Builder|Entry whereId($value)
+ * @method static Builder|Entry wherePaid($value)
+ * @method static Builder|Entry whereShowId($value)
+ * @method static Builder|Entry whereUpdatedAt($value)
+ * @method static Builder|Entry whereWinningplace($value)
+ * @method static Builder|Entry whereYear($value)
  * @mixin \Eloquent
  */
 class Entry extends Model

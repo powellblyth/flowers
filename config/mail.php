@@ -17,10 +17,6 @@ return [
             'transport' => 'ses',
         ],
 
-        'mailgun' => [
-            'transport' => 'mailgun',
-        ],
-
         'postmark' => [
             'transport' => 'postmark',
         ],
