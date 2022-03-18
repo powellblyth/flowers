@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ssh -p 21098 swocha@104.219.248.108
+ssh -p 21098 swocha@server160.web-hosting.com
