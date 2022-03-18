@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd40c2a393c9191920127c166a5059db",
+    "content-hash": "dd414c3febc2e1e807e29e0c9e7060f6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3454,6 +3454,55 @@
                 "source": "https://github.com/nztim/mailchimp/tree/master"
             },
             "time": "2019-07-26T20:38:57+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-inline-text-field",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-inline-text-field.git",
+                "reference": "402a69b1cabca4b97d373ec76400e0d130ec4183"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-inline-text-field/zipball/402a69b1cabca4b97d373ec76400e0d130ec4183",
+                "reference": "402a69b1cabca4b97d373ec76400e0d130ec4183",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^3.0",
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\NovaInlineTextField\\NovaInlineTextFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaInlineTextField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova inline text field.",
+            "keywords": [
+                "field",
+                "inline",
+                "laravel",
+                "nova",
+                "text"
+            ],
+            "support": {
+                "issues": "https://github.com/optimistdigital/nova-inline-text-field/issues",
+                "source": "https://github.com/optimistdigital/nova-inline-text-field/tree/1.0.4"
+            },
+            "time": "2022-02-07T15:29:53+00:00"
         },
         {
             "name": "phenx/php-font-lib",

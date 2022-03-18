@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use OptimistDigital\NovaInlineTextField\InlineText;
 
 class Category extends Resource
 {
@@ -46,7 +47,7 @@ class Category extends Resource
         'sortorder' => 'asc',
     ];
 
-    public static $perPageViaRelationship = 50;
+    public static $perPageViaRelationship = 100;
 
     /**
      * Build an "index" query for the given resource.
@@ -77,12 +78,14 @@ class Category extends Resource
             Text::make('Name', 'numbered_name')
                 ->sortable()
             ->onlyOnDetail(),
-            Text::make('Name', 'numbered_name')
-                ->sortable()
-                ->displayUsing(function ($value) {
-                    return substr($value, 0, 50) . '...';
-                })
+            InlineText::make('Number')
+                ->rules('required', 'max:255')->required()
                 ->onlyOnIndex(),
+            InlineText::make('Name', 'name')
+                ->onlyOnIndex(),
+
+            InlineText::make('Sort Order', 'sortorder')
+                ->onlyOnIndex()->sortable(),
 
             Text::make('Number')
                 ->sortable()
@@ -95,7 +98,7 @@ class Category extends Resource
 
             Number::make('Sort Order', 'sortorder')
                 ->required()
-                ->sortable(),
+                ->hideFromIndex(),
 
             Currency::make('Price')->required()
                 ->sortable()->currency('GBP')->asMinorUnits(),
