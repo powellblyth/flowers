@@ -61,10 +61,16 @@ class Show extends Model
 
     final const STATUS_CURRENT = 'current';
     final const STATUS_PLANNED = 'planned';
+    final const STATUS_PASSED = 'passed';
 
     public function isCurrent(): bool
     {
         return $this->status == self::STATUS_CURRENT;
+    }
+
+    public function isPublic(): bool
+    {
+        return in_array($this->status, [self::STATUS_CURRENT,self::STATUS_PASSED]);
     }
 
     public function isClosedToEntries(): bool

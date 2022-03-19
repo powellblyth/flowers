@@ -11,7 +11,7 @@ class Show extends Component
      *
      * @return void
      */
-    public function __construct( public ?\App\Models\Show $show = null, public string $route='cups.index')
+    public function __construct(public ?\App\Models\Show $show = null, public string $route = 'cups.index')
     {
         //
     }
@@ -22,7 +22,11 @@ class Show extends Component
     public function render(): \Closure|\Illuminate\Contracts\View\View|string
     {
         return view('components.navigation.show', [
-            'shows' => \App\Models\Show::orderBy('start_date')->get(),
+            'shows' => \App\Models\Show::orderBy('start_date')
+                ->get()
+                ->filter(
+                    fn(\App\Models\Show $show) => $show->isPublic()
+                ),
             'route' => $this->route,
             'show' => $this->show,
         ]);

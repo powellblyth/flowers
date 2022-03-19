@@ -74,7 +74,7 @@
                                     <b>
                                         <nobr>
                                             {{$category->entries->count()}}
-                                            {{\Illuminate\Support\Str::plural('entry', $category->entries->count())}}
+                                            {{\Illuminate\Support\Str::plural('entry', $category->entries)}}
                                         </nobr>
                                     </b>
 

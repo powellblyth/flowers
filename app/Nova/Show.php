@@ -94,7 +94,10 @@ class Show extends Resource
 
             Select::make('Status')
                 ->sortable()
-                ->options(['planned' => 'Planned', 'current' => 'Current', 'passed' => 'Passed'])
+                ->options([\App\Models\Show::STATUS_PLANNED => 'Planned',
+                           \App\Models\Show::STATUS_CURRENT => 'Current',
+                           \App\Models\Show::STATUS_PASSED => 'Passed',
+                ])
                 ->displayUsingLabels()
             ,
             \App\Nova\Fields\Badge::make('Status', 'status', function () {
@@ -102,9 +105,9 @@ class Show extends Resource
             })->label(function ($value) {
                 return __($value);
             })->map([
-                'planned' => 'danger',
-                'current' => 'warning',
-                'passed' => 'success',
+                \App\Models\Show::STATUS_PLANNED => 'danger',
+                \App\Models\Show::STATUS_CURRENT => 'warning',
+                \App\Models\Show::STATUS_PASSED => 'success',
             ])->sortable(),
             HasMany::make('Categories'),
 

@@ -100,6 +100,9 @@ class Category extends Resource
                 ->required()
                 ->hideFromIndex(),
 
+            Number::make(__('Minimum age'), 'minimum_age'),
+            Number::make(__('Maximum age'), 'maximum_age'),
+
             Currency::make('Price')->required()
                 ->sortable()->currency('GBP')->asMinorUnits(),
 
