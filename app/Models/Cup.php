@@ -38,6 +38,8 @@ use Illuminate\Support\Facades\DB;
  * @method static Builder|Cup whereWinningCategory($value)
  * @method static Builder|Cup whereWinningCriteria($value)
  * @mixin \Eloquent
+ * @property-read Collection|\App\Models\CupDirectWinner[] $cupDirectWinner
+ * @property-read int|null $cup_direct_winner_count
  */
 class Cup extends Model
 {

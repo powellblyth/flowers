@@ -41,52 +41,6 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return Response
-     */
-    public function edit()
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return Response
-     */
-    public function update()
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return Response
-     */
-    public function destroy()
-    {
-        //
-    }
-
-    public function create(): View
-    {
-        $sections = Section::pluck('name', 'id');
-        return view('categories.create', ['sections' => $sections]);
-    }
-
-    /**
      * This prints all the category cards for the show entries to put on the tables
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
@@ -98,9 +52,7 @@ class CategoryController extends Controller
         $cardFronts = [];
 
         foreach ($categories as $category) {
-            /**
-             * @var Category $category
-             */
+            /** @var Category $category */
             $cardFronts[] = [
                 'class_number' => $category->number,
                 'class_name' => $category->name

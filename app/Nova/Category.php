@@ -6,6 +6,7 @@ use App\Nova\Filters\FilterByShow;
 use App\Nova\Filters\SectionFilter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -106,6 +107,8 @@ class Category extends Resource
 
             Number::make(__('Minimum age'), 'minimum_age')->hideFromIndex()->nullable(),
             Number::make(__('Maximum age'), 'maximum_age')->hideFromIndex()->nullable(),
+
+            Boolean::make(__('Private'), 'private')->hideFromIndex(),
 
             Currency::make('Price')->required()
                 ->sortable()->currency('GBP')->asMinorUnits(),

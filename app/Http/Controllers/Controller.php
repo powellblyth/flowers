@@ -20,7 +20,7 @@ class Controller extends BaseController
         } elseif ($request->filled('show')) {
             $show = Show::with('categories')->findOrFail((int) $request->show);
         } else {
-            $show = Show::with('categories')->where('status', 'current')
+            $show = Show::with('categories')->where('status', Show::STATUS_CURRENT)
                 ->first();
         }
         return $show;

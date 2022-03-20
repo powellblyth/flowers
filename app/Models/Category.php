@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 /**
@@ -59,6 +60,14 @@ use Laravel\Nova\Http\Requests\NovaRequest;
  * @method static Builder|Category whereUpdatedAt($value)
  * @method static Builder|Category whereYear($value)
  * @mixin \Eloquent
+ * @property int|null $minimum_age
+ * @property int|null $maximum_age
+ * @property bool $private private means you can't enter it as a member of the public, e.g.. school categories
+ * @method static Builder|Category forShow(\App\Models\Show $show)
+ * @method static Builder|Category inOrder()
+ * @method static Builder|Category whereMaximumAge($value)
+ * @method static Builder|Category whereMinimumAge($value)
+ * @method static Builder|Category wherePrivate($value)
  */
 class Category extends Model implements \Stringable
 {
@@ -67,6 +76,17 @@ class Category extends Model implements \Stringable
     public final const TYPE_ADULT = 'Adult';
     public final const PRICE_LATE_PRICE = 'lateprice';
     public final const PRICE_EARLY_PRICE = 'earlyprice';
+
+    public $casts = [
+        'price' => 'int',
+        'late_price' => 'int',
+        'first_prize' => 'int',
+        'second_prize' => 'int',
+        'third_prize' => 'int',
+        'minimum_age' => 'int',
+        'maximum_age' => 'int',
+        'private' => 'bool',
+    ];
 
     public function scopeForShow(Builder $query, Show $show)
     {
@@ -141,6 +161,7 @@ class Category extends Model implements \Stringable
             return $this->late_price;
         }
     }
+
     /**
      * Default ordering for index query.
      *
@@ -153,8 +174,8 @@ class Category extends Model implements \Stringable
     /**
      * Build an "index" query for the given resource.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
+     * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public static function indexQuery(NovaRequest $request, $query)
@@ -164,5 +185,33 @@ class Category extends Model implements \Stringable
             return $query->orderBy(key(static::$indexDefaultOrder), reset(static::$indexDefaultOrder));
         }
         return $query;
+    }
+
+    public function canEnter(Entrant $entrant):bool
+    {
+        Log::debug('can enter ' . $this->name.'?');
+        if (is_null($this->minimum_age) && is_null($this->maximum_age)) {
+            Log::debug('yes, is unrestrained');
+            return true;
+        }
+
+        $age = $entrant->age;
+        Log::debug('age is '.$age);
+        if (is_null($age)) {
+            Log::debug('age is now '.$age);
+            $age = 18;
+        }
+
+        if (!is_null($this->maximum_age) && $age > $this->maximum_age) {
+            Log::debug('no, age too young'.$this->maximum_age);
+            return false;
+        }
+        if (!is_null($this->minimum_age) && $age < $this->minimum_age) {
+            Log::debug('no, age too old'.$this->minimum_age);
+            return false;
+        }
+
+        Log::debug('yes in right age');
+        return true;
     }
 }

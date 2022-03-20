@@ -17,9 +17,7 @@ use Illuminate\View\View;
 
 class EntrantController extends Controller
 {
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     protected $paymentTypes = array('cash' => 'cash',
                                     'cheque' => 'cheque',
                                     'online' => 'online',
@@ -89,7 +87,6 @@ class EntrantController extends Controller
         // Make sure we don't make duplicate show entries in a given year
         if ($request->team_id) {
             $team = Team::findOrFail($request->team_id);
-//            $teamMembership = $entrant->teams()->delete(['show_id' => $showId]);
             $entrant->teams()->save($team, ['show_id' => $showId]);
         } else {
             //TODO how do we delete them?
