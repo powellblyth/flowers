@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Filters\FilterByShow;
+use App\Nova\Filters\SectionFilter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
@@ -145,7 +146,10 @@ class Category extends Resource
      */
     public function filters(Request $request)
     {
-        return [FilterByShow::make()];
+        return [
+            FilterByShow::make(),
+            SectionFilter::make(),
+        ];
     }
 
     /**
