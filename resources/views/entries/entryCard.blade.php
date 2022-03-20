@@ -14,17 +14,25 @@
             }}
     @endif
     <div class="p-20">
-        <div class=" bg-white w-full top-0 sticky p-2 float-right"><h3
-                class="inline-block w-1/2 text-xl ">@lang('The :family family entry card for :show', ['family'=>$user->last_name,'show'=>$show->name])</h3>
+        <div class=" bg-white top-0 sticky p-2 flex">
+            <div>
+                <h3 class="text-xl ">
+                    @lang('The :family family entry card for :show', ['family'=>$user->last_name,'show'=>$show->name])
+                </h3>
+            </div>
             @if ($can_enter)
-                <div class="w-1/2 inline-block float-right"><input type="submit" value="Save"
-                                                                   class="text-white bg-green-500 px-3 py-1 rounded">
+                <div>
+                    <input type="submit" value="Save" class="text-white bg-green-500 px-3 py-1 rounded">
                 </div>
             @endif
         </div>
         @forelse ($user->entrants as $entrant)
-            <div class="bg-white p-3 m-4">
-                <h3 class=" bg-white text-xl sticky w-full top-10 p-2 font-bold">@lang(':name\'s entry card', ['name'=>$entrant->full_name]) {{$entrant->age_description}}</h3>
+            <div class="bg-white p-2 m-4">
+                <div class="sticky top-0">
+                    <h3 class="bg-white text-xl  w-full p-2 font-bold">
+                        @lang(':name\'s entry card', ['name'=>$entrant->full_name]) {{$entrant->age_description}}
+                    </h3>
+                </div>
                 <div>
                     <div class=" p-2 px-4">
                         @php
