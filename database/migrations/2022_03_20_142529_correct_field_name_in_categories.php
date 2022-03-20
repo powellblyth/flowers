@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->unsignedSmallInteger('minumum_age')->nullable();
-            $table->unsignedSmallInteger('maximum_age')->nullable();
+            $table->renameColumn('minumum_age','minimum_age');
         });
     }
 
@@ -27,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumn(['minumum_age','maximum_age']);
+            $table->renameColumn('minimum_age', 'minumum_age');
         });
     }
 };
