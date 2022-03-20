@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
 /**
  * App\Models\Show
@@ -39,6 +40,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Show extends Model
 {
+    use HasSortableRows;
+
     protected $fillable = [
         'name',
         'start_date',
@@ -49,10 +52,10 @@ class Show extends Model
     ];
 
     protected $casts = [
-        'late_entry_deadline'     => 'datetime',
+        'late_entry_deadline' => 'datetime',
         'entries_closed_deadline' => 'datetime',
-        'ends_date'               => 'datetime',
-        'start_date'              => 'datetime:Y-m-d H:i',
+        'ends_date' => 'datetime',
+        'start_date' => 'datetime:Y-m-d H:i',
     ];
 
     protected $attributes = [
@@ -70,7 +73,7 @@ class Show extends Model
 
     public function isPublic(): bool
     {
-        return in_array($this->status, [self::STATUS_CURRENT,self::STATUS_PASSED]);
+        return in_array($this->status, [self::STATUS_CURRENT, self::STATUS_PASSED]);
     }
 
     public function isClosedToEntries(): bool

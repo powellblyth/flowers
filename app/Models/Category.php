@@ -95,7 +95,7 @@ class Category extends Model implements \Stringable
 
     public function cups(): BelongsToMany
     {
-        return $this->belongsToMany(Cup::class);
+        return $this->belongsToMany(Cup::class)->withTimestamps();
     }
 
     public function numberedName(): Attribute

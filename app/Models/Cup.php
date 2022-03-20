@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\DB;
  * @property string|null $winning_criteria
  * @property int|null $sort_order
  * @property int|null $num_display_results
- * @property-read Collection|\App\Models\Category[] $categories
+ * @property-read Collection|Category[] $categories
  * @property-read int|null $categories_count
  * @method static Builder|Cup newModelQuery()
  * @method static Builder|Cup newQuery()
@@ -43,7 +43,7 @@ class Cup extends Model
 {
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class)->withTimestamps();
     }
 
     public function cupDirectWinner(): HasMany

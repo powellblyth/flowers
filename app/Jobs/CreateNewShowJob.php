@@ -47,9 +47,7 @@ class CreateNewShowJob implements ShouldQueue
             ->orderBy('sortorder')
             ->get();
         foreach ($categories as $category) {
-            /**
-             * @var Category $category
-             */
+            /** @var Category $category */
             $newCategory = $category->replicate(['show_id']);
             $newCategory->save();
             $newCategory->cups()->attach($category->cups);
