@@ -69,6 +69,9 @@
                             <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                                 <td class="border-grey-light border hover:bg-gray-100 p-3">
                                     {{$category->numbered_name}}
+                                    @if($category->notes)
+                                        <span class="italic text-sm">{{$category->notes}}</span>
+                                        @endif
                                 </td>
                                 <td class="border-grey-light border hover:bg-gray-100 p-3 font-weight-bold">
                                     <b>

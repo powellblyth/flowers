@@ -105,6 +105,8 @@ class Category extends Resource
             InlineText::make(__('Minimum age'), 'minimum_age')->onlyOnIndex(),
             InlineText::make(__('Maximum age'), 'maximum_age')->onlyOnIndex(),
 
+            Text::make('notes')->hideFromIndex(),
+
             Number::make(__('Minimum age'), 'minimum_age')->hideFromIndex()->nullable(),
             Number::make(__('Maximum age'), 'maximum_age')->hideFromIndex()->nullable(),
 
