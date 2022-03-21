@@ -2,12 +2,14 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\AddEntryToCategory;
 use App\Nova\Filters\FilterByShow;
 use App\Nova\Filters\SectionFilter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Currency;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -130,6 +132,7 @@ class Category extends Resource
 
             BelongsTo::make('Show')->sortable()->required(),
             BelongsTo::make('Section')->sortable()->required(),
+            HasMany::make(__('Entries'), 'entries'),
 
         ];
     }
@@ -174,6 +177,9 @@ class Category extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            AddEntryToCategory::make()
+                    ->showOnTableRow(),
+        ];
     }
 }
