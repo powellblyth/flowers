@@ -32,7 +32,7 @@ class MembershipsByMembershipType extends Partition
      */
     public function cacheFor(): \DateInterval|\DateTimeInterface|float|int
     {
-        // return now()->addMinutes(5);
+         return now()->addMinutes(5);
     }
 
     /**

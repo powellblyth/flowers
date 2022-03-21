@@ -9,7 +9,7 @@ if [ -f artisan ]; then
     php artisan migrate --force
     php artisan queue:restart
     npm i
-    npm run prod
+    npm run production
     php artisan config:cache
     php artisan route:cache
     php artisan view:cache

@@ -55,7 +55,14 @@
                                     <!-- TODO dont bother showing unentered historic categories -->
                                         <div class="p-2 flex bg-green-200 mx-2 my-3 rounded-xl">
                                             <label for="{{'cb_' . $category->id . '_' . $entrant->id}}"
-                                                   class="flex-auto w-80 px-2">{{$category->numbered_name}}</label>
+                                                   class="flex-auto w-80 px-2">
+                                                {{$category->numbered_name}}
+                                                @if($category->notes)
+                                                    <br /><span class="text-sm italic">
+                                                        {{$category->notes}}
+                                                    </span>
+                                                @endif
+                                            </label>
                                             <div class="2xl:text-xl">
                                                 <input
                                                     id="{{'cb_' . $category->id . '_' . $entrant->id}}"
