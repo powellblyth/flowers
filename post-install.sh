@@ -1,6 +1,6 @@
 #!/bin/sh
 git pull
-if [ -f .vendor/bin/composer];then
+if [ -f ./vendor/bin/composer ]; then
   ./vendor/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 else
   composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
