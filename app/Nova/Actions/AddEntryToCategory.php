@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\Boolean;
@@ -52,11 +53,20 @@ class AddEntryToCategory extends Action
 
 
         $models->each(function (Category $category) use ($fields, $entrantId) {
-            $entry = new Entry();
-            $entry->category()->associate($category);
-            $entry->show()->associate($category->show);
-            $entry->entrant_id = $entrantId;
-            $entry->save();
+            Log::debug('eaching ' . $entrantId . ' '.$fields['entrant_id']);
+            // If there isn't an entry, then pervesely the check has succeeded
+            try {
+                $existingEntry = $category->entries()->where('entrant_id', $entrantId)->firstOrFail();
+                Log::debug('failing because it exists');
+                $this->markAsFailed($category);
+            } catch (\Exception) {
+                Log::debug('creating');
+                $entry = new Entry();
+                $entry->category()->associate($category);
+                $entry->show()->associate($category->show);
+                $entry->entrant_id = $entrantId;
+                $entry->save();
+            }
         });
     }
 
