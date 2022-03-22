@@ -21,6 +21,13 @@ class AddEntryToCategory extends Action
     use InteractsWithQueue, Queueable;
 
     /**
+     * The text to be used for the action's confirm button.
+     *
+     * @var string
+     */
+    public $confirmButtonText = 'Create Entry(ies)';
+
+    /**
      * Perform the action on the given models.
      *
      * @param \Laravel\Nova\Fields\ActionFields $fields
