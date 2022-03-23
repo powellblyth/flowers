@@ -54,9 +54,9 @@ class SectionController extends Controller
     {
         $winningPlaces = [
             'Choose...',
-            'First Place',
-            'Second Place',
-            'Third Place',
+            '1',
+            '2',
+            '3',
             'commended' => 'Commended',
         ];
         $this->authorize('enterResults', Entry::class);
@@ -67,7 +67,7 @@ class SectionController extends Controller
                 $entry->save();
             }
         }
-        return redirect()->route('categories.index');
+        return redirect()->back();
     }
 
     public function forwebsite(): View
