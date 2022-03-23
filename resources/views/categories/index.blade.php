@@ -29,7 +29,7 @@
             {{ __('Categories for the '  . $show->name . ' show') }}
         </h2>
     </x-slot>
-    <x-navigation.show route="categories.index" :show="$show" />
+    <x-navigation.show route="categories.index" :show="$show"/>
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -58,20 +58,20 @@
                     <table
                         class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                         <thead class="text-white">
-                            <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                                <th class="p-3 text-left">Category</th>
-                                <th class="p-3 text-left">Entries</th>
-                                <th class="p-3 text-left" colspan="4" width="110px">Winner</th>
-                            </tr>
+                        <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                            <th class="p-3 text-left">Category</th>
+                            <th class="p-3 text-left">Entries</th>
+                            <th class="p-3 text-left" colspan="4" width="110px">Winner</th>
+                        </tr>
                         </thead>
                         <tbody class="flex-1 sm:flex-none">
-                        @foreach ($section->categories->where('show_id', $show->id)->sortBy('sortorder') as $category)
+                        @foreach ($show->categories->where('section_id', $section->id)->sortBy('sortorder') as $category)
                             <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                                 <td class="border-grey-light border hover:bg-gray-100 p-3">
                                     {{$category->numbered_name}}
                                     @if($category->notes)
                                         <span class="italic text-sm">{{$category->notes}}</span>
-                                        @endif
+                                    @endif
                                 </td>
                                 <td class="border-grey-light border hover:bg-gray-100 p-3 font-weight-bold">
                                     <b>
@@ -82,17 +82,22 @@
                                     </b>
 
                                 </td>
-                                @foreach ($category->entries->whereNotNull('winningplace')->sortBy(
-    function ($entry, $key){
-        if ($entry->winningplace === 'commended'){
-            return 4;
-        }
-        if (empty($entry->winningplace)){
-            return 5;
-        }
-        return $entry->winningplace;
-    }
-) as $entry)
+                                @foreach ($category
+                                    ->entries
+                                    ->reject(
+                                        fn(\App\Models\Entry $entry)=>empty($entry->winningplace)
+                                        )
+                                    ->sortBy(
+                                        function ($entry, $key){
+                                            if ($entry->winningplace === 'commended'){
+                                                return 4;
+                                            }
+                                            if (empty($entry->winningplace)){
+                                                return 5;
+                                            }
+                                            return $entry->winningplace;
+                                        }
+                                    ) as $entry)
                                     <td class="border-grey-light border hover:bg-gray-100 p-3">
                                         @if($entry->winningplace == 1)
                                             First:

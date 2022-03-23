@@ -174,9 +174,9 @@ class Category extends Model implements \Stringable
     /**
      * Build an "index" query for the given resource.
      *
-     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param NovaRequest $request
+     * @param Builder $query
+     * @return Builder
      */
     public static function indexQuery(NovaRequest $request, $query)
     {

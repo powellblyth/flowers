@@ -13,14 +13,16 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected function getShowFromRequest(Request $request): Show
+    protected function getShowFromRequest(Request $request, array $extraRelations = []): Show
     {
+//        dump($extraRelations);
+//        dd(array_merge(['categories'],$extraRelations));
         if ($request->filled('show_id')) {
-            $show = Show::with('categories')->findOrFail((int) $request->show_id);
+            $show = Show::with(array_merge(['categories'],$extraRelations))->findOrFail((int) $request->show_id);
         } elseif ($request->filled('show')) {
-            $show = Show::with('categories')->findOrFail((int) $request->show);
+            $show = Show::with(array_merge(['categories'],$extraRelations))->findOrFail((int) $request->show);
         } else {
-            $show = Show::with('categories')->where('status', Show::STATUS_CURRENT)
+            $show = Show::with(array_merge(['categories'],$extraRelations))->where('status', Show::STATUS_CURRENT)
                 ->first();
         }
         return $show;
