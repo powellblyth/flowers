@@ -40,10 +40,10 @@ class SectionController extends Controller
         return view('sections.resultsentry', array(
             'section' => $section,
             'winning_places' => [
-                'Choose...',
-                'First Place',
-                'Second Place',
-                'Third Place',
+                0 => 'Choose...',
+                '1' => 'First Place',
+                '2' => 'Second Place',
+                '3' => 'Third Place',
                 'commended' => 'Commended',
             ],
             'show' => $show,

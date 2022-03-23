@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('pagetitle', 'Results section for ' . $section->name)
+@section('pagetitle', 'Results entry for ' . $section->name)
 @section('content')
-    <a href="{{route('categories.index')}}">&laquo; Categories</a>
+    <a href="{{config('nova.path')}}/resources/sections">&laquo; Sections</a>
     <br/>
 
     <div style="text-align:left;vertical-align:middle">
@@ -17,7 +17,7 @@
                     {{Form::select('entries['.$entry->id.']',
                             $winning_places,
 
-                            in_array($entry->winningplace, $winning_places ) ? $entry->winningPlace:null,
+                            $entry->winningplace,
                             ['disabled' => !empty($entry->winningplace),
                             'class' => 'form-control',
                             'style'=>'width:200px'])}}
