@@ -24,6 +24,13 @@ class PrintLookupSheetsRedirector extends Action
     public $cancelButtonText = 'Cancel';
 
     /**
+     * Determine where the action redirection should be without confirmation.
+     *
+     * @var bool
+     */
+    public $withoutConfirmation = true;
+
+    /**
      * The text to be used for the action's confirmation text.
      *
      * @var string
