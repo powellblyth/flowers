@@ -68,6 +68,8 @@ use Laravel\Nova\Http\Requests\NovaRequest;
  * @method static Builder|Category whereMaximumAge($value)
  * @method static Builder|Category whereMinimumAge($value)
  * @method static Builder|Category wherePrivate($value)
+ * @property string $notes
+ * @method static Builder|Category whereNotes($value)
  */
 class Category extends Model implements \Stringable
 {
