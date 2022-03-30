@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
@@ -75,12 +76,12 @@ class Cup extends Resource
             Stack::make(
                 'name',
                 [
-                    Text::make('Name', 'name')
+                    Text::make(__('Name'), 'name')
                         ->sortable()
                         ->rules('required', 'max:255')
                     ,
 
-                    Text::make('Winning Criteria')
+                    Text::make(__('Winning Criteria'), 'winning_criteria')
                         ->sortable()
                         ->displayUsing(function ($value) {
                             return substr($value, 0, 62) . '...';
@@ -88,19 +89,20 @@ class Cup extends Resource
                         ->onlyOnIndex(),
                 ],
             ),
-            Text::make('Winning Criteria')
+            Text::make(__('Winning Criteria'), 'winning_criteria')
                 ->sortable()
                 ->rules('required', 'max:255')
                 ->showOnIndex(false)
             ,
 
-            Number::make('Sort Order')
+            Number::make(__('Sort Order'), 'sort_order')
                 ->sortable(),
 
-            Number::make('Number of results to display', 'num_display_results')
+            Number::make(__('Number of results to display'), 'num_display_results')
                 ->hideFromIndex()
                 ->sortable(),
-            HasMany::make('Categories')
+            HasMany::make(__('Categories'), 'categories'),
+            BelongsTo::make(__('Sections'), 'sections'),
         ];
     }
 

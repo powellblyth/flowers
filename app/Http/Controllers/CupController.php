@@ -22,7 +22,7 @@ class CupController extends Controller
         $show = $this->getShowFromRequest($request);
         $winners = array();
         $results = array();
-        $cups = Cup::orderBy('sort_order', 'asc')->get();
+        $cups = Cup::with(['section'])->orderBy('sort_order', 'asc')->get();
         /** dragons here - copied tp printableresults */
         foreach ($cups as $cup) {
             /** @var Cup $cup */
