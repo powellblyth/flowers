@@ -90,12 +90,12 @@ class Category extends Model implements \Stringable
         'private' => 'bool',
     ];
 
-    public function scopeForShow(Builder $query, Show $show)
+    public function scopeForShow(Builder $query, Show $show): Builder
     {
         return $query->where('show_id', $show->id);
     }
 
-    public function scopeInOrder(Builder $query)
+    public function scopeInOrder(Builder $query): Builder
     {
         return $query->orderby('sortorder');
     }
@@ -134,15 +134,12 @@ class Category extends Model implements \Stringable
 
     public function getWinningAmount(string $placement): int
     {
-        $result = 0;
-        if ('1' == $placement) {
-            $result = $this->first_prize;
-        } elseif ('2' == $placement) {
-            $result = $this->second_prize;
-        } elseif ('3' == $placement) {
-            $result = $this->third_prize;
-        }
-        return $result;
+        return match ($placement) {
+            '1' => $this->first_prize,
+            '2' => $this->second_prize,
+            '3' => $this->third_prize,
+            default => 0,
+        };
     }
 
     public function getType(): string
@@ -189,27 +186,27 @@ class Category extends Model implements \Stringable
         return $query;
     }
 
-    public function canEnter(Entrant $entrant):bool
+    public function canEnter(Entrant $entrant): bool
     {
-        Log::debug('can enter ' . $this->name.'?');
+        Log::debug('can enter ' . $this->name . '?');
         if (is_null($this->minimum_age) && is_null($this->maximum_age)) {
             Log::debug('yes, is unrestrained');
             return true;
         }
 
         $age = $entrant->age;
-        Log::debug('age is '.$age);
+        Log::debug('age is ' . $age);
         if (is_null($age)) {
-            Log::debug('age is now '.$age);
+            Log::debug('age is now ' . $age);
             $age = 18;
         }
 
         if (!is_null($this->maximum_age) && $age > $this->maximum_age) {
-            Log::debug('no, age too young'.$this->maximum_age);
+            Log::debug('no, age too young' . $this->maximum_age);
             return false;
         }
         if (!is_null($this->minimum_age) && $age < $this->minimum_age) {
-            Log::debug('no, age too old'.$this->minimum_age);
+            Log::debug('no, age too old' . $this->minimum_age);
             return false;
         }
 

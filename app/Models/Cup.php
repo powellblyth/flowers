@@ -75,19 +75,13 @@ class Cup extends Model
         return $this->hasMany(CupDirectWinner::class);
     }
 
-//    public function winner(): HasMany
-//    {
-//        return $this->hasMany(Entrant::class, CupDirectWinner::class);
-//    }
-
     public function getWinningResults(Show $show)
     {
         /**
          * @TODO improve this with more laravelness
          */
-        $categoryIds = $this->relatedCategories($show)->pluck('id')->toArray();
+        $categoryIds = $this->getValidCategoryIdsForShow($show);
 
-//        $categories =
         return DB::select(
             "
             select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
@@ -115,5 +109,14 @@ class Cup extends Model
 ",
             array(implode(',', $categoryIds), $show->id)
         );
+    }
+
+    private function getValidCategoryIdsForShow(Show $show): array
+    {
+        if ($this->section_id) {
+            return $this->section->categories()->forShow($show)->pluck('id')->toArray();
+        } else {
+            return $this->relatedCategories($show)->pluck('id')->toArray();
+        }
     }
 }

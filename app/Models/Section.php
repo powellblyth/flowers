@@ -34,9 +34,15 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Section whereNumber($value)
  * @method static Builder|Section whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property bool $is_junior
+ * @method static Builder|Section whereIsJunior($value)
  */
 class Section extends Model
 {
+    protected $attributes = [
+        'is_junior' => 'bool',
+    ];
+
     public function displayName(): Attribute
     {
         return new Attribute(

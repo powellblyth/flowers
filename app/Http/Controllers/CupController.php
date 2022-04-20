@@ -51,10 +51,6 @@ class CupController extends Controller
             $cupWinner = $cup->cupDirectWinner()->forShow($show)->first();
 
             if ($cupWinner instanceof CupDirectWinner) {
-//                dd($cupWinner->winningEntry);
-//                if(!$cupWinner->winningEntry) {
-//                   dd($cupWinner->winning_entry_id);
-//                }
                 if ($cupWinner?->winningEntry && !array_key_exists($cupWinner->winningEntry->entrant->id, $winners)) {
                     $winners[$cupWinner->winningEntry->entrant->id] =
                         [

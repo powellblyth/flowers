@@ -102,7 +102,7 @@ class Cup extends Resource
                 ->hideFromIndex()
                 ->sortable(),
             HasMany::make(__('Categories'), 'categories'),
-            BelongsTo::make(__('Sections'), 'sections'),
+            BelongsTo::make(__('Section'), 'section'),
         ];
     }
 
