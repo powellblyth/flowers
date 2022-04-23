@@ -13,20 +13,27 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /**
+     * @param Request $request
+     * @param array $extraRelations
+     * @return Show
+     */
     protected function getShowFromRequest(Request $request, array $extraRelations = []): Show
     {
-//        dump($extraRelations);
-//        dd(array_merge(['categories'],$extraRelations));
+        $builder = Show::with(array_merge(['categories'], $extraRelations));
         if ($request->filled('show_id')) {
-            $show = Show::with(array_merge(['categories'],$extraRelations))->findOrFail((int) $request->show_id);
-        } elseif ($request->filled('show')) {
-            $show = Show::with(array_merge(['categories'],$extraRelations))->findOrFail((int) $request->show);
-        } else {
-            $show = Show::with(array_merge(['categories'],$extraRelations))->where('status', Show::STATUS_CURRENT)
-                ->first();
+            return $builder->findOrFail((int) $request->get('show_id'));
         }
-        return $show;
-    }
 
+        if ($request->filled('show')) {
+            return $builder
+                ->findOrFail((int) $request->get('show'));
+        }
+
+        return $builder
+            ->where('status', Show::STATUS_CURRENT)
+            ->orderBy('start_date', 'DESC')
+            ->first();
+    }
 
 }

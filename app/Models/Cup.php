@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\DB;
  * @property string $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property int|null $direct_winner
- * @property string|null $winning_category
- * @property int|null $calculated_winner
  * @property string|null $winning_criteria
  * @property int|null $sort_order
  * @property int|null $num_display_results
@@ -28,19 +25,14 @@ use Illuminate\Support\Facades\DB;
  * @method static Builder|Cup newModelQuery()
  * @method static Builder|Cup newQuery()
  * @method static Builder|Cup query()
- * @method static Builder|Cup whereCalculatedWinner($value)
  * @method static Builder|Cup whereCreatedAt($value)
- * @method static Builder|Cup whereDirectWinner($value)
  * @method static Builder|Cup whereId($value)
  * @method static Builder|Cup whereName($value)
  * @method static Builder|Cup whereNumDisplayResults($value)
  * @method static Builder|Cup whereSortOrder($value)
  * @method static Builder|Cup whereUpdatedAt($value)
- * @method static Builder|Cup whereWinningCategory($value)
  * @method static Builder|Cup whereWinningCriteria($value)
  * @mixin \Eloquent
- * @property-read Collection|CupDirectWinner[] $cupDirectWinner
- * @property-read int|null $cup_direct_winner_count
  * @property int|null $section_id
  * @property-read Section|null $section
  * @method static Builder|Cup whereSectionId($value)

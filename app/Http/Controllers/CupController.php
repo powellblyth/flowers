@@ -176,7 +176,7 @@ class CupController extends Controller
             }
 
             $results[$cup->id] = array('results' => $thisCupPoints,
-                                       'direct_winner' => (($cupWinner instanceof CupDirectWinner) ? $cupWinner->entrant_id : null),
+                                       'direct_winner' => $cupWinner?->entrant_id,
                                        'winning_category' => $winningCategory);
         }
 
