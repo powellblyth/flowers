@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::table('cups', function (Blueprint $table) {
             $table->dropColumn('direct_winner');
-            $table->dropColumn('calculated_winner');
             $table->dropColumn('winning_category');
         });
     }
@@ -29,7 +28,6 @@ return new class extends Migration
     {
         Schema::table('cups', function (Blueprint $table) {
             $table->foreignId('direct_winner')->nullable();
-            $table->foreignId('calculated_winner')->nullable();
             $table->foreignId('winning_category')->nullable();
         });
     }
