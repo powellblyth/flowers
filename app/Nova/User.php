@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Themsaid\CashierTool\CashierResourceTool;
 
 class User extends Resource
 {
@@ -56,16 +57,11 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
+            CashierResourceTool::make()->onlyOnDetail(),
+
             ID::make()->sortable(),
             Gravatar::make()->maxWidth(50),
-            Text::make('First Name', 'first_name')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Text::make('Family Name', 'last_name')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
+            Text::make(__('Name'), fn(\App\Models\User $thing)=>$thing->fullName),
             Select::make('Status')
                 ->sortable()
                 ->rules('required', 'max:255')
@@ -74,6 +70,16 @@ class User extends Resource
             Select::make('Type')
                 ->sortable()
                 ->options(\App\Models\User::getAllTypes()),
+
+            Text::make('First Name', 'first_name')
+                ->sortable()
+                ->rules('required', 'max:255')
+            ->onlyOnForms(),
+
+            Text::make('Family Name', 'last_name')
+                ->sortable()
+                ->rules('required', 'max:255')
+                ->onlyOnForms(),
 
             Text::make('Email')
                 ->sortable()
@@ -102,6 +108,7 @@ class User extends Resource
             Boolean::make('Can SMS', 'can_sms')->hideFromIndex(),
             DateTime::make('SMS Opt out', 'sms_opt_in')->onlyOnDetail()->readonly(),
             DateTime::make('SMS Opt out', 'sms_opt_out')->onlyOnDetail()->readonly(),
+
             HasMany::make('Entrants'),
         ];
     }

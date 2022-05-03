@@ -17,7 +17,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 
-//use Laravel\Cashier\Billable;
+use Laravel\Cashier\Billable;
 
 /**
  * App\Models\User
@@ -117,7 +117,7 @@ class User extends Authenticatable
     use Notifiable;
     use HasFactory;
 
-//    use Billable;
+    use Billable;
 
     final const TYPE_ADMIN = 'admin';
     final const TYPE_DEFAULT = 'default';
