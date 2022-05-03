@@ -13,15 +13,16 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\CreateNewYearDataCommand::class,
-        Commands\UpdateAgesCommand::class,
-        Commands\resetPasswordResetsCommand::class,
-        Commands\AnonymiseEntrantsCommand::class,
-        Commands\ConvertYearToShow::class,
-        Commands\ScruffyCommand::class,
-        Commands\SendEmailToUnpasswordedPeopleCommand::class,
-        Commands\ConvertMembershipToMembershipModelCommand::class,
-        Commands\SendMailchimpSubscribesCommand::class,
+//        Commands\CreateNewYearDataCommand::class,
+//        Commands\UpdateAgesCommand::class,
+//        Commands\resetPasswordResetsCommand::class,
+//        Commands\AnonymiseEntrantsCommand::class,
+//        Commands\ConvertYearToShow::class,
+//        Commands\SyncProductsCommand::class,
+//        Commands\ScruffyCommand::class,
+//        Commands\SendEmailToUnpasswordedPeopleCommand::class,
+//        Commands\ConvertMembershipToMembershipModelCommand::class,
+//        Commands\SendMailchimpSubscribesCommand::class,
 
     ];
 
@@ -42,6 +43,8 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
+        $this->load(__DIR__ . '/Commands');
+
         require base_path('routes/console.php');
     }
 }
