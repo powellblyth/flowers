@@ -11,6 +11,7 @@ use App\Models\Show;
 use App\Models\Team;
 use App\Models\TeamMembership;
 use App\Models\User;
+use App\Services\MailChimpService;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +31,11 @@ class UsersTableSeeder extends Seeder
         DB::table('entrants')->truncate();
 
         $faker = Factory::create('en_GB');
+
+//        User::withoutEvents(
+//            function () use ($faker) {
+
+        MailChimpService::disable();
 
         $user = User::factory()->create([
             'id' => 1,
@@ -51,7 +57,6 @@ class UsersTableSeeder extends Seeder
             'type' => 'admin',
             'password' => Hash::make('moomoomoo'),
         ]);
-//        $user->makeDefaultEntrant();
 
         for ($userNumber = 0; $userNumber < 100; $userNumber++) {
             /** @var User $user */
@@ -78,9 +83,7 @@ class UsersTableSeeder extends Seeder
                 $membershipType = MembershipPurchase::TYPE_FAMILY;
             }
             foreach ($memberships->get() as $membership) {
-                /**
-                 * @var Membership $membership
-                 */
+                /** @var Membership $membership */
                 if ($faker->boolean(80)) {
                     dump($membership->id . ' - ' . $membership->applies_to . ' [' . $membershipType . ']');
                     $membershipPurchase = new MembershipPurchase();
@@ -109,14 +112,10 @@ class UsersTableSeeder extends Seeder
             $stickyTeams = [];
             // Create some historical data
             foreach (Show::all() as $show) {
-                /**
-                 * @var Show $show
-                 */
+                /** @var Show $show */
                 // reload the entrants to include the user's entrant
                 foreach ($user->entrants as $entrant) {
-                    /**
-                     * @var Entrant $entrant
-                     */
+                    /** @var Entrant $entrant */
                     // Teams are only for juniors
                     if ($entrant->age != null) {
                         if (!array_key_exists($entrant->id, $stickyTeams)) {
@@ -134,9 +133,8 @@ class UsersTableSeeder extends Seeder
                         }
                     }
 
-
                     // Chooses a random set of categoreies to enter
-                    Category::where('show_id', $show->id)
+                    Category::whereShowId($show->id)
                         ->get()
                         ->shuffle()
                         ->take(floor(rand(0, $faker->biasedNumberBetween(0, 17, 'Faker\Provider\Biased::linearLow'))))
@@ -173,30 +171,22 @@ class UsersTableSeeder extends Seeder
                 $user->anonymise()->save();
             }
         }
-        /**
-         * @var Show $currentShow
-         */
-        $currentShow = Show::where('status', Show::STATUS_CURRENT)->first();
+        MailChimpService::enable();
+
+        /** @var Show $currentShow */
+        $currentShow = Show::whereStatus(Show::STATUS_CURRENT)->first();
 
         // Choose a winner regardless of year
         // BUT NOT the current year
         Category::where('show_id', '<>', $currentShow->id)->get()->each(function (Category $category) {
             $winners = $category->entries()->get()->shuffle()->take(4);
             foreach ($winners as $counter => $winner) {
-                /**
-                 * @var Entry $winner
-                 */
+                /** @var Entry $winner */
                 // First prize for first entrant
-                switch ($counter) {
-                    case 0:
-                    case 1:
-                    case 2:
-                        // 1 for first place
-                        $winner->winningplace = $counter + 1;
-                        break;
-                    default:
-                        $winner->winningplace = 'commended';
-                }
+                $winner->winningplace = match ($counter) {
+                    0, 1, 2 => $counter + 1,
+                    default => 'commended',
+                };
                 $winner->save();
             }
         });
