@@ -153,7 +153,7 @@ class UserController extends Controller
                     'auth_token' => md5((string) random_int(PHP_INT_MIN, PHP_INT_MAX))]
             )->all()
         );
-        $user->makeDefaultEntrant();
+        $user->createDefaultEntrant();
 
         if ($request->has('another')) {
             return redirect()->route('users.create')

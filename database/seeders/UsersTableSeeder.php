@@ -90,8 +90,6 @@ class UsersTableSeeder extends Seeder
                     $membershipPurchase->membership()->associate($membership);
                     $membershipPurchase->type = $membershipType;
                     $membershipPurchase->amount = $membership->price_gbp;
-                    $membershipPurchase->start_date = $membership->valid_from;
-                    $membershipPurchase->end_date = $membership->valid_to;
                     $membershipPurchase->user()->associate($user);
                     if ($numChildren === 0) {
                         dump('associating ' . $user->entrants()->first()->id);

@@ -1,30 +1,34 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500"/>
-            </a>
-        </x-slot>
+<x-app-layout>
+    <x-slot name="header">
+        <x-headers.h1>
+            {{ __('My Profile') }}
+        </x-headers.h1>
+    </x-slot>
+    <x-layout.intro-para>
+        <p>@lang('You can adjust your profile settings here')</p>
+    </x-layout.intro-para>
+    <!-- Validation Errors -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors"/>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors"/>
-
+    <x-layout.intro-para>
         <form method="POST" action="{{ route('profile.update') }}">
             {{ method_field('PUT') }}
             @csrf
 
             <!-- Name -->
-            <div>
-                <x-label for="first_name" :value="__('First Name')"/>
+            <div class="grid-cols-2">
+                <div>
+                    <x-label for="first_name" :value="__('First Name')"/>
 
-                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name"
-                         :value="old('first_name', $user->first_name)" required autofocus/>
-            </div>
-            <div class="mt-4">
-                <x-label for="last_name" :value="__('Last Name')"/>
+                    <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name"
+                             :value="old('first_name', $user->first_name)" required autofocus/>
+                </div>
+                <div>
+                    <x-label for="last_name" :value="__('Last Name')"/>
 
-                <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name"
-                         :value="old('last_name', $user->last_name)" required autofocus/>
+                    <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name"
+                             :value="old('last_name', $user->last_name)" required autofocus/>
+                </div>
             </div>
 
             <!-- Email Address -->
@@ -40,7 +44,7 @@
                 <x-label for="telephone" :value="__('Telephone')"/>
 
                 <x-input id="telephone" class="block mt-1 w-full" type="text" name="telephone"
-                         :value="old('telephone', $user->telephone)" />
+                         :value="old('telephone', $user->telephone)"/>
             </div>
 
             <!-- Address -->
@@ -81,5 +85,6 @@
                 </x-button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </x-layout.intro-para>
+
+</x-app-layout>

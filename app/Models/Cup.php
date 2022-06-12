@@ -36,6 +36,10 @@ use Illuminate\Support\Facades\DB;
  * @property int|null $section_id
  * @property-read Section|null $section
  * @method static Builder|Cup whereSectionId($value)
+ * @property int|null $calculated_winner
+ * @property-read Collection|\App\Models\CupDirectWinner[] $cupDirectWinner
+ * @property-read int|null $cup_direct_winner_count
+ * @method static Builder|Cup whereCalculatedWinner($value)
  */
 class Cup extends Model
 {

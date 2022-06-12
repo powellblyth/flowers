@@ -14,7 +14,7 @@ return [
     |            "memcached", "redis", "array"
     |
     */
-
     'api_key_publishable' => env('STRIPE_API_KEY_PUBLISHABLE', 'nope'),
     'api_key_secret' => env('STRIPE_API_KEY_SECRET', 'nope'),
+    'api_key' => env('STRIPE_API_KEY_SECRET', 'nope'),
 ];

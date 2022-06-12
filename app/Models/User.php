@@ -111,6 +111,14 @@ use Laravel\Cashier\Billable;
  * @method static Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
  * @property-read string $safe_email
+ * @property string|null $pm_type
+ * @property string|null $pm_last_four
+ * @property-read Collection|\Laravel\Cashier\Subscription[] $subscriptions
+ * @property-read int|null $subscriptions_count
+ * @method static Builder|User wherePmLastFour($value)
+ * @method static Builder|User wherePmType($value)
+ * @property-read Collection|\App\Models\PaymentCard[] $paymentCards
+ * @property-read int|null $payment_cards_count
  */
 class User extends Authenticatable
 {
@@ -231,6 +239,11 @@ class User extends Authenticatable
         return $this->hasMany(Payment::class);
     }
 
+    public function paymentCards(): HasMany
+    {
+        return $this->hasMany(PaymentCard::class);
+    }
+
     public function isAdmin(): bool
     {
         return $this->type === self::TYPE_ADMIN;
@@ -239,7 +252,7 @@ class User extends Authenticatable
     /**
      * This creates a single entrant matching the user's data
      */
-    public function makeDefaultEntrant()
+    public function createDefaultEntrant()
     {
         $entrant = new Entrant();
         $entrant->first_name = $this->first_name;

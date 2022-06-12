@@ -56,6 +56,7 @@ class EntryTest extends TestCase
         $this->sut->winningplace = $placement;
 
         $this->assertSame($expected, $this->sut->getPlacementName());
+        $this->assertSame($expected, $this->sut->winning_label);
     }
 
     public function providerhasWon()

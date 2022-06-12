@@ -27,8 +27,7 @@
         "livewire/livewire": "^2.3",
         "nztim/mailchimp": "^3.10",
         "optimistdigital/nova-inline-text-field": "^1.0",
-        "optimistdigital/nova-sortable": "^2.4",
-        "themsaid/nova-cashier-manager": "^0.2.1"
+        "optimistdigital/nova-sortable": "^2.4"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12.2",

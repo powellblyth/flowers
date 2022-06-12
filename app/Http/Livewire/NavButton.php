@@ -8,8 +8,6 @@ class NavButton extends Component
 {
     public bool $hidden = true;
 
-//    public array $attributes = [];
-
     public function render()
     {
         return view('livewire.nav-button');

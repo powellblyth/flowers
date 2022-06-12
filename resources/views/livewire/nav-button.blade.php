@@ -1,14 +1,14 @@
 
-<div align="right"  class="relative" x-on:click.away="if($wire.get('hidden')==false) { $wire.hide() }">
+<div class="relative " wire:click="$toggle('hidden')">
     @if($hidden)
-        <div wire:click="toggle()">
+        <div>
             <button
                 class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                @if(Auth::check())
+                @auth
                     <div>{{ Auth::user()->full_name }} </div>
-                @else
+                @elseauth
                     <div>Welcome, Guest</div>
-                @endif
+                @endauth
 
                 <div class="ml-1">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -29,10 +29,11 @@
             x-transition:leave="transition ease-in duration-75"
             x-transition:leave-start="transform opacity-100 scale-100"
             x-transition:leave-end="transform opacity-0 scale-95"
-            class="absolute z-50 mt-2 w-20 rounded-md shadow-lg origin-top-right right-0"
-            livewire:click="toggle()">
+            id="navbutton"
+            class="absolute z-50 mt-2 w-auto rounded-md shadow-lg origin-top-right right-0"
+            >
             <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
-                @if(Auth::check())
+                @auth
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
@@ -40,6 +41,9 @@
                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                             {{ __('Log out') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('profile.edit')">
+                            {{ __('My Profile') }}
                         </x-dropdown-link>
                     </form>
                 @else

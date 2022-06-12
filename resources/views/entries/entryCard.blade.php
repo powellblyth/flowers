@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <x-headers.h1>
             {{ __('Entries for :show', ['show'=>$show->name]) }}
-        </h2>
+        </x-headers.h1>
     </x-slot>
     <x-navigation.show route="entries.entryCard" :show="$show"/>
 
@@ -13,7 +13,7 @@
             )
             }}
     @endif
-    <div class="p-20">
+    <div class="px-4">
         <div class=" bg-white top-0 sticky p-2 flex">
             <div>
                 <h3 class="text-xl ">
@@ -29,12 +29,12 @@
         @forelse ($user->entrants as $entrant)
             <div class="bg-white p-2 m-4">
                 <div class="sticky top-0">
-                    <h3 class="bg-white text-xl  w-full p-2 font-bold">
+                    <h3 class="bg-white text-xl p-2 font-bold">
                         @lang(':name\'s entry card', ['name'=>$entrant->full_name]) {{$entrant->age_description}}
                     </h3>
                 </div>
                 <div>
-                    <div class=" p-2 px-4">
+                    <div class="p-2 px-4">
                         @php
                             $teams = $entrant->teams()->wherePivot('show_id', $show->id)->first();
                         @endphp

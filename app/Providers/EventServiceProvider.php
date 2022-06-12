@@ -6,7 +6,9 @@ use App\Events\EntrantSaving;
 use App\Events\UserSaving;
 use App\Listeners\EntrantSubscriptionListener;
 use App\Listeners\UserSubscriptionListener;
+use App\Models\PaymentCard;
 use App\Models\User;
+use App\Observers\PaymentCardObserver;
 use App\Observers\UserObserver;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -35,6 +37,7 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
         User::observe(UserObserver::class);
+        PaymentCard::observe(PaymentCardObserver::class);
         //
     }
 

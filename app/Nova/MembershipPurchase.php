@@ -62,12 +62,6 @@ class MembershipPurchase extends Resource
                 ->hideFromIndex()
                 ->sortable()->currency('GBP')->asMinorUnits(),
 
-            Text::make('Start Date')->displayUsing(function () {
-                return $this->membership->valid_from->format('d M Y');
-            })->readonly(),
-            Text::make('End Date')->displayUsing(function () {
-                return $this->membership->valid_to->format('d M Y');
-            })->readonly(),
             DateTime::make(__('Created At'), 'created_at')->readonly(),
         ];
     }

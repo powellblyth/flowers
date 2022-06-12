@@ -25,106 +25,87 @@
         }
     </style>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <x-headers.h1>
             {{ __('Cups') }}
-        </h2>
+        </x-headers.h1>
     </x-slot>
     <x-navigation.show :show="$show"/>
 
-    <div class="py-4">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <p>These are the cups we award during the annual Flower Show and
-                        the winners of the {{$show->name}} show (when available).</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <x-layout.intro-para>
+        <p>These are the cups we award during the annual Flower Show and
+            the winners of the {{$show->name}} show (when available).</p>
+    </x-layout.intro-para>
     @php
         $publishMode = false;
-        $showaddress = $isAdmin;
     @endphp
     @foreach ($cups as $cup)
-        {{--    <div class="py-12">--}}
-        <div class="py-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    @php
-                        $lastResult = -1;
-                        $maxResults = $cup->num_display_results;
-                    @endphp
-                    <div class="rounded-l-lg  title text-xl font-medium">{{ $cup->name }}</div>
-                    <div>{{$cup->winning_criteria}}</div>
+        <x-layout.intro-para class="py-2">
+            @php
+                $lastResult = -1;
+                $maxResults = $cup->num_display_results;
+            @endphp
+            <x-headers.h2>{{ $cup->name }}</x-headers.h2>
+            <div>{{$cup->winning_criteria}}</div>
 
-                    @if ((int)$results[$cup->id]['direct_winner'] == 0)
-                        <table
-                            class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-                            <thead class="text-white">
-                            <!-- one for each row - required for mobile view -->
-                            @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
-                                <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                                    <th class="p-3 text-left">Position</th>
-                                    <th class="p-3 text-left">Name</th>
-                                    <th class="p-3 text-left" width="110px">Points</th>
-                                </tr>
-                            @endfor
-                            </thead>
-                            <tbody class="flex-1 sm:flex-none">
-                            @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
-                                @php
-                                    $totalPoints = $results[$cup->id]['results'][$x]['totalpoints'];
-                                    $winningEntrantId = $results[$cup->id]['results'][$x]['entrant'];
-                                @endphp
-                                <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3">
-                                        @if(0 == $x || $lastResult === $totalPoints)
-                                            @lang('Winner')
-                                        @else
-                                            @lang('Proxime Accessit')
-                                        @endif
-
-                                    </td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
-                                        {{$winners[$winningEntrantId]['entrant']->printable_name}}
-                                    </td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
-                                        {{$results[$cup->id]['results'][$x]['totalpoints'] }} points
-                                    </td>
-                                </tr>
-                            @endfor
-                            </tbody>
-                        </table>
-
-                    @else
-                        <i>Winner:</i>
+            @if ((int)$results[$cup->id]['direct_winner'] == 0)
+                <table
+                    class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                    <thead class="text-white">
+                    <!-- one for each row - required for mobile view -->
+                    @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
+                        <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                            <th class="p-3 text-left">Position</th>
+                            <th class="p-3 text-left">Name</th>
+                            <th class="p-3 text-left" width="110px">Points</th>
+                        </tr>
+                    @endfor
+                    </thead>
+                    <tbody class="flex-1 sm:flex-none">
+                    @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
                         @php
-                            $directWinnerId = $results[$cup->id]['direct_winner'];
+                            $totalPoints = $results[$cup->id]['results'][$x]['totalpoints'];
+                            $winningEntrantId = $results[$cup->id]['results'][$x]['entrant'];
                         @endphp
-                        @if(array_key_exists($directWinnerId, $winners))
-                            @if ( ! $publishMode && $isAdmin)
-                                <b>
-                                    <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->printable_name}}</a>
-                                    @if ($showaddress && (0 == $x || $lastResult == $totalPoints))
-                                        {{$winners[$directWinnerId]['entrant']->user->address}}
-                                        <br/>
-                                        {{$winners[$directWinnerId]['entrant']->user->telephone}}
-                                        , {{$winners[$directWinnerId]['entrant']->user->email}}
-                                    @endif
-                                </b>
-                            @else
-                                <big><b>{{$winners[$directWinnerId]['entrant']->printable_name}}</b></big>
-                            @endif
-                        @endif
-                        @if (is_object($results[$cup->id]['winning_category']))
-                            for category
-                            <i><b>{{$results[$cup->id]['winning_category']->numbered_name}}</b></i>
-                        @endif
-                    @endif
-                </div>
-            </div>
-        </div>
+                        <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                            <td class="border-grey-light border hover:bg-gray-100 p-3">
+                                @if(0 == $x || $lastResult === $totalPoints)
+                                    @lang('Winner')
+                                @else
+                                    @lang('Proxime Accessit')
+                                @endif
 
-        {{--    </div>--}}
+                            </td>
+                            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                                {{$winners[$winningEntrantId]['entrant']->printable_name}}
+                            </td>
+                            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                                {{$results[$cup->id]['results'][$x]['totalpoints'] }} points
+                            </td>
+                        </tr>
+                    @endfor
+                    </tbody>
+                </table>
+
+            @else
+                <i>Winner:</i>
+                @php
+                    $directWinnerId = $results[$cup->id]['direct_winner'];
+                @endphp
+                @if(array_key_exists($directWinnerId, $winners))
+                    @if ( ! $publishMode && $isAdmin)
+                        <b>
+                            <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->printable_name}}</a>
+                        </b>
+                    @else
+                        <big><b>{{$winners[$directWinnerId]['entrant']->printable_name}}</b></big>
+                    @endif
+                @endif
+                @if (is_object($results[$cup->id]['winning_category']))
+                    for category
+                    <i><b>{{$results[$cup->id]['winning_category']->numbered_name}}</b></i>
+                @endif
+            @endif
+        </x-layout.intro-para>
+
     @endforeach
 </x-app-layout>

@@ -70,6 +70,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
  * @method static Builder|Category wherePrivate($value)
  * @property string $notes
  * @method static Builder|Category whereNotes($value)
+ * @method static Builder|Category forSection(\App\Models\Section $section)
  */
 class Category extends Model implements \Stringable
 {
@@ -93,6 +94,11 @@ class Category extends Model implements \Stringable
     public function scopeForShow(Builder $query, Show $show): Builder
     {
         return $query->where('show_id', $show->id);
+    }
+
+    public function scopeForSection(Builder $query, Section $section): Builder
+    {
+        return $query->where('section_id', $section->id);
     }
 
     public function scopeInOrder(Builder $query): Builder

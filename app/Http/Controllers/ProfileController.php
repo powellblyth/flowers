@@ -16,7 +16,10 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit', ['user'=>Auth::user(), 'privacyContent' => config('static_content.privacy_content')]);
+        return view('profile.edit', [
+            'user' => Auth::user(),
+            'privacyContent' => config('static_content.privacy_content')
+        ]);
     }
 
     /**

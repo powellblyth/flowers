@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
@@ -17,10 +19,6 @@ use Illuminate\Support\Carbon;
  * @property string|null $description
  * @property int|null $price_gbp
  * @property string|null $applies_to
- * @property Carbon|null $purchasable_from
- * @property Carbon|null $purchasable_to
- * @property Carbon|null $valid_from
- * @property Carbon|null $valid_to
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
@@ -36,13 +34,16 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Membership whereId($value)
  * @method static Builder|Membership whereLabel($value)
  * @method static Builder|Membership wherePriceGbp($value)
- * @method static Builder|Membership wherePurchasableFrom($value)
- * @method static Builder|Membership wherePurchasableTo($value)
  * @method static Builder|Membership whereSku($value)
  * @method static Builder|Membership whereUpdatedAt($value)
  * @method static Builder|Membership whereValidFrom($value)
  * @method static Builder|Membership whereValidTo($value)
  * @mixin \Eloquent
+ * @property string|null $stripe_id
+ * @property string|null $stripe_price
+ * @property-read \App\Models\SubscriptionItem|null $subscriptionItem
+ * @method static Builder|Membership whereStripeId($value)
+ * @method static Builder|Membership whereStripePrice($value)
  */
 class Membership extends Model
 {
@@ -50,10 +51,6 @@ class Membership extends Model
     public final const APPLIES_TO_USER = 'user';
 
     protected $casts = [
-        'purchasable_from' => 'datetime',
-        'purchasable_to' => 'datetime',
-        'valid_from' => 'datetime',
-        'valid_to' => 'datetime',
     ];
 
     protected $fillable = [
@@ -62,11 +59,21 @@ class Membership extends Model
         'description',
         'price_gbp',
         'applies_to',
-        'purchasable_from',
-        'purchasable_to',
-        'valid_from',
-        'valid_to'
     ];
+
+    public function formattedPrice(): Attribute
+    {
+        return new Attribute(
+            get: function ($value) {
+                return number_format($this->price_gbp / 100, 2);
+            },
+        );
+    }
+
+    public function subscriptionItem(): BelongsTo
+    {
+        return $this->belongsTo(SubscriptionItem::class);
+    }
 
     //
     public function membershipsSold(): HasMany

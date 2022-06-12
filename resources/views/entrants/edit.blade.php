@@ -1,12 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <x-headers.h1>
             @if($entrant->exists)
                 {{ __('Editing ') . $entrant->first_name }}
             @else
                 {{'Creating a new family member'}}
             @endif
-        </h2>
+        </x-headers.h1>
     </x-slot>
     <x-auth-validation-errors class="mb-4" :errors="$errors"/>
 

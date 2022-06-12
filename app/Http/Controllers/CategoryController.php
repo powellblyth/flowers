@@ -19,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index(Request $request): View
     {
-        $show = $this->getShowFromRequest($request, ['categories.entries', 'categories.entries.entrant']);
+        $show = $this->getShowFromRequest($request, ['categories.entries', 'categories.entries.entrant', 'categories.section']);
         $sections = Section::orderBy('number', 'asc')->get();
 
 

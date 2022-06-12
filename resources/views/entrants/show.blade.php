@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <x-headers.h1>
             {{ $entrant->name }}
-        </h2>
+        </x-headers.h1>
     </x-slot>
     <div class="container-fluid">
             <div class="row">
@@ -90,7 +90,7 @@
 
                                     @endif
                                     @if ($entry->hasWon())
-                                        <b class="badge-success"><u>{{$entry->getPlacementName()}}</u></b>
+                                        <b class="badge-success"><u>{{$entry->winning_label}}</u></b>
                                         (&pound;{{number_format($entry->category->getWinningAmount($entry->winningplace) / 100,2)}})
                                     @endif
                                     <br/>

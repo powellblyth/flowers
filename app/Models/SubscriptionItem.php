@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class Subscriptions
+ *
+ * @package App\Models
+ * @mixin \Eloquent
+ * @property int $id
+ * @property int $subscription_id
+ * @property string $stripe_id
+ * @property string $stripe_product
+ * @property string $stripe_price
+ * @property int|null $quantity
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereQuantity($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereStripeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereStripePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereStripeProduct($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereSubscriptionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereUpdatedAt($value)
+ */
+class SubscriptionItem extends Model
+{
+    use HasFactory;
+
+    public $attributes = [
+    ];
+
+    public $casts = [
+    ];
+
+    /****   Attributes   ****/
+
+    /****   Scopes   ****/
+
+    /****   Relations   ****/
+
+    /****   Checks   ****/
+
+    /****   Methods   ****/
+
+    /****   Statics   ****/
+
+}

@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600"/>
                     </a>
@@ -15,15 +15,22 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @auth
                     <x-nav-link :href="route('family')" :active="request()->routeIs('family')">
                         {{ __('My Family') }}
                     </x-nav-link>
+                    @endauth
                     <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
                         {{ __('Categories / Results') }}
                     </x-nav-link>
                     <x-nav-link :href="route('cups.index')" :active="request()->routeIs('cups.index')">
                         {{ __('Cups') }}
                     </x-nav-link>
+                    @auth
+                        <x-nav-link :href="route('subscriptions.index')" :active="request()->routeIs('subscriptions.index')">
+                            {{ __('Subscriptions') }}<div><small>(Experimental)</small></div>
+                        </x-nav-link>
+                    @endauth
 
                     @can('logInToNova', Auth::user())
                         <x-nav-link :href="config('nova.url')">
@@ -66,7 +73,7 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
-                <div class="flex-shrink-0">
+                <div class="shrink-0">
                     <svg class="h-10 w-10 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
                          viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

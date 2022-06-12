@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 
@@ -43,6 +44,29 @@ class Entry extends Model
         'show_id',
         'category_id',
     ];
+
+    public function winningLabel(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => match ($this->winningplace) {
+                '1' => 'First Place',
+                '2' => 'Second Place',
+                '3' => 'Third Place',
+                default => ucwords($this->winningplace)
+            }
+        );
+    }
+
+    public function precedenceSorter(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => match ($this->winningplace) {
+                '1', '2', '3' => (int)$this->winningplace,
+                'commended' => 4,
+                default => 5
+            }
+        );
+    }
 
     public function hasWon(): bool
     {
