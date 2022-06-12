@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\PaymentCard;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class CardDetails extends Component
@@ -55,6 +56,7 @@ class CardDetails extends Component
         try {
             $intent = Auth::user()->createSetupIntent();
         } catch (\Stripe\Exception\ApiConnectionException $e) {
+            Log::error($e);
             $error = $e->getMessage();
         } finally {
             return view('livewire.payment.card-details', [
