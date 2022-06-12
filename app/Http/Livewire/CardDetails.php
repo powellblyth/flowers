@@ -20,8 +20,7 @@ class CardDetails extends Component
 
     public function handlePaymentFailed($error)
     {
-        dd($error);
-        $errors[] = $error;
+        $this->errors[] = $error;
     }
 
     /**

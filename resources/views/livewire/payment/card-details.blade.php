@@ -2,7 +2,7 @@
 
     @if(count($errors) > 0)
         @foreach($errors as $error)
-
+            <div class="text-red-700">{{$error}}</div>
         @endforeach
     @endif
     @if($intent)
