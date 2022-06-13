@@ -28,7 +28,7 @@
                     </x-nav-link>
                     @auth
                         <x-nav-link :href="route('subscriptions.index')" :active="request()->routeIs('subscriptions.index')">
-                            {{ __('Subscriptions') }}<div><small>(Experimental)</small></div>
+                            {{ __('Membership') }}<div><small>(Experimental)</small></div>
                         </x-nav-link>
                     @endauth
 
