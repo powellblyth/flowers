@@ -5,9 +5,12 @@
             {{ __('Your Payment Cards') }}
         </x-headers.h1>
     </x-slot>
-    <x-layout.intro-para>
+    <x-navigation.subscription-tabs active="paymentcards">
+    </x-navigation.subscription-tabs>
+
+    <x-layout.tabbed-intro-para>
         <p>This EXPERIMENTAL page shows the payment cards registered with Stripe</p>
-    </x-layout.intro-para>
+    </x-layout.tabbed-intro-para>
     <x-layout.intro-para>
         <livewire:list-cards/>
     </x-layout.intro-para>

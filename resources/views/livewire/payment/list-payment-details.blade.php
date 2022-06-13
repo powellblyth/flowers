@@ -1,9 +1,4 @@
 <div>
-    <div class="ml-40">
-        <x-subscriptions.tabs active="paymentcards">
-        </x-subscriptions.tabs>
-    </div>
-
     @if(!empty($error))
 
         <div class="rounded-lg pl-2 bg-red-400 bg-black text-white mb-2">

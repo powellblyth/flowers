@@ -6,15 +6,14 @@
         </x-headers.h1>
     </x-slot>
 
-    <x-layout.intro-para>
+    <x-navigation.subscription-tabs active="paymentcards">
+    </x-navigation.subscription-tabs>
+
+    <x-layout.tabbed-intro-para>
         <p>
             Enter your card details here, and our payment processor, Stripe, will keep hold of them securely.
         </p>
-    </x-layout.intro-para>
-    <div class="ml-40">
-        <x-subscriptions.tabs active="paymentcards">
-        </x-subscriptions.tabs>
-    </div>
+    </x-layout.tabbed-intro-para>
 
         <x-layout.intro-para>
             <livewire:card-details/>
