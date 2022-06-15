@@ -74,7 +74,7 @@ class Cup extends Resource
             ID::make()->sortable(),
 
             Stack::make(
-                'name',
+                __('Name'),
                 [
                     Text::make(__('Name'), 'name')
                         ->sortable()
@@ -89,6 +89,10 @@ class Cup extends Resource
                         ->onlyOnIndex(),
                 ],
             ),
+            Text::make(__('Name'), 'name')
+                ->rules('required', 'max:255')
+            ->onlyOnForms()
+            ,
             Text::make(__('Winning Criteria'), 'winning_criteria')
                 ->sortable()
                 ->rules('required', 'max:255')
