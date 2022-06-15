@@ -30,7 +30,7 @@ class CreateNewShowJob implements ShouldQueue
     public function handle()
     {
 
-        if ((int) $this->oldShow->id == (int) $this->newShow->id) {
+        if ($this->oldShow->is($this->newShow)) {
             throw new InvalidArgumentException('You have to specify different shows');
         }
 
