@@ -21,7 +21,7 @@ class Entry extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Entry::class;
+    public static string $model = \App\Models\Entry::class;
     public static $group = 'members';
 
     /**
@@ -70,9 +70,10 @@ class Entry extends Resource
     /**
      * Get the cards available for the request.
      *
+     * @param Request $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(Request $request): array
     {
         return [];
     }
@@ -80,9 +81,10 @@ class Entry extends Resource
     /**
      * Get the filters available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(Request $request): array
     {
         return [];
     }
@@ -90,9 +92,10 @@ class Entry extends Resource
     /**
      * Get the lenses available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(Request $request): array
     {
         return [];
     }
@@ -102,7 +105,7 @@ class Entry extends Resource
      *
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(Request $request): array
     {
         return [];
     }

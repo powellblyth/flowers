@@ -12,7 +12,6 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Themsaid\CashierTool\CashierResourceTool;
 
 class User extends Resource
 {
@@ -21,7 +20,7 @@ class User extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\User::class;
+    public static string $model = \App\Models\User::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -57,8 +56,6 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            CashierResourceTool::make()->onlyOnDetail(),
-
             ID::make()->sortable(),
             Gravatar::make()->maxWidth(50),
             Text::make(__('Name'), fn(\App\Models\User $thing)=>$thing->fullName),
@@ -109,6 +106,9 @@ class User extends Resource
             DateTime::make('SMS Opt out', 'sms_opt_in')->onlyOnDetail()->readonly(),
             DateTime::make('SMS Opt out', 'sms_opt_out')->onlyOnDetail()->readonly(),
 
+            DateTime::make('Created At', 'created_at')->onlyOnDetail()->readonly(),
+            DateTime::make('Updated At', 'updated_at')->onlyOnDetail()->readonly(),
+
             HasMany::make('Entrants'),
         ];
     }
@@ -116,9 +116,10 @@ class User extends Resource
     /**
      * Get the cards available for the request.
      *
+     * @param Request $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(Request $request): array
     {
         return [];
     }
@@ -126,9 +127,10 @@ class User extends Resource
     /**
      * Get the filters available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(Request $request): array
     {
         return [];
     }
@@ -136,9 +138,10 @@ class User extends Resource
     /**
      * Get the lenses available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(Request $request): array
     {
         return [];
     }
@@ -146,9 +149,10 @@ class User extends Resource
     /**
      * Get the actions available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(Request $request): array
     {
         return [
             PrintAllCardsRedirector::make()->showOnIndex(),

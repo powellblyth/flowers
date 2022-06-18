@@ -17,7 +17,7 @@ class Entrant extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Entrant::class;
+    public static string $model = \App\Models\Entrant::class;
     public static $group = 'members';
 
     /**
@@ -67,6 +67,8 @@ class Entrant extends Resource
 
             DateTime::make('Retain Data Opt out')
                 ->onlyOnDetail()->readonly(),
+            DateTime::make('Created At', 'created_at')->onlyOnDetail()->readonly(),
+            DateTime::make('Updated At', 'updated_at')->onlyOnDetail()->readonly(),
 
         ];
     }
@@ -76,7 +78,7 @@ class Entrant extends Resource
      *
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(Request $request): array
     {
         return [];
     }
@@ -86,7 +88,7 @@ class Entrant extends Resource
      *
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(Request $request): array
     {
         return [];
     }
@@ -96,7 +98,7 @@ class Entrant extends Resource
      *
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(Request $request): array
     {
         return [];
     }
@@ -106,7 +108,7 @@ class Entrant extends Resource
      *
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(Request $request): array
     {
         return [];
     }
