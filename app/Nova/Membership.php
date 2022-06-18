@@ -68,22 +68,9 @@ class Membership extends Resource
 
             Text::make('Stripe ID', 'stripe_id')->required()
                 ->hideFromIndex(),
-            
+
             Text::make('Stripe Price', 'stripe_price')->required()
                 ->hideFromIndex(),
-
-            DateTime::make('Valid From')
-                ->hideFromIndex()->format('DD MMM Y HH:mm'),
-
-            DateTime::make('Valid To')
-                ->hideFromIndex()->format('DD MMM Y HH:mm'),
-
-            DateTime::make('Purchasable From')
-                ->hideFromIndex()->format('DD MMM Y HH:mm'),
-
-            DateTime::make('Purchasable To')
-                ->hideFromIndex()->format('DD MMM Y HH:mm'),
-
         ];
     }
 
