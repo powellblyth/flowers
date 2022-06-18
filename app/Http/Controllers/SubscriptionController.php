@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Laravel\Cashier\Exceptions\IncompletePayment;
 use Laravel\Cashier\SubscriptionBuilder;
+use Stripe\Exception\InvalidRequestException;
 
 class SubscriptionController extends Controller
 {
@@ -44,7 +47,7 @@ class SubscriptionController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(): Response
     {
 
         return response()->view('subscriptions.updatePaymentMethod', [
@@ -56,8 +59,8 @@ class SubscriptionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @param Membership $membership
      * @return Response
+     * @throws IncompletePayment
      * @TODO why does this not dependency inject?!
      */
     public function store(Request $request)
@@ -75,15 +78,21 @@ class SubscriptionController extends Controller
         if ($renewalDate->isBefore(new Carbon('Tomorrow'))) {
             $renewalDate = new Carbon('first day of June ' . (((int) date('Y')) + 1));
         }
-        $checkout = $subscriptionBuilder
-            ->skipTrial()
-            ->price($membership->stripe_price)
-            ->prorate()
-            ->anchorBillingCycleOn($renewalDate)
-            ->create();
-        var_dump(json_decode($checkout->toJson()));
-        var_dump($checkout->toJson());
-        dump($membership->sku);
+        try {
+            $checkout = $subscriptionBuilder
+                ->skipTrial()
+                ->price($membership->stripe_price)
+                ->prorate()
+                ->anchorBillingCycleOn($renewalDate)
+                ->create();
+        }
+        catch (InvalidRequestException $e){
+            Log::error($e->getMessage());
+
+        }
+//        var_dump(json_decode($checkout->toJson()));
+//        var_dump($checkout->toJson());
+//        dump($membership->sku);
         //
     }
 

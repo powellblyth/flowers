@@ -66,6 +66,12 @@ class Membership extends Resource
                 ->hideFromIndex()
                 ->sortable()->currency('GBP')->asMinorUnits(),
 
+            Text::make('Stripe ID', 'stripe_id')->required()
+                ->hideFromIndex(),
+            
+            Text::make('Stripe Price', 'stripe_price')->required()
+                ->hideFromIndex(),
+
             DateTime::make('Valid From')
                 ->hideFromIndex()->format('DD MMM Y HH:mm'),
 
