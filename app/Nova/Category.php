@@ -22,7 +22,7 @@ class Category extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Category::class;
+    public static string $model = \App\Models\Category::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -46,7 +46,7 @@ class Category extends Resource
      *
      * @var array
      */
-    public static $sort = [
+    public static array $sort = [
         'section_id' => 'asc',
         'sortorder' => 'asc',
     ];
@@ -56,10 +56,11 @@ class Category extends Resource
     /**
      * Build an "index" query for the given resource.
      *
+     * @param NovaRequest $request
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public static function indexQuery(NovaRequest $request, $query)
+    public static function indexQuery(NovaRequest $request, $query): \Illuminate\Database\Eloquent\Builder
     {
         if (empty($request->get('orderBy'))) {
             $query->getQuery()->orders = [];
@@ -142,7 +143,7 @@ class Category extends Resource
      *
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(Request $request): array
     {
         return [];
     }
@@ -152,7 +153,7 @@ class Category extends Resource
      *
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(Request $request): array
     {
         return [
             FilterByShow::make(),
@@ -165,7 +166,7 @@ class Category extends Resource
      *
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(Request $request): array
     {
         return [];
     }
@@ -175,7 +176,7 @@ class Category extends Resource
      *
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(Request $request): array
     {
         return [
             AddEntryToCategory::make()

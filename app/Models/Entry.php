@@ -57,6 +57,18 @@ class Entry extends Model
         );
     }
 
+    public function winningColour($default = '#d9edf7'): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => match ($this->winningplace) {
+                '1' => '#c00',
+                '2' => '#00c',
+                '3' => '#FF0',
+                default => null
+            }
+        );
+    }
+
     public function precedenceSorter(): Attribute
     {
         return new Attribute(
