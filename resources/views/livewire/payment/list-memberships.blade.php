@@ -13,32 +13,39 @@
                     @endif
                 </div>
             @endif
-            <form method="POST" action="{{route('subscriptions.store')}}">
-                @csrf
-                <select name="membership_id">
-                    @foreach($membershipOptions as $membership)
-                        <option value="{{$membership->id}}">{{$membership->label}}
-                            (&pound;{{$membership->formatted_price}})
-                        </option>
-                    @endforeach
-                </select>
-                <select name="payment_method">
-                    @foreach($payment_cards as $paymentCard)
-                        <option value="{{$paymentCard->stripe_id}}"
-                        @if ($paymentCard->is_default)
-                            selected="selected"
+            @if(count($payment_cards) > 0)
+                <form method="POST" action="{{route('subscriptions.store')}}">
+                    @csrf
+                    <select name="membership_id">
+                        @foreach($membershipOptions as $membership)
+                            <option value="{{$membership->id}}">{{$membership->label}}
+                                (&pound;{{$membership->formatted_price}})
+                            </option>
+                        @endforeach
+                    </select>
+                    <select name="payment_method">
+                        @foreach($payment_cards as $paymentCard)
+                            <option value="{{$paymentCard->stripe_id}}"
+                                    @if ($paymentCard->is_default)
+                                        selected="selected"
                                 @endif
                             >
-                            {{strToUpper($paymentCard->card_name)}}'s
-                            {{strToUpper($paymentCard->brand)}}
-                            (ending {{$paymentCard->last4}})
-                        </option>
-                    @endforeach
-                </select>
-                <x-button type="submit" class="ml-4">
-                    {{ __('Subscribe') }}
+                                {{strToUpper($paymentCard->card_name)}}'s
+                                {{strToUpper($paymentCard->brand)}}
+                                (ending {{$paymentCard->last4}})
+                            </option>
+                        @endforeach
+                    </select>
+                    <x-button type="submit" class="ml-4">
+                        {{ __('Subscribe') }}
+                    </x-button>
+                </form>
+            @else
+                    <p>Before you subscribe for membership, you must register a payment card at Stripe</p>
+                <x-button>
+                    <a href="{{route('paymentcards.create')}}">Register a new <card></card></a>
                 </x-button>
-            </form>
+            @endif
         </div>
     @else
         <div>@lang('There are currently no memberships available to subscribe to')</div>
