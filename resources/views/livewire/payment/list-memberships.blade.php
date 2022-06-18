@@ -43,7 +43,7 @@
             @else
                     <p>Before you subscribe for membership, you must register a payment card at Stripe</p>
                 <x-button>
-                    <a href="{{route('paymentcards.create')}}">Register a new <card></card></a>
+                    <a href="{{route('paymentcards.create')}}">Register a new card</a>
                 </x-button>
             @endif
         </div>
