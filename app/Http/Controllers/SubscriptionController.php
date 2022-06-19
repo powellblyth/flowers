@@ -27,6 +27,8 @@ class SubscriptionController extends Controller
                 'subscriptions.index',
                 [
                     'subscriptions' => Auth::user()->subscriptions(),
+                    'error' => $_GET['error'] ?? null,
+                    'message' => $_GET['message'] ?? null,
                 ]
             );
     }
@@ -59,7 +61,7 @@ class SubscriptionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return Response|\Illuminate\Http\RedirectResponse
      * @throws IncompletePayment
      * @TODO why does this not dependency inject?!
      */
@@ -78,6 +80,7 @@ class SubscriptionController extends Controller
         if ($renewalDate->isBefore(new Carbon('Tomorrow'))) {
             $renewalDate = new Carbon('first day of June ' . (((int) date('Y')) + 1));
         }
+
         try {
             $checkout = $subscriptionBuilder
                 ->skipTrial()
@@ -85,15 +88,19 @@ class SubscriptionController extends Controller
                 ->prorate()
                 ->anchorBillingCycleOn($renewalDate)
                 ->create();
-        }
-        catch (InvalidRequestException $e){
+            return response()
+                ->redirectTo(
+                    route('subscriptions.index')
+                    . '?message='
+                    . urlencode('Success - You are subscribed to ' . $membership->description)
+                );
+        } catch (InvalidRequestException $e) {
             Log::error($e->getMessage());
-
+            return response()
+                ->redirectTo(
+                    route('subscriptions.index')
+                    . '?error=' . $e->getMessage());
         }
-//        var_dump(json_decode($checkout->toJson()));
-//        var_dump($checkout->toJson());
-//        dump($membership->sku);
-        //
     }
 
     /**

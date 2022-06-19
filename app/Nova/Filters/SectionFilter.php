@@ -2,9 +2,7 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\Category;
 use App\Models\Section;
-use App\Models\Show;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;

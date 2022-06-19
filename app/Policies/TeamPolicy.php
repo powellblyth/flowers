@@ -26,8 +26,6 @@ class TeamPolicy
      */
     public function viewAny(?User $user = null)
     {
-        die('I am here');
-        dd($user);
         return true;
     }
 
@@ -38,7 +36,6 @@ class TeamPolicy
      */
     public function view(User $user, Team $team)
     {
-        die('here ' . __LINE__);
         return true;
     }
 
@@ -49,7 +46,6 @@ class TeamPolicy
      */
     public function create(User $user)
     {
-        die('here ' . __LINE__);
         return $user->isAdmin();
     }
 
@@ -60,7 +56,6 @@ class TeamPolicy
      */
     public function update(User $user, Team $team)
     {
-        die('here ' . __LINE__);
         return $user->isAdmin();
     }
 
@@ -71,7 +66,6 @@ class TeamPolicy
      */
     public function delete(User $user, Team $team)
     {
-        die('here ' . __LINE__);
         return $user->isAdmin();
     }
 
@@ -82,7 +76,6 @@ class TeamPolicy
      */
     public function restore(User $user, Team $team)
     {
-        die('here ' . __LINE__);
         return $user->isAdmin();
     }
 
@@ -93,7 +86,6 @@ class TeamPolicy
      */
     public function forceDelete(User $user, Team $team)
     {
-        die('here ' . __LINE__);
         return $user->isAdmin();
     }
 }

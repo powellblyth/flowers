@@ -8,7 +8,7 @@
             }
     @endphp
     <x-tab class=" {{$subscriptionsClass}}" href="{{route('subscriptions.index')}}">
-        Subscriptions
+        @lang('Memberships')
     </x-tab>
     @php
         if ($active === 'paymentcards')
@@ -17,7 +17,7 @@
         }
     @endphp
     <x-tab class="{{$paymentCardClass}}" href="{{route('paymentcards.index')}}">
-        Cards
+        @lang('Cards')
     </x-tab>
 
 </div>

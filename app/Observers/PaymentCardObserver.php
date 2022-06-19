@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Models\PaymentCard;
-use Illuminate\Support\Facades\Auth;
 use Stripe\Exception\InvalidRequestException;
 
 class PaymentCardObserver

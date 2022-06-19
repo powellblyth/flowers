@@ -2,12 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Subscription;
 use Illuminate\Console\Command;
-use Laravel\Cashier\Cashier;
 use Laravel\Cashier\SubscriptionItem;
 use Stripe\Product;
-use Stripe\Stripe;
 use Stripe\StripeClient;
 
 /**

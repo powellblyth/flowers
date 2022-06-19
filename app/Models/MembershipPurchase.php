@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Eloquent\Builder as BuilderContract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
@@ -68,6 +69,11 @@ class MembershipPurchase extends Model
     public function isNotExpired(): bool
     {
         return (int) $this->year == (int) config('app.year');
+    }
+
+    public function scopeActive(BuilderContract $query): BuilderContract
+    {
+        return $query->where('end_date', '<=', Carbon::today()->toDateString());
     }
 
     public function user(): BelongsTo

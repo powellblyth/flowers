@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Database\Factories\SubscriptionFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Carbon;
 
 /**
  * Class Subscriptions
@@ -19,32 +23,27 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $quantity
  * @property string|null $trial_ends_at
  * @property string|null $ends_at
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Database\Factories\SubscriptionFactory factory(...$parameters)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription query()
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereEndsAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereQuantity($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereStripeId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereStripePrice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereStripeStatus($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereTrialEndsAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Subscription whereUserId($value)
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @method static SubscriptionFactory factory(...$parameters)
+ * @method static Builder|Subscription newModelQuery()
+ * @method static Builder|Subscription newQuery()
+ * @method static Builder|Subscription query()
+ * @method static Builder|Subscription whereCreatedAt($value)
+ * @method static Builder|Subscription whereEndsAt($value)
+ * @method static Builder|Subscription whereId($value)
+ * @method static Builder|Subscription whereName($value)
+ * @method static Builder|Subscription whereQuantity($value)
+ * @method static Builder|Subscription whereStripeId($value)
+ * @method static Builder|Subscription whereStripePrice($value)
+ * @method static Builder|Subscription whereStripeStatus($value)
+ * @method static Builder|Subscription whereTrialEndsAt($value)
+ * @method static Builder|Subscription whereUpdatedAt($value)
+ * @method static Builder|Subscription whereUserId($value)
  */
 class Subscription extends Model
 {
     use HasFactory;
-
-    public const STATUS_ACTIVE = 'Active';
-    public const STATUS_RETIRED = 'Retired';
-    public const STATUS_EXPIRED = 'Expired';
-
 
     public $attributes = [
     ];
@@ -57,6 +56,13 @@ class Subscription extends Model
     /****   Scopes   ****/
 
     /****   Relations   ****/
+
+    public function membership(): ?Membership
+    {
+        return Membership::where('name', $this->stripe_id)
+            //->where('price_id', $this->stripe_price)
+            ->first();
+    }
 
     /****   Checks   ****/
 

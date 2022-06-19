@@ -11,7 +11,6 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Text;
 
 /** @mixin \App\Models\MembershipPurchase */
 class MembershipPurchase extends Resource

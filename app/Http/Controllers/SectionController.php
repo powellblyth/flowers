@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Entry;
 use App\Models\Section;
 use Illuminate\Http\RedirectResponse;

@@ -5,8 +5,6 @@ namespace App\Observers;
 use App\Models\User;
 use App\Services\MailChimpService;
 use Illuminate\Support\Facades\Log;
-use NZTim\Mailchimp\Mailchimp;
-use NZTim\Mailchimp\Member;
 
 class UserObserver
 {
