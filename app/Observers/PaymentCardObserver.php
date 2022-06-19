@@ -4,13 +4,14 @@ namespace App\Observers;
 
 use App\Models\PaymentCard;
 use Illuminate\Support\Facades\Auth;
+use Stripe\Exception\InvalidRequestException;
 
 class PaymentCardObserver
 {
     /**
      * Handle the PaymentCard "created" event.
      *
-     * @param  \App\Models\PaymentCard  $paymentCard
+     * @param PaymentCard $paymentCard
      * @return void
      */
     public function created(PaymentCard $paymentCard)
@@ -21,10 +22,10 @@ class PaymentCardObserver
     /**
      * Handle the PaymentCard "updated" event.
      *
-     * @param  \App\Models\PaymentCard  $paymentCard
+     * @param PaymentCard $paymentCard
      * @return void
      */
-    public function updated(PaymentCard $paymentCard)
+    public function updated(PaymentCard $paymentCard): void
     {
         //
     }
@@ -32,18 +33,23 @@ class PaymentCardObserver
     /**
      * Handle the PaymentCard "deleted" event.
      *
-     * @param  \App\Models\PaymentCard  $paymentCard
+     * @param PaymentCard $paymentCard
      * @return void
      */
-    public function deleted(PaymentCard $paymentCard)
+    public function deleted(PaymentCard $paymentCard): void
     {
-        $paymentCard->user->deletePaymentMethod($paymentCard->stripe_id);
+        try {
+            $paymentCard->user->deletePaymentMethod($paymentCard->stripe_id);
+        } catch (InvalidRequestException) {
+            // Probably becaues the card is already deleted
+            ; // We ignore
+        }
     }
 
     /**
      * Handle the PaymentCard "restored" event.
      *
-     * @param  \App\Models\PaymentCard  $paymentCard
+     * @param PaymentCard $paymentCard
      * @return void
      */
     public function restored(PaymentCard $paymentCard)
@@ -54,7 +60,7 @@ class PaymentCardObserver
     /**
      * Handle the PaymentCard "force deleted" event.
      *
-     * @param  \App\Models\PaymentCard  $paymentCard
+     * @param PaymentCard $paymentCard
      * @return void
      */
     public function forceDeleted(PaymentCard $paymentCard)

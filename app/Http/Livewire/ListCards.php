@@ -27,13 +27,18 @@ class ListCards extends Component
         try {
             /** @var User $user */
             $user = Auth::user();
+            // TODO this should be a service
             $paymentCards = $user->paymentMethods();
+
+            // I use this to remove cards later
+                $cardsFromStripe = [];
             foreach ($paymentCards as $cardData) {
                 /** @var PaymentMethod $cardData */
                 $paymentCard = $user->paymentCards()
                     ->firstOrNew([
                         'stripe_id' => $cardData->id,
                     ]);
+                $cardsFromStripe[] = $cardData->id;
                 /** @var PaymentCard $paymentCard */
                 $paymentCard->setFromStripe($cardData);
                 $paymentCard->user()->associate($user);
@@ -45,6 +50,13 @@ class ListCards extends Component
                     }
                 }
             }
+
+            $extantPaymentCards = $user->paymentCards->pluck('stripe_id')->toArray();
+            $cardsToRemove = array_diff($extantPaymentCards,$cardsFromStripe);
+
+            $user->paymentCards
+                ->whereIn('stripe_id', $cardsToRemove)
+                ->each(fn(PaymentCard $paymentCard)=> $paymentCard->delete());
         } catch (ApiConnectionException $e) {
             $error = $e->getMessage();
             if ('production' !== App::environment()) {
