@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\CreateMembership;
 use App\Nova\Actions\PrintAllCardsRedirector;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
@@ -86,7 +87,7 @@ class User extends Resource
 
             Password::make('Password')
                 ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8')
+                ->creationRules('nullable', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
             Text::make('Address 1')->hideFromIndex(),
             Text::make('Address 2')->hideFromIndex(),
@@ -110,6 +111,7 @@ class User extends Resource
             DateTime::make('Updated At', 'updated_at')->onlyOnDetail()->readonly(),
 
             HasMany::make('Entrants'),
+            HasMany::make('Memberships', 'membershipPurchases', MembershipPurchase::class),
         ];
     }
 
@@ -156,6 +158,7 @@ class User extends Resource
     {
         return [
             PrintAllCardsRedirector::make()->showOnIndex(),
+//            CreateMembership::make()->showOnIndex(),
         ];
     }
 }
