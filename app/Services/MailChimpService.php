@@ -39,7 +39,7 @@ class MailChimpService
             $this->mailchimp->addUpdateMember($listId ?? $this->defaultList(), $member);
             Log::debug("subscribing");
         }
-q    }
+    }
 
     public function unsubscribe(?string $email, ?string $listId = null)
     {
