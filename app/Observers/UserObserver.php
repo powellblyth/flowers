@@ -39,7 +39,7 @@ class UserObserver
         $mailchimp = app(MailChimpService::class);
         Log::debug('user  ' . $user->id . ' saving');
 
-        // We saved the user, if these pertinant fields have changed then
+        // We saved the user, if these pertinent fields have changed then
         // Check if we can resubscribe or not
         if ($user->isDirty(['can_email', 'can_retain_data', 'email'])) {
             $email = $user->safe_email;

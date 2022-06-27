@@ -8,7 +8,7 @@ use NZTim\Mailchimp\Member;
 
 class MailChimpService
 {
-    private static $enabled = false;
+    private static $enabled = true;
 
     public static function enable(): void
     {
@@ -21,8 +21,8 @@ class MailChimpService
     }
 
     public function __construct(
-        private         readonly Mailchimp $mailchimp,
-        private ?string $defaultListId = null,
+        private readonly Mailchimp $mailchimp,
+        private ?string            $defaultListId = null,
     ) {
     }
 
@@ -39,7 +39,7 @@ class MailChimpService
             $this->mailchimp->addUpdateMember($listId ?? $this->defaultList(), $member);
             Log::debug("subscribing");
         }
-    }
+q    }
 
     public function unsubscribe(?string $email, ?string $listId = null)
     {
