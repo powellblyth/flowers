@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\User;
 use Illuminate\Console\Command;
 use NZTim\Mailchimp\Exception\MailchimpBadRequestException;
+use NZTim\Mailchimp\Exception\MailchimpException;
 use NZTim\Mailchimp\Mailchimp;
 use NZTim\Mailchimp\Member;
 
@@ -28,6 +29,7 @@ class SendMailchimpSubscribesCommand extends Command
      * Execute the console command.
      *
      * @return mixed
+     * @throws MailchimpException
      */
     public function handle()
     {
@@ -42,7 +44,7 @@ class SendMailchimpSubscribesCommand extends Command
 
             echo ++$counter . ':';
             $email = $user->safe_email;
-            echo $user->first_name . ' ' . $user->last_name . ' ' . $email . "\n";
+            echo $user->full_name . ' ' . $email . "\n";
 
 
             try {
