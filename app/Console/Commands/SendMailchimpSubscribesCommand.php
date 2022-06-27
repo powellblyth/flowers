@@ -39,6 +39,7 @@ class SendMailchimpSubscribesCommand extends Command
 
         $userList = User::where('email', '<>', '')
             ->whereNotNull('email')
+            ->orderBy('updated_at', 'DESC')
             ->get();
         $userList->each(function (User $user) use ($mailchimp, $counter, $listID) {
 
