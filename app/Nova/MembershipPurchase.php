@@ -61,6 +61,7 @@ class MembershipPurchase extends Resource
                 ->hideFromIndex()
                 ->sortable()->currency('GBP')->asMinorUnits(),
 
+            DateTime::make(__('Expires'), 'end_date')->readonly()->format('Y-MM-DD'),
             DateTime::make(__('Created At'), 'created_at')->readonly(),
         ];
     }

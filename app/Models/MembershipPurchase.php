@@ -46,9 +46,11 @@ class MembershipPurchase extends Model
 {
     final const TYPE_FAMILY = 'family';
     final const TYPE_INDIVIDUAL = 'individual';
+
     protected $fillable = [
-        'entrant_id', 'type', 'year', 'user_id', 'number',
+        'entrant_id', 'type', 'year', 'amount', 'start_date', 'end_date', 'user_id', 'number',
     ];
+
     public $casts = [
         'start_date' => 'datetime',
         'end_date' => 'datetime',
@@ -73,7 +75,9 @@ class MembershipPurchase extends Model
 
     public function scopeActive(BuilderContract $query): BuilderContract
     {
-        return $query->where('end_date', '<=', Carbon::today()->toDateString());
+        dump('today');
+        dump( Carbon::today()->toDateString());
+        return $query->where('end_date', '>=', Carbon::today()->toDateString());
     }
 
     public function user(): BelongsTo

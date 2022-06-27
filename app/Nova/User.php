@@ -2,7 +2,8 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions\CreateMembership;
+use App\Nova\Actions\CreateFamilyMembership;
+use App\Nova\Actions\CreateSingleMembership;
 use App\Nova\Actions\PrintAllCardsRedirector;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
@@ -158,7 +159,8 @@ class User extends Resource
     {
         return [
             PrintAllCardsRedirector::make()->showOnIndex(),
-//            CreateMembership::make()->showOnIndex(),
+            CreateFamilyMembership::make()->showOnIndex()->showOnTableRow(),
+            CreateSingleMembership::make()->showOnIndex()->showOnTableRow(),
         ];
     }
 }

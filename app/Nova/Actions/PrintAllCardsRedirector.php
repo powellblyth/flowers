@@ -19,6 +19,7 @@ class PrintAllCardsRedirector extends Action
     public $showOnIndex = false;
     public $confirmButtonText = 'Print Card!';
     public $name = 'Print Cards';
+
     /**
      * The text to be used for the action's cancel button.
      *

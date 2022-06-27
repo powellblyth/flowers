@@ -6,10 +6,15 @@
         @if(count($subscriptions) > 0 || count($manualMemberships) > 0)
             @if(count($subscriptions) > 0)
                 @foreach ($subscriptions as $subscription)
-                    <div class="title text-xl font-medium">
-                        {{\App\Models\Membership::where('stripe_id', $subscription->name)
-     ->where('stripe_price', $subscription->stripe_price)->first()?->label ?? $subscription->name
-     }}
+                    <div>
+                        <div class="title text-xl font-medium">
+                            {{\App\Models\Membership::where('stripe_id', $subscription->name)
+         ->where('stripe_price', $subscription->stripe_price)->first()?->label ?? $subscription->name
+         }}
+                        </div>
+                        <div>
+                            <x-button><a wire:click="cancelsubscription($subscription->name)">Cancel Membership</a></x-button>
+                        </div>
                     </div>
                 @endforeach
             @else

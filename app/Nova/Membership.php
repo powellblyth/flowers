@@ -57,8 +57,7 @@ class Membership extends Resource
             Select::make('Applies To')
                 ->sortable()
                 ->options([
-                    \App\Models\Membership::APPLIES_TO_ENTRANT => 'Entrant',
-                    \App\Models\Membership::APPLIES_TO_USER => 'Family',
+                    \App\Models\Membership::getTypes(),
                 ]),
 
             Currency::make('Price', 'price_gbp')->required()

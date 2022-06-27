@@ -76,10 +76,7 @@ class SubscriptionController extends Controller
                 $membership->stripe_price,
             );
 
-        $renewalDate = new Carbon('first day of June ' . date('Y'));
-        if ($renewalDate->isBefore(new Carbon('Tomorrow'))) {
-            $renewalDate = new Carbon('first day of June ' . (((int) date('Y')) + 1));
-        }
+        $renewalDate = Membership::getRenewalDate();
 
         try {
             $checkout = $subscriptionBuilder

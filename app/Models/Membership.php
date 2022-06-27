@@ -86,4 +86,21 @@ class Membership extends Model
     {
         return $this->applies_to === Membership::APPLIES_TO_ENTRANT;
     }
+
+    public static function getTypes(): array
+    {
+        return [
+            Membership::APPLIES_TO_ENTRANT => 'Entrant',
+            Membership::APPLIES_TO_USER => 'Family',
+        ];
+    }
+
+    public static function getRenewalDate(): Carbon
+    {
+        $renewalDate = new Carbon('first day of June ' . date('Y'));
+        if ($renewalDate->isBefore(new Carbon('Tomorrow'))) {
+            $renewalDate = new Carbon('first day of June ' . (((int) date('Y')) + 1));
+        }
+        return $renewalDate;
+    }
 }
