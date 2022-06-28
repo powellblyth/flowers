@@ -52,7 +52,9 @@
                 <tr class="bg-indigo-500 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                     <th class="p-3 text-left">Category</th>
                     <th class="p-3 text-left">Entries</th>
-                    <th class="p-3 text-left" colspan="4" width="110px">Winner</th>
+                    @if($show->resultsArePublic() || Auth::user()?->isAdmin())
+                        <th class="p-3 text-left" colspan="4" width="110px">Winner</th>
+                    @endif
                 </tr>
                 </thead>
                 <tbody class="flex-1 sm:flex-none">
@@ -72,16 +74,18 @@
                                 </b>
                             </nobr>
                         </td>
-                        @foreach ($category
-                            ->entries
-                            ->reject(fn(\App\Models\Entry $entry) => empty($entry->winningplace))
-                            ->sortBy(fn(\App\Models\Entry $entry, $key) => $entry->precedence_sorter)
-                             as $entry)
-                            <td class="border-grey-light border hover:bg-gray-100 p-3">
-                                {{ $entry->winning_label }}
-                                <br/>{{$entry->entrant->printable_name}}
-                            </td>
-                        @endforeach
+                        @if($show->resultsArePublic() || Auth::user()?->isAdmin())
+                            @foreach ($category
+                                ->entries
+                                ->reject(fn(\App\Models\Entry $entry) => empty($entry->winningplace))
+                                ->sortBy(fn(\App\Models\Entry $entry, $key) => $entry->precedence_sorter)
+                                 as $entry)
+                                <td class="border-grey-light border hover:bg-gray-100 p-3">
+                                    {{ $entry->winning_label }}
+                                    <br/>{{$entry->entrant->printable_name}}
+                                </td>
+                            @endforeach
+                        @endif
                     </tr>
                 @endforeach
             </table>
