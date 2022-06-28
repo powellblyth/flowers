@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use NZTim\Mailchimp\Exception\MailchimpBadRequestException;
 use NZTim\Mailchimp\Exception\MailchimpException;
 use NZTim\Mailchimp\Mailchimp;
@@ -55,7 +56,7 @@ class SendMailchimpSubscribesCommand extends Command
                     $mailchimp->addUpdateMember($listID, $member);
                     echo "subscribing\n";
                 } elseif ($mailchimp->check($listID, $email)) {
-                    // If the user is unsubscrbed, we cannot add them as unsubscribed
+                    // If the user is unsubscribed, we cannot add them as unsubscribed
                     // so we only change them if they already exist
                     $mailchimp->unsubscribe($listID, $email);
                     echo "doing unsubscribing\n";
@@ -63,6 +64,7 @@ class SendMailchimpSubscribesCommand extends Command
             } catch
             (MailchimpBadRequestException $e) {
                 echo $e->getMessage();
+                Log::error($e->getMessage());
             }
         }
         );
