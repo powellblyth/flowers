@@ -7,24 +7,24 @@
     <a href="{{route('cups.index')}}">&laquo; Cups</a>
     <br/>
     <ul>
-        <li>Name: {{ $cup->name }}</li>
-        <li>Show: {{ $show->name }}</li>
-        <li>Criteria: {{ $cup->winning_criteria }}</li>
+        <li>@lang('Name'): {{ $cup->name }}</li>
+        <li>@lang('Show'): {{ $show->name }}</li>
+        <li>@lang('Criteria'): {{ $cup->winning_criteria }}</li>
     </ul>
 
     @if (count($categories) > 0)
-        <b>Linked to: </b><br/>
+        <b>@lang('Linked to'): </b><br/>
         <table border>
             <tr>
-                <th>Category</th>
-                <th>First</th>
-                <th>Second</th>
-                <th>Third</th>
-                <th>Commended</th>
+                <th>@lang('Category')</th>
+                <th>@lang('First')</th>
+                <th>@lang('Second')</th>
+                <th>@lang('Third')</th>
+                <th>@lang('Commended')</th>
             </tr>
 
 
-            @foreach ($categories as $categoryId=> $category)
+            @foreach '($categories as $categoryId=> $category)
                 <tr>
                     <td>{{$category}}</td>
                     @if (array_key_exists($categoryId, $winners_by_category) && count($winners_by_category[$categoryId]) > 0)
@@ -61,7 +61,7 @@
                             @endif
                         </td>
                     @else
-                        <td colspan="4">Unavailable</td>
+                        <td colspan="4">@lang('Unavailable')</td>
                     @endif
 
                 </tr>

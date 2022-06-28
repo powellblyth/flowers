@@ -88,7 +88,7 @@
                     </table>
 
                 @else
-                    <i>Winner:</i>
+                    <i>@lang('Winner'):</i>
                     @php
                         $directWinnerId = $results[$cup->id]['direct_winner'];
                     @endphp
