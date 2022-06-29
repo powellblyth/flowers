@@ -1,9 +1,6 @@
 @extends('layouts/main')
-@section('pagetitle', 'Cup ' . $cup->name . ' '.$show->name)
+@section('pagetitle', 'Cup ' . $cup->name . ' ' . $show->name)
 @section('content')
-    @php
-        $printableNames = !$isAdmin
-    @endphp
     <a href="{{route('cups.index')}}">&laquo; Cups</a>
     <br/>
     <ul>

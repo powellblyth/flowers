@@ -88,10 +88,9 @@
                     </div>
                 </div>
             </div>
-
         @empty
             <div class="table-row">
-                @lang('There ar no family members configured yet. You must have configured at least one
+                @lang('There are no family members configured yet. You must have configured at least one
                 family member before you can add any show entries')
             </div>
 

@@ -37,23 +37,20 @@
             show, if available, here.
         </p>
     </x-layout.intro-para>
-    @php
-        $publishMode = false;
-        $shortName = false;
-    @endphp
+
     @foreach ($sections as $section)
         <x-layout.intro-para class="py-2">
             <x-headers.h2>
-                Section {{$section->display_name}}
+                @lang('Section') {{$section->display_name}}
             </x-headers.h2>
             <table
                 class="w-full flex flex-row flex-no-wrap bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                 <thead class="text-white">
                 <tr class="bg-indigo-500 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                    <th class="p-3 text-left">Category</th>
-                    <th class="p-3 text-left">Entries</th>
+                    <th class="p-3 text-left">@lang('Category')</th>
+                    <th class="p-3 text-left">@lang('Entries')</th>
                     @if($show->resultsArePublic() || Auth::user()?->isAdmin())
-                        <th class="p-3 text-left" colspan="4" width="110px">Winner</th>
+                        <th class="p-3 text-left" colspan="4" width="110px">@lang('Winner')</th>
                     @endif
                 </tr>
                 </thead>
@@ -89,7 +86,6 @@
                     </tr>
                 @endforeach
             </table>
-
         </x-layout.intro-para>
     @endforeach
 </x-app-layout>

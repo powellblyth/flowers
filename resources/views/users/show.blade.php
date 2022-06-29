@@ -35,10 +35,10 @@
 
         <div class="table border-4 p-4">
             <div class="table-header-group">
-                <div class="table-cell p-2">Name</div>
-                <div class="table-cell p-2">Age</div>
-                <div class="table-cell p-2">Manage</div>
-                <div class="table-cell p-2">Team</div>
+                <div class="table-cell p-2">@lang('Name')</div>
+                <div class="table-cell p-2">@lang('Age')</div>
+                <div class="table-cell p-2">@lang('Manage')</div>
+                <div class="table-cell p-2">@lang('Team')</div>
                 <div class="table-cell p-2"></div>
             </div>
             @forelse ($user['entrants'] as $entrant)
@@ -49,7 +49,7 @@
                     </div>
                     <div class="table-cell p-2 px-4 ">
                         @if ($entrant['age'])
-                            {{$entrant['age']}} years
+                            @lang(':age years', ['age'=>$entrant['age']])
                         @endif
                     </div>
                     <div class="table-cell p-2 px-4 ">
@@ -84,8 +84,9 @@
             @endforelse
 
             <div>
-                <a href="{{route('entrants.create')}}"
-                   class="bg-primary-200 hover:bg-primary text-white font-bold py-2 px-4 rounded">@lang('Add another family member')</a>
+                <x-button><a href="{{route('entrants.create')}}"
+                             class="bg-primary-200 hover:bg-primary text-white font-bold py-2 px-4 rounded">@lang('Add another family member')</a>
+                </x-button>
             </div>
         {{ Form::close() }}
     </x-layout.intro-para>
