@@ -21,7 +21,7 @@
             </tr>
 
 
-            @foreach '($categories as $categoryId=> $category)
+            @foreach ($categories as $categoryId => $category)
                 <tr>
                     <td>{{$category}}</td>
                     @if (array_key_exists($categoryId, $winners_by_category) && count($winners_by_category[$categoryId]) > 0)

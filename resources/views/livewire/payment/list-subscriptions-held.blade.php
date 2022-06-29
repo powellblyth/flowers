@@ -22,9 +22,10 @@
             @endif
 
             @if(count($manualMemberships) > 0)
-                @foreach ($manualMemberships as $manualMemberships)
-                    <div class="title text-xl font-medium">Manual - {{$manualMemberships->membership->label}}
-                        until {{$manualMemberships->end_date}}</div>
+                @foreach ($manualMemberships as $manualMembership)
+                    <div class="title text-xl font-medium">
+                        @lang('Manual') - {{$manualMembership->membership->label}}
+                        until {{$manualMembership->end_date}}</div>
                 @endforeach
             @endif
         @else

@@ -77,8 +77,8 @@
                 @endphp
             @empty
                 <div class="table-row">
-                    There are no family members configured yet. You must have configured at least one
-                    family member before you can add any show entries
+                    @lang('There are no family members configured yet. You must have configured at least one
+                    family member before you can add any show entries')
                 </div>
 
             @endforelse

@@ -52,8 +52,8 @@ class UserController extends Controller
     /**
      * Display a listing of the users
      *
+     * @param Request $request
      * @param User|null $user
-     * @param Show|null $show
      * @return \Illuminate\Contracts\View\View
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
