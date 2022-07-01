@@ -43,6 +43,9 @@ return new class extends Migration {
                 $table->timestamps();
             }
         );
+
+
+        Schema::dropIfExists('category_judge_role');
         Schema::create(
             'category_judge_role',
             function (Blueprint $table) {
@@ -52,6 +55,7 @@ return new class extends Migration {
                 $table->timestamps();
             }
         );
+        Schema::dropIfExists('cup_judge_role');
         // some cups are awarded by judget type
         Schema::create('cup_judge_role', function (Blueprint $table) {
             $table->id();
