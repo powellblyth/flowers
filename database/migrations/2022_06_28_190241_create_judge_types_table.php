@@ -62,11 +62,11 @@ return new class extends Migration {
         });
 
 
-        DB::table('sections')->where('id', 2)->update(['judge_role_id', 1]);
-        DB::table('sections')->where('id', 3)->update(['judge_role_id', 3]);
-        DB::table('sections')->where('id', 4)->update(['judge_role_id', 2]);
-        DB::table('sections')->where('id', 5)->update(['judge_role_id', 5]);
-        DB::table('sections')->where('id', 6)->update(['judge_role_id', 6]);
+        DB::table('sections')->where('id', 2)->update(['judge_role_id' => 1]);
+        DB::table('sections')->where('id', 3)->update(['judge_role_id' => 3]);
+        DB::table('sections')->where('id', 4)->update(['judge_role_id' => 2]);
+        DB::table('sections')->where('id', 5)->update(['judge_role_id' => 5]);
+        DB::table('sections')->where('id', 6)->update(['judge_role_id' => 6]);
     }
 
     /**
