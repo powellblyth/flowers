@@ -15,6 +15,7 @@ return new class extends Migration {
     {
         // no idea whay went wrong
         Schema::dropIfExists('judge_roles');
+        Schema::dropIfExists('judge_show');
         Schema::create('judge_roles', function (Blueprint $table) {
             $table->id();
             $table->string('label');
