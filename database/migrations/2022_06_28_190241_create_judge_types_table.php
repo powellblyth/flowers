@@ -63,7 +63,9 @@ return new class extends Migration {
             $table->foreignId('judge_role_id');
             $table->timestamps();
         });
-
+        Schema::table('sections', function (Blueprint $table) {
+            $table->dropColumn('judge_role_id');
+        });
         Schema::table('sections', function (Blueprint $table) {
             $table->foreignId('judge_role_id')->nullable();
         });
