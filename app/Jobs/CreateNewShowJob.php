@@ -46,14 +46,14 @@ class CreateNewShowJob implements ShouldQueue
         $categories = $this->oldShow->categories()
             ->orderBy('sortorder')
             ->get();
-        foreach ($categories as $category) {
-            /** @var Category $category */
+        $categories->each(function (Category $category) {
             $newCategory = $category->replicate(['show_id']);
             $newCategory->save();
             $newCategory->cups()->attach($category->cups);
             $newCategory->show()->associate($this->newShow);
+            $newCategory->judgeRoles()->saveMany($category->judgeRoles);
             $newCategory->cloned_from = $category->id;
             $newCategory->save();
-        }
+        });
     }
 }

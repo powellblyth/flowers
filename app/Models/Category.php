@@ -103,7 +103,7 @@ class Category extends Model implements \Stringable
 
     public function scopeInOrder(Builder $query): Builder
     {
-        return $query->orderby('sortorder');
+        return $query->orderby('categories.sortorder');
     }
 
     public function show(): BelongsTo
@@ -119,6 +119,11 @@ class Category extends Model implements \Stringable
     public function section(): BelongsTo
     {
         return $this->belongsTo(Section::class);
+    }
+
+    public function judgeRoles(): BelongsToMany
+    {
+        return $this->belongsToMany(JudgeRole::class)->withTimestamps();
     }
 
     public function cups(): BelongsToMany

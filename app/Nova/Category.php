@@ -7,6 +7,7 @@ use App\Nova\Filters\FilterByShow;
 use App\Nova\Filters\SectionFilter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\HasMany;
@@ -134,6 +135,7 @@ class Category extends Resource
             BelongsTo::make('Show')->sortable()->required(),
             BelongsTo::make('Section')->sortable()->required(),
             HasMany::make(__('Entries'), 'entries'),
+            BelongsToMany::make(__('Judge Roles'), 'judgeRoles'),
 
         ];
     }

@@ -6,6 +6,7 @@ use App\Nova\Actions\DuplicateShowAction;
 use App\Nova\Actions\PrintAllCardsRedirector;
 use App\Nova\Actions\PrintLookupSheetsRedirector;
 use App\Nova\Actions\PrintTableTopCardsRedirector;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
@@ -52,8 +53,8 @@ class Show extends Resource
     /**
      * Build an "index" query for the given resource.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param Builder $query
+     * @return Builder
      */
     public static function indexQuery(NovaRequest $request, $query)
     {

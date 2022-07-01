@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 
 /**
  * Class Judge
@@ -43,6 +45,10 @@ class Judge extends Model
     /****   Scopes   ****/
 
     /****   Relations   ****/
+    public function judgeAtShow(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(JudgeAtShow::class);
+    }
 
     /****   Checks   ****/
 

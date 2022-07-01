@@ -43,11 +43,11 @@ class Cup extends Resource
      * @var array
      */
     public static $sort = [
-        'sort_order' => 'asc'
+        'cups.sort_order' => 'asc'
     ];
 
     /**
-     * Build an "index" query for the given resource.
+     * Build an "index" query for   the given resource.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
