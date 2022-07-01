@@ -13,6 +13,8 @@ return new class extends Migration {
      */
     public function up()
     {
+        // no idea whay went wrong
+        Schema::dropIfExists('judge_roles');
         Schema::create('judge_roles', function (Blueprint $table) {
             $table->id();
             $table->string('label');
