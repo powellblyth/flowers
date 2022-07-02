@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('judges', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->text('cv')->nullable();
-            $table->timestamps();
+        Schema::table('judges', function (Blueprint $table) {
+            $table->string('display_name')->nullable();
+            $table->text('address')->nullable();
+            $table->text('telephone')->nullable();
         });
     }
 
@@ -29,6 +27,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('judges');
+        Schema::table('judges', function (Blueprint $table) {
+            $table->dropColumn(['display_name', 'address', 'telephone']);
+        });
     }
 };

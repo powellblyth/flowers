@@ -61,8 +61,11 @@ class Judge extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make(__('Name'), 'name')->sortable(),
+            Text::make(__('Name'), 'name')->sortable()->required(),
+            Text::make(__('Display Name'), 'display_name')->sortable()->required(),
             Text::make(__('Description'), 'Description'),
+            Textarea::make(__('Address'), 'address'),
+            Textarea::make(__('Phone'), 'phone'),
             Textarea::make(__('C.V.'), 'cv'),
             DateTime::make(__('Created At'), 'created_at')->readonly()->onlyOnDetail(),
             DateTime::make(__('Updated At'), 'updated_at')->readonly()->onlyOnDetail(),
