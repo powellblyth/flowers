@@ -80,7 +80,7 @@ class Section extends Resource
                     );
                 }),
 
-            BelongsTo::make(__('Judge Role'), 'judgeRole', JudgeRole::class)->required(false),
+            BelongsTo::make(__('Judge Role'), 'judgeRole', JudgeRole::class)->nullable(),
 
         ];
     }
