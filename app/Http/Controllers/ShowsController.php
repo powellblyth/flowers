@@ -40,4 +40,22 @@ class ShowsController extends Controller
             ]
         );
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @throws AuthorizationException
+     */
+    public function statusReport(Request $request): Response
+    {
+        $show=  $this->getShowFromRequest($request);
+
+        $this->authorize('viewAny', $show);
+        return response()->view(
+            'shows.showStatus',
+            [
+                'show' => $show,
+            ]
+        );
+    }
 }

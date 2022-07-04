@@ -104,6 +104,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('paymentcards', \App\Http\Controllers\PaymentCardsController::class);
 //    Route::put('profile', [ProfileController::class, 'password'])->name('profile.password');
 });
+Route::get('/shows/me/status', [ShowsController::class, 'statusReport'])->name('shows.status');
 
 
 Route::post(

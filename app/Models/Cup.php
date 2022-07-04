@@ -54,10 +54,10 @@ class Cup extends Model
             return $this
                 ->section
                 ->categories()
-                ->where('show_id', $show->id)
+                ->forShow($show)
                 ->get();
         } else {
-            return $this->categories()->where('show_id', $show->id)->get();
+            return $this->categories()->forShow($show->id)->get();
         }
     }
 

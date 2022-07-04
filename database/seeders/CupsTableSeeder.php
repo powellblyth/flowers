@@ -29,7 +29,7 @@ class CupsTableSeeder extends Seeder
                 'winning_criteria' => 'The winner of greatest number of points in section 2',
                 'sort_order' => 10,
                 'num_display_results' => 2,
-                'section_id' => NULL,
+                'section_id' => 2,
             ),
             1 => 
             array (
@@ -41,7 +41,7 @@ class CupsTableSeeder extends Seeder
                 'winning_criteria' => 'The winner of greatest number of points in section 3',
                 'sort_order' => 20,
                 'num_display_results' => 2,
-                'section_id' => NULL,
+                'section_id' => 3,
             ),
             2 => 
             array (
@@ -53,7 +53,7 @@ class CupsTableSeeder extends Seeder
                 'winning_criteria' => 'The winner of greatest number of points in section 4',
                 'sort_order' => 30,
                 'num_display_results' => 2,
-                'section_id' => NULL,
+                'section_id' => 4,
             ),
             3 => 
             array (
@@ -65,7 +65,7 @@ class CupsTableSeeder extends Seeder
                 'winning_criteria' => 'The winner of greatest number of points in section 5',
                 'sort_order' => 40,
                 'num_display_results' => 2,
-                'section_id' => NULL,
+                'section_id' => 5,
             ),
             4 => 
             array (
@@ -77,7 +77,7 @@ class CupsTableSeeder extends Seeder
                 'winning_criteria' => 'The winner of greatest number of points in section 6',
                 'sort_order' => 50,
                 'num_display_results' => 2,
-                'section_id' => NULL,
+                'section_id' => 6,
             ),
             5 => 
             array (
@@ -89,7 +89,7 @@ class CupsTableSeeder extends Seeder
                 'winning_criteria' => 'The winner of greatest number of points in section 7',
                 'sort_order' => 60,
                 'num_display_results' => 2,
-                'section_id' => NULL,
+                'section_id' => 7,
             ),
             6 => 
             array (
@@ -101,7 +101,7 @@ class CupsTableSeeder extends Seeder
                 'winning_criteria' => 'The winner of greatest number of points in section 9',
                 'sort_order' => 70,
                 'num_display_results' => 2,
-                'section_id' => NULL,
+                'section_id' => 9,
             ),
             7 => 
             array (
