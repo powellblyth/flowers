@@ -117,7 +117,6 @@ class CupController extends Controller
                 ->toArray();
 
         }
-
         return view('cups.show', [
             'cup' => $cup,
             'winners' => $winners,
@@ -198,8 +197,11 @@ class CupController extends Controller
             $entrant = $entry->entrant;
             $entries[$entry->id] = $entrant->full_name;
         }
-        return view('cups.directResultPickEntrant', ['entries' => $entries, 'id' => $id, 'thing' => $cup,
-                                                     'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
+        return view('cups.directResultPickEntrant', [
+            'entries' => $entries,
+            'id' => $id,
+            'thing' => $cup,
+            'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
     }
 
     public function directResultSetWinner(Request $request, Cup $cup): \Illuminate\Http\RedirectResponse

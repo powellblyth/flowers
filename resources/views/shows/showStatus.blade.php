@@ -37,7 +37,7 @@
 
     @foreach (\App\Models\Cup::with(['section'])->get() as $cup)
         <x-layout.intro-para class="py-2">
-            <div>{{ $cup->name }}<br />
+            <div>{{ $cup->name }}[{{$cup->id}}]<br />
             {{$cup->winning_criteria}}</div>
             <x-goodbad
                 :success="$cup->categories()->count() > 0 || $cup->section?->categories()->forShow($show)->count() > 0">

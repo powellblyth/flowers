@@ -57,7 +57,7 @@ class Cup extends Model
                 ->forShow($show)
                 ->get();
         } else {
-            return $this->categories()->forShow($show->id)->get();
+            return $this->categories()->forShow($show)->get();
         }
     }
 

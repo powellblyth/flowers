@@ -38,7 +38,7 @@ Route::get('/cups', [CupController::class, 'index'])
     ->name('cups.index');
 Route::get('/cups/printableresults', [CupController::class, 'printableresults'])
     ->name('cup.printableresults');
-Route::get('/cups/{id}', [CupController::class, 'name'])->name('cups.show');
+Route::get('/cups/{id}', [CupController::class, 'show'])->name('cups.show');
 
 
 Route::group(['middleware' => 'is_admin'], function () {

@@ -68,21 +68,21 @@
         </table>
     @else
         @can('storeResults', $show)
-{{--            <h2>Pick a winner from an entry</h2>--}}
-{{--            {{ Form::open([--}}
-{{--                'route' => ['cup.directResultPick','cup'=>$cup]--}}
-{{--            ]) }}--}}
+            <h2>Pick a winner from an entry</h2>
+            {{ Form::open([
+                'route' => ['cup.directResultPick','cup'=>$cup]
+            ]) }}
 {{--                        {{dd($categories)}}--}}
-{{--            {{ Form::select('category', $categories)}}--}}
-{{--            {{ Form::submit('Find Entrants', ['class' => 'button btn btn-primary']) }}--}}
-{{--            {{Form::close()}}--}}
-{{--            <h2>Pick a winner from a list of entrants</h2>--}}
-{{--            {{ Form::open([--}}
-{{--                'route' => ['cup.directResultSetWinnerPerson','id'=>$cup->id]--}}
-{{--            ]) }}--}}
-{{--            {{ Form::select('person', $people)}}--}}
-{{--            {{ Form::submit('Set Winner', ['class' => 'button btn btn-primary']) }}--}}
-{{--            {{Form::close()}}--}}
-        @endif
+            {{ Form::select('category', $categories)}}
+            {{ Form::submit('Find Entrants', ['class' => 'button btn btn-primary']) }}
+            {{Form::close()}}
+            <h2>Pick a winner from a list of entrants</h2>
+            {{ Form::open([
+                'route' => ['cup.directResultSetWinnerPerson','id'=>$cup->id]
+            ]) }}
+            {{ Form::select('person', $people)}}
+            {{ Form::submit('Set Winner', ['class' => 'button btn btn-primary']) }}
+            {{Form::close()}}
+        @endcan
     @endif
 @stop
