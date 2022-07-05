@@ -25,9 +25,9 @@ class CupController extends Controller
         /** dragons here - copied tp printableresults */
         foreach ($cups as $cup) {
             /** @var Cup $cup */
-            $resultset = $cup->getWinningResults($show);
+            $resultSet = $cup->getWinningResults($show);
             $thisCupPoints = array();
-            foreach ($resultset as $result) {
+            foreach ($resultSet as $result) {
                 $thisCupPoints[] = [
                     'firstplacepoints' => $result->firstplacepoints,
                     'secondplacepoints' => $result->secondplacepoints,
@@ -74,8 +74,9 @@ class CupController extends Controller
         ]);
     }
 
-    public function show(Cup $cup, Request $request): View
+    public function show(Request $request, int $cupId): View
     {
+        $cup = Cup::findOrFail($cupId);
         $winnerDataByCategory = [];
         $winners = [];
         $show = $this->getShowFromRequest($request);
@@ -87,7 +88,7 @@ class CupController extends Controller
                 ->entries()
                 ->selectRaw('if(winningplace=\'1\', 4,if(winningplace=\'2\',3, if(winningplace=\'3\',2, if(winningplace=\'commended\',1, 0 ) ) )) as points, winningplace, entrant_id')
                 ->whereIn('winningplace', ['1', '2', '3', 'commended'])
-                ->forShow($show->id)
+                ->where('show_id', $show->id)
                 ->orderBy('winningplace', 'asc')
                 ->get();
 
