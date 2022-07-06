@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\AddCategoryToCup;
 use App\Nova\Actions\AddEntryToCategory;
 use App\Nova\Filters\FilterByShow;
 use App\Nova\Filters\SectionFilter;
@@ -183,6 +184,7 @@ class Category extends Resource
         return [
             AddEntryToCategory::make()
                     ->showOnTableRow(),
+            AddCategoryToCup::make(),
         ];
     }
 }

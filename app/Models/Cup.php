@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\DB;
  * @property string|null $winning_criteria
  * @property int|null $sort_order
  * @property int|null $num_display_results
+ * @property int|null $winning_basis
  * @property-read Collection|Category[] $categories
  * @property-read int|null $categories_count
  * @method static Builder|Cup newModelQuery()
@@ -43,6 +44,9 @@ use Illuminate\Support\Facades\DB;
  */
 class Cup extends Model
 {
+    public const WINNING_BASIS_TOTAL_POINTS = 'total_points';
+    public const WINNING_BASIS_JUDGES_CHOICE = 'judges_choice';
+
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
@@ -54,10 +58,14 @@ class Cup extends Model
             return $this
                 ->section
                 ->categories()
+                ->orderBy('sortorder')
                 ->forShow($show)
                 ->get();
         } else {
-            return $this->categories()->forShow($show)->get();
+            return $this->categories()
+                ->orderBy('sortorder')
+                ->forShow($show)
+                ->get();
         }
     }
 
@@ -114,5 +122,13 @@ class Cup extends Model
         } else {
             return $this->relatedCategories($show)->pluck('id')->toArray();
         }
+    }
+
+    public static function getWinningBasisOptions(): array
+    {
+        return [
+            Cup::WINNING_BASIS_TOTAL_POINTS => 'Highest Points',
+            Cup::WINNING_BASIS_JUDGES_CHOICE => 'Judge\'s Choice',
+        ];
     }
 }

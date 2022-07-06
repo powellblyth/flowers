@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -93,13 +94,18 @@ class Cup extends Resource
             ),
             Text::make(__('Name'), 'name')
                 ->rules('required', 'max:255')
-            ->onlyOnForms()
+                ->onlyOnForms()
             ,
             Text::make(__('Winning Criteria'), 'winning_criteria')
                 ->sortable()
                 ->rules('required', 'max:255')
-                ->showOnIndex(false)
-            ,
+                ->showOnIndex(false),
+
+            Select::make(__('Winning Basis'), 'winning_basis')
+                ->required()
+                ->displayUsingLabels()
+                ->default(\App\Models\Cup::WINNING_BASIS_TOTAL_POINTS)
+                ->options(\App\Models\Cup::getWinningBasisOptions()),
 
             Number::make(__('Sort Order'), 'sort_order')
                 ->sortable(),

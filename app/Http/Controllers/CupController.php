@@ -81,11 +81,8 @@ class CupController extends Controller
         $winners = [];
         $show = $this->getShowFromRequest($request);
 
-        if ($cup->section) {
-            $categories = $cup->section->categories()->where('show_id', $show->id)->orderBy('sortorder')->get();
-        } else {
-            $categories = $cup->categories()->where('show_id', $show->id)->orderBy('sortorder')->get();
-        }
+        $categories = $cup->relatedCategories($show);
+
         foreach ($categories as $category) {
             $resultset = $category
                 ->entries()

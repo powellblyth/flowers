@@ -9,7 +9,7 @@
         <li>@lang('Criteria'): {{ $cup->winning_criteria }}</li>
     </ul>
 
-    @if (count($categories) > 0)
+    @if ($cup->winning_basis === \App\Models\Cup::WINNING_BASIS_TOTAL_POINTS)
         <b>@lang('Linked to'): </b><br/>
         <table border>
             <tr>
