@@ -74,15 +74,18 @@ class CupController extends Controller
         ]);
     }
 
-    public function show(Request $request, int $cupId): View
+    public function show(Request $request, Cup $cup): View
     {
-        $cup = Cup::findOrFail($cupId);
+//        $cup = Cup::findOrFail($cupId);
         $winnerDataByCategory = [];
         $winners = [];
         $show = $this->getShowFromRequest($request);
 
-        $categories = $cup->categories()->where('show_id', $show->id)->orderBy('sortorder')->get();
-
+        if ($cup->section) {
+            $categories = $cup->section->categories()->where('show_id', $show->id)->orderBy('sortorder')->get();
+        } else {
+            $categories = $cup->categories()->where('show_id', $show->id)->orderBy('sortorder')->get();
+        }
         foreach ($categories as $category) {
             $resultset = $category
                 ->entries()
@@ -122,7 +125,7 @@ class CupController extends Controller
             'cup' => $cup,
             'winners' => $winners,
             'winners_by_category' => $winnerDataByCategory,
-            'categories' => $categories->pluck('numbered_name', 'id')->toArray(),
+            'categories' => $categories,
             'people' => $people,
             'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
             'show' => $show,

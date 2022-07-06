@@ -1,7 +1,7 @@
 @extends('layouts/main')
 @section('pagetitle', 'Cup ' . $cup->name . ' ' . $show->name)
 @section('content')
-    <a href="{{route('cups.index')}}">&laquo; Cups</a>
+    <a href="{{config('nova.path')}}/resources/cups">&laquo; Cups</a>
     <br/>
     <ul>
         <li>@lang('Name'): {{ $cup->name }}</li>
@@ -21,38 +21,38 @@
             </tr>
 
 
-            @foreach ($categories as $categoryId => $category)
+            @foreach ($categories as $category)
                 <tr>
-                    <td>{{$category}}</td>
-                    @if (array_key_exists($categoryId, $winners_by_category) && count($winners_by_category[$categoryId]) > 0)
+                    <td>{{$category->numbered_name}} <small>{{$category->notes}}</small></td>
+                    @if (array_key_exists($category->id, $winners_by_category) && count($winners_by_category[$category->id]) > 0)
                         <td>
-                            @if (array_key_exists('1', $winners_by_category[$categoryId]))
-                                {{$winners[$winners_by_category[$categoryId]['1']['entrant']]->printable_name}}
-                                ({{$winners_by_category[$categoryId]['1']['points']}} points)
+                            @if (array_key_exists('1', $winners_by_category[$category->id]))
+                                {{$winners[$winners_by_category[$category->id]['1']['entrant']]->printable_name}}
+                                ({{$winners_by_category[$category->id]['1']['points']}} points)
                             @else
                                 -
                             @endif
                         </td>
                         <td>
-                            @if (array_key_exists('2', $winners_by_category[$categoryId]))
-                                {{$winners[$winners_by_category[$categoryId]['2']['entrant']]->printable_name}}
-                                ({{$winners_by_category[$categoryId]['2']['points']}} points)
+                            @if (array_key_exists('2', $winners_by_category[$category->id]))
+                                {{$winners[$winners_by_category[$category->id]['2']['entrant']]->printable_name}}
+                                ({{$winners_by_category[$category->id]['2']['points']}} points)
                             @else
                                 -
                             @endif
                         </td>
                         <td>
-                            @if (array_key_exists('3', $winners_by_category[$categoryId]))
-                                {{$winners[$winners_by_category[$categoryId]['3']['entrant']]->printable_name}}
-                                ({{$winners_by_category[$categoryId]['3']['points']}} points)
+                            @if (array_key_exists('3', $winners_by_category[$category->id]))
+                                {{$winners[$winners_by_category[$category->id]['3']['entrant']]->printable_name}}
+                                ({{$winners_by_category[$category->id]['3']['points']}} points)
                             @else
                                 -
                             @endif
                         </td>
                         <td>
-                            @if (array_key_exists('commended', $winners_by_category[$categoryId]))
-                                {{$winners[$winners_by_category[$categoryId]['commended']['entrant']]->printable_name}}
-                                ({{$winners_by_category[$categoryId]['commended']['points']}} points)
+                            @if (array_key_exists('commended', $winners_by_category[$category->id]))
+                                {{$winners[$winners_by_category[$category->id]['commended']['entrant']]->printable_name}}
+                                ({{$winners_by_category[$category->id]['commended']['points']}} points)
                             @else
                                 -
                             @endif
