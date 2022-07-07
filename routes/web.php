@@ -36,6 +36,8 @@ Route::get('/sections/forwebsite', [SectionController::class, 'forwebsite'])->na
 Route::resource('membershippurchases', MembershipPurchaseController::class);
 Route::get('/cups', [CupController::class, 'index'])
     ->name('cups.index');
+Route::get('/cupCategories', [CupController::class, 'categories'])
+    ->name('cups.categories');
 Route::get('/cups/printableresults', [CupController::class, 'printableresults'])
     ->name('cup.printableresults');
 Route::get('/cups/{cup}', [CupController::class, 'show'])->name('cups.show');

@@ -74,6 +74,19 @@ class CupController extends Controller
         ]);
     }
 
+    public function categories(Request $request)
+    {
+        $show = $this->getShowFromRequest($request);
+        $cups = Cup::with(['section'])->orderBy('sort_order', 'asc')->get();
+        return view(
+            'cups.cupcategories',
+            [
+                'cups' => $cups,
+                'show' => $show,
+            ]
+        );
+    }
+
     public function show(Request $request, Cup $cup): View
     {
 //        $cup = Cup::findOrFail($cupId);
