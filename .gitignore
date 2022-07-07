@@ -1,4 +1,8 @@
-vendor/
+/vendor/
+/public/vendor/telescope/
+/public/vendor/nova/
+/public/fonts/vendor/
+/lang/vendor/
 node_modules/
 npm-debug.log
 
