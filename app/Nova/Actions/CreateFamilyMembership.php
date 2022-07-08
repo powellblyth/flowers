@@ -28,7 +28,7 @@ class CreateFamilyMembership extends Action
      *
      * @var string
      */
-    public $confirmText = 'Are you sure you want to create this Single membership?';
+    public $confirmText = 'Are you sure you want to create this Family membership?';
 
     /**
      * Perform the action on the given models.
