@@ -81,7 +81,7 @@ class User extends Resource
                 $owed = ($fees - $payments);
 
                 return '£' . ($fees / 100) . ' fees less £' . ($payments / 100)
-                       . ' of payments =  <big><b>£' . ($owed / 100) . '</b></big>';
+                       . ' of payments =  <big><b>£' . ($owed / 100) . ' owed</b></big>';
             })->asHtml()->onlyOnDetail(),
 
             Select::make('Status')
