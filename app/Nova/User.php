@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Actions\CreateFamilyMembership;
 use App\Nova\Actions\CreateSingleMembership;
 use App\Nova\Actions\PrintAllCardsRedirector;
+use App\Nova\Actions\RecordPayment;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
@@ -15,6 +16,9 @@ use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 
+/**
+ * @mixin \App\Models\User
+ */
 class User extends Resource
 {
     /**
@@ -63,14 +67,23 @@ class User extends Resource
             Text::make(__('Name'), fn(\App\Models\User $thing) => $thing->fullName),
 
             Text::make('Fees for 2022 show', function () {
-                $x = 0;
+                $fees = 0;
                 foreach ($this->entrants as $entrant) {
                     foreach ($entrant->entries()->where('show_id', 6)->get() as $entry) {
-                        $x += $entry->getActualPrice();
+                        $fees += (int)$entry->getActualPrice();
                     }
                 }
-                return '£' . ($x/100);
-            })->onlyOnDetail(),
+//                return '£' . ($fees/100);
+                $payments = 0;
+                foreach ($this->payments()->where('created_at', '>', '2022-01-01 00:00:00')->get() as $payment) {
+                    $payments += (int)$payment->amount;
+                }
+                $owed = ($fees - $payments);
+
+                return '£' . ($fees / 100) . ' fees less £' . ($payments / 100)
+                       . ' of payments =  <big><b>£' . ($owed / 100) . '</b></big>';
+            })->asHtml()->onlyOnDetail(),
+
             Select::make('Status')
                 ->sortable()
                 ->rules('required', 'max:255')
@@ -168,6 +181,7 @@ class User extends Resource
     public function actions(Request $request): array
     {
         return [
+            RecordPayment::make(),
             PrintAllCardsRedirector::make()->showOnIndex(),
             CreateFamilyMembership::make()->showOnIndex()->showOnTableRow(),
             CreateSingleMembership::make()->showOnIndex()->showOnTableRow(),
