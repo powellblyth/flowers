@@ -32,7 +32,7 @@ class PrintAllCardsRedirector extends Action
      *
      * @var bool
      */
-    public $withoutConfirmation = true;
+    public $withoutConfirmation = false;
 
     /**
      * The text to be used for the action's confirmation text.

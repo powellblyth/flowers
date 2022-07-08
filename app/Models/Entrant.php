@@ -105,6 +105,13 @@ class Entrant extends Model
         );
     }
 
+    public function entrantNumber(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => $this->getEntrantNumber()
+        );
+    }
+
     public function fullName(): Attribute
     {
         return new Attribute(
