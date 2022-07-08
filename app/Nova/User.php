@@ -7,6 +7,7 @@ use App\Nova\Actions\CreateSingleMembership;
 use App\Nova\Actions\PrintAllCardsRedirector;
 use App\Nova\Actions\RecordPayment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Gravatar;
@@ -68,9 +69,16 @@ class User extends Resource
 
             Text::make('Fees for 2022 show', function () {
                 $fees = 0;
+                $freeEntries = 0;
+                $entries = 0;
                 foreach ($this->entrants as $entrant) {
                     foreach ($entrant->entries()->where('show_id', 6)->get() as $entry) {
-                        $fees += (int)$entry->getActualPrice();
+                        $entryPrice = (int)$entry->getActualPrice();
+                        $fees += $entryPrice
+                        $entries++;
+                        if ( 0 === $entryPrice){
+                            $freeEntries ++;
+                        }
                     }
                 }
 //                return '£' . ($fees/100);
@@ -81,7 +89,8 @@ class User extends Resource
                 $owed = ($fees - $payments);
 
                 return '£' . ($fees / 100) . ' fees less £' . ($payments / 100)
-                       . ' of payments =  <big><b>£' . ($owed / 100) . ' owed</b></big>';
+                       . ' of payments =  <big><b>£' . ($owed / 100) . ' owed</b></big>'
+                    .'<br />'.$entries . ' '.Str::plural('Entry', $entries) .' ('.$freeEntries .' '.Str::plural('free entries').')';
             })->asHtml()->onlyOnDetail(),
 
             Select::make('Status')

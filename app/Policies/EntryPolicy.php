@@ -46,7 +46,7 @@ class EntryPolicy
      */
     public function create(User $user)
     {
-        return config('app.state') !== 'locked';;
+        return config('app.state') !== 'locked';
     }
 
     /**
