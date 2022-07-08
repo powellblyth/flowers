@@ -27,7 +27,7 @@ class UpdateAgesCommand extends Command {
      * @return mixed
      */
     public function handle() {
-        DB::table('entrants')->whereNotNull('age')->increment('age', 1);
+        DB::table('entrants')->whereNotNull('age')->whereNotNull('approx_birth_year')->increment('age', 1);
 //        DB::Raw(' UPDATE entrants set `age`=`age`+1 where Age IS NOT NULL ');
 //        DB::Update('entrants', );
     }
