@@ -21,7 +21,7 @@ class EntryPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param User $user
+     * @param User|null $user
      * @return mixed
      */
     public function viewAny(?User $user = null)
@@ -46,7 +46,7 @@ class EntryPolicy
      */
     public function create(User $user)
     {
-        return true;
+        return config('app.state') !== 'locked';;
     }
 
     /**
