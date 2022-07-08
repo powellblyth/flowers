@@ -74,7 +74,7 @@ class User extends Resource
                 foreach ($this->entrants as $entrant) {
                     foreach ($entrant->entries()->where('show_id', 6)->get() as $entry) {
                         $entryPrice = (int)$entry->getActualPrice();
-                        $fees += $entryPrice
+                        $fees += $entryPrice;
                         $entries++;
                         if ( 0 === $entryPrice){
                             $freeEntries ++;
