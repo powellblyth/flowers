@@ -60,7 +60,17 @@ class User extends Resource
         return [
             ID::make()->sortable(),
             Gravatar::make()->maxWidth(50),
-            Text::make(__('Name'), fn(\App\Models\User $thing)=>$thing->fullName),
+            Text::make(__('Name'), fn(\App\Models\User $thing) => $thing->fullName),
+
+            Text::make('Fees for 2022 show', function () {
+                $x = 0;
+                foreach ($this->entrants as $entrant) {
+                    foreach ($entrant->entries()->where('show_id', 6)->get() as $entry) {
+                        $x += $entry->getActualPrice();
+                    }
+                }
+                return '£' . ($x/100);
+            })->onlyOnDetail(),
             Select::make('Status')
                 ->sortable()
                 ->rules('required', 'max:255')
@@ -73,7 +83,7 @@ class User extends Resource
             Text::make('First Name', 'first_name')
                 ->sortable()
                 ->rules('required', 'max:255')
-            ->onlyOnForms(),
+                ->onlyOnForms(),
 
             Text::make('Family Name', 'last_name')
                 ->sortable()
