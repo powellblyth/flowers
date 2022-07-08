@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\DB;
  * @property string|null $winning_criteria
  * @property int|null $sort_order
  * @property int|null $num_display_results
- * @property int|null $winning_basis
+ * @property string $winning_basis
  * @property-read Collection|Category[] $categories
  * @property-read int|null $categories_count
  * @method static Builder|Cup newModelQuery()
@@ -67,6 +67,11 @@ class Cup extends Model
                 ->forShow($show)
                 ->get();
         }
+    }
+
+    public function judgeRoles(): BelongsToMany
+    {
+        return $this->belongsToMany(JudgeRole::class);
     }
 
     public function section(): BelongsTo

@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Actions\CupResultsChooserRedirector;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
@@ -12,6 +13,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Http\Requests\ResourceDetailRequest;
 use Laravel\Nova\Http\Requests\ResourceIndexRequest;
 
 class Cup extends Resource
@@ -115,6 +117,11 @@ class Cup extends Resource
                 ->sortable(),
             HasMany::make(__('Categories'), 'categories'),
             BelongsTo::make(__('Section'), 'section')->nullable(),
+            BelongsToMany::make(__('Judge Role'), 'judgeRoles')->nullable()
+                ->canSee(
+                    fn(ResourceDetailRequest $request)
+                    => $this->resource->winning_basis === \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE
+                ),
         ];
     }
 

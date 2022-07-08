@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\PrintAllJudgingSheetsRedirector;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -114,6 +115,8 @@ class Judge extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            PrintAllJudgingSheetsRedirector::make(),
+        ];
     }
 }
