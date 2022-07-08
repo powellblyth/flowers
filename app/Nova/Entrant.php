@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\CreateEntry;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -110,6 +111,8 @@ class Entrant extends Resource
      */
     public function actions(Request $request): array
     {
-        return [];
+        return [
+            CreateEntry::make(),
+        ];
     }
 }

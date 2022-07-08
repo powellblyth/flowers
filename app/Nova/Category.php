@@ -25,7 +25,7 @@ class Category extends Resource
      * @var string
      */
     public static string $model = \App\Models\Category::class;
-
+    public static $perPageOptions = [ 120,50];
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
@@ -54,6 +54,7 @@ class Category extends Resource
     ];
 
     public static $perPageViaRelationship = 100;
+    public static $perPage = 100;
 
     /**
      * Build an "index" query for the given resource.
