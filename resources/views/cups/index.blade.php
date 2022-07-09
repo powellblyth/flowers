@@ -48,7 +48,7 @@
             <div>{{$cup->winning_criteria}}</div>
 
             @if($show->resultsArePublic()|| Auth::user()?->isAdmin())
-                @if ((int)$results[$cup->id]['direct_winner'] == 0)
+                @if ($cup->winning_basis === \App\Models\Cup::WINNING_BASIS_TOTAL_POINTS)
                     <table
                         class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                         <thead class="text-white">
@@ -90,18 +90,18 @@
                 @else
                     <i>@lang('Winner'):</i>
                     @php
-                        $directWinnerId = $results[$cup->id]['direct_winner'];
+                        $directWinnerId = $results[$cup->id]['direct_winner']?? null;
                     @endphp
                     @if(array_key_exists($directWinnerId, $winners))
-                        @if ( ! $publishMode && $isAdmin)
+                        @if (  $isAdmin)
                             <b>
-                                <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->printable_name}}</a>
+                                <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->full_name}}</a>
                             </b>
                         @else
                             <big><b>{{$winners[$directWinnerId]['entrant']->printable_name}}</b></big>
                         @endif
                     @endif
-                    @if (is_object($results[$cup->id]['winning_category']))
+                    @if (is_object($results[$cup->id]['winning_category'] ?? null))
                         for category
                         <i><b>{{$results[$cup->id]['winning_category']->numbered_name}}</b></i>
                     @endif

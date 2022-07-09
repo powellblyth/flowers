@@ -73,7 +73,7 @@
                 'route' => ['cup.directResultPick','id'=>$cup]
             ]) }}
 {{--                        {{dd($categories)}}--}}
-            {{ Form::select('category', $categories)}}
+            {{ Form::select('category', $categories->pluck('numbered_name', 'id'))}}
             {{ Form::submit('Find Entrants', ['class' => 'button btn btn-primary']) }}
             {{Form::close()}}
             <h2>Pick a winner from a list of entrants</h2>
