@@ -11,7 +11,7 @@
 {{ Form::open([
     'route' => ['cup.directResultSetWinner','id'=>$thing->id]
 ]) }}
-{{ Form::select('entry', $entries)}}
+{{ Form::select('entry', $entries->pluck('entrant.numbered_name','id')->toArray())}}
 {{ Form::submit('Choose', ['class' => 'button btn btn-primary']) }}
 {{Form::close()}}
 

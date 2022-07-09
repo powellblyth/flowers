@@ -211,16 +211,12 @@ class CupController extends Controller
     public function directResultPick(Request $request, int $id): View
     {
         $cup = Cup::find($id);
-        $entries = Entry::where('category_id', $request->post('category'))->get();
+        $entries = Entry::with('entrant')->where('category_id', $request->post('category'))->get();
         $entriesAry = [];
-        foreach ($entries as $entry) {
-//            dump($entry->id);
-            $entrant = $entry->entrant;
-            $entriesAry[$entry->id] = $entrant->full_name;
-        }
+
 //        dd($request);
         return view('cups.directResultPickEntrant', [
-            'entries' => $entriesAry,
+            'entries' => $entries,
             'id' => $id,
             'thing' => $cup,
             'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
