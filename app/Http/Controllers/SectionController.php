@@ -60,7 +60,7 @@ class SectionController extends Controller
         ];
         $this->authorize('enterResults', Entry::class);
         foreach ($request->entries as $entryId => $placing) {
-            if (in_array($placing, $winningPlaces)) {
+            if (array_key_exists($placing, $winningPlaces)) {
                 $entry = Entry::findOrFail($entryId);
                 $entry->winningplace = $placing;
                 $entry->save();

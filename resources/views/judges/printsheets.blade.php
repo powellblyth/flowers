@@ -85,13 +85,16 @@
 
     @foreach($judge->relatedCups($show) as $cup)
         {{$cup->name}}<br/>
-        <div>
             ENTRANT AND CATEGORY NUMBER
-            Entrant
+        <table>
+            <tr>
+                <td>Entrant</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+            <tr><td>Category</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+        </table>
             <div class="width:50px;border:1px solid"></div>
             category
             <div class="width:50px;border:1px solid"></div>
-        </div>
+        </table>
     @endforeach
     {{--            @for($x=0; $x < 2; $x++)--}}
     {{--                <tr>--}}
