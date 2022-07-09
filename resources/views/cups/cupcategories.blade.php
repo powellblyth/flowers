@@ -25,7 +25,7 @@
             @endforeach
             </div>
 
-            @if($show->resultsArePublic())
+            @if($show->resultsArePublic()|| Auth::user()?->isAdmin())
             @endif
         </x-layout.intro-para>
 

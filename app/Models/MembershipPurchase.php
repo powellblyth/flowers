@@ -75,8 +75,6 @@ class MembershipPurchase extends Model
 
     public function scopeActive(BuilderContract $query): BuilderContract
     {
-        dump('today');
-        dump( Carbon::today()->toDateString());
         return $query->where('end_date', '>=', Carbon::today()->toDateString());
     }
 

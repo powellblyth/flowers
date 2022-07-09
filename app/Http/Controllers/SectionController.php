@@ -82,15 +82,7 @@ class SectionController extends Controller
                 ->where('year', config('app.year'))
                 ->orderBy('sortorder', 'asc')
                 ->get();
-//
-//            if ($lastSection !== $category->section) {
-//                $categoryList[$category->section] = [];
-//            }
-//            $categoryList[$category->section][$category->id] = $category;
-//
-//            $lastSection = $category->section;
         }
-        //var_dump(count($categoryList[9]));die();
         return view(
             'sections.forwebsite',
             [

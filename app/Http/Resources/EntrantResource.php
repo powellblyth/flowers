@@ -19,8 +19,6 @@ class EntrantResource extends JsonResource
      */
     public function toArray($request)
     {
-//        dump('entrant says');
-//        dd($request->show);
         return [
             'id' => $this->id,
             'first_name' => $this->first_name,

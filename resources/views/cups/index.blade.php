@@ -47,7 +47,7 @@
             <x-headers.h2>{{ $cup->name }}</x-headers.h2>
             <div>{{$cup->winning_criteria}}</div>
 
-            @if($show->resultsArePublic())
+            @if($show->resultsArePublic()|| Auth::user()?->isAdmin())
                 @if ((int)$results[$cup->id]['direct_winner'] == 0)
                     <table
                         class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">

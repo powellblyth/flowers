@@ -15,12 +15,15 @@
 <div id="everything">
     <div>
         <h2>Judge: {{$judge->name}}, for the {{$show->name}} Petersham Horticultural Society Show</h2>
-        <h4>Judging: {{
+        <h4>Judging:
+            @php
     $judge->judgeAtShow()->with('judgeRole')->where('show_id', $show->id)->get()->each(
         function(\App\Models\JudgeAtShow $judgeAtShow){
             echo $judgeAtShow->judgeRole->label .', ';
             }
-    )}}</h4>
+    )
+    @endphp
+        </h4>
         <div>Thank you for judging with us at our {{$show->name}} Show, we really appreciate your time and your judgements.</div>
         <br /><Br />
 
