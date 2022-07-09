@@ -73,24 +73,42 @@ class User extends Resource
                 $entries = 0;
                 foreach ($this->entrants as $entrant) {
                     foreach ($entrant->entries()->where('show_id', 6)->get() as $entry) {
-                        $entryPrice = (int)$entry->getActualPrice();
+                        $entryPrice = (int) $entry->getActualPrice();
                         $fees += $entryPrice;
                         $entries++;
-                        if ( 0 === $entryPrice){
-                            $freeEntries ++;
+                        if (0 === $entryPrice) {
+                            $freeEntries++;
                         }
                     }
                 }
 //                return '£' . ($fees/100);
                 $payments = 0;
                 foreach ($this->payments()->where('created_at', '>', '2022-01-01 00:00:00')->get() as $payment) {
-                    $payments += (int)$payment->amount;
+                    $payments += (int) $payment->amount;
                 }
                 $owed = ($fees - $payments);
 
-                return '£' . ($fees / 100) . ' fees less £' . ($payments / 100)
-                       . ' of payments =  <big><b>£' . ($owed / 100) . ' owed</b></big>'
-                    .'<br />'.$entries . ' '.Str::plural('Entry', $entries) .' ('.$freeEntries .' '.Str::plural('free entries').')';
+                $numMembership = 0;
+                $amountMemberships = 0;
+                foreach ($this->membershipPurchases()
+                             ->where('created_at', '>', '2022-06-01 00:00:00') as $membershipPurchase) {
+                    $amountMemberships += $membershipPurchase->amount();
+                    $numMembership++;
+                }
+
+                return '' . $entries . ' ' . Str::plural('Entry', $entries) .
+                       ' (' . $freeEntries . ' ' . Str::plural('free entries') . ')'.
+                       ' - £' . ($fees / 100) . '<br />' .
+                       $numMembership . ' ' . Str::plural('Membership', $numMembership) .
+                       ' - £' . ($amountMemberships / 100) . '<br />' .
+                       '------------<br />' .
+                       '= £' . ($fees + $amountMemberships / 100) . ' fees <br />' .
+                       '------------<br />' .
+                       'less £' . ($payments / 100) . ' of payments <br />' .
+                       '<b>----------------</b><br />' .
+
+                       '=  <big><b>£' . ($owed / 100) . ' owed</b></big><br />' .
+                       '<b>----------------</b><br />';
             })->asHtml()->onlyOnDetail(),
 
             Select::make('Status')

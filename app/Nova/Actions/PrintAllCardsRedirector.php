@@ -77,8 +77,10 @@ class PrintAllCardsRedirector extends Action
                     5 => '5 minutes',
                     10 => '10 minutes',
                     30 => '30 minutes',
-                    60 => '1 hour',
+                    60 => '1 hour ago',
+                    120 => '2 hours ago',
                     360 => '6 hours ago',
+                    720 => '12 hours ago',
                     1440 => '24 hours ago',
                     525600 => 'All Year',
 
