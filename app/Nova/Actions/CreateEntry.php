@@ -66,10 +66,14 @@ class CreateEntry extends Action
      */
     public function fields()
     {
-        $categories = Category::where('show_id', 6)->orderBy('sortorder')->pluck('number', 'id')->toArray();
+        $categories = Category::where('show_id', 6)->orderBy('sortorder')->get();
+        $categoriesArray = [];
+        foreach ($categories as $category){
+            $categoriesArray[$category->id] = $category->numbered_name;
+        }
         $selects = [];
         for ($x = 1; $x <= self::$numRows; $x++) {
-            $selects[] = Select::make('category_id_' . $x)->options($categories);
+            $selects[] = Select::make('category_id_' . $x)->options($categoriesArray);
         }
         return $selects;
     }
