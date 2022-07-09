@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Actions\CreateEntry;
+use App\Nova\Actions\RecordPayment;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -113,6 +114,8 @@ class Entrant extends Resource
     {
         return [
             CreateEntry::make(),
+            RecordPayment::make(),
+
         ];
     }
 }

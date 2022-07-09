@@ -2,6 +2,7 @@
 
 namespace App\Nova\Actions;
 
+use App\Models\Entrant;
 use App\Models\Membership;
 use App\Models\MembershipPurchase;
 use App\Models\Payment;
@@ -25,7 +26,7 @@ class RecordPayment extends Action
      * @var string
      */
     public $confirmButtonText = 'Store Payment';
-    public $name = 'Store Payment';
+    public $name = 'Store Family Payment';
 
     /**
      * The text to be used for the action's confirmation text.
@@ -45,7 +46,10 @@ class RecordPayment extends Action
     {
 
 
-        $models->each(function (User $user) use ($fields) {
+        $models->each(function ( $user) use ($fields) {
+            if ($user instanceof Entrant){
+                $user = $user->user;
+            }
             $payment = new Payment();
             $payment->amount = $fields['amount'] * 100;
             $payment->source = $fields['source'] ?? 'cash';
@@ -66,7 +70,9 @@ class RecordPayment extends Action
             Select::make(__('Method'), 'source')->options(['cash' => 'cash',
                                                            'cheque' => 'cheque',
                                                            'online' => 'online',
+                                                           'card_machine' => 'card_machine',
                                                            'debit' => 'debit',
+                                                           'refund_card_machine' => 'refund_card_machine',
                                                            'refund_cash' => 'refund_cash',
                                                            'refund_online' => 'refund_online',
                                                            'refund_cheque' => 'refund_cheque']),
