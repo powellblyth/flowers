@@ -90,7 +90,6 @@ class Cup extends Model
          * @TODO improve this with more laravelness
          */
         $categoryIds = $this->getValidCategoryIdsForShow($show);
-
         return DB::select(
             "
             select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
@@ -108,7 +107,7 @@ class Cup extends Model
             from entries 
             
             where 
-                category_id in (?)
+                category_id in (".implode(',', $categoryIds).")
                 AND entries.show_id = ?
             
             group by entrant_id
@@ -116,7 +115,7 @@ class Cup extends Model
             having (totalpoints > 0)
             order by (totalpoints) desc
 ",
-            array(implode(',', $categoryIds), $show->id)
+            array( $show->id)
         );
     }
 

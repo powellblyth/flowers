@@ -22,6 +22,10 @@ class CupController extends Controller
         $winners = array();
         $results = array();
         $cups = Cup::with(['section'])
+
+
+
+
             ->orderBy('sort_order', 'asc')->get();
         foreach ($cups as $cup) {
             $results[$cup->id] = [];
