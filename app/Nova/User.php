@@ -37,6 +37,10 @@ class User extends Resource
     public static $title = 'full_name';
     public static $group = 'members';
 
+    public static function label()
+    {
+        return 'Family Managers';
+    }
 
     /**
      * The columns that should be searched.
@@ -97,7 +101,7 @@ class User extends Resource
                 }
 
                 return '' . $entries . ' ' . Str::plural('Entry', $entries) .
-                       ' (' . $freeEntries . ' ' . Str::plural('free entries') . ')'.
+                       ' (' . $freeEntries . ' ' . Str::plural('free entries') . ')' .
                        ' - £' . ($fees / 100) . '<br />' .
                        $numMembership . ' ' . Str::plural('Membership', $numMembership) .
                        ' - £' . ($amountMemberships / 100) . '<br />' .

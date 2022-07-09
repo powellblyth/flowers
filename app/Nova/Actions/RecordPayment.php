@@ -46,8 +46,8 @@ class RecordPayment extends Action
     {
 
 
-        $models->each(function ( $user) use ($fields) {
-            if ($user instanceof Entrant){
+        $models->each(function ($user) use ($fields) {
+            if ($user instanceof Entrant) {
                 $user = $user->user;
             }
             $payment = new Payment();

@@ -29,6 +29,21 @@ class Entrant extends Resource
      */
     public static $title = 'full_name';
 
+    public function subtitle()
+    {
+        $subtitle = '';
+        if ($this->user->first_name != $this->first_name) {
+            $subtitle .= 'Family Manager: ' . $this->user->first_name . ' ' . $this->user->last_name . ' ';
+        }
+        if (empty($this->user->address_1)) {
+            $subtitle .= $this->user->email . ', ';
+        } else {
+            $subtitle .= $this->user->address_1 . ', ';
+        }
+        $subtitle .= "{$this->user->postcode}";
+        return $subtitle;
+    }
+
     /**
      * The columns that should be searched.
      *
