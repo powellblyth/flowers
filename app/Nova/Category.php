@@ -3,7 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Actions\AddCategoryToCup;
-use App\Nova\Actions\AddEntryToCategory;
+use App\Nova\Actions\CreateUsersEntry;
 use App\Nova\Filters\FilterByShow;
 use App\Nova\Filters\SectionFilter;
 use Illuminate\Http\Request;
@@ -183,7 +183,7 @@ class Category extends Resource
     public function actions(Request $request): array
     {
         return [
-            AddEntryToCategory::make()
+            CreateUsersEntry::make()
                     ->showOnTableRow(),
             AddCategoryToCup::make(),
         ];

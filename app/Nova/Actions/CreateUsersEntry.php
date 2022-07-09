@@ -16,7 +16,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 
-class AddEntryToCategory extends Action
+class CreateUsersEntry extends Action
 {
     use InteractsWithQueue, Queueable;
 
@@ -26,6 +26,7 @@ class AddEntryToCategory extends Action
      * @var string
      */
     public $confirmButtonText = 'Create Entry(ies)';
+    public $name = 'Create Person\'s Entry';
 
     /**
      * Perform the action on the given models.
@@ -60,7 +61,7 @@ class AddEntryToCategory extends Action
 
 
         $models->each(function (Category $category) use ($fields, $entrantId) {
-            Log::debug('eaching ' . $entrantId . ' '.$fields['entrant_id']);
+            Log::debug('eaching ' . $entrantId . ' ' . $fields['entrant_id']);
             // If there isn't an entry, then pervesely the check has succeeded
             try {
                 $existingEntry = $category->entries()->where('entrant_id', $entrantId)->firstOrFail();
@@ -75,6 +76,11 @@ class AddEntryToCategory extends Action
                 $entry->save();
             }
         });
+
+        if ($fields['redirect_to'] === 'user') {
+            $entrant = Entrant::find($entrantId);
+            return Action::openInNewTab(config('nova.url') . '/resources/users/' . $entrant->user_id);
+        }
     }
 
     /**
@@ -103,6 +109,9 @@ class AddEntryToCategory extends Action
             Boolean::make(__('Can Retain Data'), 'can_retain_data'),
             Boolean::make(__('Can Email'), 'can_email'),
             Boolean::make(__('Can Telephone'), 'can_telephone'),
+            Select::make(__('Redirect To'), 'redirect_to')
+                ->options(['user' => 'Family Page', 'categories' => 'Stay'])
+                ->withMeta(['value' => 'user']),
         ];
     }
 }

@@ -27,6 +27,9 @@ class CreateEntry extends Action
     public $confirmButtonText = 'Create Entry';
     public $name = 'Create Entry';
 
+    // How many rows of categories to show
+    public static $numRows = 20;
+
     /**
      * The text to be used for the action's confirmation text.
      *
@@ -44,8 +47,8 @@ class CreateEntry extends Action
     public function handle(ActionFields $fields, Collection $models)
     {
         $models->each(function (Entrant $entrant) use ($fields) {
-            for ($x=1; $x<=10;$x++){
-                if ($fields['category_id_'.$x]) {
+            for ($x = 1; $x <= self::$numRows; $x++) {
+                if ($fields['category_id_' . $x]) {
                     $entry = new \App\Models\Entry();
                     $entry->entrant_id = $entrant->id;
                     $entry->category_id = $fields['category_id_' . $x];
@@ -63,18 +66,11 @@ class CreateEntry extends Action
      */
     public function fields()
     {
-        $categories = Category::where('show_id',6)->orderBy('sortorder')->pluck('number', 'id')->toArray();
-        return [
-            Select::make('category_id_1')->options($categories),
-            Select::make('category_id_2')->options($categories),
-            Select::make('category_id_3')->options($categories),
-            Select::make('category_id_4')->options($categories),
-            Select::make('category_id_5')->options($categories),
-            Select::make('category_id_6')->options($categories),
-            Select::make('category_id_7')->options($categories),
-            Select::make('category_id_8')->options($categories),
-            Select::make('category_id_9')->options($categories),
-            Select::make('category_id_10')->options($categories),
-        ];
+        $categories = Category::where('show_id', 6)->orderBy('sortorder')->pluck('number', 'id')->toArray();
+        $selects = [];
+        for ($x = 1; $x <= self::$numRows; $x++) {
+            $selects[] = Select::make('category_id_' . $x)->options($categories);
+        }
+        return $selects;
     }
 }
