@@ -55,7 +55,7 @@ class MembershipPurchase extends Resource
                 ->options([
                     \App\Models\Membership::APPLIES_TO_ENTRANT => 'Entrant',
                     \App\Models\Membership::APPLIES_TO_USER => 'Family',
-                ]),
+                ])->displayUsingLabels(),
 
             Currency::make('Amount')->required()
                 ->hideFromIndex()

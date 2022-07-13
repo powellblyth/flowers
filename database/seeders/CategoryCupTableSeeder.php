@@ -2683,6 +2683,1920 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            333 => 
+            array (
+                'id' => 839,
+                'cup_id' => 14,
+                'category_id' => 766,
+                'created_at' => '2022-07-06 19:22:55',
+                'updated_at' => '2022-07-06 19:22:55',
+            ),
+            334 => 
+            array (
+                'id' => 840,
+                'cup_id' => 14,
+                'category_id' => 765,
+                'created_at' => '2022-07-06 19:22:55',
+                'updated_at' => '2022-07-06 19:22:55',
+            ),
+            335 => 
+            array (
+                'id' => 841,
+                'cup_id' => 14,
+                'category_id' => 764,
+                'created_at' => '2022-07-06 19:22:55',
+                'updated_at' => '2022-07-06 19:22:55',
+            ),
+            336 => 
+            array (
+                'id' => 842,
+                'cup_id' => 14,
+                'category_id' => 796,
+                'created_at' => '2022-07-06 19:22:55',
+                'updated_at' => '2022-07-06 19:22:55',
+            ),
+            337 => 
+            array (
+                'id' => 843,
+                'cup_id' => 15,
+                'category_id' => 803,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            338 => 
+            array (
+                'id' => 844,
+                'cup_id' => 15,
+                'category_id' => 802,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            339 => 
+            array (
+                'id' => 845,
+                'cup_id' => 15,
+                'category_id' => 801,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            340 => 
+            array (
+                'id' => 846,
+                'cup_id' => 15,
+                'category_id' => 800,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            341 => 
+            array (
+                'id' => 847,
+                'cup_id' => 15,
+                'category_id' => 799,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            342 => 
+            array (
+                'id' => 848,
+                'cup_id' => 15,
+                'category_id' => 798,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            343 => 
+            array (
+                'id' => 849,
+                'cup_id' => 15,
+                'category_id' => 797,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            344 => 
+            array (
+                'id' => 850,
+                'cup_id' => 15,
+                'category_id' => 795,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            345 => 
+            array (
+                'id' => 851,
+                'cup_id' => 15,
+                'category_id' => 794,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            346 => 
+            array (
+                'id' => 852,
+                'cup_id' => 15,
+                'category_id' => 793,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            347 => 
+            array (
+                'id' => 853,
+                'cup_id' => 15,
+                'category_id' => 792,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            348 => 
+            array (
+                'id' => 854,
+                'cup_id' => 15,
+                'category_id' => 791,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            349 => 
+            array (
+                'id' => 855,
+                'cup_id' => 15,
+                'category_id' => 790,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            350 => 
+            array (
+                'id' => 856,
+                'cup_id' => 15,
+                'category_id' => 789,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            351 => 
+            array (
+                'id' => 857,
+                'cup_id' => 15,
+                'category_id' => 788,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            352 => 
+            array (
+                'id' => 858,
+                'cup_id' => 15,
+                'category_id' => 787,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            353 => 
+            array (
+                'id' => 859,
+                'cup_id' => 15,
+                'category_id' => 786,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            354 => 
+            array (
+                'id' => 860,
+                'cup_id' => 15,
+                'category_id' => 785,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            355 => 
+            array (
+                'id' => 861,
+                'cup_id' => 15,
+                'category_id' => 784,
+                'created_at' => '2022-07-06 19:32:25',
+                'updated_at' => '2022-07-06 19:32:25',
+            ),
+            356 => 
+            array (
+                'id' => 862,
+                'cup_id' => 16,
+                'category_id' => 803,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            357 => 
+            array (
+                'id' => 863,
+                'cup_id' => 16,
+                'category_id' => 802,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            358 => 
+            array (
+                'id' => 864,
+                'cup_id' => 16,
+                'category_id' => 801,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            359 => 
+            array (
+                'id' => 865,
+                'cup_id' => 16,
+                'category_id' => 800,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            360 => 
+            array (
+                'id' => 866,
+                'cup_id' => 16,
+                'category_id' => 799,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            361 => 
+            array (
+                'id' => 867,
+                'cup_id' => 16,
+                'category_id' => 798,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            362 => 
+            array (
+                'id' => 868,
+                'cup_id' => 16,
+                'category_id' => 797,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            363 => 
+            array (
+                'id' => 869,
+                'cup_id' => 16,
+                'category_id' => 796,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            364 => 
+            array (
+                'id' => 870,
+                'cup_id' => 16,
+                'category_id' => 795,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            365 => 
+            array (
+                'id' => 871,
+                'cup_id' => 16,
+                'category_id' => 794,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            366 => 
+            array (
+                'id' => 872,
+                'cup_id' => 16,
+                'category_id' => 793,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            367 => 
+            array (
+                'id' => 873,
+                'cup_id' => 16,
+                'category_id' => 792,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            368 => 
+            array (
+                'id' => 874,
+                'cup_id' => 16,
+                'category_id' => 791,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            369 => 
+            array (
+                'id' => 875,
+                'cup_id' => 16,
+                'category_id' => 790,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            370 => 
+            array (
+                'id' => 876,
+                'cup_id' => 16,
+                'category_id' => 789,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            371 => 
+            array (
+                'id' => 877,
+                'cup_id' => 16,
+                'category_id' => 788,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            372 => 
+            array (
+                'id' => 878,
+                'cup_id' => 16,
+                'category_id' => 787,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            373 => 
+            array (
+                'id' => 879,
+                'cup_id' => 16,
+                'category_id' => 786,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            374 => 
+            array (
+                'id' => 880,
+                'cup_id' => 16,
+                'category_id' => 785,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            375 => 
+            array (
+                'id' => 881,
+                'cup_id' => 16,
+                'category_id' => 784,
+                'created_at' => '2022-07-06 19:33:31',
+                'updated_at' => '2022-07-06 19:33:31',
+            ),
+            376 => 
+            array (
+                'id' => 882,
+                'cup_id' => 15,
+                'category_id' => 815,
+                'created_at' => '2022-07-06 19:33:53',
+                'updated_at' => '2022-07-06 19:33:53',
+            ),
+            377 => 
+            array (
+                'id' => 883,
+                'cup_id' => 15,
+                'category_id' => 814,
+                'created_at' => '2022-07-06 19:33:53',
+                'updated_at' => '2022-07-06 19:33:53',
+            ),
+            378 => 
+            array (
+                'id' => 884,
+                'cup_id' => 15,
+                'category_id' => 813,
+                'created_at' => '2022-07-06 19:33:53',
+                'updated_at' => '2022-07-06 19:33:53',
+            ),
+            379 => 
+            array (
+                'id' => 885,
+                'cup_id' => 15,
+                'category_id' => 812,
+                'created_at' => '2022-07-06 19:33:53',
+                'updated_at' => '2022-07-06 19:33:53',
+            ),
+            380 => 
+            array (
+                'id' => 886,
+                'cup_id' => 15,
+                'category_id' => 811,
+                'created_at' => '2022-07-06 19:33:53',
+                'updated_at' => '2022-07-06 19:33:53',
+            ),
+            381 => 
+            array (
+                'id' => 887,
+                'cup_id' => 15,
+                'category_id' => 810,
+                'created_at' => '2022-07-06 19:33:53',
+                'updated_at' => '2022-07-06 19:33:53',
+            ),
+            382 => 
+            array (
+                'id' => 888,
+                'cup_id' => 15,
+                'category_id' => 804,
+                'created_at' => '2022-07-06 19:33:53',
+                'updated_at' => '2022-07-06 19:33:53',
+            ),
+            383 => 
+            array (
+                'id' => 889,
+                'cup_id' => 16,
+                'category_id' => 676,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            384 => 
+            array (
+                'id' => 890,
+                'cup_id' => 16,
+                'category_id' => 780,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            385 => 
+            array (
+                'id' => 891,
+                'cup_id' => 16,
+                'category_id' => 781,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            386 => 
+            array (
+                'id' => 892,
+                'cup_id' => 16,
+                'category_id' => 782,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            387 => 
+            array (
+                'id' => 893,
+                'cup_id' => 16,
+                'category_id' => 783,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            388 => 
+            array (
+                'id' => 894,
+                'cup_id' => 16,
+                'category_id' => 804,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            389 => 
+            array (
+                'id' => 895,
+                'cup_id' => 16,
+                'category_id' => 810,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            390 => 
+            array (
+                'id' => 896,
+                'cup_id' => 16,
+                'category_id' => 811,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            391 => 
+            array (
+                'id' => 897,
+                'cup_id' => 16,
+                'category_id' => 812,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            392 => 
+            array (
+                'id' => 898,
+                'cup_id' => 16,
+                'category_id' => 813,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            393 => 
+            array (
+                'id' => 899,
+                'cup_id' => 16,
+                'category_id' => 814,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            394 => 
+            array (
+                'id' => 900,
+                'cup_id' => 16,
+                'category_id' => 815,
+                'created_at' => '2022-07-06 19:34:04',
+                'updated_at' => '2022-07-06 19:34:04',
+            ),
+            395 => 
+            array (
+                'id' => 901,
+                'cup_id' => 16,
+                'category_id' => 808,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            396 => 
+            array (
+                'id' => 902,
+                'cup_id' => 16,
+                'category_id' => 767,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            397 => 
+            array (
+                'id' => 903,
+                'cup_id' => 16,
+                'category_id' => 762,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            398 => 
+            array (
+                'id' => 904,
+                'cup_id' => 16,
+                'category_id' => 761,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            399 => 
+            array (
+                'id' => 905,
+                'cup_id' => 16,
+                'category_id' => 760,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            400 => 
+            array (
+                'id' => 906,
+                'cup_id' => 16,
+                'category_id' => 759,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            401 => 
+            array (
+                'id' => 907,
+                'cup_id' => 16,
+                'category_id' => 758,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            402 => 
+            array (
+                'id' => 908,
+                'cup_id' => 16,
+                'category_id' => 757,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            403 => 
+            array (
+                'id' => 909,
+                'cup_id' => 16,
+                'category_id' => 756,
+                'created_at' => '2022-07-06 19:34:54',
+                'updated_at' => '2022-07-06 19:34:54',
+            ),
+            404 => 
+            array (
+                'id' => 910,
+                'cup_id' => 17,
+                'category_id' => 807,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            405 => 
+            array (
+                'id' => 911,
+                'cup_id' => 17,
+                'category_id' => 806,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            406 => 
+            array (
+                'id' => 912,
+                'cup_id' => 17,
+                'category_id' => 755,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            407 => 
+            array (
+                'id' => 913,
+                'cup_id' => 17,
+                'category_id' => 754,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            408 => 
+            array (
+                'id' => 914,
+                'cup_id' => 17,
+                'category_id' => 753,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            409 => 
+            array (
+                'id' => 915,
+                'cup_id' => 17,
+                'category_id' => 752,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            410 => 
+            array (
+                'id' => 916,
+                'cup_id' => 17,
+                'category_id' => 750,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            411 => 
+            array (
+                'id' => 917,
+                'cup_id' => 17,
+                'category_id' => 749,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            412 => 
+            array (
+                'id' => 918,
+                'cup_id' => 17,
+                'category_id' => 748,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            413 => 
+            array (
+                'id' => 919,
+                'cup_id' => 17,
+                'category_id' => 747,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            414 => 
+            array (
+                'id' => 920,
+                'cup_id' => 17,
+                'category_id' => 746,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            415 => 
+            array (
+                'id' => 921,
+                'cup_id' => 17,
+                'category_id' => 745,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            416 => 
+            array (
+                'id' => 922,
+                'cup_id' => 17,
+                'category_id' => 744,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            417 => 
+            array (
+                'id' => 923,
+                'cup_id' => 17,
+                'category_id' => 743,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            418 => 
+            array (
+                'id' => 924,
+                'cup_id' => 17,
+                'category_id' => 742,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            419 => 
+            array (
+                'id' => 925,
+                'cup_id' => 17,
+                'category_id' => 741,
+                'created_at' => '2022-07-06 19:35:40',
+                'updated_at' => '2022-07-06 19:35:40',
+            ),
+            420 => 
+            array (
+                'id' => 926,
+                'cup_id' => 17,
+                'category_id' => 783,
+                'created_at' => '2022-07-06 19:36:06',
+                'updated_at' => '2022-07-06 19:36:06',
+            ),
+            421 => 
+            array (
+                'id' => 927,
+                'cup_id' => 17,
+                'category_id' => 782,
+                'created_at' => '2022-07-06 19:36:06',
+                'updated_at' => '2022-07-06 19:36:06',
+            ),
+            422 => 
+            array (
+                'id' => 928,
+                'cup_id' => 17,
+                'category_id' => 781,
+                'created_at' => '2022-07-06 19:36:06',
+                'updated_at' => '2022-07-06 19:36:06',
+            ),
+            423 => 
+            array (
+                'id' => 929,
+                'cup_id' => 17,
+                'category_id' => 780,
+                'created_at' => '2022-07-06 19:36:06',
+                'updated_at' => '2022-07-06 19:36:06',
+            ),
+            424 => 
+            array (
+                'id' => 930,
+                'cup_id' => 18,
+                'category_id' => 735,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            425 => 
+            array (
+                'id' => 931,
+                'cup_id' => 18,
+                'category_id' => 734,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            426 => 
+            array (
+                'id' => 932,
+                'cup_id' => 18,
+                'category_id' => 733,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            427 => 
+            array (
+                'id' => 933,
+                'cup_id' => 18,
+                'category_id' => 732,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            428 => 
+            array (
+                'id' => 934,
+                'cup_id' => 18,
+                'category_id' => 731,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            429 => 
+            array (
+                'id' => 935,
+                'cup_id' => 18,
+                'category_id' => 729,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            430 => 
+            array (
+                'id' => 936,
+                'cup_id' => 18,
+                'category_id' => 728,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            431 => 
+            array (
+                'id' => 937,
+                'cup_id' => 18,
+                'category_id' => 727,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            432 => 
+            array (
+                'id' => 938,
+                'cup_id' => 18,
+                'category_id' => 726,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            433 => 
+            array (
+                'id' => 939,
+                'cup_id' => 18,
+                'category_id' => 725,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            434 => 
+            array (
+                'id' => 940,
+                'cup_id' => 18,
+                'category_id' => 724,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            435 => 
+            array (
+                'id' => 941,
+                'cup_id' => 18,
+                'category_id' => 723,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            436 => 
+            array (
+                'id' => 942,
+                'cup_id' => 18,
+                'category_id' => 722,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            437 => 
+            array (
+                'id' => 943,
+                'cup_id' => 18,
+                'category_id' => 721,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            438 => 
+            array (
+                'id' => 944,
+                'cup_id' => 18,
+                'category_id' => 720,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            439 => 
+            array (
+                'id' => 945,
+                'cup_id' => 18,
+                'category_id' => 719,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            440 => 
+            array (
+                'id' => 946,
+                'cup_id' => 18,
+                'category_id' => 718,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            441 => 
+            array (
+                'id' => 947,
+                'cup_id' => 18,
+                'category_id' => 717,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            442 => 
+            array (
+                'id' => 948,
+                'cup_id' => 18,
+                'category_id' => 716,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            443 => 
+            array (
+                'id' => 949,
+                'cup_id' => 18,
+                'category_id' => 715,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            444 => 
+            array (
+                'id' => 950,
+                'cup_id' => 18,
+                'category_id' => 714,
+                'created_at' => '2022-07-06 19:36:58',
+                'updated_at' => '2022-07-06 19:36:58',
+            ),
+            445 => 
+            array (
+                'id' => 951,
+                'cup_id' => 18,
+                'category_id' => 778,
+                'created_at' => '2022-07-06 19:37:30',
+                'updated_at' => '2022-07-06 19:37:30',
+            ),
+            446 => 
+            array (
+                'id' => 952,
+                'cup_id' => 18,
+                'category_id' => 774,
+                'created_at' => '2022-07-06 19:37:30',
+                'updated_at' => '2022-07-06 19:37:30',
+            ),
+            447 => 
+            array (
+                'id' => 953,
+                'cup_id' => 18,
+                'category_id' => 773,
+                'created_at' => '2022-07-06 19:37:30',
+                'updated_at' => '2022-07-06 19:37:30',
+            ),
+            448 => 
+            array (
+                'id' => 954,
+                'cup_id' => 24,
+                'category_id' => 681,
+                'created_at' => '2022-07-06 19:38:20',
+                'updated_at' => '2022-07-06 19:38:20',
+            ),
+            449 => 
+            array (
+                'id' => 955,
+                'cup_id' => 24,
+                'category_id' => 685,
+                'created_at' => '2022-07-06 19:38:20',
+                'updated_at' => '2022-07-06 19:38:20',
+            ),
+            450 => 
+            array (
+                'id' => 956,
+                'cup_id' => 24,
+                'category_id' => 686,
+                'created_at' => '2022-07-06 19:38:20',
+                'updated_at' => '2022-07-06 19:38:20',
+            ),
+            451 => 
+            array (
+                'id' => 957,
+                'cup_id' => 24,
+                'category_id' => 696,
+                'created_at' => '2022-07-06 19:38:20',
+                'updated_at' => '2022-07-06 19:38:20',
+            ),
+            452 => 
+            array (
+                'id' => 958,
+                'cup_id' => 25,
+                'category_id' => 777,
+                'created_at' => '2022-07-06 19:39:53',
+                'updated_at' => '2022-07-06 19:39:53',
+            ),
+            453 => 
+            array (
+                'id' => 959,
+                'cup_id' => 25,
+                'category_id' => 776,
+                'created_at' => '2022-07-06 19:39:53',
+                'updated_at' => '2022-07-06 19:39:53',
+            ),
+            454 => 
+            array (
+                'id' => 960,
+                'cup_id' => 25,
+                'category_id' => 775,
+                'created_at' => '2022-07-06 19:39:53',
+                'updated_at' => '2022-07-06 19:39:53',
+            ),
+            455 => 
+            array (
+                'id' => 961,
+                'cup_id' => 25,
+                'category_id' => 772,
+                'created_at' => '2022-07-06 19:39:53',
+                'updated_at' => '2022-07-06 19:39:53',
+            ),
+            456 => 
+            array (
+                'id' => 962,
+                'cup_id' => 25,
+                'category_id' => 771,
+                'created_at' => '2022-07-06 19:39:53',
+                'updated_at' => '2022-07-06 19:39:53',
+            ),
+            457 => 
+            array (
+                'id' => 963,
+                'cup_id' => 25,
+                'category_id' => 770,
+                'created_at' => '2022-07-06 19:39:53',
+                'updated_at' => '2022-07-06 19:39:53',
+            ),
+            458 => 
+            array (
+                'id' => 964,
+                'cup_id' => 25,
+                'category_id' => 769,
+                'created_at' => '2022-07-06 19:39:53',
+                'updated_at' => '2022-07-06 19:39:53',
+            ),
+            459 => 
+            array (
+                'id' => 965,
+                'cup_id' => 25,
+                'category_id' => 768,
+                'created_at' => '2022-07-06 19:39:53',
+                'updated_at' => '2022-07-06 19:39:53',
+            ),
+            460 => 
+            array (
+                'id' => 966,
+                'cup_id' => 26,
+                'category_id' => 681,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            461 => 
+            array (
+                'id' => 967,
+                'cup_id' => 26,
+                'category_id' => 685,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            462 => 
+            array (
+                'id' => 968,
+                'cup_id' => 26,
+                'category_id' => 686,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            463 => 
+            array (
+                'id' => 969,
+                'cup_id' => 26,
+                'category_id' => 688,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            464 => 
+            array (
+                'id' => 970,
+                'cup_id' => 26,
+                'category_id' => 689,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            465 => 
+            array (
+                'id' => 971,
+                'cup_id' => 26,
+                'category_id' => 690,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            466 => 
+            array (
+                'id' => 972,
+                'cup_id' => 26,
+                'category_id' => 691,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            467 => 
+            array (
+                'id' => 973,
+                'cup_id' => 26,
+                'category_id' => 692,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            468 => 
+            array (
+                'id' => 974,
+                'cup_id' => 26,
+                'category_id' => 693,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            469 => 
+            array (
+                'id' => 975,
+                'cup_id' => 26,
+                'category_id' => 694,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            470 => 
+            array (
+                'id' => 976,
+                'cup_id' => 26,
+                'category_id' => 695,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            471 => 
+            array (
+                'id' => 977,
+                'cup_id' => 26,
+                'category_id' => 696,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            472 => 
+            array (
+                'id' => 978,
+                'cup_id' => 26,
+                'category_id' => 697,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            473 => 
+            array (
+                'id' => 979,
+                'cup_id' => 26,
+                'category_id' => 698,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            474 => 
+            array (
+                'id' => 980,
+                'cup_id' => 26,
+                'category_id' => 701,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            475 => 
+            array (
+                'id' => 981,
+                'cup_id' => 26,
+                'category_id' => 702,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            476 => 
+            array (
+                'id' => 982,
+                'cup_id' => 26,
+                'category_id' => 703,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            477 => 
+            array (
+                'id' => 983,
+                'cup_id' => 26,
+                'category_id' => 704,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            478 => 
+            array (
+                'id' => 984,
+                'cup_id' => 26,
+                'category_id' => 706,
+                'created_at' => '2022-07-06 19:40:58',
+                'updated_at' => '2022-07-06 19:40:58',
+            ),
+            479 => 
+            array (
+                'id' => 985,
+                'cup_id' => 26,
+                'category_id' => 809,
+                'created_at' => '2022-07-06 19:41:52',
+                'updated_at' => '2022-07-06 19:41:52',
+            ),
+            480 => 
+            array (
+                'id' => 986,
+                'cup_id' => 27,
+                'category_id' => 772,
+                'created_at' => '2022-07-06 19:47:41',
+                'updated_at' => '2022-07-06 19:47:41',
+            ),
+            481 => 
+            array (
+                'id' => 987,
+                'cup_id' => 27,
+                'category_id' => 771,
+                'created_at' => '2022-07-06 19:47:41',
+                'updated_at' => '2022-07-06 19:47:41',
+            ),
+            482 => 
+            array (
+                'id' => 988,
+                'cup_id' => 27,
+                'category_id' => 770,
+                'created_at' => '2022-07-06 19:47:41',
+                'updated_at' => '2022-07-06 19:47:41',
+            ),
+            483 => 
+            array (
+                'id' => 989,
+                'cup_id' => 27,
+                'category_id' => 769,
+                'created_at' => '2022-07-06 19:47:41',
+                'updated_at' => '2022-07-06 19:47:41',
+            ),
+            484 => 
+            array (
+                'id' => 990,
+                'cup_id' => 27,
+                'category_id' => 768,
+                'created_at' => '2022-07-06 19:47:41',
+                'updated_at' => '2022-07-06 19:47:41',
+            ),
+            485 => 
+            array (
+                'id' => 991,
+                'cup_id' => 27,
+                'category_id' => 737,
+                'created_at' => '2022-07-06 19:47:57',
+                'updated_at' => '2022-07-06 19:47:57',
+            ),
+            486 => 
+            array (
+                'id' => 992,
+                'cup_id' => 27,
+                'category_id' => 738,
+                'created_at' => '2022-07-06 19:47:57',
+                'updated_at' => '2022-07-06 19:47:57',
+            ),
+            487 => 
+            array (
+                'id' => 993,
+                'cup_id' => 27,
+                'category_id' => 739,
+                'created_at' => '2022-07-06 19:47:57',
+                'updated_at' => '2022-07-06 19:47:57',
+            ),
+            488 => 
+            array (
+                'id' => 994,
+                'cup_id' => 27,
+                'category_id' => 740,
+                'created_at' => '2022-07-06 19:47:57',
+                'updated_at' => '2022-07-06 19:47:57',
+            ),
+            489 => 
+            array (
+                'id' => 995,
+                'cup_id' => 28,
+                'category_id' => 809,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            490 => 
+            array (
+                'id' => 996,
+                'cup_id' => 28,
+                'category_id' => 778,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            491 => 
+            array (
+                'id' => 997,
+                'cup_id' => 28,
+                'category_id' => 777,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            492 => 
+            array (
+                'id' => 998,
+                'cup_id' => 28,
+                'category_id' => 776,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            493 => 
+            array (
+                'id' => 999,
+                'cup_id' => 28,
+                'category_id' => 775,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            494 => 
+            array (
+                'id' => 1000,
+                'cup_id' => 28,
+                'category_id' => 774,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            495 => 
+            array (
+                'id' => 1001,
+                'cup_id' => 28,
+                'category_id' => 773,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            496 => 
+            array (
+                'id' => 1002,
+                'cup_id' => 28,
+                'category_id' => 772,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            497 => 
+            array (
+                'id' => 1003,
+                'cup_id' => 28,
+                'category_id' => 771,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            498 => 
+            array (
+                'id' => 1004,
+                'cup_id' => 28,
+                'category_id' => 770,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            499 => 
+            array (
+                'id' => 1005,
+                'cup_id' => 28,
+                'category_id' => 769,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+        ));
+        \DB::table('category_cup')->insert(array (
+            0 => 
+            array (
+                'id' => 1006,
+                'cup_id' => 28,
+                'category_id' => 768,
+                'created_at' => '2022-07-06 19:51:43',
+                'updated_at' => '2022-07-06 19:51:43',
+            ),
+            1 => 
+            array (
+                'id' => 1007,
+                'cup_id' => 29,
+                'category_id' => 677,
+                'created_at' => '2022-07-06 20:25:53',
+                'updated_at' => '2022-07-06 20:25:53',
+            ),
+            2 => 
+            array (
+                'id' => 1008,
+                'cup_id' => 29,
+                'category_id' => 678,
+                'created_at' => '2022-07-06 20:25:53',
+                'updated_at' => '2022-07-06 20:25:53',
+            ),
+            3 => 
+            array (
+                'id' => 1009,
+                'cup_id' => 29,
+                'category_id' => 679,
+                'created_at' => '2022-07-06 20:25:53',
+                'updated_at' => '2022-07-06 20:25:53',
+            ),
+            4 => 
+            array (
+                'id' => 1010,
+                'cup_id' => 29,
+                'category_id' => 680,
+                'created_at' => '2022-07-06 20:25:53',
+                'updated_at' => '2022-07-06 20:25:53',
+            ),
+            5 => 
+            array (
+                'id' => 1011,
+                'cup_id' => 29,
+                'category_id' => 681,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            6 => 
+            array (
+                'id' => 1012,
+                'cup_id' => 29,
+                'category_id' => 685,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            7 => 
+            array (
+                'id' => 1013,
+                'cup_id' => 29,
+                'category_id' => 686,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            8 => 
+            array (
+                'id' => 1014,
+                'cup_id' => 29,
+                'category_id' => 688,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            9 => 
+            array (
+                'id' => 1015,
+                'cup_id' => 29,
+                'category_id' => 689,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            10 => 
+            array (
+                'id' => 1016,
+                'cup_id' => 29,
+                'category_id' => 690,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            11 => 
+            array (
+                'id' => 1017,
+                'cup_id' => 29,
+                'category_id' => 691,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            12 => 
+            array (
+                'id' => 1018,
+                'cup_id' => 29,
+                'category_id' => 692,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            13 => 
+            array (
+                'id' => 1019,
+                'cup_id' => 29,
+                'category_id' => 693,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            14 => 
+            array (
+                'id' => 1020,
+                'cup_id' => 29,
+                'category_id' => 694,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            15 => 
+            array (
+                'id' => 1021,
+                'cup_id' => 29,
+                'category_id' => 695,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            16 => 
+            array (
+                'id' => 1022,
+                'cup_id' => 29,
+                'category_id' => 696,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            17 => 
+            array (
+                'id' => 1023,
+                'cup_id' => 29,
+                'category_id' => 697,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            18 => 
+            array (
+                'id' => 1024,
+                'cup_id' => 29,
+                'category_id' => 698,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            19 => 
+            array (
+                'id' => 1025,
+                'cup_id' => 29,
+                'category_id' => 701,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            20 => 
+            array (
+                'id' => 1026,
+                'cup_id' => 29,
+                'category_id' => 702,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            21 => 
+            array (
+                'id' => 1027,
+                'cup_id' => 29,
+                'category_id' => 703,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            22 => 
+            array (
+                'id' => 1028,
+                'cup_id' => 29,
+                'category_id' => 704,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            23 => 
+            array (
+                'id' => 1029,
+                'cup_id' => 29,
+                'category_id' => 706,
+                'created_at' => '2022-07-06 20:26:12',
+                'updated_at' => '2022-07-06 20:26:12',
+            ),
+            24 => 
+            array (
+                'id' => 1030,
+                'cup_id' => 29,
+                'category_id' => 707,
+                'created_at' => '2022-07-06 20:26:37',
+                'updated_at' => '2022-07-06 20:26:37',
+            ),
+            25 => 
+            array (
+                'id' => 1031,
+                'cup_id' => 29,
+                'category_id' => 708,
+                'created_at' => '2022-07-06 20:26:37',
+                'updated_at' => '2022-07-06 20:26:37',
+            ),
+            26 => 
+            array (
+                'id' => 1032,
+                'cup_id' => 29,
+                'category_id' => 709,
+                'created_at' => '2022-07-06 20:26:37',
+                'updated_at' => '2022-07-06 20:26:37',
+            ),
+            27 => 
+            array (
+                'id' => 1033,
+                'cup_id' => 29,
+                'category_id' => 710,
+                'created_at' => '2022-07-06 20:26:37',
+                'updated_at' => '2022-07-06 20:26:37',
+            ),
+            28 => 
+            array (
+                'id' => 1034,
+                'cup_id' => 29,
+                'category_id' => 711,
+                'created_at' => '2022-07-06 20:26:37',
+                'updated_at' => '2022-07-06 20:26:37',
+            ),
+            29 => 
+            array (
+                'id' => 1035,
+                'cup_id' => 29,
+                'category_id' => 712,
+                'created_at' => '2022-07-06 20:26:37',
+                'updated_at' => '2022-07-06 20:26:37',
+            ),
+            30 => 
+            array (
+                'id' => 1036,
+                'cup_id' => 29,
+                'category_id' => 713,
+                'created_at' => '2022-07-06 20:26:37',
+                'updated_at' => '2022-07-06 20:26:37',
+            ),
+            31 => 
+            array (
+                'id' => 1037,
+                'cup_id' => 29,
+                'category_id' => 714,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            32 => 
+            array (
+                'id' => 1038,
+                'cup_id' => 29,
+                'category_id' => 715,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            33 => 
+            array (
+                'id' => 1039,
+                'cup_id' => 29,
+                'category_id' => 716,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            34 => 
+            array (
+                'id' => 1040,
+                'cup_id' => 29,
+                'category_id' => 717,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            35 => 
+            array (
+                'id' => 1041,
+                'cup_id' => 29,
+                'category_id' => 718,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            36 => 
+            array (
+                'id' => 1042,
+                'cup_id' => 29,
+                'category_id' => 719,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            37 => 
+            array (
+                'id' => 1043,
+                'cup_id' => 29,
+                'category_id' => 720,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            38 => 
+            array (
+                'id' => 1044,
+                'cup_id' => 29,
+                'category_id' => 721,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            39 => 
+            array (
+                'id' => 1045,
+                'cup_id' => 29,
+                'category_id' => 722,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            40 => 
+            array (
+                'id' => 1046,
+                'cup_id' => 29,
+                'category_id' => 723,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            41 => 
+            array (
+                'id' => 1047,
+                'cup_id' => 29,
+                'category_id' => 724,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            42 => 
+            array (
+                'id' => 1048,
+                'cup_id' => 29,
+                'category_id' => 725,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            43 => 
+            array (
+                'id' => 1049,
+                'cup_id' => 29,
+                'category_id' => 726,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            44 => 
+            array (
+                'id' => 1050,
+                'cup_id' => 29,
+                'category_id' => 727,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            45 => 
+            array (
+                'id' => 1051,
+                'cup_id' => 29,
+                'category_id' => 728,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            46 => 
+            array (
+                'id' => 1052,
+                'cup_id' => 29,
+                'category_id' => 729,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            47 => 
+            array (
+                'id' => 1053,
+                'cup_id' => 29,
+                'category_id' => 731,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            48 => 
+            array (
+                'id' => 1054,
+                'cup_id' => 29,
+                'category_id' => 732,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            49 => 
+            array (
+                'id' => 1055,
+                'cup_id' => 29,
+                'category_id' => 733,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            50 => 
+            array (
+                'id' => 1056,
+                'cup_id' => 29,
+                'category_id' => 734,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            51 => 
+            array (
+                'id' => 1057,
+                'cup_id' => 29,
+                'category_id' => 735,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            52 => 
+            array (
+                'id' => 1058,
+                'cup_id' => 29,
+                'category_id' => 736,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            53 => 
+            array (
+                'id' => 1059,
+                'cup_id' => 29,
+                'category_id' => 730,
+                'created_at' => '2022-07-06 20:26:55',
+                'updated_at' => '2022-07-06 20:26:55',
+            ),
+            54 => 
+            array (
+                'id' => 1060,
+                'cup_id' => 29,
+                'category_id' => 809,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            55 => 
+            array (
+                'id' => 1061,
+                'cup_id' => 29,
+                'category_id' => 779,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            56 => 
+            array (
+                'id' => 1062,
+                'cup_id' => 29,
+                'category_id' => 778,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            57 => 
+            array (
+                'id' => 1063,
+                'cup_id' => 29,
+                'category_id' => 777,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            58 => 
+            array (
+                'id' => 1064,
+                'cup_id' => 29,
+                'category_id' => 776,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            59 => 
+            array (
+                'id' => 1065,
+                'cup_id' => 29,
+                'category_id' => 775,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            60 => 
+            array (
+                'id' => 1066,
+                'cup_id' => 29,
+                'category_id' => 774,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            61 => 
+            array (
+                'id' => 1067,
+                'cup_id' => 29,
+                'category_id' => 773,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            62 => 
+            array (
+                'id' => 1068,
+                'cup_id' => 29,
+                'category_id' => 772,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            63 => 
+            array (
+                'id' => 1069,
+                'cup_id' => 29,
+                'category_id' => 771,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            64 => 
+            array (
+                'id' => 1070,
+                'cup_id' => 29,
+                'category_id' => 770,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            65 => 
+            array (
+                'id' => 1071,
+                'cup_id' => 29,
+                'category_id' => 769,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            66 => 
+            array (
+                'id' => 1072,
+                'cup_id' => 29,
+                'category_id' => 768,
+                'created_at' => '2022-07-06 20:27:24',
+                'updated_at' => '2022-07-06 20:27:24',
+            ),
+            67 => 
+            array (
+                'id' => 1073,
+                'cup_id' => 15,
+                'category_id' => 796,
+                'created_at' => '2022-07-09 13:34:24',
+                'updated_at' => '2022-07-09 13:34:24',
+            ),
+            68 => 
+            array (
+                'id' => 1074,
+                'cup_id' => 30,
+                'category_id' => 680,
+                'created_at' => '2022-07-09 13:59:19',
+                'updated_at' => '2022-07-09 13:59:19',
+            ),
+            69 => 
+            array (
+                'id' => 1075,
+                'cup_id' => 30,
+                'category_id' => 679,
+                'created_at' => '2022-07-09 13:59:19',
+                'updated_at' => '2022-07-09 13:59:19',
+            ),
+            70 => 
+            array (
+                'id' => 1076,
+                'cup_id' => 30,
+                'category_id' => 678,
+                'created_at' => '2022-07-09 13:59:19',
+                'updated_at' => '2022-07-09 13:59:19',
+            ),
+            71 => 
+            array (
+                'id' => 1077,
+                'cup_id' => 30,
+                'category_id' => 677,
+                'created_at' => '2022-07-09 13:59:19',
+                'updated_at' => '2022-07-09 13:59:19',
+            ),
         ));
         
         

@@ -92,13 +92,11 @@ class User extends Resource
                 }
                 $owed = ($fees - $payments);
 
-                $numMembership = 0;
-                $amountMemberships = 0;
-                foreach ($this->membershipPurchases()
-                             ->where('created_at', '>', '2022-06-01 00:00:00') as $membershipPurchase) {
-                    $amountMemberships += $membershipPurchase->amount();
-                    $numMembership++;
-                }
+                $memberships = $this->membershipPurchases()
+                    ->where('created_at', '>', '2022-06-01 00:00:00')
+                    ->get();
+                $numMembership = $memberships->count();
+                $amountMemberships = $memberships->sum('amount');
 
                 return '' . $entries . ' ' . Str::plural('Entry', $entries) .
                        ' (' . $freeEntries . ' ' . Str::plural('free entries') . ')' .
@@ -106,7 +104,7 @@ class User extends Resource
                        $numMembership . ' ' . Str::plural('Membership', $numMembership) .
                        ' - £' . ($amountMemberships / 100) . '<br />' .
                        '------------<br />' .
-                       '= £' . ($fees + $amountMemberships / 100) . ' fees <br />' .
+                       '= £' . (($fees + $amountMemberships) / 100) . ' fees <br />' .
                        '------------<br />' .
                        'less £' . ($payments / 100) . ' of payments <br />' .
                        '<b>----------------</b><br />' .
