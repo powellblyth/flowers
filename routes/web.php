@@ -33,6 +33,9 @@ Route::resource('categories', CategoryController::class)->only(['index']);
 //Route::resource('categories', 'CategoryController');
 Route::get('/sections/forwebsite', [SectionController::class, 'forwebsite'])->name('section.forwebsite');
 
+Route::get('/cupsadmin', [CupController::class, 'adminindex'])
+    ->name('cups.adminindex');
+
 Route::resource('membershippurchases', MembershipPurchaseController::class);
 Route::get('/cups', [CupController::class, 'index'])
     ->name('cups.index');
