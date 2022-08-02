@@ -53,16 +53,6 @@
                         class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                         <thead class="text-white">
                         <!-- one for each row - required for mobile view -->
-                        @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
-                            <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                                <th class="p-3 text-left">Position</th>
-                                <th class="p-3 text-left">Name</th>
-                                <th class="p-3 text-left">Address</th>
-                                <th class="p-3 text-left">Phone</th>
-                                <th class="p-3 text-left">Email</th>
-                                <th class="p-3 text-left" width="110px">Points</th>
-                            </tr>
-                        @endfor
                         </thead>
                         <tbody class="flex-1 sm:flex-none">
                         @for ($x=0; $x < min($maxResults,count($results[$cup->id]['results'])); $x++)
@@ -70,35 +60,25 @@
                                 $totalPoints = $results[$cup->id]['results'][$x]['totalpoints'];
                                 $winningEntrantId = $results[$cup->id]['results'][$x]['entrant'];
                             @endphp
-                            <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                                <td class="border-grey-light border hover:bg-gray-100 p-3">
+                            <tr><td>
+                                    <b>
                                     @if(0 == $x || $lastResult === $totalPoints)
                                         @lang('Winner')
                                     @else
                                         @lang('Proxime Accessit')
-                                    @endif
-
-                                </td>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
-                                    {{$winners[$winningEntrantId]['entrant']->full_name}}
-                                </td>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                                    @endif</b>
+                                     {{$winners[$winningEntrantId]['entrant']->full_name}}
+                                    {{$results[$cup->id]['results'][$x]['totalpoints'] }} points<br />
                                     @if(0 == $x || $lastResult === $totalPoints)
-                                        {{$winners[$winningEntrantId]['entrant']->user->address}}
+                                        {{$winners[$winningEntrantId]['entrant']->user->address}}<br />
                                         @endif
-                                </td>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
                                     @if(0 == $x || $lastResult === $totalPoints)
-                                    {{$winners[$winningEntrantId]['entrant']->user->telephone}}
+                                    {{$winners[$winningEntrantId]['entrant']->user->telephone}}<br />
                                         @endif
-                                </td>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
-                                    @if(0 == $x || $lastResult === $totalPoints)
+                                     @if(0 == $x || $lastResult === $totalPoints)
                                         {{$winners[$winningEntrantId]['entrant']->user->email}}
                                         @endif
-                                </td>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
-                                    {{$results[$cup->id]['results'][$x]['totalpoints'] }} points
+
                                 </td>
                             </tr>
                         @endfor
