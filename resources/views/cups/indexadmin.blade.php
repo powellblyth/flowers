@@ -115,9 +115,9 @@
                             <b>
                                 <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->full_name}}</a>
                                 <br />
-                                {{$winners[$winningEntrantId]['entrant']->user->address}}<br />
-                                {{$winners[$winningEntrantId]['entrant']->user->telephone}}<br />
-                                {{$winners[$winningEntrantId]['entrant']->user->email}}<br />
+                                {{$winners[$directWinnerId]['entrant']->user->address}}<br />
+                                {{$winners[$directWinnerId]['entrant']->user->telephone}}<br />
+                                {{$winners[$directWinnerId]['entrant']->user->email}}<br />
 
                             </b>
                         @else
