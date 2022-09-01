@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
@@ -34,13 +35,11 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Payment whereUserId($value)
  * @method static Builder|Payment whereYear($value)
  * @mixin \Eloquent
+ * @method static Builder|Payment forShow(\App\Models\Show $show)
  */
 class Payment extends Model
 {
-    public function show(): BelongsTo
-    {
-        return $this->belongsTo(Entry::class);
-    }
+    use BelongsToShow;
 
     public function user(): BelongsTo
     {

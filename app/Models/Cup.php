@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\CupCalculatorService;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -17,30 +18,37 @@ use Illuminate\Support\Facades\DB;
  * @property string $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property int|null $calculated_winner
  * @property string|null $winning_criteria
  * @property int|null $sort_order
  * @property int|null $num_display_results
+ * @property int|null $section_id
  * @property string $winning_basis
+ * @property string|null $judges_notes
  * @property-read Collection|Category[] $categories
  * @property-read int|null $categories_count
+ * @property-read Collection|CupDirectWinner[] $cupDirectWinner
+ * @property-read int|null $cup_direct_winner_count
+ * @property-read Collection|CupWinnerArchive[] $cupWinnerArchive
+ * @property-read int|null $cup_winner_archive_count
+ * @property-read Collection|JudgeRole[] $judgeRoles
+ * @property-read int|null $judge_roles_count
+ * @property-read Section|null $section
  * @method static Builder|Cup newModelQuery()
  * @method static Builder|Cup newQuery()
  * @method static Builder|Cup query()
+ * @method static Builder|Cup whereCalculatedWinner($value)
  * @method static Builder|Cup whereCreatedAt($value)
  * @method static Builder|Cup whereId($value)
+ * @method static Builder|Cup whereJudgesNotes($value)
  * @method static Builder|Cup whereName($value)
  * @method static Builder|Cup whereNumDisplayResults($value)
+ * @method static Builder|Cup whereSectionId($value)
  * @method static Builder|Cup whereSortOrder($value)
  * @method static Builder|Cup whereUpdatedAt($value)
+ * @method static Builder|Cup whereWinningBasis($value)
  * @method static Builder|Cup whereWinningCriteria($value)
  * @mixin \Eloquent
- * @property int|null $section_id
- * @property-read Section|null $section
- * @method static Builder|Cup whereSectionId($value)
- * @property int|null $calculated_winner
- * @property-read Collection|\App\Models\CupDirectWinner[] $cupDirectWinner
- * @property-read int|null $cup_direct_winner_count
- * @method static Builder|Cup whereCalculatedWinner($value)
  */
 class Cup extends Model
 {
@@ -84,40 +92,52 @@ class Cup extends Model
         return $this->hasMany(CupDirectWinner::class);
     }
 
-    public function getWinningResults(Show $show)
+    /**
+     * This represents the judges choice on the day. This will get codified into a
+     * CupWinnerArchive in the future
+     * @return HasMany
+     */
+    public function cupWinnerArchive(): HasMany
     {
-        /**
-         * @TODO improve this with more laravelness
-         */
-        $categoryIds = $this->getValidCategoryIdsForShow($show);
-        return DB::select(
-            "
-            select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
-                sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
-                sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
-                sum(if(winningplace='commended', 1,0)) as commendedplacepoints, 
-                sum(
-                    if(winningplace='1', 4,0) 
-                        + if(winningplace='2', 3,0) 
-                        + if(winningplace='3', 2,0) 
-                        + if(winningplace='commended', 1,0)
-                    ) as totalpoints,
-                entrant_id 
-            
-            from entries 
-            
-            where 
-                category_id in (".implode(',', $categoryIds).")
-                AND entries.show_id = ?
-            
-            group by entrant_id
-            
-            having (totalpoints > 0)
-            order by (totalpoints) desc
-",
-            array( $show->id)
-        );
+        return $this->hasMany(CupWinnerArchive::class);
     }
+
+    /**
+     * creates or returns the cup winner archive
+     * @param Show $show
+     * @return CupWinnerArchive
+     */
+    public function getWinnerArchiveForShow(Show $show): CupWinnerArchive
+    {
+        return $this->cupWinnerArchive()
+            ->forShow($show)
+            ->firstOrNew(
+                [
+                    'cup_id' => $this->id,
+                    'show_id' => $show->id,
+                ]
+            );
+    }
+
+    public function getWinnersForShow(Show $show)
+    {
+        $service = new CupCalculatorService($show, $this);
+        //TODO this is a little inefficient
+        $winnerArchive = $this->getWinnerArchiveForShow($show);
+        // If the show has passed, then we can stop fuffing about with the calculations
+        // we don't know if the rules changed over the years, so we can't risk recalculating
+        // However, if there isn't one, we go ahead and calculate it.
+        // this will go in the bin once all historics are generated
+        if ($winnerArchive || $show->isCurrent()) {
+            if ($this->winning_basis === Cup::WINNING_BASIS_TOTAL_POINTS) {
+                $winnerArchive = $service->calculateWinnerFromPoints($show);
+            } else {
+                $winnerArchive = $service->calculateWinnerFromJudgeNotes($show);
+            }
+        }
+        return $winnerArchive;
+    }
+
 
     private function getValidCategoryIdsForShow(Show $show): array
     {
@@ -144,30 +164,30 @@ class Cup extends Model
         $categoryIds = $this->getValidCategoryIdsForShow($show);
         return DB::select(
             "
-            select sum(if(winningplace='1', 4,0)) as firstplacepoints, 
-                sum(if(winningplace='2', 3,0) ) as secondplacepoints, 
-                sum(if(winningplace='3', 2,0)) as thirdplacepoints, 
-                sum(if(winningplace='commended', 1,0)) as commendedplacepoints, 
+            select sum(if(winningplace='1', 4,0)) as first_place_points, 
+                sum(if(winningplace='2', 3,0) ) as second_place_points, 
+                sum(if(winningplace='3', 2,0)) as third_place_points, 
+                sum(if(winningplace='commended', 1,0)) as commended_points, 
                 sum(
                     if(winningplace='1', 4,0) 
                         + if(winningplace='2', 3,0) 
                         + if(winningplace='3', 2,0) 
                         + if(winningplace='commended', 1,0)
-                    ) as totalpoints,
+                    ) as total_points,
                 entrant_id 
             
             from entries 
             
             where 
-                category_id in (".implode(',', $categoryIds).")
+                category_id in (" . implode(',', $categoryIds) . ")
                 AND entries.show_id = ?
             
             group by entrant_id
             
-            having (totalpoints > 0)
-            order by (totalpoints) desc
+            having (total_points > 0)
+            order by (total_points) desc
 ",
-            array( $show->id)
+            array($show->id)
         );
     }
 

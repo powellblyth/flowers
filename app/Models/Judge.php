@@ -30,6 +30,14 @@ use Laravel\Nova\Fields\BelongsToMany;
  * @method static Builder|Judge whereId($value)
  * @method static Builder|Judge whereName($value)
  * @method static Builder|Judge whereUpdatedAt($value)
+ * @property string|null $display_name
+ * @property string|null $address
+ * @property string|null $telephone
+ * @property-read Collection|\App\Models\JudgeAtShow[] $judgeAtShow
+ * @property-read int|null $judge_at_show_count
+ * @method static Builder|Judge whereAddress($value)
+ * @method static Builder|Judge whereDisplayName($value)
+ * @method static Builder|Judge whereTelephone($value)
  */
 class Judge extends Model
 {

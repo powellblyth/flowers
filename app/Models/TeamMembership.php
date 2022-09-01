@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
@@ -28,9 +29,12 @@ use Illuminate\Support\Carbon;
  * @method static Builder|TeamMembership whereTeamId($value)
  * @method static Builder|TeamMembership whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static Builder|TeamMembership forShow(\App\Models\Show $show)
  */
 class TeamMembership extends Model
 {
+    use BelongsToShow;
+
     protected $fillable = [
         'entrant_id',
         'team_id',
@@ -45,10 +49,5 @@ class TeamMembership extends Model
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class);
-    }
-
-    public function show(): BelongsTo
-    {
-        return $this->belongsTo(Show::class);
     }
 }

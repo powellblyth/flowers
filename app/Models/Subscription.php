@@ -69,12 +69,4 @@ class Subscription extends Model
 
     /****   Statics   ****/
 
-    public static function getDummyCards(): array
-    {
-        return [
-            json_decode('{"id":"pm_1L3p2iHJv0e8AgMdiMf7FOYr","card":{"brand":"dummy","exp_year":1976,"exp_month":11,"last4":9999},"billing_details":{"name":"Alice Abbot"}}'),
-            json_decode('{"id":"pm_1L3oe7HJv0e8AgMdRO0sJi1P","card":{"brand":"card","exp_year":1977,"exp_month":5,"last4":6666},"billing_details":{"name":"Bob Brady"}}'),
-        ];
-    }
-
 }

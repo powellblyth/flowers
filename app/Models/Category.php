@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -37,8 +38,8 @@ use Laravel\Nova\Http\Requests\NovaRequest;
  * @property-read Collection|Entry[] $entries
  * @property-read int|null $entries_count
  * @property-read string $numbered_name
- * @property-read \App\Models\Section|null $section
- * @property-read \App\Models\Show|null $show
+ * @property-read Section|null $section
+ * @property-read Show|null $show
  * @method static Builder|Category newModelQuery()
  * @method static Builder|Category newQuery()
  * @method static Builder|Category query()
@@ -63,17 +64,20 @@ use Laravel\Nova\Http\Requests\NovaRequest;
  * @property int|null $minimum_age
  * @property int|null $maximum_age
  * @property bool $private private means you can't enter it as a member of the public, e.g.. school categories
- * @method static Builder|Category forShow(\App\Models\Show $show)
+ * @method static Builder|Category forShow(Show $show)
  * @method static Builder|Category inOrder()
  * @method static Builder|Category whereMaximumAge($value)
  * @method static Builder|Category whereMinimumAge($value)
  * @method static Builder|Category wherePrivate($value)
  * @property string $notes
  * @method static Builder|Category whereNotes($value)
- * @method static Builder|Category forSection(\App\Models\Section $section)
+ * @method static Builder|Category forSection(Section $section)
+ * @property-read Collection|JudgeRole[] $judgeRoles
+ * @property-read int|null $judge_roles_count
  */
 class Category extends Model implements \Stringable
 {
+    use BelongsToShow;
 
     public final const TYPE_JUNIOR = 'Junior';
     public final const TYPE_ADULT = 'Adult';
@@ -91,11 +95,6 @@ class Category extends Model implements \Stringable
         'private' => 'bool',
     ];
 
-    public function scopeForShow(Builder $query, Show $show): Builder
-    {
-        return $query->where('show_id', $show->id);
-    }
-
     public function scopeForSection(Builder $query, Section $section): Builder
     {
         return $query->where('section_id', $section->id);
@@ -104,11 +103,6 @@ class Category extends Model implements \Stringable
     public function scopeInOrder(Builder $query): Builder
     {
         return $query->orderby('categories.sortorder');
-    }
-
-    public function show(): BelongsTo
-    {
-        return $this->belongsTo(Show::class);
     }
 
     public function entries(): HasMany

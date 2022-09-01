@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Events\UserSaving;
+use App\Traits\Mergable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -124,6 +125,7 @@ class User extends Authenticatable
     use Notifiable;
     use HasFactory;
 
+    use Mergable;
     use Billable;
 
     final const TYPE_ADMIN = 'admin';

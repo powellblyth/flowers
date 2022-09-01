@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
@@ -35,18 +36,12 @@ use Illuminate\Support\Carbon;
  * @mixin \Eloquent
  * @property-read \App\Models\Cup|null $cup
  * @method static Builder|CupDirectWinner forShow(\App\Models\Show $show)
+ * @property int|null $entrant_id
+ * @method static Builder|CupDirectWinner whereEntrantId($value)
  */
 class CupDirectWinner extends Model
 {
-    public function scopeForShow(Builder $query, Show $show)
-    {
-        return $query->where('show_id', $show->id);
-    }
-
-    public function show(): BelongsTo
-    {
-        return $this->belongsTo(Entry::class);
-    }
+    use BelongsToShow;
 
     public function winningCategory(): BelongsTo
     {

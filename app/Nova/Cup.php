@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Http\Requests\ResourceDetailRequest;
 use Laravel\Nova\Http\Requests\ResourceIndexRequest;
@@ -83,8 +84,7 @@ class Cup extends Resource
                 [
                     Text::make(__('Name'), 'name')
                         ->sortable()
-                        ->rules('required', 'max:255')
-                    ,
+                        ->rules('required', 'max:255'),
 
                     Text::make(__('Winning Criteria'), 'winning_criteria')
                         ->sortable()
@@ -96,12 +96,10 @@ class Cup extends Resource
             ),
             Text::make(__('Name'), 'name')
                 ->rules('required', 'max:255')
-                ->onlyOnForms()
-            ,
+                ->onlyOnForms(),
             Text::make(__('Winning Criteria'), 'winning_criteria')
-                ->sortable()
                 ->rules('required', 'max:255')
-                ->showOnIndex(false),
+                ->hideFromIndex(),
 
             Select::make(__('Winning Basis'), 'winning_basis')
                 ->required()
@@ -113,14 +111,14 @@ class Cup extends Resource
                 ->sortable(),
 
             Number::make(__('Number of results to display'), 'num_display_results')
-                ->hideFromIndex()
-                ->sortable(),
+                ->hideFromIndex(),
+            Textarea::make(__('Judges\' notes'), 'judges_notes')
+                ->hideFromIndex(),
             HasMany::make(__('Categories'), 'categories'),
-            BelongsTo::make(__('Section'), 'section')->nullable(),
+            BelongsTo::make(__('Section (only if all categories are for this cup)'), 'section', Section::class)->nullable(),
             BelongsToMany::make(__('Judge Role'), 'judgeRoles')->nullable()
                 ->canSee(
-                    fn(ResourceDetailRequest $request)
-                    => $this->resource->winning_basis === \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE
+                    fn() => $this->resource->winning_basis === \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE
                 ),
         ];
     }

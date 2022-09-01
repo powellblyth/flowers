@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -35,9 +36,11 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Entry whereWinningplace($value)
  * @method static Builder|Entry whereYear($value)
  * @mixin \Eloquent
+ * @method static Builder|Entry forShow(\App\Models\Show $show)
  */
 class Entry extends Model
 {
+    use BelongsToShow;
 
     public $fillable = [
         'entrant_id',
@@ -83,11 +86,6 @@ class Entry extends Model
     public function hasWon(): bool
     {
         return !empty(trim($this->winningplace));
-    }
-
-    public function show(): BelongsTo
-    {
-        return $this->belongsTo(Show::class);
     }
 
     public function entrant(): BelongsTo

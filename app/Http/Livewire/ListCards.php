@@ -60,7 +60,7 @@ class ListCards extends Component
         } catch (ApiConnectionException $e) {
             $error = $e->getMessage();
             if ('production' !== App::environment()) {
-                $paymentCards = Subscription::getDummyCards();
+                $paymentCards = PaymentCard::getDummyCards();
             }
         } catch (\Exception $e) {
             dd($e);

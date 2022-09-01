@@ -37,6 +37,9 @@ use Illuminate\Support\Carbon;
  * @mixin \Eloquent
  * @property bool $is_junior
  * @method static Builder|Section whereIsJunior($value)
+ * @property int|null $judge_role_id
+ * @property-read \App\Models\JudgeRole|null $judgeRole
+ * @method static Builder|Section whereJudgeRoleId($value)
  */
 class Section extends Model
 {

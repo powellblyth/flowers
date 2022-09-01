@@ -12,6 +12,27 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  *
  * @package App\Models
  * @mixin \Eloquent
+ * @property int $id
+ * @property string $label
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Category[] $categories
+ * @property-read int|null $categories_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Cup[] $cups
+ * @property-read int|null $cups_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Judge[] $judges
+ * @property-read int|null $judges_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Section[] $sections
+ * @property-read int|null $sections_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Show[] $shows
+ * @property-read int|null $shows_count
+ * @method static \Illuminate\Database\Eloquent\Builder|JudgeRole newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|JudgeRole newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|JudgeRole query()
+ * @method static \Illuminate\Database\Eloquent\Builder|JudgeRole whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JudgeRole whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JudgeRole whereLabel($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|JudgeRole whereUpdatedAt($value)
  */
 class JudgeRole extends Model
 {
