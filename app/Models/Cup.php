@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Services\CupCalculatorService;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -49,17 +50,25 @@ use Illuminate\Support\Facades\DB;
  * @method static Builder|Cup whereWinningBasis($value)
  * @method static Builder|Cup whereWinningCriteria($value)
  * @mixin \Eloquent
+ * @property-read bool $is_points_based
  */
 class Cup extends Model
 {
     public const WINNING_BASIS_TOTAL_POINTS = 'total_points';
     public const WINNING_BASIS_JUDGES_CHOICE = 'judges_choice';
 
+
+    public function isPointsBased(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) :bool => $this->winning_basis === self::WINNING_BASIS_TOTAL_POINTS
+        );
+    }
+
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
-
     public function relatedCategories(Show $show): Collection
     {
         if ($this->section) {
@@ -129,7 +138,7 @@ class Cup extends Model
         // However, if there isn't one, we go ahead and calculate it.
         // this will go in the bin once all historics are generated
         if ($winnerArchive || $show->isCurrent()) {
-            if ($this->winning_basis === Cup::WINNING_BASIS_TOTAL_POINTS) {
+            if ($this->is_points_based) {
                 $winnerArchive = $service->calculateWinnerFromPoints($show);
             } else {
                 $winnerArchive = $service->calculateWinnerFromJudgeNotes($show);
@@ -139,7 +148,7 @@ class Cup extends Model
     }
 
 
-    private function getValidCategoryIdsForShow(Show $show): array
+    public function getValidCategoryIdsForShow(Show $show): array
     {
         if ($this->section_id) {
             return $this->section->categories()->forShow($show)->pluck('id')->toArray();

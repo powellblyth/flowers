@@ -41,6 +41,8 @@ use Illuminate\Support\Carbon;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\CupWinnerArchiveWinner[] $winners
  * @property-read int|null $winners_count
+ * @method static Builder|CupWinnerArchive whereCupWinnerEntrantId($value)
+ * @method static Builder|CupWinnerArchive whereCupWinnerPoints($value)
  */
 class CupWinnerArchive extends Model
 {

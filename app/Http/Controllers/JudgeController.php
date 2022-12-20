@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Judge;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class JudgesController extends Controller
+class JudgeController extends Controller
 {
     /**
      * referenced by nova
      */
-    public function printSheets(Request $request): Application|Factory|\Illuminate\Contracts\View\View
+    public function printSheets(Request $request): Application|Factory|View
     {
         /** @var Judge $judge */
         $judge = Judge::whereIn('id', $request->judges)->first();

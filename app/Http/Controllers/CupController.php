@@ -204,7 +204,7 @@ class CupController extends Controller
         $show = $this->getShowFromRequest($request);
         $winners = array();
         $results = array();
-        $cups = Cup::with(['section'])
+        $cups = Cup::with(['section', 'judge_role', 'judge_role.justgeAtShow'])
 
 
 
@@ -213,7 +213,7 @@ class CupController extends Controller
         foreach ($cups as $cup) {
             $results[$cup->id] = [];
             /** @var Cup $cup */
-            if ($cup->winning_basis === Cup::WINNING_BASIS_TOTAL_POINTS) {
+            if ($cup->is_points_based) {
                 $resultSet = $cup->getWinningResultsAdmin($show);
                 $thisCupPoints = array();
                 foreach ($resultSet as $result) {

@@ -63,7 +63,7 @@ Route::group(['middleware' => 'is_admin'], function () {
         ->name('category.lookupprint');
     Route::get('/entries/printall', [EntryController::class, 'printallcards'])
         ->name('entries.printall');
-    Route::get('/judges/printSheets', [\App\Http\Controllers\JudgesController::class, 'printSheets'])
+    Route::get('/judges/printSheets', [\App\Http\Controllers\JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 
     Route::get('/users/{id}/print', [UserController::class, 'printcards'])

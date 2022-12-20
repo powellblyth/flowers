@@ -44,9 +44,28 @@
         <x-layout.intro-para class="py-2">
             <x-headers.h2>{{ $cup->name . ' '. $cup->id }}</x-headers.h2>
             <div>{{$cup->winning_criteria}}</div>
+            <div>{{
+                        // TODO this should be a model call not a display call
+                        $cup
+                        ->judgeRoles()
+                        // this is good, all the judge roles for the cups
+                        // NEXT we need to bring in all the JudgeAtShow for that role, for that show
 
-            @if($show->resultsArePublic()|| Auth::user()?->isAdmin())
-                @if ($cup->winning_basis === \App\Models\Cup::WINNING_BASIS_TOTAL_POINTS)
+                        ->whereHas('judgesForShow', function( Illuminate\Database\Eloquent\Builder $builder) use ($show){
+                            $builder->where('show_id', $show->id);
+                        })
+
+                        ->get()
+                        ->reduce(
+                            function (\Illuminate\Support\Collection $collection, \App\Models\JudgeRole $judgeRole) use ($show){
+                            $collection->add($judgeRole->judge);
+                                }, new \Illuminate\Support\Collection())
+
+                }}
+            </div>
+
+            @if($show->resultsArePublic() || Auth::user()?->isAdmin())
+                @if ($cup->is_points_based)
                     <table
                         class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                         <thead class="text-white">

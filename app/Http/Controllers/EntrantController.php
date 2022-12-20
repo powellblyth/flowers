@@ -18,22 +18,25 @@ use Illuminate\View\View;
 class EntrantController extends Controller
 {
     /** @var mixed[] */
-    protected $paymentTypes = array('cash' => 'cash',
-                                    'cheque' => 'cheque',
-                                    'online' => 'online',
-                                    'debit' => 'debit',
-                                    'refund_cash' => 'refund_cash',
-                                    'refund_online' => 'refund_online',
-                                    'refund_cheque' => 'refund_cheque');
+    protected array $paymentTypes = array('cash' => 'cash',
+                                          'cheque' => 'cheque',
+                                          'online' => 'online',
+                                          'debit' => 'debit',
+                                          'refund_cash' => 'refund_cash',
+                                          'refund_online' => 'refund_online',
+                                          'refund_cheque' => 'refund_cheque');
 
-    protected $membershipTypes = array(
+    protected array $membershipTypes = array(
         'single' => 'single',
         'family' => 'family');
 
+    /**
+     * @throws AuthorizationException
+     */
     public function create(Request $request): View
     {
         $user = Auth::user();
-        $this->authorize('addEntrant', $user);
+        $this-> authorize('addEntrant', $user);
 
         $allTeams = Team::where('status', 'active')
             ->orderBy('min_age')

@@ -48,7 +48,7 @@
             <div>{{$cup->winning_criteria}}</div>
 
             @if(Auth::user()?->isAdmin())
-                @if ($cup->winning_basis === \App\Models\Cup::WINNING_BASIS_TOTAL_POINTS)
+                @if ($cup->is_points_based)
                     <table
                         class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                         <thead class="text-white">

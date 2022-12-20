@@ -12,7 +12,7 @@ trait BelongsToShow
     /****   Scopes   ****/
     public function scopeForShow(Builder $query, Show $show): Builder
     {
-        return $query->where('show_id', $show->id);
+        return $query->where($this->getTable() . '.show_id', $show->id);
     }
 
     /****   Relations   ****/
