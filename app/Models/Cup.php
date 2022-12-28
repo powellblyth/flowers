@@ -61,7 +61,7 @@ class Cup extends Model
     public function isPointsBased(): Attribute
     {
         return new Attribute(
-            get: fn($value) :bool => $this->winning_basis === self::WINNING_BASIS_TOTAL_POINTS
+            get: fn($value): bool => $this->winning_basis === self::WINNING_BASIS_TOTAL_POINTS
         );
     }
 
@@ -69,6 +69,7 @@ class Cup extends Model
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
+
     public function relatedCategories(Show $show): Collection
     {
         if ($this->section) {
@@ -126,6 +127,31 @@ class Cup extends Model
                     'show_id' => $show->id,
                 ]
             );
+    }
+
+    public function getJudgesForThisShow(Show $show, string $prefix = ''): ?string
+    {
+        // TODO this should be a model call not a display call
+        $judges = $this
+            ->judgeRoles
+            // this is good, all the judge roles for the cups
+            // NEXT we need to       bring in all the JudgeAtShow for that role, for that show
+
+            ->reduce(function (\Illuminate\Support\Collection $carry, \App\Models\JudgeRole $judgeRole) use ($show) {
+//   echo($judgeRole->judgesForShow($show));die();
+//var_dump(($judgeRole->label));die();
+                return $carry->merge($judgeRole->judgesForShow($show)->get());
+            },
+                new \Illuminate\Support\Collection())
+            ->reduce(function (array $carry, \App\Models\Judge $judge) {
+                $carry[] = $judge->name;
+                return $carry;
+            }, []);
+        if (empty($judges)) {
+            return '';
+        }
+
+        return $prefix . ' ' . implode(', ', $judges);
     }
 
     public function getWinnersForShow(Show $show)

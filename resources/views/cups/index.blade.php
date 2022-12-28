@@ -34,7 +34,7 @@
     <x-layout.intro-para>
         <p>
             These are the cups we award during the annual Flower Show and
-            the winners of the {{$show->name}} show (when available).
+            the winners of the {{$show->name}} Show (when available).
         </p>
     </x-layout.intro-para>
     @php
@@ -42,27 +42,9 @@
     @endphp
     @foreach ($cups as $cup)
         <x-layout.intro-para class="py-2">
-            <x-headers.h2>{{ $cup->name . ' '. $cup->id }}</x-headers.h2>
+            <x-headers.h2>{{ $cup->name }}</x-headers.h2>
             <div>{{$cup->winning_criteria}}</div>
-            <div>{{
-                        // TODO this should be a model call not a display call
-                        $cup
-                        ->judgeRoles()
-                        // this is good, all the judge roles for the cups
-                        // NEXT we need to bring in all the JudgeAtShow for that role, for that show
-
-                        ->whereHas('judgesForShow', function( Illuminate\Database\Eloquent\Builder $builder) use ($show){
-                            $builder->where('show_id', $show->id);
-                        })
-
-                        ->get()
-                        ->reduce(
-                            function (\Illuminate\Support\Collection $collection, \App\Models\JudgeRole $judgeRole) use ($show){
-                            $collection->add($judgeRole->judge);
-                                }, new \Illuminate\Support\Collection())
-
-                }}
-            </div>
+            <div>{{ $cup->getJudgesForThisShow($show, 'Judge: ')  }}</div>
 
             @if($show->resultsArePublic() || Auth::user()?->isAdmin())
                 @if ($cup->is_points_based)
@@ -71,7 +53,7 @@
                         <thead class="text-white">
                         <!-- one for each row - required for mobile view -->
                         @for ($x=0; $x < 4; $x++)
-                            <tr class="bg-indigo-500  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                            <tr class="bg-indigo-500 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                                 <th class="p-3 text-left">@lang('Position')</th>
                                 <th class="p-3 text-left">@lang('Name')</th>
                                 <th class="p-3 text-left" width="110px">@lang('Points')</th>

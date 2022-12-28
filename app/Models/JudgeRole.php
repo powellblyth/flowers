@@ -65,10 +65,11 @@ class JudgeRole extends Model
 //            ->withPivot('judge_show')
             ->withTimestamps();
     }
+
     public function judgesForShow(Show $show): BelongsToMany
     {
         return $this->belongsToMany(Judge::class, 'judge_show')
-            ->withPivot('show_id', $show->id)
+            ->withPivot('show_id')
             ->withTimestamps();
     }
 
@@ -88,6 +89,7 @@ class JudgeRole extends Model
     {
         return $this->BelongsToMany(Category::class);
     }
+
     public function cups(): BelongsToMany
     {
         return $this->BelongsToMany(Cup::class);

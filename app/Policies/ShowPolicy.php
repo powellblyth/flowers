@@ -11,7 +11,6 @@ class ShowPolicy
 
     use HandlesAuthorization;
 
-
     /**
      * Determine whether the user can view any models.
      *
@@ -87,6 +86,12 @@ class ShowPolicy
     {
         return $user->isAdmin() && $show->isCurrent();
     }
+
+    public function seeResults(User $user, Show $show)
+    {
+        return $user->isAdmin() || $show->resultsArePublic();
+    }
+
     public function enterCategories(User $user, Show $show)
     {
         return !$show->isClosedToEntries();
