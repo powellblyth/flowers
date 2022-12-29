@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\User;
+use App\Traits\Controllers\HasShowSwitcher;
 use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -15,6 +16,8 @@ use Illuminate\View\View;
 
 class EntryController extends Controller
 {
+    use HasShowSwitcher;
+
     public function creates(Request $request)
     {
         foreach ($request->input('categories') as $category) {

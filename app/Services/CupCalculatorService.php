@@ -18,7 +18,6 @@ class CupCalculatorService
 
     /**
      * TODO make this a service
-     * @param Show $this->show
      * @return CupWinnerArchive
      */
     public function calculateWinnerFromPoints(): CupWinnerArchive

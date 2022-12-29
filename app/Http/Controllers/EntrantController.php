@@ -9,6 +9,7 @@ use App\Models\Entry;
 use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\Team;
+use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -17,6 +18,8 @@ use Illuminate\View\View;
 
 class EntrantController extends Controller
 {
+    use HasShowSwitcher;
+
     /** @var mixed[] */
     protected array $paymentTypes = array('cash' => 'cash',
                                           'cheque' => 'cheque',

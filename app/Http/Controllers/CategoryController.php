@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Entry;
 use App\Models\Section;
+use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class CategoryController extends Controller
 {
+    use HasShowSwitcher;
 
     /**
      * Display a listing of the resource.

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Judge;
+use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -10,6 +11,8 @@ use Illuminate\Http\Request;
 
 class JudgeController extends Controller
 {
+    use HasShowSwitcher;
+
     /**
      * referenced by nova
      */

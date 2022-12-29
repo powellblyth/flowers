@@ -6,6 +6,7 @@ use App\Models\Cup;
 use App\Models\CupDirectWinner;
 use App\Models\Entrant;
 use App\Models\Entry;
+use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ use Illuminate\View\View;
 
 class CupController extends Controller
 {
+    use HasShowSwitcher;
 
     public function index(Request $request): View
     {
@@ -28,11 +30,14 @@ class CupController extends Controller
             $results[$cup->id] = $cup->getWinnersForShow($show);
         }
 
-        return view('cups.index', ['cups' => $cups,
-                                   'results' => $results,
-                                   'show' => $show,
-                                   'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
-        ]);
+        return view(
+            'cups.index',
+            [
+                'cups' => $cups,
+                'results' => $results,
+                'show' => $show,
+            ]
+        );
     }
 
     public function categories(Request $request)
@@ -199,16 +204,13 @@ class CupController extends Controller
 
         return redirect(route('cups.show', $cup));
     }
+
     public function adminindex(Request $request): View
     {
         $show = $this->getShowFromRequest($request);
         $winners = array();
         $results = array();
         $cups = Cup::with(['section', 'judge_role', 'judge_role.justgeAtShow'])
-
-
-
-
             ->orderBy('sort_order', 'asc')->get();
         foreach ($cups as $cup) {
             $results[$cup->id] = [];
@@ -244,27 +246,31 @@ class CupController extends Controller
                                 'points' => 0,
                             ];
                     }
+                    /** @var Entry $winningEntry */
                     $winningEntry = $cupWinner->winningEntry()
                         ->where('show_id', $show->id)
                         ->first();
 
-                    $results[$cup->id] = array('direct_winner' => $winningEntry?->entrant_id,
-                                               'winning_entry' => $winningEntry,
-                                               'winning_category' => $winningEntry?->category,
-                    );
+                    $results[$cup->id] = [
+                        'direct_winner' => $winningEntry?->entrant_id,
+                        'winning_entry' => $winningEntry,
+                        'winning_category' => $winningEntry?->category,
+                    ];
                 }
             }
-
 
             /** @var CupDirectWinner $cupWinner */
             $cupWinner = $cup->cupDirectWinner()->forShow($show)->first();
         }
-        return view('cups.indexadmin', ['cups' => $cups,
-                                   'results' => $results,
-                                   'winners' => $winners,
-                                   'show' => $show,
-                                   'isAdmin' => Auth::check() && Auth::User()->isAdmin(),
-        ]);
+        return view(
+            'cups.indexadmin',
+            [
+                'cups' => $cups,
+                'results' => $results,
+                'winners' => $winners,
+                'show' => $show,
+            ]
+        );
     }
 
 

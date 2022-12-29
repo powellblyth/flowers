@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Show;
+use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ShowsController extends Controller
 {
+    use HasShowSwitcher;
 
     /**
      * Display a listing of the resource.

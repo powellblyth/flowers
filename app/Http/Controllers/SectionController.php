@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Entry;
 use App\Models\Section;
+use App\Traits\Controllers\HasShowSwitcher;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +13,8 @@ use Illuminate\View\View;
 
 class SectionController extends Controller
 {
+    use HasShowSwitcher;
+
     public function index(): View
     {
         $sections = Section::orderBy('number', 'asc')
@@ -25,7 +29,7 @@ class SectionController extends Controller
     }
 
     /**
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
     public function resultsentry(Request $request, Section $section): View
     {

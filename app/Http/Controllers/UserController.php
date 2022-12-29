@@ -7,6 +7,7 @@ use App\Models\Entrant;
 use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\User;
+use App\Traits\Controllers\HasShowSwitcher;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -16,6 +17,8 @@ use Illuminate\View\View;
 
 class UserController extends Controller
 {
+    use HasShowSwitcher;
+
     /**
      * @var mixed[]
      */

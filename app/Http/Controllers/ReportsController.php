@@ -7,11 +7,14 @@ use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\Membership;
 use App\Models\Show;
+use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class ReportsController extends Controller
 {
+    use HasShowSwitcher;
+
     protected function getMembershipFromRequest(Request $request): Membership
     {
         if ($request->filled('membership_id')) {
@@ -73,14 +76,16 @@ class ReportsController extends Controller
             'amount' => $membershipsSold->sum('amount'),
             'count' => $membershipsSold->count(),
         ];
-        return view('reports.membershipReport',
+        return view(
+            'reports.membershipReport',
             [
                 'totals' => $totals,
                 'membership' => $membership,
                 'memberships' => Membership::orderBy('valid_to', 'DESC')->get(),
                 'purchases' => $membershipsSold->get(),
                 //                'familypurchases' => $familypurchases,
-            ]);
+            ]
+        );
     }
 
     /**

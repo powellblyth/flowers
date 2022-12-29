@@ -154,7 +154,7 @@ class Cup extends Model
         return $prefix . ' ' . implode(', ', $judges);
     }
 
-    public function getWinnersForShow(Show $show)
+    public function getWinnersForShow(Show $show): CupWinnerArchive
     {
         $service = new CupCalculatorService($show, $this);
         //TODO this is a little inefficient
@@ -163,11 +163,11 @@ class Cup extends Model
         // we don't know if the rules changed over the years, so we can't risk recalculating
         // However, if there isn't one, we go ahead and calculate it.
         // this will go in the bin once all historics are generated
-        if ($winnerArchive || $show->isCurrent()) {
+        if ($show->isCurrent()) {
             if ($this->is_points_based) {
-                $winnerArchive = $service->calculateWinnerFromPoints($show);
+                $winnerArchive = $service->calculateWinnerFromPoints();
             } else {
-                $winnerArchive = $service->calculateWinnerFromJudgeNotes($show);
+                $winnerArchive = $service->calculateWinnerFromJudgeNotes();
             }
         }
         return $winnerArchive;

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
+    use HasShowSwitcher;
+
     public function store(Request $request)
     {
         $this->getShowFromRequest($request);

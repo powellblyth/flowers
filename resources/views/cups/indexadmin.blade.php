@@ -48,7 +48,7 @@
             <div>{{$cup->winning_criteria}}</div>
 
             @if(Auth::user()?->isAdmin())
-                @if ($cup->is_points_based)
+                @if ($cup->is_points_based§)
                     <table
                         class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                         <thead class="text-white">
@@ -91,7 +91,7 @@
                         $directWinnerId = $results[$cup->id]['direct_winner']?? null;
                     @endphp
                     @if(array_key_exists($directWinnerId, $winners))
-                        @if (  $isAdmin)
+                        @if (  Auth::user()?->isAdmin())
                             <b>
                                 <a href="{{route('entrants.show', ['entrant'=>$winners[$directWinnerId]['entrant']])}}">{{$winners[$directWinnerId]['entrant']->full_name}}</a>
                                 <br />
