@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -13,38 +14,270 @@ return new class extends Migration
      */
     public function up()
     {
-        \Illuminate\Support\Facades\DB::raw('TRUNCATE TABLE teams');
-\Illuminate\Support\Facades\DB::raw("INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (1, 'The Russell School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (2, 'Darell Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (3, 'Deer Park Primary', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (4, 'Holy Trinity CE Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (5, 'Kew Riverside Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (6, 'Marshgate Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (7, 'Meadlands Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (8, 'The Queen''s CE Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (9, 'St Elizabeth''s Catholic Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (10, 'St Richard''s CE Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (11, 'The Vineyard Primary School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (12, 'Windham Nursery School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (13, 'Trafalgar Infant School', 'active', 3, 11, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (14, 'Grey Court School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (15, 'Christ''s School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (16, 'Hampton High', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (17, 'Orleans Park School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (18, 'Richmond Park Academy', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (19, 'St Richard Reynolds Catholic High School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (20, 'Teddington School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (21, 'The Richmond upon Thames School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (22, 'Turing House School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (23, 'Twickenham School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (24, 'Waldegrave School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (25, 'Tiffin Girl''s School', 'active', 11, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (26, 'Sudbrook School', 'active', 2, 6, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (27, 'Strathmore School', 'active', 5, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (28, 'Kish Kindergarten', 'active', 2, 6, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-INSERT INTO teams (id, name, status, min_age, max_age, created_at, updated_at) VALUES (29, 'The German School', 'active', 5, 18, '2020-04-23 09:04:26.0', '2020-04-23 09:04:26.0');
-");
-        //
+        DB::raw('TRUNCATE TABLE teams');
+        \DB::table('teams')->insert(array(
+            array(
+                'id' => 1,
+                'name' => 'The Russell School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 2,
+                'name' => 'Darell Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 3,
+                'name' => 'Deer Park Primary',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 4,
+                'name' => 'Holy Trinity CE Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 5,
+                'name' => 'Kew Riverside Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 6,
+                'name' => 'Marshgate Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 7,
+                'name' => 'Meadlands Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 8,
+                'name' => 'The Queen\'s CE Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 9,
+                'name' => 'St Elizabeth\'s Catholic Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 10,
+                'name' => 'St Richard\'s CE Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 11,
+                'name' => 'The Vineyard Primary School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 12,
+                'name' => 'Windham Nursery School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 13,
+                'name' => 'Trafalgar Infant School',
+                'status' => 'active',
+                'min_age' => 3,
+                'max_age' => 11,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 14,
+                'name' => 'Grey Court School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 15,
+                'name' => 'Christ\'s School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 16,
+                'name' => 'Hampton High',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 17,
+                'name' => 'Orleans Park School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 18,
+                'name' => 'Richmond Park Academy',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 19,
+                'name' => 'St Richard Reynolds Catholic High School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 20,
+                'name' => 'Teddington School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 21,
+                'name' => 'The Richmond upon Thames School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 22,
+                'name' => 'Turing House School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 23,
+                'name' => 'Twickenham School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 24,
+                'name' => 'Waldegrave School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 25,
+                'name' => 'Tiffin Girl\'s School',
+                'status' => 'active',
+                'min_age' => 11,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 26,
+                'name' => 'Sudbrook School',
+                'status' => 'active',
+                'min_age' => 2,
+                'max_age' => 6,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 27,
+                'name' => 'Strathmore School',
+                'status' => 'active',
+                'min_age' => 5,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 28,
+                'name' => 'Kish Kindergarten',
+                'status' => 'active',
+                'min_age' => 2,
+                'max_age' => 6,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+            array(
+                'id' => 29,
+                'name' => 'The German School',
+                'status' => 'active',
+                'min_age' => 5,
+                'max_age' => 18,
+                'created_at' => '2020-04-23 09:04:26',
+                'updated_at' => '2020-04-23 09:04:26',
+            ),
+        ));
     }
 
     /**
