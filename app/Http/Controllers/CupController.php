@@ -55,7 +55,6 @@ class CupController extends Controller
 
     public function show(Request $request, Cup $cup): View
     {
-//        $cup = Cup::findOrFail($cupId);
         $winnerDataByCategory = [];
         $winners = [];
         $show = $this->getShowFromRequest($request);

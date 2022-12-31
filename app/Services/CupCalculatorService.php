@@ -20,13 +20,19 @@ class CupCalculatorService
      * TODO make this a service
      * @return CupWinnerArchive
      */
-    public function calculateWinnerFromPoints(): CupWinnerArchive
+    public function recalculateWinnerFromPoints(): CupWinnerArchive
     {
         /**
-         * @trying to make this select the model iwth the other columns as extra
+         * @trying to make this select the model with the other columns as extra
          * maybe copy this method and keep original for comparison
          */
         $categoryIds = $this->cup->getValidCategoryIdsForShow($this->show);
+
+        // Some shows may not have ANY categories (e.g. Covid mini show)
+        // by forcing this to 0 we unbreak the SQL
+        if (empty($categoryIds)){
+            $categoryIds = [0=>0];
+        }
         $results = collect(DB::select(
             "
             select sum(if(winningplace = '1', 4,0)) as first_place_points, 
@@ -39,7 +45,8 @@ class CupCalculatorService
                         + if(winningplace = '3', 2,0) 
                         + if(winningplace = 'commended', 1,0)
                     ) as total_points,
-                entrant_id
+                entrant_id,
+                max(entries.id) as entry_id
             
             from entries 
             LEFT JOIN entrants on entrants.id=entries.entrant_id
@@ -69,6 +76,7 @@ class CupCalculatorService
             $cupWinnerEntrant->cupWinnerArchive()->associate($cupWinnerArchive);
             $cupWinnerEntrant->points = $result->total_points;
             $cupWinnerEntrant->entrant_id = $result->entrant_id;
+            $cupWinnerEntrant->entry_id = $result->entry_id;
 
             // If this is not equal placing, then reset the counter to the number required
             if ($lastWinnerPoints !== $result->total_points) {
@@ -83,6 +91,8 @@ class CupCalculatorService
                 break;
             }
         }
+        // Reload all the winnars
+        $cupWinnerArchive->load('winners');
         return $cupWinnerArchive;
     }
 
@@ -90,22 +100,27 @@ class CupCalculatorService
      * TODO this should be a service
      * @return CupWinnerArchive
      */
-    public function calculateWinnerFromJudgeNotes(): CupWinnerArchive
+    public function recalculateWinnerFromJudgeNotes(): CupWinnerArchive
     {
         //TODO no more cupWinner
         /** @var CupDirectWinner $cupWinner */
+        // TODO thks seems not ot be working
         $cupWinner = $this->cup->cupDirectWinner()
             ->forShow($this->show)
             ->first();
+
+        $winningEntry = false;
         $winnerArchive = $this->cup->getWinnerArchiveForShow($this->show);
-        $winnerArchive->cupWinner()->associate($cupWinner->entrant);
-        // TODO merge these two concepts, create the archive when the winner is selected
-        $entry = $cupWinner->winningEntry;
+        if ($cupWinner) {
+            $winnerArchive->cupWinner()->associate($cupWinner->entrant);
+            // TODO merge these two concepts, create the archive when the winner is selected
+            $winningEntry = $cupWinner->winningEntry;
+        }
 
         // Maybe the entry has been added? or removed?
-        if ($entry) {
-            $winnerArchive->entry()->associate($entry);
-            $winnerArchive->cupWinner()->associate($entry->entrant);
+        if ($winningEntry) {
+            $winnerArchive->entry()->associate($winningEntry);
+            $winnerArchive->cupWinner()->associate($winningEntry->entrant);
         } else {
             $winnerArchive->entry()->dissociate();
             $winnerArchive->cupWinner()->dissociate();

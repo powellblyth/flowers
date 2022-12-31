@@ -159,15 +159,15 @@ class Cup extends Model
         $service = new CupCalculatorService($show, $this);
         //TODO this is a little inefficient
         $winnerArchive = $this->getWinnerArchiveForShow($show);
-        // If the show has passed, then we can stop fuffing about with the calculations
+        // If the show has passed, then we can stop foofing about with the calculations
         // we don't know if the rules changed over the years, so we can't risk recalculating
         // However, if there isn't one, we go ahead and calculate it.
         // this will go in the bin once all historics are generated
-        if ($show->isCurrent()) {
+        if (!$winnerArchive->exists || $show->isCurrent()) {
             if ($this->is_points_based) {
-                $winnerArchive = $service->calculateWinnerFromPoints();
+                $winnerArchive = $service->recalculateWinnerFromPoints();
             } else {
-                $winnerArchive = $service->calculateWinnerFromJudgeNotes();
+                $winnerArchive = $service->recalculateWinnerFromJudgeNotes();
             }
         }
         return $winnerArchive;
