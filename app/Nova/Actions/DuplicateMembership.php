@@ -43,7 +43,7 @@ class DuplicateMembership extends Action
              * @var Membership $membership
              */
             $membership->replicate();
-            $membership->label = $membership->label . ' copy';
+            $membership->label .= ' copy';
             $membership->sku = 'COPY_' . $membership->sku;
             $membership->description = 'copy ' . $membership->description;
             if ($membership->save()) {

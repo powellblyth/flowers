@@ -100,7 +100,6 @@ class Entry extends Model
 
     public function getPlacementName(): string
     {
-        $result = 0;
         return match ($this->winningplace) {
             '1' => 'First Place',
             '2' => 'Second Place',

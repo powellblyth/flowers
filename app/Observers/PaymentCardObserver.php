@@ -10,7 +10,6 @@ class PaymentCardObserver
     /**
      * Handle the PaymentCard "created" event.
      *
-     * @param PaymentCard $paymentCard
      * @return void
      */
     public function created(PaymentCard $paymentCard)
@@ -20,9 +19,6 @@ class PaymentCardObserver
 
     /**
      * Handle the PaymentCard "updated" event.
-     *
-     * @param PaymentCard $paymentCard
-     * @return void
      */
     public function updated(PaymentCard $paymentCard): void
     {
@@ -31,9 +27,6 @@ class PaymentCardObserver
 
     /**
      * Handle the PaymentCard "deleted" event.
-     *
-     * @param PaymentCard $paymentCard
-     * @return void
      */
     public function deleted(PaymentCard $paymentCard): void
     {
@@ -48,7 +41,6 @@ class PaymentCardObserver
     /**
      * Handle the PaymentCard "restored" event.
      *
-     * @param PaymentCard $paymentCard
      * @return void
      */
     public function restored(PaymentCard $paymentCard)
@@ -59,7 +51,6 @@ class PaymentCardObserver
     /**
      * Handle the PaymentCard "force deleted" event.
      *
-     * @param PaymentCard $paymentCard
      * @return void
      */
     public function forceDeleted(PaymentCard $paymentCard)

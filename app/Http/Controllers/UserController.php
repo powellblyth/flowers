@@ -55,7 +55,6 @@ class UserController extends Controller
     /**
      * Display a listing of the users
      *
-     * @param Request $request
      * @param User|null $user
      * @return \Illuminate\Contracts\View\View
      * @throws \Illuminate\Auth\Access\AuthorizationException
@@ -142,11 +141,7 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $this->authorize('update', User::class);
-        if (empty($request->get('password'))) {
-            $newPassword = '';
-        } else {
-            $newPassword = Hash::make($request->get('password'));
-        }
+        $newPassword = empty($request->get('password')) ? '' : Hash::make($request->get('password'));
         /** @var User $user */
         $user = User::create(
             $request->merge(
@@ -177,10 +172,7 @@ class UserController extends Controller
         $this->authorize('update', $user);
         return view(
             'users.edit',
-            array_merge(
-                compact('user'),
-                ['privacyContent' => config('static_content.privacy_content')]
-            )
+            ['user' => $user, 'privacyContent' => config('static_content.privacy_content')]
         );
     }
 

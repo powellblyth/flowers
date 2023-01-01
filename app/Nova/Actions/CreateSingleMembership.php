@@ -33,7 +33,6 @@ class CreateSingleMembership extends Action
     /**
      * Perform the action on the given models.
      *
-     * @param ActionFields $fields
      * @param Collection[\App\Models\User] $models
      * @return mixed
      */

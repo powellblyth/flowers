@@ -178,7 +178,6 @@ class Category extends Model implements \Stringable
     /**
      * Build an "index" query for the given resource.
      *
-     * @param NovaRequest $request
      * @param Builder $query
      * @return Builder
      */

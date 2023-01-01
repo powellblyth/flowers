@@ -32,7 +32,6 @@ class AddCategoryToCup extends Action
     /**
      * Perform the action on the given models.
      *
-     * @param ActionFields $fields
      * @param Collection<Category> $categories
      * @return mixed
      */

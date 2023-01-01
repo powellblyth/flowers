@@ -21,10 +21,9 @@ class EntryPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param User|null $user
      * @return mixed
      */
-    public function viewAny(?User $user = null)
+    public function viewAny(?User $user = null): bool
     {
         return false;
     }
@@ -64,7 +63,7 @@ class EntryPolicy
      *
      * @return mixed
      */
-    public function delete(User $user, Entry $entry)
+    public function delete(User $user, Entry $entry): bool
     {
         return false;
     }
@@ -74,7 +73,7 @@ class EntryPolicy
      *
      * @return mixed
      */
-    public function restore(User $user, Entry $entry)
+    public function restore(User $user, Entry $entry): bool
     {
         return false;
     }
@@ -84,15 +83,15 @@ class EntryPolicy
      *
      * @return mixed
      */
-    public function forceDelete(User $user, Entry $entry)
+    public function forceDelete(User $user, Entry $entry): bool
     {
         return false;
     }
 
-    public function printCards(User $user){
+    public function printCards(User $user): bool{
         return false;
     }
-    public function enterResults(User $user){
+    public function enterResults(User $user): bool{
         return false;
     }
 }

@@ -15,10 +15,9 @@ class CupPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param User|null $user
      * @return mixed
      */
-    public function viewAny(?User $user = null)
+    public function viewAny(?User $user = null): bool
     {
         return true;
     }
@@ -28,7 +27,7 @@ class CupPolicy
      *
      * @return mixed
      */
-    public function view(User $user, Cup $cup)
+    public function view(User $user, Cup $cup): bool
     {
         return true;
     }
@@ -58,7 +57,7 @@ class CupPolicy
      *
      * @return mixed
      */
-    public function delete(User $user, Cup $cup)
+    public function delete(User $user, Cup $cup): bool
     {
         return false;
     }
@@ -68,7 +67,7 @@ class CupPolicy
      *
      * @return mixed
      */
-    public function restore(User $user, Cup $cup)
+    public function restore(User $user, Cup $cup): bool
     {
         return false;
     }
@@ -78,7 +77,7 @@ class CupPolicy
      *
      * @return mixed
      */
-    public function forceDelete(User $user, Cup $cup)
+    public function forceDelete(User $user, Cup $cup): bool
     {
         return false;
     }

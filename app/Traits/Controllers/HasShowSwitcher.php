@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 trait HasShowSwitcher
 {
 
-    /**
-     * @param Request $request
-     * @param array $extraRelations
-     * @return Show
-     */
     protected function getShowFromRequest(Request $request, array $extraRelations = []): Show
     {
         $builder = Show::with(array_merge(['categories'], $extraRelations));

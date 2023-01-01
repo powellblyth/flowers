@@ -24,8 +24,6 @@ class User extends Resource
 {
     /**
      * The model the resource corresponds to.
-     *
-     * @var string
      */
     public static string $model = \App\Models\User::class;
 
@@ -37,7 +35,7 @@ class User extends Resource
     public static $title = 'full_name';
     public static $group = 'members';
 
-    public static function label()
+    public static function label(): string
     {
         return 'Family Managers';
     }
@@ -170,9 +168,6 @@ class User extends Resource
 
     /**
      * Get the cards available for the request.
-     *
-     * @param Request $request
-     * @return array
      */
     public function cards(Request $request): array
     {
@@ -181,9 +176,6 @@ class User extends Resource
 
     /**
      * Get the filters available for the resource.
-     *
-     * @param Request $request
-     * @return array
      */
     public function filters(Request $request): array
     {
@@ -192,9 +184,6 @@ class User extends Resource
 
     /**
      * Get the lenses available for the resource.
-     *
-     * @param Request $request
-     * @return array
      */
     public function lenses(Request $request): array
     {
@@ -203,9 +192,6 @@ class User extends Resource
 
     /**
      * Get the actions available for the resource.
-     *
-     * @param Request $request
-     * @return array
      */
     public function actions(Request $request): array
     {

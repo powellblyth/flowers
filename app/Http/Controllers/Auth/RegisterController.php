@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+    public $templateDir;
     /*
     |--------------------------------------------------------------------------
     | Register Controller

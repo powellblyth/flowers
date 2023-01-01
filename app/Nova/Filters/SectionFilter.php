@@ -20,7 +20,6 @@ class SectionFilter extends Filter
     /**
      * Apply the filter to the given query.
      *
-     * @param Request $request
      * @param Builder $query
      * @param mixed $value
      * @return Builder
@@ -33,7 +32,6 @@ class SectionFilter extends Filter
     /**
      * Get the filter's available options.
      *
-     * @param Request $request
      * @return array
      */
     public function options(Request $request)

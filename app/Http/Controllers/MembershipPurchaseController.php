@@ -9,12 +9,7 @@ class MembershipPurchaseController extends Controller
 {
     public function getAmount($type)
     {
-        if ('single' === $type) {
-            $amount = 300;
-        } else {
-            $amount = 500;
-        }
-        return $amount;
+        return 'single' === $type ? 300 : 500;
     }
 
     public function store(Request $request)

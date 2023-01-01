@@ -19,7 +19,7 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-        $res = [
+        return [
             'id' => $this->id,
             'first_name' => $this->first_name,
             'family_name' => $this->last_name,
@@ -41,6 +41,5 @@ class UserResource extends JsonResource
             'entrants' => EntrantResource::collection($this->entrants)->toArray($request),//->with($request),
             'membershipPurchases' => $this->membershipPurchases(),
         ];
-        return $res;
     }
 }

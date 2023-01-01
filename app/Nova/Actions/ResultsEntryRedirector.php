@@ -40,8 +40,6 @@ class ResultsEntryRedirector extends Action
     /**
      * Perform the action on the given models.
      *
-     * @param ActionFields $fields
-     * @param Collection $sections
      * @return array|string[]
      */
     public function handle(ActionFields $fields, Collection $sections)

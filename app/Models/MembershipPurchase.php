@@ -71,7 +71,7 @@ class MembershipPurchase extends Model
 
     public function isNotExpired(): bool
     {
-        return (int) $this->year == (int) config('app.year');
+        return (int) $this->year === (int) config('app.year');
     }
 
     public function scopeActive(BuilderContract $query): BuilderContract

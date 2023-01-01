@@ -64,7 +64,7 @@ class Membership extends Model
     public function formattedPrice(): Attribute
     {
         return new Attribute(
-            get: function ($value) {
+            get: function ($value): string {
                 return number_format($this->price_gbp / 100, 2);
             },
         );

@@ -18,7 +18,6 @@ class CupCalculatorService
 
     /**
      * TODO make this a service
-     * @return CupWinnerArchive
      */
     public function recalculateWinnerFromPoints(): CupWinnerArchive
     {
@@ -30,7 +29,7 @@ class CupCalculatorService
 
         // Some shows may not have ANY categories (e.g. Covid mini show)
         // by forcing this to 0 we unbreak the SQL
-        if (empty($categoryIds)){
+        if ($categoryIds === []){
             $categoryIds = [0=>0];
         }
         $results = collect(DB::select(
@@ -98,7 +97,6 @@ class CupCalculatorService
 
     /**
      * TODO this should be a service
-     * @return CupWinnerArchive
      */
     public function recalculateWinnerFromJudgeNotes(): CupWinnerArchive
     {
@@ -118,7 +116,7 @@ class CupCalculatorService
         }
 
         // Maybe the entry has been added? or removed?
-        if ($winningEntry) {
+        if ($winningEntry !== null) {
             $winnerArchive->entry()->associate($winningEntry);
             $winnerArchive->cupWinner()->associate($winningEntry->entrant);
         } else {

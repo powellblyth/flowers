@@ -58,7 +58,7 @@ class EntrantController extends Controller
     public function store(EntrantRequest $request)
     {
         $entrant = Entrant::create(
-            $request->validated()
+            $request->validated(null, null)
             + [
                 'user_id' => auth()->id(),
             ]
@@ -85,7 +85,7 @@ class EntrantController extends Controller
     {
         $this->authorize('update', $entrant);
 
-        $entrant->update($request->validated());
+        $entrant->update($request->validated(null, null));
 
         // No point eding
         $showId = Show::where('status', 'current')->first()->id;
@@ -141,16 +141,11 @@ class EntrantController extends Controller
 
         foreach ($entries as $entry) {
             /** @var Entry $entry */
-            if ($entry->category instanceof Category) {
-                $price = $entry->category->getPrice($entry->category->getPriceType());
-
-                $entryFee += $price;
-
-                if ($entry->hasWon()) {
-                    $totalPrizes += $entry->category->getWinningAmount($entry->winningplace);
-                }
+            $price = $entry->category->getPrice($entry->category->getPriceType());
+            $entryFee += $price;
+            if ($entry->hasWon()) {
+                $totalPrizes += $entry->category->getWinningAmount($entry->winningplace);
             }
-
         }
         $memberNumber = $entrant->getMemberNumber() ?? 'Not currently a member';
 

@@ -54,8 +54,8 @@ use Illuminate\Support\Facades\DB;
  */
 class Cup extends Model
 {
-    public const WINNING_BASIS_TOTAL_POINTS = 'total_points';
-    public const WINNING_BASIS_JUDGES_CHOICE = 'judges_choice';
+    final public const WINNING_BASIS_TOTAL_POINTS = 'total_points';
+    final public const WINNING_BASIS_JUDGES_CHOICE = 'judges_choice';
 
 
     public function isPointsBased(): Attribute
@@ -72,7 +72,7 @@ class Cup extends Model
 
     public function relatedCategories(Show $show): Collection
     {
-        if ($this->section) {
+        if ($this->section !== null) {
             return $this
                 ->section
                 ->categories()
@@ -105,7 +105,6 @@ class Cup extends Model
     /**
      * This represents the judges choice on the day. This will get codified into a
      * CupWinnerArchive in the future
-     * @return HasMany
      */
     public function cupWinnerArchive(): HasMany
     {
@@ -114,8 +113,6 @@ class Cup extends Model
 
     /**
      * creates or returns the cup winner archive
-     * @param Show $show
-     * @return CupWinnerArchive
      */
     public function getWinnerArchiveForShow(Show $show): CupWinnerArchive
     {

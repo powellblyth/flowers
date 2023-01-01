@@ -26,7 +26,7 @@ class UserPolicy
      *
      * @return mixed
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user): bool
     {
         return false;
     }
@@ -57,7 +57,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return $user->id == $model->id;
+        return $user->id === $model->id;
     }
 
     /**
@@ -65,7 +65,7 @@ class UserPolicy
      *
      * @return mixed
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         return false;
     }
@@ -95,7 +95,7 @@ class UserPolicy
      *
      * @return mixed
      */
-    public function restore(User $user, User $model)
+    public function restore(User $user, User $model): bool
     {
         return false;
     }
@@ -105,7 +105,7 @@ class UserPolicy
      *
      * @return mixed
      */
-    public function forceDelete(User $user, User $model)
+    public function forceDelete(User $user, User $model): bool
     {
         return false;
     }

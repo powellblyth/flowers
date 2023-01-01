@@ -24,7 +24,7 @@ class TeamPolicy
      * @param User $user
      * @return mixed
      */
-    public function viewAny(?User $user = null)
+    public function viewAny(?User $user = null): bool
     {
         return true;
     }
@@ -34,7 +34,7 @@ class TeamPolicy
      *
      * @return mixed
      */
-    public function view(User $user, Team $team)
+    public function view(User $user, Team $team): bool
     {
         return true;
     }

@@ -2,22 +2,23 @@
 
 declare(strict_types=1);
 
-use Rector\Core\Configuration\Option;
-use Rector\Php74\Rector\Property\TypedPropertyRector;
+use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector;
+use RectorLaravel\Set\LaravelSetList;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    // get parameters
-    $parameters = $containerConfigurator->parameters();
-//    $containerConfigurator->import(\Rector\Laravel\Set\LaravelSetList::LARAVEL_80);
-    // Define what rule sets will be applied
-//    $containerConfigurator->import(SetList::PHP_80);
-//    $containerConfigurator->import(SetList::PHP_81);
-    $containerConfigurator->import(SetList::DEAD_CODE);
-    // get services (needed for register a single rule)
-    // $services = $containerConfigurator->services();
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->rule(TypedPropertyFromStrictConstructorRector::class);
 
-    // register a single rule
-    // $services->set(TypedPropertyRector::class);
+    // here we can define, what sets of rules will be applied
+    // tip: use "SetList" class to autocomplete sets with your IDE
+    $rectorConfig->sets([
+        SetList::CODE_QUALITY,
+        SetList::PHP_80,
+        SetList::PHP_81,
+        SetList::PHP_82,
+        SetList::DEAD_CODE,
+        LaravelSetList::LARAVEL_90,
+    ]);
+
 };

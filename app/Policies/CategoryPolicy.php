@@ -18,7 +18,7 @@ class CategoryPolicy
      * @param User $user
      * @return mixed
      */
-    public function viewAny(?User $user = null)
+    public function viewAny(?User $user = null): bool
     {
         return true;
     }
@@ -28,7 +28,7 @@ class CategoryPolicy
      *
      * @return mixed
      */
-    public function view(User $user, Category $category)
+    public function view(User $user, Category $category): bool
     {
         return true;
     }

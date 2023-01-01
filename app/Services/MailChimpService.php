@@ -22,7 +22,7 @@ class MailChimpService
 
     public function __construct(
         private readonly Mailchimp $mailchimp,
-        private ?string            $defaultListId = null,
+        private readonly ?string            $defaultListId = null,
     ) {
     }
 

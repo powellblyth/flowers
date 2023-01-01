@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Badge;
 
 class RangeBadge extends Badge
 {
+    public $defaultClass;
     /**
      * Resolve the Badge's CSS classes based on the field's value.
      *
@@ -17,7 +18,7 @@ class RangeBadge extends Badge
     public function resolveBadgeClasses()
     {
         asort($this->map);
-        foreach ($this->map as $threshold => $thing) {
+        foreach (array_keys($this->map) as $threshold) {
             if ($this->value < $threshold) {
                 return ($this->types[$threshold]);
             }

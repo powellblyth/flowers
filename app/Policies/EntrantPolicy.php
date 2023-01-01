@@ -24,7 +24,7 @@ class EntrantPolicy
      * @param User $user
      * @return mixed
      */
-    public function viewAny(?User $user = null)
+    public function viewAny(?User $user = null): bool
     {
         return true;
     }
@@ -34,7 +34,7 @@ class EntrantPolicy
      *
      * @return mixed
      */
-    public function view(User $user, Entrant $entrant)
+    public function view(User $user, Entrant $entrant): bool
     {
         return true;
     }

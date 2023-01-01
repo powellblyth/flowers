@@ -40,7 +40,7 @@ trait Mergable
         if ($mergableModel::class !== $this::class) {
             return false;
         }
-        return $this->merge_config['merge' . Str::plural(get_class($this))];
+        return $this->merge_config['merge' . Str::plural($this::class)];
     }
 
     public function merge(Model $mergableModel)
@@ -52,7 +52,7 @@ trait Mergable
 //                    $
 //                });
 //$this->{$relation()}->associateMany($relation);
-            var_dump(get_Class($relation));
+            var_dump($relation::class);
             }
         }
     }

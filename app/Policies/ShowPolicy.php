@@ -17,7 +17,7 @@ class ShowPolicy
      * @param User $user
      * @return mixed
      */
-    public function viewAny(?User $user = null)
+    public function viewAny(?User $user = null): bool
     {
         return true;
     }
@@ -27,7 +27,7 @@ class ShowPolicy
      *
      * @return mixed
      */
-    public function view(User $user, Show $show)
+    public function view(User $user, Show $show): bool
     {
         return true;
     }

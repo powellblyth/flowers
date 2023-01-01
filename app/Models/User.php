@@ -187,7 +187,7 @@ class User extends Authenticatable
     public function address(): Attribute
     {
         return new Attribute(
-            get: function ($value) {
+            get: function ($value): string {
                 $words = new Collection([$this->address_1, $this->address_2, $this->address_town]);
                 $address = implode(
                     ', ',
@@ -297,11 +297,7 @@ class User extends Authenticatable
         $newPostcode = null;
         if (!empty($postcode)) {
             $oldPostcode = explode(' ', trim($postcode));
-            if (2 == count($oldPostcode)) {
-                $newPostcode = $oldPostcode[0] . substr($oldPostcode[1], 0, 1);
-            } else {
-                $newPostcode = substr($postcode, 0, 5);
-            }
+            $newPostcode = 2 == count($oldPostcode) ? $oldPostcode[0] . substr($oldPostcode[1], 0, 1) : substr($postcode, 0, 5);
         }
         return $newPostcode;
     }

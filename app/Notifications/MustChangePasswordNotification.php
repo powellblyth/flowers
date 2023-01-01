@@ -37,16 +37,11 @@ class MustChangePasswordNotification extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param mixed $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
+    public function toMail(mixed $notifiable)
     {
-        if (!empty($this->first_name)) {
-            $greeting = "Hello " . $this->first_name . ",";
-        } else {
-            $greeting = "Hi There!";
-        }
+        $greeting = empty($this->first_name) ? "Hi There!" : "Hello " . $this->first_name . ",";
 
         return (new MailMessage)
             ->greeting($greeting)

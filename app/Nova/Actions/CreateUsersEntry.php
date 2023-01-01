@@ -31,8 +31,6 @@ class CreateUsersEntry extends Action
     /**
      * Perform the action on the given models.
      *
-     * @param \Laravel\Nova\Fields\ActionFields $fields
-     * @param \Illuminate\Support\Collection $models
      * @return mixed
      */
     public function handle(ActionFields $fields, Collection $models)
@@ -64,7 +62,7 @@ class CreateUsersEntry extends Action
             Log::debug('eaching ' . $entrantId . ' ' . $fields['entrant_id']);
             // If there isn't an entry, then pervesely the check has succeeded
             try {
-                $existingEntry = $category->entries()->where('entrant_id', $entrantId)->firstOrFail();
+                $category->entries()->where('entrant_id', $entrantId)->firstOrFail();
                 Log::debug('failing because it exists');
                 $this->markAsFailed($category);
             } catch (\Exception) {

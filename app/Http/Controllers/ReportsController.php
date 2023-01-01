@@ -107,13 +107,10 @@ class ReportsController extends Controller
             $entrant = $entry->entrant;
             $entrant_id = null;
             $entrant_name = null;
-
-            if ($entrant instanceof Entrant) {
-                $entrant_id = $entrant->id;
-                $entrant_name = $entrant->full_name;
-                $entrants[$entrant_id] = 'yo ho ho and a bottle of rum';
-                $users[$entrant->user_id] = 'Vittals for johnnie';
-            }
+            $entrant_id = $entrant->id;
+            $entrant_name = $entrant->full_name;
+            $entrants[$entrant_id] = 'yo ho ho and a bottle of rum';
+            $users[$entrant->user_id] = 'Vittals for johnnie';
 
             $category = $entry->category;
             $price = $category->getPrice($entry->getPriceType());

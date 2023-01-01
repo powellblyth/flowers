@@ -20,10 +20,8 @@ class UnplacedCategoriesReport extends Dashboard
 
     /**
      * Get the URI key for the dashboard.
-     *
-     * @return string
      */
-    public static function uriKey()
+    public static function uriKey(): string
     {
         return 'unplaced-categories-report';
     }

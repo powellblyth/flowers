@@ -171,7 +171,6 @@ class CupController extends Controller
     {
         $cup = Cup::find($id);
         $entries = Entry::with('entrant')->where('category_id', $request->post('category'))->get();
-        $entriesAry = [];
 
 //        dd($request);
         return view('cups.directResultPickEntrant', [
@@ -236,7 +235,6 @@ class CupController extends Controller
                 $results[$cup->id] = array('results' => $thisCupPoints);
             } else {
                 $cupWinner = $cup->cupDirectWinner()->where('show_id', $show->id)->first();
-                $winningCategory = null;
                 if ($cupWinner instanceof CupDirectWinner) {
                     if ($cupWinner?->winningEntry && !array_key_exists($cupWinner->winningEntry->entrant->id, $winners)) {
                         $winners[$cupWinner->winningEntry->entrant->id] =

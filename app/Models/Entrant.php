@@ -196,11 +196,7 @@ class Entrant extends Model
     {
         $entrant = $this;
 
-        if (!$this->age) {
-            $teamQuery = Team::query();
-        } else {
-            $teamQuery = Team::where('max_age', '>=', (int) $this->age);
-        }
+        $teamQuery = $this->age ? Team::where('max_age', '>=', (int) $this->age) : Team::query();
         return $teamQuery
             ->orderBy('min_age')
             ->orderBy('max_age')

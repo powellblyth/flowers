@@ -29,10 +29,8 @@ class SyncProductsCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return int
      */
-    public function handle()
+    public function handle(): int
     {
         $this->stripe = new StripeClient(config('stripe.api_key_secret'));
 
@@ -47,10 +45,9 @@ class SyncProductsCommand extends Command
         $plans = $plansraw->data;
 
         foreach ($plans as $plan) {
-            $prod = $this->stripe->products->retrieve(
+            $plan->product = $this->stripe->products->retrieve(
                 $plan->product, []
             );
-            $plan->product = $prod;
         }
         dd($plans);
 
