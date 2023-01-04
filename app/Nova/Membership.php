@@ -4,8 +4,8 @@ namespace App\Nova;
 
 use App\Nova\Actions\DuplicateMembership;
 use App\Nova\Filters\FilterByYear;
-use App\Nova\Metrics\MembershipPriceByMembershipType;
-use App\Nova\Metrics\MembershipsByMembershipType;
+use App\Nova\Metrics\MembershipValueByMembershipType;
+use App\Nova\Metrics\ActiveMembershipsByMembershipType;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Select;
@@ -80,8 +80,8 @@ class Membership extends Resource
     public function cards(Request $request)
     {
         return [
-            MembershipPriceByMembershipType::make(),
-            MembershipsByMembershipType::make(),
+            MembershipValueByMembershipType::make(),
+            ActiveMembershipsByMembershipType::make(),
         ];
     }
 

@@ -2,8 +2,8 @@
 
 namespace App\Nova\Dashboards;
 
-use App\Nova\Metrics\MembershipPriceByMembershipType;
-use App\Nova\Metrics\MembershipsByMembershipType;
+use App\Nova\Metrics\MembershipValueByMembershipType;
+use App\Nova\Metrics\ActiveMembershipsByMembershipType;
 use Laravel\Nova\Dashboard;
 
 class EntriesReport extends Dashboard
@@ -16,8 +16,8 @@ class EntriesReport extends Dashboard
     public function cards()
     {
         return [
-            MembershipsByMembershipType::make(),
-            MembershipPriceByMembershipType::make(),
+            ActiveMembershipsByMembershipType::make(),
+            MembershipValueByMembershipType::make(),
         ];
     }
 

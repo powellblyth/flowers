@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Partition;
 
-class MembershipPriceByMembershipType extends Partition
+class MembershipValueByMembershipType extends Partition
 {
     /**
      * Calculate the value of the metric.
@@ -19,16 +19,20 @@ class MembershipPriceByMembershipType extends Partition
     {
         Log::info($request);
         $salesQuery = MembershipPurchase::
-            with(['entrant', 'user', 'membership']);
+            with(['entrant', 'user', 'membership'])->active();
 
         // Might have to replace this with a custom query to format the numbers
         return $this->sum(
             $request,
             $salesQuery,
             'amount',
-            'membership_id'
+            'type'
         )->label(function ($value) {
-            return Membership::find($value)->sku;
+            return match ($value) {
+                'entrant' => 'Single',
+                'user' => 'Family',
+                default => 'n/a',
+            };
         });
     }
 
@@ -37,6 +41,6 @@ class MembershipPriceByMembershipType extends Partition
      */
     public function cacheFor(): \DateInterval|\DateTimeInterface|float|int
     {
-         return now()->addMinutes(5);
+        return 0;now()->addMinutes(5);
     }
 }

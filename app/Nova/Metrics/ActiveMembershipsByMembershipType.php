@@ -7,7 +7,7 @@ use App\Models\MembershipPurchase;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Partition;
 
-class MembershipsByMembershipType extends Partition
+class ActiveMembershipsByMembershipType extends Partition
 {
     /**
      * Calculate the value of the metric.
@@ -16,14 +16,18 @@ class MembershipsByMembershipType extends Partition
      */
     public function calculate(NovaRequest $request)
     {
-        $sales = MembershipPurchase::with(['entrant', 'user', 'membership']);
+        $sales = MembershipPurchase::with(['entrant', 'user', 'membership'])->active();
         return
             $this->count(
                 $request,
                 $sales,
-                'membership_id'
+                'type'
             )->label(function ($value) {
-                return Membership::find($value)->sku;
+                return match ($value) {
+                    'entrant' => 'Single',
+                    'user' => 'Family',
+                    default => 'n/a',
+                };
             });
     }
 
@@ -32,7 +36,8 @@ class MembershipsByMembershipType extends Partition
      */
     public function cacheFor(): \DateInterval|\DateTimeInterface|float|int
     {
-         return now()->addMinutes(5);
+        return 0;
+        now()->addMinutes(5);
     }
 
     /**
