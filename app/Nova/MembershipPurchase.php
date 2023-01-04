@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\FilterByActive;
 use App\Nova\Filters\FilterByYear;
 use App\Nova\Filters\FilterMembershipByType;
 use App\Nova\Metrics\MembershipPriceByMembershipType;
@@ -20,7 +21,7 @@ class MembershipPurchase extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\MembershipPurchase::class;
+    public static string $model = \App\Models\MembershipPurchase::class;
     public static $group = 'Memberships';
 
     /**
@@ -89,6 +90,7 @@ class MembershipPurchase extends Resource
         return [
             FilterByYear::make(),
             FilterMembershipByType::make(),
+            FilterByActive::make(),
         ];
     }
 

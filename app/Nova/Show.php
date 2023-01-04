@@ -22,7 +22,7 @@ class Show extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Show::class;
+    public static string $model = \App\Models\Show::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

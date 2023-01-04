@@ -17,7 +17,7 @@ class Section extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Section::class;
+    public static string $model = \App\Models\Section::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

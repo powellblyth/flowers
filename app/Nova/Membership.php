@@ -18,7 +18,7 @@ class Membership extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Membership::class;
+    public static string $model = \App\Models\Membership::class;
     public static $group = 'Configuration';
 
     /**

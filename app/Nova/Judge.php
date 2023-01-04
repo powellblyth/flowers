@@ -23,7 +23,7 @@ class Judge extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Judge::class;
+    public static string $model = \App\Models\Judge::class;
 
     public static $group = 'Judging';
 

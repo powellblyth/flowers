@@ -16,7 +16,7 @@ class JudgeRole extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\JudgeRole::class;
+    public static string $model = \App\Models\JudgeRole::class;
     public static $group = 'Judging';
 
     /**
