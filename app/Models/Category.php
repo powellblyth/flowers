@@ -175,22 +175,7 @@ class Category extends Model implements \Stringable
         'sortorder' => 'asc'
     ];
 
-    /**
-     * Build an "index" query for the given resource.
-     *
-     * @param Builder $query
-     * @return Builder
-     */
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        if (empty($request->get('orderBy'))) {
-            $query->getQuery()->orders = [];
-            return $query->orderBy(key(static::$indexDefaultOrder), reset(static::$indexDefaultOrder));
-        }
-        return $query;
-    }
-
-    public function canEnter(Entrant $entrant): bool
+    public function notAgeRestricted(Entrant $entrant): bool
     {
         Log::debug('can enter ' . $this->name . '?');
         if (is_null($this->minimum_age) && is_null($this->maximum_age)) {

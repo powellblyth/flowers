@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Events\UserSaving;
 use App\Traits\Mergable;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -69,7 +70,7 @@ use Laravel\Cashier\Billable;
  * @property-read int|null $notifications_count
  * @property-read Collection|Payment[] $payments
  * @property-read int|null $payments_count
- * @method static \Database\Factories\UserFactory factory(...$parameters)
+ * @method static UserFactory factory(...$parameters)
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
  * @method static Builder|User query()
@@ -117,8 +118,11 @@ use Laravel\Cashier\Billable;
  * @property-read int|null $subscriptions_count
  * @method static Builder|User wherePmLastFour($value)
  * @method static Builder|User wherePmType($value)
- * @property-read Collection|\App\Models\PaymentCard[] $paymentCards
+ * @property-read Collection|PaymentCard[] $paymentCards
  * @property-read int|null $payment_cards_count
+ * @property bool $is_committee
+ * @property-read string $address
+ * @method static Builder|User whereIsCommittee($value)
  */
 class User extends Authenticatable
 {
@@ -156,6 +160,7 @@ class User extends Authenticatable
         'can_sms' => 'bool',
         'can_post' => 'bool',
         'is_anonymised' => 'bool',
+        'is_committee' => 'bool',
     ];
 
     protected $dispatchesEvents = [
@@ -183,6 +188,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 'auth_token', 'password_reset_token'
     ];
+
+    /****   Attributes   ****/
 
     public function address(): Attribute
     {
@@ -225,6 +232,11 @@ class User extends Authenticatable
         );
     }
 
+    /****   Scopes   ****/
+
+    /****   Relations   ****/
+
+
     public function entrants(): HasMany
     {
         return $this->hasMany(Entrant::class);
@@ -245,10 +257,14 @@ class User extends Authenticatable
         return $this->hasMany(PaymentCard::class);
     }
 
+    /****   Checks   ****/
+
     public function isAdmin(): bool
     {
         return $this->type === self::TYPE_ADMIN;
     }
+
+    /****   Methods   ****/
 
     /**
      * This creates a single entrant matching the user's data
@@ -332,6 +348,8 @@ class User extends Authenticatable
 
         return $this;
     }
+
+    /****   Statics   ****/
 
     public static function getAllStatuses(): array
     {

@@ -30,7 +30,8 @@
             <div class="bg-white p-2 m-4">
                 <div class="sticky top-0">
                     <h3 class="bg-white text-xl p-2 font-bold">
-                        @lang(':name\'s entry card', ['name'=>$entrant->full_name]) {{$entrant->age_description}}
+                        @lang(':name\'s entry card', ['name'=>$entrant->full_name])
+                        {{$entrant->age_description}}
                     </h3>
                 </div>
                 <div>

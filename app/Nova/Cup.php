@@ -13,12 +13,10 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Http\Requests\ResourceDetailRequest;
-use Laravel\Nova\Http\Requests\ResourceIndexRequest;
 
 class Cup extends Resource
 {
+
     /**
      * The model the resource corresponds to.
      *
@@ -51,23 +49,6 @@ class Cup extends Resource
     public static $sort = [
         'cups.sort_order' => 'asc'
     ];
-
-    /**
-     * Build an "index" query for   the given resource.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        if (empty($request->get('orderBy'))) {
-            $query->getQuery()->orders = [];
-
-            return $query->orderBy(key(static::$sort), reset(static::$sort));
-        }
-
-        return $query;
-    }
 
     /**
      * Get the fields displayed by the resource.

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
+use App\Models\Section;
 use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
 use Carbon\Carbon;
@@ -75,6 +76,12 @@ class EntryController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param User|null $user
+     * @return View
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function entryCard(Request $request, User $user = null): View
     {
         if (is_null($user)) {
@@ -94,12 +101,12 @@ class EntryController extends Controller
             'user' => $user,
             'categories' => $show
                 ->categories
-                ->reject(fn(Category $category)=>$category->private == true)
+                ->reject(fn(Category $category)=>$category->private === true)
             ,
             'show' => $show,
             'showId' => $show->id,
             'can_enter' => !$show->isClosedToEntries(),
-            'sections' => \App\Models\Section::all(),
+            'sections' => Section::all(),
         ]);
     }
 
@@ -121,6 +128,7 @@ class EntryController extends Controller
             $entrant = $user->entrants->where('id', $entrantId)->firstOrFail();
             $this->authorize('createEntries', $entrant);
             $entrant->entries()->where('show_id', $show->id)->whereNotIn('category_id', array_keys($entries))->delete();
+
             foreach ($entries as $categoryId => $discarded) {
                 Entry::firstOrCreate(
                     [

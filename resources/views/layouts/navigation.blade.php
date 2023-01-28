@@ -26,6 +26,9 @@
                     <x-nav-link :href="route('cups.index')" :active="request()->routeIs('cups.index')">
                         {{ __('Cups') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('raffle.index')" :active="request()->routeIs('raffle.index')">
+                        {{ __('Raffle') }}
+                    </x-nav-link>
                     @auth
                         <x-nav-link :href="route('subscriptions.index')" :active="request()->routeIs('subscriptions.index')">
                             {{ __('Membership') }}<div><small>(Experimental)</small></div>

@@ -44,6 +44,7 @@ use Illuminate\Support\Carbon;
  * @property-read \App\Models\SubscriptionItem|null $subscriptionItem
  * @method static Builder|Membership whereStripeId($value)
  * @method static Builder|Membership whereStripePrice($value)
+ * @property-read string $formatted_price
  */
 class Membership extends Model
 {

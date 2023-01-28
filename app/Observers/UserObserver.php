@@ -20,7 +20,7 @@ class UserObserver
     {
         $mailchimp = app(MailChimpService::class);
 //        $listID = config('flowers.mailchimp.mailing_list_id');
-        // If the email has changed, then attemp to unsubscribe the old address
+        // If the email has changed, then attempt to unsubscribe the old address
         if ($user->isDirty('email') && !empty($user->getOriginal('email'))) {
             Log::debug('unsubscribing ' . $user->getOriginal('email'));
             $mailchimp->unsubscribe($user->getOriginal('email'));
@@ -28,8 +28,12 @@ class UserObserver
 
         // If the user status changed, and the user has not been made inactive, unsubscribe (???)
         if ($user->isDirty('status') && $user->status === User::STATUS_INACTIVE) {
-            Log::debug('unsubscribing ' . $user->getOriginal('email'));
-            $mailchimp->unsubscribe($user->getOriginal('email'));
+            // Users might NEVER have had an email address
+            // Yes this is dupe. Will fix along with unittest one day
+            if (!empty($user->getOriginal('email'))) {
+                Log::debug('unsubscribing ' . $user->getOriginal('email'));
+                $mailchimp->unsubscribe($user->getOriginal('email'));
+            }
         }
     }
 

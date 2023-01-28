@@ -14,7 +14,6 @@ use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use OptimistDigital\NovaInlineTextField\InlineText;
 
 class Category extends Resource
@@ -51,22 +50,6 @@ class Category extends Resource
 
     public static $perPageViaRelationship = 100;
     public static $perPage = 100;
-
-    /**
-     * Build an "index" query for the given resource.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     */
-    public static function indexQuery(NovaRequest $request, $query): \Illuminate\Database\Eloquent\Builder
-    {
-        if (empty($request->get('orderBy'))) {
-            $query->getQuery()->orders = [];
-
-            return $query->orderBy(key(static::$sort), reset(static::$sort));
-        }
-
-        return $query;
-    }
 
     /**
      * Get the fields displayed by the resource.

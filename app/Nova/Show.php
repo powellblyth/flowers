@@ -6,14 +6,12 @@ use App\Nova\Actions\DuplicateShowAction;
 use App\Nova\Actions\PrintAllCardsRedirector;
 use App\Nova\Actions\PrintLookupSheetsRedirector;
 use App\Nova\Actions\PrintTableTopCardsRedirector;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Show extends Resource
 {
@@ -49,23 +47,6 @@ class Show extends Resource
     public static $sort = [
         'start_date' => 'desc'
     ];
-
-    /**
-     * Build an "index" query for the given resource.
-     *
-     * @param Builder $query
-     * @return Builder
-     */
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        if (empty($request->get('orderBy'))) {
-            $query->getQuery()->orders = [];
-
-            return $query->orderBy(key(static::$sort), reset(static::$sort));
-        }
-
-        return $query;
-    }
 
     /**
      * Get the fields displayed by the resource.

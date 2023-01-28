@@ -28,6 +28,14 @@ class User extends Resource
     public static string $model = \App\Models\User::class;
 
     /**
+     * Default ordering for index query.
+     */
+    public static $sort = [
+        'last_name' => 'asc',
+        'first_name' => 'asc',
+    ];
+
+    /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
@@ -69,7 +77,7 @@ class User extends Resource
             Gravatar::make()->maxWidth(50),
             Text::make(__('Name'), fn(\App\Models\User $thing) => $thing->fullName),
 
-            Text::make('Fees for 2022 show', function () {
+            Text::make('Fees for current show', function () {
                 $fees = 0;
                 $freeEntries = 0;
                 $entries = 0;
@@ -132,9 +140,10 @@ class User extends Resource
 
             Text::make('Email')
                 ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+                ->required(false)
+                ->rules('sometimes:email:max:254')
+                ->creationRules('sometimes:unique:users,email')
+                ->updateRules('sometimes:unique:users,email,{{resourceId}}'),
 
             Password::make('Password')
                 ->onlyOnForms()
@@ -155,6 +164,7 @@ class User extends Resource
             DateTime::make('Phone Opt in')->onlyOnDetail()->readonly(),
             DateTime::make('Phone Opt out')->onlyOnDetail()->readonly(),
             Boolean::make('Can SMS', 'can_sms')->hideFromIndex(),
+            Boolean::make('Is Committee Member', 'is_committee')->hideFromIndex()->default(false),
             DateTime::make('SMS Opt out', 'sms_opt_in')->onlyOnDetail()->readonly(),
             DateTime::make('SMS Opt out', 'sms_opt_out')->onlyOnDetail()->readonly(),
 

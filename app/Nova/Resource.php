@@ -18,6 +18,9 @@ abstract class Resource extends NovaResource
         if (empty($request->get('orderBy')) && !empty(static::$sort)) {
             $query->getQuery()->orders = [];
 
+            foreach (static::$sort as $column => $direction) {
+                $query = $query->orderBy($column, $direction ?? 'asc');
+            }
             return $query->orderBy(key(static::$sort), reset(static::$sort));
         }
 
@@ -27,7 +30,7 @@ abstract class Resource extends NovaResource
     /**
      * Build a Scout search query for the given resource.
      *
-     * @param  \Laravel\Scout\Builder  $query
+     * @param \Laravel\Scout\Builder $query
      * @return \Laravel\Scout\Builder
      */
     public static function scoutQuery(NovaRequest $request, $query)

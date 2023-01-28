@@ -5,8 +5,8 @@ namespace App\Nova;
 use App\Nova\Filters\FilterByActive;
 use App\Nova\Filters\FilterByYear;
 use App\Nova\Filters\FilterMembershipByType;
-use App\Nova\Metrics\MembershipValueByMembershipType;
 use App\Nova\Metrics\ActiveMembershipsByMembershipType;
+use App\Nova\Metrics\MembershipValueByMembershipType;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
@@ -50,7 +50,7 @@ class MembershipPurchase extends Resource
     {
         return [
             BelongsTo::make('User'),
-            BelongsTo::make('Entrant'),
+            BelongsTo::make('Entrant')->required(false),
             Select::make('Type')
                 ->sortable()
                 ->options([

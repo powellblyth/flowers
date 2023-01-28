@@ -4,6 +4,7 @@ use App\Http\Controllers\EntrantController;
 use App\Http\Controllers\EntryController;
 use App\Http\Controllers\MembershipPurchaseController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RaffleController;
 use App\Http\Controllers\ShowsController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\UserController;
@@ -37,6 +38,14 @@ Route::get('/cupsadmin', [CupController::class, 'adminindex'])
     ->name('cups.adminindex');
 
 Route::resource('membershippurchases', MembershipPurchaseController::class);
+
+
+Route::controller(RaffleController::class)
+    ->group(function () {
+        Route::get('/raffle', 'index')
+        ->name('raffle.index');
+    });
+
 Route::get('/cups', [CupController::class, 'index'])
     ->name('cups.index');
 Route::get('/cupCategories', [CupController::class, 'categories'])
