@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "akki-io/laravel-nova-search": "^1.0",
         "aws/aws-sdk-php": "^3.228",
         "composer/composer": "dev-main",
         "doctrine/dbal": "~2.3",

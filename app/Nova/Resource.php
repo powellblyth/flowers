@@ -2,16 +2,19 @@
 
 namespace App\Nova;
 
+use AkkiIo\LaravelNovaSearch\LaravelNovaSearchable;
+use Illuminate\Database\Eloquent\Builder;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
 
 abstract class Resource extends NovaResource
 {
+    use LaravelNovaSearchable;
     /**
      * Build an "index" query for the given resource.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param Builder $query
+     * @return Builder
      */
     public static function indexQuery(NovaRequest $request, $query)
     {

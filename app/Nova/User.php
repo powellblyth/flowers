@@ -66,6 +66,16 @@ class User extends Resource
     ];
 
     /**
+     * The columns that should be concatenated and searched.
+     * Part of akki-io/laravel-nova-search
+     * @var array
+     */
+    public static $searchConcatenation = [
+        ['first_name', 'last_name'],
+        ['last_name', 'first_name'],
+    ];
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @return array

@@ -47,7 +47,20 @@ class Entrant extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'first_name', 'family_name', 'membernumber'
+        'id',
+        'first_name',
+        'family_name',
+        'membernumber',
+    ];
+
+    /**
+     * The columns that should be concatenated and searched.
+     * Part of akki-io/laravel-nova-search
+     * @var array
+     */
+    public static $searchConcatenation = [
+        ['first_name', 'family_name'],
+        ['family_name', 'first_name'],
     ];
 
     /**

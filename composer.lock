@@ -4,8 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fab1e3a0754e60ae8a73e33295549697",
+    "content-hash": "af17815fc99bf56cb9d51be08aa913b8",
     "packages": [
+        {
+            "name": "akki-io/laravel-nova-search",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akki-io/laravel-nova-search.git",
+                "reference": "666608ca109d9042bae0dcc8ecfccc3d4685b4e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akki-io/laravel-nova-search/zipball/666608ca109d9042bae0dcc8ecfccc3d4685b4e8",
+                "reference": "666608ca109d9042bae0dcc8ecfccc3d4685b4e8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.4",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AkkiIo\\LaravelNovaSearch\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Akki Khare",
+                    "email": "hello@akki.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A package that extends search for laravel nova",
+            "homepage": "https://github.com/akki-io/laravel-nova-search",
+            "keywords": [
+                "akki-io",
+                "laravel-nova-search"
+            ],
+            "support": {
+                "issues": "https://github.com/akki-io/laravel-nova-search/issues",
+                "source": "https://github.com/akki-io/laravel-nova-search/tree/v1.0.7"
+            },
+            "time": "2022-03-01T03:43:48+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.1.1",
