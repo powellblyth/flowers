@@ -299,7 +299,7 @@ class User extends Authenticatable
     public function getMemberNumber(): ?string
     {
         $membership = $this->membershipPurchases()
-            ->where('end_date', '<', date('Y-m-d 11:39:39'))
+            ->where('end_date', '>=', date('Y-m-d 11:39:39'))
             ->first();
         if ($membership instanceof MembershipPurchase) {
             return $membership->getNumber();
