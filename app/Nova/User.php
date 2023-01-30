@@ -106,13 +106,14 @@ class User extends Resource
                 foreach ($this->payments()->where('created_at', '>', '2022-01-01 00:00:00')->get() as $payment) {
                     $payments += (int) $payment->amount;
                 }
-                $owed = ($fees - $payments);
 
                 $memberships = $this->membershipPurchases()
                     ->where('created_at', '>', '2022-06-01 00:00:00')
                     ->get();
                 $numMembership = $memberships->count();
                 $amountMemberships = $memberships->sum('amount');
+
+                $owed = (($fees + $amountMemberships) - $payments);
 
                 return '' . $entries . ' ' . Str::plural('Entry', $entries) .
                        ' (' . $freeEntries . ' ' . Str::plural('free entries') . ')' .
