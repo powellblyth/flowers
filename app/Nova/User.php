@@ -85,7 +85,11 @@ class User extends Resource
         return [
             ID::make()->sortable(),
             Gravatar::make()->maxWidth(50),
-            Text::make(__('Name'), fn(\App\Models\User $thing) => $thing->fullName),
+            Text::make(__('Name'), fn(\App\Models\User $user) => $user->fullName),
+            Text::make(
+                __('Membership Number'),
+                fn(\App\Models\User $user) => $user->getMemberNumber()
+            ),
 
             Text::make('Fees for current show', function () {
                 $fees = 0;
@@ -156,14 +160,14 @@ class User extends Resource
                 ->creationRules('sometimes:unique:users,email')
                 ->updateRules('sometimes:unique:users,email,{{resourceId}}'),
 
-//            // why do I even have this?
-//            Password::make('Password')
-//                ->onlyOnForms()
-//                ->creationRules('nullable', 'string', 'min:8')
-//                ->updateRules('nullable', 'string', 'min:8')
-//                ->hideWhenCreating()
-//                ->hideWhenEditing()
-//            ,
+            //            // why do I even have this?
+            //            Password::make('Password')
+            //                ->onlyOnForms()
+            //                ->creationRules('nullable', 'string', 'min:8')
+            //                ->updateRules('nullable', 'string', 'min:8')
+            //                ->hideWhenCreating()
+            //                ->hideWhenEditing()
+            //            ,
             Text::make('Address 1')->onlyOnForms(),
             Text::make('Address 2')->onlyOnForms(),
             Text::make('Town', 'address_town')->onlyOnForms(),
