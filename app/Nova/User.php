@@ -156,14 +156,21 @@ class User extends Resource
                 ->creationRules('sometimes:unique:users,email')
                 ->updateRules('sometimes:unique:users,email,{{resourceId}}'),
 
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('nullable', 'string', 'min:8')
-                ->updateRules('nullable', 'string', 'min:8'),
-            Text::make('Address 1')->hideFromIndex(),
-            Text::make('Address 2')->hideFromIndex(),
-            Text::make('Town', 'address_town')->hideFromIndex(),
-            Text::make('Postcode')->hideFromIndex(),
+//            // why do I even have this?
+//            Password::make('Password')
+//                ->onlyOnForms()
+//                ->creationRules('nullable', 'string', 'min:8')
+//                ->updateRules('nullable', 'string', 'min:8')
+//                ->hideWhenCreating()
+//                ->hideWhenEditing()
+//            ,
+            Text::make('Address 1')->onlyOnForms(),
+            Text::make('Address 2')->onlyOnForms(),
+            Text::make('Town', 'address_town')->onlyOnForms(),
+            Text::make('Postcode')->onlyOnForms(),
+            Text::make('Address', function (\App\Models\User $user) {
+                return $user->address;
+            })->asHtml()->onlyOnDetail(),
             Text::make('Telephone')->hideFromIndex(),
             Boolean::make('Can Retain Data')->hideFromIndex(),
             DateTime::make('Retain Data Opt in')->onlyOnDetail()->readonly(),
@@ -176,8 +183,8 @@ class User extends Resource
             DateTime::make('Phone Opt out')->onlyOnDetail()->readonly(),
             Boolean::make('Can SMS', 'can_sms')->hideFromIndex(),
             Boolean::make('Is Committee Member', 'is_committee')->hideFromIndex()->default(false),
-            DateTime::make('SMS Opt out', 'sms_opt_in')->onlyOnDetail()->readonly(),
-            DateTime::make('SMS Opt out', 'sms_opt_out')->onlyOnDetail()->readonly(),
+            DateTime::make('SMS Opt-in', 'sms_opt_in')->onlyOnDetail()->readonly(),
+            DateTime::make('SMS Opt-out', 'sms_opt_out')->onlyOnDetail()->readonly(),
 
             DateTime::make('Created At', 'created_at')->onlyOnDetail()->readonly(),
             DateTime::make('Updated At', 'updated_at')->onlyOnDetail()->readonly(),
