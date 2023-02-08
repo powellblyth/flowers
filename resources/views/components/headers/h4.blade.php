@@ -1,3 +1,3 @@
-<h4 class="italic" $attributes>
+<h4 {{ $attributes->merge(['class' =>'italic']) }}>
     {{ $slot }}
 </h4>
