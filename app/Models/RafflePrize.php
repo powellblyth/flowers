@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Traits\BelongsToShow;
-use Illuminate\Database\Eloquent\Builder;
+use \Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -61,7 +61,7 @@ class RafflePrize extends Model
     /****   Scopes   ****/
 
     /****   Scopes   ****/
-    public function scopeIsActive(\Illuminate\Contracts\Database\Eloquent\Builder $query): Builder
+    public function scopeIsActive(Builder $query): Builder
     {
         return $query->where($this->getTable() . '.is_offered', true);
     }
@@ -93,5 +93,4 @@ class RafflePrize extends Model
     /****   Methods   ****/
 
     /****   Statics   ****/
-
 }

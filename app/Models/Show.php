@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -14,12 +14,12 @@ use OptimistDigital\NovaSortable\Traits\HasSortableRows;
  * @property int $id
  * @property string $name
  * @property \datetime $start_date
- * @property \Illuminate\Support\Carbon $ends_date
- * @property \Illuminate\Support\Carbon $late_entry_deadline
- * @property \Illuminate\Support\Carbon $entries_closed_deadline
+ * @property Carbon $ends_date
+ * @property Carbon $late_entry_deadline
+ * @property Carbon $entries_closed_deadline
  * @property string $status
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property-read Collection|Category[] $categories
  * @property-read int|null $categories_count
  * @property-read Collection|Entry[] $entries
