@@ -122,7 +122,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::get('/shows/me/status', [ShowsController::class, 'statusReport'])->name('shows.status');
 
-Route::get('sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('shows.status');
+Route::get('sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
 
 
 Route::post(
