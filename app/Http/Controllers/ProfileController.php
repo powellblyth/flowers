@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\ProfileRequest;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,7 +18,7 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit()
+    public function edit(): \Illuminate\View\View
     {
         return view('profile.edit', [
             'user' => Auth::user(),
@@ -25,15 +29,29 @@ class ProfileController extends Controller
     /**
      * Update the profile
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @param ProfileRequest $request
+     * @return RedirectResponse
      */
-    public function update(ProfileRequest $request)
+    public function update(ProfileRequest $request): RedirectResponse
     {
-        auth()->user()->update($request->all());
+        auth()->user()->update(
+            $request
+                ->merge(
+                    ['password' =>
+                         !empty($request->get('password'))
+                             ? Hash::make($request->get('password'))
+                             : ''
+                    ]
+                )
+                ->except(
+                // If the password is not set, ignore it
+                    [$request->get('password') ? '' : 'password']
+                )
+        );
         return back()->withStatus(__('Profile successfully updated.'));
     }
 
-    public function subscribe()
+    public function subscribe(): Factory|View|Application
     {
         return view('profile.subscribe', ['thing' => Auth::User()]);
     }
@@ -41,9 +59,10 @@ class ProfileController extends Controller
     /**
      * Change the password
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @param PasswordRequest $request
+     * @return RedirectResponse
      */
-    public function password(PasswordRequest $request)
+    public function password(PasswordRequest $request): RedirectResponse
     {
         auth()->user()->update(['password' => Hash::make($request->get('password'))]);
 

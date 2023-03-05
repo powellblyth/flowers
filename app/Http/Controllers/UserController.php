@@ -9,6 +9,9 @@ use App\Models\Show;
 use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
 use Carbon\Carbon;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +25,7 @@ class UserController extends Controller
     /**
      * @var mixed[]
      */
-    protected $paymentTypes = array('cash' => 'cash',
+    protected array $paymentTypes = array('cash' => 'cash',
                                           'cheque' => 'cheque',
                                           'online' => 'online',
                                           'debit' => 'debit',
@@ -32,7 +35,7 @@ class UserController extends Controller
     /**
      * @var mixed[]
      */
-    protected $membershipTypes = array(
+    protected array $membershipTypes = array(
         'single' => 'single',
         'family' => 'family');
 
@@ -41,7 +44,7 @@ class UserController extends Controller
         return Auth::check() && Auth::User()->isAdmin();
     }
 
-    public function subscribe()
+    public function subscribe(): Factory|\Illuminate\Contracts\View\View|Application
     {
         return view(
             'users.subscribe',
@@ -57,7 +60,7 @@ class UserController extends Controller
      *
      * @param User|null $user
      * @return \Illuminate\Contracts\View\View
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
     public function show(Request $request, User $user = null): View
     {
@@ -109,12 +112,12 @@ class UserController extends Controller
             'entry_fee' => $entryFee,
             'total_paid' => $totalPaid,
             'payments' => $payments,
-//            'payment_methods' => $user->paymentMethods(),
-//            'needs_payment_method' => !$user->hasPaymentMethod(),
+            //            'payment_methods' => $user->paymentMethods(),
+            //            'needs_payment_method' => !$user->hasPaymentMethod(),
             'isAdmin' => $this->isAdmin(),
             'show' => $show,
             'showId' => $show->id,
-//            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
+            //            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
             'payment_types' => $this->paymentTypes,
             'membership_types' => [MembershipPurchase::TYPE_FAMILY => 'Family'],
             'isLocked' => config('app.state') == 'locked',
@@ -165,7 +168,7 @@ class UserController extends Controller
      * Show the form for editing the specified user
      *
      * @return \Illuminate\Contracts\View\View
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
     public function edit(User $user)
     {
@@ -180,14 +183,19 @@ class UserController extends Controller
      * Update the specified user in storage
      *
      * @return RedirectResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
     public function update(UserRequest $request, User $user)
     {
         $this->authorize('update', $user);
         $user->update(
-            $request->merge(['password' => Hash::make($request->get('password'))])
-                ->except([$request->get('password') ? '' : 'password'])
+            $request
+                ->merge(
+                    ['password' => Hash::make($request->get('password'))]
+                )
+                ->except(
+                    [$request->get('password') ? '' : 'password']
+                )
         );
 
         return redirect()->route('users.index')->withStatus(__('Family successfully updated.'));
@@ -197,7 +205,7 @@ class UserController extends Controller
      * Remove the specified user from storage
      *
      * @return RedirectResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
     public function destroy(User $user)
     {
