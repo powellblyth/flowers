@@ -71,7 +71,7 @@ class Entrant extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('First Name', 'first_name')
+            Text::make(__('First Name'), 'first_name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 

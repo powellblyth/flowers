@@ -11,6 +11,9 @@ use App\Models\Show;
 use App\Models\Team;
 use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +23,7 @@ class EntrantController extends Controller
 {
     use HasShowSwitcher;
 
-    /** @var mixed[] */
+    /** @var array */
     protected array $paymentTypes = array('cash' => 'cash',
                                           'cheque' => 'cheque',
                                           'online' => 'online',
@@ -39,7 +42,7 @@ class EntrantController extends Controller
     public function create(Request $request): View
     {
         $user = Auth::user();
-        $this-> authorize('addEntrant', $user);
+        $this->authorize('addEntrant', $user);
 
         $allTeams = Team::where('status', 'active')
             ->orderBy('min_age')
@@ -55,7 +58,7 @@ class EntrantController extends Controller
         ]);
     }
 
-    public function store(EntrantRequest $request)
+    public function store(EntrantRequest $request): RedirectResponse
     {
         $entrant = Entrant::create(
             $request->validated(null, null)
@@ -81,7 +84,10 @@ class EntrantController extends Controller
         }
     }
 
-    public function update(EntrantRequest $request, Entrant $entrant)
+    /**
+     * @throws AuthorizationException
+     */
+    public function update(EntrantRequest $request, Entrant $entrant): RedirectResponse
     {
         $this->authorize('update', $entrant);
 
@@ -111,10 +117,13 @@ class EntrantController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param Request $request
+     * @param Entrant $entrant
+     * @param array $showData
      * @return Response
      * @throws AuthorizationException
      */
-    public function show(Request $request, Entrant $entrant, array $showData = [])
+    public function show(Request $request, Entrant $entrant, array $showData = []): Response
     {
         $totalPrizes = 0;
         $membershipFee = 0;
@@ -173,14 +182,15 @@ class EntrantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @return Response
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      * @throws AuthorizationException
      */
     public function edit(Entrant $entrant)
     {
         $this->authorize('update', $entrant);
 
-        return view('entrants.edit',
+        return view(
+            'entrants.edit',
             [
                 'entrant' => $entrant,
                 'teams' => $entrant->getValidTeamOptions(),

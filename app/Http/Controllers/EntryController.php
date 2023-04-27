@@ -9,9 +9,12 @@ use App\Models\Section;
 use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
 use Carbon\Carbon;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -19,7 +22,7 @@ class EntryController extends Controller
 {
     use HasShowSwitcher;
 
-    public function creates(Request $request)
+    public function creates(Request $request): RedirectResponse
     {
         foreach ($request->input('categories') as $category) {
             if ('0' !== $category) {
@@ -80,7 +83,7 @@ class EntryController extends Controller
      * @param Request $request
      * @param User|null $user
      * @return View
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
     public function entryCard(Request $request, User $user = null): View
     {
@@ -93,7 +96,6 @@ class EntryController extends Controller
          * Default show
          */
         $show = $this->getShowFromRequest($request);
-//        $show->load('categories');
 
         $this->authorize('view', $user);
 
@@ -101,8 +103,7 @@ class EntryController extends Controller
             'user' => $user,
             'categories' => $show
                 ->categories
-                ->reject(fn(Category $category)=>$category->private === true)
-            ,
+                ->reject(fn(Category $category) => $category->private === true),
             'show' => $show,
             'showId' => $show->id,
             'can_enter' => !$show->isClosedToEntries(),
@@ -110,7 +111,10 @@ class EntryController extends Controller
         ]);
     }
 
-    public function update(Request $request, User $user = null)
+    /**
+     * @throws AuthorizationException
+     */
+    public function update(Request $request, User $user = null): Redirector|Application|RedirectResponse
     {
         if (is_null($user)) {
             $user = Auth::user();
@@ -127,7 +131,11 @@ class EntryController extends Controller
             /** @var Entrant $entrant */
             $entrant = $user->entrants->where('id', $entrantId)->firstOrFail();
             $this->authorize('createEntries', $entrant);
-            $entrant->entries()->where('show_id', $show->id)->whereNotIn('category_id', array_keys($entries))->delete();
+            $entrant
+                ->entries()
+                ->where('show_id', $show->id)
+                ->whereNotIn('category_id', array_keys($entries))
+                ->delete();
 
             foreach ($entries as $categoryId => $discarded) {
                 Entry::firstOrCreate(

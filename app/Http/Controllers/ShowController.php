@@ -8,7 +8,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class ShowsController extends Controller
+class ShowController extends Controller
 {
     use HasShowSwitcher;
 
@@ -18,7 +18,7 @@ class ShowsController extends Controller
      * @return Response
      * @throws AuthorizationException
      */
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
         $this->getShowFromRequest($request);
 
@@ -50,7 +50,7 @@ class ShowsController extends Controller
      */
     public function statusReport(Request $request): Response
     {
-        $show=  $this->getShowFromRequest($request);
+        $show = $this->getShowFromRequest($request);
 
         $this->authorize('viewAny', $show);
         return response()->view(

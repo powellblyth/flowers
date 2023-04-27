@@ -13,7 +13,6 @@ class CupCalculatorService
 {
     public function __construct(public Show $show, public Cup $cup)
     {
-
     }
 
     /**
@@ -22,14 +21,14 @@ class CupCalculatorService
     public function recalculateWinnerFromPoints(): CupWinnerArchive
     {
         /**
-         * @trying to make this select the model with the other columns as extra
+         * trying to make this select the model with the other columns as extra
          * maybe copy this method and keep original for comparison
          */
         $categoryIds = $this->cup->getValidCategoryIdsForShow($this->show);
 
         // Some shows may not have ANY categories (e.g. Covid mini show)
         // by forcing this to 0 we unbreak the SQL
-        if ($categoryIds === []){
+        if ($categoryIds === []) {
             $categoryIds = [0=>0];
         }
         $results = collect(DB::select(
@@ -107,7 +106,7 @@ class CupCalculatorService
             ->forShow($this->show)
             ->first();
 
-        $winningEntry = false;
+        $winningEntry = null;
         $winnerArchive = $this->cup->getWinnerArchiveForShow($this->show);
         if ($cupWinner) {
             $winnerArchive->cupWinner()->associate($cupWinner->entrant);
@@ -117,6 +116,7 @@ class CupCalculatorService
 
         // Maybe the entry has been added? or removed?
         if ($winningEntry !== null) {
+//            dd($winningEntry);
             $winnerArchive->entry()->associate($winningEntry);
             $winnerArchive->cupWinner()->associate($winningEntry->entrant);
         } else {
@@ -126,5 +126,4 @@ class CupCalculatorService
         $winnerArchive->save();
         return $winnerArchive;
     }
-
 }

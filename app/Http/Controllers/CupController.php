@@ -7,6 +7,8 @@ use App\Models\CupDirectWinner;
 use App\Models\Entrant;
 use App\Models\Entry;
 use App\Traits\Controllers\HasShowSwitcher;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -40,7 +42,7 @@ class CupController extends Controller
         );
     }
 
-    public function categories(Request $request)
+    public function categories(Request $request): Factory|\Illuminate\Contracts\View\View|Application
     {
         $show = $this->getShowFromRequest($request);
         $cups = Cup::with(['section'])->orderBy('sort_order', 'asc')->get();
@@ -59,10 +61,10 @@ class CupController extends Controller
         $winners = [];
         $show = $this->getShowFromRequest($request);
 
-        $categories = $cup->relatedCategories($show);
+        $categories = $cup?->relatedCategories($show) ?? [];
 
         foreach ($categories as $category) {
-            $resultset = $category
+            $resultSet = $category
                 ->entries()
                 ->selectRaw('if(winningplace=\'1\', 4,if(winningplace=\'2\',3, if(winningplace=\'3\',2, if(winningplace=\'commended\',1, 0 ) ) )) as points, winningplace, entrant_id')
                 ->whereIn('winningplace', ['1', '2', '3', 'commended'])
@@ -71,7 +73,7 @@ class CupController extends Controller
                 ->get();
 
             $winnerDataByCategory[$category->id] = [];
-            foreach ($resultset as $categoryWinners) {
+            foreach ($resultSet as $categoryWinners) {
                 $winnerDataByCategory[$category->id][$categoryWinners->winningplace] =
                     [
                         'entrant' => $categoryWinners->entrant_id,

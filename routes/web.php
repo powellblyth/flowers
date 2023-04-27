@@ -5,7 +5,7 @@ use App\Http\Controllers\EntryController;
 use App\Http\Controllers\MembershipPurchaseController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaffleController;
-use App\Http\Controllers\ShowsController;
+use App\Http\Controllers\ShowController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebhookController;
@@ -81,7 +81,7 @@ Route::group(['middleware' => 'is_admin'], function () {
 
 
 Route::resource('teams', TeamsController::class);
-Route::resource('shows', ShowsController::class);
+Route::resource('shows', ShowController::class);
 
 require __DIR__ . '/auth.php';
 Route::group(['middleware' => 'auth'], function () {
@@ -120,7 +120,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('paymentcards', \App\Http\Controllers\PaymentCardsController::class);
 //    Route::put('profile', [ProfileController::class, 'password'])->name('profile.password');
 });
-Route::get('/shows/me/status', [ShowsController::class, 'statusReport'])->name('shows.status');
+Route::get('/shows/me/status', [ShowController::class, 'statusReport'])->name('shows.status');
 
 Route::get('sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
 
