@@ -37,7 +37,7 @@
                     </x-headers.h2>
                 @endauth
                 @guest
-                    <x-headers.h3 class="my-4  ">@lang('Log in or register above to get started')</x-headers.h3>
+                    <x-headers.h3 class="my-4  "><h2><x-a href="{{route('login')}}">Log in</x-a> or <x-a href="{{route('register')}}">register</x-a> to get started</x-headers.h3>
                 @endguest
             </div>
         </div>

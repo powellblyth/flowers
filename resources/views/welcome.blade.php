@@ -5,7 +5,7 @@
             <div class="col-lg-7 col-md-8">
                 <h1 class="text-white text-center">{{ __('Welcome to the PHS Summer Show entry system.') }}</h1>
                 @auth()<h2>Go to <a style="color:white;text-decoration:underline" href="{{route('dashboard')}}">Your Dashboard</a> to get started</h2>@endguest
-                @guest()<h2>Log in or register above to get started</h2>@endguest
+                @guest()<h2><a href="{{route('login')}}>">Log in</a> or <a href="{{route('register')}}">register</a> to get started</h2>@endguest
 
 
             </div>

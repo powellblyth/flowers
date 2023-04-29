@@ -122,6 +122,15 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::get('/shows/me/status', [ShowController::class, 'statusReport'])->name('shows.status');
 
+Route::controller(\App\Http\Controllers\MarketingController::class)
+    ->middleware(['guest'])
+    ->group(function () {
+        Route::get('/pricing', 'pricing')
+            ->name('marketing.pricing');
+        Route::get('/membership', 'membership')
+            ->name('marketing.membership');
+    });
+
 Route::get('sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
 
 
