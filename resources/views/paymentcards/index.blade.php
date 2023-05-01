@@ -1,5 +1,7 @@
 <x-app-layout>
-
+    <x-slot name="pageTitle">
+        {{ __('Your Payment Cards') }}
+    </x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Your Payment Cards') }}

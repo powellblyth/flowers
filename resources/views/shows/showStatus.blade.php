@@ -1,8 +1,11 @@
 <x-app-layout>
 
+    <x-slot name="pageTitle">
+        {{ __('Show Status for the '  . $show->name . ' show') }}
+    </x-slot>
     <x-slot name="header">
         <x-headers.h1>
-            {{ __('Show Status for the '  . $show->name . ' show') }}
+            {{ __('Show Status for the '  . $show->name . ' show')}}
         </x-headers.h1>
     </x-slot>
 

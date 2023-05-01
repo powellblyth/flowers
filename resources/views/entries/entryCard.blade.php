@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="pageTitle">
+        {{ __('Entries for :show', ['show'=>$show->name]) }}
+    </x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Entries for :show', ['show'=>$show->name]) }}

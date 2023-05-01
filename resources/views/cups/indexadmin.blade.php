@@ -24,6 +24,9 @@
             border-bottom: 2px solid rgba(0, 0, 0, .1);
         }
     </style>
+    <x-slot name="pageTitle">
+        {{ __('Cups') }}
+    </x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Cups') }}

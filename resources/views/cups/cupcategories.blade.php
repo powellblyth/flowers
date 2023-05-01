@@ -1,5 +1,7 @@
 <x-app-layout>
-
+    <x-slot name="pageTitle">
+        {{ __('Categories allocated to cups') }}
+    </x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Categories allocated to cups') }}

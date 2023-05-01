@@ -1,5 +1,8 @@
 
 <x-app-layout>
+    <x-slot name="pageTitle">
+        {{ __('Subscribe for PHS Membership') }}
+    </x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Subscribe for PHS Membership') }}

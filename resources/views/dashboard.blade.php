@@ -1,4 +1,8 @@
 <x-app-layout>
+    <x-slot name="pageTitle">
+        {{ __('Dashboard') }}
+    </x-slot>
+
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Dashboard') }}

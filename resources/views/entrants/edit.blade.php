@@ -1,4 +1,11 @@
 <x-app-layout>
+    <x-slot name="pageTitle">
+        @if($entrant->exists)
+            {{ __('Editing ') . $entrant->first_name }}
+        @else
+            {{'Creating a new family member'}}
+        @endif
+    </x-slot>
     <x-slot name="header">
         <x-headers.h1>
             @if($entrant->exists)
