@@ -20,7 +20,7 @@
         <div class=" bg-white top-0 sticky p-2 flex">
             <div>
                 <h3 class="text-xl ">
-                    @lang('The :family family entry card for :show', ['family'=>$user->last_name,'show'=>$show->name])
+                    @lang('The :family family entry form for :show', ['family'=>$user->last_name,'show'=>$show->name])
                 </h3>
             </div>
             @if ($can_enter)
@@ -33,7 +33,7 @@
             <div class="bg-white p-2 m-4">
                 <div class="sticky top-0">
                     <h3 class="bg-white text-xl p-2 font-bold">
-                        @lang(':name\'s entry card', ['name'=>$entrant->full_name])
+                        @lang(':name\'s entry form', ['name'=>$entrant->full_name])
                         {{$entrant->age_description}}
                         @if ($can_enter)
                             {{--                        <div>--}}

@@ -30,10 +30,10 @@
             </div>
         </div>
 
-        <div class="h-10">
-            <a href="{{route('entries.entryCard', ['show'=>$show])}}" class="bg-green-200  p-4 rounded-xl">
-                @lang('Entry Card for :show', ['show'=>$show->name])
-            </a>
+        <div class="h-10 mb-10">
+            <x-button><a href="{{route('entries.entryCard', ['show'=>$show])}}">
+                &raquo; @lang('Open the Entry Form for :show', ['show'=>$show->name])
+            </a></x-button>
         </div>
 
         <div class="table border-4 p-4">
