@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Actions\ResultsEntryRedirector;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
@@ -64,6 +65,9 @@ class Section extends Resource
                 ->rules('required', 'max:255'),
 
             Text::make('Notes')
+                ->showOnIndex(false),
+
+            Boolean::make('Is Junior')
                 ->showOnIndex(false),
 
             Text::make('Judges')
