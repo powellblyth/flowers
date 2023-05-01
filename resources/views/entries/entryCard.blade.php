@@ -55,7 +55,7 @@
                             <div class="pl-2 text-xl font-bold bg-pink-200 rounded-md">{{$section->display_name}}</div>
                             <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
                                 @forelse($categories->where('section_id', $section->id)->sortBy('sortorder') as $category)
-                                    @if($category->canEnter($entrant))
+                                    @if($category->notAgeRestricted($entrant))
                                         <!-- TODO dont bother showing unentered historic categories -->
                                         <div class="p-2 flex bg-green-200 mx-2 my-3 rounded-xl">
                                             <label for="{{'cb_' . $category->id . '_' . $entrant->id}}"
