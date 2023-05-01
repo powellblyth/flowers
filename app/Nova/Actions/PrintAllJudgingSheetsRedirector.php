@@ -44,9 +44,9 @@ class PrintAllJudgingSheetsRedirector extends Action
     /**
      * Perform the action on the given models.
      *
-     * @return mixed
+     * @return array|string[]
      */
-    public function handle(ActionFields $fields, Collection $judges)
+    public function handle(ActionFields $fields, Collection $judges): array
     {
         $params = $judges->pluck('id')->toArray();
         return Action::openInNewTab(route('judges.printSheets', ['judges'=>$params]));
@@ -57,7 +57,7 @@ class PrintAllJudgingSheetsRedirector extends Action
      *
      * @return array
      */
-    public function fields()
+    public function fields(): array
     {
         return [
            ];
