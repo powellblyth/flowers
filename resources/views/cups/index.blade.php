@@ -27,6 +27,7 @@
     <x-slot name="pageTitle">
         {{ __('Cups for our ' . $show->name.' show') }}
     </x-slot>
+    <x-slot name="canonical">{{route('cups.index').'?show_id=' . (int)$show->id }}</x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Cups for our ' . $show->name.' show') }}
