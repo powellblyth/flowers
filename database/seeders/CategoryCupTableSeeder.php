@@ -4597,6 +4597,2414 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-09 13:59:19',
                 'updated_at' => '2022-07-09 13:59:19',
             ),
+            72 => 
+            array (
+                'id' => 1383,
+                'cup_id' => 13,
+                'category_id' => 948,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            73 => 
+            array (
+                'id' => 1384,
+                'cup_id' => 29,
+                'category_id' => 948,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            74 => 
+            array (
+                'id' => 1385,
+                'cup_id' => 30,
+                'category_id' => 948,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            75 => 
+            array (
+                'id' => 1386,
+                'cup_id' => 13,
+                'category_id' => 949,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            76 => 
+            array (
+                'id' => 1387,
+                'cup_id' => 29,
+                'category_id' => 949,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            77 => 
+            array (
+                'id' => 1388,
+                'cup_id' => 30,
+                'category_id' => 949,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            78 => 
+            array (
+                'id' => 1389,
+                'cup_id' => 13,
+                'category_id' => 950,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            79 => 
+            array (
+                'id' => 1390,
+                'cup_id' => 29,
+                'category_id' => 950,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            80 => 
+            array (
+                'id' => 1391,
+                'cup_id' => 30,
+                'category_id' => 950,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            81 => 
+            array (
+                'id' => 1392,
+                'cup_id' => 13,
+                'category_id' => 951,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            82 => 
+            array (
+                'id' => 1393,
+                'cup_id' => 29,
+                'category_id' => 951,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            83 => 
+            array (
+                'id' => 1394,
+                'cup_id' => 30,
+                'category_id' => 951,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            84 => 
+            array (
+                'id' => 1395,
+                'cup_id' => 13,
+                'category_id' => 952,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            85 => 
+            array (
+                'id' => 1396,
+                'cup_id' => 24,
+                'category_id' => 952,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            86 => 
+            array (
+                'id' => 1397,
+                'cup_id' => 26,
+                'category_id' => 952,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            87 => 
+            array (
+                'id' => 1398,
+                'cup_id' => 29,
+                'category_id' => 952,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            88 => 
+            array (
+                'id' => 1399,
+                'cup_id' => 13,
+                'category_id' => 953,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            89 => 
+            array (
+                'id' => 1400,
+                'cup_id' => 24,
+                'category_id' => 953,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            90 => 
+            array (
+                'id' => 1401,
+                'cup_id' => 26,
+                'category_id' => 953,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            91 => 
+            array (
+                'id' => 1402,
+                'cup_id' => 29,
+                'category_id' => 953,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            92 => 
+            array (
+                'id' => 1403,
+                'cup_id' => 13,
+                'category_id' => 954,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            93 => 
+            array (
+                'id' => 1404,
+                'cup_id' => 24,
+                'category_id' => 954,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            94 => 
+            array (
+                'id' => 1405,
+                'cup_id' => 26,
+                'category_id' => 954,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            95 => 
+            array (
+                'id' => 1406,
+                'cup_id' => 29,
+                'category_id' => 954,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            96 => 
+            array (
+                'id' => 1407,
+                'cup_id' => 13,
+                'category_id' => 955,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            97 => 
+            array (
+                'id' => 1408,
+                'cup_id' => 26,
+                'category_id' => 955,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            98 => 
+            array (
+                'id' => 1409,
+                'cup_id' => 29,
+                'category_id' => 955,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            99 => 
+            array (
+                'id' => 1410,
+                'cup_id' => 13,
+                'category_id' => 956,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            100 => 
+            array (
+                'id' => 1411,
+                'cup_id' => 26,
+                'category_id' => 956,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            101 => 
+            array (
+                'id' => 1412,
+                'cup_id' => 29,
+                'category_id' => 956,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            102 => 
+            array (
+                'id' => 1413,
+                'cup_id' => 13,
+                'category_id' => 957,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            103 => 
+            array (
+                'id' => 1414,
+                'cup_id' => 26,
+                'category_id' => 957,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            104 => 
+            array (
+                'id' => 1415,
+                'cup_id' => 29,
+                'category_id' => 957,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            105 => 
+            array (
+                'id' => 1416,
+                'cup_id' => 13,
+                'category_id' => 958,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            106 => 
+            array (
+                'id' => 1417,
+                'cup_id' => 26,
+                'category_id' => 958,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            107 => 
+            array (
+                'id' => 1418,
+                'cup_id' => 29,
+                'category_id' => 958,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            108 => 
+            array (
+                'id' => 1419,
+                'cup_id' => 13,
+                'category_id' => 959,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            109 => 
+            array (
+                'id' => 1420,
+                'cup_id' => 26,
+                'category_id' => 959,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            110 => 
+            array (
+                'id' => 1421,
+                'cup_id' => 29,
+                'category_id' => 959,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            111 => 
+            array (
+                'id' => 1422,
+                'cup_id' => 13,
+                'category_id' => 960,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            112 => 
+            array (
+                'id' => 1423,
+                'cup_id' => 26,
+                'category_id' => 960,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            113 => 
+            array (
+                'id' => 1424,
+                'cup_id' => 29,
+                'category_id' => 960,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            114 => 
+            array (
+                'id' => 1425,
+                'cup_id' => 13,
+                'category_id' => 961,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            115 => 
+            array (
+                'id' => 1426,
+                'cup_id' => 26,
+                'category_id' => 961,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            116 => 
+            array (
+                'id' => 1427,
+                'cup_id' => 29,
+                'category_id' => 961,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            117 => 
+            array (
+                'id' => 1428,
+                'cup_id' => 13,
+                'category_id' => 962,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            118 => 
+            array (
+                'id' => 1429,
+                'cup_id' => 26,
+                'category_id' => 962,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            119 => 
+            array (
+                'id' => 1430,
+                'cup_id' => 29,
+                'category_id' => 962,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            120 => 
+            array (
+                'id' => 1431,
+                'cup_id' => 13,
+                'category_id' => 963,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            121 => 
+            array (
+                'id' => 1432,
+                'cup_id' => 24,
+                'category_id' => 963,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            122 => 
+            array (
+                'id' => 1433,
+                'cup_id' => 26,
+                'category_id' => 963,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            123 => 
+            array (
+                'id' => 1434,
+                'cup_id' => 29,
+                'category_id' => 963,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            124 => 
+            array (
+                'id' => 1435,
+                'cup_id' => 9,
+                'category_id' => 964,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            125 => 
+            array (
+                'id' => 1436,
+                'cup_id' => 13,
+                'category_id' => 964,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            126 => 
+            array (
+                'id' => 1437,
+                'cup_id' => 26,
+                'category_id' => 964,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            127 => 
+            array (
+                'id' => 1438,
+                'cup_id' => 29,
+                'category_id' => 964,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            128 => 
+            array (
+                'id' => 1439,
+                'cup_id' => 13,
+                'category_id' => 965,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            129 => 
+            array (
+                'id' => 1440,
+                'cup_id' => 26,
+                'category_id' => 965,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            130 => 
+            array (
+                'id' => 1441,
+                'cup_id' => 29,
+                'category_id' => 965,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            131 => 
+            array (
+                'id' => 1442,
+                'cup_id' => 13,
+                'category_id' => 966,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            132 => 
+            array (
+                'id' => 1443,
+                'cup_id' => 26,
+                'category_id' => 966,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            133 => 
+            array (
+                'id' => 1444,
+                'cup_id' => 29,
+                'category_id' => 966,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            134 => 
+            array (
+                'id' => 1445,
+                'cup_id' => 13,
+                'category_id' => 967,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            135 => 
+            array (
+                'id' => 1446,
+                'cup_id' => 26,
+                'category_id' => 967,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            136 => 
+            array (
+                'id' => 1447,
+                'cup_id' => 29,
+                'category_id' => 967,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            137 => 
+            array (
+                'id' => 1448,
+                'cup_id' => 13,
+                'category_id' => 968,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            138 => 
+            array (
+                'id' => 1449,
+                'cup_id' => 26,
+                'category_id' => 968,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            139 => 
+            array (
+                'id' => 1450,
+                'cup_id' => 29,
+                'category_id' => 968,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            140 => 
+            array (
+                'id' => 1451,
+                'cup_id' => 13,
+                'category_id' => 969,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            141 => 
+            array (
+                'id' => 1452,
+                'cup_id' => 26,
+                'category_id' => 969,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            142 => 
+            array (
+                'id' => 1453,
+                'cup_id' => 29,
+                'category_id' => 969,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            143 => 
+            array (
+                'id' => 1454,
+                'cup_id' => 12,
+                'category_id' => 970,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            144 => 
+            array (
+                'id' => 1455,
+                'cup_id' => 26,
+                'category_id' => 970,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            145 => 
+            array (
+                'id' => 1456,
+                'cup_id' => 29,
+                'category_id' => 970,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            146 => 
+            array (
+                'id' => 1457,
+                'cup_id' => 13,
+                'category_id' => 971,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            147 => 
+            array (
+                'id' => 1458,
+                'cup_id' => 29,
+                'category_id' => 971,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            148 => 
+            array (
+                'id' => 1459,
+                'cup_id' => 13,
+                'category_id' => 972,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            149 => 
+            array (
+                'id' => 1460,
+                'cup_id' => 29,
+                'category_id' => 972,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            150 => 
+            array (
+                'id' => 1461,
+                'cup_id' => 13,
+                'category_id' => 973,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            151 => 
+            array (
+                'id' => 1462,
+                'cup_id' => 29,
+                'category_id' => 973,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            152 => 
+            array (
+                'id' => 1463,
+                'cup_id' => 13,
+                'category_id' => 974,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            153 => 
+            array (
+                'id' => 1464,
+                'cup_id' => 29,
+                'category_id' => 974,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            154 => 
+            array (
+                'id' => 1465,
+                'cup_id' => 13,
+                'category_id' => 975,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            155 => 
+            array (
+                'id' => 1466,
+                'cup_id' => 29,
+                'category_id' => 975,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            156 => 
+            array (
+                'id' => 1467,
+                'cup_id' => 13,
+                'category_id' => 976,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            157 => 
+            array (
+                'id' => 1468,
+                'cup_id' => 29,
+                'category_id' => 976,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            158 => 
+            array (
+                'id' => 1469,
+                'cup_id' => 13,
+                'category_id' => 977,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            159 => 
+            array (
+                'id' => 1470,
+                'cup_id' => 29,
+                'category_id' => 977,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            160 => 
+            array (
+                'id' => 1471,
+                'cup_id' => 13,
+                'category_id' => 978,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            161 => 
+            array (
+                'id' => 1472,
+                'cup_id' => 18,
+                'category_id' => 978,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            162 => 
+            array (
+                'id' => 1473,
+                'cup_id' => 29,
+                'category_id' => 978,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            163 => 
+            array (
+                'id' => 1474,
+                'cup_id' => 13,
+                'category_id' => 979,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            164 => 
+            array (
+                'id' => 1475,
+                'cup_id' => 18,
+                'category_id' => 979,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            165 => 
+            array (
+                'id' => 1476,
+                'cup_id' => 29,
+                'category_id' => 979,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            166 => 
+            array (
+                'id' => 1477,
+                'cup_id' => 13,
+                'category_id' => 980,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            167 => 
+            array (
+                'id' => 1478,
+                'cup_id' => 18,
+                'category_id' => 980,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            168 => 
+            array (
+                'id' => 1479,
+                'cup_id' => 29,
+                'category_id' => 980,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            169 => 
+            array (
+                'id' => 1480,
+                'cup_id' => 13,
+                'category_id' => 981,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            170 => 
+            array (
+                'id' => 1481,
+                'cup_id' => 18,
+                'category_id' => 981,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            171 => 
+            array (
+                'id' => 1482,
+                'cup_id' => 29,
+                'category_id' => 981,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            172 => 
+            array (
+                'id' => 1483,
+                'cup_id' => 13,
+                'category_id' => 982,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            173 => 
+            array (
+                'id' => 1484,
+                'cup_id' => 18,
+                'category_id' => 982,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            174 => 
+            array (
+                'id' => 1485,
+                'cup_id' => 29,
+                'category_id' => 982,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            175 => 
+            array (
+                'id' => 1486,
+                'cup_id' => 13,
+                'category_id' => 983,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            176 => 
+            array (
+                'id' => 1487,
+                'cup_id' => 18,
+                'category_id' => 983,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            177 => 
+            array (
+                'id' => 1488,
+                'cup_id' => 29,
+                'category_id' => 983,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            178 => 
+            array (
+                'id' => 1489,
+                'cup_id' => 13,
+                'category_id' => 984,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            179 => 
+            array (
+                'id' => 1490,
+                'cup_id' => 18,
+                'category_id' => 984,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            180 => 
+            array (
+                'id' => 1491,
+                'cup_id' => 29,
+                'category_id' => 984,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            181 => 
+            array (
+                'id' => 1492,
+                'cup_id' => 13,
+                'category_id' => 985,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            182 => 
+            array (
+                'id' => 1493,
+                'cup_id' => 18,
+                'category_id' => 985,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            183 => 
+            array (
+                'id' => 1494,
+                'cup_id' => 29,
+                'category_id' => 985,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            184 => 
+            array (
+                'id' => 1495,
+                'cup_id' => 13,
+                'category_id' => 986,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            185 => 
+            array (
+                'id' => 1496,
+                'cup_id' => 18,
+                'category_id' => 986,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            186 => 
+            array (
+                'id' => 1497,
+                'cup_id' => 29,
+                'category_id' => 986,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            187 => 
+            array (
+                'id' => 1498,
+                'cup_id' => 13,
+                'category_id' => 987,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            188 => 
+            array (
+                'id' => 1499,
+                'cup_id' => 18,
+                'category_id' => 987,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            189 => 
+            array (
+                'id' => 1500,
+                'cup_id' => 29,
+                'category_id' => 987,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            190 => 
+            array (
+                'id' => 1501,
+                'cup_id' => 13,
+                'category_id' => 988,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            191 => 
+            array (
+                'id' => 1502,
+                'cup_id' => 18,
+                'category_id' => 988,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            192 => 
+            array (
+                'id' => 1503,
+                'cup_id' => 29,
+                'category_id' => 988,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            193 => 
+            array (
+                'id' => 1504,
+                'cup_id' => 13,
+                'category_id' => 989,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            194 => 
+            array (
+                'id' => 1505,
+                'cup_id' => 18,
+                'category_id' => 989,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            195 => 
+            array (
+                'id' => 1506,
+                'cup_id' => 29,
+                'category_id' => 989,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            196 => 
+            array (
+                'id' => 1507,
+                'cup_id' => 13,
+                'category_id' => 990,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            197 => 
+            array (
+                'id' => 1508,
+                'cup_id' => 18,
+                'category_id' => 990,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            198 => 
+            array (
+                'id' => 1509,
+                'cup_id' => 29,
+                'category_id' => 990,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            199 => 
+            array (
+                'id' => 1510,
+                'cup_id' => 13,
+                'category_id' => 991,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            200 => 
+            array (
+                'id' => 1511,
+                'cup_id' => 18,
+                'category_id' => 991,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            201 => 
+            array (
+                'id' => 1512,
+                'cup_id' => 29,
+                'category_id' => 991,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            202 => 
+            array (
+                'id' => 1513,
+                'cup_id' => 13,
+                'category_id' => 992,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            203 => 
+            array (
+                'id' => 1514,
+                'cup_id' => 18,
+                'category_id' => 992,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            204 => 
+            array (
+                'id' => 1515,
+                'cup_id' => 29,
+                'category_id' => 992,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            205 => 
+            array (
+                'id' => 1516,
+                'cup_id' => 13,
+                'category_id' => 993,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            206 => 
+            array (
+                'id' => 1517,
+                'cup_id' => 18,
+                'category_id' => 993,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            207 => 
+            array (
+                'id' => 1518,
+                'cup_id' => 29,
+                'category_id' => 993,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            208 => 
+            array (
+                'id' => 1519,
+                'cup_id' => 29,
+                'category_id' => 994,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            209 => 
+            array (
+                'id' => 1520,
+                'cup_id' => 13,
+                'category_id' => 995,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            210 => 
+            array (
+                'id' => 1521,
+                'cup_id' => 18,
+                'category_id' => 995,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            211 => 
+            array (
+                'id' => 1522,
+                'cup_id' => 29,
+                'category_id' => 995,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            212 => 
+            array (
+                'id' => 1523,
+                'cup_id' => 13,
+                'category_id' => 996,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            213 => 
+            array (
+                'id' => 1524,
+                'cup_id' => 18,
+                'category_id' => 996,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            214 => 
+            array (
+                'id' => 1525,
+                'cup_id' => 29,
+                'category_id' => 996,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            215 => 
+            array (
+                'id' => 1526,
+                'cup_id' => 13,
+                'category_id' => 997,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            216 => 
+            array (
+                'id' => 1527,
+                'cup_id' => 18,
+                'category_id' => 997,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            217 => 
+            array (
+                'id' => 1528,
+                'cup_id' => 29,
+                'category_id' => 997,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            218 => 
+            array (
+                'id' => 1529,
+                'cup_id' => 13,
+                'category_id' => 998,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            219 => 
+            array (
+                'id' => 1530,
+                'cup_id' => 18,
+                'category_id' => 998,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            220 => 
+            array (
+                'id' => 1531,
+                'cup_id' => 29,
+                'category_id' => 998,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            221 => 
+            array (
+                'id' => 1532,
+                'cup_id' => 13,
+                'category_id' => 999,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            222 => 
+            array (
+                'id' => 1533,
+                'cup_id' => 18,
+                'category_id' => 999,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            223 => 
+            array (
+                'id' => 1534,
+                'cup_id' => 29,
+                'category_id' => 999,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            224 => 
+            array (
+                'id' => 1535,
+                'cup_id' => 31,
+                'category_id' => 999,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            225 => 
+            array (
+                'id' => 1536,
+                'cup_id' => 11,
+                'category_id' => 1000,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            226 => 
+            array (
+                'id' => 1537,
+                'cup_id' => 29,
+                'category_id' => 1000,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            227 => 
+            array (
+                'id' => 1538,
+                'cup_id' => 27,
+                'category_id' => 1001,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            228 => 
+            array (
+                'id' => 1539,
+                'cup_id' => 27,
+                'category_id' => 1002,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            229 => 
+            array (
+                'id' => 1540,
+                'cup_id' => 27,
+                'category_id' => 1003,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            230 => 
+            array (
+                'id' => 1541,
+                'cup_id' => 27,
+                'category_id' => 1004,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            231 => 
+            array (
+                'id' => 1542,
+                'cup_id' => 17,
+                'category_id' => 1005,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            232 => 
+            array (
+                'id' => 1543,
+                'cup_id' => 17,
+                'category_id' => 1006,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            233 => 
+            array (
+                'id' => 1544,
+                'cup_id' => 17,
+                'category_id' => 1007,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            234 => 
+            array (
+                'id' => 1545,
+                'cup_id' => 17,
+                'category_id' => 1008,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            235 => 
+            array (
+                'id' => 1546,
+                'cup_id' => 17,
+                'category_id' => 1009,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            236 => 
+            array (
+                'id' => 1547,
+                'cup_id' => 17,
+                'category_id' => 1010,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            237 => 
+            array (
+                'id' => 1548,
+                'cup_id' => 17,
+                'category_id' => 1011,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            238 => 
+            array (
+                'id' => 1549,
+                'cup_id' => 17,
+                'category_id' => 1012,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            239 => 
+            array (
+                'id' => 1550,
+                'cup_id' => 17,
+                'category_id' => 1013,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            240 => 
+            array (
+                'id' => 1551,
+                'cup_id' => 17,
+                'category_id' => 1014,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            241 => 
+            array (
+                'id' => 1552,
+                'cup_id' => 17,
+                'category_id' => 1015,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            242 => 
+            array (
+                'id' => 1553,
+                'cup_id' => 17,
+                'category_id' => 1016,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            243 => 
+            array (
+                'id' => 1554,
+                'cup_id' => 17,
+                'category_id' => 1017,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            244 => 
+            array (
+                'id' => 1555,
+                'cup_id' => 17,
+                'category_id' => 1018,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            245 => 
+            array (
+                'id' => 1556,
+                'cup_id' => 17,
+                'category_id' => 1019,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            246 => 
+            array (
+                'id' => 1557,
+                'cup_id' => 17,
+                'category_id' => 1020,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            247 => 
+            array (
+                'id' => 1558,
+                'cup_id' => 16,
+                'category_id' => 1021,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            248 => 
+            array (
+                'id' => 1559,
+                'cup_id' => 16,
+                'category_id' => 1022,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            249 => 
+            array (
+                'id' => 1560,
+                'cup_id' => 16,
+                'category_id' => 1023,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            250 => 
+            array (
+                'id' => 1561,
+                'cup_id' => 16,
+                'category_id' => 1024,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            251 => 
+            array (
+                'id' => 1562,
+                'cup_id' => 16,
+                'category_id' => 1025,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            252 => 
+            array (
+                'id' => 1563,
+                'cup_id' => 16,
+                'category_id' => 1026,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            253 => 
+            array (
+                'id' => 1564,
+                'cup_id' => 16,
+                'category_id' => 1027,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            254 => 
+            array (
+                'id' => 1565,
+                'cup_id' => 14,
+                'category_id' => 1028,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            255 => 
+            array (
+                'id' => 1566,
+                'cup_id' => 14,
+                'category_id' => 1029,
+                'created_at' => '2023-04-26 20:55:07',
+                'updated_at' => '2023-04-26 20:55:07',
+            ),
+            256 => 
+            array (
+                'id' => 1567,
+                'cup_id' => 14,
+                'category_id' => 1030,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            257 => 
+            array (
+                'id' => 1568,
+                'cup_id' => 16,
+                'category_id' => 1031,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            258 => 
+            array (
+                'id' => 1569,
+                'cup_id' => 16,
+                'category_id' => 1032,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            259 => 
+            array (
+                'id' => 1570,
+                'cup_id' => 8,
+                'category_id' => 1033,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            260 => 
+            array (
+                'id' => 1571,
+                'cup_id' => 25,
+                'category_id' => 1033,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            261 => 
+            array (
+                'id' => 1572,
+                'cup_id' => 27,
+                'category_id' => 1033,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            262 => 
+            array (
+                'id' => 1573,
+                'cup_id' => 28,
+                'category_id' => 1033,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            263 => 
+            array (
+                'id' => 1574,
+                'cup_id' => 29,
+                'category_id' => 1033,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            264 => 
+            array (
+                'id' => 1575,
+                'cup_id' => 8,
+                'category_id' => 1034,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            265 => 
+            array (
+                'id' => 1576,
+                'cup_id' => 25,
+                'category_id' => 1034,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            266 => 
+            array (
+                'id' => 1577,
+                'cup_id' => 27,
+                'category_id' => 1034,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            267 => 
+            array (
+                'id' => 1578,
+                'cup_id' => 28,
+                'category_id' => 1034,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            268 => 
+            array (
+                'id' => 1579,
+                'cup_id' => 29,
+                'category_id' => 1034,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            269 => 
+            array (
+                'id' => 1580,
+                'cup_id' => 8,
+                'category_id' => 1035,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            270 => 
+            array (
+                'id' => 1581,
+                'cup_id' => 25,
+                'category_id' => 1035,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            271 => 
+            array (
+                'id' => 1582,
+                'cup_id' => 27,
+                'category_id' => 1035,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            272 => 
+            array (
+                'id' => 1583,
+                'cup_id' => 28,
+                'category_id' => 1035,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            273 => 
+            array (
+                'id' => 1584,
+                'cup_id' => 29,
+                'category_id' => 1035,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            274 => 
+            array (
+                'id' => 1585,
+                'cup_id' => 8,
+                'category_id' => 1036,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            275 => 
+            array (
+                'id' => 1586,
+                'cup_id' => 25,
+                'category_id' => 1036,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            276 => 
+            array (
+                'id' => 1587,
+                'cup_id' => 27,
+                'category_id' => 1036,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            277 => 
+            array (
+                'id' => 1588,
+                'cup_id' => 28,
+                'category_id' => 1036,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            278 => 
+            array (
+                'id' => 1589,
+                'cup_id' => 29,
+                'category_id' => 1036,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            279 => 
+            array (
+                'id' => 1590,
+                'cup_id' => 8,
+                'category_id' => 1037,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            280 => 
+            array (
+                'id' => 1591,
+                'cup_id' => 25,
+                'category_id' => 1037,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            281 => 
+            array (
+                'id' => 1592,
+                'cup_id' => 27,
+                'category_id' => 1037,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            282 => 
+            array (
+                'id' => 1593,
+                'cup_id' => 28,
+                'category_id' => 1037,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            283 => 
+            array (
+                'id' => 1594,
+                'cup_id' => 29,
+                'category_id' => 1037,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            284 => 
+            array (
+                'id' => 1595,
+                'cup_id' => 8,
+                'category_id' => 1038,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            285 => 
+            array (
+                'id' => 1596,
+                'cup_id' => 18,
+                'category_id' => 1038,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            286 => 
+            array (
+                'id' => 1597,
+                'cup_id' => 28,
+                'category_id' => 1038,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            287 => 
+            array (
+                'id' => 1598,
+                'cup_id' => 29,
+                'category_id' => 1038,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            288 => 
+            array (
+                'id' => 1599,
+                'cup_id' => 8,
+                'category_id' => 1039,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            289 => 
+            array (
+                'id' => 1600,
+                'cup_id' => 18,
+                'category_id' => 1039,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            290 => 
+            array (
+                'id' => 1601,
+                'cup_id' => 28,
+                'category_id' => 1039,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            291 => 
+            array (
+                'id' => 1602,
+                'cup_id' => 29,
+                'category_id' => 1039,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            292 => 
+            array (
+                'id' => 1603,
+                'cup_id' => 26,
+                'category_id' => 1040,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            293 => 
+            array (
+                'id' => 1604,
+                'cup_id' => 28,
+                'category_id' => 1040,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            294 => 
+            array (
+                'id' => 1605,
+                'cup_id' => 29,
+                'category_id' => 1040,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            295 => 
+            array (
+                'id' => 1606,
+                'cup_id' => 8,
+                'category_id' => 1042,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            296 => 
+            array (
+                'id' => 1607,
+                'cup_id' => 25,
+                'category_id' => 1042,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            297 => 
+            array (
+                'id' => 1608,
+                'cup_id' => 28,
+                'category_id' => 1042,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            298 => 
+            array (
+                'id' => 1609,
+                'cup_id' => 29,
+                'category_id' => 1042,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            299 => 
+            array (
+                'id' => 1610,
+                'cup_id' => 8,
+                'category_id' => 1043,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            300 => 
+            array (
+                'id' => 1611,
+                'cup_id' => 25,
+                'category_id' => 1043,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            301 => 
+            array (
+                'id' => 1612,
+                'cup_id' => 28,
+                'category_id' => 1043,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            302 => 
+            array (
+                'id' => 1613,
+                'cup_id' => 29,
+                'category_id' => 1043,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            303 => 
+            array (
+                'id' => 1614,
+                'cup_id' => 8,
+                'category_id' => 1044,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            304 => 
+            array (
+                'id' => 1615,
+                'cup_id' => 25,
+                'category_id' => 1044,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            305 => 
+            array (
+                'id' => 1616,
+                'cup_id' => 28,
+                'category_id' => 1044,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            306 => 
+            array (
+                'id' => 1617,
+                'cup_id' => 29,
+                'category_id' => 1044,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            307 => 
+            array (
+                'id' => 1622,
+                'cup_id' => 10,
+                'category_id' => 1046,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            308 => 
+            array (
+                'id' => 1623,
+                'cup_id' => 29,
+                'category_id' => 1046,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            309 => 
+            array (
+                'id' => 1624,
+                'cup_id' => 16,
+                'category_id' => 1047,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            310 => 
+            array (
+                'id' => 1625,
+                'cup_id' => 17,
+                'category_id' => 1047,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            311 => 
+            array (
+                'id' => 1626,
+                'cup_id' => 15,
+                'category_id' => 1048,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            312 => 
+            array (
+                'id' => 1627,
+                'cup_id' => 16,
+                'category_id' => 1048,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            313 => 
+            array (
+                'id' => 1628,
+                'cup_id' => 16,
+                'category_id' => 1049,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            314 => 
+            array (
+                'id' => 1629,
+                'cup_id' => 17,
+                'category_id' => 1049,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            315 => 
+            array (
+                'id' => 1630,
+                'cup_id' => 16,
+                'category_id' => 1050,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            316 => 
+            array (
+                'id' => 1631,
+                'cup_id' => 17,
+                'category_id' => 1050,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            317 => 
+            array (
+                'id' => 1632,
+                'cup_id' => 16,
+                'category_id' => 1051,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            318 => 
+            array (
+                'id' => 1633,
+                'cup_id' => 17,
+                'category_id' => 1051,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            319 => 
+            array (
+                'id' => 1634,
+                'cup_id' => 15,
+                'category_id' => 1052,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            320 => 
+            array (
+                'id' => 1635,
+                'cup_id' => 16,
+                'category_id' => 1052,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            321 => 
+            array (
+                'id' => 1636,
+                'cup_id' => 15,
+                'category_id' => 1053,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            322 => 
+            array (
+                'id' => 1637,
+                'cup_id' => 16,
+                'category_id' => 1053,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            323 => 
+            array (
+                'id' => 1638,
+                'cup_id' => 15,
+                'category_id' => 1054,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            324 => 
+            array (
+                'id' => 1639,
+                'cup_id' => 16,
+                'category_id' => 1054,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            325 => 
+            array (
+                'id' => 1640,
+                'cup_id' => 15,
+                'category_id' => 1055,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            326 => 
+            array (
+                'id' => 1641,
+                'cup_id' => 16,
+                'category_id' => 1055,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            327 => 
+            array (
+                'id' => 1642,
+                'cup_id' => 15,
+                'category_id' => 1056,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            328 => 
+            array (
+                'id' => 1643,
+                'cup_id' => 16,
+                'category_id' => 1056,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            329 => 
+            array (
+                'id' => 1644,
+                'cup_id' => 15,
+                'category_id' => 1057,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            330 => 
+            array (
+                'id' => 1645,
+                'cup_id' => 16,
+                'category_id' => 1057,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            331 => 
+            array (
+                'id' => 1646,
+                'cup_id' => 15,
+                'category_id' => 1058,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            332 => 
+            array (
+                'id' => 1647,
+                'cup_id' => 16,
+                'category_id' => 1058,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            333 => 
+            array (
+                'id' => 1648,
+                'cup_id' => 15,
+                'category_id' => 1059,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            334 => 
+            array (
+                'id' => 1649,
+                'cup_id' => 16,
+                'category_id' => 1059,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            335 => 
+            array (
+                'id' => 1650,
+                'cup_id' => 15,
+                'category_id' => 1060,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            336 => 
+            array (
+                'id' => 1651,
+                'cup_id' => 16,
+                'category_id' => 1060,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            337 => 
+            array (
+                'id' => 1652,
+                'cup_id' => 15,
+                'category_id' => 1061,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            338 => 
+            array (
+                'id' => 1653,
+                'cup_id' => 16,
+                'category_id' => 1061,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            339 => 
+            array (
+                'id' => 1654,
+                'cup_id' => 15,
+                'category_id' => 1062,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            340 => 
+            array (
+                'id' => 1655,
+                'cup_id' => 16,
+                'category_id' => 1062,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            341 => 
+            array (
+                'id' => 1656,
+                'cup_id' => 15,
+                'category_id' => 1063,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            342 => 
+            array (
+                'id' => 1657,
+                'cup_id' => 16,
+                'category_id' => 1063,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            343 => 
+            array (
+                'id' => 1658,
+                'cup_id' => 15,
+                'category_id' => 1064,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            344 => 
+            array (
+                'id' => 1659,
+                'cup_id' => 16,
+                'category_id' => 1064,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            345 => 
+            array (
+                'id' => 1660,
+                'cup_id' => 16,
+                'category_id' => 1065,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            346 => 
+            array (
+                'id' => 1661,
+                'cup_id' => 15,
+                'category_id' => 1066,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            347 => 
+            array (
+                'id' => 1662,
+                'cup_id' => 16,
+                'category_id' => 1066,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            348 => 
+            array (
+                'id' => 1663,
+                'cup_id' => 15,
+                'category_id' => 1067,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            349 => 
+            array (
+                'id' => 1664,
+                'cup_id' => 16,
+                'category_id' => 1067,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            350 => 
+            array (
+                'id' => 1665,
+                'cup_id' => 15,
+                'category_id' => 1068,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            351 => 
+            array (
+                'id' => 1666,
+                'cup_id' => 16,
+                'category_id' => 1068,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            352 => 
+            array (
+                'id' => 1667,
+                'cup_id' => 15,
+                'category_id' => 1069,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            353 => 
+            array (
+                'id' => 1668,
+                'cup_id' => 16,
+                'category_id' => 1069,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            354 => 
+            array (
+                'id' => 1669,
+                'cup_id' => 14,
+                'category_id' => 1070,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            355 => 
+            array (
+                'id' => 1670,
+                'cup_id' => 15,
+                'category_id' => 1070,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            356 => 
+            array (
+                'id' => 1671,
+                'cup_id' => 16,
+                'category_id' => 1070,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            357 => 
+            array (
+                'id' => 1672,
+                'cup_id' => 15,
+                'category_id' => 1071,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            358 => 
+            array (
+                'id' => 1673,
+                'cup_id' => 16,
+                'category_id' => 1071,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            359 => 
+            array (
+                'id' => 1674,
+                'cup_id' => 15,
+                'category_id' => 1072,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            360 => 
+            array (
+                'id' => 1675,
+                'cup_id' => 16,
+                'category_id' => 1072,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            361 => 
+            array (
+                'id' => 1676,
+                'cup_id' => 15,
+                'category_id' => 1073,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            362 => 
+            array (
+                'id' => 1677,
+                'cup_id' => 16,
+                'category_id' => 1073,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            363 => 
+            array (
+                'id' => 1678,
+                'cup_id' => 15,
+                'category_id' => 1074,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            364 => 
+            array (
+                'id' => 1679,
+                'cup_id' => 16,
+                'category_id' => 1074,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            365 => 
+            array (
+                'id' => 1680,
+                'cup_id' => 15,
+                'category_id' => 1075,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            366 => 
+            array (
+                'id' => 1681,
+                'cup_id' => 16,
+                'category_id' => 1075,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            367 => 
+            array (
+                'id' => 1682,
+                'cup_id' => 15,
+                'category_id' => 1076,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            368 => 
+            array (
+                'id' => 1683,
+                'cup_id' => 16,
+                'category_id' => 1076,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            369 => 
+            array (
+                'id' => 1684,
+                'cup_id' => 15,
+                'category_id' => 1077,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            370 => 
+            array (
+                'id' => 1685,
+                'cup_id' => 16,
+                'category_id' => 1077,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            371 => 
+            array (
+                'id' => 1686,
+                'cup_id' => 15,
+                'category_id' => 1078,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
+            372 => 
+            array (
+                'id' => 1687,
+                'cup_id' => 16,
+                'category_id' => 1078,
+                'created_at' => '2023-04-26 20:55:08',
+                'updated_at' => '2023-04-26 20:55:08',
+            ),
         ));
         
         
