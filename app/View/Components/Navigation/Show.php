@@ -23,10 +23,9 @@ class Show extends Component
     {
         return view('components.navigation.show', [
             'shows' => \App\Models\Show::orderBy('start_date')
+                ->public()
                 ->get()
-                ->filter(
-                    fn(\App\Models\Show $show) => $show->isPublic()
-                ),
+                ,
             'route' => $this->route,
             'show' => $this->show,
         ]);

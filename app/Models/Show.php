@@ -76,6 +76,12 @@ class Show extends Model
         return in_array($this->status, [self::STATUS_CURRENT, self::STATUS_PASSED]);
     }
 
+    /****   Scopes   ****/
+    public function scopePublic(Builder $query): Builder
+    {
+        return $query->whereIn($this->getTable().'.status', [self::STATUS_CURRENT, self::STATUS_PASSED]);
+    }
+
     public function isClosedToEntries(): bool
     {
         return $this->entries_closed_deadline <= Carbon::now();
