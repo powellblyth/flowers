@@ -150,7 +150,7 @@ class EntrantController extends Controller
 
         foreach ($entries as $entry) {
             /** @var Entry $entry */
-            $price = $entry->category->getPrice($entry->category->getPriceType());
+            $price = $entry->category->getPrice($entry->getPriceType());
             $entryFee += $price;
             if ($entry->hasWon()) {
                 $totalPrizes += $entry->category->getWinningAmount($entry->winningplace);

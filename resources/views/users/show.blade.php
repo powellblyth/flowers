@@ -40,7 +40,7 @@
             <div class="table-header-group">
                 <div class="table-cell p-2">@lang('Name')</div>
                 <div class="table-cell p-2">@lang('Age')</div>
-                <div class="table-cell p-2">@lang('Manage')</div>
+{{--                <div class="table-cell p-2">@lang('Manage')</div>--}}
                 <div class="table-cell p-2">@lang('Team')</div>
                 <div class="table-cell p-2"></div>
             </div>
@@ -55,9 +55,9 @@
                             @lang(':age years', ['age'=>$entrant['age']])
                         @endif
                     </div>
-                    <div class="table-cell p-2 px-4 ">
-                        <a href="{{route('entrants.show', $entrant['id'])}}">Manage Entries</a>
-                    </div>
+{{--                    <div class="table-cell p-2 px-4 ">--}}
+{{--                        <a href="{{route('entrants.show', $entrant['id'])}}">Manage Entries</a>--}}
+{{--                    </div>--}}
 
                     <div class="table-cell p-2 px-4 ">
 

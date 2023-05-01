@@ -24,15 +24,16 @@ class EntryController extends Controller
 
     public function creates(Request $request): RedirectResponse
     {
-        foreach ($request->input('categories') as $category) {
-            if ('0' !== $category) {
-                $entry = new Entry;
-                $entry->category_id = (int) $category;
-                $entry->entrant_id = (int) $request->input('entrant');
-                $entry->year = (int) config('app.year');
-                $entry->save();
-            }
-        }
+//        foreach ($request->input('categories') as $category) {
+//            if (0 !== (int)$category) {
+//                die('hi');
+//                $entry = new Entry;
+//                $entry->category_id = (int) $category;
+//                $entry->entrant_id = (int) $request->input('entrant');
+//                $entry->year = (int) config('app.year');
+//                $entry->save();
+//            }
+//        }
         return redirect()->route('entrants.show', ['entrant' => $request->input('entrant')]);
     }
 
