@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Actions\AddCategoryToCup;
+use App\Nova\Actions\ChangeSectionAction;
 use App\Nova\Actions\CreateUsersEntry;
 use App\Nova\Filters\FilterByShow;
 use App\Nova\Filters\SectionFilter;
@@ -22,7 +23,7 @@ class Category extends Resource
      * The model the resource corresponds to.
      */
     public static string $model = \App\Models\Category::class;
-    public static $perPageOptions = [ 120,50];
+    public static $perPageOptions = [120, 50];
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
@@ -38,31 +39,34 @@ class Category extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'number',
+        'id',
+        'name',
+        'number',
     ];
+
     /**
      * Default ordering for index query.
      */
     public static array $sort = [
-        'section_id' => 'asc',
+        'show_id' => 'asc',
         'sortorder' => 'asc',
     ];
 
     public static $perPageViaRelationship = 100;
-    public static $perPage = 100;
+    public static int $perPage = 100;
 
     /**
      * Get the fields displayed by the resource.
      *
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(Request $request): array
     {
         return [
 
             Text::make('Name', 'numbered_name')
                 ->sortable()
-            ->onlyOnDetail(),
+                ->onlyOnDetail(),
             InlineText::make('Number')
                 ->rules('required', 'max:255')->required()
                 ->onlyOnIndex(),
@@ -79,7 +83,7 @@ class Category extends Resource
 
             Text::make('Name', 'name')
                 ->rules('required', 'max:255')->required()
-            ->onlyOnForms(),
+                ->onlyOnForms(),
 
             Number::make('Sort Order', 'sortorder')
                 ->required()
@@ -153,8 +157,9 @@ class Category extends Resource
     {
         return [
             CreateUsersEntry::make()
-                    ->showOnTableRow(),
+                ->showOnTableRow(),
             AddCategoryToCup::make(),
+            ChangeSectionAction::make(),
         ];
     }
 }
