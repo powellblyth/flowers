@@ -58,6 +58,7 @@ class Category extends Resource
     /**
      * Get the fields displayed by the resource.
      *
+     * @param Request $request
      * @return array
      */
     public function fields(Request $request): array

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Models\Entrant;
 use App\Models\MembershipPurchase;
-use App\Models\Show;
 use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
 use Carbon\Carbon;

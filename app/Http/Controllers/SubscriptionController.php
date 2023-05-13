@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Membership;
 use App\Models\Subscription;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Laravel\Cashier\Exceptions\IncompletePayment;
@@ -20,7 +20,7 @@ class SubscriptionController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(): Response
     {
         return response()
             ->view(
@@ -33,7 +33,7 @@ class SubscriptionController extends Controller
             );
     }
 
-    public function manageCards()
+    public function manageCards(): Response
     {
         return response()
             ->view(
@@ -61,11 +61,10 @@ class SubscriptionController extends Controller
      * @throws IncompletePayment
      * @TODO why does this not dependency inject?!
      */
-    public function store(Request $request): \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+    public function store(Request $request): Response|RedirectResponse
     {
         /** @var Membership $membership */
         $membership = Membership::find($request->membership_id);
-        /** @var SubscriptionBuilder $subscriptionBuilder */
         $subscriptionBuilder = Auth::user()
             ->newSubscription(
                 $membership->stripe_id,
@@ -92,7 +91,8 @@ class SubscriptionController extends Controller
             return response()
                 ->redirectTo(
                     route('subscriptions.index')
-                    . '?error=' . $e->getMessage());
+                    . '?error=' . $e->getMessage()
+                );
         }
     }
 

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EntrantRequest;
-use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\Team;
 use App\Traits\Controllers\HasShowSwitcher;
+use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -122,6 +122,7 @@ class EntrantController extends Controller
      * @param array $showData
      * @return Response
      * @throws AuthorizationException
+     * @throws Exception
      */
     public function show(Request $request, Entrant $entrant, array $showData = []): Response
     {
@@ -185,7 +186,7 @@ class EntrantController extends Controller
      * @return Application|Factory|\Illuminate\Contracts\View\View
      * @throws AuthorizationException
      */
-    public function edit(Entrant $entrant)
+    public function edit(Entrant $entrant): \Illuminate\Contracts\View\View|Factory|Application
     {
         $this->authorize('update', $entrant);
 

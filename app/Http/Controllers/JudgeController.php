@@ -22,8 +22,6 @@ class JudgeController extends Controller
         $judge = Judge::whereIn('id', $request->judges)->first();
         $show = $this->getShowFromRequest($request);
 
-//        $categories = $judge->relatedCategories($show);
-
         return view('judges.printsheets', [
             'judge' => $judge,
             'show' => $show,

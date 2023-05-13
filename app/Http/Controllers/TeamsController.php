@@ -17,7 +17,7 @@ class TeamsController extends Controller
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
         $show = $this->getShowFromRequest($request);
 
@@ -33,7 +33,7 @@ class TeamsController extends Controller
      * @return Response
      * @throws AuthorizationException
      */
-    public function show(Team $team)
+    public function show(Team $team): Response
     {
         $this->authorize('view', Team::class);
         return response()->view('teams.show', ['team' => $team]);

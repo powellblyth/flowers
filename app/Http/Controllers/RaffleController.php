@@ -7,6 +7,7 @@ use App\Models\RafflePrize;
 use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class RaffleController extends Controller
 {
@@ -15,13 +16,12 @@ class RaffleController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return Response
      */
-    public function index(Request $request)
+    public function index(Request $request): Response|View
     {
         $show = $this->getShowFromRequest($request);
-
-//        $don
 
         $donors = RafflePrize::with('raffleDonor')
             ->whereBelongsTo($show)
@@ -35,71 +35,5 @@ class RaffleController extends Controller
                 'show' => $show,
             ]
         );
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\RaffleDonor $raffleDonor
-     * @return Response
-     */
-    public function show(RaffleDonor $raffleDonor)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\RaffleDonor $raffleDonor
-     * @return Response
-     */
-    public function edit(RaffleDonor $raffleDonor)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\RaffleDonor $raffleDonor
-     * @return Response
-     */
-    public function update(Request $request, RaffleDonor $raffleDonor)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Models\RaffleDonor $raffleDonor
-     * @return Response
-     */
-    public function destroy(RaffleDonor $raffleDonor)
-    {
-        //
     }
 }

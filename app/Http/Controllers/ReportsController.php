@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\Membership;
 use App\Models\Show;
@@ -105,8 +104,6 @@ class ReportsController extends Controller
         foreach ($entriesSold as $entry) {
             /** @var Entry $entry */
             $entrant = $entry->entrant;
-            $entrant_id = null;
-            $entrant_name = null;
             $entrant_id = $entrant->id;
             $entrant_name = $entrant->full_name;
             $entrants[$entrant_id] = 'yo ho ho and a bottle of rum';
@@ -140,7 +137,6 @@ class ReportsController extends Controller
                    'count_user' => count($users),
                    'count_adult' => $countAdult,
                    'count_child' => $countChild];
-//dd($show->name);
         return view(
             'reports.entriesReport',
             [
