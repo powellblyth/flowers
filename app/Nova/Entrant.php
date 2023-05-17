@@ -38,7 +38,7 @@ class Entrant extends Resource
         } else {
             $subtitle .= $this->user?->address_1 . ', ';
         }
-        return $subtitle . "{$this->user->postcode}";
+        return $subtitle . "{$this->user?->postcode}";
     }
 
     /**
