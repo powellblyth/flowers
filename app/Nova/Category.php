@@ -120,6 +120,7 @@ class Category extends Resource
             BelongsTo::make('Section')->sortable()->required(),
             HasMany::make(__('Entries'), 'entries'),
             BelongsToMany::make(__('Judge Roles'), 'judgeRoles'),
+            BelongsToMany::make(__('Cup'), 'cups'),
 
         ];
     }
