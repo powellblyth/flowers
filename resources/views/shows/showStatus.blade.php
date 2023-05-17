@@ -24,17 +24,14 @@
             @foreach ($show->categories()->with(['judgeRoles','section','section.judgeRole', 'entries', 'entries.entrant'])->forSection($section)->get()->sortBy('sortorder') as $category)
                 <div>
                     {{$category->numbered_name}}
-                    <x-goodbad :success="$category->price > 0">Price: {{$category->price}}</x-goodbad>
-                    <x-goodbad :success="$category->late_price > 0 && $category->late_price >= $category->price">Late
+                    <x-goodbad :success="$category->isPriceCorrect()">Price: {{$category->price}}</x-goodbad>
+                    <x-goodbad :success="$category->isLatePriceCorrect()">Late
                         Price: {{$category->late_price}}</x-goodbad>
                     <x-goodbad :success="$category->judgeRoles?->first() || $category->section?->judgeRole">
                         Judge{{$category->judgeRoles->first()->label ??$category->section->judgeRole?->label }}</x-goodbad>
                 </div>
-                </td>
 
-                </tr>
                 @endforeach
-                </table>
         </x-layout.intro-para>
     @endforeach
 

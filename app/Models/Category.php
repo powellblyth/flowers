@@ -202,4 +202,20 @@ class Category extends Model implements \Stringable
         Log::debug('yes in right age');
         return true;
     }
+
+    public function isLatePriceCorrect(): bool
+    {
+        if ((int) $this->maximum_age > 0) {
+            return $this->late_price === 0;
+        }
+        return $this->late_price > 0 && $this->late_price >= $this->price;
+    }
+
+    public function isPriceCorrect(): bool
+    {
+        if ((int) $this->maximum_age > 0) {
+            return $this->price === 0;
+        }
+        return $this->price > 0;
+    }
 }

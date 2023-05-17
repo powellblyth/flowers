@@ -210,7 +210,8 @@ class CupController extends Controller
         $show = $this->getShowFromRequest($request);
         $winners = array();
         $results = array();
-        $cups = Cup::with(['section', 'judge_role', 'judge_role.justgeAtShow'])
+        // this didn't work but I don't have time to find out why so I commented it out
+        $cups = Cup::with(['section'])//, 'judge_role', 'judge_role.justgeAtShow'])
             ->orderBy('sort_order', 'asc')->get();
         foreach ($cups as $cup) {
             $results[$cup->id] = [];
