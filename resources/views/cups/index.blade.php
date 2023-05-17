@@ -46,8 +46,8 @@
     @endphp
     @foreach ($cups as $cup)
         <x-layout.intro-para class="py-2">
-            <x-headers.h2>{{ $cup->name }}</x-headers.h2>
-            <div>{{$cup->winning_criteria}}</div>
+            <x-headers.h2>{{ $cup->name }} <x-button><a href="{{ route('cups.show', ['cup'=>$cup]) }}">Details</a></x-button></x-headers.h2>
+            <div>{{ $cup->winning_criteria }}</div>
             <div>{{ $cup->getJudgesForThisShow($show, 'Judge: ')  }}</div>
 
             @if($show->resultsArePublic() || Auth::user()?->isAdmin())
