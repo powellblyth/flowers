@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\CheckShowRedirector;
 use App\Nova\Actions\DuplicateShowAction;
 use App\Nova\Actions\PrintAllCardsRedirector;
 use App\Nova\Actions\PrintLookupSheetsRedirector;
@@ -44,7 +45,7 @@ class Show extends Resource
      *
      * @var array
      */
-    public static $sort = [
+    public static array $sort = [
         'start_date' => 'desc'
     ];
 
@@ -53,7 +54,7 @@ class Show extends Resource
      *
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(Request $request): array
     {
         return [
             ID::make()->sortable(),
@@ -99,9 +100,10 @@ class Show extends Resource
     /**
      * Get the cards available for the request.
      *
+     * @param Request $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(Request $request): array
     {
         return [];
     }
@@ -109,9 +111,10 @@ class Show extends Resource
     /**
      * Get the filters available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(Request $request): array
     {
         return [];
     }
@@ -119,9 +122,10 @@ class Show extends Resource
     /**
      * Get the lenses available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(Request $request): array
     {
         return [];
     }
@@ -129,15 +133,17 @@ class Show extends Resource
     /**
      * Get the actions available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(Request $request): array
     {
         return [
             DuplicateShowAction::make()->showOnIndex(),
             PrintAllCardsRedirector::make()->showOnIndex(),
             PrintTableTopCardsRedirector::make()->showOnIndex(),
             PrintLookupSheetsRedirector::make()->showOnIndex(),
+            CheckShowRedirector::make()->showOnIndex(),
         ];
     }
 }

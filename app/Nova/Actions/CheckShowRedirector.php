@@ -3,26 +3,20 @@
 namespace App\Nova\Actions;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
 
-class CupResultsChooserRedirector extends Action
+class CheckShowRedirector extends Action
 {
     use InteractsWithQueue, Queueable;
 
     public $showOnTableRow = true;
     public $showOnIndex = false;
-    public $confirmButtonText = 'Choose Winner';
-    public $name = 'Choose Winner';
-
-    /**
-     * The text to be used for the action's cancel button.
-     *
-     * @var string
-     */
-    public $cancelButtonText = 'Cancel';
+    public $confirmButtonText = 'Check Show';
+    public $name = 'Check Show';
 
     /**
      * Determine where the action redirection should be without confirmation.
@@ -32,28 +26,21 @@ class CupResultsChooserRedirector extends Action
     public $withoutConfirmation = true;
 
     /**
-     * The text to be used for the action's confirmation text.
-     *
-     * @var string
-     */
-    public $confirmText = 'Choose a winner for this cup';
-
-    /**
      * Perform the action on the given models.
      *
      * @param ActionFields $fields
-     * @param Collection $cups
-     * @return array|string[]
+     * @param Collection $shows
+     * @return mixed
      */
-    public function handle(ActionFields $fields, Collection $cups)
+    public function handle(ActionFields $fields, Collection $shows): mixed
     {
         $params = [];
         // Can only do one at once.
-        foreach ($cups as $model) {
-            $params['cup'] = $model;
+        foreach ($shows as $model) {
+            $params['show'] = $model;
             // can only do one cup at once
         }
-        return Action::openInNewTab(route('cups.show', $params));
+        return Action::openInNewTab(route('shows.status', $params));
     }
 
     /**
@@ -61,11 +48,8 @@ class CupResultsChooserRedirector extends Action
      *
      * @return array
      */
-    public function fields()
+    public function fields(): array
     {
-        return [
-        ];
+        return [];
     }
-
-
 }
