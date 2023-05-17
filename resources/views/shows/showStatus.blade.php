@@ -45,16 +45,16 @@
             <div>{{ $cup->name }}[{{$cup->id}}]<br />
             {{$cup->winning_criteria}}</div>
             <x-goodbad
-                :success="$cup->categories()->count() > 0 || $cup->section?->categories()->forShow($show)->count() > 0">
+                :success="$cup->categories()->forShow($show)->count() > 0 || $cup->section?->categories()->forShow($show)->count() > 0">
 
-                {{$cup->categories()->count() }} direct categories<br/>
+                {{$cup->categories()->forShow($show)->count() }} direct categories<br/>
             </x-goodbad>
             @foreach ($cup->categories()->forShow($show)->inOrder()->get() as $category)
                 {{$category->numbered_name}}<br />
             @endforeach
             @if($cup->section?->categories()->forShow($show)->count() > 0)
                 <x-goodbad
-                    :success="$cup->categories()->count() > 0 || $cup->section?->categories()->forShow($show)->count() > 0">
+                    :success="$cup->categories()->forShow($show)->count() > 0 || $cup->section?->categories()->forShow($show)->count() > 0">
                     {{$cup->section?->categories()->forShow($show)->count()}} categories through
                     section {{$cup->section->name}}
                 </x-goodbad>
