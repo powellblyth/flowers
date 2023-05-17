@@ -40,7 +40,7 @@
         </x-layout.intro-para>
     @endforeach
 
-    @foreach (\App\Models\Cup::with(['section'])->get() as $cup)
+    @foreach (\App\Models\Cup::with(['section'])->inOrder()->get() as $cup)
         <x-layout.intro-para class="py-2">
             <div>{{ $cup->name }}[{{$cup->id}}]<br />
             {{$cup->winning_criteria}}</div>

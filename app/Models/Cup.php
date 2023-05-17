@@ -65,6 +65,11 @@ class Cup extends Model
         );
     }
 
+    public function scopeInOrder(Builder $query): Builder
+    {
+        return $query->orderby('cups.sort_order');
+    }
+
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
