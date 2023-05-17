@@ -30,13 +30,13 @@ class Entrant extends Resource
     public function subtitle()
     {
         $subtitle = '';
-        if ($this->user->first_name != $this->first_name) {
-            $subtitle .= 'Family Manager: ' . $this->user->first_name . ' ' . $this->user->last_name . ' ';
+        if ($this->user?->first_name != $this->first_name) {
+            $subtitle .= 'Family Manager: ' . $this->user?->full_name . ' ';
         }
-        if (empty($this->user->address_1)) {
-            $subtitle .= $this->user->email . ', ';
+        if (empty($this->user?->address_1)) {
+            $subtitle .= $this->user?->email . ', ';
         } else {
-            $subtitle .= $this->user->address_1 . ', ';
+            $subtitle .= $this->user?->address_1 . ', ';
         }
         return $subtitle . "{$this->user->postcode}";
     }
