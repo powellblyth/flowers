@@ -11,6 +11,7 @@
                     organisation which aims to encourage families living in Petersham to enjoy their gardens.</p>
                 <p class="my-2"> The Annual Flower Show is our biggest event of the year, drawing crowds from far and
                     wide. We have a wide range of entrants from young to old, experienced to absolute novice.</p>
+                <p class="my-2">You don't need to be an expert, you don't need to be a member of the society to join, we are <b>Open to All</b></p>
                 @auth
                     <x-headers.h2 class="my-8">Go to <a class="underline" href="{{route('dashboard')}}">Your
                             Dashboard</a> to get started

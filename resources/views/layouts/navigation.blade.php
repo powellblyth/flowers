@@ -26,9 +26,12 @@
                     <x-nav-link :href="route('raffle.index')" :active="request()->routeIs('raffle.index')">
                         {{ __('Raffle') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('marketing.membership')" :active="request()->routeIs('marketing.membership')">
-                        {{ __('PHS Membership') }}
-                    </x-nav-link>
+                    @guest
+                        <x-nav-link :href="route('marketing.membership')"
+                                    :active="request()->routeIs('marketing.membership')">
+                            {{ __('PHS Membership') }}
+                        </x-nav-link>
+                    @endguest
                     @auth
                         <x-nav-link :href="route('subscriptions.index')"
                                     :active="request()->routeIs('subscriptions.index')">
@@ -97,7 +100,7 @@
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                                     onclick="event.preventDefault();
+                                           onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                         {{ __('Log out') }}
                     </x-responsive-nav-link>

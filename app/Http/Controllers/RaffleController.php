@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RaffleDonor;
 use App\Models\RafflePrize;
 use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Http\Request;
@@ -17,7 +16,7 @@ class RaffleController extends Controller
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return Response
+     * @return Response|View
      */
     public function index(Request $request): Response|View
     {
