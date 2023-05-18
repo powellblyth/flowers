@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(JudgesTableSeeder::class);
         $this->call(CupJudgeRoleTableSeeder::class);
         $this->call(CategoryJudgeRoleTableSeeder::class);
+        $this->call(JudgeShowTableSeeder::class);
     }
 }
