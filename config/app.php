@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use Spatie\Html\HtmlServiceProvider;
 
 return [
 
@@ -180,7 +181,7 @@ return [
         App\Providers\NovaServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
+        HtmlServiceProvider::class,
     ],
 
     /*
@@ -203,7 +204,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
+        'Html' => Spatie\Html\Facades\Html::class,
+    // ...
     ])->toArray()
 
 ];

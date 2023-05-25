@@ -14,7 +14,7 @@ class ShowPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param User $user
+     * @param User|null $user
      * @return mixed
      */
     public function viewAny(?User $user = null): bool
@@ -45,9 +45,9 @@ class ShowPolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @return mixed
+     * @return bool
      */
-    public function update(User $user, Show $show)
+    public function update(User $user, Show $show): bool
     {
         return $user->isAdmin();
     }
@@ -55,9 +55,9 @@ class ShowPolicy
     /**
      * Determine whether the user can delete the model.
      *
-     * @return mixed
+     * @return bool
      */
-    public function delete(User $user, Show $show)
+    public function delete(User $user, Show $show): bool
     {
         return $user->isAdmin();
     }
@@ -65,9 +65,9 @@ class ShowPolicy
     /**
      * Determine whether the user can restore the model.
      *
-     * @return mixed
+     * @return bool
      */
-    public function restore(User $user, Show $show)
+    public function restore(User $user, Show $show): bool
     {
         return $user->isAdmin();
     }

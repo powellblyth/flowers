@@ -33,8 +33,61 @@
 
         @foreach ($categories as $category)
             <p>{{$category->numbered_name}} <small>{{$category->notes}}</small></p>
+            @can('storeResults', $show)
+
+                {{--            @if (array_key_exists($category->id, $winners_by_category) && count($winners_by_category[$category->id]) > 0)--}}
+                {{--                <td>--}}
+                {{--                    @if (array_key_exists('1', $winners_by_category[$category->id]))--}}
+                {{--                        {{$winners[$winners_by_category[$category->id]['1']['entrant']]->printable_name}}--}}
+                {{--                        ({{$winners_by_category[$category->id]['1']['points']}} points)--}}
+                {{--                    @else--}}
+                {{--                        ---}}
+                {{--                    @endif--}}
+                {{--                </td>--}}
+                {{--                <td>--}}
+                {{--                    @if (array_key_exists('2', $winners_by_category[$category->id]))--}}
+                {{--                        {{$winners[$winners_by_category[$category->id]['2']['entrant']]->printable_name}}--}}
+                {{--                        ({{$winners_by_category[$category->id]['2']['points']}} points)--}}
+                {{--                    @else--}}
+                {{--                        ---}}
+                {{--                    @endif--}}
+                {{--                </td>--}}
+                {{--                <td>--}}
+                {{--                    @if (array_key_exists('3', $winners_by_category[$category->id]))--}}
+                {{--                        {{$winners[$winners_by_category[$category->id]['3']['entrant']]->printable_name}}--}}
+                {{--                        ({{$winners_by_category[$category->id]['3']['points']}} points)--}}
+                {{--                    @else--}}
+                {{--                        ---}}
+                {{--                    @endif--}}
+                {{--                </td>--}}
+                {{--                <td>--}}
+                {{--                    @if (array_key_exists('commended', $winners_by_category[$category->id]))--}}
+                {{--                        {{$winners[$winners_by_category[$category->id]['commended']['entrant']]->printable_name}}--}}
+                {{--                        ({{$winners_by_category[$category->id]['commended']['points']}} points)--}}
+                {{--                    @else--}}
+                {{--                        ---}}
+                {{--                    @endif--}}
+                {{--                </td>--}}
+                {{--            @else--}}
+                {{--                <td colspan="4">@lang('Unavailable')</td>--}}
+                {{--            @endif--}}
+
+            @endcan
         @endforeach
 
+        @can('storeResults', $show)
+            @if($cup->is_points_based)
+                @foreach ($cup->getWinnersForShow($show)->winners()  as $winner)
+                    {{$winner->full_name}}
+                @endforeach
+            @else
+                <livewire:cup-winner-chooser
+                    :cup="$cup"
+                    :categories="$categories->pluck('numbered_name', 'id')"
+                    :show="$show"
+                ></livewire:cup-winner-chooser>
+            @endif
+        @endcan
 
     </x-layout.intro-para>
 </x-app-layout>

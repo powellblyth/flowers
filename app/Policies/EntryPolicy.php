@@ -51,9 +51,11 @@ class EntryPolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @return mixed
+     * @param User $user
+     * @param Entry $entry
+     * @return bool
      */
-    public function update(User $user, Entry $entry)
+    public function update(User $user, Entry $entry): bool
     {
         return $entry->entrant->user->id === $user->id;
     }

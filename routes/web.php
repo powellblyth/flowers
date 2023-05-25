@@ -57,9 +57,9 @@ Route::get('/cups/{cup}', [CupController::class, 'show'])->name('cups.show');
 
 Route::group(['middleware' => 'is_admin'], function () {
 
-    Route::post('/cups/{id}/directresultpick', [CupController::class, 'directResultPick'])
-        ->name('cup.directResultPick');
-    Route::post('/cups/{id}/directResultSetWinner', [CupController::class, 'directResultSetWinner'])
+//        Route::post('/cups/{id}/directresultpick', [CupController::class, 'directResultPick'])
+//        ->name('cup.directResultPick');
+    Route::post('/cups/{cup}/directResultSetWinner', [CupController::class, 'directResultSetWinner'])
         ->name('cup.directResultSetWinner');
 
     Route::post('/sections/{section}/storeresults', [SectionController::class, 'storeresults'])

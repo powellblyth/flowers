@@ -169,23 +169,23 @@ class CupController extends Controller
         ]);
     }
 
-    public function directResultPick(Request $request, int $id): View
-    {
-        $cup = Cup::find($id);
-        $entries = Entry::with('entrant')->where('category_id', $request->post('category'))->get();
+//    public function directResultPick(Request $request, int $id): View
+//    {
+//        $cup = Cup::find($id);
+//        $entries = Entry::with('entrant')->where('category_id', $request->post('category'))->get();
+//
+////        dd($request);
+//        return view('cups.directResultPickEntrant', [
+//            'entries' => $entries,
+//            'id' => $id,
+//            'thing' => $cup,
+//            'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
+//    }
 
-//        dd($request);
-        return view('cups.directResultPickEntrant', [
-            'entries' => $entries,
-            'id' => $id,
-            'thing' => $cup,
-            'isAdmin' => Auth::check() && Auth::User()->isAdmin()]);
-    }
-
-    public function directResultSetWinner(Request $request, Cup $id): \Illuminate\Http\RedirectResponse
+    public function directResultSetWinner(Request $request, Cup $cup): \Illuminate\Http\RedirectResponse
     {
-        $cup = $id; // No idea jsut wevvs
-        $entry = Entry::findOrFail($request->entry);
+//        $cup = $id; // No idea just wevvs
+        $entry = Entry::findOrFail($request->post('entry_id'));
         $cupDirectWinner = new CupDirectWinner();
         $cupDirectWinner->show()->associate($entry->show);
         $cupDirectWinner->cup()->associate($cup);
@@ -193,17 +193,17 @@ class CupController extends Controller
         $cupDirectWinner->winningCategory()->associate($entry->category);
         $cupDirectWinner->save();
 
-        return redirect(route('cups.show', $cup));
+        return redirect(route('cups.index').'#cup_'.$cup->id);
     }
 
-    public function directResultSetWinnerPerson(Request $request, Cup $cup): \Illuminate\Http\RedirectResponse
-    {
-        $cupDirectWinner = new CupDirectWinner();
-        $cupDirectWinner->cup()->associate($cup);
-        $cupDirectWinner->save();
-
-        return redirect(route('cups.show', $cup));
-    }
+//    public function directResultSetWinnerPerson(Request $request, Cup $cup): \Illuminate\Http\RedirectResponse
+//    {
+//        $cupDirectWinner = new CupDirectWinner();
+//        $cupDirectWinner->cup()->associate($cup);
+//        $cupDirectWinner->save();
+//
+//        return redirect(route('cups.show', $cup));
+//    }
 
     public function adminindex(Request $request): View
     {

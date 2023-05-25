@@ -6,32 +6,45 @@
 
     <div style="text-align:left;vertical-align:middle">
 
-        {{Form::open(['route'=>array('sections.storeresults',$show)])}}
+        <form method="post" action="{{route('sections.storeresults',$show)}}">
+            @csrf
         @foreach ($section->categories()->with(['entries.entrant'])->forShow($show)->orderBy('sortorder')->get() as $category)
             {{$category->numbered_name}}<br/>
             <b>Entrants:</b>
             @foreach ($category->entries->sortBy('winningplace') as $entry)
                 <div style="display:inline-block;background-color:{{$entry->winning_colour ?? '#d9edf7'}}; margin:2px; padding:2px;">
                     <span style="{{$entry->winning_colour ? 'color:'.$entry->winning_colour .'; -webkit-filter: invert(100%);filter: invert(100%);;font-weight:bold':''}}">
-                    {{ Form::label('first_place', $entry->entrant->entrant_number . ' ' .$entry->entrant->full_name, ['class' => 'control-label']) }}
+                        <label for="first_place" class="control-label">{{$entry->entrant->entrant_number . ' ' .$entry->entrant->full_name}}</label>
                     <br/>
-                    {{Form::select('entries['.$entry->id.']',
-                            $winning_places,
+                        <select name="entries[{{$entry->id}}]"
+                                {{!empty($entry->winningplace) ? 'disabled="disabled"' : '' }}
+                                class="form-control"
+                                style="width:200px; font-weight:bold">
+                            @foreach ($winning_places as $winningPlaceId => $winningPlace)
+                                <option value="{{$winningPlaceId}}"
+                                @if($winningPlaceId == $entry->winningplace)
+                                    selected="selected"
+                                    @endif
+                                >{{ucwords($winningPlace)}}</option>
+                            @endforeach
+                        </select>
+{{--                    {{Form::select('entries['.$entry->id.']',--}}
+{{--                            $winning_places,--}}
 
-                            $entry->winningplace,
-                            ['disabled' => !empty($entry->winningplace),
-                            'class' => 'form-control',
-                            'style'=>'width:200px; font-weight:bold'])}}
-                    </span>
+{{--                            $entry->winningplace,--}}
+{{--                            ['disabled' => ,--}}
+{{--                            'class' => 'form-control',--}}
+{{--                            'style'=>'width:200px; font-weight:bold'])}}--}}
+{{--                    </span>--}}
                 </div>
             @endforeach
             <hr/>
         @endforeach
 
 
-        {{ Form::submit('Store Results', ['class' => 'button btn btn-primary']) }}
+            <input type="submit" class="button btn btn-primary">@lang('Store Results')</input>
         <br/><br/><br/>
-        {{ Form::close() }}
+        </form>
     </div>
 
 
