@@ -21,7 +21,7 @@ class EntrantPolicy
     /**
      * Determine whether the user can view any models.
      *
-     * @param User $user
+     * @param User|null $user
      * @return mixed
      */
     public function viewAny(?User $user = null): bool
@@ -52,17 +52,17 @@ class EntrantPolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @return mixed
+     * @return bool
      */
-    public function update(User $user, Entrant $entrant)
+    public function update(User $user, Entrant $entrant): bool
     {
-        return $user->isAdmin();
+        return $user->is($entrant->user) ;
     }
 
     /**
      * Determine whether the user can delete the model.
      *
-     * @return mixed
+     * @return bool
      */
     public function delete(User $user, Entrant $entrant)
     {
