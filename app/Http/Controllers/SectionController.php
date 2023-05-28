@@ -31,7 +31,7 @@ class SectionController extends Controller
     /**
      * @throws AuthorizationException
      */
-    public function resultsentry(Request $request, Section $section): View
+    public function resultsEntryForm(Request $request, Section $section): View
     {
         $show = $this->getShowFromRequest($request);
         $this->authorize('enterResults', Entry::class);

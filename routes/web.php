@@ -55,7 +55,7 @@ Route::get('/cups/printableresults', [CupController::class, 'printableresults'])
 Route::get('/cups/{cup}', [CupController::class, 'show'])->name('cups.show');
 
 
-Route::group(['middleware' => 'is_admin'], function () {
+Route::group(['middleware' => ['is_admin', 'auth']], function () {
 
 //        Route::post('/cups/{id}/directresultpick', [CupController::class, 'directResultPick'])
 //        ->name('cup.directResultPick');
@@ -64,7 +64,7 @@ Route::group(['middleware' => 'is_admin'], function () {
 
     Route::post('/sections/{section}/storeresults', [SectionController::class, 'storeresults'])
         ->name('sections.storeresults');
-    Route::get('/sections/{section}/resultsentry', [SectionController::class, 'resultsentry'])
+    Route::get('/sections/{section}/resultsentry', [SectionController::class, 'resultsEntryForm'])
         ->name('sections.resultsentry');
     Route::get('/categories/printtabletop', [CategoryController::class, 'printcards'])
         ->name('category.tabletopprint');
