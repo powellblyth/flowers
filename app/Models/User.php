@@ -174,9 +174,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password', 'auth_token', 'password_reset_token',
-        'telephone', 'address_1', 'address_2', 'address_town', 'postcode', 'retain_data_opt_in',
-        'can_retain_data', 'email_opt_in', 'can_email', 'sms_opt_in', 'can_sms', 'sms_opt_in', 'can_post',
-        'post_opt_in',
+        'telephone', 'address_1', 'address_2', 'address_town', 'postcode',
+        'can_retain_data', 'retain_data_opt_in', 'retain_data_opt_out',
+        'can_email', 'email_opt_in', 'email_opt_out',
+        'can_sms', 'sms_opt_in', 'sms_opt_out',
+        'can_post', 'post_opt_in', 'post_opt_out',
 
     ];
 

@@ -65,10 +65,6 @@
                <label for="can_post" class="block">
                 <input type="checkbox" {{old('can_post') == '1' ? 'checked="checked"' : ''}} id="can_post" name="can_post" class="m-4" value="1"/>May we post the odd letter to you
                </label>
-{{--            <p>{{ Form::checkbox('can_retain_data', 1, old('can_retain_data')) }} {{ Form::label('can_retain_data', 'Check here to allow retain your information for future shows?:', ['class' => 'control-label']) }}</p>--}}
-{{--            <p>{{ Form::checkbox('can_email', 1, old('can_email')) }} {{ Form::label('can_email', 'Check here to allow us to contact you by email (occasionally)?:', ['class' => 'control-label']) }}</p>--}}
-{{--            <p>{{ Form::checkbox('can_sms', 1, old('can_sms')) }} {{ Form::label('can_sms', 'Check here to allow us contact you by SMS (very infrequent)?:', ['class' => 'control-label']) }}</p>--}}
-{{--            <p>{{ Form::checkbox('can_post', 1, old('can_post')) }} {{ Form::label('can_post', 'Check here to allow us contact you by mail (occasionally)?:', ['class' => 'control-label']) }}</p>--}}
             </div>
 
             <div class="flex items-center justify-end mt-4">

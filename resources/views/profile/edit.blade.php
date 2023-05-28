@@ -66,7 +66,8 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Change Password (Optional)')"/>
+                <x-label for="password"
+                         :value="__('Change Password (Optional - leave blank if you do not wish to change this)')"/>
 
                 <x-input id="password" class="block mt-1 w-full"
                          type="password"
@@ -80,6 +81,26 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                          type="password"
                          name="password_confirmation"/>
+            </div>
+            <div class="mt-4">
+                <div class="mt-4">
+                    {!! config('static_content.privacy_content') !!}
+                </div>
+                <div class="mt-4">
+                    <label for="can_retain_data" class="block">
+                        <input type="checkbox" {{$user->can_retain_data == '1' ? 'checked="checked"' : ''}} id="can_retain_data" name="can_retain_data" class="m-4" value="1"/>Check here to retain your data for future shows
+                    </label>
+                    <label for="can_email" class="block">
+                        <input type="checkbox" {{$user->can_email == '1' ? 'checked="checked"' : ''}} id="can_email" name="can_email" class="m-4" value="1"/>May we email you occasionally?
+                    </label>
+                    <label for="can_sms" class="block">
+                        <input type="checkbox" {{$user->can_sms == '1' ? 'checked="checked"' : ''}} id="can_sms" name="can_sms" class="m-4" value="1"/>May we Text you occasionally?
+                    </label>
+                    <label for="can_post" class="block">
+                        <input type="checkbox" {{$user->can_post == '1' ? 'checked="checked"' : ''}} id="can_post" name="can_post" class="m-4" value="1"/>May we post the odd letter to you
+                    </label>
+                </div>
+
             </div>
 
             <div class="flex items-center justify-end mt-4">

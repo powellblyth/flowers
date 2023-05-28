@@ -35,6 +35,7 @@ class UserRequest extends FormRequest
 //                'required', 'email', Rule::unique((new UserResource)->getTable())->ignore($this->route()->user->id ?? null)
             ],
             'address_1' => ['required_without:email', 'max:255'],
+            'address_2' => ['required_without:email', 'max:255'],
             'address_town' => ['required_without:email', 'max:255'],
             'postcode' => ['required_without:email', 'max:10'],
         ];

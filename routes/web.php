@@ -93,7 +93,7 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/entrants/{entrant}/edit', [EntrantController::class, 'edit'])->name('entrants.edit');
 
 
-    Route::resource('users', UserController::class)->except(['index']);
+    Route::resource('users', UserController::class)->except(['index','update']);
 
 //    Route::post('/entrants/{entrant}/update', [EntrantController::class, 'update'])
 //        ->name('entrants.update');

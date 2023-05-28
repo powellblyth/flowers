@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\ProfileRequest;
+use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -34,6 +35,18 @@ class ProfileController extends Controller
      */
     public function update(ProfileRequest $request): RedirectResponse
     {
+        $optIns = ['retain_data', 'post', 'sms', 'email'];
+        $optInRequest = [];
+
+        foreach ($optIns as $optin) {
+            if ($request->post('can_' . $optin) == '1') {
+                $optInRequest['can_' . $optin] = 1;
+                $optInRequest[$optin . '_opt_in'] = Carbon::now();
+            } else {
+                $optInRequest['can_' . $optin] = 0;
+                $optInRequest[$optin . '_opt_out'] = Carbon::now();
+            }
+        }
         auth()->user()->update(
             $request
                 ->merge(
@@ -43,6 +56,7 @@ class ProfileController extends Controller
                              : ''
                     ]
                 )
+                ->merge($optInRequest)
                 ->except(
                 // If the password is not set, ignore it
                     [$request->get('password') ? '' : 'password']

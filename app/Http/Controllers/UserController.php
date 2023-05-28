@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\Entrant;
 use App\Models\MembershipPurchase;
 use App\Models\User;
@@ -22,7 +23,7 @@ class UserController extends Controller
     use HasShowSwitcher;
 
     /**
-     * @var mixed[]
+     * @var array
      */
     protected array $paymentTypes = array('cash' => 'cash',
                                           'cheque' => 'cheque',
@@ -32,7 +33,7 @@ class UserController extends Controller
                                           'refund_online' => 'refund_online',
                                           'refund_cheque' => 'refund_cheque');
     /**
-     * @var mixed[]
+     * @var array
      */
     protected array $membershipTypes = array(
         'single' => 'single',
@@ -104,7 +105,7 @@ class UserController extends Controller
         }
 
         return view('users.show', [
-            'user' => (new \App\Http\Resources\UserResource($user))->toArray(new Request(['show' => $show])),
+            'user' => (new UserResource($user))->toArray(new Request(['show' => $show])),
             //            'user' => $user,
             'paid' => $totalPaid,
             'membership_fee' => $membershipFee,
@@ -176,28 +177,6 @@ class UserController extends Controller
             'users.edit',
             ['user' => $user, 'privacyContent' => config('static_content.privacy_content')]
         );
-    }
-
-    /**
-     * Update the specified user in storage
-     *
-     * @return RedirectResponse
-     * @throws AuthorizationException
-     */
-    public function update(UserRequest $request, User $user)
-    {
-        $this->authorize('update', $user);
-        $user->update(
-            $request
-                ->merge(
-                    ['password' => Hash::make($request->get('password'))]
-                )
-                ->except(
-                    [$request->get('password') ? '' : 'password']
-                )
-        );
-
-        return redirect()->route('users.index')->withStatus(__('Family successfully updated.'));
     }
 
     /**
