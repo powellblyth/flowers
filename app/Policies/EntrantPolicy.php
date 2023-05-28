@@ -99,7 +99,7 @@ class EntrantPolicy
      */
     public function seeDetailedInfo(User $user, Entrant $entrant)
     {
-        return $user->isAdmin() || $entrant->user instanceof User && ($user->id === $entrant->user->id);
+        return $user->isAdmin() || $entrant->user instanceof User && $user->is($entrant->user);
     }
 
 }
