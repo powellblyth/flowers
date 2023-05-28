@@ -10,13 +10,9 @@
     <x-navigation.show route="entries.entryCard" :show="$show"/>
 
     @if ($can_enter)
-        {{ Form::open(
-        [
-            'route' => ['entries.store']]
-            )
-            }}
+        <form method="POST" action="{{route('entries.store')}}">
     @endif
-    <div class="px-4">
+    <form class="px-4">
         <div class=" bg-white top-0 sticky p-2 flex">
             <div>
                 <h3 class="text-xl ">
@@ -105,7 +101,7 @@
 
         @if ($can_enter)
 
-            {{ Form::close() }}
+            </form>
 
         @endif
         <div class="row">
