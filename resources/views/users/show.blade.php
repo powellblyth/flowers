@@ -91,6 +91,7 @@
                              class="bg-primary-200 hover:bg-primary text-white font-bold py-2 px-4 rounded">@lang('Add another family member')</a>
                 </x-button>
             </div>
-        {{ Form::close() }}
+        </div>
+
     </x-layout.intro-para>
 </x-app-layout>
