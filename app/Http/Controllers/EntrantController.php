@@ -183,6 +183,7 @@ class EntrantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param Entrant $entrant
      * @return Application|Factory|\Illuminate\Contracts\View\View
      * @throws AuthorizationException
      */

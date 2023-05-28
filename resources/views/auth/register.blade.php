@@ -49,6 +49,28 @@
                                 name="password_confirmation" required />
             </div>
 
+            <div class="mt-4">
+            {!! config('static_content.privacy_content') !!}
+            </div>
+            <div class="mt-4">
+               <label for="can_retain_data" class="block">
+                <input type="checkbox" {{old('can_retain_data') == '1' ? 'checked="checked"' : ''}} id="can_retain_data" name="can_retain_data" class="m-4" value="1"/>Check here to retain your data for future shows
+               </label>
+               <label for="can_email" class="block">
+                <input type="checkbox" {{old('can_email') == '1' ? 'checked="checked"' : ''}} id="can_email" name="can_email" class="m-4" value="1"/>May we email you occasionally?
+               </label>
+               <label for="can_sms" class="block">
+                <input type="checkbox" {{old('can_sms') == '1' ? 'checked="checked"' : ''}} id="can_sms" name="can_sms" class="m-4" value="1"/>May we Text you occasionally?
+               </label>
+               <label for="can_post" class="block">
+                <input type="checkbox" {{old('can_post') == '1' ? 'checked="checked"' : ''}} id="can_post" name="can_post" class="m-4" value="1"/>May we post the odd letter to you
+               </label>
+{{--            <p>{{ Form::checkbox('can_retain_data', 1, old('can_retain_data')) }} {{ Form::label('can_retain_data', 'Check here to allow retain your information for future shows?:', ['class' => 'control-label']) }}</p>--}}
+{{--            <p>{{ Form::checkbox('can_email', 1, old('can_email')) }} {{ Form::label('can_email', 'Check here to allow us to contact you by email (occasionally)?:', ['class' => 'control-label']) }}</p>--}}
+{{--            <p>{{ Form::checkbox('can_sms', 1, old('can_sms')) }} {{ Form::label('can_sms', 'Check here to allow us contact you by SMS (very infrequent)?:', ['class' => 'control-label']) }}</p>--}}
+{{--            <p>{{ Form::checkbox('can_post', 1, old('can_post')) }} {{ Form::label('can_post', 'Check here to allow us contact you by mail (occasionally)?:', ['class' => 'control-label']) }}</p>--}}
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
