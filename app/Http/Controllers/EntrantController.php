@@ -120,11 +120,11 @@ class EntrantController extends Controller
      * @param Request $request
      * @param Entrant $entrant
      * @param array $showData
-     * @return Response
+     * @return Response|RedirectResponse
      * @throws AuthorizationException
      * @throws Exception
      */
-    public function show(Request $request, Entrant $entrant, array $showData = []): Response
+    public function show(Request $request, Entrant $entrant, array $showData = []): Response|RedirectResponse
     {
         $totalPrizes = 0;
         $membershipFee = 0;

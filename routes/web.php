@@ -92,7 +92,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/entry/creates', [EntryController::class, 'creates'])->name('entry.creates');
 //    Route::get('/entrants/{entrant}/edit', [EntrantController::class, 'edit'])->name('entrants.edit');
 
-    Route::resource('entrants', EntrantController::class);
 
     Route::resource('users', UserController::class)->except(['index']);
 
@@ -100,6 +99,9 @@ Route::group(['middleware' => 'auth'], function () {
 //        ->name('entrants.update');
     Route::post('/entrants/{id}/optins', [EntrantController::class, 'optins'])
         ->name('entrants.optins');
+
+    Route::resource('entrants', EntrantController::class)->except(['showen']);
+
 
     Route::get('/users/{user}/{show?}', [UserController::class, 'show'])->name('users.showfiltered');
 

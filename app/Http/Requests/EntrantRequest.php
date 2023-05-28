@@ -32,8 +32,8 @@ class EntrantRequest extends FormRequest
                           'integer',
                           Rule::exists('teams', 'id')->where(function ($query) {
                               $query
-                                  ->where('min_age', '<=', $this->input('age'))
-                                  ->where('max_age', '>=', $this->input('age'));
+                                  ->where('min_age', '<=', (int)$this->input('age'))
+                                  ->where('max_age', '>=', (int)$this->input('age'));
                               return $query;
                           })],
             'can_retain_data' => 'sometimes:boolean',
