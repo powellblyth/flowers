@@ -25,10 +25,13 @@ class SitemapController extends Controller
                 'lastmod' => $publishDate->format('Y-m-d'),
                 'loc' => route('cups.index') . '?show_id=' . $show->id,
             ];
-            $urls[] = [
-                'lastmod' => $publishDate->format('Y-m-d'),
-                'loc' => route('raffle.index') . '?show_id=' . $show->id,
-            ];
+            // don't bother if there are no prizes
+            if ($show->rafflePrizes()->count() > 0) {
+                $urls[] = [
+                    'lastmod' => $publishDate->format('Y-m-d'),
+                    'loc' => route('raffle.index') . '?show_id=' . $show->id,
+                ];
+            }
         }
 
         foreach (Cup::inOrder()->get() as $cup) {
