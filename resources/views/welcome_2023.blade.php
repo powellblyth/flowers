@@ -13,8 +13,9 @@
                     wide. We have a wide range of entrants from young to old, experienced to absolute novice.</p>
                 <p class="my-2">You don't need to be an expert, you don't need to be a member of the society to join, we are <b>Open to All</b></p>
                 @auth
-                    <x-headers.h2 class="my-8">Go to <a class="underline" href="{{route('dashboard')}}">Your
-                            Dashboard</a> to get started
+                    <x-headers.h2 class="my-8">Go to
+                        <a class="underline" href="{{route('family')}}">Your Family Page</a>
+                        to get started
                     </x-headers.h2>
                 @endauth
                 @guest
