@@ -79,7 +79,13 @@ class Show extends Model
     /****   Scopes   ****/
     public function scopePublic(Builder $query): Builder
     {
-        return $query->whereIn($this->getTable().'.status', [self::STATUS_CURRENT, self::STATUS_PASSED]);
+        return $query->whereIn($this->getTable() . '.status', [self::STATUS_CURRENT, self::STATUS_PASSED]);
+    }
+
+    /****   Scopes   ****/
+    public function scopeNewestFirst(Builder $query): Builder
+    {
+        return $query->orderBy($this->getTable() . '.start_date', 'desc');
     }
 
     public function isClosedToEntries(): bool

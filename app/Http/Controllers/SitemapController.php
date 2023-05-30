@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cup;
 use App\Models\Show;
 use Carbon\Carbon;
 use Illuminate\Http\Response;
@@ -13,7 +14,7 @@ class SitemapController extends Controller
         $urls = [['lastmod' => date('Y-m-d'), 'loc' => route('home')]];
         // Content Pages
 //        $urls[] = ['lastmod' => '2022-09-01', 'loc' => route('about')];
-        foreach (Show::public()->get() as $show) {
+        foreach (Show::public()->newestFirst()->get() as $show) {
             /** @var Show $show */
             $publishDate = ($show->ends_date->isBefore(Carbon::now()) ? $show->ends_date : Carbon::now());
             $urls[] = [
@@ -29,9 +30,17 @@ class SitemapController extends Controller
                 'loc' => route('raffle.index') . '?show_id=' . $show->id,
             ];
         }
-        $urls[] = ['lastmod' => date('Y-m-d'), 'loc' => route('categories.index')];
-        $urls[] = ['lastmod' => date('Y-m-d'), 'loc' => route('cups.index')];
-        $urls[] = ['lastmod' => date('Y-m-d'), 'loc' => route('raffle.index')];
+
+        foreach (Cup::inOrder()->get() as $cup) {
+            $urls[] = [
+                'lastmod' => date('Y-m-d'),
+                'loc' => route('cups.show', ['cup' => $cup])
+            ];
+        }
+
+//        $urls[] = ['lastmod' => date('Y-m-d'), 'loc' => route('categories.index')];
+//        $urls[] = ['lastmod' => date('Y-m-d'), 'loc' => route('cups.index')];
+//        $urls[] = ['lastmod' => date('Y-m-d'), 'loc' => route('raffle.index')];
 
 
         $urls[] = ['lastmod' => '2022-09-01', 'loc' => route('login')];
