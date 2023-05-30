@@ -22,7 +22,7 @@
             <x-headers.h2>{{ $donor->name }}</x-headers.h2>
             <p>{{$donor->description}}</p>
             @if($donor->website)
-                <p>You can visit the website of <b>{{$donor->name}}</b> at <a href="{{$donor->website}}?utm_source=phs&utm_campaign=raffle&utm_value={{$show->name}}">{{$donor->website}}</p>
+                <p>You can visit the website of <b>{{$donor->name}}</b> at <a href="{{$donor->website}}?utm_source=phs&utm_campaign=raffle&utm_value={{urlencode($show->name)}}">{{$donor->website}}</p>
             @endif
             @if($donor->telephone)
                 <p>You can call <b>{{$donor->name}}</b> on <a href="tel:{{str_replace(' ', '', $donor->telephone)}}">{{$donor->telephone}}</p>

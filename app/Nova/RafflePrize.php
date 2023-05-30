@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -63,6 +64,7 @@ class RafflePrize extends Resource
             Text::make(__('Prize Title'), 'name')->nullable(),
             Textarea::make(__('Prize Description '), 'description')->nullable(),
             Textarea::make(__('Notes'), 'notes')->nullable(),
+            Boolean::make(__('Is Offered'), 'is_offered')->default(true),
         ];
     }
 

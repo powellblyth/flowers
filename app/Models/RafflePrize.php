@@ -40,7 +40,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|RafflePrize wherePrizeDescription($value)
  * @method static Builder|RafflePrize wherePrizeTitle($value)
  * @method static Builder|RafflePrize whereRaffleDonorId($value)
- * @method static Builder|RafflePrize whereShowId($value)
+ * @method static Builder|RafflePrize whereS§howId($value)
  * @method static Builder|RafflePrize whereUpdatedAt($value)
  * @method static Builder|RafflePrize whereWinnerId($value)
  */
@@ -50,6 +50,7 @@ class RafflePrize extends Model
     use HasFactory;
 
     public $attributes = [
+        'is_offered' => true,
     ];
 
     public $casts = [
