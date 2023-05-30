@@ -27,7 +27,7 @@
             @if($donor->telephone)
                 <p>You can call <b>{{$donor->name}}</b> on <a href="tel:{{str_replace(' ', '', $donor->telephone)}}">{{$donor->telephone}}</p>
             @endif
-            <x-headers.h3>Prizes offered for the {{$show->name}} show</x-headers.h3>
+            <x-headers.h3>Prize offered for the {{$show->name}} show</x-headers.h3>
 
         @foreach (
                 $donor->rafflePrizes()
