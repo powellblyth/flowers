@@ -22,8 +22,8 @@ class Show extends Component
     public function render(): \Closure|\Illuminate\Contracts\View\View|string
     {
         return view('components.navigation.show', [
-            'shows' => \App\Models\Show::orderBy('start_date')
-                ->public()
+            'shows' => \App\Models\Show::public()
+                ->newestFirst()
                 ->get()
                 ,
             'route' => $this->route,
