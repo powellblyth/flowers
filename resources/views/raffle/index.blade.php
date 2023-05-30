@@ -21,7 +21,7 @@
         <x-layout.intro-para class="py-2">
             <x-headers.h2>{{ $donor->name }}</x-headers.h2>
             @if($donor->website)
-                <p><a href="{{$donor->website}}?utm_source=phs&utm_campaign=raffle&utm_value={{urlencode($show->name)}}">{{$donor->website}}
+                <p><a href="{{$donor->website}}?utm_source=phs&utm_campaign=raffle&utm_value={{urlencode($show->name)}}">{{$donor->website}}</a>
                 </p>
                     @endif
             <p>{{$donor->description}}</p>
