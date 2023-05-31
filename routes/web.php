@@ -77,12 +77,14 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('category.tabletopprint');
     Route::get('/categories/printlookup', [CategoryController::class, 'printlookups'])
         ->name('category.lookupprint');
-    Route::get('/entries/printall', [EntryController::class, 'printallcards'])
+    Route::get('/shows/{show}/printAllCards', [EntryController::class, 'printAllCards'])
         ->name('entries.printall');
     Route::get('/judges/printSheets', [\App\Http\Controllers\JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 
-    Route::get('/users/{id}/print', [UserController::class, 'printcards'])
+    Route::get('/users/print/{show}', [UserController::class, 'printcards'])
+        ->name('users.print');
+    Route::get('/user/{user}print/{show}', [UserController::class, 'printcards'])
         ->name('user.print');
 });
 

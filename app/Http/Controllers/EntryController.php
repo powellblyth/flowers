@@ -6,8 +6,10 @@ use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\Section;
+use App\Models\Show;
 use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
+use App\Traits\MakesCards;
 use Carbon\Carbon;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
@@ -21,6 +23,7 @@ use Illuminate\View\View;
 class EntryController extends Controller
 {
     use HasShowSwitcher;
+    use MakesCards;
 
     public function creates(Request $request): RedirectResponse
     {
@@ -40,43 +43,18 @@ class EntryController extends Controller
     /**
      * referenced by nova
      */
-    public function printallcards(Request $request): Application|Factory|\Illuminate\Contracts\View\View
+    public function printAllCards(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
     {
-        $show = $this->getShowFromRequest($request);
-
-        $categoryData = [];
-        $entriesQuery = Entry::join('entrants', 'entries.entrant_id', '=', 'entrants.id')
-            ->join('users', 'users.id', '=', 'entrants.user_id')
-            ->join('categories', 'categories.id', '=', 'entries.category_id')
-            ->where('categories.show_id', $show->id)
-            ->orderBy('users.last_name')
-            ->orderBy('entrants.family_name')
-            ->orderBy('entrant_id');
-
-        if ($request->filled('users')) {
-            $entriesQuery->whereIn('users.id', (array) $request->users);
-        }
-        if ($request->filled('entrants')) {
-            $entriesQuery->whereIn('entrants.id', (array) $request->entrants);
-        }
+        $entriesQuery = $this->getEntriesQuery($show);
         if ($request->filled('since')) {
             $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
         }
-        $cardFronts = [];
-        $cardBacks = [];
 
-        foreach ($entriesQuery->get() as $entry) {
-            /** @var Entry $entry */
-            if ($entry->category) {
-                $categoryData[$entry->category->id] = $entry->category;
-                $cardFronts[] = $entry->getCardFrontData();
-                $cardBacks[] = $entry->getCardBackData();
-            }
-        }
+        $cardData = $this->getCardDataFromEntries($entriesQuery->get());
 
         return view('cards.printcards', [
-            'card_fronts' => $cardFronts,
-            'card_backs' => $cardBacks,
+            'card_fronts' => $cardData['fronts'],
+            'card_backs' => $cardData['backs'],
         ]);
     }
 

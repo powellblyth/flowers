@@ -6,8 +6,10 @@ use App\Http\Requests\UserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Entrant;
 use App\Models\MembershipPurchase;
+use App\Models\Show;
 use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
+use App\Traits\MakesCards;
 use Carbon\Carbon;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
@@ -21,6 +23,7 @@ use Illuminate\View\View;
 class UserController extends Controller
 {
     use HasShowSwitcher;
+    use MakesCards;
 
     /**
      * @var array
@@ -192,4 +195,30 @@ class UserController extends Controller
 
         return redirect()->route('users.index')->withStatus(__('Family successfully deleted.'));
     }
+
+    public function printcards(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
+{
+
+//        $show = $this->getShowFromRequest($request);
+
+//        $categoryData = [];
+    $entriesQuery = $this->getEntriesQuery($show);
+
+//        if ($request->filled('users')) {
+            $entriesQuery->whereIn('users.id', $request->get('users'));
+//        }
+//        if ($request->filled('entrants')) {
+//            $entriesQuery->whereIn('entrants.id', (array) $request->entrants);
+//        }
+    if ($request->filled('since')) {
+        $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
+    }
+
+    $cardData = $this->getCardDataFromEntries($entriesQuery->get());
+
+    return view('cards.printcards', [
+        'card_fronts' => $cardData['fronts'],
+        'card_backs' => $cardData['backs'],
+    ]);
+}
 }

@@ -46,22 +46,36 @@ class PrintAllCardsRedirector extends Action
      *
      * @return mixed
      */
-    public function handle(ActionFields $fields, Collection $shows)
+    public function handle(ActionFields $fields, Collection $showsOrUsers)
     {
         $params = ['since' => $fields->since];
         // Can only do one at once.
-        foreach ($shows as $model) {
+        foreach ($showsOrUsers as $model) {
             switch ($model::class) {
                 case Show::class:
-                    $params['show'] = $model;
+                    return Action::openInNewTab(
+                        route(
+                            'entries.printall',
+                            ['show' => $model, 'since' => $fields->since]
+                        )
+                    );
                     break;
                 case User::class:
-                    $params['users'] = array_merge($params['users'] ?? [], [$model->id]);
+                    return Action::openInNewTab(
+                        route(
+                            'users.print',
+                            [
+                                'users' => $showsOrUsers->pluck('id')->toArray(),
+                                'show' => Show::public()->newestFirst()->first(),
+                                'since' => $fields->since,
+                            ]
+                        )
+                    );
+//                    $params['users'] = array_merge($params['users'] ?? [], [$model->id]);
                     break;
             };
 
         }
-        return Action::openInNewTab(route('entries.printall', $params));
     }
 
     /**
