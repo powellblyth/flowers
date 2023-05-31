@@ -20,13 +20,13 @@ $show = \App\Models\Show::public()->newestFirst()->first();
                             {{ __('My Family') }}
                         </x-nav-link>
                     @endauth
-                    <x-nav-link :href="route('show.categories', ['show'=>$show])" :active="request()->routeIs('categories.index')">
+                    <x-nav-link :href="route('show.categories', ['show'=>$show])" :active="request()->routeIs('show.categories')">
                         {{ __('Categories / Results') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('show.cups', ['show'=>$show])" :active="request()->routeIs('cups.index')">
+                    <x-nav-link :href="route('show.cups', ['show'=>$show])" :active="request()->routeIs('show.cups')">
                         {{ __('Cups') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('show.raffle', ['show'=>$show])" :active="request()->routeIs('raffle.index')">
+                    <x-nav-link :href="route('show.raffle', ['show'=>$show])" :active="request()->routeIs('show.raffle')">
                         {{ __('Raffle') }}
                     </x-nav-link>
                     @guest
