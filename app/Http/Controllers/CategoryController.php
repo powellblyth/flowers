@@ -70,12 +70,11 @@ class CategoryController extends Controller
      *
      * This prints the lookup sheet to look up where entry categories are
      */
-    public function printlookups(Request $request): Factory|View
+    public function printlookups(Request $request, Show $show): Factory|View
     {
-        $show = $this->getShowFromRequest($request);
         $categories = Category::where('show_id', $show->id)
-            ->orderBy('section_id')
-            ->orderBy('sortorder')
+            ->inOrder()
+//            ->orderBy('sortorder')
             ->get();
         $cardFronts = [];
 

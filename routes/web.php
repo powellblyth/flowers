@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EntrantController;
 use App\Http\Controllers\EntryController;
+use App\Http\Controllers\JudgeController;
 use App\Http\Controllers\MembershipPurchaseController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaffleController;
@@ -73,13 +74,13 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('sections.storeresults');
     Route::get('/sections/{section}/resultsentry', [SectionController::class, 'resultsEntryForm'])
         ->name('sections.resultsentry');
-    Route::get('/categories/printtabletop', [CategoryController::class, 'printcards'])
+    Route::get('/shows/{show}/printtabletop', [CategoryController::class, 'printcards'])
         ->name('category.tabletopprint');
-    Route::get('/categories/printlookup', [CategoryController::class, 'printlookups'])
+    Route::get('/show/{show}/printlookup', [CategoryController::class, 'printlookups'])
         ->name('category.lookupprint');
     Route::get('/shows/{show}/printAllCards', [EntryController::class, 'printAllCards'])
         ->name('entries.printall');
-    Route::get('/judges/printSheets', [\App\Http\Controllers\JudgeController::class, 'printSheets'])
+    Route::get('/judges/printSheets', [JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 
     Route::get('/users/print/{show}', [UserController::class, 'printcards'])

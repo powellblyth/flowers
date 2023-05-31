@@ -50,6 +50,7 @@ class PrintTableTopCardsRedirector extends Action
         foreach ($shows as $model) {
             $params['show'] = $model;
             // can only do one show at once
+            break;
         }
         return Action::openInNewTab(route('category.tabletopprint', $params));
     }
