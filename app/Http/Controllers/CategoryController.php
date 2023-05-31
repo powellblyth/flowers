@@ -52,7 +52,7 @@ class CategoryController extends Controller
     {
         $show = $this->getShowFromRequest($request);
         $this->authorize('printCards', Entry::class);
-        $categories = Category::where('show_id', $show->id)->get();
+        $categories = Category::where('show_id', $show->id)->inOrder()->get();
         $cardFronts = [];
 
         foreach ($categories as $category) {
