@@ -37,12 +37,21 @@
 
     <x-layout.intro-para>
         <p>
-            You can see the categories for this show, along with all winners from the {{$show->name}}
-            show, if available, here.
+            @lang(
+    'You can see the categories for this show, along with all winners from the :showName show, if available, here.',
+    ['showName'=>$show->name]
+    )
         </p>
     </x-layout.intro-para>
 
+    @php
+        $totalEntryCount = 0;
+    @endphp
     @foreach ($sections as $section)
+        @php
+            $sectionEntryCount = 0;
+        @endphp
+
         <x-layout.intro-para class="py-2">
             <x-headers.h2>
                 @lang('Section') {{$section->display_name}}
@@ -60,6 +69,11 @@
                 </thead>
                 <tbody class="flex-1 sm:flex-none">
                 @foreach ($show->categories()->with(['section', 'entries', 'entries.entrant'])->forSection($section)->get()->sortBy('sortorder') as $category)
+                    @php
+                        $entriesCount = $category->entries->count();
+                        $sectionEntryCount += $entriesCount;
+                        $totalEntryCount += $entriesCount;
+                    @endphp
                     <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                         <td class="border-grey-light border hover:bg-gray-100 p-3">
                             {{$category->numbered_name}}
@@ -67,10 +81,9 @@
                                 <span class="italic text-sm">{{ $category->notes }}</span>
                             @endif
                         </td>
-                        <td class="border-grey-light border hover:bg-gray-100 p-3 font-weight-bold">
+                        <td class="border-grey-light border hover:bg-gray-100 p-3">
                             <nobr>
-                                <b>
-                                    {{$category->entries->count()}}
+                                <b> {{$entriesCount}}
                                     {{\Illuminate\Support\Str::plural('entry', $category->entries)}}
                                 </b>
                             </nobr>
@@ -89,7 +102,18 @@
                         @endif
                     </tr>
                 @endforeach
+                <tr>
+                    <td colspan="7" class="border-grey-light border hover:bg-gray-100 p-3"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="border-grey-light border hover:bg-gray-100 p-3 font-bold">Total: {{ $sectionEntryCount . ' ' . \Illuminate\Support\Str::plural('entry', $sectionEntryCount); }}</td>
+                </tr>
             </table>
         </x-layout.intro-para>
     @endforeach
+    <x-layout.intro-para class="py-2 font-bold">
+        Entry Count: {{$totalEntryCount .' ' . \Illuminate\Support\Str::plural('entry', $totalEntryCount)}}
+    </x-layout.intro-para>
+
 </x-app-layout>
