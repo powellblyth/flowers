@@ -46,7 +46,7 @@
     @endphp
     @foreach ($cups as $cup)
         <x-layout.intro-para class="py-2">
-            <x-headers.h2><a name="cup_{{$cup->id}}">{{ $cup->name }}</a> <x-button><a href="{{ route('cups.show', ['cup'=>$cup]) }}">Details</x-button></x-headers.h2></a>
+            <x-headers.h2><a name="cup_{{$cup->id}}">{{ $cup->name }}</a> <x-button><a href="{{ route('cups.show', ['cup'=>$cup, 'show'=>$show]) }}">Details</x-button></x-headers.h2></a>
             <div>{{ $cup->winning_criteria }}</div>
             <div>{{ $cup->getJudgesForThisShow($show, 'Judge: ')  }}</div>
 
