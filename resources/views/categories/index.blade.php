@@ -25,12 +25,12 @@
         }
     </style>
     <x-slot name="pageTitle">
-        {{ __('Categories for the '  . $show->name . ' show') }}
+        {{ __('Categories for the :showName show', ['showName'=>$show->name]) }}
     </x-slot>
     <x-slot name="canonical">{{route('show.categories', [$show])}}</x-slot>
     <x-slot name="header">
         <x-headers.h1>
-            {{ __('Categories for the '  . $show->name . ' show') }}
+            {{ __('Categories for the :showName show', ['showName'=>$show->name]) }}
         </x-headers.h1>
     </x-slot>
     <x-navigation.show route="show.categories" :show="$show"/>
@@ -107,13 +107,13 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="border-grey-light border hover:bg-gray-100 p-3 font-bold">Total: {{ $sectionEntryCount . ' ' . \Illuminate\Support\Str::plural('entry', $sectionEntryCount); }}</td>
+                    <td class="border-grey-light border hover:bg-gray-100 p-3 font-bold">@lang('Total:') {{ $sectionEntryCount . ' ' . \Illuminate\Support\Str::plural('entry', $sectionEntryCount); }}</td>
                 </tr>
             </table>
         </x-layout.intro-para>
     @endforeach
     <x-layout.intro-para class="py-2 font-bold">
-        Entry Count: {{$totalEntryCount .' ' . \Illuminate\Support\Str::plural('entry', $totalEntryCount)}}
+        @lang('Entry Count:') {{$totalEntryCount .' ' . \Illuminate\Support\Str::plural('entry', $totalEntryCount)}}
     </x-layout.intro-para>
 
 </x-app-layout>
