@@ -110,7 +110,6 @@ use Laravel\Cashier\Billable;
  * @method static Builder|User whereTrialEndsAt($value)
  * @method static Builder|User whereType($value)
  * @method static Builder|User whereUpdatedAt($value)
- * @mixin \Eloquent
  * @property-read string $safe_email
  * @property string|null $pm_type
  * @property string|null $pm_last_four
@@ -123,6 +122,7 @@ use Laravel\Cashier\Billable;
  * @property bool $is_committee
  * @property-read string $address
  * @method static Builder|User whereIsCommittee($value)
+ * @mixin \Eloquent
  */
 class User extends Authenticatable
 {

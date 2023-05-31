@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  * Class CommitteeMember
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property-read string $address
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Entrant[] $entrants
  * @property-read int|null $entrants_count
@@ -28,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|CommitteeMember newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CommitteeMember newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CommitteeMember query()
+ * @mixin \Eloquent
  */
 class CommitteeMember extends User
 {

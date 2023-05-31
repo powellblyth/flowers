@@ -34,12 +34,12 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Section whereNotes($value)
  * @method static Builder|Section whereNumber($value)
  * @method static Builder|Section whereUpdatedAt($value)
- * @mixin \Eloquent
  * @property bool $is_junior
  * @method static Builder|Section whereIsJunior($value)
  * @property int|null $judge_role_id
  * @property-read \App\Models\JudgeRole|null $judgeRole
  * @method static Builder|Section whereJudgeRoleId($value)
+ * @mixin \Eloquent
  */
 class Section extends Model
 {

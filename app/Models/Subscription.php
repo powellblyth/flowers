@@ -12,7 +12,6 @@ use Illuminate\Support\Carbon;
  * Class Subscriptions
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property int $id
  * @property int $user_id
  * @property string $name
@@ -39,6 +38,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Subscription whereTrialEndsAt($value)
  * @method static Builder|Subscription whereUpdatedAt($value)
  * @method static Builder|Subscription whereUserId($value)
+ * @mixin \Eloquent
  */
 class Subscription extends Model
 {

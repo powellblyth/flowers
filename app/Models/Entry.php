@@ -35,8 +35,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Entry whereUpdatedAt($value)
  * @method static Builder|Entry whereWinningplace($value)
  * @method static Builder|Entry whereYear($value)
- * @mixin \Eloquent
  * @method static Builder|Entry forShow(\App\Models\Show $show)
+ * @mixin \Eloquent
  */
 class Entry extends Model
 {

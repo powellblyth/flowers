@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\RafflePrize;
+use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 
 class RaffleController extends Controller
@@ -16,12 +19,19 @@ class RaffleController extends Controller
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return Response|View
+     * @return RedirectResponse
      */
-    public function index(Request $request): Response|View
+    public function index(Request $request): RedirectResponse
     {
         $show = $this->getShowFromRequest($request);
+        return redirect(
+            route('show.raffle', ['show' => $this->getShowFromRequest($request)]),
+            301
+        );
+    }
 
+    public function forShow(Request $request, ?Show $show)
+    {
         $donors = RafflePrize::with('raffleDonor')
             ->whereBelongsTo($show)
             ->get()

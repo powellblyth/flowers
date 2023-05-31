@@ -13,7 +13,6 @@ use Illuminate\Support\Carbon;
  * Class RaffleDonor
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property int $id
  * @property string $name
  * @property string|null $telephone
@@ -41,6 +40,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|RaffleDonor whereTelephone($value)
  * @method static Builder|RaffleDonor whereUpdatedAt($value)
  * @method static Builder|RaffleDonor whereWebsite($value)
+ * @mixin \Eloquent
  */
 class RaffleDonor extends Model
 {

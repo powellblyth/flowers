@@ -6,6 +6,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
 /**
@@ -36,6 +37,12 @@ use OptimistDigital\NovaSortable\Traits\HasSortableRows;
  * @method static Builder|Show whereStartDate($value)
  * @method static Builder|Show whereStatus($value)
  * @method static Builder|Show whereUpdatedAt($value)
+ * @property string|null $slug
+ * @property-read Collection<int, RafflePrize> $rafflePrizes
+ * @property-read int|null $raffle_prizes_count
+ * @method static Builder|Show newestFirst()
+ * @method static Builder|Show public ()
+ * @method static Builder|Show whereSlug($value)
  * @mixin \Eloquent
  */
 class Show extends Model
@@ -65,6 +72,11 @@ class Show extends Model
     final const STATUS_CURRENT = 'current';
     final const STATUS_PLANNED = 'planned';
     final const STATUS_PASSED = 'passed';
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 
     public function isCurrent(): bool
     {
@@ -111,5 +123,16 @@ class Show extends Model
     public function resultsArePublic(): bool
     {
         return $this->ends_date->isBefore(Carbon::now());
+    }
+
+    /**
+     * @return void
+     */
+    protected static function boot(): void
+    {
+        parent::boot();
+        static::saving(function ($show) {
+            $show->slug = Str::slug($show->name);
+        });
     }
 }

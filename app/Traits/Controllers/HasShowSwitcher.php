@@ -11,19 +11,20 @@ trait HasShowSwitcher
     protected function getShowFromRequest(Request $request, array $extraRelations = []): Show
     {
         $builder = Show::with(array_merge(['categories'], $extraRelations));
-        if ($request->filled('show_id')) {
-            return $builder->findOrFail((int) $request->get('show_id'));
+        if ($request->filled('show_id') || $request->filled('show')) {
+            return $builder->findOrFail((int) $request->get('show_id') ?? $request->get('show'));
         }
-
-        if ($request->filled('show')) {
-            return $builder
-                ->findOrFail((int) $request->get('show'));
-        }
-
         return $builder
             ->where('status', Show::STATUS_CURRENT)
             ->orderBy('start_date', 'DESC')
             ->first();
     }
 
+    protected function getMostRecentShow(array $extraRelations = []): Show
+    {
+        return Show::with(array_merge(['categories'], $extraRelations))
+            ->current()
+            ->latestFirst()
+            ->first();
+    }
 }

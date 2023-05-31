@@ -13,7 +13,6 @@ use Illuminate\Support\Carbon;
  * Class RafflePrize
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property int $id
  * @property int $raffle_donor_id
  * @property int $show_id
@@ -43,6 +42,12 @@ use Illuminate\Support\Carbon;
  * @method static Builder|RafflePrize whereS§howId($value)
  * @method static Builder|RafflePrize whereUpdatedAt($value)
  * @method static Builder|RafflePrize whereWinnerId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|RafflePrize forShow(\App\Models\Show $show)
+ * @method static \Illuminate\Database\Eloquent\Builder|RafflePrize isActive()
+ * @method static \Illuminate\Database\Eloquent\Builder|RafflePrize whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|RafflePrize whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|RafflePrize whereShowId($value)
+ * @mixin \Eloquent
  */
 class RafflePrize extends Model
 {

@@ -49,8 +49,9 @@ use Illuminate\Support\Facades\DB;
  * @method static Builder|Cup whereUpdatedAt($value)
  * @method static Builder|Cup whereWinningBasis($value)
  * @method static Builder|Cup whereWinningCriteria($value)
- * @mixin \Eloquent
  * @property-read bool $is_points_based
+ * @method static Builder|Cup inOrder()
+ * @mixin \Eloquent
  */
 class Cup extends Model
 {

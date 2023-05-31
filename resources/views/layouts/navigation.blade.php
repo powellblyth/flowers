@@ -1,3 +1,6 @@
+@php
+$show = \App\Models\Show::public()->newestFirst()->first();
+@endphp
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,13 +20,13 @@
                             {{ __('My Family') }}
                         </x-nav-link>
                     @endauth
-                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
+                    <x-nav-link :href="route('show.categories', ['show'=>$show])" :active="request()->routeIs('categories.index')">
                         {{ __('Categories / Results') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('cups.index')" :active="request()->routeIs('cups.index')">
+                    <x-nav-link :href="route('show.cups', ['show'=>$show])" :active="request()->routeIs('cups.index')">
                         {{ __('Cups') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('raffle.index')" :active="request()->routeIs('raffle.index')">
+                    <x-nav-link :href="route('show.raffle', ['show'=>$show])" :active="request()->routeIs('raffle.index')">
                         {{ __('Raffle') }}
                     </x-nav-link>
                     @guest

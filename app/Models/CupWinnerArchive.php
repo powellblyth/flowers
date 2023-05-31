@@ -39,11 +39,11 @@ use Illuminate\Support\Carbon;
  * @method static Builder|CupWinnerArchive whereId($value)
  * @method static Builder|CupWinnerArchive whereShowId($value)
  * @method static Builder|CupWinnerArchive whereUpdatedAt($value)
- * @mixin \Eloquent
  * @property-read Collection|CupWinnerArchiveWinner[] $winners
  * @property-read int|null $winners_count
  * @method static Builder|CupWinnerArchive whereCupWinnerEntrantId($value)
  * @method static Builder|CupWinnerArchive whereCupWinnerPoints($value)
+ * @mixin \Eloquent
  */
 class CupWinnerArchive extends Model
 {

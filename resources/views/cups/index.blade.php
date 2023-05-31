@@ -27,13 +27,13 @@
     <x-slot name="pageTitle">
         {{ __('Cups for our ' . $show->name.' show') }}
     </x-slot>
-    <x-slot name="canonical">{{route('cups.index').'?show_id=' . (int)$show->id }}</x-slot>
+    <x-slot name="canonical">{{route('show.cups', [$show]) }}</x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Cups for our ' . $show->name.' show') }}
         </x-headers.h1>
     </x-slot>
-    <x-navigation.show :show="$show"/>
+    <x-navigation.show :show="$show" route="show.cups"/>
 
     <x-layout.intro-para>
         <p>

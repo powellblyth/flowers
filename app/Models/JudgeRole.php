@@ -15,7 +15,6 @@ use Illuminate\Support\Carbon;
  * Class JudgeRole
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property int $id
  * @property string $label
  * @property Carbon|null $created_at
@@ -37,6 +36,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|JudgeRole whereId($value)
  * @method static Builder|JudgeRole whereLabel($value)
  * @method static Builder|JudgeRole whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class JudgeRole extends Model
 {

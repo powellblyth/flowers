@@ -2,7 +2,7 @@
     <x-slot name="pageTitle">
         {{ __( $cup->name . ' cup in ' . $show->name) }}
     </x-slot>
-    <x-slot name="canonical">{{route('cups.show', [$show]) }}</x-slot>
+    <x-slot name="canonical">{{route('cups.show', ['show' => $show, 'cup' => $cup]) }}</x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Cup ' . $cup->name . ' ' . $show->name) }}

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Entry;
 use App\Models\Section;
+use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -15,12 +17,22 @@ class CategoryController extends Controller
 
     /**
      * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function index(Request $request): View
+    public function index(Request $request): RedirectResponse
     {
-        $show = $this->getShowFromRequest($request, ['categories.entries', 'categories.entries.entrant', 'categories.section']);
-        $sections = Section::orderBy('number', 'asc')->get();
+        $show = $this->getShowFromRequest($request);
+        return redirect(route('show.categories', ['show' => $show]), 301);
+    }
 
+    /**
+     * Display a listing of the resource.
+     */
+    public function forShow(Request $request, Show $show): View
+    {
+        $sections = Section::orderBy('number', 'asc')->get();
 
         return view(
             'categories.index',

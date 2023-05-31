@@ -38,6 +38,7 @@ use Laravel\Nova\Fields\BelongsToMany;
  * @method static Builder|Judge whereAddress($value)
  * @method static Builder|Judge whereDisplayName($value)
  * @method static Builder|Judge whereTelephone($value)
+ * @mixin \Eloquent
  */
 class Judge extends Model
 {

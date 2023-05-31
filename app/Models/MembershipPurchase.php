@@ -40,8 +40,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|MembershipPurchase whereUpdatedAt($value)
  * @method static Builder|MembershipPurchase whereUserId($value)
  * @method static Builder|MembershipPurchase whereYear($value)
- * @mixin \Eloquent
  * @method static Builder|MembershipPurchase active()
+ * @mixin \Eloquent
  */
 class MembershipPurchase extends Model
 {

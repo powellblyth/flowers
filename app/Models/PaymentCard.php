@@ -12,7 +12,6 @@ use Illuminate\Support\Carbon;
  * Class PaymentCard
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property int $id
  * @property string $stripe_id
  * @property int $user_id
@@ -43,6 +42,7 @@ use Illuminate\Support\Carbon;
  * @property int $is_default
  * @property-read User|null $user
  * @method static Builder|PaymentCard whereIsDefault($value)
+ * @mixin \Eloquent
  */
 class PaymentCard extends Model
 {

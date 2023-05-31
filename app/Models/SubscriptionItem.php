@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  * Class Subscriptions
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property int $id
  * @property int $subscription_id
  * @property string $stripe_id
@@ -29,6 +28,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereStripeProduct($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereSubscriptionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SubscriptionItem whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class SubscriptionItem extends Model
 {

@@ -34,8 +34,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Payment whereUpdatedAt($value)
  * @method static Builder|Payment whereUserId($value)
  * @method static Builder|Payment whereYear($value)
- * @mixin \Eloquent
  * @method static Builder|Payment forShow(\App\Models\Show $show)
+ * @mixin \Eloquent
  */
 class Payment extends Model
 {

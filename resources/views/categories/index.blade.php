@@ -27,13 +27,13 @@
     <x-slot name="pageTitle">
         {{ __('Categories for the '  . $show->name . ' show') }}
     </x-slot>
-    <x-slot name="canonical">{{route('categories.index').'?show_id=' . (int)$show->id }}</x-slot>
+    <x-slot name="canonical">{{route('show.categories', [$show])}}</x-slot>
     <x-slot name="header">
         <x-headers.h1>
             {{ __('Categories for the '  . $show->name . ' show') }}
         </x-headers.h1>
     </x-slot>
-    <x-navigation.show route="categories.index" :show="$show"/>
+    <x-navigation.show route="show.categories" :show="$show"/>
 
     <x-layout.intro-para>
         <p>

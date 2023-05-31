@@ -42,17 +42,24 @@ Route::resource('membershippurchases', MembershipPurchaseController::class);
 
 Route::controller(RaffleController::class)
     ->group(function () {
-        Route::get('/raffle', 'index')
+        Route::get('/raffle/', 'index')
         ->name('raffle.index');
+        Route::get('/shows/{show}/raffle', 'forShow')
+        ->name('show.raffle');
     });
 
 Route::get('/cups', [CupController::class, 'index'])
     ->name('cups.index');
+Route::get('/shows/{show}/cups', [CupController::class, 'forShow'])
+    ->name('show.cups');
+Route::get('/shows/{show}/categories', [CategoryController::class, 'forShow'])
+    ->name('show.categories');
 Route::get('/cupCategories', [CupController::class, 'categories'])
     ->name('cups.categories');
 Route::get('/cups/printableresults', [CupController::class, 'printableresults'])
     ->name('cup.printableresults');
-Route::get('/cups/{cup}', [CupController::class, 'show'])->name('cups.show');
+Route::get('/cups/{cup}', [CupController::class, 'showold'])->name('cups.showold');
+Route::get('/shows/{show}/cups/{cup}', [CupController::class, 'show'])->name('cups.show');
 
 
 Route::group(['middleware' => ['is_admin', 'auth']], function () {

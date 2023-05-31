@@ -6,11 +6,13 @@ use App\Models\Cup;
 use App\Models\CupDirectWinner;
 use App\Models\Entrant;
 use App\Models\Entry;
+use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -19,9 +21,22 @@ class CupController extends Controller
 {
     use HasShowSwitcher;
 
-    public function index(Request $request): View
+    /**
+     * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function index(Request $request): RedirectResponse
     {
-        $show = $this->getShowFromRequest($request);
+        return redirect(
+            route('show.cups', ['show' => $this->getShowFromRequest($request)]),
+            301
+        );
+    }
+
+    public function forShow(Request $request, Show $show): View
+    {
         $results = [];
         $cups = Cup::with(['section'])
             ->orderBy('sort_order', 'asc')
@@ -55,7 +70,14 @@ class CupController extends Controller
         );
     }
 
-    public function show(Request $request, Cup $cup): View
+    public function showold(Request $request, Cup $cup): RedirectResponse
+    {
+        return redirect(
+            route('cups.show', ['cup' => $cup, 'show' => $this->getShowFromRequest($request)]),
+            301);
+    }
+
+    public function show(Request $request, Show $show, Cup $cup): View
     {
         $winnerDataByCategory = [];
         $winners = [];
@@ -193,7 +215,7 @@ class CupController extends Controller
         $cupDirectWinner->winningCategory()->associate($entry->category);
         $cupDirectWinner->save();
 
-        return redirect(route('cups.index').'#cup_'.$cup->id);
+        return redirect(route('cups.index') . '#cup_' . $cup->id);
     }
 
 //    public function directResultSetWinnerPerson(Request $request, Cup $cup): \Illuminate\Http\RedirectResponse
@@ -212,7 +234,7 @@ class CupController extends Controller
         $results = array();
         // this didn't work but I don't have time to find out why so I commented it out
         $cups = Cup::with(['section'])//, 'judge_role', 'judge_role.justgeAtShow'])
-            ->orderBy('sort_order', 'asc')->get();
+        ->orderBy('sort_order', 'asc')->get();
         foreach ($cups as $cup) {
             $results[$cup->id] = [];
             /** @var Cup $cup */

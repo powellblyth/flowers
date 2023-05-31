@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="canonical">{{route('raffle.index').'?show_id=' . (int)$show->id }}</x-slot>
+    <x-slot name="canonical">{{route('show.raffle', [$show]) }}</x-slot>
     <x-slot name="pageTitle">
         {{ __('Raffle Prizes') }}
     </x-slot>
@@ -8,7 +8,7 @@
             {{ __('Raffle Prizes') }}
         </x-headers.h1>
     </x-slot>
-    <x-navigation.show route="raffle.index" :show="$show"/>
+    <x-navigation.show route="show.raffle" :show="$show"/>
 
     <x-layout.intro-para>
         <p>

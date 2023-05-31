@@ -13,7 +13,6 @@ use Illuminate\Support\Carbon;
  * Class JudgeAtShow
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property int $id
  * @property int $judge_id
  * @property int $judge_role_id
@@ -33,6 +32,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|JudgeAtShow whereShowId($value)
  * @method static Builder|JudgeAtShow whereUpdatedAt($value)
  * @method static Builder|JudgeAtShow forShow(Show $show)
+ * @mixin \Eloquent
  */
 class JudgeAtShow extends Model
 {

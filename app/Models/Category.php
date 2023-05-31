@@ -60,7 +60,6 @@ use Laravel\Nova\Http\Requests\NovaRequest;
  * @method static Builder|Category whereThirdPrize($value)
  * @method static Builder|Category whereUpdatedAt($value)
  * @method static Builder|Category whereYear($value)
- * @mixin \Eloquent
  * @property int|null $minimum_age
  * @property int|null $maximum_age
  * @property bool $private private means you can't enter it as a member of the public, e.g.. school categories
@@ -74,6 +73,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
  * @method static Builder|Category forSection(Section $section)
  * @property-read Collection|JudgeRole[] $judgeRoles
  * @property-read int|null $judge_roles_count
+ * @mixin \Eloquent
  */
 class Category extends Model implements \Stringable
 {

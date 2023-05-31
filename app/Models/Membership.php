@@ -38,13 +38,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Membership whereUpdatedAt($value)
  * @method static Builder|Membership whereValidFrom($value)
  * @method static Builder|Membership whereValidTo($value)
- * @mixin \Eloquent
  * @property string|null $stripe_id
  * @property string|null $stripe_price
  * @property-read \App\Models\SubscriptionItem|null $subscriptionItem
  * @method static Builder|Membership whereStripeId($value)
  * @method static Builder|Membership whereStripePrice($value)
  * @property-read string $formatted_price
+ * @mixin \Eloquent
  */
 class Membership extends Model
 {

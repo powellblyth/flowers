@@ -10,7 +10,7 @@
 
     <x-layout.intro-para>
         <p>
-        @lang('Membership of the Horti costs only £5 per year per family, or £3 per year for individuals, and comes with many benefits including:')
+        @lang('Membership of the Horti costs only £7.50 per year per family, or £5 per year for individuals, and comes with many benefits including:')
         </p>
         <ul class="list-disc pl-4 py-4">
             <li>@lang('Free entry to our annual show')</li>

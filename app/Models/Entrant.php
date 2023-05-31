@@ -65,9 +65,9 @@ use Illuminate\Support\Str;
  * @method static Builder|Entrant whereRetainDataOptOut($value)
  * @method static Builder|Entrant whereUpdatedAt($value)
  * @method static Builder|Entrant whereUserId($value)
- * @mixin \Eloquent
  * @property int|null $approx_birth_year
  * @method static Builder|Entrant whereApproxBirthYear($value)
+ * @mixin \Eloquent
  */
 class Entrant extends Model
 {

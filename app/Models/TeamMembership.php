@@ -28,8 +28,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|TeamMembership whereShowId($value)
  * @method static Builder|TeamMembership whereTeamId($value)
  * @method static Builder|TeamMembership whereUpdatedAt($value)
- * @mixin \Eloquent
  * @method static Builder|TeamMembership forShow(\App\Models\Show $show)
+ * @mixin \Eloquent
  */
 class TeamMembership extends Model
 {

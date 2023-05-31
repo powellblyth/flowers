@@ -14,7 +14,6 @@ use Illuminate\Support\Str;
  * Class CupWinnerArchiveWinner
  *
  * @package App\Models
- * @mixin \Eloquent
  * @property int $id
  * @property int $cup_winner_archive_id
  * @property int $entrant_id
@@ -38,6 +37,7 @@ use Illuminate\Support\Str;
  * @property int $sort_order
  * @method static Builder|CupWinnerArchiveWinner inOrder()
  * @method static Builder|CupWinnerArchiveWinner whereSortOrder($value)
+ * @mixin \Eloquent
  */
 class CupWinnerArchiveWinner extends Model
 {
