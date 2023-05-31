@@ -7,6 +7,7 @@ use App\Models\Entry;
 use App\Models\Section;
 use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -48,9 +49,8 @@ class CategoryController extends Controller
      * This prints all the category cards for the show entries to put on the tables
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function printcards(Request $request): \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+    public function printcards(Request $request, Show $show): Factory|View
     {
-        $show = $this->getShowFromRequest($request);
         $this->authorize('printCards', Entry::class);
         $categories = Category::where('show_id', $show->id)->inOrder()->get();
         $cardFronts = [];
@@ -70,7 +70,7 @@ class CategoryController extends Controller
      *
      * This prints the lookup sheet to look up where entry categories are
      */
-    public function printlookups(Request $request): \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+    public function printlookups(Request $request): Factory|View
     {
         $show = $this->getShowFromRequest($request);
         $categories = Category::where('show_id', $show->id)
