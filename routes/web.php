@@ -132,7 +132,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('paymentcards', \App\Http\Controllers\PaymentCardsController::class);
 //    Route::put('profile', [ProfileController::class, 'password'])->name('profile.password');
 });
-Route::get('/shows/me/status', [ShowController::class, 'statusReport'])->name('shows.status');
+Route::get('/shows/{show}/status', [ShowController::class, 'statusReport'])->name('shows.status');
 
 Route::controller(\App\Http\Controllers\MarketingController::class)
     ->middleware(['guest'])

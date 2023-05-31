@@ -49,10 +49,8 @@ class ShowController extends Controller
      *
      * @throws AuthorizationException
      */
-    public function statusReport(Request $request): Response
+    public function statusReport(Request $request, Show $show): Response
     {
-        $show = $this->getShowFromRequest($request);
-
         $this->authorize('viewAny', $show);
         return response()->view(
             'shows.showStatus',
