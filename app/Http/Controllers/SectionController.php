@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Entry;
 use App\Models\Section;
+use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
@@ -31,9 +32,12 @@ class SectionController extends Controller
     /**
      * @throws AuthorizationException
      */
-    public function resultsEntryForm(Request $request, Section $section): View
+    public function resultsEntryForm(Request $request, Show $show, Section $section): View
     {
-        $show = $this->getShowFromRequest($request);
+        if (!$show->exists){
+            $show = $this->getShowFromRequest($request);
+        }
+
         $this->authorize('enterResults', Entry::class);
         $section->load([
             'categories',
@@ -53,7 +57,7 @@ class SectionController extends Controller
         ));
     }
 
-    public function storeresults(Request $request, Section $section): RedirectResponse
+    public function storeresults(Request $request, Show $show, Section $section): RedirectResponse
     {
         $winningPlaces = [
             'Choose...',

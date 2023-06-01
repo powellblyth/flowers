@@ -6,11 +6,11 @@
 
     <div style="text-align:left;vertical-align:middle">
 
-        <form method="post" action="{{route('sections.storeresults',$show)}}">
+        <form method="post" action="{{route('sections.storeresults',['show'=> $show, 'section' => $section])}}">
             @csrf
-        @foreach ($section->categories()->with(['entries.entrant'])->forShow($show)->orderBy('sortorder')->get() as $category)
+        @foreach ($section->categories()->with(['entries.entrant'])->forShow($show)->inOrder()->get() as $category)
             {{$category->numbered_name}}<br/>
-            <b>Entrants:</b>
+            <b>@lang('Entrants:')</b>
             @foreach ($category->entries->sortBy('winningplace') as $entry)
                 <div style="display:inline-block;background-color:{{$entry->winning_colour ?? '#d9edf7'}}; margin:2px; padding:2px;">
                     <span style="{{$entry->winning_colour ? 'color:'.$entry->winning_colour .'; -webkit-filter: invert(100%);filter: invert(100%);;font-weight:bold':''}}">

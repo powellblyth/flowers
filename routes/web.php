@@ -70,7 +70,7 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
     Route::post('/cups/{cup}/directResultSetWinner', [CupController::class, 'directResultSetWinner'])
         ->name('cup.directResultSetWinner');
 
-    Route::post('/sections/{section}/storeresults', [SectionController::class, 'storeresults'])
+    Route::post('/shows/{show}/sections/{section}/storeresults', [SectionController::class, 'storeresults'])
         ->name('sections.storeresults');
     Route::get('/sections/{section}/resultsentry', [SectionController::class, 'resultsEntryForm'])
         ->name('sections.resultsentry');

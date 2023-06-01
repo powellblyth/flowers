@@ -16,7 +16,7 @@ trait HasShowSwitcher
         }
         return $builder
             ->where('status', Show::STATUS_CURRENT)
-            ->orderBy('start_date', 'DESC')
+            ->newestFirst()
             ->first();
     }
 
