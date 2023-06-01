@@ -57,6 +57,7 @@ class SectionController extends Controller
         ));
     }
 
+    /** @TODO why do I need the show here? */
     public function storeresults(Request $request, Show $show, Section $section): RedirectResponse
     {
         $winningPlaces = [

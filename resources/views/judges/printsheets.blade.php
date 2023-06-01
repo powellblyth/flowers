@@ -54,7 +54,7 @@
                 <li> Once the category is judged, Stewards are to turn the winning cards over with the names exposed,
                     and attach the relevant sticker
                 </li>
-                <li> In order to record the winners, the Steward need only record the number into the box on this
+                <li> In order to record the winners, the Steward need only record the entrant's number into the box on this
                     sheet
                 </li>
             </ol>

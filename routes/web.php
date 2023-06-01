@@ -80,7 +80,7 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('category.lookupprint');
     Route::get('/shows/{show}/printAllCards', [EntryController::class, 'printAllCards'])
         ->name('entries.printall');
-    Route::get('/judges/printSheets', [JudgeController::class, 'printSheets'])
+    Route::get('/shows/{show}/judges/{judge}/printSheets', [JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 
     Route::get('/users/print/{show}', [UserController::class, 'printcards'])
