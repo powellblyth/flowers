@@ -19,7 +19,7 @@ class DuplicateShowAction extends Action
     public $showOnTableRow = true;
     public $showOnIndex = false;
     public $confirmButtonText = 'Duplicate!';
-    public $name ='Duplicate Show';
+    public $name = 'Duplicate Show';
     /**
      * The text to be used for the action's cancel button.
      *
@@ -37,9 +37,9 @@ class DuplicateShowAction extends Action
     /**
      * Perform the action on the given models.
      *
-     * @return mixed
+     * @return array|string[]
      */
-    public function handle(ActionFields $fields, Collection $models)
+    public function handle(ActionFields $fields, Collection $models): mixed
     {
         foreach ($models as $model) {
             $show = new Show();
@@ -64,14 +64,15 @@ class DuplicateShowAction extends Action
      *
      * @return array
      */
-    public function fields()
+    public function fields(): array
     {
+        $previousShow = Show::newestFirst()->first();
         return [
             Text::make('Name')->rules('max:255')->required(),
-            DateTime::make('Start Date')->required(),
-            DateTime::make('End Date', 'ends_date')->required(),
-            DateTime::make('Late Entry Deadline')->required(),
-            DateTime::make('Entries Closed Deadline')->required(),
+            DateTime::make('Start Date')->required()->default(fn()=>$previousShow->start_date->add('1 year')),
+            DateTime::make('End Date', 'ends_date')->required()->default(fn()=>$previousShow->ends_date->add('1 year')),
+            DateTime::make('Late Entry Deadline')->required()->default(fn()=>$previousShow->late_entry_deadline->add('1 year')),
+            DateTime::make('Entries Closed Deadline')->required()->default(fn()=>$previousShow->entries_closed_deadline->add('1 year')),
         ];
     }
 }

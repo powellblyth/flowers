@@ -14,7 +14,7 @@ use OptimistDigital\NovaSortable\Traits\HasSortableRows;
  *
  * @property int $id
  * @property string $name
- * @property \datetime $start_date
+ * @property Carbon $start_date
  * @property Carbon $ends_date
  * @property Carbon $late_entry_deadline
  * @property Carbon $entries_closed_deadline
