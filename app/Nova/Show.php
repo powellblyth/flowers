@@ -64,16 +64,16 @@ class Show extends Resource
                 ->rules('required', 'max:255'),
 
             DateTime::make('Start Date')
-                ->sortable()->format('Y-MM-DD HH:m'),
+                ->sortable()->format('MMM D HH:mm'),
 
             DateTime::make('End Date', 'ends_date')
-                ->sortable()->format('Y-MM-DD HH:m'),
+                ->sortable()->format('MMM D HH:mm'),
 
             DateTime::make('Entries Closed Deadline', 'entries_closed_deadline')
-                ->sortable()->format('Y-MM-DD HH:m'),
+                ->sortable()->format('MMM D HH:mm'),
 
             DateTime::make('Late Entry Deadline')
-                ->sortable()->format('Y-MM-DD HH:m'),
+                ->sortable()->format('MMM D HH:mm'),
 
             Select::make('Status')
                 ->sortable()
