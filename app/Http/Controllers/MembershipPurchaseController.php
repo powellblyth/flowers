@@ -3,22 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\MembershipPurchase;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class MembershipPurchaseController extends Controller
 {
-    public function getAmount($type)
+    public static function getAmount($type): int
     {
-        return 'single' === $type ? 300 : 500;
+        return 'single' === $type ? 500 : 750;
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         // Validate the request...
 
         $thing = new MembershipPurchase();
         $thing->type = $request->type;
-        $thing->amount = $this->getAmount($request->type);
+        $thing->amount = MembershipPurchaseController::getAmount($request->type);
         if ('single' == $request->type) {
             $thing->entrant_id = $request->entrant;
         }
