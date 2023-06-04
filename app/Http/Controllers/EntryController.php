@@ -60,11 +60,12 @@ class EntryController extends Controller
 
     /**
      * @param Request $request
+     * @param Show $show
      * @param User|null $user
      * @return View
      * @throws AuthorizationException
      */
-    public function entryCard(Request $request, User $user = null): View
+    public function entryCard(Request $request, Show $show, User $user = null ): View
     {
         if (is_null($user)) {
             $user = Auth::user();
@@ -74,7 +75,7 @@ class EntryController extends Controller
         /**
          * Default show
          */
-        $show = $this->getShowFromRequest($request);
+//        $show = $this->getShowFromRequest($request);
 
         $this->authorize('view', $user);
 
@@ -126,6 +127,6 @@ class EntryController extends Controller
                 );
             }
         }
-        return redirect(route('entries.entryCard', ['show_id' => $show->id]));
+        return redirect(route('entries.entryCard', ['show' => $show]));
     }
 }

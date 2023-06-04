@@ -110,14 +110,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/entrants/{id}/optins', [EntrantController::class, 'optins'])
         ->name('entrants.optins');
 
-    Route::resource('entrants', EntrantController::class)->except(['showen']);
+    Route::resource('entrants', EntrantController::class)->only(['edit','create', 'update']);
 
 
     Route::get('/users/{user}/{show?}', [UserController::class, 'show'])->name('users.showfiltered');
 
     Route::controller(EntryController::class)
         ->group(function () {
-            Route::get('/entries', 'entryCard')->name('entries.entryCard');
+            Route::get('/entries/{show}', 'entryCard')->name('entries.entryCard');
             Route::post('/entries', 'update')->name('entries.store');
         });
     Route::get('/family', [UserController::class, 'show'])->name('family');

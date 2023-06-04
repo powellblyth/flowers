@@ -24,18 +24,18 @@ class EntrantController extends Controller
     use HasShowSwitcher;
 
     /** @var array */
-    protected array $paymentTypes = array('cash' => 'cash',
-                                          'cheque' => 'cheque',
-                                          'online' => 'online',
-                                          'debit' => 'debit',
-                                          'refund_cash' => 'refund_cash',
-                                          'refund_online' => 'refund_online',
-                                          'refund_cheque' => 'refund_cheque');
+//    protected array $paymentTypes = array('cash' => 'cash',
+//                                          'cheque' => 'cheque',
+//                                          'online' => 'online',
+//                                          'debit' => 'debit',
+//                                          'refund_cash' => 'refund_cash',
+//                                          'refund_online' => 'refund_online',
+//                                          'refund_cheque' => 'refund_cheque');
 
-    protected array $membershipTypes = array(
-        'single' => 'single',
-        'family' => 'family');
-
+//    protected array $membershipTypes = array(
+//        'single' => 'single',
+//        'family' => 'family');
+//
     /**
      * @throws AuthorizationException
      */
@@ -113,72 +113,72 @@ class EntrantController extends Controller
             return back();
         }
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param Request $request
-     * @param Entrant $entrant
-     * @param array $showData
-     * @return Response|RedirectResponse
-     * @throws AuthorizationException
-     * @throws Exception
-     */
-    public function show(Request $request, Entrant $entrant, array $showData = []): Response|RedirectResponse
-    {
-        $totalPrizes = 0;
-        $membershipFee = 0;
-        $entryFee = 0;
-
-        $show = $this->getShowFromRequest($request);
-
-        $this->authorize('seeDetailedInfo', $entrant);
-
-        $categories = $show->categories()->orderBy('sortorder')
-            ->where('status', 'active')
-            ->get();
-
-        $membershipPurchases = $entrant->membershipPurchases()->get();
-        $membershipPaymentData = [];
-        foreach ($membershipPurchases as $membershipPurchase) {
-            /** @var MembershipPurchase $membershipPurchase */
-            $amount = MembershipPurchaseController::getAmount($membershipPurchase->type);
-            $membershipFee += $amount;
-            $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
-        }
-
-        $entries = $entrant->entries()->where('show_id', $show->id)->with('category')->get();
-
-        foreach ($entries as $entry) {
-            /** @var Entry $entry */
-            $price = $entry->category->getPrice($entry->getPriceType());
-            $entryFee += $price;
-            if ($entry->hasWon()) {
-                $totalPrizes += $entry->category->getWinningAmount($entry->winningplace);
-            }
-        }
-        $memberNumber = $entrant->getMemberNumber() ?? 'Not currently a member';
-
-        return response()->view(
-            'entrants.show',
-            array_merge(
-                $showData,
-                [
-                    'entries' => $entries,
-                    'categories' => $categories,
-                    'membership_purchases' => $membershipPaymentData,
-                    'entry_fee' => $entryFee,
-                    'total_price' => $entryFee + $membershipFee,
-                    'payment_types' => $this->paymentTypes,
-                    'total_prizes' => $totalPrizes,
-                    'membership_types' => ['single' => 'Single'],
-                    'entrant' => $entrant,
-                    'member_number' => $memberNumber,
-                    'isLocked' => config('app.state') == 'locked',
-                ]
-            )
-        );
-    }
+//
+//    /**
+//     * Display the specified resource.
+//     *
+//     * @param Request $request
+//     * @param Entrant $entrant
+//     * @param array $showData
+//     * @return Response|RedirectResponse
+//     * @throws AuthorizationException
+//     * @throws Exception
+//     */
+//    public function show(Request $request, Entrant $entrant, array $showData = []): Response|RedirectResponse
+//    {
+//        $totalPrizes = 0;
+//        $membershipFee = 0;
+//        $entryFee = 0;
+//
+//        $show = $this->getShowFromRequest($request);
+//
+//        $this->authorize('seeDetailedInfo', $entrant);
+//
+//        $categories = $show->categories()->orderBy('sortorder')
+//            ->where('status', 'active')
+//            ->get();
+//
+//        $membershipPurchases = $entrant->membershipPurchases()->get();
+//        $membershipPaymentData = [];
+//        foreach ($membershipPurchases as $membershipPurchase) {
+//            /** @var MembershipPurchase $membershipPurchase */
+//            $amount = MembershipPurchaseController::getAmount($membershipPurchase->type);
+//            $membershipFee += $amount;
+//            $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
+//        }
+//
+//        $entries = $entrant->entries()->where('show_id', $show->id)->with('category')->get();
+//
+//        foreach ($entries as $entry) {
+//            /** @var Entry $entry */
+//            $price = $entry->category->getPrice($entry->getPriceType());
+//            $entryFee += $price;
+//            if ($entry->hasWon()) {
+//                $totalPrizes += $entry->category->getWinningAmount($entry->winningplace);
+//            }
+//        }
+//        $memberNumber = $entrant->getMemberNumber() ?? 'Not currently a member';
+//
+//        return response()->view(
+//            'entrants.show',
+//            array_merge(
+//                $showData,
+//                [
+//                    'entries' => $entries,
+//                    'categories' => $categories,
+//                    'membership_purchases' => $membershipPaymentData,
+//                    'entry_fee' => $entryFee,
+//                    'total_price' => $entryFee + $membershipFee,
+//                    'payment_types' => $this->paymentTypes,
+//                    'total_prizes' => $totalPrizes,
+//                    'membership_types' => ['single' => 'Single'],
+//                    'entrant' => $entrant,
+//                    'member_number' => $memberNumber,
+//                    'isLocked' => config('app.state') == 'locked',
+//                ]
+//            )
+//        );
+//    }
 
     /**
      * Show the form for editing the specified resource.
