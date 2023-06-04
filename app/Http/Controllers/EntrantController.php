@@ -142,7 +142,7 @@ class EntrantController extends Controller
         $membershipPaymentData = [];
         foreach ($membershipPurchases as $membershipPurchase) {
             /** @var MembershipPurchase $membershipPurchase */
-            $amount = (($membershipPurchase->type == 'single' ? 300 : 500));
+            $amount = MembershipPurchaseController::getAmount($membershipPurchase->type);
             $membershipFee += $amount;
             $membershipPaymentData[] = ['type' => $membershipPurchase->type, 'amount' => $amount];
         }

@@ -10,10 +10,10 @@
 
     <x-layout.intro-para>
         <p>
-        @lang('Membership of the Horti costs only £:familycost per year per family, or £:individualcost per year for individuals, and comes with many benefits including:',
+        @lang('Membership of the Horti costs only £:familyCost per year per family, or £:individualCost per year for individuals, and comes with many benefits including:',
 [
-    'familycost'=> number_format(\App\Http\Controllers\MembershipPurchaseController::getAmount('family')/100, 2),
-    'individualcost'=>number_format(\App\Http\Controllers\MembershipPurchaseController::getAmount('single')/100, 2),
+    'familyCost'=> number_format(\App\Http\Controllers\MembershipPurchaseController::getAmount('family')/100, 2),
+    'individualCost'=>number_format(\App\Http\Controllers\MembershipPurchaseController::getAmount('single')/100, 2),
     ]
     )
         </p>
