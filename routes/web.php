@@ -83,6 +83,8 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
     Route::get('/shows/{show}/judges/{judge}/printSheets', [JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 
+    Route::get('/members/list', [UserController::class, 'previousMembersList'])->name('members.lust');
+
     Route::get('/users/print/{show}', [UserController::class, 'printCards'])
         ->name('users.print');
     Route::get('/user/{user}print/{show}', [UserController::class, 'printCards'])

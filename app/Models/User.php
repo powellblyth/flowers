@@ -208,6 +208,18 @@ class User extends Authenticatable
         );
     }
 
+    public function scopeNotAnonymised(Builder $query): Builder
+    {
+        return $query->where('users.is_anonymised', false);
+    }
+
+    public function scopeAlphabetical(Builder $query): Builder
+    {
+        return $query
+            ->orderby('users.last_name')
+            ->orderBy('users.first_name');
+    }
+
     public function fullName(): Attribute
     {
         return new Attribute(

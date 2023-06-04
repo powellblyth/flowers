@@ -230,4 +230,17 @@ class UserController extends Controller
             'card_backs' => $cardData['backs'],
         ]);
     }
+
+    /**
+     * @throws AuthorizationException
+     */
+    public function previousMembersList()
+    {
+        $this->authorize('viewAny', User::class);
+        $memberList = User::notanonymised()->alphabetical()->get();
+
+        return view('users.memberList', [
+            'members' => $memberList,
+        ]);
+    }
 }
