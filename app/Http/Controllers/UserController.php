@@ -47,6 +47,18 @@ class UserController extends Controller
         return Auth::check() && Auth::User()->isAdmin();
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function index(Request $request): RedirectResponse
+    {
+        $show = $this->getShowFromRequest($request);
+        return redirect(route('family.show', ['show' => $show]), 301);
+    }
+
     public function subscribe(): Factory|\Illuminate\Contracts\View\View|Application
     {
         return view(
@@ -65,17 +77,13 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\View\View
      * @throws AuthorizationException
      */
-    public function show(Request $request, User $user = null): View
+    public function show(Request $request, Show $show, User $user = null): View
     {
         if (is_null($user)) {
             $user = Auth::user();
         }
 
         $user->load(['entrants', 'entrants.entries']);
-        /**
-         * Default show
-         */
-        $show = $this->getShowFromRequest($request);
 
         $this->authorize('view', $user);
         $membershipFee = 0;
@@ -122,7 +130,6 @@ class UserController extends Controller
             //            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
             'payment_types' => $this->paymentTypes,
             'membership_types' => [MembershipPurchase::TYPE_FAMILY => 'Family'],
-            'isLocked' => config('app.state') == 'locked',
         ]);
     }
 

@@ -7,25 +7,25 @@
             {{ __('My Family') }}
         </x-headers.h1>
     </x-slot>
-    <x-navigation.show route="family" :show="$show"/>
+    <x-navigation.show route="family.show" :show="$show"/>
 
     <x-layout.intro-para>
 
         <div class="flex flex-row w-full h-20">
             <div class="w-1/4">
-                Membership Purchases<br/>
+                @lang('Membership Purchases')<br/>
                 &pound;{{number_format($membership_fee/100,2)}}
             </div>
             <div class="w-1/4">
-                Entries <br/>
+                @lang('Entries') <br/>
                 &pound;{{number_format($entry_fee/100,2)}}
             </div>
             <div class="w-1/4">
-                Payments <br/>
+                @lang('Payments') <br/>
                 &pound;{{number_format($paid,2)}}
             </div>
             <div class="w-1/4">
-                Balance <br/>
+                @lang('Balance') <br/>
                 &pound;{{number_format((($entry_fee + $membership_fee)/100) - $paid,2)}}
             </div>
         </div>

@@ -4,9 +4,11 @@ use App\Http\Controllers\EntrantController;
 use App\Http\Controllers\EntryController;
 use App\Http\Controllers\JudgeController;
 use App\Http\Controllers\MembershipPurchaseController;
+use App\Http\Controllers\PaymentCardsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaffleController;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebhookController;
@@ -55,8 +57,6 @@ Route::get('/shows/{show}/cups', [CupController::class, 'forShow'])
     ->name('show.cups');
 Route::get('/shows/{show}/categories', [CategoryController::class, 'forShow'])
     ->name('show.categories');
-Route::get('/cupCategories', [CupController::class, 'categories'])
-    ->name('cups.categories');
 Route::get('/cups/printableresults', [CupController::class, 'printableresults'])
     ->name('cup.printableresults');
 Route::get('/cups/{cup}', [CupController::class, 'showold'])->name('cups.showold');
@@ -120,7 +120,8 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('/entries/{show}', 'entryCard')->name('entries.entryCard');
             Route::post('/entries', 'update')->name('entries.store');
         });
-    Route::get('/family', [UserController::class, 'show'])->name('family');
+    Route::get('/family', [UserController::class, 'index'])->name('family');
+    Route::get('/family/{show}', [UserController::class, 'show'])->name('family.show');
 
     Route::get('/profile/subscribe', [ProfileController::class, 'subscribe'])
         ->name('users.subscribe');
@@ -128,8 +129,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
 
-    Route::resource('subscriptions', \App\Http\Controllers\SubscriptionController::class);
-    Route::resource('paymentcards', \App\Http\Controllers\PaymentCardsController::class);
+    Route::resource('subscriptions', SubscriptionController::class);
+    Route::resource('paymentcards', PaymentCardsController::class);
 //    Route::put('profile', [ProfileController::class, 'password'])->name('profile.password');
 });
 Route::get('/shows/{show}/status', [ShowController::class, 'statusReport'])->name('shows.status');

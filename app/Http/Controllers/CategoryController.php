@@ -41,7 +41,6 @@ class CategoryController extends Controller
             [
                 'sections' => $sections,
                 'show' => $show,
-                'isLocked' => config('app.state') == 'locked',
             ]
         );
     }

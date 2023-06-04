@@ -38,8 +38,8 @@ class CupController extends Controller
     public function forShow(Request $request, Show $show): View
     {
         $results = [];
-        $cups = Cup::with(['section'])
-            ->orderBy('sort_order', 'asc')
+        $cups = Cup::inOrder()
+            ->with(['section'])
             ->get();
 
         foreach ($cups as $cup) {
@@ -57,24 +57,12 @@ class CupController extends Controller
         );
     }
 
-    public function categories(Request $request): Factory|\Illuminate\Contracts\View\View|Application
-    {
-        $show = $this->getShowFromRequest($request);
-        $cups = Cup::with(['section'])->orderBy('sort_order', 'asc')->get();
-        return view(
-            'cups.cupcategories',
-            [
-                'cups' => $cups,
-                'show' => $show,
-            ]
-        );
-    }
-
     public function showold(Request $request, Cup $cup): RedirectResponse
     {
         return redirect(
             route('cups.show', ['cup' => $cup, 'show' => $this->getShowFromRequest($request)]),
-            301);
+            301
+        );
     }
 
     public function show(Request $request, Show $show, Cup $cup): View

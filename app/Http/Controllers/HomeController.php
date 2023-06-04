@@ -30,7 +30,6 @@ class HomeController extends Controller
         return view('dashboard', [
             'entrantCount' => $entrantCount,
             'entryCount'   => $totalEntries,
-            'isLocked'     => config('app.state') == 'locked',
         ]);
     }
 }
