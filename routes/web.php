@@ -74,18 +74,18 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('sections.storeresults');
     Route::get('/sections/{section}/resultsentry', [SectionController::class, 'resultsEntryForm'])
         ->name('sections.resultsentry');
-    Route::get('/shows/{show}/printtabletop', [CategoryController::class, 'printcards'])
+    Route::get('/shows/{show}/printtabletop', [CategoryController::class, 'printCards'])
         ->name('category.tabletopprint');
-    Route::get('/show/{show}/printlookup', [CategoryController::class, 'printlookups'])
+    Route::get('/show/{show}/printLookups', [CategoryController::class, 'printLookups'])
         ->name('category.lookupprint');
     Route::get('/shows/{show}/printAllCards', [EntryController::class, 'printAllCards'])
         ->name('entries.printall');
     Route::get('/shows/{show}/judges/{judge}/printSheets', [JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 
-    Route::get('/users/print/{show}', [UserController::class, 'printcards'])
+    Route::get('/users/print/{show}', [UserController::class, 'printCards'])
         ->name('users.print');
-    Route::get('/user/{user}print/{show}', [UserController::class, 'printcards'])
+    Route::get('/user/{user}print/{show}', [UserController::class, 'printCards'])
         ->name('user.print');
 });
 

@@ -7,6 +7,7 @@ use App\Models\Entry;
 use App\Models\Section;
 use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -47,9 +48,9 @@ class CategoryController extends Controller
 
     /**
      * This prints all the category cards for the show entries to put on the tables
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
-    public function printcards(Request $request, Show $show): Factory|View
+    public function printCards(Request $request, Show $show): Factory|View
     {
         $this->authorize('printCards', Entry::class);
         $categories = Category::where('show_id', $show->id)->inOrder()->get();
@@ -62,19 +63,17 @@ class CategoryController extends Controller
                 'class_name' => $category->name
             ];
         }
-
-        return view('categories.printcards', ['show' => $show, 'card_fronts' => $cardFronts]);
+        return view('categories.printCards', ['show' => $show, 'card_fronts' => $cardFronts]);
     }
 
     /**
      *
      * This prints the lookup sheet to look up where entry categories are
      */
-    public function printlookups(Request $request, Show $show): Factory|View
+    public function printLookups(Request $request, Show $show): Factory|View
     {
-        $categories = Category::where('show_id', $show->id)
+        $categories = Category::forShow($show)
             ->inOrder()
-//            ->orderBy('sortorder')
             ->get();
         $cardFronts = [];
 
@@ -91,6 +90,6 @@ class CategoryController extends Controller
             ];
         }
 
-        return view('categories.printlookups', ['card_fronts' => $cardFronts]);
+        return view('categories.printLookups', ['card_fronts' => $cardFronts]);
     }
 }

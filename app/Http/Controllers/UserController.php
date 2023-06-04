@@ -196,7 +196,7 @@ class UserController extends Controller
         return redirect()->route('users.index')->withStatus(__('Family successfully deleted.'));
     }
 
-    public function printcards(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
+    public function printCards(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
 {
 
 //        $show = $this->getShowFromRequest($request);
@@ -216,7 +216,7 @@ class UserController extends Controller
 
     $cardData = $this->getCardDataFromEntries($entriesQuery->get());
 
-    return view('cards.printcards', [
+    return view('cards.printCards', [
         'card_fronts' => $cardData['fronts'],
         'card_backs' => $cardData['backs'],
     ]);

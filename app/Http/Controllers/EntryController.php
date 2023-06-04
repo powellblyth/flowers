@@ -52,7 +52,7 @@ class EntryController extends Controller
 
         $cardData = $this->getCardDataFromEntries($entriesQuery->get());
 
-        return view('cards.printcards', [
+        return view('cards.printCards', [
             'card_fronts' => $cardData['fronts'],
             'card_backs' => $cardData['backs'],
         ]);
