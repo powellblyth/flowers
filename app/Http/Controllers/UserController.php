@@ -35,12 +35,12 @@ class UserController extends Controller
                                           'refund_cash' => 'refund_cash',
                                           'refund_online' => 'refund_online',
                                           'refund_cheque' => 'refund_cheque');
-    /**
-     * @var array
-     */
-    protected array $membershipTypes = array(
-        'single' => 'single',
-        'family' => 'family');
+//    /**
+//     * @var array
+//     */
+//    protected array $membershipTypes = array(
+//        'single' => 'single',
+//        'family' => 'family');
 
     public function isAdmin(): bool
     {
@@ -79,7 +79,6 @@ class UserController extends Controller
 
         $this->authorize('view', $user);
         $membershipFee = 0;
-        $entryFee = 0;
         $totalPaid = 0;
 
         $entryFee = $user->entrants->reduce(
@@ -131,6 +130,7 @@ class UserController extends Controller
      * Show the form for creating a new user
      *
      * @return \Illuminate\Contracts\View\View
+     * @throws AuthorizationException
      */
     public function create(): View
     {
@@ -141,10 +141,11 @@ class UserController extends Controller
     /**
      * Store a newly created user in storage
      *
-     * @param User $model
+     * @param UserRequest $request
      * @return RedirectResponse
+     * @throws AuthorizationException
      */
-    public function store(UserRequest $request)
+    public function store(UserRequest $request): RedirectResponse
     {
         $this->authorize('update', User::class);
         $newPassword = empty($request->get('password')) ? '' : Hash::make($request->get('password'));
@@ -185,10 +186,11 @@ class UserController extends Controller
     /**
      * Remove the specified user from storage
      *
+     * @param User $user
      * @return RedirectResponse
      * @throws AuthorizationException
      */
-    public function destroy(User $user)
+    public function destroy(User $user): RedirectResponse
     {
         $this->authorize('delete', $user);
         $user->delete();
@@ -197,28 +199,28 @@ class UserController extends Controller
     }
 
     public function printCards(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
-{
+    {
 
 //        $show = $this->getShowFromRequest($request);
 
 //        $categoryData = [];
-    $entriesQuery = $this->getEntriesQuery($show);
+        $entriesQuery = $this->getEntriesQuery($show);
 
 //        if ($request->filled('users')) {
-            $entriesQuery->whereIn('users.id', $request->get('users'));
+        $entriesQuery->whereIn('users.id', $request->get('users'));
 //        }
 //        if ($request->filled('entrants')) {
 //            $entriesQuery->whereIn('entrants.id', (array) $request->entrants);
 //        }
-    if ($request->filled('since')) {
-        $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
+        if ($request->filled('since')) {
+            $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
+        }
+
+        $cardData = $this->getCardDataFromEntries($entriesQuery->get());
+
+        return view('cards.printCards', [
+            'card_fronts' => $cardData['fronts'],
+            'card_backs' => $cardData['backs'],
+        ]);
     }
-
-    $cardData = $this->getCardDataFromEntries($entriesQuery->get());
-
-    return view('cards.printCards', [
-        'card_fronts' => $cardData['fronts'],
-        'card_backs' => $cardData['backs'],
-    ]);
-}
 }

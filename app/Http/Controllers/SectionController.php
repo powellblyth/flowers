@@ -78,7 +78,7 @@ class SectionController extends Controller
         return redirect()->back();
     }
 
-    public function forwebsite(): View
+    public function forWebSite(): View
     {
         $categoryList = [];
         $sections = Section::orderBy('number', 'asc')
@@ -93,7 +93,7 @@ class SectionController extends Controller
                 ->get();
         }
         return view(
-            'sections.forwebsite',
+            'sections.forWebSite',
             [
                 'things' => $sections,
                 'categoryList' => $categoryList,

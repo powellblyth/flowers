@@ -227,7 +227,7 @@ class CupController extends Controller
 //        return redirect(route('cups.show', $cup));
 //    }
 
-    public function adminindex(Request $request): View
+    public function adminIndex(Request $request): View
     {
         $show = $this->getShowFromRequest($request);
         $winners = array();

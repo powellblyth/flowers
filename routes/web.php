@@ -33,10 +33,10 @@ Route::get('/', function () {
 Route::resource('categories', CategoryController::class)->only(['index']);
 
 //Route::resource('categories', 'CategoryController');
-Route::get('/sections/forwebsite', [SectionController::class, 'forwebsite'])->name('section.forwebsite');
+Route::get('/sections/forWebSite', [SectionController::class, 'forWebSite'])->name('section.forWebSite');
 
-Route::get('/cupsadmin', [CupController::class, 'adminindex'])
-    ->name('cups.adminindex');
+Route::get('/cupsadmin', [CupController::class, 'adminIndex'])
+    ->name('cups.adminIndex');
 
 Route::resource('membershippurchases', MembershipPurchaseController::class);
 
