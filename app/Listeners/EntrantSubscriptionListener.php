@@ -31,33 +31,5 @@ class EntrantSubscriptionListener
                 $entrant->retain_data_opt_out = date('Y-m-d H:i:s');
             }
         }
-        if ($entrant->isDirty('can_email')) {
-            if ($entrant->can_email) {
-                $entrant->email_opt_in = date('Y-m-d H:i:s');
-            } else {
-                $entrant->email_opt_out = date('Y-m-d H:i:s');
-            }
-        }
-        if ($entrant->isDirty('can_sms')) {
-            if ($entrant->can_sms) {
-                $entrant->sms_opt_in = date('Y-m-d H:i:s');
-            } else {
-                $entrant->sms_opt_out = date('Y-m-d H:i:s');
-            }
-        }
-        if ($entrant->isDirty('can_phone')) {
-            if ($entrant->can_phone) {
-                $entrant->phone_opt_in = date('Y-m-d H:i:s');
-            } else {
-                $entrant->phone_opt_out = date('Y-m-d H:i:s');
-            }
-        }
-        if ($entrant->isDirty('can_post')) {
-            if ($entrant->can_post) {
-                $entrant->post_opt_in = date('Y-m-d H:i:s');
-            } else {
-                $entrant->post_opt_out = date('Y-m-d H:i:s');
-            }
-        }
     }
 }
