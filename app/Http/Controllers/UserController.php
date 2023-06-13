@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ManualSubscriptionRenewRequest;
 use App\Http\Requests\UserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Entrant;
+use App\Models\Membership;
 use App\Models\MembershipPurchase;
+use App\Models\Payment;
 use App\Models\Show;
 use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
@@ -17,6 +20,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
@@ -24,23 +28,6 @@ class UserController extends Controller
 {
     use HasShowSwitcher;
     use MakesCards;
-
-    /**
-     * @var array
-     */
-    protected array $paymentTypes = array('cash' => 'cash',
-                                          'cheque' => 'cheque',
-                                          'online' => 'online',
-                                          'debit' => 'debit',
-                                          'refund_cash' => 'refund_cash',
-                                          'refund_online' => 'refund_online',
-                                          'refund_cheque' => 'refund_cheque');
-//    /**
-//     * @var array
-//     */
-//    protected array $membershipTypes = array(
-//        'single' => 'single',
-//        'family' => 'family');
 
     public function isAdmin(): bool
     {
@@ -106,9 +93,8 @@ class UserController extends Controller
         foreach ($payments as $payment) {
             $totalPaid += $payment->amount;
         }
-//        $memberNumber = $user->getMemberNumber();
         $memberships = $user->membershipPurchases()
-            ->where('end_date', '<', Carbon::now())
+            ->active()
             ->get();
         foreach ($memberships as $membership) {
             $membershipFee += $membership->amount;
@@ -126,10 +112,6 @@ class UserController extends Controller
             //            'needs_payment_method' => !$user->hasPaymentMethod(),
             'isAdmin' => $this->isAdmin(),
             'show' => $show,
-            'showId' => $show->id,
-            //            'payment_intent' => $user->hasPaymentMethod() ? null : $user->createSetupIntent(),
-            'payment_types' => $this->paymentTypes,
-            'membership_types' => [MembershipPurchase::TYPE_FAMILY => 'Family'],
         ]);
     }
 
@@ -233,14 +215,82 @@ class UserController extends Controller
 
     /**
      * @throws AuthorizationException
+     * @TODO can I do this in Nova? It seems possible
      */
-    public function previousMembersList()
+    public function previousMembersList(): Factory|\Illuminate\Contracts\View\View|Application
     {
         $this->authorize('viewAny', User::class);
-        $memberList = User::notanonymised()->alphabetical()->get();
+        $memberList = User::with('membershipPurchases')->notanonymised()->alphabetical()->get();
 
         return view('users.memberList', [
             'members' => $memberList,
         ]);
+    }
+
+
+    public function renew(ManualSubscriptionRenewRequest $request, User $user): RedirectResponse
+    {
+        $entrant = null;
+        if (Membership::APPLIES_TO_ENTRANT == $request->membership_type) {
+            $entrant = $user->entrants->first();
+        }
+
+        DB::beginTransaction();
+        // Validate the request...
+        $optIns = ['retain_data', 'email'];
+        $optInRequest = [];
+
+        /* @todo this should be a method on the model or something */
+        foreach ($optIns as $optin) {
+            if ($request->post('can_' . $optin) == '1') {
+                $optInRequest['can_' . $optin] = 1;
+                $optInRequest[$optin . '_opt_in'] = Carbon::now();
+            } else {
+                $optInRequest['can_' . $optin] = 0;
+                $optInRequest[$optin . '_opt_out'] = Carbon::now();
+            }
+        }
+
+        if (!$user->update(
+            array_merge(
+                ['email' => $request->post('email'),],
+                $optInRequest
+            )
+        )) {
+            DB::rollBack();
+            return redirect()->back()->withErrors(['msg' => 'Could not save user']);
+        }
+
+        $payment = new Payment();
+        $payment->user()->associate($user);
+        $payment->amount = MembershipPurchaseController::getAmount($request->membership_type);
+        $payment->source = $request->post('payment_method');
+
+        if ($entrant instanceof Entrant) {
+            $payment->entrant()->associate($entrant);
+        }
+        if (!$payment->save()) {
+            DB::rollBack();
+            return redirect()->back()->withErrors(['msg' => 'Could not save payment']);
+        }
+
+        $membershipPurchase = new MembershipPurchase();
+        $membershipPurchase->type = $request->membership_type;
+        $membershipPurchase->amount = MembershipPurchaseController::getAmount($request->type);
+        if ($entrant instanceof Entrant) {
+            $membershipPurchase->entrant()->associate($entrant);
+        }
+        $membershipPurchase->user()->associate($user);
+        $membershipPurchase->end_date = Membership::getRenewalDate();
+        $membershipPurchase->start_date = Carbon::now();
+
+        // Todo record payment here
+        if ($membershipPurchase->save()) {
+            DB::commit();
+            return redirect()->route('members.list');
+        }
+        DB::rollBack();
+
+        return redirect()->back()->withErrors(['msg' => 'Could not save membership purchase']);
     }
 }

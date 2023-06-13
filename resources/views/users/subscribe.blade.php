@@ -247,25 +247,25 @@
                 </div>
 
             @endif
-            @if($isAdmin)
-                <div class="col-md-6 col-sm-12">
-                    <div class="card">
-                        <div class="card-header-success">New Membership Purchase</div>
-                        <div class="card-body">
-                            <p>Note that your membership will not be processed until the money has been received</p>
-                            {{ Form::open([ 'route' => 'membershippurchases.store' ]) }}
+{{--            @if($isAdmin)--}}
+{{--                <div class="col-md-6 col-sm-12">--}}
+{{--                    <div class="card">--}}
+{{--                        <div class="card-header-success">New Membership Purchase</div>--}}
+{{--                        <div class="card-body">--}}
+{{--                            <p>Note that your membership will not be processed until the money has been received</p>--}}
+{{--                            {{ Form::open([ 'route' => 'membershippurchases.store' ]) }}--}}
 
-                            {{ Form::hidden('user', $thing->id, ['class' => 'form-control']) }}
-                            {{ Form::label('type', 'Type:', ['class' => 'control-label']) }}
-                            {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}
-                            <br/>
-                            {{ Form::submit('Purchase Membership', ['class' => 'button btn btn-primary']) }}
-                            <br/><br/><br/>
-                            {{ Form::close() }}
-                        </div>
-                    </div>
-                </div>
-            @endif
+{{--                            {{ Form::hidden('user', $thing->id, ['class' => 'form-control']) }}--}}
+{{--                            {{ Form::label('type', 'Type:', ['class' => 'control-label']) }}--}}
+{{--                            {{Form::select('type', $membership_types, null, ['class' => 'form-control','style'=>'width:100px'])}}--}}
+{{--                            <br/>--}}
+{{--                            {{ Form::submit('Purchase Membership', ['class' => 'button btn btn-primary']) }}--}}
+{{--                            <br/><br/><br/>--}}
+{{--                            {{ Form::close() }}--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            @endif--}}
         </div>
     </div>
 @endsection

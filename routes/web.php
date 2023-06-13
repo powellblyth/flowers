@@ -3,6 +3,7 @@
 use App\Http\Controllers\EntrantController;
 use App\Http\Controllers\EntryController;
 use App\Http\Controllers\JudgeController;
+use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\MembershipPurchaseController;
 use App\Http\Controllers\PaymentCardsController;
 use App\Http\Controllers\ProfileController;
@@ -40,15 +41,20 @@ Route::get('/sections/forWebSite', [SectionController::class, 'forWebSite'])->na
 Route::get('/cupsadmin', [CupController::class, 'adminIndex'])
     ->name('cups.adminIndex');
 
-Route::resource('membershippurchases', MembershipPurchaseController::class);
+//Route::resource('membershippurchases', MembershipPurchaseController::class)->only(['store']);
+Route::post(
+    '/users/{user}/renew',
+    [UserController::class, 'renew']
+)
+    ->name('membershippurchases.store');
 
 
 Route::controller(RaffleController::class)
     ->group(function () {
         Route::get('/raffle/', 'index')
-        ->name('raffle.index');
+            ->name('raffle.index');
         Route::get('/shows/{show}/raffle', 'forShow')
-        ->name('show.raffle');
+            ->name('show.raffle');
     });
 
 Route::get('/cups', [CupController::class, 'index'])
@@ -83,7 +89,7 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
     Route::get('/shows/{show}/judges/{judge}/printSheets', [JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 
-    Route::get('/members/list', [UserController::class, 'previousMembersList'])->name('members.lust');
+    Route::get('/members/list', [UserController::class, 'previousMembersList'])->name('members.list');
 
     Route::get('/users/print/{show}', [UserController::class, 'printCards'])
         ->name('users.print');
@@ -105,14 +111,14 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/entrants/{entrant}/edit', [EntrantController::class, 'edit'])->name('entrants.edit');
 
 
-    Route::resource('users', UserController::class)->except(['index','update']);
+    Route::resource('users', UserController::class)->except(['index', 'update']);
 
 //    Route::post('/entrants/{entrant}/update', [EntrantController::class, 'update'])
 //        ->name('entrants.update');
     Route::post('/entrants/{id}/optins', [EntrantController::class, 'optins'])
         ->name('entrants.optins');
 
-    Route::resource('entrants', EntrantController::class)->only(['edit','create', 'update']);
+    Route::resource('entrants', EntrantController::class)->only(['edit', 'create', 'update']);
 
 
     Route::get('/users/{user}/{show?}', [UserController::class, 'show'])->name('users.showfiltered');
@@ -136,8 +142,9 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::put('profile', [ProfileController::class, 'password'])->name('profile.password');
 });
 Route::get('/shows/{show}/status', [ShowController::class, 'statusReport'])->name('shows.status');
+//Route::get('/membership/renew', [MembershipPurchaseController::class, 'store'])->name('membership.renew');
 
-Route::controller(\App\Http\Controllers\MarketingController::class)
+Route::controller(MarketingController::class)
     ->middleware(['guest'])
     ->group(function () {
         Route::get('/pricing', 'pricing')

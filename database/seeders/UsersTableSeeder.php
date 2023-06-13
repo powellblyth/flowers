@@ -77,10 +77,10 @@ class UsersTableSeeder extends Seeder
             // No children? Probably would choose a non family member
             if ($numChildren === 0) {
                 $memberships = Membership::where('applies_to', Membership::APPLIES_TO_ENTRANT);
-                $membershipType = MembershipPurchase::TYPE_INDIVIDUAL;
+                $membershipType = Membership::APPLIES_TO_ENTRANT;
             } else {
                 $memberships = Membership::where('applies_to', Membership::APPLIES_TO_USER);
-                $membershipType = MembershipPurchase::TYPE_FAMILY;
+                $membershipType = Membership::APPLIES_TO_USER;
             }
             foreach ($memberships->get() as $membership) {
                 /** @var Membership $membership */

@@ -45,9 +45,6 @@ use Illuminate\Support\Carbon;
  */
 class MembershipPurchase extends Model
 {
-    final const TYPE_FAMILY = 'family';
-    final const TYPE_INDIVIDUAL = 'individual';
-
     protected $fillable = [
         'entrant_id', 'type', 'year', 'amount', 'start_date', 'end_date', 'user_id', 'number',
     ];
@@ -62,7 +59,7 @@ class MembershipPurchase extends Model
         $membershipNumber = null;
         if (empty($this->number)) {
             $membershipNumber = match ($this->type) {
-                self::TYPE_FAMILY => 'FM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT),
+                Membership::APPLIES_TO_USER => 'FM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT),
                 default => 'SM-' . str_pad((string) $this->id, 5, '0', STR_PAD_LEFT),
             };
         }
@@ -77,6 +74,11 @@ class MembershipPurchase extends Model
     public function scopeActive(BuilderContract $query): BuilderContract
     {
         return $query->where('end_date', '>=', Carbon::today()->toDateString());
+    }
+
+    public function scopeMostRecentFirst(BuilderContract $query): BuilderContract
+    {
+        return $query->orderBy('end_date', 'DESC');
     }
 
     public function user(): BelongsTo

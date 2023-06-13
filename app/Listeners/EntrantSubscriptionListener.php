@@ -19,9 +19,10 @@ class EntrantSubscriptionListener
     /**
      * Handle the event.
      *
+     * @param EntrantSaving $event
      * @return void
      */
-    public function handle(EntrantSaving $event)
+    public function handle(EntrantSaving $event): void
     {
         $entrant = $event->entrant;
         if ($entrant->isDirty('can_retain_data')) {

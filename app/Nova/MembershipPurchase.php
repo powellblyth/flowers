@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\MembershipListRedirector;
 use App\Nova\Filters\FilterByActive;
 use App\Nova\Filters\FilterByYear;
 use App\Nova\Filters\FilterMembershipByType;
@@ -53,10 +54,7 @@ class MembershipPurchase extends Resource
             BelongsTo::make('Entrant')->required(false),
             Select::make('Type')
                 ->sortable()
-                ->options([
-                    \App\Models\Membership::APPLIES_TO_ENTRANT => 'Entrant',
-                    \App\Models\Membership::APPLIES_TO_USER => 'Family',
-                ])->displayUsingLabels(),
+                ->options(\App\Models\Membership::getTypes())->displayUsingLabels(),
 
             Currency::make('Amount')->required()
                 ->hideFromIndex()
@@ -83,9 +81,10 @@ class MembershipPurchase extends Resource
     /**
      * Get the filters available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(Request $request): array
     {
         return [
             FilterByYear::make(),
@@ -97,9 +96,10 @@ class MembershipPurchase extends Resource
     /**
      * Get the lenses available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(Request $request): array
     {
         return [];
     }
@@ -107,12 +107,13 @@ class MembershipPurchase extends Resource
     /**
      * Get the actions available for the resource.
      *
+     * @param Request $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(Request $request): array
     {
         return [
-
+            MembershipListRedirector::make()->standalone(),
         ];
     }
 }

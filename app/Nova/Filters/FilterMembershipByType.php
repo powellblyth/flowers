@@ -2,7 +2,8 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\MembershipPurchase;
+use App\Models\Membership;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;
 
@@ -18,11 +19,12 @@ class FilterMembershipByType extends Filter
     /**
      * Apply the filter to the given query.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param Request $request
+     * @param Builder $query
      * @param mixed $value
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
-    public function apply(Request $request, $query, $value)
+    public function apply(Request $request, $query, $value): Builder
     {
         if ($value) {
             $query = $query
@@ -34,13 +36,11 @@ class FilterMembershipByType extends Filter
     /**
      * Get the filter's available options.
      *
+     * @param Request $request
      * @return array
      */
-    public function options(Request $request)
+    public function options(Request $request): array
     {
-        return [
-            'Family' => MembershipPurchase::TYPE_FAMILY,
-            'Individual' => MembershipPurchase::TYPE_INDIVIDUAL,
-        ];
+        return array_flip(Membership::getTypes());
     }
 }

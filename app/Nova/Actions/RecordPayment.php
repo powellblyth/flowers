@@ -66,15 +66,7 @@ class RecordPayment extends Action
     {
         return [
             Number::make(__('Amount in pounds'), 'amount')->step(0.01),
-            Select::make(__('Method'), 'source')->options(['cash' => 'cash',
-                                                           'cheque' => 'cheque',
-                                                           'online' => 'online',
-                                                           'card_machine' => 'card_machine',
-                                                           'debit' => 'debit',
-                                                           'refund_card_machine' => 'refund_card_machine',
-                                                           'refund_cash' => 'refund_cash',
-                                                           'refund_online' => 'refund_online',
-                                                           'refund_cheque' => 'refund_cheque']),
+            Select::make(__('Method'), 'source')->options(Payment::getAllPaymentTypes()),
         ];
     }
 }

@@ -132,6 +132,12 @@ class User extends Authenticatable
     use Mergable;
     use Billable;
 
+    /**
+     * @var bool|null This is used to cache a complex query but only through the lifecycle of the model itself
+     */
+    private ?bool $membershipIsCurrent = null;
+    private ?MembershipPurchase $latestMembershipPurchase = null;
+
     final const TYPE_ADMIN = 'admin';
     final const TYPE_DEFAULT = 'default';
 
@@ -283,7 +289,7 @@ class User extends Authenticatable
     /**
      * This creates a single entrant matching the user's data
      */
-    public function createDefaultEntrant()
+    public function createDefaultEntrant(): void
     {
         $entrant = new Entrant();
         $entrant->first_name = $this->first_name;
@@ -296,12 +302,12 @@ class User extends Authenticatable
 
     public function familyMemberships(): HasMany
     {
-        return $this->hasMany(MembershipPurchase::class, 'user_id')->where('type', 'family');
+        return $this->hasMany(MembershipPurchase::class, 'user_id')
+            ->where('type', Membership::APPLIES_TO_USER);
     }
 
     public function teamMemberships($year = null): HasManyThrough
     {
-        $year = $year ?? config('app.year');
         return $this->hasManyThrough(TeamMembership::class, TeamMembership::class);
     }
 
@@ -312,24 +318,24 @@ class User extends Authenticatable
 
     public function getMemberNumber(): ?string
     {
-        $membership = $this->membershipPurchases()
-            ->where('end_date', '>=', date('Y-m-d 11:39:39'))
-            ->first();
-        if ($membership instanceof MembershipPurchase) {
-            return $membership->getNumber();
-        } else {
-            return null;
-        }
+        return $this->membershipPurchases()
+            ->active()
+            ->first()
+            ?->getNumber();
     }
 
     public function anonymisePostcode(?string $postcode): ?string
     {
-        $newPostcode = null;
-        if (!empty($postcode)) {
-            $oldPostcode = explode(' ', trim($postcode));
-            $newPostcode = 2 == count($oldPostcode) ? $oldPostcode[0] . substr($oldPostcode[1], 0, 1) : substr($postcode, 0, 5);
+        if (empty($postcode)) {
+            return null;
         }
-        return $newPostcode;
+
+        $oldPostcode = explode(' ', trim($postcode));
+        // If there was a space, we substr out the space
+        if (2 == count($oldPostcode)) {
+            return $oldPostcode[0] . substr($oldPostcode[1], 0, 1);
+        }
+        return substr($postcode, 0, 5);
     }
 
     public function anonymise(): User
@@ -373,5 +379,33 @@ class User extends Authenticatable
     public static function getAllTypes(): array
     {
         return ['default' => 'Default', 'admin' => 'Admin'];
+    }
+
+    public function getLatestMembershipPurchase(): ?MembershipPurchase
+    {
+        if (is_null($this->latestMembershipPurchase)) {
+            $this->latestMembershipPurchase = $this->membershipPurchases->sort(
+                fn(MembershipPurchase $a, MembershipPurchase $b) => $a->end_date <=> $b->end_date
+            )->first();
+        }
+        return $this->latestMembershipPurchase;
+    }
+
+    public function getLatestMembershipEndDate(): ?Carbon
+    {
+        return $this->getLatestMembershipPurchase()?->end_date;
+    }
+
+    /**
+     * This method self-caches to allow multiple usages on a page
+     * This is because it calls methods which sort and that can be an expensive operation
+     * @return bool
+     */
+    public function membershipIsCurrent(): bool
+    {
+        if (is_null($this->membershipIsCurrent)) {
+            $this->membershipIsCurrent = $this->getLatestMembershipEndDate()?->gte(Carbon::now()) ?? false;
+        }
+        return $this->membershipIsCurrent;
     }
 }

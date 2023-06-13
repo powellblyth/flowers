@@ -41,6 +41,22 @@ class Payment extends Model
 {
     use BelongsToShow;
 
+    /**
+     * TODO constants
+     * @var array
+     */
+    protected static array $paymentTypes = [
+        'cash' => 'cash',
+        'cheque' => 'cheque',
+        'online' => 'online',
+        'debit' => 'debit',
+    ];
+    protected static array $refundPaymentTypes = [
+        'refund_cash' => 'refund_cash',
+        'refund_online' => 'refund_online',
+        'refund_cheque' => 'refund_cheque',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -49,5 +65,15 @@ class Payment extends Model
     public function entrant(): BelongsTo
     {
         return $this->belongsTo(Entrant::class);
+    }
+
+    public static function getAllPaymentTypes($includeRefund = true): array
+    {
+
+        $result = self::$paymentTypes;
+        if ($includeRefund) {
+            $result = array_merge($result, self::$refundPaymentTypes);
+        }
+        return $result;
     }
 }
