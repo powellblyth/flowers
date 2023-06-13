@@ -4,18 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EntrantRequest;
 use App\Models\Entrant;
-use App\Models\Entry;
-use App\Models\MembershipPurchase;
 use App\Models\Show;
 use App\Models\Team;
 use App\Traits\Controllers\HasShowSwitcher;
-use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 

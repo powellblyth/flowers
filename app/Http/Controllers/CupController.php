@@ -8,8 +8,6 @@ use App\Models\Entrant;
 use App\Models\Entry;
 use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\RedirectResponse;

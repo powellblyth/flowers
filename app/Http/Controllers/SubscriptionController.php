@@ -10,7 +10,6 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Laravel\Cashier\Exceptions\IncompletePayment;
-use Laravel\Cashier\SubscriptionBuilder;
 use Stripe\Exception\InvalidRequestException;
 
 class SubscriptionController extends Controller

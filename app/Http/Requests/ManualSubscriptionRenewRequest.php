@@ -6,7 +6,6 @@ use App\Models\Entrant;
 use App\Models\Membership;
 use App\Models\Payment;
 use App\Models\User;
-use App\Models\MembershipPurchase;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
