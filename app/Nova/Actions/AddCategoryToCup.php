@@ -4,19 +4,12 @@ namespace App\Nova\Actions;
 
 use App\Models\Category;
 use App\Models\Cup;
-use App\Models\Entrant;
-use App\Models\Entry;
-use App\Models\Section;
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
-use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Text;
 
 class AddCategoryToCup extends Action
 {

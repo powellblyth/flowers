@@ -4,10 +4,6 @@ namespace App\Nova\Actions;
 
 use App\Models\Category;
 use App\Models\Entrant;
-use App\Models\Membership;
-use App\Models\MembershipPurchase;
-use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;

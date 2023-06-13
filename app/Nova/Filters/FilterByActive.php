@@ -2,10 +2,8 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\Show;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 use Laravel\Nova\Filters\Filter;
 
 class FilterByActive extends Filter

@@ -2,7 +2,6 @@
 
 namespace App\Nova\Metrics;
 
-use App\Models\Membership;
 use App\Models\MembershipPurchase;
 use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Http\Requests\NovaRequest;

@@ -4,8 +4,8 @@ namespace App\Nova;
 
 use App\Nova\Actions\DuplicateMembership;
 use App\Nova\Filters\FilterByYear;
-use App\Nova\Metrics\MembershipValueByMembershipType;
 use App\Nova\Metrics\ActiveMembershipsByMembershipType;
+use App\Nova\Metrics\MembershipValueByMembershipType;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Select;

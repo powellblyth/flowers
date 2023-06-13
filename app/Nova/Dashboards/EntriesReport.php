@@ -2,8 +2,8 @@
 
 namespace App\Nova\Dashboards;
 
-use App\Nova\Metrics\MembershipValueByMembershipType;
 use App\Nova\Metrics\ActiveMembershipsByMembershipType;
+use App\Nova\Metrics\MembershipValueByMembershipType;
 use Laravel\Nova\Dashboard;
 
 class EntriesReport extends Dashboard
