@@ -2,25 +2,10 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions\CreateFamilyMembership;
-use App\Nova\Actions\CreateSingleMembership;
-use App\Nova\Actions\PrintAllCardsRedirector;
-use App\Nova\Actions\RecordPayment;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Password;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Text;
-
 /**
  * @mixin \App\Models\CommitteeMember
  */
-class CommitteeMember extends \App\Nova\User
+class CommitteeMember extends User
 {
     /**
      * Default ordering for index query.
