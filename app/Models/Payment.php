@@ -50,6 +50,7 @@ class Payment extends Model
         'cheque' => 'cheque',
         'online' => 'online',
         'debit' => 'debit',
+        'standing_order' => 'standing_order',
     ];
     protected static array $refundPaymentTypes = [
         'refund_cash' => 'refund_cash',
