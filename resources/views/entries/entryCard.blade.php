@@ -11,8 +11,9 @@
 
     @if ($can_enter)
         <form method="POST" action="{{route('entries.store')}}">
+            @csrf
     @endif
-    <form class="px-4">
+{{--    <form class="px-4">--}}
         <div class=" bg-white top-0 sticky p-2 flex">
             <div>
                 <h3 class="text-xl ">
