@@ -41,6 +41,14 @@
                                                 this.closest('form').submit();">
                             {{ __('Log out') }}
                         </x-dropdown-link>
+                        @if(Auth::check() && Auth::User()->isAdmin())
+                            <x-dropdown-link :href="config('nova.url')">
+                                {{ __('Admin') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('members.list')">
+                                {{ __('Renewal tool') }}
+                            </x-dropdown-link>
+                        @endif
                     </form>
                 @else
                     <x-dropdown-link :href="route('login')">

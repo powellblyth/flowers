@@ -45,7 +45,7 @@ $show = \App\Models\Show::public()->newestFirst()->first();
 
                     @can('logInToNova', Auth::user())
                         <x-nav-link :href="config('nova.url')">
-                            {{ __('Admin') }}
+                            {{ __('FAdmin') }}
                         </x-nav-link>
 
                     @endcan
@@ -99,18 +99,12 @@ $show = \App\Models\Show::public()->newestFirst()->first();
             @endauth
 
             @auth
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
+                @can('logInToNova', Auth::user())
+                    <x-responsive-nav-link :href="config('nova.url')">
+                        {{ __('Admin') }}
+                    </x-responsive-nav-link>
 
-                    <x-responsive-nav-link :href="route('logout')"
-                                           onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                        {{ __('Log out') }}
-                    </x-responsive-nav-link>
-                    <x-responsive-nav-link :href="route('profile.edit')">
-                        {{ __('My Profile') }}
-                    </x-responsive-nav-link>
-                </form>
+                @endcan
             @else
                 <x-responsive-nav-link :href="route('login')">
                     {{ __('Log In') }}
@@ -119,12 +113,6 @@ $show = \App\Models\Show::public()->newestFirst()->first();
                     {{ __('Register') }}
                 </x-responsive-nav-link>
 
-                @can('logInToNova', Auth::user())
-                    <x-responsive-nav-link :href="config('nova.url')">
-                        {{ __('Admin') }}
-                    </x-responsive-nav-link>
-
-                @endcan
             @endif
         </div>
 
