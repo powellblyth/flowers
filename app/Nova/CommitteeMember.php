@@ -21,7 +21,7 @@ class CommitteeMember extends User
     /**
      * The model the resource corresponds to.
      */
-    public static string $model = \App\Models\User::class;
+    public static string $model = \App\Models\CommitteeMember::class;
 
 
     public static function label(): string
