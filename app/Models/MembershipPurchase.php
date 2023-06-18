@@ -76,6 +76,16 @@ class MembershipPurchase extends Model
         return $query->where('end_date', '>=', Carbon::today()->toDateString());
     }
 
+    public function scopeSingle(BuilderContract $query): BuilderContract
+    {
+        return $query->where('type', Membership::APPLIES_TO_ENTRANT);
+    }
+
+    public function scopeFamily(BuilderContract $query): BuilderContract
+    {
+        return $query->where('type', Membership::APPLIES_TO_USER);
+    }
+
     public function scopeMostRecentFirst(BuilderContract $query): BuilderContract
     {
         return $query->orderBy('end_date', 'DESC');

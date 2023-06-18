@@ -384,9 +384,10 @@ class User extends Authenticatable
     public function getLatestMembershipPurchase(): ?MembershipPurchase
     {
         if (is_null($this->latestMembershipPurchase)) {
-            $this->latestMembershipPurchase = $this->membershipPurchases->sort(
-                fn(MembershipPurchase $a, MembershipPurchase $b) => $a->end_date <=> $b->end_date
-            )->first();
+            $this->latestMembershipPurchase = $this
+                ->membershipPurchases
+                ->sortBy('end_date', descending: true)
+                ->first();
         }
         return $this->latestMembershipPurchase;
     }

@@ -29,7 +29,7 @@ class User extends Resource
     /**
      * Default ordering for index query.
      */
-    public static $sort = [
+    public static array $sort = [
         'last_name' => 'asc',
         'first_name' => 'asc',
     ];

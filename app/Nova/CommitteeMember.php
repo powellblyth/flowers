@@ -12,7 +12,7 @@ class CommitteeMember extends User
      *
      * @var array
      */
-    public static $sort = [
+    public static array $sort = [
         'is_committee' => 'desc',
         'last_name' => 'asc',
         'first_name' => 'asc',

@@ -126,21 +126,6 @@ class Entrant extends Model
         );
     }
 
-    public function ageDescription(): Attribute
-    {
-        return new Attribute(
-            get: function ($value) {
-                if (!$this->age) {
-                    return '';
-                }
-                if ($this->age >= 18) {
-                    return '';
-                }
-                return __(':age years', ['age' => $this->age]);
-            }
-        );
-    }
-
     /**
      * Simple way to get an entrant number
      */
@@ -187,11 +172,6 @@ class Entrant extends Model
         return $this->hasMany(MembershipPurchase::class);
     }
 
-    public function individualMemberships(): HasMany
-    {
-        return $this->hasMany(MembershipPurchase::class, 'entrant_id');
-    }
-
     public function getValidTeamOptions(): array
     {
         $entrant = $this;
@@ -206,48 +186,6 @@ class Entrant extends Model
                 return !$entrant->canJoin($team);
             })
             ->pluck('name', 'id')->toArray();
-    }
-
-    public function familyMembership(): ?MembershipPurchase
-    {
-        if ($this->user instanceof User) {
-            return $this->user->familyMemberships()->first();
-        } else {
-            return null;
-        }
-    }
-
-    public function getCurrentMembership(): ?MembershipPurchase
-    {
-        $membership = $this->individualMemberships()
-            ->orderBy('year', 'desc')
-            ->orderBy('created_at', 'desc')
-            ->where('type', 'single')
-            ->first();
-
-        if (!$membership instanceof MembershipPurchase || $membership->isNotExpired()) {
-            $membership = $this->familyMembership();
-        }
-        if ($membership instanceof MembershipPurchase && $membership->isNotExpired()) {
-            return $membership;
-        } else {
-            return null;
-        }
-    }
-
-    public function isAMember(): bool
-    {
-        return $this->individualMemberships->count() > 0 || $this->familyMembership()->count() > 0;
-    }
-
-    public function getMemberNumber()
-    {
-        $membership = $this->getCurrentMembership();
-        if ($membership instanceof MembershipPurchase) {
-            return $membership->getNumber();
-        } else {
-            return null;
-        }
     }
 
     public function anonymise(): Entrant

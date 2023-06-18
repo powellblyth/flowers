@@ -96,6 +96,10 @@ class Membership extends Model
         ];
     }
 
+    /**
+     * This method is a utility to determine the next appropriate renewal date
+     * @return Carbon
+     */
     public static function getRenewalDate(): Carbon
     {
         $renewalDate = new Carbon('first day of June ' . date('Y'));
