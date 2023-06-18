@@ -94,8 +94,9 @@ class User extends Resource
                 $fees = 0;
                 $freeEntries = 0;
                 $entries = 0;
+                $latestShow = \App\Models\Show::public()->newestFirst()->first();
                 foreach ($this->entrants as $entrant) {
-                    foreach ($entrant->entries()->where('show_id', 6)->get() as $entry) {
+                    foreach ($entrant->entries()->forShow($latestShow)->get() as $entry) {
                         $entryPrice = (int) $entry->getActualPrice();
                         $fees += $entryPrice;
                         $entries++;
