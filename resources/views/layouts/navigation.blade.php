@@ -45,7 +45,7 @@ $show = \App\Models\Show::public()->newestFirst()->first();
 
                     @can('logInToNova', Auth::user())
                         <x-nav-link :href="config('nova.url')">
-                            {{ __('FAdmin') }}
+                            {{ __('Admin') }}
                         </x-nav-link>
 
                     @endcan
