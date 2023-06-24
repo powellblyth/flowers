@@ -1,5 +1,5 @@
-<div class="py-8">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+<div class="py-4">
+    <div class="max-w-7xl mx-auto sm:px-4 lg:px-4">
         <div class="bg-white">
             <nav class="flex flex-col sm:flex-row">
                 @foreach ($shows as $showList)
