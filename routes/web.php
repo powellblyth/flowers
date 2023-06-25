@@ -118,7 +118,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/entrants/{id}/optins', [EntrantController::class, 'optins'])
         ->name('entrants.optins');
 
-    Route::resource('entrants', EntrantController::class)->only(['edit', 'create', 'update']);
+    Route::resource('entrants', EntrantController::class)->only(['edit','store', 'create', 'update']);
 
 
     Route::get('/users/{user}/{show?}', [UserController::class, 'show'])->name('users.showfiltered');
