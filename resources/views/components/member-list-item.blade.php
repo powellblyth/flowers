@@ -9,7 +9,7 @@
                         <form method="POST" id="form_{{$member->id}}"
                               action="{{route('membershippurchases.store', ['user'=> $member])}}">
                             @csrf
-                            {{$member->full_name}} / {{$member->postcode}}</td>
+                            {{$member->last_name}}, {{$member->first_name}} / {{$member->postcode}}</td>
                     <td>
                         <x-goodbad
                             :success="$member->membershipIsCurrent()">{{$member->getLatestMembershipEndDate()?->format('Y-m-d') ?? '--'}}</x-goodbad>
