@@ -15,7 +15,7 @@
                 <p>Please Double-check the email address</p>
                 <p>Please accurately record the source of payment</p>
             </div>
-            <div class="text-right flex-none">
+            <div class="text-right flex-none"><br /><br /><br /><br />
                 <x-button><a href="{{config('nova.url') . '/resources/users/new'}}">Create New Family</a></x-button>
             </div>
         </div>
