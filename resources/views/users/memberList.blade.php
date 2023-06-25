@@ -34,7 +34,7 @@
                 <th class="px-4">Name</th>
                 <th class="px-4">Previous <br/>Membership</th>
                 <th class="px-4">Retain Data?<br/><i>Please Ask</i></th>
-                <th class="px-4">Email?<br/><i>Please Ask</i></th>
+                <th class="px-4">Can<br />We<br >Email<br />you?</th>
                 <th class="px-4">Email Address</th>
                 <th class="px-4">Renewing?</th>
             </tr>
