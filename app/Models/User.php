@@ -223,7 +223,9 @@ class User extends Authenticatable
     {
         return $query
             ->orderby('users.last_name')
-            ->orderBy('users.first_name');
+            ->orderBy('users.first_name')
+            ->orderBy('users.postcode')
+            ;
     }
 
     public function fullName(): Attribute
