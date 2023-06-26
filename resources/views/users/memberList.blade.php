@@ -29,15 +29,6 @@
         </x-layout.intro-para>
     @endif
     <x-layout.intro-para>
-        <table class="table-auto text-sm">
-            <tr>
-                <th class="px-4">Name</th>
-                <th class="px-4">Previous <br/>Membership</th>
-                <th class="px-4">Retain Data?<br/><i>Please Ask</i></th>
-                <th class="px-4">Can<br />We<br >Email<br />you?</th>
-                <th class="px-4">Email Address</th>
-                <th class="px-4">Renewing?</th>
-            </tr>
             <livewire:member-list></livewire:member-list>
 {{--            @foreach($members as $member)--}}
 {{--                @php--}}
@@ -104,7 +95,6 @@
 {{--                </tr>--}}
 {{--                </form>--}}
 {{--            @endforeach--}}
-        </table>
 
     </x-layout.intro-para>
 </x-app-layout>
