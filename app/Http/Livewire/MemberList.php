@@ -15,8 +15,11 @@ class MemberList extends Component
 
     public ?string $filter = null;
 
+
     public function render(): Factory|View|Application
     {
+        // TODOD this
+//        does not search properly
         $memberSearch = User::with('membershipPurchases')->notanonymised()->alphabetical();
         if ($this->filter) {
             $memberSearch = $memberSearch->where('last_name', 'LIKE', '%' . $this->filter . '%')
@@ -24,8 +27,7 @@ class MemberList extends Component
                 ->orWhere('email', 'LIKE', '%' . $this->filter . '%')
                 ->orWhere('postcode', 'LIKE', '%' . $this->filter . '%')
                 ->orWhere('address_1', 'LIKE', '%' . $this->filter . '%')
-                ->orWhere('address_2', 'LIKE', '%' . $this->filter . '%')
-            ;
+                ->orWhere('address_2', 'LIKE', '%' . $this->filter . '%');
         }
 
         $this->memberList = $memberSearch->get();

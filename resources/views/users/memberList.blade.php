@@ -29,7 +29,7 @@
         </x-layout.intro-para>
     @endif
     <x-layout.intro-para>
-            <livewire:member-list></livewire:member-list>
+        <livewire:member-list/>
 {{--            @foreach($members as $member)--}}
 {{--                @php--}}
 {{--                    $latestMembershipPurchase = $member->getLatestMembershipPurchase();--}}
