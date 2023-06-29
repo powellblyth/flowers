@@ -37,7 +37,13 @@ class UserRequest extends FormRequest
             'address_1' => ['required_without:email', 'max:255'],
             'address_2' => ['required_without:email', 'max:255'],
             'address_town' => ['required_without:email', 'max:255'],
+            'telephone' => ['nullable', 'max:15'],
             'postcode' => ['required_without:email', 'max:10'],
+            'can_retain_data' => ['nullable', 'int', 'min:0', 'max:1'],
+            'can_email' => ['nullable', 'int', 'min:0', 'max:1'],
+            'can_phone' => ['nullable', 'int', 'min:0', 'max:1'],
+            'can_sms' => ['nullable', 'int', 'min:0', 'max:1'],
+            'can_post' => ['nullable', 'int', 'min:0', 'max:1'],
         ];
     }
 }

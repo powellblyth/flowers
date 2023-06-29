@@ -16,4 +16,3 @@
         <livewire:member-list-item :member="$member"  wire:key="{{$member->id}}"/>
         {{--            <x-member-list-item :member="$member" />--}}
     @endforeach
-</div>
