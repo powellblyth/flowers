@@ -61,9 +61,9 @@ class CreateEntry extends Action
      */
     public function fields()
     {
-        $categories = Category::where('show_id', 6)->orderBy('sortorder')->get();
+        $categories = Category::where('show_id', 8)->orderBy('sortorder')->get();
         $categoriesArray = [];
-        foreach ($categories as $category){
+        foreach ($categories as $category) {
             $categoriesArray[$category->id] = $category->numbered_name;
         }
         $selects = [];
