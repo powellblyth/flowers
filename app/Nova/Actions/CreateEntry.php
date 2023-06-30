@@ -47,7 +47,7 @@ class CreateEntry extends Action
                     $entry = new \App\Models\Entry();
                     $entry->entrant_id = $entrant->id;
                     $entry->category_id = $fields['category_id_' . $x];
-                    $entry->show_id = 6; //hard code hell
+                    $entry->show_id = 8; //hard code hell
                     $entry->save();
                 }
             }
