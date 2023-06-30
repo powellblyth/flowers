@@ -4,6 +4,8 @@ namespace App\Nova\Actions;
 
 use App\Models\Category;
 use App\Models\Entrant;
+use App\Models\Entry;
+use App\Models\Show;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
@@ -44,10 +46,10 @@ class CreateEntry extends Action
         $models->each(function (Entrant $entrant) use ($fields) {
             for ($x = 1; $x <= self::$numRows; $x++) {
                 if ($fields['category_id_' . $x]) {
-                    $entry = new \App\Models\Entry();
+                    $entry = new Entry();
                     $entry->entrant_id = $entrant->id;
                     $entry->category_id = $fields['category_id_' . $x];
-                    $entry->show_id = 8; //hard code hell
+                    $entry->show()->associate(Show::public()->newestFirst()->first()); //hard code hell
                     $entry->save();
                 }
             }
@@ -61,7 +63,7 @@ class CreateEntry extends Action
      */
     public function fields()
     {
-        $categories = Category::where('show_id', 8)->orderBy('sortorder')->get();
+        $categories = Category::forShow(Show::public()->newestFirst()->first())->inOrder()->get();
         $categoriesArray = [];
         foreach ($categories as $category) {
             $categoriesArray[$category->id] = $category->numbered_name;
