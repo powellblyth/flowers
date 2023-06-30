@@ -89,6 +89,6 @@ class CategoryController extends Controller
             ];
         }
 
-        return view('categories.printLookups', ['card_fronts' => $cardFronts]);
+        return view('categories.printlookups', ['card_fronts' => $cardFronts]);
     }
 }
