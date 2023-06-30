@@ -80,6 +80,7 @@ class Show extends Resource
                 ->options([\App\Models\Show::STATUS_PLANNED => 'Planned',
                            \App\Models\Show::STATUS_CURRENT => 'Current',
                            \App\Models\Show::STATUS_PASSED => 'Passed',
+                           \App\Models\Show::STATUS_CANCELLED => 'Cancelled',
                 ])
                 ->displayUsingLabels()
             ,
@@ -91,6 +92,7 @@ class Show extends Resource
                 \App\Models\Show::STATUS_PLANNED => 'danger',
                 \App\Models\Show::STATUS_CURRENT => 'warning',
                 \App\Models\Show::STATUS_PASSED => 'success',
+                \App\Models\Show::STATUS_CANCELLED => 'danger',
             ])->sortable(),
             HasMany::make('Categories'),
 

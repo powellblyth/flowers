@@ -72,6 +72,7 @@ class Show extends Model
     final const STATUS_CURRENT = 'current';
     final const STATUS_PLANNED = 'planned';
     final const STATUS_PASSED = 'passed';
+    final const STATUS_CANCELLED = 'cancelled';
 
     public function getRouteKeyName(): string
     {
