@@ -207,7 +207,7 @@ class UserController extends Controller
 
         $cardData = $this->getCardDataFromEntries($entriesQuery->get());
 
-        return view('cards.printCards', [
+        return view('cards.printcards', [
             'card_fronts' => $cardData['fronts'],
             'card_backs' => $cardData['backs'],
         ]);
