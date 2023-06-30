@@ -57,7 +57,7 @@ class NewMemberForm extends Component
     public function submit()
     {
         $validatedData = $this->validate();
-        $optIns = ['retain_data', 'post', 'sms', 'email'];
+        $optIns = ['retain_data', 'post', 'sms', 'email', 'phone'];
         $optInRequest = [];
 //        var_dump($validatedData);
         foreach ($optIns as $optin) {

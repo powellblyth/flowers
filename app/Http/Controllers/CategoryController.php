@@ -62,7 +62,7 @@ class CategoryController extends Controller
                 'class_name' => $category->name
             ];
         }
-        return view('categories.printCards', ['show' => $show, 'card_fronts' => $cardFronts]);
+        return view('categories.printcards', ['show' => $show, 'card_fronts' => $cardFronts]);
     }
 
     /**
