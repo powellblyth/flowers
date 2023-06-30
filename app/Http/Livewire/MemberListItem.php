@@ -35,8 +35,8 @@ class MemberListItem extends Component
     public function mount()
     {
         $this->email = $this->member->email;
-        $this->can_email = $this->member->can_email;
-        $this->can_retain_data = $this->member->can_retain_data;
+        $this->can_email = (bool)$this->member->can_email;
+        $this->can_retain_data = (bool)$this->member->can_retain_data;
         $this->membership_type = $this->member->getLatestMembershipPurchase()?->type;
         $this->payment_type = null;
     }
