@@ -81,7 +81,11 @@
                                     @endif
                                 </td>
                                 <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
-                                    {{$winner->entrant->printable_name}}
+                                    @if(Auth::user() && Auth::user()->isAdmin())
+                                        {{$winner->entrant->full_name}}
+                                    @else
+                                        {{$winner->entrant->printable_name}}
+                                    @endif
                                 </td>
                                 <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
                                     {{$winner->points}} @lang('points')
