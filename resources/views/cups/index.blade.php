@@ -95,7 +95,11 @@
                     </table>
                 @else
                     <i>@lang('Winner'): </i>
+                @if (Auth::user() && Auth::user()->isAdmin())
+                    {{$results[$cup->id]->cupWinner?->full_name;}}
+                    @else
                     {{$results[$cup->id]->cupWinner?->printable_name;}}
+                    @endif
                     @if (is_object($results[$cup->id]?->entry ?? null))
                         for category
                         <i><b>{{$results[$cup->id]?->entry?->category?->numbered_name}}</b></i>
