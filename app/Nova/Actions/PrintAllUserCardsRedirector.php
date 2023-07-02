@@ -11,7 +11,7 @@ use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\Select;
 
-class PrintAllCardsRedirector extends Action
+class PrintAllUserCardsRedirector extends Action
 {
     use InteractsWithQueue, Queueable;
 
@@ -44,35 +44,21 @@ class PrintAllCardsRedirector extends Action
     /**
      * Perform the action on the given models.
      *
-     * @return array|string[]|void
+     * @return array|string[]
      */
-    public function handle(ActionFields $fields, Collection $showsOrUsers)
+    public function handle(ActionFields $fields, Collection $users)
     {
-        $params = ['since' => $fields->since];
         // Can only do one at once.
-        foreach ($showsOrUsers as $model) {
-            switch ($model::class) {
-                case Show::class:
-                    return Action::openInNewTab(
-                        route(
-                            'entries.printall',
-                            ['show' => $model, 'since' => $fields->since]
-                        )
-                    );
-                    break;
-                case User::class:
-                    return Action::openInNewTab(
-                        route(
-                            'users.print',
-                            [
-                                'users' => $showsOrUsers->pluck('id')->toArray(),
-                                'show' => Show::public()->newestFirst()->first(),
-                                'since' => $fields->since,
-                            ]
-                        )
-                    );
-            };
-        }
+        return Action::openInNewTab(
+            route(
+                'users.print',
+                [
+                    'users' => $users->pluck('id')->toArray(),
+                    'show' => Show::public()->newestFirst()->first(),
+                    'since' => $fields->since,
+                ]
+            )
+        );
     }
 
     /**

@@ -4,7 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\CreateFamilyMembership;
 use App\Nova\Actions\CreateSingleMembership;
-use App\Nova\Actions\PrintAllCardsRedirector;
+use App\Nova\Actions\PrintAllUserCardsRedirector;
 use App\Nova\Actions\RecordPayment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -229,7 +229,7 @@ class User extends Resource
     {
         return [
             RecordPayment::make(),
-            PrintAllCardsRedirector::make()->showOnIndex(),
+            PrintAllUserCardsRedirector::make()->showOnIndex(),
             CreateFamilyMembership::make()->showOnIndex()->showOnTableRow(),
             CreateSingleMembership::make()->showOnIndex()->showOnTableRow(),
         ];

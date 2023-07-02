@@ -4,7 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\CheckShowRedirector;
 use App\Nova\Actions\DuplicateShowAction;
-use App\Nova\Actions\PrintAllCardsRedirector;
+use App\Nova\Actions\PrintAllShowCardsRedirector;
 use App\Nova\Actions\PrintLookupSheetsRedirector;
 use App\Nova\Actions\PrintTableTopCardsRedirector;
 use Illuminate\Http\Request;
@@ -52,6 +52,7 @@ class Show extends Resource
     /**
      * Get the fields displayed by the resource.
      *
+     * @param Request $request
      * @return array
      */
     public function fields(Request $request): array
@@ -142,7 +143,7 @@ class Show extends Resource
     {
         return [
             DuplicateShowAction::make()->showOnIndex(),
-            PrintAllCardsRedirector::make()->showOnIndex(),
+            PrintAllShowCardsRedirector::make()->showOnIndex(),
             PrintTableTopCardsRedirector::make()->showOnIndex(),
             PrintLookupSheetsRedirector::make()->showOnIndex(),
             CheckShowRedirector::make()->showOnIndex(),
