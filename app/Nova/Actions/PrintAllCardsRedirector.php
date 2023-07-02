@@ -44,7 +44,7 @@ class PrintAllCardsRedirector extends Action
     /**
      * Perform the action on the given models.
      *
-     * @return mixed
+     * @return array|string[]|void
      */
     public function handle(ActionFields $fields, Collection $showsOrUsers)
     {
@@ -71,10 +71,7 @@ class PrintAllCardsRedirector extends Action
                             ]
                         )
                     );
-//                    $params['users'] = array_merge($params['users'] ?? [], [$model->id]);
-                    break;
             };
-
         }
     }
 
@@ -83,11 +80,12 @@ class PrintAllCardsRedirector extends Action
      *
      * @return array
      */
-    public function fields()
+    public function fields(): array
     {
         return [
             Select::make('Since')->options(
                 [
+                    1 => '1 minute',
                     5 => '5 minutes',
                     10 => '10 minutes',
                     30 => '30 minutes',

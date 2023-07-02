@@ -2,6 +2,7 @@
 
 namespace App\Nova\Actions;
 
+use App\Models\Show;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
@@ -45,14 +46,16 @@ class CupResultsChooserRedirector extends Action
      * @param Collection $cups
      * @return array|string[]
      */
-    public function handle(ActionFields $fields, Collection $cups)
+    public function handle(ActionFields $fields, Collection $cups): array
     {
+        $newestShow = Show::public()->newestFirst()->first();
         $params = [];
         // Can only do one at once.
         foreach ($cups as $model) {
             $params['cup'] = $model;
             // can only do one cup at once
         }
+        $params['show'] = $newestShow;
         return Action::openInNewTab(route('cups.show', $params));
     }
 
@@ -61,7 +64,7 @@ class CupResultsChooserRedirector extends Action
      *
      * @return array
      */
-    public function fields()
+    public function fields(): array
     {
         return [
         ];
