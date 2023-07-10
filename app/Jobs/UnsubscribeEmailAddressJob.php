@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Models\User;
 use App\Services\MailChimpService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
@@ -11,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class updateMailChimpMembershipTags implements ShouldQueue
+class UnsubscribeEmailAddressJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -20,7 +19,7 @@ class updateMailChimpMembershipTags implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(public ?User $user)
+    public function __construct(public string $emailAddress)
     {
         //
     }
@@ -30,9 +29,9 @@ class updateMailChimpMembershipTags implements ShouldQueue
      *
      * @return void
      */
-    public function handle(): void
+    public function handle()
     {
         $mailchimp = app(MailChimpService::class);
-
+        $mailchimp->unsubscribe($this->emailAddress);
     }
 }

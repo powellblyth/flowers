@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Jobs\syncUserToMailChimpJob;
+use App\Jobs\SyncUserToMailChimpJob;
 use App\Models\MembershipPurchase;
 
 class MembershipPurchaseObserver
@@ -16,7 +16,7 @@ class MembershipPurchaseObserver
     {
         // This means the member's tag gets updated
         if ($membershipPurchase->user) {
-            syncUserToMailChimpJob::dispatch($membershipPurchase->user);
+            SyncUserToMailChimpJob::dispatch($membershipPurchase->user);
         }
     }
 }

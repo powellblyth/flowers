@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
 use App\Traits\MakesCards;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
+use Throwable;
 
 class UserController extends Controller
 {
@@ -102,14 +104,11 @@ class UserController extends Controller
 
         return view('users.show', [
             'user' => (new UserResource($user))->toArray(new Request(['show' => $show])),
-            //            'user' => $user,
             'paid' => $totalPaid,
             'membership_fee' => $membershipFee,
             'entry_fee' => $entryFee,
             'total_paid' => $totalPaid,
             'payments' => $payments,
-            //            'payment_methods' => $user->paymentMethods(),
-            //            'needs_payment_method' => !$user->hasPaymentMethod(),
             'isAdmin' => $this->isAdmin(),
             'show' => $show,
         ]);
@@ -133,6 +132,7 @@ class UserController extends Controller
      * @param UserRequest $request
      * @return RedirectResponse
      * @throws AuthorizationException
+     * @throws Exception
      */
     public function store(UserRequest $request): RedirectResponse
     {
@@ -154,7 +154,8 @@ class UserController extends Controller
                 ->withStatus(__('Family :Family successfully created.', ['family' => $user->last_name]));
 
         }
-        return redirect()->route('users.show', ['user' => $user])->withStatus(__('Family successfully created.'));
+        return redirect()->route('users.show', ['user' => $user])
+            ->withStatus(__('Family successfully created.'));
     }
 
     /**
@@ -163,7 +164,7 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\View\View
      * @throws AuthorizationException
      */
-    public function edit(User $user)
+    public function edit(User $user): \Illuminate\Contracts\View\View
     {
         $this->authorize('update', $user);
         return view(
@@ -184,23 +185,15 @@ class UserController extends Controller
         $this->authorize('delete', $user);
         $user->delete();
 
-        return redirect()->route('users.index')->withStatus(__('Family successfully deleted.'));
+        return redirect()->route('users.index')
+            ->withStatus(__('Family successfully deleted.'));
     }
 
     public function printCards(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
     {
-
-//        $show = $this->getShowFromRequest($request);
-
-//        $categoryData = [];
         $entriesQuery = $this->getEntriesQuery($show);
-
-//        if ($request->filled('users')) {
         $entriesQuery->whereIn('users.id', $request->get('users'));
-//        }
-//        if ($request->filled('entrants')) {
-//            $entriesQuery->whereIn('entrants.id', (array) $request->entrants);
-//        }
+
         if ($request->filled('since')) {
             $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
         }
@@ -228,6 +221,12 @@ class UserController extends Controller
     }
 
 
+    /**
+     * @param ManualSubscriptionRenewRequest $request
+     * @param User $user
+     * @return RedirectResponse
+     * @throws Throwable
+     */
     public function renew(ManualSubscriptionRenewRequest $request, User $user): RedirectResponse
     {
         $entrant = null;
@@ -240,16 +239,24 @@ class UserController extends Controller
         $optIns = ['retain_data', 'email'];
         $optInRequest = [];
 
-        /* @todo this should be a method on the model or something */
-        foreach ($optIns as $optin) {
-            if ($request->post('can_' . $optin) == '1') {
-                $optInRequest['can_' . $optin] = 1;
-                $optInRequest[$optin . '_opt_in'] = Carbon::now();
-            } else {
-                $optInRequest['can_' . $optin] = 0;
-                $optInRequest[$optin . '_opt_out'] = Carbon::now();
-            }
-        }
+
+        $optInRequest = $user->getOptinValues(
+            ['retain_data', 'email'],
+            [
+                'can_retain_data' => $request->post('can_retain_data'),
+                'can_email' => $request->post('can_email'),
+            ]
+        );
+//        /* @todo this should be a method on the model or something */
+//        foreach ($optIns as $optin) {
+//            if ($request->post('can_' . $optin) == '1') {
+//                $optInRequest['can_' . $optin] = 1;
+//                $optInRequest[$optin . '_opt_in'] = Carbon::now();
+//            } else {
+//                $optInRequest['can_' . $optin] = 0;
+//                $optInRequest[$optin . '_opt_out'] = Carbon::now();
+//            }
+//        }
 
         if (!$user->update(
             array_merge(

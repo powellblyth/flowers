@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\syncUserToMailChimpJob;
+use App\Jobs\SyncUserToMailChimpJob;
 use App\Models\User;
 use Illuminate\Console\Command;
 
@@ -31,7 +31,7 @@ class ResyncMembersCommand extends Command
     {
         User::all()->each(function (User $user) {
             dump($user?->full_name ?? 'null');
-            syncUserToMailChimpJob::dispatch($user);
+            SyncUserToMailChimpJob::dispatch($user);
         });
 
         return Command::SUCCESS;

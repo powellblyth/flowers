@@ -125,12 +125,14 @@ class MemberListItem extends Component
         $membershipPurchase->start_date = Carbon::now();
 
         // Todo record payment here
-        if ($membershipPurchase->save()) {
-            DB::commit();
-            $this->failed = false;
-            $this->successMessage = 'Membership Saved';
-            $this->emit('refreshComponent');
+        if (!$membershipPurchase->save()) {
+            DB::rollBack();
+            return;
         }
-        DB::rollBack();
+
+        DB::commit();
+        $this->failed = false;
+        $this->successMessage = 'Membership Saved';
+        $this->emit('refreshComponent');
     }
 }

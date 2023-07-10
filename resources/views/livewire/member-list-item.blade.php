@@ -1,5 +1,5 @@
 @props(['member'])
-<div class="grid grid-cols-[250px_120px_80px_80px_300px_170px_120px]">
+<div wire:key="member_list_item_{{$member->id}}" class="grid grid-cols-[250px_120px_80px_80px_300px_170px_120px]">
 
     <div class=" border-b-2 my-4">
         {{$member->last_name}}, {{$member->first_name}} / {{$member->postcode, $member->address_1}}
@@ -18,14 +18,14 @@
                value="1" {!! $member->membershipIsCurrent() ?' disabled="disabled"' : '' !!} {!! $member->can_email ? 'checked="checked"' :'' !!}
         " />
     </div>
-    <div class=" border-b-2 my-4">
+    <div class="border-b-2 my-4">
         @if(!$member->membershipIsCurrent())
             <x-input wire:model="email" autocomplete="off" value="{{$member->email}}" type="email" name="email" class="text-sm w-64"/>
         @else
             {{$member->email}}
         @endif
     </div>
-    <div class=" border-b-2 my-4 ">
+    <div class="border-b-2 my-4 ">
         @if($this->failed)
             <span class="text-red-600">{{$this->failedMessage}}</span>
         @endif
@@ -46,9 +46,9 @@
             {{\App\Models\Membership::getTypes()[$latestMembershipPurchase?->type]}}
         @endif
     </div>
-    <div class=" border-b-2 my-4 flex ">
+    <div class="border-b-2 my-4 flex ">
         @if(!$member->membershipIsCurrent())
-            <x-button wire:click.prevent.stop="renew" >Renew</x-button>
+            <x-button wire:click.prevent.stop="renew">Renew</x-button>
         @endif
     </div>
 

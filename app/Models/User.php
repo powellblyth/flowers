@@ -224,8 +224,7 @@ class User extends Authenticatable
         return $query
             ->orderby('users.last_name')
             ->orderBy('users.first_name')
-            ->orderBy('users.postcode')
-            ;
+            ->orderBy('users.postcode');
     }
 
     public function fullName(): Attribute
@@ -233,6 +232,31 @@ class User extends Authenticatable
         return new Attribute(
             get: fn($value) => trim($this->first_name . ' ' . $this->last_name)
         );
+    }
+
+    /**
+     * This method manages opt-ins and opt outs and generates properties to be used
+     *  in $model->update
+     * Critically, it knows how to handle re-confirmation of opt-ins
+     * @param array $optinList a list of opt-ins, but in the format 'sms' not 'can_sms'
+     * @param array $values a key-indexed array of opt-in and value, in the format 'can_sms' not 'sms'
+     * @return array
+     */
+    public function getOptinValues(array $optinList, array $values): array
+    {
+        $return = [];
+        foreach ($optinList as $optin) {
+            if ($values['can_' . $optin] == '1') {
+                $return['can_' . $optin] = 1;
+                $return[$optin . '_opt_in'] = Carbon::now();
+                $return[$optin . '_opt_out'] = null;
+            } else {
+                $return['can_' . $optin] = 0;
+                $return[$optin . '_opt_out'] = Carbon::now();
+                $return[$optin . '_opt_in'] = null;
+            }
+        }
+        return $return;
     }
 
     public function printableName(): Attribute
