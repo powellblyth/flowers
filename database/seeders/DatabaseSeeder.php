@@ -20,12 +20,12 @@ class DatabaseSeeder extends Seeder
         $this->call(SectionsTableSeeder::class);
         $this->call(TeamsTableSeeder::class);
         $this->call(ShowsTableSeeder::class);
-        $this->call(MembershipsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(JudgeRolesTableSeeder::class);
         $this->call(JudgesTableSeeder::class);
         $this->call(CupJudgeRoleTableSeeder::class);
         $this->call(CategoryJudgeRoleTableSeeder::class);
+        $this->call(MembershipsTableSeeder::class);
         $this->call(JudgeShowTableSeeder::class);
     }
 }
