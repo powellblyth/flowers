@@ -82,12 +82,12 @@
                                 </td>
                                 <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
                                     @if(Auth::user() && Auth::user()->isAdmin())
-                                        {{$winner->entrant->full_name}}
+                                        {{ $winner->entrant->full_name }}
                                         @if (!$winnerPoints || $winner->points === $winnerPoints)
                                             <br />
-                                            {{ $winner->entrant->user?->address}}<br />
-                                            {{$winner->entrant->user?->email}}<br />
-                                            {{$winner->entrant->user?->telephone}}
+                                            {{ $winner->entrant->user?->address }}<br />
+                                            {{ $winner->entrant->user?->email }}<br />
+                                            {{ $winner->entrant->user?->telephone }}
                                         @endif
                                     @else
                                         {{$winner->entrant->printable_name}}
@@ -101,10 +101,16 @@
                     </table>
                 @else
                     <i>@lang('Winner'): </i>
+
                 @if (Auth::user() && Auth::user()->isAdmin())
-                    {{$results[$cup->id]->cupWinner?->full_name;}}
+                    {{ $results[$cup->id]->cupWinner?->full_name}}
+                        <br />
+                    {{ $winner->entrant->user?->address }}<br />
+                    {{ $winner->entrant->user?->email }}<br />
+                    {{ $winner->entrant->user?->telephone }}
+
                     @else
-                    {{$results[$cup->id]->cupWinner?->printable_name;}}
+                    {{ $results[$cup->id]->cupWinner?->printable_name }}
                     @endif
                     @if (is_object($results[$cup->id]?->entry ?? null))
                         for category
