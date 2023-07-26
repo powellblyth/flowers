@@ -83,6 +83,10 @@
                                 <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
                                     @if(Auth::user() && Auth::user()->isAdmin())
                                         {{$winner->entrant->full_name}}
+                                        @if (!$winnerPoints || $winner->points === $winnerPoints)
+                                            <br />
+                                            {{$winner->entrant->user?->address}}
+                                        @endif
                                     @else
                                         {{$winner->entrant->printable_name}}
                                     @endif
