@@ -85,8 +85,15 @@
                                         {{$winner->entrant->full_name}}
                                         @if (!$winnerPoints || $winner->points === $winnerPoints)
                                             <br />
-                                            {{$winner->entrant->user?->address}}
+                                        @php
+                                        $address = $winner->entrant->user?->address;
+                                        if (empty($address)){
+                                            $address = $winner->entrant->user?->email;
+                                        }
+                                        @endphp
+                                            {{$address}}
                                         @endif
+                                        {{$winner->entrant->user?->telephone}}
                                     @else
                                         {{$winner->entrant->printable_name}}
                                     @endif
