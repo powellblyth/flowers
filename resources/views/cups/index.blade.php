@@ -105,9 +105,9 @@
                 @if (Auth::user() && Auth::user()->isAdmin())
                     {{ $results[$cup->id]->cupWinner?->full_name}}
                         <br />
-                    {{ $winner->entrant->user?->address }}<br />
-                    {{ $winner->entrant->user?->email }}<br />
-                    {{ $winner->entrant->user?->telephone }}
+                    {{ $results[$cup->id]->cupWinner?->user?->address }}<br />
+                    {{ $results[$cup->id]->cupWinner?->user?->email }}<br />
+                    {{ $results[$cup->id]->cupWinner?->user?->telephone }}
 
                     @else
                     {{ $results[$cup->id]->cupWinner?->printable_name }}
