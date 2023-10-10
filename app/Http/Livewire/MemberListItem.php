@@ -32,7 +32,7 @@ class MemberListItem extends Component
     public ?string $filter = null;
     protected $listeners = ['refreshComponent' => '$refresh'];
 
-    public function mount()
+    public function mount(): void
     {
         $this->email = $this->member->email;
         $this->can_email = (bool)$this->member->can_email;
