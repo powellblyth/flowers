@@ -31,3 +31,5 @@ Homestead.json
 .idea/
 .DS_Store
 .phpunit.result.cache
+
+auth.json
