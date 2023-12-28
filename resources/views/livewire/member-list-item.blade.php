@@ -48,7 +48,7 @@
     </div>
     <div class="border-b-2 my-4 flex ">
         @if(!$member->membershipIsCurrent())
-            <x-button wire:click.prevent.stop="renew">Renew</x-button>
+            <x-button wire:click.prevent.stop="renew">@lang('Renew')</x-button>
         @endif
     </div>
 
