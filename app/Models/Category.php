@@ -26,7 +26,6 @@ use Illuminate\Support\Facades\Log;
  * @property int|null $first_prize
  * @property int|null $second_prize
  * @property int|null $third_prize
- * @property int|null $year
  * @property int|null $show_id
  * @property int|null $section_id
  * @property string $status
@@ -58,7 +57,6 @@ use Illuminate\Support\Facades\Log;
  * @method static Builder|Category whereStatus($value)
  * @method static Builder|Category whereThirdPrize($value)
  * @method static Builder|Category whereUpdatedAt($value)
- * @method static Builder|Category whereYear($value)
  * @property int|null $minimum_age
  * @property int|null $maximum_age
  * @property bool $private private means you can't enter it as a member of the public, e.g.. school categories
