@@ -34,7 +34,7 @@ class CategoryController extends Controller
      */
     public function forShow(Request $request, Show $show): View
     {
-        $sections = Section::orderBy('number', 'asc')->get();
+        $sections = $show->sections()->inOrder()->get();
 
         return view(
             'categories.index',

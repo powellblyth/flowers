@@ -37,7 +37,6 @@ class CupController extends Controller
     {
         $results = [];
         $cups = Cup::inOrder()
-            ->with(['section'])
             ->get();
 
         foreach ($cups as $cup) {

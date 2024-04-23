@@ -17187,10 +17187,37 @@ namespace NZTim\Mailchimp {
          * 
          *
          * @static 
+         */        public static function getTags($listId, $email)
+        {
+                        /** @var \NZTim\Mailchimp\Mailchimp $instance */
+                        return $instance->getTags($listId, $email);
+        }
+                    /**
+         * 
+         *
+         * @static 
          */        public static function addTags($listId, $email, $tags)
         {
                         /** @var \NZTim\Mailchimp\Mailchimp $instance */
                         return $instance->addTags($listId, $email, $tags);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function removeTags($listId, $email, $tags)
+        {
+                        /** @var \NZTim\Mailchimp\Mailchimp $instance */
+                        return $instance->removeTags($listId, $email, $tags);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */        public static function removeAllTags($listId, $email)
+        {
+                        /** @var \NZTim\Mailchimp\Mailchimp $instance */
+                        return $instance->removeAllTags($listId, $email);
         }
                     /**
          * 

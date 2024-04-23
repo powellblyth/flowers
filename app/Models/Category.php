@@ -102,6 +102,11 @@ class Category extends Model implements \Stringable
         return $query->orderby('categories.sortorder');
     }
 
+    public function scopeExceptPrivate(Builder $query): Builder
+    {
+        return $query->where('private', false);
+    }
+
     public function entries(): HasMany
     {
         return $this->hasMany(Entry::class);

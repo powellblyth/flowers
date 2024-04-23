@@ -152,7 +152,7 @@ class ReportsController extends Controller
     {
         $show = $this->getShowFromRequest($request);
         $unplacedCategories = [];
-        $categories = $show->categories()->orderby('sortorder')->get();
+        $categories = $show->categories()->inOrder()->get();
 
         foreach ($categories as $category) {
             /** @var Category $category */

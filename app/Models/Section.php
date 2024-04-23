@@ -47,6 +47,11 @@ class Section extends Model
         'is_junior' => 'bool',
     ];
 
+    public function scopeInOrder(Builder $query): Builder
+    {
+        return $query->orderby('number', 'asc');
+    }
+
     public function displayName(): Attribute
     {
         return new Attribute(
@@ -59,8 +64,18 @@ class Section extends Model
         return $this->hasMany(Category::class);
     }
 
+    public function clonedFrom(): BelongsTo
+    {
+        return $this->belongsTo(Section::class, 'cloned_from_id');
+    }
+
     public function judgeRole(): BelongsTo
     {
         return $this->belongsTo(JudgeRole::class);
+    }
+
+    public function show(): BelongsTo
+    {
+        return $this->belongsTo(Show::class);
     }
 }

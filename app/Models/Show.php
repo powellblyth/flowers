@@ -121,6 +121,11 @@ class Show extends Model
         return $this->HasMany(RafflePrize::class);
     }
 
+    public function sections(): HasMany
+    {
+        return $this->HasMany(Section::class);
+    }
+
     public function resultsArePublic(): bool
     {
         return $this->ends_date->isBefore(Carbon::now());

@@ -95,6 +95,7 @@ class Show extends Resource
                 \App\Models\Show::STATUS_PASSED => 'success',
                 \App\Models\Show::STATUS_CANCELLED => 'danger',
             ])->sortable(),
+            HasMany::make('Sections'),
             HasMany::make('Categories'),
 
         ];

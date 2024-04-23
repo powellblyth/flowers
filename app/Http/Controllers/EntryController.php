@@ -81,13 +81,10 @@ class EntryController extends Controller
 
         return view('entries.entryCard', [
             'user' => $user,
-            'categories' => $show
-                ->categories
-                ->reject(fn(Category $category) => $category->private === true),
+            'sections' => $show->sections,
             'show' => $show,
             'showId' => $show->id,
             'can_enter' => !$show->isClosedToEntries(),
-            'sections' => Section::all(),
         ]);
     }
 

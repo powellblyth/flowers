@@ -71,23 +71,43 @@ class Cup extends Model
         return $query->orderby('cups.sort_order');
     }
 
+    public function sections()
+    {
+        return $this->belongsToMany(
+            Section::class,
+            'cup_section_show',
+//            '',
+//            '',
+//            ''
+        )
+            ->withPivot('show_id');
+    }
+
     public function categories(): BelongsToMany
     {
+//        return $this->belongsToMany(Category::class, 'cup_section_show')
+//            ->withPivot('show_id')
+//            ->withTimestamps();
+
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
 
     public function relatedCategories(Show $show): Collection
     {
-        if ($this->section !== null) {
+//        var_dump($show->id);die();
+//        dd($this->sections()->count());
+//        dd($this->sections()->withPivotValue('show_id', $show->id)->dd());
+
+        if ($this->sections()->withPivotValue('show_id', $show->id)->count() > 0) {
             return $this
-                ->section
+                ->sections()->with('categories')
                 ->categories()
-                ->orderBy('sortorder')
+                ->inOrder()
                 ->forShow($show)
                 ->get();
         } else {
             return $this->categories()
-                ->orderBy('sortorder')
+                ->inOrder()
                 ->forShow($show)
                 ->get();
         }
@@ -141,8 +161,6 @@ class Cup extends Model
             // NEXT we need to       bring in all the JudgeAtShow for that role, for that show
 
             ->reduce(function (\Illuminate\Support\Collection $carry, \App\Models\JudgeRole $judgeRole) use ($show) {
-//   echo($judgeRole->judgesForShow($show));die();
-//var_dump(($judgeRole->label));die();
                 return $carry->merge($judgeRole->judgesForShow($show)->get());
             },
                 new \Illuminate\Support\Collection())
@@ -159,7 +177,7 @@ class Cup extends Model
 
     public function getWinnersForShow(Show $show): CupWinnerArchive
     {
-        $service = new CupCalculatorService($show, $this);
+        $calculatorService = new CupCalculatorService($show, $this);
         //TODO this is a little inefficient
         $winnerArchive = $this->getWinnerArchiveForShow($show);
         // If the show has passed, then we can stop foofing about with the calculations
@@ -168,9 +186,9 @@ class Cup extends Model
         // this will go in the bin once all historics are generated
         if (!$winnerArchive->exists || $show->isCurrent()) {
             if ($this->is_points_based) {
-                $winnerArchive = $service->recalculateWinnerFromPoints();
+                $winnerArchive = $calculatorService->recalculateWinnerFromPoints();
             } else {
-                $winnerArchive = $service->recalculateWinnerFromJudgeNotes();
+                $winnerArchive = $calculatorService->recalculateWinnerFromJudgeNotes();
             }
         }
         return $winnerArchive;
@@ -179,11 +197,21 @@ class Cup extends Model
 
     public function getValidCategoryIdsForShow(Show $show): array
     {
-        if ($this->section_id) {
-            return $this->section->categories()->forShow($show)->pluck('id')->toArray();
-        } else {
-            return $this->relatedCategories($show)->pluck('id')->toArray();
+        $sections = $this->sections()->withPivotValue('show_id', $show->id);
+        if ($sections->count() > 0) {
+            $categories = new Collection();
+            $sections->each(
+                function (Section $section) use ($show, &$categories) {
+                    $categories->add($section->categories);
+                }
+            );
+            return $categories->pluck('id')->toArray();
         }
+        // This is replaced with the above
+//        if ($this->section_id) {
+//            return $this->section->categories()->forShow($show)->pluck('id')->toArray();
+//        }
+        return $this->relatedCategories($show)->pluck('id')->toArray();
     }
 
     public static function getWinningBasisOptions(): array
