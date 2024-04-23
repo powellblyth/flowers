@@ -48,14 +48,14 @@ class CreateNewShowJob implements ShouldQueue
         $this->oldShow->sections()
             ->orderBy('number')
             ->get()
-            ->each(function (Section $section) {
-                $newSection = $section->replicate();
+            ->each(function (Section $oldSection) {
+                $newSection = $oldSection->replicate();
                 $newSection->show()->associate($this->newShow);
-                $newSection->clonedFrom()->associate($section);
+                $newSection->clonedFrom()->associate($oldSection);
                 $newSection->save();
 
                 // Gather all categories from the old year
-                $categories = $this->oldShow->categories()
+                $categories = $oldSection->categories()
                     ->inOrder()
                     ->get();
                 $categories->each(function (Category $category) use ($newSection) {
