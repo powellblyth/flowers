@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Actions\ResultsEntryRedirector;
+use App\Nova\Filters\FilterByShow;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -17,6 +18,7 @@ class Section extends Resource
      * @var string
      */
     public static string $model = \App\Models\Section::class;
+    public static $perPageViaRelationship = 20;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -32,7 +34,7 @@ class Section extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'number', 'notes', 'judges',
+        'id', 'name', 'number', 'notes',
     ];
     /**
      * Default ordering for index query.
@@ -82,6 +84,7 @@ class Section extends Resource
                     );
                 }),
 
+            BelongsTo::make(__('Show'), 'show', Show::class)->nullable(),
             BelongsTo::make(__('Judge Role'), 'judgeRole', JudgeRole::class)->nullable(),
 
         ];
@@ -104,7 +107,9 @@ class Section extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            FilterByShow::make(),
+        ];
     }
 
     /**
