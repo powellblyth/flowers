@@ -49,7 +49,7 @@ class Section extends Model
 
     public function scopeInOrder(Builder $query): Builder
     {
-        return $query->orderby('number', 'asc');
+        return $query->orderby('sort_order', 'asc');
     }
 
     public function displayName(): Attribute
