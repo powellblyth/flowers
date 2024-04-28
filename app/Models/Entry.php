@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToCategory;
 use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -41,6 +42,7 @@ use Illuminate\Support\Carbon;
 class Entry extends Model
 {
     use BelongsToShow;
+    use BelongsToCategory;
 
     public $fillable = [
         'entrant_id',
@@ -91,11 +93,6 @@ class Entry extends Model
     public function entrant(): BelongsTo
     {
         return $this->belongsTo(Entrant::class);
-    }
-
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(Category::class);
     }
 
     public function getPlacementName(): string

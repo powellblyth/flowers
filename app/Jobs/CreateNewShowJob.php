@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Category;
+use App\Models\CupSectionShow;
 use App\Models\Section;
 use App\Models\Show;
 use Illuminate\Bus\Queueable;
@@ -68,6 +69,13 @@ class CreateNewShowJob implements ShouldQueue
                     $newCategory->section()->associate($newSection);
                     $newCategory->save();
                 });
+
+                $cupSectionShows = CupSectionShow::forSection($oldSection)
+                    ->get()->each(function (CupSectionShow $oldCupSectionShow) use ($newSection) {
+                        $newCupSectionShow = $oldCupSectionShow->replicate();
+                        $newCupSectionShow->section()->associate($newSection);
+                        $newCupSectionShow->save();
+                    });
             });
     }
 }
