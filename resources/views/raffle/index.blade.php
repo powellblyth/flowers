@@ -33,7 +33,9 @@
                         href="tel:{{str_replace(' ', '', $donor->telephone)}}">{{$donor->telephone}}</p>
             @endif
 
-            <x-headers.h3>Prize offered for the {{$show->name}} show</x-headers.h3>
+            <x-headers.h3>
+                {{ __('Prize offered for the {{$show->name}} show', ['show'=>$show->name]) }}
+            </x-headers.h3>
 
         @foreach (
                 $donor->rafflePrizes()
