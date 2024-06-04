@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
+use App\Models\Cup;
 use Illuminate\Console\Command;
 
 class ScruffyCommand extends Command {
@@ -26,7 +26,8 @@ class ScruffyCommand extends Command {
      * @return mixed
      */
     public function handle() {
-$user = User::first();
-$user->merge(User::find(10));
+        $cup = Cup::find(1);
+
+        $cup->sections;
     }
 }

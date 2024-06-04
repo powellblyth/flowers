@@ -73,14 +73,22 @@ class Cup extends Model
 
     public function sections()
     {
+//        $this->belongsToMany(
+//            Section::class,
+//            'cup_section_show',
+////            '',
+////            '',
+////            ''
+//        )->withPivot('show_id')
+//            ->dump();
+//            ->withPivot('show_id');
         return $this->belongsToMany(
             Section::class,
             'cup_section_show',
 //            '',
 //            '',
 //            ''
-        )
-            ->withPivot('show_id');
+        )->withPivot('show_id');
     }
 
     public function categories(): BelongsToMany

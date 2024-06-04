@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\ResultsEntryRedirector;
 use App\Nova\Filters\FilterByShow;
+use App\Nova\Filters\FilterCupSectionShowByShow;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -109,6 +110,7 @@ class Section extends Resource
     {
         return [
             FilterByShow::make(),
+            FilterCupSectionShowByShow::make(),
         ];
     }
 

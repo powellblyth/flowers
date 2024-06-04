@@ -96,11 +96,19 @@ class Cup extends Resource
             Textarea::make(__('Judges\' notes'), 'judges_notes')
                 ->hideFromIndex(),
             HasMany::make(__('Categories'), 'categories'),
-            BelongsTo::make(__('Section (only if all categories are for this cup)'), 'section', Section::class)->nullable(),
+            //            BelongsTo::make(__('Section (only if all categories are for this cup)'), 'section', Section::class)->nullable(),
             BelongsToMany::make(__('Judge Role'), 'judgeRoles')->nullable()
                 ->canSee(
                     fn() => $this->resource->winning_basis === \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE
                 ),
+            BelongsToMany::make(__('Sections'), 'sections', CupSectionShow::class)
+                ->fields(function (Request $request, \App\Models\Section $section) {
+                    return [
+                        BelongsTo::make('show'),
+                        BelongsTo::make('section'),
+                        BelongsTo::make('cup'),
+                    ];
+                }),
         ];
     }
 
