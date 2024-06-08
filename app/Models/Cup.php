@@ -73,39 +73,20 @@ class Cup extends Model
 
     public function sections()
     {
-//        $this->belongsToMany(
-//            Section::class,
-//            'cup_section_show',
-////            '',
-////            '',
-////            ''
-//        )->withPivot('show_id')
-//            ->dump();
-//            ->withPivot('show_id');
         return $this->belongsToMany(
             Section::class,
             'cup_section_show',
-//            '',
-//            '',
-//            ''
+
         )->withPivot('show_id');
     }
 
     public function categories(): BelongsToMany
     {
-//        return $this->belongsToMany(Category::class, 'cup_section_show')
-//            ->withPivot('show_id')
-//            ->withTimestamps();
-
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
 
     public function relatedCategories(Show $show): Collection
     {
-//        var_dump($show->id);die();
-//        dd($this->sections()->count());
-//        dd($this->sections()->withPivotValue('show_id', $show->id)->dd());
-
         if ($this->sections()->withPivotValue('show_id', $show->id)->count() > 0) {
             return $this
                 ->sections()->with('categories')
@@ -202,7 +183,6 @@ class Cup extends Model
         return $winnerArchive;
     }
 
-
     public function getValidCategoryIdsForShow(Show $show): array
     {
         $sections = $this->sections()->withPivotValue('show_id', $show->id);
@@ -215,10 +195,6 @@ class Cup extends Model
             );
             return $categories->pluck('id')->toArray();
         }
-        // This is replaced with the above
-//        if ($this->section_id) {
-//            return $this->section->categories()->forShow($show)->pluck('id')->toArray();
-//        }
         return $this->relatedCategories($show)->pluck('id')->toArray();
     }
 
