@@ -23,7 +23,7 @@
             <p>{{$donor->description}}</p>
             @if($donor->website)
                 <p>
-                    <a href="{{$donor->website}}?utm_source=phs&utm_campaign=raffle&utm_value={{urlencode($show->name)}}">
+                    <a href="{{$donor->website}}?utm_source=phs&amp;utm_campaign=raffle&amp;utm_value={{urlencode($show->name)}}">
                         {{$donor->website}}
                     </a>
                 </p>
@@ -34,7 +34,7 @@
             @endif
 
             <x-headers.h3>
-                {{ __('Prize offered for the {{$show->name}} show', ['show'=>$show->name]) }}
+                {{ __('Prize offered for the :show show', ['show'=>$show->name]) }}
             </x-headers.h3>
 
         @foreach (

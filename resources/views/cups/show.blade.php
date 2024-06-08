@@ -22,7 +22,6 @@
         </ul>
     </x-layout.intro-para>
     <x-layout.intro-para>
-
         <b>
             @if ($cup->is_points_based)
                 @lang('For the most points in ')
