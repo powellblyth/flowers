@@ -71,7 +71,7 @@ class Cup extends Model
         return $query->orderby('cups.sort_order');
     }
 
-    public function sections()
+    public function sections(): BelongsToMany
     {
         return $this->belongsToMany(
             Section::class,
@@ -129,6 +129,16 @@ class Cup extends Model
     public function cupWinnerArchive(): HasMany
     {
         return $this->hasMany(CupWinnerArchive::class);
+    }
+
+    public function getSectionsOrCategoriesDescription(Show $show): string
+    {
+        $sections = $this->sections()->withPivotValue('show_id', $show->id)->get();
+        if ($sections->count() > 0) {
+            return 'for ' . \Str::plural('section', $sections) . ' ' . implode(', ', $sections->pluck('number')->all());
+        }
+        $categories = $this->categories()->forShow($show)->get();
+        return 'for ' . \Str::plural('category', $categories) . ' ' . implode(', ', $categories->pluck('number')->all());
     }
 
     /**

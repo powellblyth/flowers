@@ -18,6 +18,7 @@
         <ul>
             <li>@lang('Name'): {{ $cup->name }}</li>
             <li>@lang('Show'): {{ $show->name }}</li>
+            <li>{{ ucfirst($cup->getSectionsOrCategoriesDescription($show)) }}</li>
             <li>@lang('Criteria'): {{ $cup->winning_criteria }}</li>
         </ul>
     </x-layout.intro-para>
