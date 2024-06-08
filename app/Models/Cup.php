@@ -76,6 +76,8 @@ class Cup extends Model
         return $this->belongsToMany(
             Section::class,
             'cup_section_show',
+            'cup_id',
+            'section_id'
 
         )->withPivot('show_id');
     }
@@ -88,12 +90,15 @@ class Cup extends Model
     public function relatedCategories(Show $show): Collection
     {
         if ($this->sections()->withPivotValue('show_id', $show->id)->count() > 0) {
-            return $this
-                ->sections()->with('categories')
-                ->categories()
-                ->inOrder()
-                ->forShow($show)
-                ->get();
+            $categories = new Collection();
+            $this
+                ->sections()
+                ->withPivotValue('show_id', $show->id)
+                ->each(function (Section $section) use (&$categories, $show) {
+                    $categories = $categories->merge($section->categories()->forShow($show)->get());
+                });
+            return $categories;
+
         } else {
             return $this->categories()
                 ->inOrder()
@@ -190,7 +195,7 @@ class Cup extends Model
             $categories = new Collection();
             $sections->each(
                 function (Section $section) use ($show, &$categories) {
-                    $categories->add($section->categories);
+                    $categories = $categories->merge($section->categories);
                 }
             );
             return $categories->pluck('id')->toArray();
