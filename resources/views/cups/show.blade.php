@@ -5,7 +5,7 @@
     <x-slot name="canonical">{{route('cups.show', ['show' => $show, 'cup' => $cup]) }}</x-slot>
     <x-slot name="header">
         <x-headers.h1>
-            {{ __('Cup ' . $cup->name . ' ' . $show->name) }}
+            {{ __($cup->name . ' ' . $show->name) }}
         </x-headers.h1>
     </x-slot>
 
