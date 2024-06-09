@@ -65,7 +65,7 @@ class JudgeRole extends Model
             ->withTimestamps();
     }
 
-    public function judgesForShow(Show $show): BelongsToMany
+    public function judgesForShow(): BelongsToMany
     {
         return $this->belongsToMany(Judge::class, 'judge_show')
             ->withPivot('show_id')

@@ -175,14 +175,15 @@ class Cup extends Model
             // this is good, all the judge roles for the cups
             // NEXT we need to       bring in all the JudgeAtShow for that role, for that show
 
-            ->reduce(function (\Illuminate\Support\Collection $carry, \App\Models\JudgeRole $judgeRole) use ($show) {
-                return $carry->merge($judgeRole->judgesForShow($show)->get());
+            ->reduce(function (\Illuminate\Support\Collection $carry, JudgeRole $judgeRole) use ($show) {
+                return $carry->merge($judgeRole->judgesForShow()->withPivotValue('show_id', $show->id)->get());
             },
                 new \Illuminate\Support\Collection())
             ->reduce(function (array $carry, \App\Models\Judge $judge) {
                 $carry[] = $judge->name;
                 return $carry;
             }, []);
+
         if (empty($judges)) {
             return '';
         }

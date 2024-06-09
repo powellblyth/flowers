@@ -118,17 +118,19 @@
                                 </tbody>
                             </table>
                         @else
-                            <i>@lang('Winner'): </i>
+                            @if($results[$cup->id]?->cupWinner)
+                                <i>@lang('Winner'): </i>
 
-                            @if (Auth::user() && Auth::user()->isAdmin())
-                                {{ $results[$cup->id]?->cupWinner?->full_name }}<Br/>
-                                {!! $results[$cup->id]?->cupWinner?->getAddressDetails('<br />') !!}<br/>
-                            @else
-                                {{ $results[$cup->id]->cupWinner?->printable_name }}
-                            @endif
-                            @if (is_object($results[$cup->id]?->entry ?? null))
-                                for category
-                                <i><b>{{$results[$cup->id]?->entry?->category?->numbered_name}}</b></i>
+                                @if (Auth::user() && Auth::user()->isAdmin())
+                                    {{ $results[$cup->id]->cupWinner->full_name }}<Br/>
+                                    {!! $results[$cup->id]->cupWinner->getAddressDetails('<br />') !!}<br/>
+                                @else
+                                    {{ $results[$cup->id]->cupWinner->printable_name }}
+                                @endif
+                                @if (is_object($results[$cup->id]?->entry ?? null))
+                                    for
+                                    <i><b>{{$results[$cup->id]?->entry?->category?->numbered_name}}</b></i>
+                                @endif
                             @endif
                         @endif
                     @endif
