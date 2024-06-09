@@ -45,7 +45,7 @@
         $publishMode = false;
     @endphp
     @foreach ($cups as $cup)
-        <x-layout.intro-para class="py-2">
+        <x-layout.intro-para class="py-2 break-inside-avoid">
             <x-headers.h2><a name="cup_{{$cup->id}}">{{ $cup->name }}</a>
                 <x-button>
                     <a class="print:hidden" href="{{ route('cups.show', ['cup'=>$cup, 'show'=>$show]) }}">
