@@ -3,8 +3,8 @@
 namespace App\Nova;
 
 use App\Nova\Actions\CupResultsChooserRedirector;
+use Benjacho\BelongsToManyField\BelongsToManyField;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -104,14 +104,18 @@ class Cup extends Resource
                 ->canSee(
                     fn() => $this->resource->winning_basis === \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE
                 ),
-            BelongsToMany::make(__('Sections'), 'sections', CupSectionShow::class)
-                ->fields(function (Request $request, \App\Models\Section $section) {
-                    return [
-                        BelongsTo::make('show'),
-                        BelongsTo::make('section'),
-                        BelongsTo::make('cup'),
-                    ];
-                }),
+
+            BelongsToManyField::make('Sections', 'sections', Section::class),
+
+            //            BelongsToMany::make(__('Sections'), 'sections')
+            //                ->fields(function (Request $request, \App\Models\Section $section) {
+            //                    return [
+            //                        BelongsTo::make('section')
+            //                            ->nullable()
+            //                            ->searchable(),
+            //                        //                        BelongsTo::make('cup'),
+            //                    ];
+            //                }),
         ];
     }
 

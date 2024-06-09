@@ -26,7 +26,7 @@ class Section extends Resource
      *
      * @var string
      */
-    public static $title = 'display_name';
+    public static $title = 'display_name_show';
     public static $group = 'Configuration';
 
     /**

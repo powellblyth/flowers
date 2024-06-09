@@ -59,6 +59,13 @@ class Section extends Model
         );
     }
 
+    public function displayNameShow(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => $this->number . ' - ' . $this->name . ' - ' . $this->show?->name
+        );
+    }
+
     public function categories(): HasMany
     {
         return $this->hasMany(Category::class);

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b16e056cbee02214e6bb6fa1e1338176",
+    "content-hash": "0215ae3eb76a3560c7f61883d84c849b",
     "packages": [
         {
             "name": "akki-io/laravel-nova-search",
@@ -204,6 +204,53 @@
                 "source": "https://github.com/aws/aws-sdk-php/tree/3.311.2"
             },
             "time": "2024-06-07T18:05:33+00:00"
+        },
+        {
+            "name": "benjacho/belongs-to-many-field",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Benjacho/belongs-to-many-field-nova.git",
+                "reference": "8b51d077fc0584f9ddabc852698a5d792ecae2da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Benjacho/belongs-to-many-field-nova/zipball/8b51d077fc0584f9ddabc852698a5d792ecae2da",
+                "reference": "8b51d077fc0584f9ddabc852698a5d792ecae2da",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Benjacho\\BelongsToManyField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Benjacho\\BelongsToManyField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "belongsToMany nova representation in field.",
+            "keywords": [
+                "Many to Many Field",
+                "belongsToMany",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Benjacho/belongs-to-many-field-nova/issues",
+                "source": "https://github.com/Benjacho/belongs-to-many-field-nova/tree/2.0"
+            },
+            "time": "2021-08-21T16:10:48+00:00"
         },
         {
             "name": "brick/math",
@@ -11827,5 +11874,5 @@
         "php": "^8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
