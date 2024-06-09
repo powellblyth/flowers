@@ -20,7 +20,7 @@
     </x-layout.intro-para>
 
 
-    @foreach (\App\Models\Section::all() as $section)
+    @foreach ($show->sections()->inOrder()->get() as $section)
         <x-layout.intro-para class="py-2">
             <x-headers.h2>
                 @lang('Section') {{$section->display_name}}

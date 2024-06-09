@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Entry;
-use App\Models\Section;
 use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -83,7 +82,7 @@ class CategoryController extends Controller
             $section = $category->section;
             $cardFronts[] = [
                 'section' => $section->id,
-                'section_name' => $section->name,
+                'section_name' => $section->display_name,
                 'class_number' => $category->number,
                 'class_name' => $category->name
             ];
