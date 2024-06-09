@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -43,6 +44,7 @@ use Illuminate\Support\Carbon;
  */
 class Section extends Model
 {
+    use BelongsToShow;
     protected $attributes = [
         'is_junior' => 'bool',
     ];

@@ -79,16 +79,15 @@ class Judge extends Model
         $categories = new Collection();
         foreach ($judgeRoles as $judgeRole) {
             /** @var Collection <Section> $sections */
-            $sections = Section::where('judge_role_id', $judgeRole->id)->get();
+            $sections = Section::forShow($show)->where('judge_role_id', $judgeRole->id)->get();
             foreach ($sections as $section) {
                 $categories = $categories->merge(
                     $section->categories()
                         ->with('section')
-                        ->where('section_id', $section->id)
-                        ->where('show_id', $show->id)
                         ->get()
                 );
             }
+//            dump($show->categories()->with('section')->get()->pluck('name', 'id')->toArray());
             foreach ($show->categories()->with('section')->get() as $showCategory) {
                 $hasJudgeRole = $showCategory->judgeRoles()->where('judge_role_id', $judgeRole->id)->first();
                 if ($hasJudgeRole) {
