@@ -36,7 +36,7 @@
     <x-navigation.show :show="$show" route="show.cups"/>
 
     <x-layout.intro-para>
-        <p>
+        <p @if(Auth::user()?->isAdmin())class="print:hidden"@endif>
             These are the cups we award during the annual Flower Show and
             the winners of the {{$show->name}} Show (when available).
         </p>
@@ -107,8 +107,8 @@
                     <i>@lang('Winner'): </i>
 
                 @if (Auth::user() && Auth::user()->isAdmin())
-                        {{ $winner->entrant->full_name }}<Br/>
-                        {!! $results[$cup->id]->cupWinner?->getAddressDetails('<br />') !!}<br/>
+                        {{ $results[$cup->id]?->cupWinner?->full_name }}<Br/>
+                        {!! $results[$cup->id]?->cupWinner?->getAddressDetails('<br />') !!}<br/>
                     @else
                         {{ $results[$cup->id]->cupWinner?->printable_name }}
                     @endif
