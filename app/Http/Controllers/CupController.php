@@ -66,8 +66,6 @@ class CupController extends Controller
     {
         $winnerDataByCategory = [];
         $winners = [];
-        $show = $this->getShowFromRequest($request);
-
         $categories = $cup?->relatedCategories($show) ?? [];
 
         foreach ($categories as $category) {

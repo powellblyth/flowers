@@ -27,6 +27,7 @@
             @if($cup->prize_description)
                 <li><b>Prize</b>: {{$cup->prize_description}}</li>
             @endif
+                <li><b>Judges for {{$show->name}}</b>: {{ $cup->getJudgesForThisShow($show)  }}</li>
         </ul>
         </div>
     </x-layout.intro-para>
