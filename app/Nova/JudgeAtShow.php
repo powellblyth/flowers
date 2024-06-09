@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 
 class JudgeAtShow extends Resource
 {
@@ -42,6 +43,7 @@ class JudgeAtShow extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             BelongsTo::make(__('Judge'), 'judge', Judge::class)->sortable(),
             BelongsTo::make(__('Show'), 'show', Show::class)->sortable(),
+            Text::make(__('Steward'), 'steward'),
             BelongsTo::make(__('Judging Role'), 'judgeRole', JudgeRole::class)->sortable(),
         ];
     }

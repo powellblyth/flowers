@@ -9,11 +9,12 @@
     </x-slot>
     <x-layout.intro-para class="py-2 ">
     <div>
+        <x-headers.h3>Judge: {{$judge->name}}</x-headers.h3>
         <x-headers.h3>Judging:
             @php
                 $judge->judgeAtShow()->with('judgeRole')->where('show_id', $show->id)->get()->each(
                     function(\App\Models\JudgeAtShow $judgeAtShow){
-                        echo $judgeAtShow->judgeRole->label .', ';
+                        echo $judgeAtShow->judgeRole->label .' (Steward: ' . $judgeAtShow->steward. '), ';
                         }
                 )
             @endphp
@@ -58,12 +59,10 @@
         </div>
 
         <div class="grid grid-cols-7 gap-0 ">
-        @php
-            $previousSection = null;
-        @endphp
+            @php
+                $previousSection = null;
+            @endphp
             @foreach ($relatedCategories as $category)
-
-                {{--            </thead>--}}
             @if($previousSection !== $category->section_id)
                     @php
                         $previousSection = $category->section_id;
@@ -72,10 +71,10 @@
                         <x-headers.h4>{{$category->section->display_name}}</x-headers.h4>
                     </div>
                     <div class="font-bold col-span-3">Category</div>
-                    <div class="font-bold">First</div>
-                    <div class="font-bold">Second</div>
-                    <div class="font-bold">Third</div>
-                    <div class="font-bold">Commended</div>
+                    <div class="font-bold text-center">First</div>
+                    <div class="font-bold text-center">Second</div>
+                    <div class="font-bold text-center">Third</div>
+                    <div class="font-bold text-center">Commended</div>
             @endif
                 <div class="col-span-3 text-sm border-2">
                     {{$category->numbered_name}}
