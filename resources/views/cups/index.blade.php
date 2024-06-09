@@ -53,8 +53,13 @@
                     </a>
                 </x-button>
             </x-headers.h2>
-            <div class="print:text-sm">{{ $cup->winning_criteria }}
-                <i>{{ $cup->getSectionsOrCategoriesDescription($show) }}</i></div>
+            <div class="print:text-sm">
+                {{ $cup->winning_criteria }}
+                <i>{{ $cup->getSectionsOrCategoriesDescription($show) }}</i>
+            </div>
+            @if($cup->prize_description)
+                <div class="">Prize: {{$cup->prize_description}}</div>
+            @endif
             <div>{{ $cup->getJudgesForThisShow($show, 'Judge: ')  }}</div>
 
             @if($show->resultsArePublic() || Auth::user()?->isAdmin())

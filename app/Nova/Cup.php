@@ -81,6 +81,9 @@ class Cup extends Resource
             Text::make(__('Winning Criteria'), 'winning_criteria')
                 ->rules('required', 'max:255')
                 ->hideFromIndex(),
+            Text::make(__('Prize Description'), 'prize_description')
+                ->rules('max:255')
+                ->hideFromIndex(),
 
             Select::make(__('Winning Basis'), 'winning_basis')
                 ->required()

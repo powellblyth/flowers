@@ -16,10 +16,13 @@
         {{--            the winners of the {{$show->name}} Show (when available).--}}
         {{--        </p>--}}
         <ul>
-            <li>@lang('Name'): {{ $cup->name }}</li>
-            <li>@lang('Show'): {{ $show->name }}</li>
-            <li>{{ ucfirst($cup->getSectionsOrCategoriesDescription($show)) }}</li>
-            <li>@lang('Criteria'): {{ $cup->winning_criteria }}</li>
+            <li><b>@lang('Show')</b>: {{ $show->name }}</li>
+            <li><b>@lang('Name')</b>: {{ $cup->name }}</li>
+            <li><b>@lang('Criteria')</b>: {{ $cup->winning_criteria }}
+                <i>{{ $cup->getSectionsOrCategoriesDescription($show) }}</i></li>
+            @if($cup->prize_description)
+                <li><b>Prize</b>: {{$cup->prize_description}}</li>
+            @endif
         </ul>
     </x-layout.intro-para>
     <x-layout.intro-para>

@@ -131,14 +131,25 @@ class Cup extends Model
         return $this->hasMany(CupWinnerArchive::class);
     }
 
+    /**
+     * returns a list of either sections (preferred) or categories by number of the cup's relevant winning triggers)
+     * @param Show $show
+     * @return string
+     */
     public function getSectionsOrCategoriesDescription(Show $show): string
     {
         $sections = $this->sections()->withPivotValue('show_id', $show->id)->get();
         if ($sections->count() > 0) {
-            return 'for ' . \Str::plural('section', $sections) . ' ' . implode(', ', $sections->pluck('number')->all());
+            return 'for '
+                   . \Str::plural('section', $sections)
+                   . ' '
+                   . implode(', ', $sections->pluck('number')->all());
         }
         $categories = $this->categories()->forShow($show)->get();
-        return 'for ' . \Str::plural('category', $categories) . ' ' . implode(', ', $categories->pluck('number')->all());
+        return 'for '
+               . \Str::plural('category', $categories)
+               . ' '
+               . implode(', ', $categories->pluck('number')->all());
     }
 
     /**
