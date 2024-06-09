@@ -22,11 +22,13 @@ class CupsTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'name' => 'Cowen Bowl',
+                'name' => 'Cowen Memorial Challenge Bowl',
+                'prize_description' => 'A silver bowl and PHS certificate',
+                'image' => 'cowen_memorial_challenge_bowl.jpg',
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2024-06-08 15:31:57',
                 'calculated_winner' => NULL,
-                'winning_criteria' => 'The winner of greatest number of points in section 2',
+                'winning_criteria' => 'The winner of greatest number of points for Flowers',
                 'sort_order' => 10,
                 'num_display_results' => 2,
                 'section_id' => 2,
@@ -37,10 +39,12 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'name' => 'Clifford Bragg Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'clifford_bragg_cup.jpg',
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2024-06-08 15:32:28',
                 'calculated_winner' => NULL,
-                'winning_criteria' => 'The winner of greatest number of points in section 3',
+                'winning_criteria' => 'The winner of greatest number of points in Fruit categories',
                 'sort_order' => 20,
                 'num_display_results' => 2,
                 'section_id' => 3,
@@ -50,11 +54,13 @@ class CupsTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'name' => 'Petersham Perpetual Cup',
+                'name' => 'Petersham Perpetual Challenge Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'petersham_perpetual_challenge_cup.jpg',
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2024-06-08 15:32:50',
                 'calculated_winner' => NULL,
-                'winning_criteria' => 'The winner of greatest number of points in section 4',
+                'winning_criteria' => 'The winner of greatest number of points in Vegetables and Produce',
                 'sort_order' => 30,
                 'num_display_results' => 2,
                 'section_id' => 4,
@@ -65,10 +71,12 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'name' => 'James Clark Memorial Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'james_clarke_memorial_cup.jpg',
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2024-06-08 15:33:10',
                 'calculated_winner' => NULL,
-                'winning_criteria' => 'The winner of greatest number of points in section 5',
+                'winning_criteria' => 'The winner of greatest number of points in Floral Arrangement',
                 'sort_order' => 40,
                 'num_display_results' => 2,
                 'section_id' => 5,
@@ -79,10 +87,12 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'name' => 'Philip Carr Challenge Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'phillip_carr_challenge_cup.jpg',
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2024-06-08 15:33:27',
                 'calculated_winner' => NULL,
-                'winning_criteria' => 'The winner of greatest number of points in section 6',
+                'winning_criteria' => 'The winner of greatest number of points in Cookery',
                 'sort_order' => 50,
                 'num_display_results' => 2,
                 'section_id' => 6,
@@ -93,10 +103,12 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 6,
                 'name' => 'Violet Lincoln Memorial Salver',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'Violet_lincoln_memorial_salver.jpg',
                 'created_at' => NULL,
-                'updated_at' => '2024-06-08 13:25:22',
+                'updated_at' => '2024-06-08 15:33:46',
                 'calculated_winner' => NULL,
-            'winning_criteria' => 'The winner of greatest number of points in section 8 (Arts and Crafts)',
+                'winning_criteria' => 'The winner of greatest number of points in Arts and Crafts',
                 'sort_order' => 60,
                 'num_display_results' => 2,
                 'section_id' => 7,
@@ -107,8 +119,10 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 7,
                 'name' => 'Edmonds Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'edmonds_cup.jpg',
                 'created_at' => NULL,
-                'updated_at' => '2024-06-08 13:29:06',
+                'updated_at' => '2024-06-08 15:34:11',
                 'calculated_winner' => NULL,
                 'winning_criteria' => 'The winner of greatest number of points in Junior Arts and Crafts',
                 'sort_order' => 70,
@@ -120,11 +134,13 @@ class CupsTableSeeder extends Seeder
             7 => 
             array (
                 'id' => 8,
-                'name' => 'Pamela Griffiths Cup',
+                'name' => 'Pamela Griffiths Memorial Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'pamela_griffiths_memorial_cup.jpg',
                 'created_at' => NULL,
-                'updated_at' => '2024-06-08 11:58:33',
+                'updated_at' => '2024-06-08 15:36:58',
                 'calculated_winner' => NULL,
-            'winning_criteria' => 'Greatest number of points in Section 9 (Junior Floral)',
+                'winning_criteria' => 'Greatest number of points in Junior Floral',
                 'sort_order' => 80,
                 'num_display_results' => 2,
                 'section_id' => NULL,
@@ -134,7 +150,9 @@ class CupsTableSeeder extends Seeder
             8 => 
             array (
                 'id' => 9,
-                'name' => 'The Kathleen and Harold Sharp Trophy',
+                'name' => 'Kathleen and Harold Sharp Trophy',
+                'prize_description' => 'A silver trophy and PHS certificate',
+                'image' => 'kathleen_and_harold_sharp_trophy.jpg',
                 'created_at' => NULL,
                 'updated_at' => '2022-06-15 18:45:36',
                 'calculated_winner' => NULL,
@@ -148,7 +166,9 @@ class CupsTableSeeder extends Seeder
             9 => 
             array (
                 'id' => 10,
-                'name' => 'The Mary Turner Cup',
+                'name' => 'Mary Turner Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'mary_turner_cup.jpg',
                 'created_at' => NULL,
                 'updated_at' => '2022-06-15 18:47:29',
                 'calculated_winner' => NULL,
@@ -163,6 +183,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 11,
                 'name' => 'PHS Top Tray',
+                'prize_description' => NULL,
+                'image' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -177,6 +199,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 12,
                 'name' => 'PHS Top Vase',
+                'prize_description' => NULL,
+                'image' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -191,8 +215,10 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 13,
                 'name' => 'Banksian Medal',
+                'prize_description' => 'An RHS Banksian Medal and an RHS certificate',
+                'image' => NULL,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2024-06-08 15:41:33',
                 'calculated_winner' => NULL,
             'winning_criteria' => 'The largest total amount of points in the whole of the horticultural classes at the Show, or who has the highest number of place points within the vegetable, fruit, flower and plant sections (Exclusions apply)',
                 'sort_order' => 130,
@@ -205,6 +231,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 14,
                 'name' => 'Anthony Rampton Memorial Prize',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'anthony_rampton_memorial_prize.jpg',
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -219,6 +247,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 15,
                 'name' => 'Cowen Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'cowen_cup.jpg',
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -233,6 +263,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 16,
                 'name' => 'Best in Show Artwork Rosette',
+                'prize_description' => 'A rosette and a PHS certificate',
+                'image' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -246,7 +278,9 @@ class CupsTableSeeder extends Seeder
             16 => 
             array (
                 'id' => 17,
-                'name' => 'The North Trophy',
+                'name' => 'North Trophy',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'north_trophy.jpg',
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -261,6 +295,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 18,
                 'name' => 'Harry Thorne Memorial Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'harry_thorne_memorial_cup.jpg',
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -274,7 +310,9 @@ class CupsTableSeeder extends Seeder
             18 => 
             array (
                 'id' => 24,
-                'name' => 'Lambert Memorial Bowl & Worshipful company of gardener\'s Diploma of Excellence',
+                'name' => 'Lambert Memorial Bowl & Worshipful Company of Gardener\'s Diploma of Excellence',
+                'prize_description' => 'A silver cup and Worshipful Company of Gardeners Diploma',
+                'image' => 'lambert_memorial_bowl.jpg',
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -289,6 +327,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 25,
                 'name' => 'Anne Millard Cup',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'anne_millard_cup.jpg',
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -302,7 +342,9 @@ class CupsTableSeeder extends Seeder
             20 => 
             array (
                 'id' => 26,
-                'name' => 'John Grapes Memorial Prize',
+                'name' => 'John Grapes Memorial Trophy',
+                'prize_description' => 'A silver cup and PHS certificate',
+                'image' => 'john_grapes_memorial_trophy.jpg',
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -317,6 +359,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 27,
             'name' => 'The Worshipful Company of Gardeners; Certificate of Merit (floral decoration)',
+                'prize_description' => 'Worshipful Company of Gardeners certificate of Merit',
+                'image' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-07-06 19:46:25',
                 'calculated_winner' => NULL,
@@ -331,6 +375,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 28,
             'name' => 'RHS Certificate of Merit (Junior Floral, Fruit and Vegetables)',
+                'prize_description' => 'An RHS certificate of merit',
+                'image' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
                 'calculated_winner' => NULL,
@@ -345,6 +391,8 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 29,
                 'name' => 'Col Bromhead Memorial Cup Rosette and Certificate',
+                'prize_description' => 'A rosette and a PHS certificate',
+                'image' => 'col_bromhead_memorial_cup.jpg',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-06 20:24:55',
                 'calculated_winner' => NULL,
@@ -359,10 +407,12 @@ class CupsTableSeeder extends Seeder
             array (
                 'id' => 30,
                 'name' => 'The Worshipful Company of Gardeners’ Certificate of Merit in Horticulture',
+                'prize_description' => 'A certificate from the Worshipful Company of Gardeners',
+                'image' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-06-15 17:33:24',
+                'updated_at' => '2024-06-09 08:25:32',
                 'calculated_winner' => NULL,
-                'winning_criteria' => 'The winner of greatest number of points in section 1',
+                'winning_criteria' => 'The winner of greatest number of points in the Novice categories',
                 'sort_order' => 1,
                 'num_display_results' => 2,
                 'section_id' => 1,
@@ -372,7 +422,9 @@ class CupsTableSeeder extends Seeder
             25 => 
             array (
                 'id' => 31,
-                'name' => 'The Alf Gundry Memorial Prize',
+                'name' => 'Alf Gundry Memorial Prize',
+                'prize_description' => 'A garden voucher and a PHS certificate',
+                'image' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2023-05-17 20:53:25',
                 'calculated_winner' => NULL,
