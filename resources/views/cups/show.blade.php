@@ -8,14 +8,17 @@
             {{ __('Cup ' . $cup->name . ' ' . $show->name) }}
         </x-headers.h1>
     </x-slot>
-    {{--    <x-navigation.show route="cups.show" :show="$show" />--}}
 
     <x-layout.intro-para>
-        {{--        <p>--}}
-        {{--            These are the cups we award during the annual Flower Show and--}}
-        {{--            the winners of the {{$show->name}} Show (when available).--}}
-        {{--        </p>--}}
-        <ul>
+        <div class="flex">
+            @if($cup->image)
+                <div class="flex-initial pr-4">
+                    <img src="/images/cups/{{$cup->image}}" max-width="148" alt="Image of {{$cup->name}}"
+                         title="Image of {{$cup->name}}"/>
+                </div>
+            @endif
+
+            <ul class="flex-1">
             <li><b>@lang('Show')</b>: {{ $show->name }}</li>
             <li><b>@lang('Name')</b>: {{ $cup->name }}</li>
             <li><b>@lang('Criteria')</b>: {{ $cup->winning_criteria }}
@@ -24,6 +27,7 @@
                 <li><b>Prize</b>: {{$cup->prize_description}}</li>
             @endif
         </ul>
+        </div>
     </x-layout.intro-para>
     <x-layout.intro-para>
         <b>
@@ -36,46 +40,6 @@
 
         @foreach ($categories as $category)
             <p>{{$category->numbered_name}} <small>{{$category->notes}}</small></p>
-            @can('storeResults', $show)
-
-                {{--            @if (array_key_exists($category->id, $winners_by_category) && count($winners_by_category[$category->id]) > 0)--}}
-                {{--                <td>--}}
-                {{--                    @if (array_key_exists('1', $winners_by_category[$category->id]))--}}
-                {{--                        {{$winners[$winners_by_category[$category->id]['1']['entrant']]->printable_name}}--}}
-                {{--                        ({{$winners_by_category[$category->id]['1']['points']}} points)--}}
-                {{--                    @else--}}
-                {{--                        ---}}
-                {{--                    @endif--}}
-                {{--                </td>--}}
-                {{--                <td>--}}
-                {{--                    @if (array_key_exists('2', $winners_by_category[$category->id]))--}}
-                {{--                        {{$winners[$winners_by_category[$category->id]['2']['entrant']]->printable_name}}--}}
-                {{--                        ({{$winners_by_category[$category->id]['2']['points']}} points)--}}
-                {{--                    @else--}}
-                {{--                        ---}}
-                {{--                    @endif--}}
-                {{--                </td>--}}
-                {{--                <td>--}}
-                {{--                    @if (array_key_exists('3', $winners_by_category[$category->id]))--}}
-                {{--                        {{$winners[$winners_by_category[$category->id]['3']['entrant']]->printable_name}}--}}
-                {{--                        ({{$winners_by_category[$category->id]['3']['points']}} points)--}}
-                {{--                    @else--}}
-                {{--                        ---}}
-                {{--                    @endif--}}
-                {{--                </td>--}}
-                {{--                <td>--}}
-                {{--                    @if (array_key_exists('commended', $winners_by_category[$category->id]))--}}
-                {{--                        {{$winners[$winners_by_category[$category->id]['commended']['entrant']]->printable_name}}--}}
-                {{--                        ({{$winners_by_category[$category->id]['commended']['points']}} points)--}}
-                {{--                    @else--}}
-                {{--                        ---}}
-                {{--                    @endif--}}
-                {{--                </td>--}}
-                {{--            @else--}}
-                {{--                <td colspan="4">@lang('Unavailable')</td>--}}
-                {{--            @endif--}}
-
-            @endcan
         @endforeach
 
         @can('storeResults', $show)
