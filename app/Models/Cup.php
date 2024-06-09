@@ -167,7 +167,7 @@ class Cup extends Model
             );
     }
 
-    public function getJudgesForThisShow(Show $show, string $prefix = ''): ?string
+    public function getJudgesForThisShow(Show $show): Collection
     {
         // TODO this should be a model call not a display call
         $judges = $this
@@ -179,16 +179,22 @@ class Cup extends Model
                 return $carry->merge($judgeRole->judgesForShow()->withPivotValue('show_id', $show->id)->get());
             },
                 new \Illuminate\Support\Collection())
-            ->reduce(function (array $carry, \App\Models\Judge $judge) {
-                $carry[] = $judge->name;
-                return $carry;
-            }, []);
+            ->reduce(function (Collection $carry, \App\Models\Judge $judge) {
+                return $carry->add($judge);
+            }, new Collection);
+        return $judges;
+    }
 
-        if (empty($judges)) {
+    public function getJudgesDescriptionForThisShow(Show $show, string $prefix = ''): ?string
+    {
+        // TODO this should be a model call not a display call
+        $judges = $this->getJudgesForThisShow($show);
+
+        if (0 == $judges->count()) {
             return '';
         }
 
-        return $prefix . ' ' . implode(', ', $judges);
+        return $prefix . ' ' . implode(', ', $judges->pluck('name')->toArray());
     }
 
     public function getWinnersForShow(Show $show): CupWinnerArchive

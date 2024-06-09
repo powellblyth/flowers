@@ -92,9 +92,17 @@
             <x-headers.h3 class="mt-4">Cups</x-headers.h3>
 
             @foreach($relatedCups as $cup)
+                @php
+                    $otherJudges = $cup->getJudgesForThisShow($show);
+                    $otherJudges = $otherJudges->except($judge->id);
+                @endphp
                 <div class="break-inside-avoid grid grid-cols-4 gap-0 w-1/2">
                     <div class="col-span-4 bg-gray-200 border-x-2 text-bold text-sm">
                         <x-headers.h4>{{$cup->name}} - {{$cup->winning_criteria}}</x-headers.h4>
+                        @if($otherJudges->count() > 0)
+                            <b class="text-red-700">Judged
+                                with {{implode(', ', $otherJudges->pluck('name')->toArray())}}</b>
+                        @endif
                     </div>
                     <div class="col-span-3 text-sm">
                         <x-headers.h5>Entrant Number</x-headers.h5>

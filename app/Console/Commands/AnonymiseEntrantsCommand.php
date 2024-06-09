@@ -31,8 +31,6 @@ class AnonymiseEntrantsCommand extends Command
     {
         $newDate = new \DateTime();
 
-        $oneYearAgo = $newDate->sub(new \DateInterval('P11M'));
-        var_dump($oneYearAgo->format('Y-m-d'));
         $entrants = Entrant::where('can_retain_data', 0)
             ->where('is_anonymised', false)
             ->where('created_at', '<', '2018-08-08 00:00:00')->get();

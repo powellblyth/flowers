@@ -69,7 +69,7 @@
                     @if($cup->prize_description)
                         <div class="">Prize: {{$cup->prize_description}}</div>
                     @endif
-                    <div>{{ $cup->getJudgesForThisShow($show, 'Judge: ')  }}</div>
+                    <div>{{ $cup->getJudgesDescriptionForThisShow($show, 'Judge: ')  }}</div>
 
                     @if($show->resultsArePublic() || Auth::user()?->isAdmin())
                         @if ($cup->is_points_based)
