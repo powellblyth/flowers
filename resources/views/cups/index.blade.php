@@ -48,7 +48,7 @@
         <x-layout.intro-para class="py-2 break-inside-avoid">
             <div class="flex">
                 @if($cup->image)
-                    <div class="flex-initial pr-4 w-1/5">
+                    <div class="flex-initial pr-4 w-1/5 print:hidden">
                         <img src="/images/cups/{{$cup->image}}" class="w-100"
                              alt="Image of {{$cup->name}}"
                              title="Image of {{$cup->name}}"/>

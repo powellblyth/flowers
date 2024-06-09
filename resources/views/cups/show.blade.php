@@ -12,7 +12,7 @@
     <x-layout.intro-para>
         <div class="flex">
             @if($cup->image)
-                <div class="flex-initial pr-4 print:hidden">
+                <div class="flex-initial pr-4 ">
                     <img src="/images/cups/{{$cup->image}}" class="max-w-200"
                          alt="Image of {{$cup->name}}"
                          title="Image of {{$cup->name}}"/>
