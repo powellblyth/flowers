@@ -134,6 +134,25 @@ class Entrant extends Model
         return 'E-' . str_pad((string) $this->id, 4, '0', STR_PAD_LEFT);
     }
 
+    /**
+     * Simple way to get an entrant number
+     */
+    public function getAddressDetails($joiningChars = ', '): string
+    {
+        $addressItems = [];
+        if ($this->user) {
+            if (!empty($this->user->address)) {
+                $addressItems[] = $this->user->address;
+            }
+            if (!empty($this->user->email)) {
+                $addressItems[] = $this->user->email;
+            }
+            if (!empty($this->user->telephone)) {
+                $addressItems[] = $this->user->telephone;
+            }
+        }
+        return implode($joiningChars, $addressItems);
+    }
 
     public function user(): BelongsTo
     {

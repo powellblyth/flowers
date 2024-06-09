@@ -46,16 +46,22 @@
     @endphp
     @foreach ($cups as $cup)
         <x-layout.intro-para class="py-2">
-            <x-headers.h2><a name="cup_{{$cup->id}}">{{ $cup->name }}</a> <x-button><a href="{{ route('cups.show', ['cup'=>$cup, 'show'=>$show]) }}">Details</x-button></x-headers.h2></a>
-            <div>{{ $cup->winning_criteria }}</div>
-            <div>{{ ucfirst($cup->getSectionsOrCategoriesDescription($show)) }}</div>
+            <x-headers.h2><a name="cup_{{$cup->id}}">{{ $cup->name }}</a>
+                <x-button>
+                    <a class="print:hidden" href="{{ route('cups.show', ['cup'=>$cup, 'show'=>$show]) }}">
+                        Details
+                    </a>
+                </x-button>
+            </x-headers.h2>
+            <div class="print:text-sm">{{ $cup->winning_criteria }}
+                <i>{{ $cup->getSectionsOrCategoriesDescription($show) }}</i></div>
             <div>{{ $cup->getJudgesForThisShow($show, 'Judge: ')  }}</div>
 
             @if($show->resultsArePublic() || Auth::user()?->isAdmin())
                 @if ($cup->is_points_based)
                     <table
-                        class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-                        <thead class="text-white">
+                        class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5 print:m-0 print:shadow-none ">
+                        <thead class="text-white print:hidden">
                         <!-- one for each row - required for mobile view -->
                         @for ($x=0; $x < 4; $x++)
                             <tr class="bg-indigo-500 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
@@ -71,7 +77,7 @@
                         @endphp
                         @foreach($results[$cup->id]->winners as $winner)
                             <tr>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3">
+                                <td class="border-grey-light border hover:bg-gray-100 p-3 print:p-0 print:text-sm">
                                     @if (!$winnerPoints || $winner->points === $winnerPoints)
                                         @lang('Winner')
                                         @php
@@ -81,20 +87,17 @@
                                         @lang('Proxime Accessit')
                                     @endif
                                 </td>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate print:p-0 print:text-sm">
                                     @if(Auth::user() && Auth::user()->isAdmin())
                                         {{ $winner->entrant->full_name }}
                                         @if (!$winnerPoints || $winner->points === $winnerPoints)
-                                            <br />
-                                            {{ $winner->entrant->user?->address }}<br />
-                                            {{ $winner->entrant->user?->email }}<br />
-                                            {{ $winner->entrant->user?->telephone }}
+                                            {!!  $winner->entrant->getAddressDetails('<br />') !!}
                                         @endif
                                     @else
                                         {{$winner->entrant->printable_name}}
                                     @endif
                                 </td>
-                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate print:p-0 print:text-sm">
                                     {{$winner->points}} @lang('points')
                                 </td>
                         @endforeach
@@ -104,14 +107,10 @@
                     <i>@lang('Winner'): </i>
 
                 @if (Auth::user() && Auth::user()->isAdmin())
-                    {{ $results[$cup->id]->cupWinner?->full_name}}
-                        <br />
-                    {{ $results[$cup->id]->cupWinner?->user?->address }}<br />
-                    {{ $results[$cup->id]->cupWinner?->user?->email }}<br />
-                    {{ $results[$cup->id]->cupWinner?->user?->telephone }}
-
+                        {{ $winner->entrant->full_name }}<Br/>
+                        {!! $results[$cup->id]->cupWinner?->getAddressDetails('<br />') !!}<br/>
                     @else
-                    {{ $results[$cup->id]->cupWinner?->printable_name }}
+                        {{ $results[$cup->id]->cupWinner?->printable_name }}
                     @endif
                     @if (is_object($results[$cup->id]?->entry ?? null))
                         for category
