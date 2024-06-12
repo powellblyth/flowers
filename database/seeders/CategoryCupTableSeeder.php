@@ -9015,15 +9015,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            124 => 
-            array (
-                'id' => 2269,
-                'cup_id' => 15,
-                'category_id' => 1328,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            125 => 
+            125 =>
             array (
                 'id' => 2270,
                 'cup_id' => 16,

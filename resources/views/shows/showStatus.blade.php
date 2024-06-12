@@ -43,7 +43,17 @@
     @foreach (\App\Models\Cup::with(['section'])->inOrder()->get() as $cup)
         <x-layout.intro-para class="py-2">
             <div>{{ $cup->name }}[{{$cup->id}}]<br />
-            {{$cup->winning_criteria}}</div>
+                {{\App\Models\Cup::getWinningBasisOptions()[$cup->winning_basis]}}<br/>
+                @if($cup->winning_basis == \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE  )
+                    @php $judges = $cup->getJudgesForThisShow($show)->pluck('name')->toArray();
+                    @endphp
+                    <x-goodbad
+                        :success="count($judges) > 0">
+                        <b>Judges:</b>{{implode(', ' , $judges)}}
+                    </x-goodbad>
+                @endif
+            </div>
+
 
             @php
                 $sections = $cup->sections()->withPivotValue('show_id', $show->id)->inOrder()->get();
@@ -54,8 +64,8 @@
                 :success="$cup->categories()->forShow($show)->count() > 0 || $sections->count() > 0">
 
                 {{$cup->categories()->forShow($show)->count() }}
-                direct {{Str::plural('category', $cup->categories()->forShow($show)->count())}}
-                , {{count($sections) . ' direct ' . Str::plural('section', $section->count())}}
+                {{Str::plural('category', $cup->categories()->forShow($show)->count())}}
+                , {{count($sections) . ' ' . Str::plural('section', $sections->count())}}
             </x-goodbad>
             </div>
             @foreach ($cup->categories()->forShow($show)->inOrder()->get() as $category)
