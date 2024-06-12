@@ -96,22 +96,24 @@
                     $otherJudges = $cup->getJudgesForThisShow($show);
                     $otherJudges = $otherJudges->except($judge->id);
                 @endphp
-                <div class="break-inside-avoid grid grid-cols-4 gap-0 w-1/2">
-                    <div class="col-span-4 bg-gray-200 border-x-2 text-bold text-sm">
-                        <x-headers.h4>{{$cup->name}} - {{$cup->winning_criteria}}</x-headers.h4>
+                <div class="break-inside-avoid grid grid-cols-4 p-1 gap-0 w-5/6 border-2 border-gray-500 m-2">
+                    <div class="col-span-4 border-x-2 text-bold text-sm">
+                        <b>{{$cup->name}}</b>
+                        - {{$cup->winning_criteria}} {{$cup->getSectionsOrCategoriesDescription($show)}}</p>
                         @if($otherJudges->count() > 0)
-                            <b class="text-red-700">Judged
-                                with {{implode(', ', $otherJudges->pluck('name')->toArray())}}</b>
+                            <b class="text-red-700">
+                                Judged with {{implode(', ', $otherJudges->pluck('name')->toArray())}}
+                            </b>
                         @endif
                     </div>
-                    <div class="col-span-3 text-sm">
+                    <div class="text-sm text-right align-middle">
                         <x-headers.h5>Entrant Number</x-headers.h5>
                     </div>
-                    <div class="border-2 "></div>
-                    <div class="col-span-3 text-sm">
+                    <div class="border-2 border-black">&nbsp;</div>
+                    <div class="text-sm text-right align-middle">
                         <x-headers.h5>Category Number</x-headers.h5>
                     </div>
-                    <div class="border-2 "></div>
+                    <div class="border-2 border-black"></div>
                 </div>
             @endforeach
         @endif
