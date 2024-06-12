@@ -27,7 +27,9 @@
             @if($cup->prize_description)
                 <li><b>Prize</b>: {{$cup->prize_description}}</li>
             @endif
-                <li><b>Judges for {{$show->name}}</b>: {{ $cup->getJudgesDescriptionForThisShow($show)  }}</li>
+                @if (!$cup->is_points_based)
+                    <li><b>Judges for {{$show->name}}</b>: {{ $cup->getJudgesDescriptionForThisShow($show)  }}</li>
+                @endif
         </ul>
         </div>
     </x-layout.intro-para>

@@ -8303,6 +8303,78 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
+            35 => 
+            array (
+                'id' => 2298,
+                'cup_id' => 6,
+                'category_id' => 1285,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
+            36 => 
+            array (
+                'id' => 2299,
+                'cup_id' => 6,
+                'category_id' => 1286,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
+            37 => 
+            array (
+                'id' => 2300,
+                'cup_id' => 6,
+                'category_id' => 1287,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
+            38 => 
+            array (
+                'id' => 2301,
+                'cup_id' => 6,
+                'category_id' => 1288,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
+            39 => 
+            array (
+                'id' => 2302,
+                'cup_id' => 6,
+                'category_id' => 1290,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
+            40 => 
+            array (
+                'id' => 2303,
+                'cup_id' => 6,
+                'category_id' => 1291,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
+            41 => 
+            array (
+                'id' => 2304,
+                'cup_id' => 6,
+                'category_id' => 1295,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
+            42 => 
+            array (
+                'id' => 2305,
+                'cup_id' => 6,
+                'category_id' => 1296,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
+            43 => 
+            array (
+                'id' => 2306,
+                'cup_id' => 6,
+                'category_id' => 1297,
+                'created_at' => '2024-06-12 16:06:07',
+                'updated_at' => NULL,
+            ),
         ));
         
         

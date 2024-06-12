@@ -135,7 +135,7 @@ class Cup extends Model
      * @param Show $show
      * @return string
      */
-    public function getSectionsOrCategoriesDescription(Show $show): string
+    public function getSectionsOrCategoriesDescription(Show $show): ?string
     {
         $sections = $this->sections()->withPivotValue('show_id', $show->id)->get();
         $result = null;
@@ -145,13 +145,16 @@ class Cup extends Model
                    . implode(', ', $sections->pluck('number')->all());
         }
         $categories = $this->categories()->forShow($show)->get();
-        if (!is_null($result)) {
-            $result .= ' and ';
+
+        if ($categories->count() > 0) {
+            if (!is_null($result)) {
+                $result .= ' and ';
+            }
+            $result .= \Str::plural('category', $categories)
+                       . ' '
+                       . implode(', ', $categories->pluck('number')->all());
         }
-        return 'for ' . $result
-               . \Str::plural('category', $categories)
-               . ' '
-               . implode(', ', $categories->pluck('number')->all());
+        return $result;
     }
 
     /**
@@ -172,7 +175,7 @@ class Cup extends Model
     public function getJudgesForThisShow(Show $show): Collection
     {
         // TODO this should be a model call not a display call
-        $judges = $this
+        return $this
             ->judgeRoles
             // this is good, all the judge roles for the cups
             // NEXT we need to       bring in all the JudgeAtShow for that role, for that show
@@ -184,7 +187,6 @@ class Cup extends Model
             ->reduce(function (Collection $carry, \App\Models\Judge $judge) {
                 return $carry->add($judge);
             }, new Collection);
-        return $judges;
     }
 
     public function getJudgesDescriptionForThisShow(Show $show, string $prefix = ''): ?string
