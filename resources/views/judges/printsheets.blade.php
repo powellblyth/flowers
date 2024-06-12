@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="pageTitle">
-        {{ __('Judge Sheets for :judge for :show Petersham Horticultural Society Summer Show', ['judge' => $judge->name, 'show' => $show->name]) }}
+        {{ __('Judging Sheet for :judge for :show Petersham Horticultural Society Summer Show', ['judge' => $judge->name, 'show' => $show->name]) }}
     </x-slot>
     <x-slot name="header">
         <x-headers.h1>
-            {{ __('Judge Sheets for :judge for :show PHS Summer Show', ['judge' => $judge->name, 'show' => $show->name]) }}
+            {{ __('Judging Sheet for :judge for :show PHS Summer Show', ['judge' => $judge->name, 'show' => $show->name]) }}
         </x-headers.h1>
     </x-slot>
     <x-layout.intro-para class="py-2 ">
@@ -76,14 +76,14 @@
                     <div class="font-bold text-center">Third</div>
                     <div class="font-bold text-center">Commended</div>
             @endif
-                <div class="col-span-3 text-sm border-2 border-gray-500">
+                <div class="col-span-3 text-sm border border-gray-500">
                     {{$category->numbered_name}}
                     <br/><small><i>{{$category->notes}}</i></small>
                 </div>
-                <div class="result border-2 border-gray-500 ">&nbsp;</div>
-                <div class="result border-2 border-gray-500">&nbsp;</div>
-                <div class="result border-2 border-gray-500">&nbsp;</div>
-                <div class="result_commended border-gray-500 border-2">&nbsp;</div>
+                <div class="result border border-gray-500 ">&nbsp;</div>
+                <div class="result border border-gray-500">&nbsp;</div>
+                <div class="result border border-gray-500">&nbsp;</div>
+                <div class="result_commended border-gray-500 border">&nbsp;</div>
         @endforeach
 
         </div>
