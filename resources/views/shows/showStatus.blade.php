@@ -44,6 +44,7 @@
         <x-layout.intro-para class="py-2">
             <div>{{ $cup->name }}[{{$cup->id}}]<br />
                 {{\App\Models\Cup::getWinningBasisOptions()[$cup->winning_basis]}}<br/>
+                {{$cup->winning_criteria}}<br/>
                 @if($cup->winning_basis == \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE  )
                     @php $judges = $cup->getJudgesForThisShow($show)->pluck('name')->toArray();
                     @endphp
