@@ -137,7 +137,7 @@ class Cup extends Model
      */
     public function getSectionsOrCategoriesDescription(Show $show): ?string
     {
-        $sections = $this->sections()->withPivotValue('show_id', $show->id)->get();
+        $sections = $this->sections()->withPivotValue('show_id', $show->id)->inOrder()->get();
         $result = null;
         if ($sections->count() > 0) {
             $result = \Str::plural('section', $sections)
