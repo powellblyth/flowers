@@ -44,13 +44,25 @@
         <x-layout.intro-para class="py-2">
             <div>{{ $cup->name }}[{{$cup->id}}]<br />
             {{$cup->winning_criteria}}</div>
-            <x-goodbad
-                :success="$cup->categories()->forShow($show)->count() > 0 || $cup->section?->categories()->forShow($show)->count() > 0">
 
-                {{$cup->categories()->forShow($show)->count() }} direct categories<br/>
+            @php
+                $sections = $cup->sections()->withPivotValue('show_id', $show->id)->inOrder()->get();
+            @endphp
+
+            <div class="my-2">
+            <x-goodbad
+                :success="$cup->categories()->forShow($show)->count() > 0 || $sections->count() > 0">
+
+                {{$cup->categories()->forShow($show)->count() }}
+                direct {{Str::plural('category', $cup->categories()->forShow($show)->count())}}
+                , {{count($sections) . ' direct ' . Str::plural('section', $section->count())}}
             </x-goodbad>
+            </div>
             @foreach ($cup->categories()->forShow($show)->inOrder()->get() as $category)
                 {{$category->numbered_name}}<br />
+            @endforeach
+            @foreach ($sections as $section)
+                {{$section->display_name}}<br/>
             @endforeach
             @if($cup->section?->categories()->forShow($show)->count() > 0)
                 <x-goodbad
