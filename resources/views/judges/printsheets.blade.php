@@ -67,7 +67,7 @@
                     @php
                         $previousSection = $category->section_id;
                     @endphp
-                    <div class="col-span-7 bg-gray-200 text-bold mt-4">
+                    <div class="col-span-7 text-bold mt-4">
                         <x-headers.h4>{{$category->section->display_name}}</x-headers.h4>
                     </div>
                     <div class="font-bold col-span-3">Category</div>
@@ -76,14 +76,14 @@
                     <div class="font-bold text-center">Third</div>
                     <div class="font-bold text-center">Commended</div>
             @endif
-                <div class="col-span-3 text-sm border-2">
+                <div class="col-span-3 text-sm border-2 border-gray-500">
                     {{$category->numbered_name}}
                     <br/><small><i>{{$category->notes}}</i></small>
                 </div>
-                <div class="result border-2 ">&nbsp;</div>
-                <div class="result border-2">&nbsp;</div>
-                <div class="result border-2">&nbsp;</div>
-                <div class="result_commended border-2">&nbsp;</div>
+                <div class="result border-2 border-gray-500 ">&nbsp;</div>
+                <div class="result border-2 border-gray-500">&nbsp;</div>
+                <div class="result border-2 border-gray-500">&nbsp;</div>
+                <div class="result_commended border-gray-500 border-2">&nbsp;</div>
         @endforeach
 
         </div>
