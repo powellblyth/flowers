@@ -9015,7 +9015,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            125 =>
+            124 => 
             array (
                 'id' => 2270,
                 'cup_id' => 16,
@@ -9023,7 +9023,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            126 => 
+            125 => 
             array (
                 'id' => 2272,
                 'cup_id' => 16,
@@ -9031,7 +9031,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            127 => 
+            126 => 
             array (
                 'id' => 2274,
                 'cup_id' => 16,
@@ -9039,7 +9039,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            128 => 
+            127 => 
             array (
                 'id' => 2276,
                 'cup_id' => 16,
@@ -9047,7 +9047,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            129 => 
+            128 => 
             array (
                 'id' => 2281,
                 'cup_id' => 16,
@@ -9055,7 +9055,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            130 => 
+            129 => 
             array (
                 'id' => 2283,
                 'cup_id' => 16,
@@ -9063,7 +9063,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            131 => 
+            130 => 
             array (
                 'id' => 2285,
                 'cup_id' => 16,
@@ -9071,7 +9071,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            132 => 
+            131 => 
             array (
                 'id' => 2287,
                 'cup_id' => 16,
@@ -9079,7 +9079,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            133 => 
+            132 => 
             array (
                 'id' => 2289,
                 'cup_id' => 16,
@@ -9087,7 +9087,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            134 => 
+            133 => 
             array (
                 'id' => 2291,
                 'cup_id' => 16,
@@ -9095,7 +9095,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            135 => 
+            134 => 
             array (
                 'id' => 2293,
                 'cup_id' => 16,
@@ -9103,7 +9103,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:42',
                 'updated_at' => '2024-04-23 21:27:42',
             ),
-            136 => 
+            135 => 
             array (
                 'id' => 2295,
                 'cup_id' => 16,
@@ -9111,7 +9111,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:42',
                 'updated_at' => '2024-04-23 21:27:42',
             ),
-            137 => 
+            136 => 
             array (
                 'id' => 2297,
                 'cup_id' => 16,

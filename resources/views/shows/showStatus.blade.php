@@ -49,11 +49,10 @@
                     @endphp
                     <x-goodbad
                         :success="count($judges) > 0">
-                        <b>Judges:</b>{{implode(', ' , $judges)}}
+                        <b>Judges:</b> {{implode(', ' , $judges)}}
                     </x-goodbad>
                 @endif
             </div>
-
 
             @php
                 $sections = $cup->sections()->withPivotValue('show_id', $show->id)->inOrder()->get();
@@ -62,7 +61,6 @@
             <div class="my-2">
             <x-goodbad
                 :success="$cup->categories()->forShow($show)->count() > 0 || $sections->count() > 0">
-
                 {{$cup->categories()->forShow($show)->count() }}
                 {{Str::plural('category', $cup->categories()->forShow($show)->count())}}
                 , {{count($sections) . ' ' . Str::plural('section', $sections->count())}}
