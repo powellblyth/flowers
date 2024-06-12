@@ -99,7 +99,7 @@
                 <div class="break-inside-avoid grid grid-cols-4 p-1 gap-0 w-5/6 border-2 border-gray-500 m-2">
                     <div class="col-span-4 border-x-2 text-bold text-sm">
                         <b>{{$cup->name}}</b>
-                        - {{$cup->winning_criteria}} {{$cup->getSectionsOrCategoriesDescription($show)}}</p>
+                        - {{$cup->winning_criteria}} {{$cup->getSectionsOrCategoriesDescription($show)}}
                         @if($otherJudges->count() > 0)
                             <b class="text-red-700">
                                 Judged with {{implode(', ', $otherJudges->pluck('name')->toArray())}}

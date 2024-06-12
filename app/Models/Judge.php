@@ -87,6 +87,7 @@ class Judge extends Model
                         ->get()
                 );
             }
+            // TODO this looks inefficient
 //            dump($show->categories()->with('section')->get()->pluck('name', 'id')->toArray());
             foreach ($show->categories()->with('section')->get() as $showCategory) {
                 $hasJudgeRole = $showCategory->judgeRoles()->where('judge_role_id', $judgeRole->id)->first();

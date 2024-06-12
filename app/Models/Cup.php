@@ -89,22 +89,21 @@ class Cup extends Model
 
     public function relatedCategories(Show $show): Collection
     {
+        $categories = new Collection();
         if ($this->sections()->withPivotValue('show_id', $show->id)->count() > 0) {
-            $categories = new Collection();
             $this
                 ->sections()
                 ->withPivotValue('show_id', $show->id)
                 ->each(function (Section $section) use (&$categories, $show) {
                     $categories = $categories->merge($section->categories()->forShow($show)->get());
                 });
-            return $categories;
-
-        } else {
-            return $this->categories()
+        }
+        return $categories->merge($this->categories()
                 ->inOrder()
                 ->forShow($show)
-                ->get();
-        }
+            ->get())
+            // TO DO why doesn't this work?
+            ->sortBy('sort_order');
     }
 
     public function judgeRoles(): BelongsToMany
@@ -139,14 +138,17 @@ class Cup extends Model
     public function getSectionsOrCategoriesDescription(Show $show): string
     {
         $sections = $this->sections()->withPivotValue('show_id', $show->id)->get();
+        $result = null;
         if ($sections->count() > 0) {
-            return 'for '
-                   . \Str::plural('section', $sections)
+            $result = \Str::plural('section', $sections)
                    . ' '
                    . implode(', ', $sections->pluck('number')->all());
         }
         $categories = $this->categories()->forShow($show)->get();
-        return 'for '
+        if (!is_null($result)) {
+            $result .= ' and ';
+        }
+        return 'for ' . $result
                . \Str::plural('category', $categories)
                . ' '
                . implode(', ', $categories->pluck('number')->all());

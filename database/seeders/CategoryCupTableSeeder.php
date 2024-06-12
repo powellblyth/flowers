@@ -2173,165 +2173,13 @@ class CategoryCupTableSeeder extends Seeder
             ),
             269 => 
             array (
-                'id' => 843,
-                'cup_id' => 15,
-                'category_id' => 803,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            270 => 
-            array (
-                'id' => 844,
-                'cup_id' => 15,
-                'category_id' => 802,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            271 => 
-            array (
-                'id' => 845,
-                'cup_id' => 15,
-                'category_id' => 801,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            272 => 
-            array (
-                'id' => 846,
-                'cup_id' => 15,
-                'category_id' => 800,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            273 => 
-            array (
-                'id' => 847,
-                'cup_id' => 15,
-                'category_id' => 799,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            274 => 
-            array (
-                'id' => 848,
-                'cup_id' => 15,
-                'category_id' => 798,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            275 => 
-            array (
-                'id' => 849,
-                'cup_id' => 15,
-                'category_id' => 797,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            276 => 
-            array (
-                'id' => 850,
-                'cup_id' => 15,
-                'category_id' => 795,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            277 => 
-            array (
-                'id' => 851,
-                'cup_id' => 15,
-                'category_id' => 794,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            278 => 
-            array (
-                'id' => 852,
-                'cup_id' => 15,
-                'category_id' => 793,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            279 => 
-            array (
-                'id' => 853,
-                'cup_id' => 15,
-                'category_id' => 792,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            280 => 
-            array (
-                'id' => 854,
-                'cup_id' => 15,
-                'category_id' => 791,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            281 => 
-            array (
-                'id' => 855,
-                'cup_id' => 15,
-                'category_id' => 790,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            282 => 
-            array (
-                'id' => 856,
-                'cup_id' => 15,
-                'category_id' => 789,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            283 => 
-            array (
-                'id' => 857,
-                'cup_id' => 15,
-                'category_id' => 788,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            284 => 
-            array (
-                'id' => 858,
-                'cup_id' => 15,
-                'category_id' => 787,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            285 => 
-            array (
-                'id' => 859,
-                'cup_id' => 15,
-                'category_id' => 786,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            286 => 
-            array (
-                'id' => 860,
-                'cup_id' => 15,
-                'category_id' => 785,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            287 => 
-            array (
-                'id' => 861,
-                'cup_id' => 15,
-                'category_id' => 784,
-                'created_at' => '2022-07-06 19:32:25',
-                'updated_at' => '2022-07-06 19:32:25',
-            ),
-            288 => 
-            array (
                 'id' => 862,
                 'cup_id' => 16,
                 'category_id' => 803,
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            289 => 
+            270 => 
             array (
                 'id' => 863,
                 'cup_id' => 16,
@@ -2339,7 +2187,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            290 => 
+            271 => 
             array (
                 'id' => 864,
                 'cup_id' => 16,
@@ -2347,7 +2195,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            291 => 
+            272 => 
             array (
                 'id' => 865,
                 'cup_id' => 16,
@@ -2355,7 +2203,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            292 => 
+            273 => 
             array (
                 'id' => 866,
                 'cup_id' => 16,
@@ -2363,7 +2211,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            293 => 
+            274 => 
             array (
                 'id' => 867,
                 'cup_id' => 16,
@@ -2371,7 +2219,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            294 => 
+            275 => 
             array (
                 'id' => 868,
                 'cup_id' => 16,
@@ -2379,7 +2227,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            295 => 
+            276 => 
             array (
                 'id' => 869,
                 'cup_id' => 16,
@@ -2387,7 +2235,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            296 => 
+            277 => 
             array (
                 'id' => 870,
                 'cup_id' => 16,
@@ -2395,7 +2243,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            297 => 
+            278 => 
             array (
                 'id' => 871,
                 'cup_id' => 16,
@@ -2403,7 +2251,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            298 => 
+            279 => 
             array (
                 'id' => 872,
                 'cup_id' => 16,
@@ -2411,7 +2259,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            299 => 
+            280 => 
             array (
                 'id' => 873,
                 'cup_id' => 16,
@@ -2419,7 +2267,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            300 => 
+            281 => 
             array (
                 'id' => 874,
                 'cup_id' => 16,
@@ -2427,7 +2275,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            301 => 
+            282 => 
             array (
                 'id' => 875,
                 'cup_id' => 16,
@@ -2435,7 +2283,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            302 => 
+            283 => 
             array (
                 'id' => 876,
                 'cup_id' => 16,
@@ -2443,7 +2291,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            303 => 
+            284 => 
             array (
                 'id' => 877,
                 'cup_id' => 16,
@@ -2451,7 +2299,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            304 => 
+            285 => 
             array (
                 'id' => 878,
                 'cup_id' => 16,
@@ -2459,7 +2307,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            305 => 
+            286 => 
             array (
                 'id' => 879,
                 'cup_id' => 16,
@@ -2467,7 +2315,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            306 => 
+            287 => 
             array (
                 'id' => 880,
                 'cup_id' => 16,
@@ -2475,7 +2323,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            307 => 
+            288 => 
             array (
                 'id' => 881,
                 'cup_id' => 16,
@@ -2483,63 +2331,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:33:31',
                 'updated_at' => '2022-07-06 19:33:31',
             ),
-            308 => 
-            array (
-                'id' => 882,
-                'cup_id' => 15,
-                'category_id' => 815,
-                'created_at' => '2022-07-06 19:33:53',
-                'updated_at' => '2022-07-06 19:33:53',
-            ),
-            309 => 
-            array (
-                'id' => 883,
-                'cup_id' => 15,
-                'category_id' => 814,
-                'created_at' => '2022-07-06 19:33:53',
-                'updated_at' => '2022-07-06 19:33:53',
-            ),
-            310 => 
-            array (
-                'id' => 884,
-                'cup_id' => 15,
-                'category_id' => 813,
-                'created_at' => '2022-07-06 19:33:53',
-                'updated_at' => '2022-07-06 19:33:53',
-            ),
-            311 => 
-            array (
-                'id' => 885,
-                'cup_id' => 15,
-                'category_id' => 812,
-                'created_at' => '2022-07-06 19:33:53',
-                'updated_at' => '2022-07-06 19:33:53',
-            ),
-            312 => 
-            array (
-                'id' => 886,
-                'cup_id' => 15,
-                'category_id' => 811,
-                'created_at' => '2022-07-06 19:33:53',
-                'updated_at' => '2022-07-06 19:33:53',
-            ),
-            313 => 
-            array (
-                'id' => 887,
-                'cup_id' => 15,
-                'category_id' => 810,
-                'created_at' => '2022-07-06 19:33:53',
-                'updated_at' => '2022-07-06 19:33:53',
-            ),
-            314 => 
-            array (
-                'id' => 888,
-                'cup_id' => 15,
-                'category_id' => 804,
-                'created_at' => '2022-07-06 19:33:53',
-                'updated_at' => '2022-07-06 19:33:53',
-            ),
-            315 => 
+            289 => 
             array (
                 'id' => 889,
                 'cup_id' => 16,
@@ -2547,7 +2339,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            316 => 
+            290 => 
             array (
                 'id' => 890,
                 'cup_id' => 16,
@@ -2555,7 +2347,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            317 => 
+            291 => 
             array (
                 'id' => 891,
                 'cup_id' => 16,
@@ -2563,7 +2355,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            318 => 
+            292 => 
             array (
                 'id' => 892,
                 'cup_id' => 16,
@@ -2571,7 +2363,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            319 => 
+            293 => 
             array (
                 'id' => 893,
                 'cup_id' => 16,
@@ -2579,7 +2371,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            320 => 
+            294 => 
             array (
                 'id' => 894,
                 'cup_id' => 16,
@@ -2587,7 +2379,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            321 => 
+            295 => 
             array (
                 'id' => 895,
                 'cup_id' => 16,
@@ -2595,7 +2387,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            322 => 
+            296 => 
             array (
                 'id' => 896,
                 'cup_id' => 16,
@@ -2603,7 +2395,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            323 => 
+            297 => 
             array (
                 'id' => 897,
                 'cup_id' => 16,
@@ -2611,7 +2403,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            324 => 
+            298 => 
             array (
                 'id' => 898,
                 'cup_id' => 16,
@@ -2619,7 +2411,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            325 => 
+            299 => 
             array (
                 'id' => 899,
                 'cup_id' => 16,
@@ -2627,7 +2419,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            326 => 
+            300 => 
             array (
                 'id' => 900,
                 'cup_id' => 16,
@@ -2635,7 +2427,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:04',
                 'updated_at' => '2022-07-06 19:34:04',
             ),
-            327 => 
+            301 => 
             array (
                 'id' => 901,
                 'cup_id' => 16,
@@ -2643,7 +2435,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            328 => 
+            302 => 
             array (
                 'id' => 902,
                 'cup_id' => 16,
@@ -2651,7 +2443,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            329 => 
+            303 => 
             array (
                 'id' => 903,
                 'cup_id' => 16,
@@ -2659,7 +2451,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            330 => 
+            304 => 
             array (
                 'id' => 904,
                 'cup_id' => 16,
@@ -2667,7 +2459,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            331 => 
+            305 => 
             array (
                 'id' => 905,
                 'cup_id' => 16,
@@ -2675,7 +2467,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            332 => 
+            306 => 
             array (
                 'id' => 906,
                 'cup_id' => 16,
@@ -2683,7 +2475,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            333 => 
+            307 => 
             array (
                 'id' => 907,
                 'cup_id' => 16,
@@ -2691,7 +2483,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            334 => 
+            308 => 
             array (
                 'id' => 908,
                 'cup_id' => 16,
@@ -2699,7 +2491,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            335 => 
+            309 => 
             array (
                 'id' => 909,
                 'cup_id' => 16,
@@ -2707,7 +2499,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:34:54',
                 'updated_at' => '2022-07-06 19:34:54',
             ),
-            336 => 
+            310 => 
             array (
                 'id' => 910,
                 'cup_id' => 17,
@@ -2715,7 +2507,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            337 => 
+            311 => 
             array (
                 'id' => 911,
                 'cup_id' => 17,
@@ -2723,7 +2515,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            338 => 
+            312 => 
             array (
                 'id' => 912,
                 'cup_id' => 17,
@@ -2731,7 +2523,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            339 => 
+            313 => 
             array (
                 'id' => 913,
                 'cup_id' => 17,
@@ -2739,7 +2531,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            340 => 
+            314 => 
             array (
                 'id' => 914,
                 'cup_id' => 17,
@@ -2747,7 +2539,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            341 => 
+            315 => 
             array (
                 'id' => 915,
                 'cup_id' => 17,
@@ -2755,7 +2547,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            342 => 
+            316 => 
             array (
                 'id' => 916,
                 'cup_id' => 17,
@@ -2763,7 +2555,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            343 => 
+            317 => 
             array (
                 'id' => 917,
                 'cup_id' => 17,
@@ -2771,7 +2563,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            344 => 
+            318 => 
             array (
                 'id' => 918,
                 'cup_id' => 17,
@@ -2779,7 +2571,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            345 => 
+            319 => 
             array (
                 'id' => 919,
                 'cup_id' => 17,
@@ -2787,7 +2579,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            346 => 
+            320 => 
             array (
                 'id' => 920,
                 'cup_id' => 17,
@@ -2795,7 +2587,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            347 => 
+            321 => 
             array (
                 'id' => 921,
                 'cup_id' => 17,
@@ -2803,7 +2595,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            348 => 
+            322 => 
             array (
                 'id' => 922,
                 'cup_id' => 17,
@@ -2811,7 +2603,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            349 => 
+            323 => 
             array (
                 'id' => 923,
                 'cup_id' => 17,
@@ -2819,7 +2611,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            350 => 
+            324 => 
             array (
                 'id' => 924,
                 'cup_id' => 17,
@@ -2827,7 +2619,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            351 => 
+            325 => 
             array (
                 'id' => 925,
                 'cup_id' => 17,
@@ -2835,7 +2627,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:35:40',
                 'updated_at' => '2022-07-06 19:35:40',
             ),
-            352 => 
+            326 => 
             array (
                 'id' => 926,
                 'cup_id' => 17,
@@ -2843,7 +2635,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:06',
                 'updated_at' => '2022-07-06 19:36:06',
             ),
-            353 => 
+            327 => 
             array (
                 'id' => 927,
                 'cup_id' => 17,
@@ -2851,7 +2643,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:06',
                 'updated_at' => '2022-07-06 19:36:06',
             ),
-            354 => 
+            328 => 
             array (
                 'id' => 928,
                 'cup_id' => 17,
@@ -2859,7 +2651,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:06',
                 'updated_at' => '2022-07-06 19:36:06',
             ),
-            355 => 
+            329 => 
             array (
                 'id' => 929,
                 'cup_id' => 17,
@@ -2867,7 +2659,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:06',
                 'updated_at' => '2022-07-06 19:36:06',
             ),
-            356 => 
+            330 => 
             array (
                 'id' => 930,
                 'cup_id' => 18,
@@ -2875,7 +2667,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            357 => 
+            331 => 
             array (
                 'id' => 931,
                 'cup_id' => 18,
@@ -2883,7 +2675,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            358 => 
+            332 => 
             array (
                 'id' => 932,
                 'cup_id' => 18,
@@ -2891,7 +2683,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            359 => 
+            333 => 
             array (
                 'id' => 933,
                 'cup_id' => 18,
@@ -2899,7 +2691,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            360 => 
+            334 => 
             array (
                 'id' => 934,
                 'cup_id' => 18,
@@ -2907,7 +2699,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            361 => 
+            335 => 
             array (
                 'id' => 935,
                 'cup_id' => 18,
@@ -2915,7 +2707,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            362 => 
+            336 => 
             array (
                 'id' => 936,
                 'cup_id' => 18,
@@ -2923,7 +2715,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            363 => 
+            337 => 
             array (
                 'id' => 937,
                 'cup_id' => 18,
@@ -2931,7 +2723,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            364 => 
+            338 => 
             array (
                 'id' => 938,
                 'cup_id' => 18,
@@ -2939,7 +2731,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            365 => 
+            339 => 
             array (
                 'id' => 939,
                 'cup_id' => 18,
@@ -2947,7 +2739,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            366 => 
+            340 => 
             array (
                 'id' => 940,
                 'cup_id' => 18,
@@ -2955,7 +2747,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            367 => 
+            341 => 
             array (
                 'id' => 941,
                 'cup_id' => 18,
@@ -2963,7 +2755,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            368 => 
+            342 => 
             array (
                 'id' => 942,
                 'cup_id' => 18,
@@ -2971,7 +2763,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            369 => 
+            343 => 
             array (
                 'id' => 943,
                 'cup_id' => 18,
@@ -2979,7 +2771,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            370 => 
+            344 => 
             array (
                 'id' => 944,
                 'cup_id' => 18,
@@ -2987,7 +2779,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            371 => 
+            345 => 
             array (
                 'id' => 945,
                 'cup_id' => 18,
@@ -2995,7 +2787,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            372 => 
+            346 => 
             array (
                 'id' => 946,
                 'cup_id' => 18,
@@ -3003,7 +2795,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            373 => 
+            347 => 
             array (
                 'id' => 947,
                 'cup_id' => 18,
@@ -3011,7 +2803,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            374 => 
+            348 => 
             array (
                 'id' => 948,
                 'cup_id' => 18,
@@ -3019,7 +2811,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            375 => 
+            349 => 
             array (
                 'id' => 949,
                 'cup_id' => 18,
@@ -3027,7 +2819,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            376 => 
+            350 => 
             array (
                 'id' => 950,
                 'cup_id' => 18,
@@ -3035,7 +2827,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:36:58',
                 'updated_at' => '2022-07-06 19:36:58',
             ),
-            377 => 
+            351 => 
             array (
                 'id' => 951,
                 'cup_id' => 18,
@@ -3043,7 +2835,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:37:30',
                 'updated_at' => '2022-07-06 19:37:30',
             ),
-            378 => 
+            352 => 
             array (
                 'id' => 952,
                 'cup_id' => 18,
@@ -3051,7 +2843,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:37:30',
                 'updated_at' => '2022-07-06 19:37:30',
             ),
-            379 => 
+            353 => 
             array (
                 'id' => 953,
                 'cup_id' => 18,
@@ -3059,7 +2851,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:37:30',
                 'updated_at' => '2022-07-06 19:37:30',
             ),
-            380 => 
+            354 => 
             array (
                 'id' => 954,
                 'cup_id' => 24,
@@ -3067,7 +2859,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:38:20',
                 'updated_at' => '2022-07-06 19:38:20',
             ),
-            381 => 
+            355 => 
             array (
                 'id' => 955,
                 'cup_id' => 24,
@@ -3075,7 +2867,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:38:20',
                 'updated_at' => '2022-07-06 19:38:20',
             ),
-            382 => 
+            356 => 
             array (
                 'id' => 956,
                 'cup_id' => 24,
@@ -3083,7 +2875,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:38:20',
                 'updated_at' => '2022-07-06 19:38:20',
             ),
-            383 => 
+            357 => 
             array (
                 'id' => 957,
                 'cup_id' => 24,
@@ -3091,7 +2883,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:38:20',
                 'updated_at' => '2022-07-06 19:38:20',
             ),
-            384 => 
+            358 => 
             array (
                 'id' => 958,
                 'cup_id' => 25,
@@ -3099,7 +2891,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:39:53',
                 'updated_at' => '2022-07-06 19:39:53',
             ),
-            385 => 
+            359 => 
             array (
                 'id' => 959,
                 'cup_id' => 25,
@@ -3107,7 +2899,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:39:53',
                 'updated_at' => '2022-07-06 19:39:53',
             ),
-            386 => 
+            360 => 
             array (
                 'id' => 960,
                 'cup_id' => 25,
@@ -3115,7 +2907,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:39:53',
                 'updated_at' => '2022-07-06 19:39:53',
             ),
-            387 => 
+            361 => 
             array (
                 'id' => 961,
                 'cup_id' => 25,
@@ -3123,7 +2915,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:39:53',
                 'updated_at' => '2022-07-06 19:39:53',
             ),
-            388 => 
+            362 => 
             array (
                 'id' => 962,
                 'cup_id' => 25,
@@ -3131,7 +2923,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:39:53',
                 'updated_at' => '2022-07-06 19:39:53',
             ),
-            389 => 
+            363 => 
             array (
                 'id' => 963,
                 'cup_id' => 25,
@@ -3139,7 +2931,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:39:53',
                 'updated_at' => '2022-07-06 19:39:53',
             ),
-            390 => 
+            364 => 
             array (
                 'id' => 964,
                 'cup_id' => 25,
@@ -3147,7 +2939,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:39:53',
                 'updated_at' => '2022-07-06 19:39:53',
             ),
-            391 => 
+            365 => 
             array (
                 'id' => 965,
                 'cup_id' => 25,
@@ -3155,7 +2947,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:39:53',
                 'updated_at' => '2022-07-06 19:39:53',
             ),
-            392 => 
+            366 => 
             array (
                 'id' => 966,
                 'cup_id' => 26,
@@ -3163,7 +2955,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            393 => 
+            367 => 
             array (
                 'id' => 967,
                 'cup_id' => 26,
@@ -3171,7 +2963,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            394 => 
+            368 => 
             array (
                 'id' => 968,
                 'cup_id' => 26,
@@ -3179,7 +2971,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            395 => 
+            369 => 
             array (
                 'id' => 969,
                 'cup_id' => 26,
@@ -3187,7 +2979,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            396 => 
+            370 => 
             array (
                 'id' => 970,
                 'cup_id' => 26,
@@ -3195,7 +2987,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            397 => 
+            371 => 
             array (
                 'id' => 971,
                 'cup_id' => 26,
@@ -3203,7 +2995,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            398 => 
+            372 => 
             array (
                 'id' => 972,
                 'cup_id' => 26,
@@ -3211,7 +3003,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            399 => 
+            373 => 
             array (
                 'id' => 973,
                 'cup_id' => 26,
@@ -3219,7 +3011,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            400 => 
+            374 => 
             array (
                 'id' => 974,
                 'cup_id' => 26,
@@ -3227,7 +3019,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            401 => 
+            375 => 
             array (
                 'id' => 975,
                 'cup_id' => 26,
@@ -3235,7 +3027,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            402 => 
+            376 => 
             array (
                 'id' => 976,
                 'cup_id' => 26,
@@ -3243,7 +3035,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            403 => 
+            377 => 
             array (
                 'id' => 977,
                 'cup_id' => 26,
@@ -3251,7 +3043,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            404 => 
+            378 => 
             array (
                 'id' => 978,
                 'cup_id' => 26,
@@ -3259,7 +3051,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            405 => 
+            379 => 
             array (
                 'id' => 979,
                 'cup_id' => 26,
@@ -3267,7 +3059,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            406 => 
+            380 => 
             array (
                 'id' => 980,
                 'cup_id' => 26,
@@ -3275,7 +3067,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            407 => 
+            381 => 
             array (
                 'id' => 981,
                 'cup_id' => 26,
@@ -3283,7 +3075,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            408 => 
+            382 => 
             array (
                 'id' => 982,
                 'cup_id' => 26,
@@ -3291,7 +3083,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            409 => 
+            383 => 
             array (
                 'id' => 983,
                 'cup_id' => 26,
@@ -3299,7 +3091,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            410 => 
+            384 => 
             array (
                 'id' => 984,
                 'cup_id' => 26,
@@ -3307,7 +3099,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:40:58',
                 'updated_at' => '2022-07-06 19:40:58',
             ),
-            411 => 
+            385 => 
             array (
                 'id' => 985,
                 'cup_id' => 26,
@@ -3315,7 +3107,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:41:52',
                 'updated_at' => '2022-07-06 19:41:52',
             ),
-            412 => 
+            386 => 
             array (
                 'id' => 986,
                 'cup_id' => 27,
@@ -3323,7 +3115,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:41',
                 'updated_at' => '2022-07-06 19:47:41',
             ),
-            413 => 
+            387 => 
             array (
                 'id' => 987,
                 'cup_id' => 27,
@@ -3331,7 +3123,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:41',
                 'updated_at' => '2022-07-06 19:47:41',
             ),
-            414 => 
+            388 => 
             array (
                 'id' => 988,
                 'cup_id' => 27,
@@ -3339,7 +3131,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:41',
                 'updated_at' => '2022-07-06 19:47:41',
             ),
-            415 => 
+            389 => 
             array (
                 'id' => 989,
                 'cup_id' => 27,
@@ -3347,7 +3139,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:41',
                 'updated_at' => '2022-07-06 19:47:41',
             ),
-            416 => 
+            390 => 
             array (
                 'id' => 990,
                 'cup_id' => 27,
@@ -3355,7 +3147,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:41',
                 'updated_at' => '2022-07-06 19:47:41',
             ),
-            417 => 
+            391 => 
             array (
                 'id' => 991,
                 'cup_id' => 27,
@@ -3363,7 +3155,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:57',
                 'updated_at' => '2022-07-06 19:47:57',
             ),
-            418 => 
+            392 => 
             array (
                 'id' => 992,
                 'cup_id' => 27,
@@ -3371,7 +3163,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:57',
                 'updated_at' => '2022-07-06 19:47:57',
             ),
-            419 => 
+            393 => 
             array (
                 'id' => 993,
                 'cup_id' => 27,
@@ -3379,7 +3171,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:57',
                 'updated_at' => '2022-07-06 19:47:57',
             ),
-            420 => 
+            394 => 
             array (
                 'id' => 994,
                 'cup_id' => 27,
@@ -3387,7 +3179,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:47:57',
                 'updated_at' => '2022-07-06 19:47:57',
             ),
-            421 => 
+            395 => 
             array (
                 'id' => 995,
                 'cup_id' => 28,
@@ -3395,7 +3187,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            422 => 
+            396 => 
             array (
                 'id' => 996,
                 'cup_id' => 28,
@@ -3403,7 +3195,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            423 => 
+            397 => 
             array (
                 'id' => 997,
                 'cup_id' => 28,
@@ -3411,7 +3203,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            424 => 
+            398 => 
             array (
                 'id' => 998,
                 'cup_id' => 28,
@@ -3419,7 +3211,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            425 => 
+            399 => 
             array (
                 'id' => 999,
                 'cup_id' => 28,
@@ -3427,7 +3219,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            426 => 
+            400 => 
             array (
                 'id' => 1000,
                 'cup_id' => 28,
@@ -3435,7 +3227,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            427 => 
+            401 => 
             array (
                 'id' => 1001,
                 'cup_id' => 28,
@@ -3443,7 +3235,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            428 => 
+            402 => 
             array (
                 'id' => 1002,
                 'cup_id' => 28,
@@ -3451,7 +3243,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            429 => 
+            403 => 
             array (
                 'id' => 1003,
                 'cup_id' => 28,
@@ -3459,7 +3251,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            430 => 
+            404 => 
             array (
                 'id' => 1004,
                 'cup_id' => 28,
@@ -3467,7 +3259,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            431 => 
+            405 => 
             array (
                 'id' => 1005,
                 'cup_id' => 28,
@@ -3475,7 +3267,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            432 => 
+            406 => 
             array (
                 'id' => 1006,
                 'cup_id' => 28,
@@ -3483,7 +3275,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 19:51:43',
                 'updated_at' => '2022-07-06 19:51:43',
             ),
-            433 => 
+            407 => 
             array (
                 'id' => 1007,
                 'cup_id' => 29,
@@ -3491,7 +3283,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:25:53',
                 'updated_at' => '2022-07-06 20:25:53',
             ),
-            434 => 
+            408 => 
             array (
                 'id' => 1008,
                 'cup_id' => 29,
@@ -3499,7 +3291,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:25:53',
                 'updated_at' => '2022-07-06 20:25:53',
             ),
-            435 => 
+            409 => 
             array (
                 'id' => 1009,
                 'cup_id' => 29,
@@ -3507,7 +3299,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:25:53',
                 'updated_at' => '2022-07-06 20:25:53',
             ),
-            436 => 
+            410 => 
             array (
                 'id' => 1010,
                 'cup_id' => 29,
@@ -3515,7 +3307,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:25:53',
                 'updated_at' => '2022-07-06 20:25:53',
             ),
-            437 => 
+            411 => 
             array (
                 'id' => 1011,
                 'cup_id' => 29,
@@ -3523,7 +3315,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            438 => 
+            412 => 
             array (
                 'id' => 1012,
                 'cup_id' => 29,
@@ -3531,7 +3323,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            439 => 
+            413 => 
             array (
                 'id' => 1013,
                 'cup_id' => 29,
@@ -3539,7 +3331,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            440 => 
+            414 => 
             array (
                 'id' => 1014,
                 'cup_id' => 29,
@@ -3547,7 +3339,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            441 => 
+            415 => 
             array (
                 'id' => 1015,
                 'cup_id' => 29,
@@ -3555,7 +3347,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            442 => 
+            416 => 
             array (
                 'id' => 1016,
                 'cup_id' => 29,
@@ -3563,7 +3355,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            443 => 
+            417 => 
             array (
                 'id' => 1017,
                 'cup_id' => 29,
@@ -3571,7 +3363,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            444 => 
+            418 => 
             array (
                 'id' => 1018,
                 'cup_id' => 29,
@@ -3579,7 +3371,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            445 => 
+            419 => 
             array (
                 'id' => 1019,
                 'cup_id' => 29,
@@ -3587,7 +3379,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            446 => 
+            420 => 
             array (
                 'id' => 1020,
                 'cup_id' => 29,
@@ -3595,7 +3387,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            447 => 
+            421 => 
             array (
                 'id' => 1021,
                 'cup_id' => 29,
@@ -3603,7 +3395,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            448 => 
+            422 => 
             array (
                 'id' => 1022,
                 'cup_id' => 29,
@@ -3611,7 +3403,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            449 => 
+            423 => 
             array (
                 'id' => 1023,
                 'cup_id' => 29,
@@ -3619,7 +3411,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            450 => 
+            424 => 
             array (
                 'id' => 1024,
                 'cup_id' => 29,
@@ -3627,7 +3419,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            451 => 
+            425 => 
             array (
                 'id' => 1025,
                 'cup_id' => 29,
@@ -3635,7 +3427,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            452 => 
+            426 => 
             array (
                 'id' => 1026,
                 'cup_id' => 29,
@@ -3643,7 +3435,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            453 => 
+            427 => 
             array (
                 'id' => 1027,
                 'cup_id' => 29,
@@ -3651,7 +3443,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            454 => 
+            428 => 
             array (
                 'id' => 1028,
                 'cup_id' => 29,
@@ -3659,7 +3451,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            455 => 
+            429 => 
             array (
                 'id' => 1029,
                 'cup_id' => 29,
@@ -3667,7 +3459,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:12',
                 'updated_at' => '2022-07-06 20:26:12',
             ),
-            456 => 
+            430 => 
             array (
                 'id' => 1030,
                 'cup_id' => 29,
@@ -3675,7 +3467,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:37',
                 'updated_at' => '2022-07-06 20:26:37',
             ),
-            457 => 
+            431 => 
             array (
                 'id' => 1031,
                 'cup_id' => 29,
@@ -3683,7 +3475,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:37',
                 'updated_at' => '2022-07-06 20:26:37',
             ),
-            458 => 
+            432 => 
             array (
                 'id' => 1032,
                 'cup_id' => 29,
@@ -3691,7 +3483,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:37',
                 'updated_at' => '2022-07-06 20:26:37',
             ),
-            459 => 
+            433 => 
             array (
                 'id' => 1033,
                 'cup_id' => 29,
@@ -3699,7 +3491,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:37',
                 'updated_at' => '2022-07-06 20:26:37',
             ),
-            460 => 
+            434 => 
             array (
                 'id' => 1034,
                 'cup_id' => 29,
@@ -3707,7 +3499,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:37',
                 'updated_at' => '2022-07-06 20:26:37',
             ),
-            461 => 
+            435 => 
             array (
                 'id' => 1035,
                 'cup_id' => 29,
@@ -3715,7 +3507,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:37',
                 'updated_at' => '2022-07-06 20:26:37',
             ),
-            462 => 
+            436 => 
             array (
                 'id' => 1036,
                 'cup_id' => 29,
@@ -3723,7 +3515,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:37',
                 'updated_at' => '2022-07-06 20:26:37',
             ),
-            463 => 
+            437 => 
             array (
                 'id' => 1037,
                 'cup_id' => 29,
@@ -3731,7 +3523,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            464 => 
+            438 => 
             array (
                 'id' => 1038,
                 'cup_id' => 29,
@@ -3739,7 +3531,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            465 => 
+            439 => 
             array (
                 'id' => 1039,
                 'cup_id' => 29,
@@ -3747,7 +3539,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            466 => 
+            440 => 
             array (
                 'id' => 1040,
                 'cup_id' => 29,
@@ -3755,7 +3547,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            467 => 
+            441 => 
             array (
                 'id' => 1041,
                 'cup_id' => 29,
@@ -3763,7 +3555,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            468 => 
+            442 => 
             array (
                 'id' => 1042,
                 'cup_id' => 29,
@@ -3771,7 +3563,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            469 => 
+            443 => 
             array (
                 'id' => 1043,
                 'cup_id' => 29,
@@ -3779,7 +3571,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            470 => 
+            444 => 
             array (
                 'id' => 1044,
                 'cup_id' => 29,
@@ -3787,7 +3579,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            471 => 
+            445 => 
             array (
                 'id' => 1045,
                 'cup_id' => 29,
@@ -3795,7 +3587,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            472 => 
+            446 => 
             array (
                 'id' => 1046,
                 'cup_id' => 29,
@@ -3803,7 +3595,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            473 => 
+            447 => 
             array (
                 'id' => 1047,
                 'cup_id' => 29,
@@ -3811,7 +3603,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            474 => 
+            448 => 
             array (
                 'id' => 1048,
                 'cup_id' => 29,
@@ -3819,7 +3611,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            475 => 
+            449 => 
             array (
                 'id' => 1049,
                 'cup_id' => 29,
@@ -3827,7 +3619,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            476 => 
+            450 => 
             array (
                 'id' => 1050,
                 'cup_id' => 29,
@@ -3835,7 +3627,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            477 => 
+            451 => 
             array (
                 'id' => 1051,
                 'cup_id' => 29,
@@ -3843,7 +3635,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            478 => 
+            452 => 
             array (
                 'id' => 1052,
                 'cup_id' => 29,
@@ -3851,7 +3643,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            479 => 
+            453 => 
             array (
                 'id' => 1053,
                 'cup_id' => 29,
@@ -3859,7 +3651,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            480 => 
+            454 => 
             array (
                 'id' => 1054,
                 'cup_id' => 29,
@@ -3867,7 +3659,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            481 => 
+            455 => 
             array (
                 'id' => 1055,
                 'cup_id' => 29,
@@ -3875,7 +3667,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            482 => 
+            456 => 
             array (
                 'id' => 1056,
                 'cup_id' => 29,
@@ -3883,7 +3675,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            483 => 
+            457 => 
             array (
                 'id' => 1057,
                 'cup_id' => 29,
@@ -3891,7 +3683,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            484 => 
+            458 => 
             array (
                 'id' => 1058,
                 'cup_id' => 29,
@@ -3899,7 +3691,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            485 => 
+            459 => 
             array (
                 'id' => 1059,
                 'cup_id' => 29,
@@ -3907,7 +3699,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:26:55',
                 'updated_at' => '2022-07-06 20:26:55',
             ),
-            486 => 
+            460 => 
             array (
                 'id' => 1060,
                 'cup_id' => 29,
@@ -3915,7 +3707,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            487 => 
+            461 => 
             array (
                 'id' => 1061,
                 'cup_id' => 29,
@@ -3923,7 +3715,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            488 => 
+            462 => 
             array (
                 'id' => 1062,
                 'cup_id' => 29,
@@ -3931,7 +3723,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            489 => 
+            463 => 
             array (
                 'id' => 1063,
                 'cup_id' => 29,
@@ -3939,7 +3731,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            490 => 
+            464 => 
             array (
                 'id' => 1064,
                 'cup_id' => 29,
@@ -3947,7 +3739,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            491 => 
+            465 => 
             array (
                 'id' => 1065,
                 'cup_id' => 29,
@@ -3955,7 +3747,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            492 => 
+            466 => 
             array (
                 'id' => 1066,
                 'cup_id' => 29,
@@ -3963,7 +3755,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            493 => 
+            467 => 
             array (
                 'id' => 1067,
                 'cup_id' => 29,
@@ -3971,7 +3763,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            494 => 
+            468 => 
             array (
                 'id' => 1068,
                 'cup_id' => 29,
@@ -3979,7 +3771,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            495 => 
+            469 => 
             array (
                 'id' => 1069,
                 'cup_id' => 29,
@@ -3987,7 +3779,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            496 => 
+            470 => 
             array (
                 'id' => 1070,
                 'cup_id' => 29,
@@ -3995,7 +3787,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            497 => 
+            471 => 
             array (
                 'id' => 1071,
                 'cup_id' => 29,
@@ -4003,7 +3795,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            498 => 
+            472 => 
             array (
                 'id' => 1072,
                 'cup_id' => 29,
@@ -4011,17 +3803,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:27:24',
                 'updated_at' => '2022-07-06 20:27:24',
             ),
-            499 => 
-            array (
-                'id' => 1073,
-                'cup_id' => 15,
-                'category_id' => 796,
-                'created_at' => '2022-07-09 13:34:24',
-                'updated_at' => '2022-07-09 13:34:24',
-            ),
-        ));
-        \DB::table('category_cup')->insert(array (
-            0 => 
+            473 => 
             array (
                 'id' => 1383,
                 'cup_id' => 13,
@@ -4029,7 +3811,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            1 => 
+            474 => 
             array (
                 'id' => 1384,
                 'cup_id' => 29,
@@ -4037,7 +3819,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            2 => 
+            475 => 
             array (
                 'id' => 1386,
                 'cup_id' => 13,
@@ -4045,7 +3827,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            3 => 
+            476 => 
             array (
                 'id' => 1387,
                 'cup_id' => 29,
@@ -4053,7 +3835,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            4 => 
+            477 => 
             array (
                 'id' => 1389,
                 'cup_id' => 13,
@@ -4061,7 +3843,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            5 => 
+            478 => 
             array (
                 'id' => 1390,
                 'cup_id' => 29,
@@ -4069,7 +3851,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            6 => 
+            479 => 
             array (
                 'id' => 1392,
                 'cup_id' => 13,
@@ -4077,7 +3859,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            7 => 
+            480 => 
             array (
                 'id' => 1393,
                 'cup_id' => 29,
@@ -4085,7 +3867,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            8 => 
+            481 => 
             array (
                 'id' => 1395,
                 'cup_id' => 13,
@@ -4093,7 +3875,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            9 => 
+            482 => 
             array (
                 'id' => 1396,
                 'cup_id' => 24,
@@ -4101,7 +3883,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            10 => 
+            483 => 
             array (
                 'id' => 1397,
                 'cup_id' => 26,
@@ -4109,7 +3891,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            11 => 
+            484 => 
             array (
                 'id' => 1398,
                 'cup_id' => 29,
@@ -4117,7 +3899,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            12 => 
+            485 => 
             array (
                 'id' => 1399,
                 'cup_id' => 13,
@@ -4125,7 +3907,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            13 => 
+            486 => 
             array (
                 'id' => 1400,
                 'cup_id' => 24,
@@ -4133,7 +3915,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            14 => 
+            487 => 
             array (
                 'id' => 1401,
                 'cup_id' => 26,
@@ -4141,7 +3923,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            15 => 
+            488 => 
             array (
                 'id' => 1402,
                 'cup_id' => 29,
@@ -4149,7 +3931,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            16 => 
+            489 => 
             array (
                 'id' => 1403,
                 'cup_id' => 13,
@@ -4157,7 +3939,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            17 => 
+            490 => 
             array (
                 'id' => 1404,
                 'cup_id' => 24,
@@ -4165,7 +3947,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            18 => 
+            491 => 
             array (
                 'id' => 1405,
                 'cup_id' => 26,
@@ -4173,7 +3955,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            19 => 
+            492 => 
             array (
                 'id' => 1406,
                 'cup_id' => 29,
@@ -4181,7 +3963,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            20 => 
+            493 => 
             array (
                 'id' => 1407,
                 'cup_id' => 13,
@@ -4189,7 +3971,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            21 => 
+            494 => 
             array (
                 'id' => 1408,
                 'cup_id' => 26,
@@ -4197,7 +3979,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            22 => 
+            495 => 
             array (
                 'id' => 1409,
                 'cup_id' => 29,
@@ -4205,7 +3987,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            23 => 
+            496 => 
             array (
                 'id' => 1410,
                 'cup_id' => 13,
@@ -4213,7 +3995,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            24 => 
+            497 => 
             array (
                 'id' => 1411,
                 'cup_id' => 26,
@@ -4221,7 +4003,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            25 => 
+            498 => 
             array (
                 'id' => 1412,
                 'cup_id' => 29,
@@ -4229,7 +4011,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            26 => 
+            499 => 
             array (
                 'id' => 1413,
                 'cup_id' => 13,
@@ -4237,7 +4019,9 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            27 => 
+        ));
+        \DB::table('category_cup')->insert(array (
+            0 => 
             array (
                 'id' => 1414,
                 'cup_id' => 26,
@@ -4245,7 +4029,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            28 => 
+            1 => 
             array (
                 'id' => 1415,
                 'cup_id' => 29,
@@ -4253,7 +4037,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            29 => 
+            2 => 
             array (
                 'id' => 1416,
                 'cup_id' => 13,
@@ -4261,7 +4045,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            30 => 
+            3 => 
             array (
                 'id' => 1417,
                 'cup_id' => 26,
@@ -4269,7 +4053,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            31 => 
+            4 => 
             array (
                 'id' => 1418,
                 'cup_id' => 29,
@@ -4277,7 +4061,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            32 => 
+            5 => 
             array (
                 'id' => 1419,
                 'cup_id' => 13,
@@ -4285,7 +4069,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            33 => 
+            6 => 
             array (
                 'id' => 1420,
                 'cup_id' => 26,
@@ -4293,7 +4077,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            34 => 
+            7 => 
             array (
                 'id' => 1421,
                 'cup_id' => 29,
@@ -4301,7 +4085,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            35 => 
+            8 => 
             array (
                 'id' => 1422,
                 'cup_id' => 13,
@@ -4309,7 +4093,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            36 => 
+            9 => 
             array (
                 'id' => 1423,
                 'cup_id' => 26,
@@ -4317,7 +4101,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            37 => 
+            10 => 
             array (
                 'id' => 1424,
                 'cup_id' => 29,
@@ -4325,7 +4109,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            38 => 
+            11 => 
             array (
                 'id' => 1425,
                 'cup_id' => 13,
@@ -4333,7 +4117,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            39 => 
+            12 => 
             array (
                 'id' => 1426,
                 'cup_id' => 26,
@@ -4341,7 +4125,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            40 => 
+            13 => 
             array (
                 'id' => 1427,
                 'cup_id' => 29,
@@ -4349,7 +4133,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            41 => 
+            14 => 
             array (
                 'id' => 1428,
                 'cup_id' => 13,
@@ -4357,7 +4141,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            42 => 
+            15 => 
             array (
                 'id' => 1429,
                 'cup_id' => 26,
@@ -4365,7 +4149,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            43 => 
+            16 => 
             array (
                 'id' => 1430,
                 'cup_id' => 29,
@@ -4373,7 +4157,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            44 => 
+            17 => 
             array (
                 'id' => 1431,
                 'cup_id' => 13,
@@ -4381,7 +4165,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            45 => 
+            18 => 
             array (
                 'id' => 1433,
                 'cup_id' => 26,
@@ -4389,7 +4173,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            46 => 
+            19 => 
             array (
                 'id' => 1434,
                 'cup_id' => 29,
@@ -4397,7 +4181,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            47 => 
+            20 => 
             array (
                 'id' => 1435,
                 'cup_id' => 9,
@@ -4405,7 +4189,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            48 => 
+            21 => 
             array (
                 'id' => 1436,
                 'cup_id' => 13,
@@ -4413,7 +4197,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            49 => 
+            22 => 
             array (
                 'id' => 1437,
                 'cup_id' => 26,
@@ -4421,7 +4205,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            50 => 
+            23 => 
             array (
                 'id' => 1438,
                 'cup_id' => 29,
@@ -4429,7 +4213,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            51 => 
+            24 => 
             array (
                 'id' => 1439,
                 'cup_id' => 13,
@@ -4437,7 +4221,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            52 => 
+            25 => 
             array (
                 'id' => 1440,
                 'cup_id' => 26,
@@ -4445,7 +4229,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            53 => 
+            26 => 
             array (
                 'id' => 1441,
                 'cup_id' => 29,
@@ -4453,7 +4237,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            54 => 
+            27 => 
             array (
                 'id' => 1442,
                 'cup_id' => 13,
@@ -4461,7 +4245,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            55 => 
+            28 => 
             array (
                 'id' => 1443,
                 'cup_id' => 26,
@@ -4469,7 +4253,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            56 => 
+            29 => 
             array (
                 'id' => 1444,
                 'cup_id' => 29,
@@ -4477,7 +4261,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            57 => 
+            30 => 
             array (
                 'id' => 1445,
                 'cup_id' => 13,
@@ -4485,7 +4269,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            58 => 
+            31 => 
             array (
                 'id' => 1446,
                 'cup_id' => 26,
@@ -4493,7 +4277,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            59 => 
+            32 => 
             array (
                 'id' => 1447,
                 'cup_id' => 29,
@@ -4501,7 +4285,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            60 => 
+            33 => 
             array (
                 'id' => 1448,
                 'cup_id' => 13,
@@ -4509,7 +4293,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            61 => 
+            34 => 
             array (
                 'id' => 1449,
                 'cup_id' => 26,
@@ -4517,7 +4301,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            62 => 
+            35 => 
             array (
                 'id' => 1450,
                 'cup_id' => 29,
@@ -4525,7 +4309,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            63 => 
+            36 => 
             array (
                 'id' => 1451,
                 'cup_id' => 13,
@@ -4533,7 +4317,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            64 => 
+            37 => 
             array (
                 'id' => 1452,
                 'cup_id' => 26,
@@ -4541,7 +4325,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            65 => 
+            38 => 
             array (
                 'id' => 1453,
                 'cup_id' => 29,
@@ -4549,7 +4333,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            66 => 
+            39 => 
             array (
                 'id' => 1454,
                 'cup_id' => 12,
@@ -4557,7 +4341,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            67 => 
+            40 => 
             array (
                 'id' => 1455,
                 'cup_id' => 26,
@@ -4565,7 +4349,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            68 => 
+            41 => 
             array (
                 'id' => 1456,
                 'cup_id' => 29,
@@ -4573,7 +4357,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            69 => 
+            42 => 
             array (
                 'id' => 1457,
                 'cup_id' => 13,
@@ -4581,7 +4365,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            70 => 
+            43 => 
             array (
                 'id' => 1458,
                 'cup_id' => 29,
@@ -4589,7 +4373,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            71 => 
+            44 => 
             array (
                 'id' => 1459,
                 'cup_id' => 13,
@@ -4597,7 +4381,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            72 => 
+            45 => 
             array (
                 'id' => 1460,
                 'cup_id' => 29,
@@ -4605,7 +4389,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            73 => 
+            46 => 
             array (
                 'id' => 1461,
                 'cup_id' => 13,
@@ -4613,7 +4397,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            74 => 
+            47 => 
             array (
                 'id' => 1462,
                 'cup_id' => 29,
@@ -4621,7 +4405,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            75 => 
+            48 => 
             array (
                 'id' => 1463,
                 'cup_id' => 13,
@@ -4629,7 +4413,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            76 => 
+            49 => 
             array (
                 'id' => 1464,
                 'cup_id' => 29,
@@ -4637,7 +4421,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            77 => 
+            50 => 
             array (
                 'id' => 1465,
                 'cup_id' => 13,
@@ -4645,7 +4429,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            78 => 
+            51 => 
             array (
                 'id' => 1466,
                 'cup_id' => 29,
@@ -4653,7 +4437,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            79 => 
+            52 => 
             array (
                 'id' => 1467,
                 'cup_id' => 13,
@@ -4661,7 +4445,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            80 => 
+            53 => 
             array (
                 'id' => 1468,
                 'cup_id' => 29,
@@ -4669,7 +4453,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            81 => 
+            54 => 
             array (
                 'id' => 1469,
                 'cup_id' => 13,
@@ -4677,7 +4461,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            82 => 
+            55 => 
             array (
                 'id' => 1470,
                 'cup_id' => 29,
@@ -4685,7 +4469,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            83 => 
+            56 => 
             array (
                 'id' => 1471,
                 'cup_id' => 13,
@@ -4693,7 +4477,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            84 => 
+            57 => 
             array (
                 'id' => 1472,
                 'cup_id' => 18,
@@ -4701,7 +4485,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            85 => 
+            58 => 
             array (
                 'id' => 1473,
                 'cup_id' => 29,
@@ -4709,7 +4493,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            86 => 
+            59 => 
             array (
                 'id' => 1474,
                 'cup_id' => 13,
@@ -4717,7 +4501,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            87 => 
+            60 => 
             array (
                 'id' => 1475,
                 'cup_id' => 18,
@@ -4725,7 +4509,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            88 => 
+            61 => 
             array (
                 'id' => 1476,
                 'cup_id' => 29,
@@ -4733,7 +4517,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            89 => 
+            62 => 
             array (
                 'id' => 1477,
                 'cup_id' => 13,
@@ -4741,7 +4525,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            90 => 
+            63 => 
             array (
                 'id' => 1478,
                 'cup_id' => 18,
@@ -4749,7 +4533,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            91 => 
+            64 => 
             array (
                 'id' => 1479,
                 'cup_id' => 29,
@@ -4757,7 +4541,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            92 => 
+            65 => 
             array (
                 'id' => 1480,
                 'cup_id' => 13,
@@ -4765,7 +4549,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            93 => 
+            66 => 
             array (
                 'id' => 1481,
                 'cup_id' => 18,
@@ -4773,7 +4557,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            94 => 
+            67 => 
             array (
                 'id' => 1482,
                 'cup_id' => 29,
@@ -4781,7 +4565,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            95 => 
+            68 => 
             array (
                 'id' => 1483,
                 'cup_id' => 13,
@@ -4789,7 +4573,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            96 => 
+            69 => 
             array (
                 'id' => 1484,
                 'cup_id' => 18,
@@ -4797,7 +4581,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            97 => 
+            70 => 
             array (
                 'id' => 1485,
                 'cup_id' => 29,
@@ -4805,7 +4589,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            98 => 
+            71 => 
             array (
                 'id' => 1486,
                 'cup_id' => 13,
@@ -4813,7 +4597,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            99 => 
+            72 => 
             array (
                 'id' => 1487,
                 'cup_id' => 18,
@@ -4821,7 +4605,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            100 => 
+            73 => 
             array (
                 'id' => 1488,
                 'cup_id' => 29,
@@ -4829,7 +4613,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            101 => 
+            74 => 
             array (
                 'id' => 1489,
                 'cup_id' => 13,
@@ -4837,7 +4621,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            102 => 
+            75 => 
             array (
                 'id' => 1490,
                 'cup_id' => 18,
@@ -4845,7 +4629,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            103 => 
+            76 => 
             array (
                 'id' => 1491,
                 'cup_id' => 29,
@@ -4853,7 +4637,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            104 => 
+            77 => 
             array (
                 'id' => 1492,
                 'cup_id' => 13,
@@ -4861,7 +4645,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            105 => 
+            78 => 
             array (
                 'id' => 1493,
                 'cup_id' => 18,
@@ -4869,7 +4653,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            106 => 
+            79 => 
             array (
                 'id' => 1494,
                 'cup_id' => 29,
@@ -4877,7 +4661,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            107 => 
+            80 => 
             array (
                 'id' => 1495,
                 'cup_id' => 13,
@@ -4885,7 +4669,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            108 => 
+            81 => 
             array (
                 'id' => 1496,
                 'cup_id' => 18,
@@ -4893,7 +4677,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            109 => 
+            82 => 
             array (
                 'id' => 1497,
                 'cup_id' => 29,
@@ -4901,7 +4685,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            110 => 
+            83 => 
             array (
                 'id' => 1498,
                 'cup_id' => 13,
@@ -4909,7 +4693,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            111 => 
+            84 => 
             array (
                 'id' => 1499,
                 'cup_id' => 18,
@@ -4917,7 +4701,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            112 => 
+            85 => 
             array (
                 'id' => 1500,
                 'cup_id' => 29,
@@ -4925,7 +4709,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            113 => 
+            86 => 
             array (
                 'id' => 1501,
                 'cup_id' => 13,
@@ -4933,7 +4717,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            114 => 
+            87 => 
             array (
                 'id' => 1502,
                 'cup_id' => 18,
@@ -4941,7 +4725,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            115 => 
+            88 => 
             array (
                 'id' => 1503,
                 'cup_id' => 29,
@@ -4949,7 +4733,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            116 => 
+            89 => 
             array (
                 'id' => 1504,
                 'cup_id' => 13,
@@ -4957,7 +4741,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            117 => 
+            90 => 
             array (
                 'id' => 1505,
                 'cup_id' => 18,
@@ -4965,7 +4749,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            118 => 
+            91 => 
             array (
                 'id' => 1506,
                 'cup_id' => 29,
@@ -4973,7 +4757,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            119 => 
+            92 => 
             array (
                 'id' => 1507,
                 'cup_id' => 13,
@@ -4981,7 +4765,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            120 => 
+            93 => 
             array (
                 'id' => 1508,
                 'cup_id' => 18,
@@ -4989,7 +4773,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            121 => 
+            94 => 
             array (
                 'id' => 1509,
                 'cup_id' => 29,
@@ -4997,7 +4781,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            122 => 
+            95 => 
             array (
                 'id' => 1510,
                 'cup_id' => 13,
@@ -5005,7 +4789,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            123 => 
+            96 => 
             array (
                 'id' => 1511,
                 'cup_id' => 18,
@@ -5013,7 +4797,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            124 => 
+            97 => 
             array (
                 'id' => 1512,
                 'cup_id' => 29,
@@ -5021,7 +4805,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            125 => 
+            98 => 
             array (
                 'id' => 1513,
                 'cup_id' => 13,
@@ -5029,7 +4813,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            126 => 
+            99 => 
             array (
                 'id' => 1514,
                 'cup_id' => 18,
@@ -5037,7 +4821,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            127 => 
+            100 => 
             array (
                 'id' => 1515,
                 'cup_id' => 29,
@@ -5045,7 +4829,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            128 => 
+            101 => 
             array (
                 'id' => 1516,
                 'cup_id' => 13,
@@ -5053,7 +4837,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            129 => 
+            102 => 
             array (
                 'id' => 1517,
                 'cup_id' => 18,
@@ -5061,7 +4845,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            130 => 
+            103 => 
             array (
                 'id' => 1518,
                 'cup_id' => 29,
@@ -5069,7 +4853,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            131 => 
+            104 => 
             array (
                 'id' => 1520,
                 'cup_id' => 13,
@@ -5077,7 +4861,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            132 => 
+            105 => 
             array (
                 'id' => 1523,
                 'cup_id' => 13,
@@ -5085,7 +4869,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            133 => 
+            106 => 
             array (
                 'id' => 1524,
                 'cup_id' => 18,
@@ -5093,7 +4877,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            134 => 
+            107 => 
             array (
                 'id' => 1525,
                 'cup_id' => 29,
@@ -5101,7 +4885,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            135 => 
+            108 => 
             array (
                 'id' => 1526,
                 'cup_id' => 13,
@@ -5109,7 +4893,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            136 => 
+            109 => 
             array (
                 'id' => 1527,
                 'cup_id' => 18,
@@ -5117,7 +4901,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            137 => 
+            110 => 
             array (
                 'id' => 1528,
                 'cup_id' => 29,
@@ -5125,7 +4909,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            138 => 
+            111 => 
             array (
                 'id' => 1529,
                 'cup_id' => 13,
@@ -5133,7 +4917,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            139 => 
+            112 => 
             array (
                 'id' => 1530,
                 'cup_id' => 18,
@@ -5141,7 +4925,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            140 => 
+            113 => 
             array (
                 'id' => 1531,
                 'cup_id' => 29,
@@ -5149,7 +4933,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            141 => 
+            114 => 
             array (
                 'id' => 1532,
                 'cup_id' => 13,
@@ -5157,7 +4941,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            142 => 
+            115 => 
             array (
                 'id' => 1533,
                 'cup_id' => 18,
@@ -5165,7 +4949,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            143 => 
+            116 => 
             array (
                 'id' => 1534,
                 'cup_id' => 29,
@@ -5173,7 +4957,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            144 => 
+            117 => 
             array (
                 'id' => 1535,
                 'cup_id' => 31,
@@ -5181,7 +4965,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            145 => 
+            118 => 
             array (
                 'id' => 1536,
                 'cup_id' => 11,
@@ -5189,7 +4973,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            146 => 
+            119 => 
             array (
                 'id' => 1537,
                 'cup_id' => 29,
@@ -5197,7 +4981,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            147 => 
+            120 => 
             array (
                 'id' => 1538,
                 'cup_id' => 27,
@@ -5205,7 +4989,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            148 => 
+            121 => 
             array (
                 'id' => 1539,
                 'cup_id' => 27,
@@ -5213,7 +4997,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            149 => 
+            122 => 
             array (
                 'id' => 1540,
                 'cup_id' => 27,
@@ -5221,7 +5005,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            150 => 
+            123 => 
             array (
                 'id' => 1541,
                 'cup_id' => 27,
@@ -5229,7 +5013,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            151 => 
+            124 => 
             array (
                 'id' => 1542,
                 'cup_id' => 17,
@@ -5237,7 +5021,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            152 => 
+            125 => 
             array (
                 'id' => 1543,
                 'cup_id' => 17,
@@ -5245,7 +5029,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            153 => 
+            126 => 
             array (
                 'id' => 1544,
                 'cup_id' => 17,
@@ -5253,7 +5037,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            154 => 
+            127 => 
             array (
                 'id' => 1545,
                 'cup_id' => 17,
@@ -5261,7 +5045,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            155 => 
+            128 => 
             array (
                 'id' => 1546,
                 'cup_id' => 17,
@@ -5269,7 +5053,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            156 => 
+            129 => 
             array (
                 'id' => 1547,
                 'cup_id' => 17,
@@ -5277,7 +5061,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            157 => 
+            130 => 
             array (
                 'id' => 1548,
                 'cup_id' => 17,
@@ -5285,7 +5069,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            158 => 
+            131 => 
             array (
                 'id' => 1549,
                 'cup_id' => 17,
@@ -5293,7 +5077,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            159 => 
+            132 => 
             array (
                 'id' => 1550,
                 'cup_id' => 17,
@@ -5301,7 +5085,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            160 => 
+            133 => 
             array (
                 'id' => 1551,
                 'cup_id' => 17,
@@ -5309,7 +5093,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            161 => 
+            134 => 
             array (
                 'id' => 1552,
                 'cup_id' => 17,
@@ -5317,7 +5101,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            162 => 
+            135 => 
             array (
                 'id' => 1553,
                 'cup_id' => 17,
@@ -5325,7 +5109,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            163 => 
+            136 => 
             array (
                 'id' => 1554,
                 'cup_id' => 17,
@@ -5333,7 +5117,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            164 => 
+            137 => 
             array (
                 'id' => 1555,
                 'cup_id' => 17,
@@ -5341,7 +5125,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            165 => 
+            138 => 
             array (
                 'id' => 1556,
                 'cup_id' => 17,
@@ -5349,7 +5133,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            166 => 
+            139 => 
             array (
                 'id' => 1557,
                 'cup_id' => 17,
@@ -5357,7 +5141,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            167 => 
+            140 => 
             array (
                 'id' => 1561,
                 'cup_id' => 16,
@@ -5365,7 +5149,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            168 => 
+            141 => 
             array (
                 'id' => 1562,
                 'cup_id' => 16,
@@ -5373,7 +5157,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            169 => 
+            142 => 
             array (
                 'id' => 1563,
                 'cup_id' => 16,
@@ -5381,7 +5165,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            170 => 
+            143 => 
             array (
                 'id' => 1565,
                 'cup_id' => 14,
@@ -5389,7 +5173,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            171 => 
+            144 => 
             array (
                 'id' => 1566,
                 'cup_id' => 14,
@@ -5397,7 +5181,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:07',
                 'updated_at' => '2023-04-26 20:55:07',
             ),
-            172 => 
+            145 => 
             array (
                 'id' => 1567,
                 'cup_id' => 14,
@@ -5405,7 +5189,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            173 => 
+            146 => 
             array (
                 'id' => 1568,
                 'cup_id' => 16,
@@ -5413,7 +5197,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            174 => 
+            147 => 
             array (
                 'id' => 1569,
                 'cup_id' => 16,
@@ -5421,7 +5205,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            175 => 
+            148 => 
             array (
                 'id' => 1570,
                 'cup_id' => 8,
@@ -5429,7 +5213,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            176 => 
+            149 => 
             array (
                 'id' => 1571,
                 'cup_id' => 25,
@@ -5437,7 +5221,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            177 => 
+            150 => 
             array (
                 'id' => 1572,
                 'cup_id' => 27,
@@ -5445,7 +5229,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            178 => 
+            151 => 
             array (
                 'id' => 1573,
                 'cup_id' => 28,
@@ -5453,7 +5237,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            179 => 
+            152 => 
             array (
                 'id' => 1574,
                 'cup_id' => 29,
@@ -5461,7 +5245,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            180 => 
+            153 => 
             array (
                 'id' => 1575,
                 'cup_id' => 8,
@@ -5469,7 +5253,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            181 => 
+            154 => 
             array (
                 'id' => 1576,
                 'cup_id' => 25,
@@ -5477,7 +5261,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            182 => 
+            155 => 
             array (
                 'id' => 1577,
                 'cup_id' => 27,
@@ -5485,7 +5269,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            183 => 
+            156 => 
             array (
                 'id' => 1578,
                 'cup_id' => 28,
@@ -5493,7 +5277,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            184 => 
+            157 => 
             array (
                 'id' => 1579,
                 'cup_id' => 29,
@@ -5501,7 +5285,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            185 => 
+            158 => 
             array (
                 'id' => 1580,
                 'cup_id' => 8,
@@ -5509,7 +5293,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            186 => 
+            159 => 
             array (
                 'id' => 1581,
                 'cup_id' => 25,
@@ -5517,7 +5301,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            187 => 
+            160 => 
             array (
                 'id' => 1582,
                 'cup_id' => 27,
@@ -5525,7 +5309,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            188 => 
+            161 => 
             array (
                 'id' => 1583,
                 'cup_id' => 28,
@@ -5533,7 +5317,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            189 => 
+            162 => 
             array (
                 'id' => 1584,
                 'cup_id' => 29,
@@ -5541,7 +5325,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            190 => 
+            163 => 
             array (
                 'id' => 1585,
                 'cup_id' => 8,
@@ -5549,7 +5333,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            191 => 
+            164 => 
             array (
                 'id' => 1586,
                 'cup_id' => 25,
@@ -5557,7 +5341,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            192 => 
+            165 => 
             array (
                 'id' => 1587,
                 'cup_id' => 27,
@@ -5565,7 +5349,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            193 => 
+            166 => 
             array (
                 'id' => 1588,
                 'cup_id' => 28,
@@ -5573,7 +5357,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            194 => 
+            167 => 
             array (
                 'id' => 1589,
                 'cup_id' => 29,
@@ -5581,7 +5365,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            195 => 
+            168 => 
             array (
                 'id' => 1590,
                 'cup_id' => 8,
@@ -5589,7 +5373,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            196 => 
+            169 => 
             array (
                 'id' => 1591,
                 'cup_id' => 25,
@@ -5597,7 +5381,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            197 => 
+            170 => 
             array (
                 'id' => 1592,
                 'cup_id' => 27,
@@ -5605,7 +5389,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            198 => 
+            171 => 
             array (
                 'id' => 1593,
                 'cup_id' => 28,
@@ -5613,7 +5397,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            199 => 
+            172 => 
             array (
                 'id' => 1594,
                 'cup_id' => 29,
@@ -5621,7 +5405,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            200 => 
+            173 => 
             array (
                 'id' => 1595,
                 'cup_id' => 8,
@@ -5629,7 +5413,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            201 => 
+            174 => 
             array (
                 'id' => 1596,
                 'cup_id' => 18,
@@ -5637,7 +5421,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            202 => 
+            175 => 
             array (
                 'id' => 1597,
                 'cup_id' => 28,
@@ -5645,7 +5429,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            203 => 
+            176 => 
             array (
                 'id' => 1598,
                 'cup_id' => 29,
@@ -5653,7 +5437,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            204 => 
+            177 => 
             array (
                 'id' => 1599,
                 'cup_id' => 8,
@@ -5661,7 +5445,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            205 => 
+            178 => 
             array (
                 'id' => 1600,
                 'cup_id' => 18,
@@ -5669,7 +5453,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            206 => 
+            179 => 
             array (
                 'id' => 1601,
                 'cup_id' => 28,
@@ -5677,7 +5461,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            207 => 
+            180 => 
             array (
                 'id' => 1602,
                 'cup_id' => 29,
@@ -5685,7 +5469,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            208 => 
+            181 => 
             array (
                 'id' => 1603,
                 'cup_id' => 26,
@@ -5693,7 +5477,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            209 => 
+            182 => 
             array (
                 'id' => 1604,
                 'cup_id' => 28,
@@ -5701,7 +5485,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            210 => 
+            183 => 
             array (
                 'id' => 1605,
                 'cup_id' => 29,
@@ -5709,7 +5493,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            211 => 
+            184 => 
             array (
                 'id' => 1606,
                 'cup_id' => 8,
@@ -5717,7 +5501,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            212 => 
+            185 => 
             array (
                 'id' => 1607,
                 'cup_id' => 25,
@@ -5725,7 +5509,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            213 => 
+            186 => 
             array (
                 'id' => 1608,
                 'cup_id' => 28,
@@ -5733,7 +5517,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            214 => 
+            187 => 
             array (
                 'id' => 1609,
                 'cup_id' => 29,
@@ -5741,7 +5525,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            215 => 
+            188 => 
             array (
                 'id' => 1610,
                 'cup_id' => 8,
@@ -5749,7 +5533,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            216 => 
+            189 => 
             array (
                 'id' => 1611,
                 'cup_id' => 25,
@@ -5757,7 +5541,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            217 => 
+            190 => 
             array (
                 'id' => 1612,
                 'cup_id' => 28,
@@ -5765,7 +5549,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            218 => 
+            191 => 
             array (
                 'id' => 1613,
                 'cup_id' => 29,
@@ -5773,7 +5557,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            219 => 
+            192 => 
             array (
                 'id' => 1614,
                 'cup_id' => 8,
@@ -5781,7 +5565,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            220 => 
+            193 => 
             array (
                 'id' => 1615,
                 'cup_id' => 25,
@@ -5789,7 +5573,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            221 => 
+            194 => 
             array (
                 'id' => 1616,
                 'cup_id' => 28,
@@ -5797,7 +5581,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            222 => 
+            195 => 
             array (
                 'id' => 1617,
                 'cup_id' => 29,
@@ -5805,7 +5589,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            223 => 
+            196 => 
             array (
                 'id' => 1622,
                 'cup_id' => 10,
@@ -5813,7 +5597,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            224 => 
+            197 => 
             array (
                 'id' => 1623,
                 'cup_id' => 29,
@@ -5821,7 +5605,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            225 => 
+            198 => 
             array (
                 'id' => 1625,
                 'cup_id' => 17,
@@ -5829,7 +5613,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            226 => 
+            199 => 
             array (
                 'id' => 1629,
                 'cup_id' => 17,
@@ -5837,7 +5621,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            227 => 
+            200 => 
             array (
                 'id' => 1631,
                 'cup_id' => 17,
@@ -5845,7 +5629,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            228 => 
+            201 => 
             array (
                 'id' => 1633,
                 'cup_id' => 17,
@@ -5853,15 +5637,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            229 => 
-            array (
-                'id' => 1634,
-                'cup_id' => 15,
-                'category_id' => 1052,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            230 => 
+            202 => 
             array (
                 'id' => 1635,
                 'cup_id' => 16,
@@ -5869,15 +5645,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            231 => 
-            array (
-                'id' => 1636,
-                'cup_id' => 15,
-                'category_id' => 1053,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            232 => 
+            203 => 
             array (
                 'id' => 1637,
                 'cup_id' => 16,
@@ -5885,15 +5653,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            233 => 
-            array (
-                'id' => 1638,
-                'cup_id' => 15,
-                'category_id' => 1054,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            234 => 
+            204 => 
             array (
                 'id' => 1639,
                 'cup_id' => 16,
@@ -5901,15 +5661,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            235 => 
-            array (
-                'id' => 1648,
-                'cup_id' => 15,
-                'category_id' => 1059,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            236 => 
+            205 => 
             array (
                 'id' => 1649,
                 'cup_id' => 16,
@@ -5917,15 +5669,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            237 => 
-            array (
-                'id' => 1650,
-                'cup_id' => 15,
-                'category_id' => 1060,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            238 => 
+            206 => 
             array (
                 'id' => 1651,
                 'cup_id' => 16,
@@ -5933,15 +5677,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            239 => 
-            array (
-                'id' => 1652,
-                'cup_id' => 15,
-                'category_id' => 1061,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            240 => 
+            207 => 
             array (
                 'id' => 1653,
                 'cup_id' => 16,
@@ -5949,15 +5685,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            241 => 
-            array (
-                'id' => 1654,
-                'cup_id' => 15,
-                'category_id' => 1062,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            242 => 
+            208 => 
             array (
                 'id' => 1655,
                 'cup_id' => 16,
@@ -5965,23 +5693,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            243 => 
-            array (
-                'id' => 1656,
-                'cup_id' => 15,
-                'category_id' => 1063,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            244 => 
-            array (
-                'id' => 1658,
-                'cup_id' => 15,
-                'category_id' => 1064,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            245 => 
+            209 => 
             array (
                 'id' => 1659,
                 'cup_id' => 16,
@@ -5989,15 +5701,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            246 => 
-            array (
-                'id' => 1661,
-                'cup_id' => 15,
-                'category_id' => 1066,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            247 => 
+            210 => 
             array (
                 'id' => 1662,
                 'cup_id' => 16,
@@ -6005,15 +5709,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            248 => 
-            array (
-                'id' => 1663,
-                'cup_id' => 15,
-                'category_id' => 1067,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            249 => 
+            211 => 
             array (
                 'id' => 1664,
                 'cup_id' => 16,
@@ -6021,15 +5717,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            250 => 
-            array (
-                'id' => 1665,
-                'cup_id' => 15,
-                'category_id' => 1068,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            251 => 
+            212 => 
             array (
                 'id' => 1666,
                 'cup_id' => 16,
@@ -6037,15 +5725,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            252 => 
-            array (
-                'id' => 1667,
-                'cup_id' => 15,
-                'category_id' => 1069,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            253 => 
+            213 => 
             array (
                 'id' => 1668,
                 'cup_id' => 16,
@@ -6053,7 +5733,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            254 => 
+            214 => 
             array (
                 'id' => 1669,
                 'cup_id' => 14,
@@ -6061,15 +5741,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            255 => 
-            array (
-                'id' => 1670,
-                'cup_id' => 15,
-                'category_id' => 1070,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            256 => 
+            215 => 
             array (
                 'id' => 1671,
                 'cup_id' => 16,
@@ -6077,15 +5749,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            257 => 
-            array (
-                'id' => 1672,
-                'cup_id' => 15,
-                'category_id' => 1071,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            258 => 
+            216 => 
             array (
                 'id' => 1673,
                 'cup_id' => 16,
@@ -6093,15 +5757,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            259 => 
-            array (
-                'id' => 1674,
-                'cup_id' => 15,
-                'category_id' => 1072,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            260 => 
+            217 => 
             array (
                 'id' => 1675,
                 'cup_id' => 16,
@@ -6109,15 +5765,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            261 => 
-            array (
-                'id' => 1676,
-                'cup_id' => 15,
-                'category_id' => 1073,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            262 => 
+            218 => 
             array (
                 'id' => 1677,
                 'cup_id' => 16,
@@ -6125,15 +5773,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            263 => 
-            array (
-                'id' => 1678,
-                'cup_id' => 15,
-                'category_id' => 1074,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            264 => 
+            219 => 
             array (
                 'id' => 1679,
                 'cup_id' => 16,
@@ -6141,15 +5781,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            265 => 
-            array (
-                'id' => 1680,
-                'cup_id' => 15,
-                'category_id' => 1075,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            266 => 
+            220 => 
             array (
                 'id' => 1681,
                 'cup_id' => 16,
@@ -6157,15 +5789,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            267 => 
-            array (
-                'id' => 1682,
-                'cup_id' => 15,
-                'category_id' => 1076,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            268 => 
+            221 => 
             array (
                 'id' => 1683,
                 'cup_id' => 16,
@@ -6173,15 +5797,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            269 => 
-            array (
-                'id' => 1684,
-                'cup_id' => 15,
-                'category_id' => 1077,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            270 => 
+            222 => 
             array (
                 'id' => 1685,
                 'cup_id' => 16,
@@ -6189,15 +5805,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            271 => 
-            array (
-                'id' => 1686,
-                'cup_id' => 15,
-                'category_id' => 1078,
-                'created_at' => '2023-04-26 20:55:08',
-                'updated_at' => '2023-04-26 20:55:08',
-            ),
-            272 => 
+            223 => 
             array (
                 'id' => 1687,
                 'cup_id' => 16,
@@ -6205,7 +5813,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 20:55:08',
                 'updated_at' => '2023-04-26 20:55:08',
             ),
-            273 => 
+            224 => 
             array (
                 'id' => 1688,
                 'cup_id' => 13,
@@ -6213,7 +5821,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            274 => 
+            225 => 
             array (
                 'id' => 1689,
                 'cup_id' => 29,
@@ -6221,7 +5829,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            275 => 
+            226 => 
             array (
                 'id' => 1691,
                 'cup_id' => 13,
@@ -6229,7 +5837,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            276 => 
+            227 => 
             array (
                 'id' => 1692,
                 'cup_id' => 29,
@@ -6237,7 +5845,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            277 => 
+            228 => 
             array (
                 'id' => 1694,
                 'cup_id' => 13,
@@ -6245,7 +5853,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            278 => 
+            229 => 
             array (
                 'id' => 1695,
                 'cup_id' => 29,
@@ -6253,7 +5861,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            279 => 
+            230 => 
             array (
                 'id' => 1697,
                 'cup_id' => 13,
@@ -6261,7 +5869,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            280 => 
+            231 => 
             array (
                 'id' => 1698,
                 'cup_id' => 29,
@@ -6269,7 +5877,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            281 => 
+            232 => 
             array (
                 'id' => 1700,
                 'cup_id' => 13,
@@ -6277,7 +5885,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            282 => 
+            233 => 
             array (
                 'id' => 1701,
                 'cup_id' => 24,
@@ -6285,7 +5893,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            283 => 
+            234 => 
             array (
                 'id' => 1702,
                 'cup_id' => 26,
@@ -6293,7 +5901,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            284 => 
+            235 => 
             array (
                 'id' => 1703,
                 'cup_id' => 29,
@@ -6301,7 +5909,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            285 => 
+            236 => 
             array (
                 'id' => 1704,
                 'cup_id' => 13,
@@ -6309,7 +5917,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            286 => 
+            237 => 
             array (
                 'id' => 1705,
                 'cup_id' => 24,
@@ -6317,7 +5925,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            287 => 
+            238 => 
             array (
                 'id' => 1706,
                 'cup_id' => 26,
@@ -6325,7 +5933,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            288 => 
+            239 => 
             array (
                 'id' => 1707,
                 'cup_id' => 29,
@@ -6333,7 +5941,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            289 => 
+            240 => 
             array (
                 'id' => 1708,
                 'cup_id' => 13,
@@ -6341,7 +5949,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            290 => 
+            241 => 
             array (
                 'id' => 1709,
                 'cup_id' => 24,
@@ -6349,7 +5957,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            291 => 
+            242 => 
             array (
                 'id' => 1710,
                 'cup_id' => 26,
@@ -6357,7 +5965,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            292 => 
+            243 => 
             array (
                 'id' => 1711,
                 'cup_id' => 29,
@@ -6365,7 +5973,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            293 => 
+            244 => 
             array (
                 'id' => 1712,
                 'cup_id' => 13,
@@ -6373,7 +5981,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            294 => 
+            245 => 
             array (
                 'id' => 1713,
                 'cup_id' => 26,
@@ -6381,7 +5989,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            295 => 
+            246 => 
             array (
                 'id' => 1714,
                 'cup_id' => 29,
@@ -6389,7 +5997,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            296 => 
+            247 => 
             array (
                 'id' => 1715,
                 'cup_id' => 13,
@@ -6397,7 +6005,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            297 => 
+            248 => 
             array (
                 'id' => 1716,
                 'cup_id' => 26,
@@ -6405,7 +6013,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            298 => 
+            249 => 
             array (
                 'id' => 1717,
                 'cup_id' => 29,
@@ -6413,7 +6021,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            299 => 
+            250 => 
             array (
                 'id' => 1718,
                 'cup_id' => 13,
@@ -6421,7 +6029,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            300 => 
+            251 => 
             array (
                 'id' => 1719,
                 'cup_id' => 26,
@@ -6429,7 +6037,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            301 => 
+            252 => 
             array (
                 'id' => 1720,
                 'cup_id' => 29,
@@ -6437,7 +6045,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            302 => 
+            253 => 
             array (
                 'id' => 1721,
                 'cup_id' => 13,
@@ -6445,7 +6053,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            303 => 
+            254 => 
             array (
                 'id' => 1722,
                 'cup_id' => 26,
@@ -6453,7 +6061,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            304 => 
+            255 => 
             array (
                 'id' => 1723,
                 'cup_id' => 29,
@@ -6461,7 +6069,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            305 => 
+            256 => 
             array (
                 'id' => 1724,
                 'cup_id' => 13,
@@ -6469,7 +6077,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            306 => 
+            257 => 
             array (
                 'id' => 1725,
                 'cup_id' => 26,
@@ -6477,7 +6085,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            307 => 
+            258 => 
             array (
                 'id' => 1726,
                 'cup_id' => 29,
@@ -6485,7 +6093,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            308 => 
+            259 => 
             array (
                 'id' => 1727,
                 'cup_id' => 13,
@@ -6493,7 +6101,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            309 => 
+            260 => 
             array (
                 'id' => 1728,
                 'cup_id' => 26,
@@ -6501,7 +6109,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            310 => 
+            261 => 
             array (
                 'id' => 1729,
                 'cup_id' => 29,
@@ -6509,7 +6117,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            311 => 
+            262 => 
             array (
                 'id' => 1730,
                 'cup_id' => 13,
@@ -6517,7 +6125,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            312 => 
+            263 => 
             array (
                 'id' => 1731,
                 'cup_id' => 26,
@@ -6525,7 +6133,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            313 => 
+            264 => 
             array (
                 'id' => 1732,
                 'cup_id' => 29,
@@ -6533,7 +6141,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            314 => 
+            265 => 
             array (
                 'id' => 1733,
                 'cup_id' => 13,
@@ -6541,7 +6149,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            315 => 
+            266 => 
             array (
                 'id' => 1734,
                 'cup_id' => 26,
@@ -6549,7 +6157,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            316 => 
+            267 => 
             array (
                 'id' => 1735,
                 'cup_id' => 29,
@@ -6557,7 +6165,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            317 => 
+            268 => 
             array (
                 'id' => 1736,
                 'cup_id' => 13,
@@ -6565,7 +6173,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            318 => 
+            269 => 
             array (
                 'id' => 1737,
                 'cup_id' => 24,
@@ -6573,7 +6181,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            319 => 
+            270 => 
             array (
                 'id' => 1738,
                 'cup_id' => 26,
@@ -6581,7 +6189,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            320 => 
+            271 => 
             array (
                 'id' => 1739,
                 'cup_id' => 29,
@@ -6589,7 +6197,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            321 => 
+            272 => 
             array (
                 'id' => 1740,
                 'cup_id' => 9,
@@ -6597,7 +6205,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            322 => 
+            273 => 
             array (
                 'id' => 1741,
                 'cup_id' => 13,
@@ -6605,7 +6213,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            323 => 
+            274 => 
             array (
                 'id' => 1742,
                 'cup_id' => 26,
@@ -6613,7 +6221,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            324 => 
+            275 => 
             array (
                 'id' => 1743,
                 'cup_id' => 29,
@@ -6621,7 +6229,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            325 => 
+            276 => 
             array (
                 'id' => 1744,
                 'cup_id' => 13,
@@ -6629,7 +6237,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            326 => 
+            277 => 
             array (
                 'id' => 1745,
                 'cup_id' => 26,
@@ -6637,7 +6245,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            327 => 
+            278 => 
             array (
                 'id' => 1746,
                 'cup_id' => 29,
@@ -6645,7 +6253,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            328 => 
+            279 => 
             array (
                 'id' => 1747,
                 'cup_id' => 13,
@@ -6653,7 +6261,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            329 => 
+            280 => 
             array (
                 'id' => 1748,
                 'cup_id' => 26,
@@ -6661,7 +6269,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            330 => 
+            281 => 
             array (
                 'id' => 1749,
                 'cup_id' => 29,
@@ -6669,7 +6277,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            331 => 
+            282 => 
             array (
                 'id' => 1750,
                 'cup_id' => 13,
@@ -6677,7 +6285,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            332 => 
+            283 => 
             array (
                 'id' => 1751,
                 'cup_id' => 26,
@@ -6685,7 +6293,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            333 => 
+            284 => 
             array (
                 'id' => 1752,
                 'cup_id' => 29,
@@ -6693,7 +6301,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            334 => 
+            285 => 
             array (
                 'id' => 1753,
                 'cup_id' => 13,
@@ -6701,7 +6309,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            335 => 
+            286 => 
             array (
                 'id' => 1754,
                 'cup_id' => 26,
@@ -6709,7 +6317,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            336 => 
+            287 => 
             array (
                 'id' => 1755,
                 'cup_id' => 29,
@@ -6717,7 +6325,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            337 => 
+            288 => 
             array (
                 'id' => 1756,
                 'cup_id' => 13,
@@ -6725,7 +6333,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            338 => 
+            289 => 
             array (
                 'id' => 1757,
                 'cup_id' => 26,
@@ -6733,7 +6341,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            339 => 
+            290 => 
             array (
                 'id' => 1758,
                 'cup_id' => 29,
@@ -6741,7 +6349,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            340 => 
+            291 => 
             array (
                 'id' => 1759,
                 'cup_id' => 12,
@@ -6749,7 +6357,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            341 => 
+            292 => 
             array (
                 'id' => 1760,
                 'cup_id' => 26,
@@ -6757,7 +6365,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            342 => 
+            293 => 
             array (
                 'id' => 1761,
                 'cup_id' => 29,
@@ -6765,7 +6373,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            343 => 
+            294 => 
             array (
                 'id' => 1762,
                 'cup_id' => 13,
@@ -6773,7 +6381,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            344 => 
+            295 => 
             array (
                 'id' => 1763,
                 'cup_id' => 29,
@@ -6781,7 +6389,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            345 => 
+            296 => 
             array (
                 'id' => 1764,
                 'cup_id' => 13,
@@ -6789,7 +6397,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            346 => 
+            297 => 
             array (
                 'id' => 1765,
                 'cup_id' => 29,
@@ -6797,7 +6405,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            347 => 
+            298 => 
             array (
                 'id' => 1766,
                 'cup_id' => 13,
@@ -6805,7 +6413,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            348 => 
+            299 => 
             array (
                 'id' => 1767,
                 'cup_id' => 29,
@@ -6813,7 +6421,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            349 => 
+            300 => 
             array (
                 'id' => 1768,
                 'cup_id' => 13,
@@ -6821,7 +6429,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            350 => 
+            301 => 
             array (
                 'id' => 1769,
                 'cup_id' => 29,
@@ -6829,7 +6437,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            351 => 
+            302 => 
             array (
                 'id' => 1770,
                 'cup_id' => 13,
@@ -6837,7 +6445,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            352 => 
+            303 => 
             array (
                 'id' => 1771,
                 'cup_id' => 29,
@@ -6845,7 +6453,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            353 => 
+            304 => 
             array (
                 'id' => 1772,
                 'cup_id' => 13,
@@ -6853,7 +6461,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            354 => 
+            305 => 
             array (
                 'id' => 1773,
                 'cup_id' => 29,
@@ -6861,7 +6469,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            355 => 
+            306 => 
             array (
                 'id' => 1774,
                 'cup_id' => 13,
@@ -6869,7 +6477,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            356 => 
+            307 => 
             array (
                 'id' => 1775,
                 'cup_id' => 29,
@@ -6877,7 +6485,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            357 => 
+            308 => 
             array (
                 'id' => 1776,
                 'cup_id' => 13,
@@ -6885,7 +6493,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            358 => 
+            309 => 
             array (
                 'id' => 1777,
                 'cup_id' => 18,
@@ -6893,7 +6501,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            359 => 
+            310 => 
             array (
                 'id' => 1778,
                 'cup_id' => 29,
@@ -6901,7 +6509,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            360 => 
+            311 => 
             array (
                 'id' => 1779,
                 'cup_id' => 13,
@@ -6909,7 +6517,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            361 => 
+            312 => 
             array (
                 'id' => 1780,
                 'cup_id' => 18,
@@ -6917,7 +6525,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            362 => 
+            313 => 
             array (
                 'id' => 1781,
                 'cup_id' => 29,
@@ -6925,7 +6533,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            363 => 
+            314 => 
             array (
                 'id' => 1782,
                 'cup_id' => 13,
@@ -6933,7 +6541,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            364 => 
+            315 => 
             array (
                 'id' => 1783,
                 'cup_id' => 18,
@@ -6941,7 +6549,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            365 => 
+            316 => 
             array (
                 'id' => 1784,
                 'cup_id' => 29,
@@ -6949,7 +6557,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            366 => 
+            317 => 
             array (
                 'id' => 1785,
                 'cup_id' => 13,
@@ -6957,7 +6565,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            367 => 
+            318 => 
             array (
                 'id' => 1786,
                 'cup_id' => 18,
@@ -6965,7 +6573,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            368 => 
+            319 => 
             array (
                 'id' => 1787,
                 'cup_id' => 29,
@@ -6973,7 +6581,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            369 => 
+            320 => 
             array (
                 'id' => 1788,
                 'cup_id' => 13,
@@ -6981,7 +6589,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            370 => 
+            321 => 
             array (
                 'id' => 1789,
                 'cup_id' => 18,
@@ -6989,7 +6597,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            371 => 
+            322 => 
             array (
                 'id' => 1790,
                 'cup_id' => 29,
@@ -6997,7 +6605,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            372 => 
+            323 => 
             array (
                 'id' => 1791,
                 'cup_id' => 13,
@@ -7005,7 +6613,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            373 => 
+            324 => 
             array (
                 'id' => 1792,
                 'cup_id' => 18,
@@ -7013,7 +6621,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            374 => 
+            325 => 
             array (
                 'id' => 1793,
                 'cup_id' => 29,
@@ -7021,7 +6629,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            375 => 
+            326 => 
             array (
                 'id' => 1794,
                 'cup_id' => 13,
@@ -7029,7 +6637,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            376 => 
+            327 => 
             array (
                 'id' => 1795,
                 'cup_id' => 18,
@@ -7037,7 +6645,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            377 => 
+            328 => 
             array (
                 'id' => 1796,
                 'cup_id' => 29,
@@ -7045,7 +6653,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            378 => 
+            329 => 
             array (
                 'id' => 1797,
                 'cup_id' => 13,
@@ -7053,7 +6661,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            379 => 
+            330 => 
             array (
                 'id' => 1798,
                 'cup_id' => 18,
@@ -7061,7 +6669,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            380 => 
+            331 => 
             array (
                 'id' => 1799,
                 'cup_id' => 29,
@@ -7069,7 +6677,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            381 => 
+            332 => 
             array (
                 'id' => 1800,
                 'cup_id' => 13,
@@ -7077,7 +6685,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            382 => 
+            333 => 
             array (
                 'id' => 1801,
                 'cup_id' => 18,
@@ -7085,7 +6693,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            383 => 
+            334 => 
             array (
                 'id' => 1802,
                 'cup_id' => 29,
@@ -7093,7 +6701,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            384 => 
+            335 => 
             array (
                 'id' => 1803,
                 'cup_id' => 13,
@@ -7101,7 +6709,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            385 => 
+            336 => 
             array (
                 'id' => 1804,
                 'cup_id' => 18,
@@ -7109,7 +6717,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            386 => 
+            337 => 
             array (
                 'id' => 1805,
                 'cup_id' => 29,
@@ -7117,7 +6725,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            387 => 
+            338 => 
             array (
                 'id' => 1806,
                 'cup_id' => 13,
@@ -7125,7 +6733,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            388 => 
+            339 => 
             array (
                 'id' => 1807,
                 'cup_id' => 18,
@@ -7133,7 +6741,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            389 => 
+            340 => 
             array (
                 'id' => 1808,
                 'cup_id' => 29,
@@ -7141,7 +6749,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            390 => 
+            341 => 
             array (
                 'id' => 1809,
                 'cup_id' => 13,
@@ -7149,7 +6757,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            391 => 
+            342 => 
             array (
                 'id' => 1810,
                 'cup_id' => 18,
@@ -7157,7 +6765,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            392 => 
+            343 => 
             array (
                 'id' => 1811,
                 'cup_id' => 29,
@@ -7165,7 +6773,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            393 => 
+            344 => 
             array (
                 'id' => 1812,
                 'cup_id' => 13,
@@ -7173,7 +6781,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            394 => 
+            345 => 
             array (
                 'id' => 1813,
                 'cup_id' => 18,
@@ -7181,7 +6789,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            395 => 
+            346 => 
             array (
                 'id' => 1814,
                 'cup_id' => 29,
@@ -7189,7 +6797,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            396 => 
+            347 => 
             array (
                 'id' => 1815,
                 'cup_id' => 13,
@@ -7197,7 +6805,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            397 => 
+            348 => 
             array (
                 'id' => 1816,
                 'cup_id' => 18,
@@ -7205,7 +6813,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            398 => 
+            349 => 
             array (
                 'id' => 1817,
                 'cup_id' => 29,
@@ -7213,7 +6821,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            399 => 
+            350 => 
             array (
                 'id' => 1818,
                 'cup_id' => 13,
@@ -7221,7 +6829,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            400 => 
+            351 => 
             array (
                 'id' => 1819,
                 'cup_id' => 18,
@@ -7229,7 +6837,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            401 => 
+            352 => 
             array (
                 'id' => 1820,
                 'cup_id' => 29,
@@ -7237,7 +6845,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            402 => 
+            353 => 
             array (
                 'id' => 1821,
                 'cup_id' => 13,
@@ -7245,7 +6853,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            403 => 
+            354 => 
             array (
                 'id' => 1822,
                 'cup_id' => 18,
@@ -7253,7 +6861,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            404 => 
+            355 => 
             array (
                 'id' => 1823,
                 'cup_id' => 29,
@@ -7261,7 +6869,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            405 => 
+            356 => 
             array (
                 'id' => 1824,
                 'cup_id' => 29,
@@ -7269,7 +6877,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            406 => 
+            357 => 
             array (
                 'id' => 1825,
                 'cup_id' => 13,
@@ -7277,7 +6885,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            407 => 
+            358 => 
             array (
                 'id' => 1826,
                 'cup_id' => 18,
@@ -7285,7 +6893,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            408 => 
+            359 => 
             array (
                 'id' => 1827,
                 'cup_id' => 29,
@@ -7293,7 +6901,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            409 => 
+            360 => 
             array (
                 'id' => 1828,
                 'cup_id' => 13,
@@ -7301,7 +6909,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            410 => 
+            361 => 
             array (
                 'id' => 1829,
                 'cup_id' => 18,
@@ -7309,7 +6917,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            411 => 
+            362 => 
             array (
                 'id' => 1830,
                 'cup_id' => 29,
@@ -7317,7 +6925,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            412 => 
+            363 => 
             array (
                 'id' => 1831,
                 'cup_id' => 13,
@@ -7325,7 +6933,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            413 => 
+            364 => 
             array (
                 'id' => 1832,
                 'cup_id' => 18,
@@ -7333,7 +6941,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            414 => 
+            365 => 
             array (
                 'id' => 1833,
                 'cup_id' => 29,
@@ -7341,7 +6949,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            415 => 
+            366 => 
             array (
                 'id' => 1834,
                 'cup_id' => 13,
@@ -7349,7 +6957,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            416 => 
+            367 => 
             array (
                 'id' => 1835,
                 'cup_id' => 18,
@@ -7357,7 +6965,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            417 => 
+            368 => 
             array (
                 'id' => 1836,
                 'cup_id' => 29,
@@ -7365,7 +6973,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            418 => 
+            369 => 
             array (
                 'id' => 1837,
                 'cup_id' => 13,
@@ -7373,7 +6981,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            419 => 
+            370 => 
             array (
                 'id' => 1838,
                 'cup_id' => 18,
@@ -7381,7 +6989,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            420 => 
+            371 => 
             array (
                 'id' => 1839,
                 'cup_id' => 29,
@@ -7389,7 +6997,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            421 => 
+            372 => 
             array (
                 'id' => 1840,
                 'cup_id' => 31,
@@ -7397,7 +7005,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            422 => 
+            373 => 
             array (
                 'id' => 1841,
                 'cup_id' => 11,
@@ -7405,7 +7013,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            423 => 
+            374 => 
             array (
                 'id' => 1842,
                 'cup_id' => 29,
@@ -7413,7 +7021,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            424 => 
+            375 => 
             array (
                 'id' => 1843,
                 'cup_id' => 27,
@@ -7421,7 +7029,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            425 => 
+            376 => 
             array (
                 'id' => 1844,
                 'cup_id' => 27,
@@ -7429,7 +7037,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            426 => 
+            377 => 
             array (
                 'id' => 1845,
                 'cup_id' => 27,
@@ -7437,7 +7045,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            427 => 
+            378 => 
             array (
                 'id' => 1846,
                 'cup_id' => 27,
@@ -7445,7 +7053,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            428 => 
+            379 => 
             array (
                 'id' => 1847,
                 'cup_id' => 17,
@@ -7453,7 +7061,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            429 => 
+            380 => 
             array (
                 'id' => 1848,
                 'cup_id' => 17,
@@ -7461,7 +7069,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            430 => 
+            381 => 
             array (
                 'id' => 1849,
                 'cup_id' => 17,
@@ -7469,7 +7077,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            431 => 
+            382 => 
             array (
                 'id' => 1850,
                 'cup_id' => 17,
@@ -7477,7 +7085,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            432 => 
+            383 => 
             array (
                 'id' => 1851,
                 'cup_id' => 17,
@@ -7485,7 +7093,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            433 => 
+            384 => 
             array (
                 'id' => 1852,
                 'cup_id' => 17,
@@ -7493,7 +7101,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            434 => 
+            385 => 
             array (
                 'id' => 1853,
                 'cup_id' => 17,
@@ -7501,7 +7109,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            435 => 
+            386 => 
             array (
                 'id' => 1854,
                 'cup_id' => 17,
@@ -7509,7 +7117,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            436 => 
+            387 => 
             array (
                 'id' => 1855,
                 'cup_id' => 17,
@@ -7517,7 +7125,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            437 => 
+            388 => 
             array (
                 'id' => 1856,
                 'cup_id' => 17,
@@ -7525,7 +7133,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            438 => 
+            389 => 
             array (
                 'id' => 1857,
                 'cup_id' => 17,
@@ -7533,7 +7141,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            439 => 
+            390 => 
             array (
                 'id' => 1858,
                 'cup_id' => 17,
@@ -7541,7 +7149,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            440 => 
+            391 => 
             array (
                 'id' => 1859,
                 'cup_id' => 17,
@@ -7549,7 +7157,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            441 => 
+            392 => 
             array (
                 'id' => 1860,
                 'cup_id' => 17,
@@ -7557,7 +7165,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            442 => 
+            393 => 
             array (
                 'id' => 1861,
                 'cup_id' => 17,
@@ -7565,7 +7173,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            443 => 
+            394 => 
             array (
                 'id' => 1862,
                 'cup_id' => 17,
@@ -7573,7 +7181,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            444 => 
+            395 => 
             array (
                 'id' => 1863,
                 'cup_id' => 16,
@@ -7581,7 +7189,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            445 => 
+            396 => 
             array (
                 'id' => 1864,
                 'cup_id' => 16,
@@ -7589,7 +7197,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            446 => 
+            397 => 
             array (
                 'id' => 1865,
                 'cup_id' => 16,
@@ -7597,7 +7205,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            447 => 
+            398 => 
             array (
                 'id' => 1866,
                 'cup_id' => 16,
@@ -7605,7 +7213,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            448 => 
+            399 => 
             array (
                 'id' => 1867,
                 'cup_id' => 16,
@@ -7613,7 +7221,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            449 => 
+            400 => 
             array (
                 'id' => 1868,
                 'cup_id' => 16,
@@ -7621,7 +7229,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            450 => 
+            401 => 
             array (
                 'id' => 1869,
                 'cup_id' => 16,
@@ -7629,7 +7237,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            451 => 
+            402 => 
             array (
                 'id' => 1870,
                 'cup_id' => 14,
@@ -7637,7 +7245,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            452 => 
+            403 => 
             array (
                 'id' => 1871,
                 'cup_id' => 14,
@@ -7645,7 +7253,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            453 => 
+            404 => 
             array (
                 'id' => 1872,
                 'cup_id' => 14,
@@ -7653,7 +7261,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            454 => 
+            405 => 
             array (
                 'id' => 1873,
                 'cup_id' => 16,
@@ -7661,7 +7269,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            455 => 
+            406 => 
             array (
                 'id' => 1874,
                 'cup_id' => 16,
@@ -7669,7 +7277,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            456 => 
+            407 => 
             array (
                 'id' => 1875,
                 'cup_id' => 8,
@@ -7677,7 +7285,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            457 => 
+            408 => 
             array (
                 'id' => 1876,
                 'cup_id' => 25,
@@ -7685,7 +7293,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            458 => 
+            409 => 
             array (
                 'id' => 1877,
                 'cup_id' => 27,
@@ -7693,7 +7301,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            459 => 
+            410 => 
             array (
                 'id' => 1878,
                 'cup_id' => 28,
@@ -7701,7 +7309,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            460 => 
+            411 => 
             array (
                 'id' => 1879,
                 'cup_id' => 29,
@@ -7709,7 +7317,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            461 => 
+            412 => 
             array (
                 'id' => 1880,
                 'cup_id' => 8,
@@ -7717,7 +7325,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            462 => 
+            413 => 
             array (
                 'id' => 1881,
                 'cup_id' => 25,
@@ -7725,7 +7333,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            463 => 
+            414 => 
             array (
                 'id' => 1882,
                 'cup_id' => 27,
@@ -7733,7 +7341,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            464 => 
+            415 => 
             array (
                 'id' => 1883,
                 'cup_id' => 28,
@@ -7741,7 +7349,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            465 => 
+            416 => 
             array (
                 'id' => 1884,
                 'cup_id' => 29,
@@ -7749,7 +7357,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            466 => 
+            417 => 
             array (
                 'id' => 1885,
                 'cup_id' => 8,
@@ -7757,7 +7365,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            467 => 
+            418 => 
             array (
                 'id' => 1886,
                 'cup_id' => 25,
@@ -7765,7 +7373,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            468 => 
+            419 => 
             array (
                 'id' => 1887,
                 'cup_id' => 27,
@@ -7773,7 +7381,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            469 => 
+            420 => 
             array (
                 'id' => 1888,
                 'cup_id' => 28,
@@ -7781,7 +7389,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            470 => 
+            421 => 
             array (
                 'id' => 1889,
                 'cup_id' => 29,
@@ -7789,7 +7397,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            471 => 
+            422 => 
             array (
                 'id' => 1890,
                 'cup_id' => 8,
@@ -7797,7 +7405,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            472 => 
+            423 => 
             array (
                 'id' => 1891,
                 'cup_id' => 25,
@@ -7805,7 +7413,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            473 => 
+            424 => 
             array (
                 'id' => 1892,
                 'cup_id' => 27,
@@ -7813,7 +7421,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            474 => 
+            425 => 
             array (
                 'id' => 1893,
                 'cup_id' => 28,
@@ -7821,7 +7429,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            475 => 
+            426 => 
             array (
                 'id' => 1894,
                 'cup_id' => 29,
@@ -7829,7 +7437,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            476 => 
+            427 => 
             array (
                 'id' => 1895,
                 'cup_id' => 8,
@@ -7837,7 +7445,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            477 => 
+            428 => 
             array (
                 'id' => 1896,
                 'cup_id' => 25,
@@ -7845,7 +7453,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            478 => 
+            429 => 
             array (
                 'id' => 1897,
                 'cup_id' => 27,
@@ -7853,7 +7461,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            479 => 
+            430 => 
             array (
                 'id' => 1898,
                 'cup_id' => 28,
@@ -7861,7 +7469,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            480 => 
+            431 => 
             array (
                 'id' => 1899,
                 'cup_id' => 29,
@@ -7869,7 +7477,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            481 => 
+            432 => 
             array (
                 'id' => 1900,
                 'cup_id' => 8,
@@ -7877,7 +7485,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            482 => 
+            433 => 
             array (
                 'id' => 1901,
                 'cup_id' => 18,
@@ -7885,7 +7493,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            483 => 
+            434 => 
             array (
                 'id' => 1902,
                 'cup_id' => 28,
@@ -7893,7 +7501,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            484 => 
+            435 => 
             array (
                 'id' => 1903,
                 'cup_id' => 29,
@@ -7901,7 +7509,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            485 => 
+            436 => 
             array (
                 'id' => 1904,
                 'cup_id' => 8,
@@ -7909,7 +7517,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            486 => 
+            437 => 
             array (
                 'id' => 1905,
                 'cup_id' => 18,
@@ -7917,7 +7525,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            487 => 
+            438 => 
             array (
                 'id' => 1906,
                 'cup_id' => 28,
@@ -7925,7 +7533,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            488 => 
+            439 => 
             array (
                 'id' => 1907,
                 'cup_id' => 29,
@@ -7933,7 +7541,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            489 => 
+            440 => 
             array (
                 'id' => 1908,
                 'cup_id' => 26,
@@ -7941,7 +7549,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            490 => 
+            441 => 
             array (
                 'id' => 1909,
                 'cup_id' => 28,
@@ -7949,7 +7557,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            491 => 
+            442 => 
             array (
                 'id' => 1910,
                 'cup_id' => 29,
@@ -7957,7 +7565,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            492 => 
+            443 => 
             array (
                 'id' => 1911,
                 'cup_id' => 8,
@@ -7965,7 +7573,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            493 => 
+            444 => 
             array (
                 'id' => 1912,
                 'cup_id' => 25,
@@ -7973,7 +7581,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            494 => 
+            445 => 
             array (
                 'id' => 1913,
                 'cup_id' => 28,
@@ -7981,7 +7589,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            495 => 
+            446 => 
             array (
                 'id' => 1914,
                 'cup_id' => 29,
@@ -7989,7 +7597,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            496 => 
+            447 => 
             array (
                 'id' => 1915,
                 'cup_id' => 8,
@@ -7997,7 +7605,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            497 => 
+            448 => 
             array (
                 'id' => 1916,
                 'cup_id' => 25,
@@ -8005,7 +7613,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            498 => 
+            449 => 
             array (
                 'id' => 1917,
                 'cup_id' => 28,
@@ -8013,7 +7621,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            499 => 
+            450 => 
             array (
                 'id' => 1918,
                 'cup_id' => 29,
@@ -8021,9 +7629,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-        ));
-        \DB::table('category_cup')->insert(array (
-            0 => 
+            451 => 
             array (
                 'id' => 1919,
                 'cup_id' => 8,
@@ -8031,7 +7637,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            1 => 
+            452 => 
             array (
                 'id' => 1920,
                 'cup_id' => 25,
@@ -8039,7 +7645,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            2 => 
+            453 => 
             array (
                 'id' => 1921,
                 'cup_id' => 28,
@@ -8047,7 +7653,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            3 => 
+            454 => 
             array (
                 'id' => 1922,
                 'cup_id' => 29,
@@ -8055,7 +7661,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            4 => 
+            455 => 
             array (
                 'id' => 1923,
                 'cup_id' => 8,
@@ -8063,7 +7669,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            5 => 
+            456 => 
             array (
                 'id' => 1924,
                 'cup_id' => 18,
@@ -8071,7 +7677,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            6 => 
+            457 => 
             array (
                 'id' => 1925,
                 'cup_id' => 28,
@@ -8079,7 +7685,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            7 => 
+            458 => 
             array (
                 'id' => 1926,
                 'cup_id' => 29,
@@ -8087,7 +7693,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            8 => 
+            459 => 
             array (
                 'id' => 1927,
                 'cup_id' => 10,
@@ -8095,7 +7701,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            9 => 
+            460 => 
             array (
                 'id' => 1928,
                 'cup_id' => 29,
@@ -8103,7 +7709,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            10 => 
+            461 => 
             array (
                 'id' => 1929,
                 'cup_id' => 16,
@@ -8111,7 +7717,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            11 => 
+            462 => 
             array (
                 'id' => 1930,
                 'cup_id' => 17,
@@ -8119,15 +7725,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            12 => 
-            array (
-                'id' => 1931,
-                'cup_id' => 15,
-                'category_id' => 1179,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            13 => 
+            463 => 
             array (
                 'id' => 1932,
                 'cup_id' => 16,
@@ -8135,7 +7733,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            14 => 
+            464 => 
             array (
                 'id' => 1933,
                 'cup_id' => 16,
@@ -8143,7 +7741,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            15 => 
+            465 => 
             array (
                 'id' => 1934,
                 'cup_id' => 17,
@@ -8151,7 +7749,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            16 => 
+            466 => 
             array (
                 'id' => 1935,
                 'cup_id' => 16,
@@ -8159,7 +7757,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            17 => 
+            467 => 
             array (
                 'id' => 1936,
                 'cup_id' => 17,
@@ -8167,7 +7765,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            18 => 
+            468 => 
             array (
                 'id' => 1937,
                 'cup_id' => 16,
@@ -8175,7 +7773,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            19 => 
+            469 => 
             array (
                 'id' => 1938,
                 'cup_id' => 17,
@@ -8183,15 +7781,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            20 => 
-            array (
-                'id' => 1939,
-                'cup_id' => 15,
-                'category_id' => 1183,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            21 => 
+            470 => 
             array (
                 'id' => 1940,
                 'cup_id' => 16,
@@ -8199,15 +7789,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            22 => 
-            array (
-                'id' => 1941,
-                'cup_id' => 15,
-                'category_id' => 1184,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            23 => 
+            471 => 
             array (
                 'id' => 1942,
                 'cup_id' => 16,
@@ -8215,15 +7797,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            24 => 
-            array (
-                'id' => 1943,
-                'cup_id' => 15,
-                'category_id' => 1185,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            25 => 
+            472 => 
             array (
                 'id' => 1944,
                 'cup_id' => 16,
@@ -8231,15 +7805,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            26 => 
-            array (
-                'id' => 1945,
-                'cup_id' => 15,
-                'category_id' => 1186,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            27 => 
+            473 => 
             array (
                 'id' => 1946,
                 'cup_id' => 16,
@@ -8247,15 +7813,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            28 => 
-            array (
-                'id' => 1947,
-                'cup_id' => 15,
-                'category_id' => 1187,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            29 => 
+            474 => 
             array (
                 'id' => 1948,
                 'cup_id' => 16,
@@ -8263,15 +7821,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            30 => 
-            array (
-                'id' => 1949,
-                'cup_id' => 15,
-                'category_id' => 1188,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            31 => 
+            475 => 
             array (
                 'id' => 1950,
                 'cup_id' => 16,
@@ -8279,15 +7829,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            32 => 
-            array (
-                'id' => 1951,
-                'cup_id' => 15,
-                'category_id' => 1189,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            33 => 
+            476 => 
             array (
                 'id' => 1952,
                 'cup_id' => 16,
@@ -8295,15 +7837,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            34 => 
-            array (
-                'id' => 1953,
-                'cup_id' => 15,
-                'category_id' => 1190,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            35 => 
+            477 => 
             array (
                 'id' => 1954,
                 'cup_id' => 16,
@@ -8311,15 +7845,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            36 => 
-            array (
-                'id' => 1955,
-                'cup_id' => 15,
-                'category_id' => 1191,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            37 => 
+            478 => 
             array (
                 'id' => 1956,
                 'cup_id' => 16,
@@ -8327,15 +7853,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            38 => 
-            array (
-                'id' => 1957,
-                'cup_id' => 15,
-                'category_id' => 1192,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            39 => 
+            479 => 
             array (
                 'id' => 1958,
                 'cup_id' => 16,
@@ -8343,15 +7861,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            40 => 
-            array (
-                'id' => 1959,
-                'cup_id' => 15,
-                'category_id' => 1193,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            41 => 
+            480 => 
             array (
                 'id' => 1960,
                 'cup_id' => 16,
@@ -8359,15 +7869,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            42 => 
-            array (
-                'id' => 1961,
-                'cup_id' => 15,
-                'category_id' => 1194,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            43 => 
+            481 => 
             array (
                 'id' => 1962,
                 'cup_id' => 16,
@@ -8375,15 +7877,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            44 => 
-            array (
-                'id' => 1963,
-                'cup_id' => 15,
-                'category_id' => 1195,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            45 => 
+            482 => 
             array (
                 'id' => 1964,
                 'cup_id' => 16,
@@ -8391,7 +7885,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            46 => 
+            483 => 
             array (
                 'id' => 1965,
                 'cup_id' => 16,
@@ -8399,15 +7893,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            47 => 
-            array (
-                'id' => 1966,
-                'cup_id' => 15,
-                'category_id' => 1197,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            48 => 
+            484 => 
             array (
                 'id' => 1967,
                 'cup_id' => 16,
@@ -8415,15 +7901,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            49 => 
-            array (
-                'id' => 1968,
-                'cup_id' => 15,
-                'category_id' => 1198,
-                'created_at' => '2023-04-26 21:22:09',
-                'updated_at' => '2023-04-26 21:22:09',
-            ),
-            50 => 
+            485 => 
             array (
                 'id' => 1969,
                 'cup_id' => 16,
@@ -8431,15 +7909,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:09',
                 'updated_at' => '2023-04-26 21:22:09',
             ),
-            51 => 
-            array (
-                'id' => 1970,
-                'cup_id' => 15,
-                'category_id' => 1199,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            52 => 
+            486 => 
             array (
                 'id' => 1971,
                 'cup_id' => 16,
@@ -8447,15 +7917,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            53 => 
-            array (
-                'id' => 1972,
-                'cup_id' => 15,
-                'category_id' => 1200,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            54 => 
+            487 => 
             array (
                 'id' => 1973,
                 'cup_id' => 16,
@@ -8463,7 +7925,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            55 => 
+            488 => 
             array (
                 'id' => 1974,
                 'cup_id' => 14,
@@ -8471,15 +7933,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            56 => 
-            array (
-                'id' => 1975,
-                'cup_id' => 15,
-                'category_id' => 1201,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            57 => 
+            489 => 
             array (
                 'id' => 1976,
                 'cup_id' => 16,
@@ -8487,15 +7941,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            58 => 
-            array (
-                'id' => 1977,
-                'cup_id' => 15,
-                'category_id' => 1202,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            59 => 
+            490 => 
             array (
                 'id' => 1978,
                 'cup_id' => 16,
@@ -8503,15 +7949,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            60 => 
-            array (
-                'id' => 1979,
-                'cup_id' => 15,
-                'category_id' => 1203,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            61 => 
+            491 => 
             array (
                 'id' => 1980,
                 'cup_id' => 16,
@@ -8519,15 +7957,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            62 => 
-            array (
-                'id' => 1981,
-                'cup_id' => 15,
-                'category_id' => 1204,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            63 => 
+            492 => 
             array (
                 'id' => 1982,
                 'cup_id' => 16,
@@ -8535,15 +7965,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            64 => 
-            array (
-                'id' => 1983,
-                'cup_id' => 15,
-                'category_id' => 1205,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            65 => 
+            493 => 
             array (
                 'id' => 1984,
                 'cup_id' => 16,
@@ -8551,15 +7973,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            66 => 
-            array (
-                'id' => 1985,
-                'cup_id' => 15,
-                'category_id' => 1206,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            67 => 
+            494 => 
             array (
                 'id' => 1986,
                 'cup_id' => 16,
@@ -8567,15 +7981,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            68 => 
-            array (
-                'id' => 1987,
-                'cup_id' => 15,
-                'category_id' => 1207,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            69 => 
+            495 => 
             array (
                 'id' => 1988,
                 'cup_id' => 16,
@@ -8583,15 +7989,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            70 => 
-            array (
-                'id' => 1989,
-                'cup_id' => 15,
-                'category_id' => 1208,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            71 => 
+            496 => 
             array (
                 'id' => 1990,
                 'cup_id' => 16,
@@ -8599,15 +7997,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            72 => 
-            array (
-                'id' => 1991,
-                'cup_id' => 15,
-                'category_id' => 1209,
-                'created_at' => '2023-04-26 21:22:10',
-                'updated_at' => '2023-04-26 21:22:10',
-            ),
-            73 => 
+            497 => 
             array (
                 'id' => 1992,
                 'cup_id' => 16,
@@ -8615,7 +8005,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-04-26 21:22:10',
                 'updated_at' => '2023-04-26 21:22:10',
             ),
-            74 => 
+            498 => 
             array (
                 'id' => 1993,
                 'cup_id' => 17,
@@ -8623,7 +8013,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:27:22',
                 'updated_at' => '2023-05-17 20:27:22',
             ),
-            75 => 
+            499 => 
             array (
                 'id' => 1994,
                 'cup_id' => 16,
@@ -8631,7 +8021,9 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:31:12',
                 'updated_at' => '2023-05-17 20:31:12',
             ),
-            76 => 
+        ));
+        \DB::table('category_cup')->insert(array (
+            0 => 
             array (
                 'id' => 1995,
                 'cup_id' => 16,
@@ -8639,7 +8031,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:31:39',
                 'updated_at' => '2023-05-17 20:31:39',
             ),
-            77 => 
+            1 => 
             array (
                 'id' => 1996,
                 'cup_id' => 16,
@@ -8647,7 +8039,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:32:17',
                 'updated_at' => '2023-05-17 20:32:17',
             ),
-            78 => 
+            2 => 
             array (
                 'id' => 1997,
                 'cup_id' => 25,
@@ -8655,7 +8047,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:39:55',
                 'updated_at' => '2023-05-17 20:39:55',
             ),
-            79 => 
+            3 => 
             array (
                 'id' => 1998,
                 'cup_id' => 26,
@@ -8663,7 +8055,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:41:35',
                 'updated_at' => '2023-05-17 20:41:35',
             ),
-            80 => 
+            4 => 
             array (
                 'id' => 1999,
                 'cup_id' => 26,
@@ -8671,7 +8063,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:42:18',
                 'updated_at' => '2023-05-17 20:42:18',
             ),
-            81 => 
+            5 => 
             array (
                 'id' => 2000,
                 'cup_id' => 26,
@@ -8679,7 +8071,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:42:51',
                 'updated_at' => '2023-05-17 20:42:51',
             ),
-            82 => 
+            6 => 
             array (
                 'id' => 2001,
                 'cup_id' => 27,
@@ -8687,7 +8079,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:44:42',
                 'updated_at' => '2023-05-17 20:44:42',
             ),
-            83 => 
+            7 => 
             array (
                 'id' => 2002,
                 'cup_id' => 28,
@@ -8695,7 +8087,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:45:18',
                 'updated_at' => '2023-05-17 20:45:18',
             ),
-            84 => 
+            8 => 
             array (
                 'id' => 2003,
                 'cup_id' => 29,
@@ -8703,7 +8095,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 20:48:31',
                 'updated_at' => '2023-05-17 20:48:31',
             ),
-            85 => 
+            9 => 
             array (
                 'id' => 2004,
                 'cup_id' => 13,
@@ -8711,7 +8103,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 21:10:29',
                 'updated_at' => '2023-05-17 21:10:29',
             ),
-            86 => 
+            10 => 
             array (
                 'id' => 2005,
                 'cup_id' => 13,
@@ -8719,7 +8111,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 21:11:13',
                 'updated_at' => '2023-05-17 21:11:13',
             ),
-            87 => 
+            11 => 
             array (
                 'id' => 2006,
                 'cup_id' => 24,
@@ -8727,7 +8119,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 21:19:18',
                 'updated_at' => '2023-05-17 21:19:18',
             ),
-            88 => 
+            12 => 
             array (
                 'id' => 2007,
                 'cup_id' => 24,
@@ -8735,7 +8127,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2023-05-17 21:20:15',
                 'updated_at' => '2023-05-17 21:20:15',
             ),
-            89 => 
+            13 => 
             array (
                 'id' => 2008,
                 'cup_id' => 28,
@@ -8743,7 +8135,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            90 => 
+            14 => 
             array (
                 'id' => 2010,
                 'cup_id' => 24,
@@ -8751,7 +8143,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            91 => 
+            15 => 
             array (
                 'id' => 2014,
                 'cup_id' => 24,
@@ -8759,7 +8151,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            92 => 
+            16 => 
             array (
                 'id' => 2023,
                 'cup_id' => 24,
@@ -8767,7 +8159,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            93 => 
+            17 => 
             array (
                 'id' => 2027,
                 'cup_id' => 24,
@@ -8775,7 +8167,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            94 => 
+            18 => 
             array (
                 'id' => 2031,
                 'cup_id' => 24,
@@ -8783,7 +8175,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            95 => 
+            19 => 
             array (
                 'id' => 2061,
                 'cup_id' => 9,
@@ -8791,7 +8183,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            96 => 
+            20 => 
             array (
                 'id' => 2080,
                 'cup_id' => 12,
@@ -8799,7 +8191,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            97 => 
+            21 => 
             array (
                 'id' => 2158,
                 'cup_id' => 31,
@@ -8807,7 +8199,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            98 => 
+            22 => 
             array (
                 'id' => 2159,
                 'cup_id' => 11,
@@ -8815,7 +8207,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:40',
                 'updated_at' => '2024-04-23 21:27:40',
             ),
-            99 => 
+            23 => 
             array (
                 'id' => 2161,
                 'cup_id' => 27,
@@ -8823,7 +8215,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            100 => 
+            24 => 
             array (
                 'id' => 2162,
                 'cup_id' => 27,
@@ -8831,7 +8223,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            101 => 
+            25 => 
             array (
                 'id' => 2163,
                 'cup_id' => 27,
@@ -8839,7 +8231,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            102 => 
+            26 => 
             array (
                 'id' => 2164,
                 'cup_id' => 27,
@@ -8847,15 +8239,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            103 => 
-            array (
-                'id' => 2181,
-                'cup_id' => 16,
-                'category_id' => 1288,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            104 => 
+            27 => 
             array (
                 'id' => 2182,
                 'cup_id' => 16,
@@ -8863,55 +8247,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            105 => 
-            array (
-                'id' => 2183,
-                'cup_id' => 16,
-                'category_id' => 1290,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            106 => 
-            array (
-                'id' => 2185,
-                'cup_id' => 16,
-                'category_id' => 1292,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            107 => 
-            array (
-                'id' => 2187,
-                'cup_id' => 16,
-                'category_id' => 1293,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            108 => 
-            array (
-                'id' => 2189,
-                'cup_id' => 16,
-                'category_id' => 1294,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            109 => 
-            array (
-                'id' => 2190,
-                'cup_id' => 16,
-                'category_id' => 1295,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            110 => 
-            array (
-                'id' => 2191,
-                'cup_id' => 16,
-                'category_id' => 1296,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            111 => 
+            28 => 
             array (
                 'id' => 2192,
                 'cup_id' => 8,
@@ -8919,7 +8255,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            112 => 
+            29 => 
             array (
                 'id' => 2194,
                 'cup_id' => 27,
@@ -8927,7 +8263,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            113 => 
+            30 => 
             array (
                 'id' => 2199,
                 'cup_id' => 27,
@@ -8935,7 +8271,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            114 => 
+            31 => 
             array (
                 'id' => 2203,
                 'cup_id' => 27,
@@ -8943,7 +8279,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            115 => 
+            32 => 
             array (
                 'id' => 2208,
                 'cup_id' => 27,
@@ -8951,7 +8287,7 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            116 => 
+            33 => 
             array (
                 'id' => 2213,
                 'cup_id' => 27,
@@ -8959,165 +8295,13 @@ class CategoryCupTableSeeder extends Seeder
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
             ),
-            117 => 
+            34 => 
             array (
                 'id' => 2218,
                 'cup_id' => 27,
                 'category_id' => 1303,
                 'created_at' => '2024-04-23 21:27:41',
                 'updated_at' => '2024-04-23 21:27:41',
-            ),
-            118 => 
-            array (
-                'id' => 2255,
-                'cup_id' => 16,
-                'category_id' => 1316,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            119 => 
-            array (
-                'id' => 2257,
-                'cup_id' => 16,
-                'category_id' => 1317,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            120 => 
-            array (
-                'id' => 2259,
-                'cup_id' => 16,
-                'category_id' => 1318,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            121 => 
-            array (
-                'id' => 2261,
-                'cup_id' => 16,
-                'category_id' => 1323,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            122 => 
-            array (
-                'id' => 2263,
-                'cup_id' => 16,
-                'category_id' => 1324,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            123 => 
-            array (
-                'id' => 2265,
-                'cup_id' => 16,
-                'category_id' => 1325,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            124 => 
-            array (
-                'id' => 2270,
-                'cup_id' => 16,
-                'category_id' => 1328,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            125 => 
-            array (
-                'id' => 2272,
-                'cup_id' => 16,
-                'category_id' => 1330,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            126 => 
-            array (
-                'id' => 2274,
-                'cup_id' => 16,
-                'category_id' => 1331,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            127 => 
-            array (
-                'id' => 2276,
-                'cup_id' => 16,
-                'category_id' => 1332,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            128 => 
-            array (
-                'id' => 2281,
-                'cup_id' => 16,
-                'category_id' => 1334,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            129 => 
-            array (
-                'id' => 2283,
-                'cup_id' => 16,
-                'category_id' => 1335,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            130 => 
-            array (
-                'id' => 2285,
-                'cup_id' => 16,
-                'category_id' => 1336,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            131 => 
-            array (
-                'id' => 2287,
-                'cup_id' => 16,
-                'category_id' => 1337,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            132 => 
-            array (
-                'id' => 2289,
-                'cup_id' => 16,
-                'category_id' => 1338,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            133 => 
-            array (
-                'id' => 2291,
-                'cup_id' => 16,
-                'category_id' => 1339,
-                'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-23 21:27:41',
-            ),
-            134 => 
-            array (
-                'id' => 2293,
-                'cup_id' => 16,
-                'category_id' => 1340,
-                'created_at' => '2024-04-23 21:27:42',
-                'updated_at' => '2024-04-23 21:27:42',
-            ),
-            135 => 
-            array (
-                'id' => 2295,
-                'cup_id' => 16,
-                'category_id' => 1341,
-                'created_at' => '2024-04-23 21:27:42',
-                'updated_at' => '2024-04-23 21:27:42',
-            ),
-            136 => 
-            array (
-                'id' => 2297,
-                'cup_id' => 16,
-                'category_id' => 1342,
-                'created_at' => '2024-04-23 21:27:42',
-                'updated_at' => '2024-04-23 21:27:42',
             ),
         ));
         
