@@ -106,14 +106,14 @@
                             </b>
                         @endif
                     </div>
-                    <div class="text-sm text-right align-middle">
-                        <x-headers.h5>Entrant Number</x-headers.h5>
+                    <div class="text-sm text-right align-middle font-bold">
+                        Entrant Number
                     </div>
-                    <div class="border-2 border-black">&nbsp;</div>
-                    <div class="text-sm text-right align-middle">
-                        <x-headers.h5>Category Number</x-headers.h5>
+                    <div class="ml-2 border-2 border-black">&nbsp;</div>
+                    <div class="text-sm text-right align-middle font-bold">
+                        Category Number
                     </div>
-                    <div class="border-2 border-black"></div>
+                    <div class="ml-2 border-2 border-black"></div>
                 </div>
             @endforeach
         @endif
