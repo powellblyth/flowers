@@ -79,6 +79,7 @@ class Judge extends Model
         $categories = new Collection();
         foreach ($judgeRoles as $judgeRole) {
             /** @var Collection <Section> $sections */
+            // is this wrong? is this only getting the categories with the static judge role?
             $sections = Section::forShow($show)->where('judge_role_id', $judgeRole->id)->get();
             foreach ($sections as $section) {
                 $categories = $categories->merge(
