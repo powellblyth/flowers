@@ -227,10 +227,10 @@ class User extends Authenticatable
             ->orderBy('users.postcode');
     }
 
-    public function fullName(): Attribute
+    protected function fullName(): Attribute
     {
-        return new Attribute(
-            get: fn($value) => Str::title(
+        return Attribute::make(
+            get: fn() => Str::title(
                 trim($this->first_name . ' ' . $this->last_name)
             )
         );
@@ -261,17 +261,17 @@ class User extends Authenticatable
         return $return;
     }
 
-    public function printableName(): Attribute
+    protected function printableName(): Attribute
     {
-        return new Attribute(
-            get: fn($value) => trim(substr($this->first_name, 0, 1) . ' ' . $this->last_name)
+        return Attribute::make(
+            get: fn() => trim(substr($this->first_name, 0, 1) . ' ' . $this->last_name)
         );
     }
 
-    public function safeEmail(): Attribute
+    protected function safeEmail(): Attribute
     {
-        return new Attribute(
-            get: function ($value) {
+        return Attribute::make(
+            get: function () {
                 if ('production' === App::environment()) {
                     return $this->email;
                 }
