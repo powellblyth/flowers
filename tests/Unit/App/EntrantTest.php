@@ -84,7 +84,7 @@ class EntrantTest extends TestCase
         $sut = new Entrant();
         $sut->id = $id;
 
-        $this->assertSame($expected, $sut->getEntrantNumber());
+        $this->assertSame($expected, $sut->entrant_number);
     }
 
     public function providerDescribeAge():array{

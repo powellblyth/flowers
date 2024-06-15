@@ -230,7 +230,9 @@ class User extends Authenticatable
     public function fullName(): Attribute
     {
         return new Attribute(
-            get: fn($value) => trim($this->first_name . ' ' . $this->last_name)
+            get: fn($value) => Str::title(
+                trim($this->first_name . ' ' . $this->last_name)
+            )
         );
     }
 

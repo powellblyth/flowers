@@ -98,40 +98,34 @@ class Entrant extends Model
         'saving' => EntrantSaving::class
     ];
 
-    public function printableName(): Attribute
+    protected function printableName(): Attribute
     {
         return new Attribute(
             get: fn($value) => trim(substr($this->first_name, 0, 1) . ' ' . $this->family_name)
         );
     }
 
-    public function entrantNumber(): Attribute
+    protected function entrantNumber(): Attribute
     {
         return new Attribute(
-            get: fn($value) => $this->getEntrantNumber()
+            get: fn($value) => 'E-' . str_pad((string) $this->id, 4, '0', STR_PAD_LEFT)
         );
     }
 
-    public function numberedName(): Attribute
+    protected function numberedName(): Attribute
     {
-        return new Attribute(
-            get: fn($value) => $this->getEntrantNumber() .' ' . $this->full_name
+        return Attribute::make(
+            get: fn() => $this->entrant_number . ' ' . $this->full_name
         );
     }
 
-    public function fullName(): Attribute
+    protected function fullName(): Attribute
     {
-        return new Attribute(
-            get: fn($value) => Str::title(trim($this->first_name . ' ' . $this->family_name))
+        return Attribute::make(
+            get: fn() => Str::title(
+                trim($this->first_name . ' ' . $this->family_name)
+            )
         );
-    }
-
-    /**
-     * Simple way to get an entrant number
-     */
-    public function getEntrantNumber(): string
-    {
-        return 'E-' . str_pad((string) $this->id, 4, '0', STR_PAD_LEFT);
     }
 
     /**
