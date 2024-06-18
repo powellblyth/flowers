@@ -15,6 +15,8 @@ class CupSectionShow extends Model
     use BelongsToShow;
     use BelongsToSection;
 
+    public $table = 'cup_section_show';
+
     public function cup(): BelongsTo
     {
         return $this->belongsTo(Cup::class);
