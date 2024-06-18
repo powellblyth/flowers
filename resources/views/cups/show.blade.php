@@ -61,5 +61,10 @@
         @endcan
 
     </x-layout.intro-para>
+    @if($cup->rules)
+        <x-layout.intro-para>
+            <b>Rules</b>: {!! str_replace('<ol>', '<ol class="list-decimal ml-8">', $cup->rules) !!}</li>
+        </x-layout.intro-para>
+    @endif
 </x-app-layout>
 

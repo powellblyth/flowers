@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 
 class Cup extends Resource
 {
@@ -80,6 +81,8 @@ class Cup extends Resource
                 ->onlyOnForms(),
             Text::make(__('Winning Criteria'), 'winning_criteria')
                 ->rules('required', 'max:255')
+                ->hideFromIndex(),
+            Trix::make(__('Rules'), 'rules')
                 ->hideFromIndex(),
             Text::make(__('Prize Description'), 'prize_description')
                 ->rules('max:255')

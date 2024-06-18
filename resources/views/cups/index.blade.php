@@ -69,6 +69,13 @@
                     @if($cup->prize_description)
                         <div class="">Prize: {{$cup->prize_description}}</div>
                     @endif
+                    @if($cup->rules)
+                        <div class="">Rules: see
+                            <a class="underline"
+                               href="{{ route('cups.show', ['cup'=>$cup, 'show'=>$show]) }}">details</a>
+                            for prize rules
+                        </div>
+                    @endif
                     <div>{{ $cup->getJudgesDescriptionForThisShow($show, 'Judge: ')  }}</div>
 
                     @if($show->resultsArePublic() || Auth::user()?->isAdmin())

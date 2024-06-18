@@ -47,12 +47,12 @@
         </ul>
         <x-headers.h3 class="pt-4">Stewards' Instructions</x-headers.h3>
         <ol class="list-disc ml-4 text-sm">
-                <li> Once the category is judged, Stewards are to turn the winning cards over with the names exposed,
-                    and attach the relevant sticker
-                </li>
-            <li> In order to record the winners, the Steward need only record the entrant's number into the box on
-                this
-                    sheet
+            <li> Once the category is judged, Stewards are to turn the winning cards over with the names exposed,
+                and attach the relevant sticker
+            </li>
+            <li>
+                In order to record the winners, the Steward need only record the entrant's number into the box on this
+                sheet
                 </li>
             </ol>
             <br/>
@@ -90,7 +90,10 @@
 
         @if(count($relatedCups) > 0)
             <x-headers.h3 class="mt-4">Cups</x-headers.h3>
-
+            <p>
+                Note that only those cups listed below are awarded by Judges. Other cups are awarded on points gained
+                over several Categories
+            </p>
             @foreach($relatedCups as $cup)
                 @php
                     $otherJudges = $cup->getJudgesForThisShow($show);
@@ -106,6 +109,11 @@
                             </b>
                         @endif
                     </div>
+                    @if($cup->rules)
+                        <div class="col-span-4">
+                            {!!  str_replace('<ol>', '<ol class="list-decimal ml-8">', $cup->rules) !!}
+                        </div>
+                    @endif
                     <div class="text-sm text-right align-middle font-bold">
                         Entrant Number
                     </div>
