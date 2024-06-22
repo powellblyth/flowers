@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\CreateFamilyMembership;
 use App\Nova\Actions\CreateSingleMembership;
+use App\Nova\Actions\PrintAllUserCardsA5Redirector;
 use App\Nova\Actions\PrintAllUserCardsRedirector;
 use App\Nova\Actions\RecordPayment;
 use Illuminate\Http\Request;
@@ -84,7 +85,7 @@ class User extends Resource
         return [
             ID::make()->sortable(),
             Gravatar::make()->maxWidth(50),
-            Text::make(__('Name'), fn(\App\Models\User $user) => $user->fullName),
+            Text::make(__('Name'), fn(\App\Models\User $user) => $user->full_name),
             Text::make(
                 __('Membership Number'),
                 fn(\App\Models\User $user) => $user->getMemberNumber()
@@ -230,6 +231,7 @@ class User extends Resource
         return [
             RecordPayment::make(),
             PrintAllUserCardsRedirector::make()->showOnIndex(),
+            PrintAllUserCardsA5Redirector::make()->showOnIndex(),
             CreateFamilyMembership::make()->showOnIndex()->showOnTableRow(),
             CreateSingleMembership::make()->showOnIndex()->showOnTableRow(),
         ];

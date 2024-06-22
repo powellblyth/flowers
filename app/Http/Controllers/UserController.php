@@ -206,6 +206,24 @@ class UserController extends Controller
         ]);
     }
 
+    public function printCardsA5(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
+    {
+        $entriesQuery = $this->getEntriesQuery($show);
+        $entriesQuery->whereIn('users.id', $request->get('users'));
+
+        if ($request->filled('since')) {
+            $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
+        }
+
+        $cardData = $this->getCardDataFromEntries($entriesQuery->get());
+
+        return view('cards.printcardsA5', [
+            'show' => $show,
+            'card_fronts' => $cardData['fronts'],
+            'card_backs' => $cardData['backs'],
+        ]);
+    }
+
     /**
      * @throws AuthorizationException
      * @TODO can I do this in Nova? It seems possible
