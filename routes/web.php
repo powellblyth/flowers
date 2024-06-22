@@ -1,22 +1,21 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CupController;
 use App\Http\Controllers\EntrantController;
 use App\Http\Controllers\EntryController;
 use App\Http\Controllers\JudgeController;
 use App\Http\Controllers\MarketingController;
-use App\Http\Controllers\MembershipPurchaseController;
 use App\Http\Controllers\PaymentCardsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaffleController;
+use App\Http\Controllers\SectionController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\CategoryController;
-use \App\Http\Controllers\CupController;
-use App\Http\Controllers\SectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,6 +85,8 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('category.lookupprint');
     Route::get('/shows/{show}/printAllCards', [EntryController::class, 'printAllCards'])
         ->name('entries.printall');
+    Route::get('/shows/{show}/printAllCardsA5', [EntryController::class, 'printAllCardsA5'])
+        ->name('entries.printallA5');
     Route::get('/shows/{show}/judges/{judge}/printSheets', [JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 

@@ -57,6 +57,26 @@ class EntryController extends Controller
     }
 
     /**
+     * referenced by nova
+     */
+    public function printAllCardsA5(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
+    {
+        $entriesQuery = $this->getEntriesQuery($show);
+        if ($request->filled('since')) {
+            $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
+        }
+
+        $cardData = $this->getCardDataFromEntries($entriesQuery->get());
+
+        return view('cards.printcardsA5',
+            [
+                'show' => $show,
+                'card_fronts' => $cardData['fronts'],
+                'card_backs' => $cardData['backs'],
+            ]);
+    }
+
+    /**
      * @param Request $request
      * @param Show $show
      * @param User|null $user

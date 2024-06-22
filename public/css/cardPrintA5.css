@@ -2,16 +2,17 @@
 @page {
     margin: 0;
     width: 148mm;
-    height: 105mm;
-    size: A4 landscape;
+    height: 210mm;
+    size: A5 portrait;
 }
 @media print {
   html, body {
     width: 148mm;
-    height: 105mm;
-    size: A4 landscape;
+    height: 210mm;
+      size: A5 portrait;
   }
 }
+
 .pageset
 {
     page-break-before: always;
@@ -21,15 +22,15 @@
 }
 .backpage
 {
-    size: A4 landscape;
+    size: A5 portrait;
     margin: 0;
 }
 .card_row
 {
-    margin-left: 20px;
+    margin-left:20px;
     border-bottom: 1px solid black;
-    margin-top: 25px;
-    width: 97%;
+    margin-top:25px;
+    width:97%;
 }
 
 .frontpage .entrant_number_box
@@ -62,7 +63,7 @@
     font-size:20px;
     border-bottom: 1px solid black;
     display:inline-block;
-    width: 180px;
+    width:180px;
 }
 .frontpage .class_number_box
 {
@@ -72,7 +73,7 @@
     margin-left:auto;
     margin-right:auto;
     text-align:center;
-    font-size:30px;
+    font-size:30px;=
 }
 .frontpage .class_number
 {
@@ -81,27 +82,23 @@
     display:inline-block;
     width:100px;
     font-weight:bold;
-        
 }
 .frontpage .entrant_number
 {
-    margin-left: auto;
+    margin-left:auto;
 }
 .entrycard
 {
     width:800px;
-}
-.backpage.second
-{
-    left:50%;
+    height:140mm;
 }
 .backpage
 {
-        width:100%;
+    width:100%;
 }
 .frontpage
 {
-        width:100%;
+    width:100%;
 }
 .frontpage .footer
 {
@@ -157,4 +154,15 @@ img.rhs-logo
 {
     margin-bottom:6px;
     height:18px;
+}
+div.foldline {
+
+    height:1px;
+    border-bottom: 1px dashed green;
+    text-align: center;
+    font-size:8pt;
+    color:darkgrey
+}
+div.foldline .arrow{
+    font-size:12pt;
 }
