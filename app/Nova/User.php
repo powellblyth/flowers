@@ -92,10 +92,10 @@ class User extends Resource
             ),
 
             Text::make('Fees for current show', function () {
+                $latestShow = \App\Models\Show::public()->newestFirst()->first();
                 $fees = 0;
                 $freeEntries = 0;
                 $entries = 0;
-                $latestShow = \App\Models\Show::public()->newestFirst()->first();
                 foreach ($this->entrants as $entrant) {
                     foreach ($entrant->entries()->forShow($latestShow)->get() as $entry) {
                         $entryPrice = (int) $entry->getActualPrice();
@@ -108,7 +108,13 @@ class User extends Resource
                 }
 //                return '£' . ($fees/100);
                 $payments = 0;
-                foreach ($this->payments()->where('created_at', '>', '2022-01-01 00:00:00')->get() as $payment) {
+                foreach (
+                    $this->payments()->where(
+                        'created_at',
+                        '>',
+                        $latestShow->start_date->format('Y-05-01')
+                    )->get() as $payment
+                ) {
                     $payments += (int) $payment->amount;
                 }
 
