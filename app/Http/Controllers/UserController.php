@@ -138,6 +138,11 @@ class UserController extends Controller
         return view('users.merge', ['user' => $user]);
     }
 
+    public function prepareMerge(User $user, User $mergeInto)
+    {
+        $this->authorize('delete', $user);
+        return view('users.prepareMerge', ['user' => $user, 'mergeInto' => $mergeInto]);
+    }
     /**
      * Store a newly created user in storage
      *

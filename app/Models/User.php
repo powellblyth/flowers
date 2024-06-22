@@ -199,7 +199,7 @@ class User extends Authenticatable
 
     /****   Attributes   ****/
 
-    public function address(): Attribute
+    protected function address(): Attribute
     {
         return new Attribute(
             get: function ($value): string {

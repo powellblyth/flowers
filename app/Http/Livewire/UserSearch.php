@@ -10,8 +10,8 @@ class UserSearch extends Component
 {
     public User $existingUser;
     public ?Collection $results;
-    public ?string $firstName = null;
-    public ?string $familyName = null;
+    public ?string $firstName = 'a';
+    public ?string $familyName = '';
 
     public function render()
     {
@@ -20,11 +20,13 @@ class UserSearch extends Component
     public function mount(User $existingUser)
     {
         $this->existingUser = $existingUser;
+        $this->doSearch();
     }
     public function doSearch()
     {
         $this->results = User::where('first_name', 'like', '%' . $this->firstName . '%')
             ->where('last_name', 'like', '%' . $this->familyName . '%')
+            ->notAnonymised()
             ->where('id', '<>', $this->existingUser->id)
             ->get();
     }

@@ -100,6 +100,8 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('user.print');
     Route::get('/users/{user}/merge', [UserController::class, 'merge'])
         ->name('users.merge');
+    Route::get('/users/{user}/prepareMerge/{mergeInto}', [UserController::class, 'prepareMerge'])
+        ->name('users.prepareMerge');
     Route::get('/users/{user}/saveMerge', [UserController::class, 'saveMerge'])
         ->name('users.saveMerge');
 });
