@@ -127,6 +127,18 @@ class UserController extends Controller
     }
 
     /**
+     * Show the form for merging a person
+     *
+     * @return \Illuminate\Contracts\View\View
+     * @throws AuthorizationException
+     */
+    public function merge(User $user): View
+    {
+        $this->authorize('delete', $user);
+        return view('users.merge', ['user' => $user]);
+    }
+
+    /**
      * Store a newly created user in storage
      *
      * @param UserRequest $request
