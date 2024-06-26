@@ -87,7 +87,6 @@ class Entrant extends Model
         'first_name',
         'family_name',
         'membernumber',
-        'age',
         'can_retain_data',
     ];
 

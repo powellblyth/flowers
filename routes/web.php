@@ -96,8 +96,12 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('users.print');
     Route::get('/users/printA5/{show}', [UserController::class, 'printCardsA5'])
         ->name('users.printA5');
-    Route::get('/user/{user}print/{show}', [UserController::class, 'printCards'])
+    Route::get('/users/{user}/print/{show}', [UserController::class, 'printCards'])
         ->name('user.print');
+    Route::get('/users/{user}/merge', [UserController::class, 'merge'])
+        ->name('users.merge');
+    Route::get('/users/{user}/saveMerge', [UserController::class, 'saveMerge'])
+        ->name('users.saveMerge');
 });
 
 
