@@ -29,7 +29,12 @@
                 </td>
             </tr>
             <tr>
-                <td class="foldLine"><div class="foldLine">Fold here for judging and <span class="arrow">&darr;</span> hide this side <span class="arrow">&darr;</span></div></td>
+                <td>
+                    <div class="foldLine">
+                        Fold here for judging and <span class="arrow">&darr;</span> hide this side
+                        <span class="arrow">&darr;</span>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td class="entrycard">
@@ -39,7 +44,9 @@
                                 <td><img class="rhs-logo" src="/images/RHS-LOGO-BW-SMALL.jpg" /></td>
                                 <td>
                                     <div class="society_name">Petersham Horticultural Society</div>
-                                    <div class="prize_box">&nbsp;</div>
+                                    <div class="prize_box">Affix Prize Sticker Here (if
+                                        applicable)
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
