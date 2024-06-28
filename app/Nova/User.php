@@ -119,7 +119,7 @@ class User extends Resource
                 }
 
                 $memberships = $this->membershipPurchases()
-                    ->where('created_at', '>', '2022-06-01 00:00:00')
+                    ->where('created_at', '>', '2023-06-01 00:00:00')
                     ->get();
                 $numMembership = $memberships->count();
                 $amountMemberships = $memberships->sum('amount');
