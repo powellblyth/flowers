@@ -104,6 +104,21 @@ class Entrant extends Model
         );
     }
 
+    protected function ageDescription(): Attribute
+    {
+        return new Attribute(
+            get: function ($value) {
+                if (!$this->age) {
+                    return '';
+                }
+                if ($this->age >= 18) {
+                    return '';
+                }
+                return __(':age years', ['age' => $this->age]);
+            }
+        );
+    }
+
     protected function entrantNumber(): Attribute
     {
         return new Attribute(
