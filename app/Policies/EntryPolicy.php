@@ -90,7 +90,8 @@ class EntryPolicy
         return false;
     }
 
-    public function printCards(User $user): bool{
+    public function printTableCards(User $user): bool
+    {
         return false;
     }
     public function enterResults(User $user): bool{

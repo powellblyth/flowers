@@ -48,17 +48,18 @@ class CategoryController extends Controller
      * This prints all the category cards for the show entries to put on the tables
      * @throws AuthorizationException
      */
-    public function printCards(Request $request, Show $show): Factory|View
+    public function printTableCards(Request $request, Show $show): Factory|View
     {
-        $this->authorize('printCards', Entry::class);
-        $categories = Category::where('show_id', $show->id)->inOrder()->get();
+        $this->authorize('printTableCards', Entry::class);
+        $categories = Category::forShow($show)->inOrder()->get();
         $cardFronts = [];
 
         foreach ($categories as $category) {
             /** @var Category $category */
             $cardFronts[] = [
                 'class_number' => $category->number,
-                'class_name' => $category->name
+                'class_name' => $category->name,
+                'class_notes' => $category->notes,
             ];
         }
         return view('categories.printcards', ['show' => $show, 'card_fronts' => $cardFronts]);

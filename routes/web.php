@@ -80,7 +80,7 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('sections.storeresults');
     Route::get('/sections/{section}/resultsentry', [SectionController::class, 'resultsEntryForm'])
         ->name('sections.resultsentry');
-    Route::get('/shows/{show}/printtabletop', [CategoryController::class, 'printCards'])
+    Route::get('/shows/{show}/printtabletop', [CategoryController::class, 'printTableCards'])
         ->name('category.tabletopprint');
     Route::get('/show/{show}/printLookups', [CategoryController::class, 'printLookups'])
         ->name('category.lookupprint');
