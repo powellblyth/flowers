@@ -516,15 +516,6 @@ class CupSectionShowTableSeeder extends Seeder
             ),
             55 => 
             array (
-                'id' => 92,
-                'cup_id' => 10,
-                'section_id' => 82,
-                'show_id' => 10,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-            ),
-            56 => 
-            array (
                 'id' => 93,
                 'cup_id' => 13,
                 'section_id' => 71,
@@ -532,7 +523,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            57 => 
+            56 => 
             array (
                 'id' => 94,
                 'cup_id' => 14,
@@ -541,7 +532,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            58 => 
+            57 => 
             array (
                 'id' => 95,
                 'cup_id' => 15,
@@ -550,7 +541,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            59 => 
+            58 => 
             array (
                 'id' => 96,
                 'cup_id' => 17,
@@ -559,7 +550,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            60 => 
+            59 => 
             array (
                 'id' => 97,
                 'cup_id' => 18,
@@ -568,7 +559,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            61 => 
+            60 => 
             array (
                 'id' => 98,
                 'cup_id' => 25,
@@ -577,7 +568,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            62 => 
+            61 => 
             array (
                 'id' => 100,
                 'cup_id' => 14,
@@ -586,7 +577,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            63 => 
+            62 => 
             array (
                 'id' => 101,
                 'cup_id' => 17,
@@ -595,7 +586,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            64 => 
+            63 => 
             array (
                 'id' => 102,
                 'cup_id' => 18,
@@ -604,7 +595,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            65 => 
+            64 => 
             array (
                 'id' => 103,
                 'cup_id' => 26,
@@ -613,7 +604,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            66 => 
+            65 => 
             array (
                 'id' => 104,
                 'cup_id' => 26,
@@ -622,7 +613,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            67 => 
+            66 => 
             array (
                 'id' => 105,
                 'cup_id' => 28,
@@ -631,7 +622,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            68 => 
+            67 => 
             array (
                 'id' => 106,
                 'cup_id' => 28,
@@ -640,7 +631,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            69 => 
+            68 => 
             array (
                 'id' => 107,
                 'cup_id' => 29,
@@ -649,7 +640,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            70 => 
+            69 => 
             array (
                 'id' => 108,
                 'cup_id' => 29,
@@ -658,7 +649,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            71 => 
+            70 => 
             array (
                 'id' => 109,
                 'cup_id' => 29,
@@ -667,7 +658,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            72 => 
+            71 => 
             array (
                 'id' => 110,
                 'cup_id' => 29,
@@ -676,7 +667,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            73 => 
+            72 => 
             array (
                 'id' => 111,
                 'cup_id' => 29,
@@ -685,7 +676,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            74 => 
+            73 => 
             array (
                 'id' => 112,
                 'cup_id' => 13,
@@ -694,7 +685,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            75 => 
+            74 => 
             array (
                 'id' => 113,
                 'cup_id' => 13,
@@ -703,7 +694,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            76 => 
+            75 => 
             array (
                 'id' => 114,
                 'cup_id' => 13,
@@ -712,7 +703,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            77 => 
+            76 => 
             array (
                 'id' => 115,
                 'cup_id' => 13,
@@ -721,7 +712,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            78 => 
+            77 => 
             array (
                 'id' => 117,
                 'cup_id' => 7,
@@ -730,7 +721,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => '2024-06-08 16:35:45',
                 'updated_at' => NULL,
             ),
-            79 => 
+            78 => 
             array (
                 'id' => 118,
                 'cup_id' => 5,
@@ -739,7 +730,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => '2024-06-12 11:33:35',
                 'updated_at' => NULL,
             ),
-            80 => 
+            79 => 
             array (
                 'id' => 119,
                 'cup_id' => 6,
@@ -748,7 +739,7 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => '2024-06-12 11:36:04',
                 'updated_at' => NULL,
             ),
-            81 => 
+            80 => 
             array (
                 'id' => 120,
                 'cup_id' => 6,
@@ -757,13 +748,22 @@ class CupSectionShowTableSeeder extends Seeder
                 'created_at' => '2024-06-12 11:39:47',
                 'updated_at' => NULL,
             ),
-            82 => 
+            81 => 
             array (
                 'id' => 121,
                 'cup_id' => 16,
                 'section_id' => 83,
                 'show_id' => 10,
                 'created_at' => '2024-06-12 15:17:58',
+                'updated_at' => NULL,
+            ),
+            82 => 
+            array (
+                'id' => 122,
+                'cup_id' => 29,
+                'section_id' => 1244,
+                'show_id' => 10,
+                'created_at' => '2024-06-29 15:17:26',
                 'updated_at' => NULL,
             ),
         ));
