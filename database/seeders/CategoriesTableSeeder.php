@@ -40,7 +40,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             1 => 
             array (
@@ -63,7 +63,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             2 => 
             array (
@@ -86,7 +86,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             3 => 
             array (
@@ -109,7 +109,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             4 => 
             array (
@@ -132,7 +132,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             5 => 
             array (
@@ -155,7 +155,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             6 => 
             array (
@@ -178,7 +178,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             7 => 
             array (
@@ -201,7 +201,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             8 => 
             array (
@@ -224,7 +224,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             9 => 
             array (
@@ -247,7 +247,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             10 => 
             array (
@@ -270,7 +270,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             11 => 
             array (
@@ -293,7 +293,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             12 => 
             array (
@@ -316,7 +316,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             13 => 
             array (
@@ -339,7 +339,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             14 => 
             array (
@@ -362,7 +362,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             15 => 
             array (
@@ -385,7 +385,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             16 => 
             array (
@@ -408,7 +408,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             17 => 
             array (
@@ -431,7 +431,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             18 => 
             array (
@@ -454,7 +454,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             19 => 
             array (
@@ -477,7 +477,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             20 => 
             array (
@@ -500,7 +500,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             21 => 
             array (
@@ -523,7 +523,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             22 => 
             array (
@@ -546,7 +546,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             23 => 
             array (
@@ -569,7 +569,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             24 => 
             array (
@@ -592,7 +592,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             25 => 
             array (
@@ -615,7 +615,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             26 => 
             array (
@@ -638,7 +638,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             27 => 
             array (
@@ -661,7 +661,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             28 => 
             array (
@@ -684,7 +684,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             29 => 
             array (
@@ -707,7 +707,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             30 => 
             array (
@@ -730,7 +730,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             31 => 
             array (
@@ -753,7 +753,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             32 => 
             array (
@@ -776,7 +776,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             33 => 
             array (
@@ -799,7 +799,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             34 => 
             array (
@@ -822,7 +822,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             35 => 
             array (
@@ -845,7 +845,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             36 => 
             array (
@@ -868,7 +868,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             37 => 
             array (
@@ -891,7 +891,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             38 => 
             array (
@@ -914,7 +914,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             39 => 
             array (
@@ -937,7 +937,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             40 => 
             array (
@@ -960,7 +960,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             41 => 
             array (
@@ -983,7 +983,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             42 => 
             array (
@@ -1006,7 +1006,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             43 => 
             array (
@@ -1029,7 +1029,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             44 => 
             array (
@@ -1052,7 +1052,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             45 => 
             array (
@@ -1075,7 +1075,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             46 => 
             array (
@@ -1098,7 +1098,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             47 => 
             array (
@@ -1121,7 +1121,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             48 => 
             array (
@@ -1144,7 +1144,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             49 => 
             array (
@@ -1167,7 +1167,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             50 => 
             array (
@@ -1190,7 +1190,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             51 => 
             array (
@@ -1213,7 +1213,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             52 => 
             array (
@@ -1236,7 +1236,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             53 => 
             array (
@@ -1259,7 +1259,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             54 => 
             array (
@@ -1282,7 +1282,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             55 => 
             array (
@@ -1305,7 +1305,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             56 => 
             array (
@@ -1328,7 +1328,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             57 => 
             array (
@@ -1351,7 +1351,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             58 => 
             array (
@@ -1374,7 +1374,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             59 => 
             array (
@@ -1397,7 +1397,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             60 => 
             array (
@@ -1420,7 +1420,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             61 => 
             array (
@@ -1443,7 +1443,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             62 => 
             array (
@@ -1466,7 +1466,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             63 => 
             array (
@@ -1489,7 +1489,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             64 => 
             array (
@@ -1512,7 +1512,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             65 => 
             array (
@@ -1535,7 +1535,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             66 => 
             array (
@@ -1558,7 +1558,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             67 => 
             array (
@@ -1581,7 +1581,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             68 => 
             array (
@@ -1604,7 +1604,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             69 => 
             array (
@@ -1627,7 +1627,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             70 => 
             array (
@@ -1650,7 +1650,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             71 => 
             array (
@@ -1673,7 +1673,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             72 => 
             array (
@@ -1696,7 +1696,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             73 => 
             array (
@@ -1719,7 +1719,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             74 => 
             array (
@@ -1742,7 +1742,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             75 => 
             array (
@@ -1765,7 +1765,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             76 => 
             array (
@@ -1788,7 +1788,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             77 => 
             array (
@@ -1811,7 +1811,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             78 => 
             array (
@@ -1834,7 +1834,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             79 => 
             array (
@@ -1857,7 +1857,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             80 => 
             array (
@@ -1880,7 +1880,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             81 => 
             array (
@@ -1903,7 +1903,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             82 => 
             array (
@@ -1926,7 +1926,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             83 => 
             array (
@@ -1949,7 +1949,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             84 => 
             array (
@@ -1972,7 +1972,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             85 => 
             array (
@@ -1995,7 +1995,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             86 => 
             array (
@@ -2018,7 +2018,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             87 => 
             array (
@@ -2041,7 +2041,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             88 => 
             array (
@@ -2064,7 +2064,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             89 => 
             array (
@@ -2087,7 +2087,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             90 => 
             array (
@@ -2110,7 +2110,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             91 => 
             array (
@@ -2133,7 +2133,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             92 => 
             array (
@@ -2156,7 +2156,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             93 => 
             array (
@@ -2179,7 +2179,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             94 => 
             array (
@@ -2202,7 +2202,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             95 => 
             array (
@@ -2225,7 +2225,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             96 => 
             array (
@@ -2248,7 +2248,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             97 => 
             array (
@@ -2271,7 +2271,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             98 => 
             array (
@@ -2294,7 +2294,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             99 => 
             array (
@@ -2317,7 +2317,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             100 => 
             array (
@@ -2340,7 +2340,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             101 => 
             array (
@@ -2363,7 +2363,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             102 => 
             array (
@@ -2386,7 +2386,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             103 => 
             array (
@@ -2409,7 +2409,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             104 => 
             array (
@@ -2432,7 +2432,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             105 => 
             array (
@@ -2455,7 +2455,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not Lego',
             ),
             106 => 
             array (
@@ -2478,7 +2478,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             107 => 
             array (
@@ -2501,7 +2501,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             108 => 
             array (
@@ -2524,7 +2524,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             109 => 
             array (
@@ -2547,7 +2547,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             110 => 
             array (
@@ -2570,7 +2570,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             111 => 
             array (
@@ -2593,7 +2593,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             112 => 
             array (
@@ -2616,7 +2616,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             113 => 
             array (
@@ -2639,7 +2639,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             114 => 
             array (
@@ -2662,7 +2662,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             115 => 
             array (
@@ -2685,7 +2685,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             116 => 
             array (
@@ -2708,7 +2708,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             117 => 
             array (
@@ -2731,7 +2731,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             118 => 
             array (
@@ -2754,7 +2754,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             119 => 
             array (
@@ -2777,7 +2777,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             120 => 
             array (
@@ -2800,7 +2800,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             121 => 
             array (
@@ -2823,7 +2823,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             122 => 
             array (
@@ -2846,7 +2846,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             123 => 
             array (
@@ -2869,7 +2869,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             124 => 
             array (
@@ -2892,7 +2892,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             125 => 
             array (
@@ -2915,7 +2915,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             126 => 
             array (
@@ -2938,7 +2938,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             127 => 
             array (
@@ -2961,7 +2961,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             128 => 
             array (
@@ -2984,7 +2984,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             129 => 
             array (
@@ -3007,7 +3007,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             130 => 
             array (
@@ -3030,7 +3030,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             131 => 
             array (
@@ -3053,7 +3053,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             132 => 
             array (
@@ -3076,7 +3076,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             133 => 
             array (
@@ -3099,7 +3099,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             134 => 
             array (
@@ -3122,7 +3122,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             135 => 
             array (
@@ -3145,7 +3145,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             136 => 
             array (
@@ -3168,7 +3168,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             137 => 
             array (
@@ -3191,7 +3191,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             138 => 
             array (
@@ -3214,7 +3214,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             139 => 
             array (
@@ -3237,7 +3237,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             140 => 
             array (
@@ -3260,7 +3260,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             141 => 
             array (
@@ -3283,7 +3283,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             142 => 
             array (
@@ -3306,7 +3306,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             143 => 
             array (
@@ -3329,7 +3329,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             144 => 
             array (
@@ -3352,7 +3352,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             145 => 
             array (
@@ -3375,7 +3375,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             146 => 
             array (
@@ -3398,7 +3398,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             147 => 
             array (
@@ -3421,7 +3421,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             148 => 
             array (
@@ -3444,7 +3444,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             149 => 
             array (
@@ -3467,7 +3467,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             150 => 
             array (
@@ -3490,7 +3490,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             151 => 
             array (
@@ -3513,7 +3513,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             152 => 
             array (
@@ -3536,7 +3536,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             153 => 
             array (
@@ -3559,7 +3559,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             154 => 
             array (
@@ -3582,7 +3582,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             155 => 
             array (
@@ -3605,7 +3605,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             156 => 
             array (
@@ -3628,7 +3628,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             157 => 
             array (
@@ -3651,7 +3651,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             158 => 
             array (
@@ -3674,7 +3674,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             159 => 
             array (
@@ -3697,7 +3697,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             160 => 
             array (
@@ -3720,7 +3720,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             161 => 
             array (
@@ -3743,7 +3743,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             162 => 
             array (
@@ -3766,7 +3766,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             163 => 
             array (
@@ -3789,7 +3789,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             164 => 
             array (
@@ -3812,7 +3812,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             165 => 
             array (
@@ -3835,7 +3835,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             166 => 
             array (
@@ -3858,7 +3858,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             167 => 
             array (
@@ -3881,7 +3881,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             168 => 
             array (
@@ -3904,7 +3904,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             169 => 
             array (
@@ -3927,7 +3927,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             170 => 
             array (
@@ -3950,7 +3950,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             171 => 
             array (
@@ -3973,7 +3973,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             172 => 
             array (
@@ -3996,7 +3996,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             173 => 
             array (
@@ -4019,7 +4019,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             174 => 
             array (
@@ -4042,7 +4042,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             175 => 
             array (
@@ -4065,7 +4065,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             176 => 
             array (
@@ -4088,7 +4088,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             177 => 
             array (
@@ -4111,7 +4111,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             178 => 
             array (
@@ -4134,7 +4134,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             179 => 
             array (
@@ -4157,7 +4157,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             180 => 
             array (
@@ -4180,7 +4180,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             181 => 
             array (
@@ -4203,7 +4203,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             182 => 
             array (
@@ -4226,7 +4226,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             183 => 
             array (
@@ -4249,7 +4249,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             184 => 
             array (
@@ -4272,7 +4272,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             185 => 
             array (
@@ -4295,7 +4295,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             186 => 
             array (
@@ -4318,7 +4318,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             187 => 
             array (
@@ -4341,7 +4341,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             188 => 
             array (
@@ -4364,7 +4364,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             189 => 
             array (
@@ -4387,7 +4387,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             190 => 
             array (
@@ -4410,7 +4410,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             191 => 
             array (
@@ -4433,7 +4433,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             192 => 
             array (
@@ -4456,7 +4456,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             193 => 
             array (
@@ -4479,7 +4479,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             194 => 
             array (
@@ -4502,7 +4502,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             195 => 
             array (
@@ -4525,7 +4525,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             196 => 
             array (
@@ -4548,7 +4548,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             197 => 
             array (
@@ -4571,7 +4571,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             198 => 
             array (
@@ -4594,7 +4594,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             199 => 
             array (
@@ -4617,7 +4617,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             200 => 
             array (
@@ -4640,7 +4640,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             201 => 
             array (
@@ -4663,7 +4663,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             202 => 
             array (
@@ -4686,7 +4686,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             203 => 
             array (
@@ -4709,7 +4709,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             204 => 
             array (
@@ -4732,7 +4732,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             205 => 
             array (
@@ -4755,7 +4755,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             206 => 
             array (
@@ -4778,7 +4778,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             207 => 
             array (
@@ -4801,7 +4801,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             208 => 
             array (
@@ -4824,7 +4824,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             209 => 
             array (
@@ -4847,7 +4847,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             210 => 
             array (
@@ -4870,7 +4870,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             211 => 
             array (
@@ -4893,7 +4893,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             212 => 
             array (
@@ -4916,7 +4916,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             213 => 
             array (
@@ -4939,7 +4939,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             214 => 
             array (
@@ -4962,7 +4962,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             215 => 
             array (
@@ -4985,7 +4985,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             216 => 
             array (
@@ -5008,7 +5008,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             217 => 
             array (
@@ -5031,7 +5031,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             218 => 
             array (
@@ -5054,7 +5054,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             219 => 
             array (
@@ -5077,7 +5077,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             220 => 
             array (
@@ -5100,7 +5100,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             221 => 
             array (
@@ -5123,7 +5123,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             222 => 
             array (
@@ -5146,7 +5146,7 @@ class CategoriesTableSeeder extends Seeder
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             223 => 
             array (
@@ -5171,7 +5171,7 @@ flowers, or a combination of all three',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             224 => 
             array (
@@ -5194,7 +5194,7 @@ flowers, or a combination of all three',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             225 => 
             array (
@@ -5217,7 +5217,7 @@ flowers, or a combination of all three',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             226 => 
             array (
@@ -5240,7 +5240,7 @@ flowers, or a combination of all three',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             227 => 
             array (
@@ -5264,7 +5264,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             228 => 
             array (
@@ -5287,7 +5287,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             229 => 
             array (
@@ -5310,7 +5310,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             230 => 
             array (
@@ -5333,7 +5333,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             231 => 
             array (
@@ -5356,7 +5356,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             232 => 
             array (
@@ -5379,7 +5379,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             233 => 
             array (
@@ -5402,7 +5402,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             234 => 
             array (
@@ -5425,7 +5425,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             235 => 
             array (
@@ -5448,7 +5448,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             236 => 
             array (
@@ -5471,7 +5471,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             237 => 
             array (
@@ -5494,7 +5494,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             238 => 
             array (
@@ -5517,7 +5517,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             239 => 
             array (
@@ -5540,7 +5540,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             240 => 
             array (
@@ -5563,7 +5563,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             241 => 
             array (
@@ -5586,7 +5586,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             242 => 
             array (
@@ -5609,7 +5609,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             243 => 
             array (
@@ -5632,7 +5632,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             244 => 
             array (
@@ -5655,7 +5655,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             245 => 
             array (
@@ -5678,7 +5678,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             246 => 
             array (
@@ -5701,7 +5701,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             247 => 
             array (
@@ -5724,7 +5724,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             248 => 
             array (
@@ -5747,7 +5747,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             249 => 
             array (
@@ -5770,7 +5770,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             250 => 
             array (
@@ -5793,7 +5793,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             251 => 
             array (
@@ -5816,7 +5816,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             252 => 
             array (
@@ -5839,7 +5839,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             253 => 
             array (
@@ -5862,7 +5862,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             254 => 
             array (
@@ -5885,7 +5885,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             255 => 
             array (
@@ -5908,7 +5908,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             256 => 
             array (
@@ -5931,7 +5931,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             257 => 
             array (
@@ -5954,7 +5954,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             258 => 
             array (
@@ -5977,7 +5977,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             259 => 
             array (
@@ -6000,7 +6000,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             260 => 
             array (
@@ -6023,7 +6023,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             261 => 
             array (
@@ -6046,7 +6046,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             262 => 
             array (
@@ -6069,7 +6069,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             263 => 
             array (
@@ -6092,7 +6092,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             264 => 
             array (
@@ -6115,7 +6115,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             265 => 
             array (
@@ -6138,7 +6138,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             266 => 
             array (
@@ -6161,7 +6161,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             267 => 
             array (
@@ -6184,7 +6184,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             268 => 
             array (
@@ -6207,7 +6207,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             269 => 
             array (
@@ -6230,7 +6230,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             270 => 
             array (
@@ -6253,7 +6253,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             271 => 
             array (
@@ -6276,7 +6276,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             272 => 
             array (
@@ -6299,7 +6299,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             273 => 
             array (
@@ -6322,7 +6322,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             274 => 
             array (
@@ -6345,7 +6345,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             275 => 
             array (
@@ -6369,7 +6369,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             276 => 
             array (
@@ -6392,7 +6392,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             277 => 
             array (
@@ -6415,7 +6415,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             278 => 
             array (
@@ -6438,7 +6438,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             279 => 
             array (
@@ -6461,7 +6461,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             280 => 
             array (
@@ -6484,7 +6484,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             281 => 
             array (
@@ -6507,7 +6507,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             282 => 
             array (
@@ -6530,7 +6530,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             283 => 
             array (
@@ -6553,7 +6553,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             284 => 
             array (
@@ -6576,7 +6576,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             285 => 
             array (
@@ -6599,7 +6599,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             286 => 
             array (
@@ -6622,7 +6622,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             287 => 
             array (
@@ -6645,7 +6645,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             288 => 
             array (
@@ -6668,7 +6668,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             289 => 
             array (
@@ -6691,7 +6691,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             290 => 
             array (
@@ -6714,7 +6714,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             291 => 
             array (
@@ -6737,7 +6737,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             292 => 
             array (
@@ -6760,7 +6760,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             293 => 
             array (
@@ -6783,7 +6783,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             294 => 
             array (
@@ -6806,7 +6806,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             295 => 
             array (
@@ -6829,7 +6829,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             296 => 
             array (
@@ -6852,7 +6852,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             297 => 
             array (
@@ -6875,7 +6875,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             298 => 
             array (
@@ -6898,7 +6898,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             299 => 
             array (
@@ -6921,7 +6921,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             300 => 
             array (
@@ -6944,7 +6944,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             301 => 
             array (
@@ -6967,7 +6967,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             302 => 
             array (
@@ -6990,7 +6990,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             303 => 
             array (
@@ -7013,7 +7013,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             304 => 
             array (
@@ -7036,7 +7036,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             305 => 
             array (
@@ -7059,7 +7059,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             306 => 
             array (
@@ -7082,7 +7082,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             307 => 
             array (
@@ -7105,7 +7105,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             308 => 
             array (
@@ -7128,7 +7128,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             309 => 
             array (
@@ -7151,7 +7151,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             310 => 
             array (
@@ -7174,7 +7174,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             311 => 
             array (
@@ -7197,7 +7197,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             312 => 
             array (
@@ -7220,7 +7220,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             313 => 
             array (
@@ -7243,7 +7243,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             314 => 
             array (
@@ -7266,7 +7266,7 @@ leaves.',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             315 => 
             array (
@@ -7290,7 +7290,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             316 => 
             array (
@@ -7313,7 +7313,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             317 => 
             array (
@@ -7336,7 +7336,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             318 => 
             array (
@@ -7359,7 +7359,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             319 => 
             array (
@@ -7383,7 +7383,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             320 => 
             array (
@@ -7406,7 +7406,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             321 => 
             array (
@@ -7430,7 +7430,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             322 => 
             array (
@@ -7453,7 +7453,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             323 => 
             array (
@@ -7476,7 +7476,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             324 => 
             array (
@@ -7499,7 +7499,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             325 => 
             array (
@@ -7522,7 +7522,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             326 => 
             array (
@@ -7545,7 +7545,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             327 => 
             array (
@@ -7568,7 +7568,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             328 => 
             array (
@@ -7591,7 +7591,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             329 => 
             array (
@@ -7614,7 +7614,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             330 => 
             array (
@@ -7637,7 +7637,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             331 => 
             array (
@@ -7660,7 +7660,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             332 => 
             array (
@@ -7683,7 +7683,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             333 => 
             array (
@@ -7706,7 +7706,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             334 => 
             array (
@@ -7729,7 +7729,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             335 => 
             array (
@@ -7752,7 +7752,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             336 => 
             array (
@@ -7775,7 +7775,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             337 => 
             array (
@@ -7798,7 +7798,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             338 => 
             array (
@@ -7821,7 +7821,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             339 => 
             array (
@@ -7844,7 +7844,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             340 => 
             array (
@@ -7867,7 +7867,7 @@ cookies)',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             341 => 
             array (
@@ -7891,7 +7891,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             342 => 
             array (
@@ -7914,7 +7914,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             343 => 
             array (
@@ -7937,7 +7937,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             344 => 
             array (
@@ -7960,7 +7960,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             345 => 
             array (
@@ -7983,7 +7983,7 @@ Children 7-10 years',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 346 => 
                 array (
@@ -8006,7 +8006,7 @@ Children 7-10 years',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     347 => 
                     array (
@@ -8029,7 +8029,7 @@ Children 7-10 years',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         348 => 
                         array (
@@ -8052,7 +8052,7 @@ Children 7-10 years',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         349 => 
                         array (
@@ -8076,7 +8076,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         350 => 
                         array (
@@ -8099,7 +8099,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         351 => 
                         array (
@@ -8122,7 +8122,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         352 => 
                         array (
@@ -8145,7 +8145,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         353 => 
                         array (
@@ -8168,7 +8168,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         354 => 
                         array (
@@ -8191,7 +8191,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         355 => 
                         array (
@@ -8214,7 +8214,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         356 => 
                         array (
@@ -8237,7 +8237,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         357 => 
                         array (
@@ -8260,7 +8260,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         358 => 
                         array (
@@ -8283,7 +8283,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         359 => 
                         array (
@@ -8306,7 +8306,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         360 => 
                         array (
@@ -8329,7 +8329,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         361 => 
                         array (
@@ -8352,7 +8352,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         362 => 
                         array (
@@ -8375,7 +8375,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         363 => 
                         array (
@@ -8398,7 +8398,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         364 => 
                         array (
@@ -8421,7 +8421,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         365 => 
                         array (
@@ -8444,7 +8444,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 1,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         366 => 
                         array (
@@ -8467,7 +8467,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 1,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         367 => 
                         array (
@@ -8490,7 +8490,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 1,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         368 => 
                         array (
@@ -8513,7 +8513,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 1,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         369 => 
                         array (
@@ -8536,7 +8536,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 1,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         370 => 
                         array (
@@ -8559,7 +8559,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 1,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         371 => 
                         array (
@@ -8582,7 +8582,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 1,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         372 => 
                         array (
@@ -8605,7 +8605,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 1,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         373 => 
                         array (
@@ -8628,7 +8628,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         374 => 
                         array (
@@ -8651,7 +8651,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         375 => 
                         array (
@@ -8674,7 +8674,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         376 => 
                         array (
@@ -8697,7 +8697,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         377 => 
                         array (
@@ -8720,7 +8720,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         378 => 
                         array (
@@ -8743,7 +8743,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         379 => 
                         array (
@@ -8766,7 +8766,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         380 => 
                         array (
@@ -8789,7 +8789,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         381 => 
                         array (
@@ -8812,7 +8812,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         382 => 
                         array (
@@ -8835,7 +8835,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         383 => 
                         array (
@@ -8858,7 +8858,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         384 => 
                         array (
@@ -8881,7 +8881,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         385 => 
                         array (
@@ -8904,7 +8904,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         386 => 
                         array (
@@ -8927,7 +8927,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         387 => 
                         array (
@@ -8950,7 +8950,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         388 => 
                         array (
@@ -8973,7 +8973,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         389 => 
                         array (
@@ -8996,7 +8996,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         390 => 
                         array (
@@ -9019,7 +9019,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         391 => 
                         array (
@@ -9042,7 +9042,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         392 => 
                         array (
@@ -9065,7 +9065,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         393 => 
                         array (
@@ -9088,7 +9088,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         394 => 
                         array (
@@ -9111,7 +9111,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         395 => 
                         array (
@@ -9134,7 +9134,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         396 => 
                         array (
@@ -9157,7 +9157,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         397 => 
                         array (
@@ -9180,7 +9180,7 @@ vegetables or flowers, or a combination of all three',
                             'minimum_age' => NULL,
                             'maximum_age' => NULL,
                             'private' => 0,
-                            'notes' => NULL,
+                            'notes' => '',
                         ),
                         398 => 
                         array (
@@ -9203,7 +9203,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     399 => 
                     array (
@@ -9226,7 +9226,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     400 => 
                     array (
@@ -9249,7 +9249,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     401 => 
                     array (
@@ -9272,7 +9272,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     402 => 
                     array (
@@ -9295,7 +9295,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     403 => 
                     array (
@@ -9318,7 +9318,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     404 => 
                     array (
@@ -9341,7 +9341,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     405 => 
                     array (
@@ -9364,7 +9364,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     406 => 
                     array (
@@ -9387,7 +9387,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => 'No more than 15 cm in diameter',
                     ),
                     407 => 
                     array (
@@ -9410,7 +9410,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => 'No more than 15 cm in diameter',
                     ),
                     408 => 
                     array (
@@ -9433,7 +9433,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => 'no more than 15 cm in diameter',
                     ),
                     409 => 
                     array (
@@ -9456,7 +9456,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     410 => 
                     array (
@@ -9479,7 +9479,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     411 => 
                     array (
@@ -9502,7 +9502,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     412 => 
                     array (
@@ -9525,7 +9525,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     413 => 
                     array (
@@ -9548,7 +9548,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     414 => 
                     array (
@@ -9571,7 +9571,7 @@ vegetables or flowers, or a combination of all three',
                         'minimum_age' => NULL,
                         'maximum_age' => NULL,
                         'private' => 0,
-                        'notes' => NULL,
+                        'notes' => '',
                     ),
                     415 => 
                     array (
@@ -9594,7 +9594,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 416 => 
                 array (
@@ -9617,7 +9617,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 417 => 
                 array (
@@ -9640,7 +9640,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 418 => 
                 array (
@@ -9663,7 +9663,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 419 => 
                 array (
@@ -9686,7 +9686,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => 16,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 420 => 
                 array (
@@ -9709,7 +9709,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 421 => 
                 array (
@@ -9732,7 +9732,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 422 => 
                 array (
@@ -9755,7 +9755,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 423 => 
                 array (
@@ -9778,7 +9778,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 424 => 
                 array (
@@ -9801,7 +9801,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 425 => 
                 array (
@@ -9824,7 +9824,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 426 => 
                 array (
@@ -9847,7 +9847,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 427 => 
                 array (
@@ -9870,7 +9870,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 428 => 
                 array (
@@ -9893,7 +9893,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 429 => 
                 array (
@@ -9916,7 +9916,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 430 => 
                 array (
@@ -9939,7 +9939,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 431 => 
                 array (
@@ -9962,7 +9962,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 432 => 
                 array (
@@ -9985,7 +9985,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'Max height 80 cm',
                 ),
                 433 => 
                 array (
@@ -10008,7 +10008,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 434 => 
                 array (
@@ -10031,7 +10031,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 435 => 
                 array (
@@ -10054,7 +10054,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 436 => 
                 array (
@@ -10077,7 +10077,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 437 => 
                 array (
@@ -10100,7 +10100,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 438 => 
                 array (
@@ -10123,7 +10123,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                'notes' => 'Not exceeding 38cm (15”) diameter',
                 ),
                 439 => 
                 array (
@@ -10146,7 +10146,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                'notes' => 'Pot not to exceed 30cm (12”) diameter',
                 ),
                 440 => 
                 array (
@@ -10169,7 +10169,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                'notes' => 'Pots not to exceed 15cm (6”) in diameter. Note regulation 2',
                 ),
                 441 => 
                 array (
@@ -10192,7 +10192,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                'notes' => 'Not to exceed 15cm (6”) in diameter',
                 ),
                 442 => 
                 array (
@@ -10215,7 +10215,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'sponsored by Petersham Nursery',
                 ),
                 443 => 
                 array (
@@ -10238,7 +10238,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 444 => 
                 array (
@@ -10261,7 +10261,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 445 => 
                 array (
@@ -10284,7 +10284,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 446 => 
                 array (
@@ -10307,7 +10307,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 447 => 
                 array (
@@ -10330,7 +10330,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 448 => 
                 array (
@@ -10353,7 +10353,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 449 => 
                 array (
@@ -10376,7 +10376,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 450 => 
                 array (
@@ -10399,7 +10399,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 451 => 
                 array (
@@ -10422,7 +10422,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 452 => 
                 array (
@@ -10445,7 +10445,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 453 => 
                 array (
@@ -10468,7 +10468,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 454 => 
                 array (
@@ -10491,7 +10491,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 455 => 
                 array (
@@ -10514,7 +10514,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'As grown, no weight limit',
                 ),
                 456 => 
                 array (
@@ -10537,7 +10537,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 457 => 
                 array (
@@ -10560,7 +10560,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 458 => 
                 array (
@@ -10583,7 +10583,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 459 => 
                 array (
@@ -10606,7 +10606,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'Must be able to go through a 30mm ring',
                 ),
                 460 => 
                 array (
@@ -10629,7 +10629,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'no size limit',
                 ),
                 461 => 
                 array (
@@ -10652,7 +10652,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'Any length/ diameter',
                 ),
                 462 => 
                 array (
@@ -10675,7 +10675,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 463 => 
                 array (
@@ -10698,7 +10698,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 464 => 
                 array (
@@ -10721,7 +10721,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 465 => 
                 array (
@@ -10744,7 +10744,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 466 => 
                 array (
@@ -10767,7 +10767,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 467 => 
                 array (
@@ -10790,7 +10790,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 468 => 
                 array (
@@ -10813,7 +10813,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 469 => 
                 array (
@@ -10836,7 +10836,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 470 => 
                 array (
@@ -10859,7 +10859,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'Mustard and cress count as one kind',
                 ),
                 471 => 
                 array (
@@ -10882,7 +10882,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 472 => 
                 array (
@@ -10905,7 +10905,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'Sponsored by Petersham Nursery',
                 ),
                 473 => 
                 array (
@@ -10928,7 +10928,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 474 => 
                 array (
@@ -10951,7 +10951,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 475 => 
                 array (
@@ -10974,7 +10974,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 476 => 
                 array (
@@ -10997,7 +10997,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 477 => 
                 array (
@@ -11020,7 +11020,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 478 => 
                 array (
@@ -11043,7 +11043,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 479 => 
                 array (
@@ -11066,7 +11066,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 480 => 
                 array (
@@ -11089,7 +11089,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 481 => 
                 array (
@@ -11112,7 +11112,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 482 => 
                 array (
@@ -11135,7 +11135,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 483 => 
                 array (
@@ -11158,7 +11158,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'Handmade, not with a bread machine, can be any type of bread',
                 ),
                 484 => 
                 array (
@@ -11181,7 +11181,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 485 => 
                 array (
@@ -11204,7 +11204,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 486 => 
                 array (
@@ -11227,7 +11227,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 487 => 
                 array (
@@ -11250,7 +11250,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 488 => 
                 array (
@@ -11273,7 +11273,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 489 => 
                 array (
@@ -11296,7 +11296,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 490 => 
                 array (
@@ -11319,7 +11319,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 491 => 
                 array (
@@ -11342,7 +11342,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 492 => 
                 array (
@@ -11365,7 +11365,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => 'e.g. embroidery, tapestry',
                 ),
                 493 => 
                 array (
@@ -11388,7 +11388,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 494 => 
                 array (
@@ -11411,7 +11411,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 495 => 
                 array (
@@ -11434,7 +11434,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 496 => 
                 array (
@@ -11457,7 +11457,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 497 => 
                 array (
@@ -11480,7 +11480,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 498 => 
                 array (
@@ -11503,7 +11503,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
                 499 => 
                 array (
@@ -11526,7 +11526,7 @@ vegetables or flowers, or a combination of all three',
                     'minimum_age' => NULL,
                     'maximum_age' => NULL,
                     'private' => 0,
-                    'notes' => NULL,
+                    'notes' => '',
                 ),
             ));
         \DB::table('categories')->insert(array (
@@ -11551,7 +11551,7 @@ vegetables or flowers, or a combination of all three',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             1 => 
             array (
@@ -11574,7 +11574,7 @@ vegetables or flowers, or a combination of all three',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'e.g. a handmade card; collage',
             ),
             2 => 
             array (
@@ -11597,7 +11597,7 @@ vegetables or flowers, or a combination of all three',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20x30cm',
             ),
             3 => 
             array (
@@ -11620,7 +11620,7 @@ vegetables or flowers, or a combination of all three',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20x30cm',
             ),
             4 => 
             array (
@@ -11643,7 +11643,7 @@ vegetables or flowers, or a combination of all three',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             5 => 
             array (
@@ -11667,7 +11667,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             6 => 
             array (
@@ -11690,7 +11690,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             7 => 
             array (
@@ -11713,7 +11713,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             8 => 
             array (
@@ -11736,7 +11736,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             9 => 
             array (
@@ -11759,7 +11759,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             10 => 
             array (
@@ -11782,7 +11782,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             11 => 
             array (
@@ -11805,7 +11805,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             12 => 
             array (
@@ -11828,7 +11828,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             13 => 
             array (
@@ -11851,7 +11851,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             14 => 
             array (
@@ -11874,7 +11874,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             15 => 
             array (
@@ -11897,7 +11897,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 12,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             16 => 
             array (
@@ -11920,7 +11920,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             17 => 
             array (
@@ -11943,7 +11943,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Up to 18cm diameter',
             ),
             18 => 
             array (
@@ -11966,7 +11966,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             19 => 
             array (
@@ -11989,7 +11989,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             20 => 
             array (
@@ -12012,7 +12012,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             21 => 
             array (
@@ -12058,7 +12058,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             23 => 
             array (
@@ -12081,7 +12081,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             24 => 
             array (
@@ -12104,7 +12104,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             25 => 
             array (
@@ -12127,7 +12127,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             26 => 
             array (
@@ -12150,7 +12150,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'May include Lego',
             ),
             27 => 
             array (
@@ -12173,7 +12173,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             28 => 
             array (
@@ -12196,7 +12196,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 12,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             29 => 
             array (
@@ -12219,7 +12219,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             30 => 
             array (
@@ -12242,7 +12242,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             31 => 
             array (
@@ -12265,7 +12265,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             32 => 
             array (
@@ -12288,7 +12288,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             33 => 
             array (
@@ -12311,7 +12311,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             34 => 
             array (
@@ -12334,7 +12334,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 17,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             35 => 
             array (
@@ -12357,7 +12357,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 17,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             36 => 
             array (
@@ -12380,7 +12380,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             37 => 
             array (
@@ -12403,7 +12403,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             38 => 
             array (
@@ -12426,7 +12426,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             39 => 
             array (
@@ -12449,7 +12449,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             40 => 
             array (
@@ -12472,7 +12472,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             41 => 
             array (
@@ -12495,7 +12495,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             42 => 
             array (
@@ -12518,7 +12518,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             43 => 
             array (
@@ -12541,7 +12541,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             44 => 
             array (
@@ -12564,7 +12564,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not lego',
             ),
             45 => 
             array (
@@ -12587,7 +12587,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not Lego',
             ),
             46 => 
             array (
@@ -12610,7 +12610,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             47 => 
             array (
@@ -12633,7 +12633,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 12,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             48 => 
             array (
@@ -12656,7 +12656,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             49 => 
             array (
@@ -12679,7 +12679,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '-',
             ),
             50 => 
             array (
@@ -12702,7 +12702,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             51 => 
             array (
@@ -12725,7 +12725,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             52 => 
             array (
@@ -12748,7 +12748,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             53 => 
             array (
@@ -12771,7 +12771,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             54 => 
             array (
@@ -12794,7 +12794,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             55 => 
             array (
@@ -12817,7 +12817,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             56 => 
             array (
@@ -12840,7 +12840,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             57 => 
             array (
@@ -12863,7 +12863,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             58 => 
             array (
@@ -12886,7 +12886,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             59 => 
             array (
@@ -12909,7 +12909,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             60 => 
             array (
@@ -12932,7 +12932,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             61 => 
             array (
@@ -12955,7 +12955,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             62 => 
             array (
@@ -12978,7 +12978,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Max height 80 cm',
             ),
             63 => 
             array (
@@ -13001,7 +13001,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             64 => 
             array (
@@ -13024,7 +13024,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             65 => 
             array (
@@ -13047,7 +13047,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             66 => 
             array (
@@ -13070,7 +13070,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             67 => 
             array (
@@ -13093,7 +13093,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             68 => 
             array (
@@ -13116,7 +13116,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Not exceeding 38cm (15”) diameter',
             ),
             69 => 
             array (
@@ -13139,7 +13139,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Pot not to exceed 30cm (12”) diameter',
             ),
             70 => 
             array (
@@ -13162,7 +13162,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Pots not to exceed 15cm (6”) in diameter. Note regulation 2',
             ),
             71 => 
             array (
@@ -13185,7 +13185,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Not to exceed 15cm (6”) in diameter',
             ),
             72 => 
             array (
@@ -13208,7 +13208,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'sponsored by Petersham Nursery',
             ),
             73 => 
             array (
@@ -13231,7 +13231,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             74 => 
             array (
@@ -13254,7 +13254,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             75 => 
             array (
@@ -13277,7 +13277,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             76 => 
             array (
@@ -13300,7 +13300,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             77 => 
             array (
@@ -13323,7 +13323,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             78 => 
             array (
@@ -13346,7 +13346,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             79 => 
             array (
@@ -13369,7 +13369,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             80 => 
             array (
@@ -13392,7 +13392,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             81 => 
             array (
@@ -13415,7 +13415,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             82 => 
             array (
@@ -13438,7 +13438,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             83 => 
             array (
@@ -13461,7 +13461,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             84 => 
             array (
@@ -13484,7 +13484,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             85 => 
             array (
@@ -13507,7 +13507,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'As grown, no weight limit',
             ),
             86 => 
             array (
@@ -13530,7 +13530,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             87 => 
             array (
@@ -13553,7 +13553,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             88 => 
             array (
@@ -13576,7 +13576,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             89 => 
             array (
@@ -13599,7 +13599,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Must be able to go through a 30mm ring',
             ),
             90 => 
             array (
@@ -13622,7 +13622,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no size limit',
             ),
             91 => 
             array (
@@ -13645,7 +13645,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Any length/ diameter',
             ),
             92 => 
             array (
@@ -13668,7 +13668,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'other than Cos',
             ),
             93 => 
             array (
@@ -13691,7 +13691,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             94 => 
             array (
@@ -13714,7 +13714,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => '(see “Hints to Exhibitors”)',
             ),
             95 => 
             array (
@@ -13737,7 +13737,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             96 => 
             array (
@@ -13760,7 +13760,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             97 => 
             array (
@@ -13783,7 +13783,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             98 => 
             array (
@@ -13806,7 +13806,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             99 => 
             array (
@@ -13829,7 +13829,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             100 => 
             array (
@@ -13852,7 +13852,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Mustard and cress count as one kind',
             ),
             101 => 
             array (
@@ -13875,7 +13875,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             102 => 
             array (
@@ -13898,7 +13898,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Sponsored by Petersham Nursery',
             ),
             103 => 
             array (
@@ -13921,7 +13921,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             104 => 
             array (
@@ -13944,7 +13944,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'may include non-floral decorative items',
             ),
             105 => 
             array (
@@ -13967,7 +13967,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             106 => 
             array (
@@ -13990,7 +13990,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             107 => 
             array (
@@ -14013,7 +14013,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'decoration only to be judged',
             ),
             108 => 
             array (
@@ -14036,7 +14036,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'pastry top and bottom',
             ),
             109 => 
             array (
@@ -14059,7 +14059,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             110 => 
             array (
@@ -14082,7 +14082,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             111 => 
             array (
@@ -14105,7 +14105,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'https://www.royal.uk/the-coronation-quiche',
             ),
             112 => 
             array (
@@ -14128,7 +14128,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             113 => 
             array (
@@ -14151,7 +14151,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Handmade, not with a bread machine, can be any type',
             ),
             114 => 
             array (
@@ -14174,7 +14174,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             115 => 
             array (
@@ -14197,7 +14197,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Men-only',
             ),
             116 => 
             array (
@@ -14220,7 +14220,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'state when made',
             ),
             117 => 
             array (
@@ -14243,7 +14243,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'State when made',
             ),
             118 => 
             array (
@@ -14266,7 +14266,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             119 => 
             array (
@@ -14289,7 +14289,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             120 => 
             array (
@@ -14312,7 +14312,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             121 => 
             array (
@@ -14335,7 +14335,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             122 => 
             array (
@@ -14358,7 +14358,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             123 => 
             array (
@@ -14381,7 +14381,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             124 => 
             array (
@@ -14404,7 +14404,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'e.g. embroidery, tapestry',
             ),
             125 => 
             array (
@@ -14427,7 +14427,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             126 => 
             array (
@@ -14450,7 +14450,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             127 => 
             array (
@@ -14473,7 +14473,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             128 => 
             array (
@@ -14496,7 +14496,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             129 => 
             array (
@@ -14519,7 +14519,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             130 => 
             array (
@@ -14542,7 +14542,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             131 => 
             array (
@@ -14565,7 +14565,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             132 => 
             array (
@@ -14588,7 +14588,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'e.g. a handmade card; collage',
             ),
             133 => 
             array (
@@ -14611,7 +14611,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             134 => 
             array (
@@ -14634,7 +14634,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20 x 30 cm, containing natural materials',
             ),
             135 => 
             array (
@@ -14657,7 +14657,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20 x 30 cm, containing natural materials',
             ),
             136 => 
             array (
@@ -14680,7 +14680,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             137 => 
             array (
@@ -14703,7 +14703,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             138 => 
             array (
@@ -14726,7 +14726,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             139 => 
             array (
@@ -14749,7 +14749,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             140 => 
             array (
@@ -14772,7 +14772,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             141 => 
             array (
@@ -14795,7 +14795,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             142 => 
             array (
@@ -14818,7 +14818,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             143 => 
             array (
@@ -14841,7 +14841,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             144 => 
             array (
@@ -14864,7 +14864,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             145 => 
             array (
@@ -14887,7 +14887,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             146 => 
             array (
@@ -14910,7 +14910,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             147 => 
             array (
@@ -14933,7 +14933,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             148 => 
             array (
@@ -14956,7 +14956,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 12,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             149 => 
             array (
@@ -14979,7 +14979,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             150 => 
             array (
@@ -15002,7 +15002,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Up to 18cm diameter',
             ),
             151 => 
             array (
@@ -15025,7 +15025,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             152 => 
             array (
@@ -15048,7 +15048,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             153 => 
             array (
@@ -15071,7 +15071,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             154 => 
             array (
@@ -15094,7 +15094,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not Lego',
             ),
             155 => 
             array (
@@ -15117,7 +15117,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not lego',
             ),
             156 => 
             array (
@@ -15140,7 +15140,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not Lego',
             ),
             157 => 
             array (
@@ -15163,7 +15163,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not Lego',
             ),
             158 => 
             array (
@@ -15278,7 +15278,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             163 => 
             array (
@@ -15301,7 +15301,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'May include Lego',
             ),
             164 => 
             array (
@@ -15324,7 +15324,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             165 => 
             array (
@@ -15439,7 +15439,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             170 => 
             array (
@@ -15462,7 +15462,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             171 => 
             array (
@@ -15485,7 +15485,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             172 => 
             array (
@@ -15508,7 +15508,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             173 => 
             array (
@@ -15531,7 +15531,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 17,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             174 => 
             array (
@@ -15554,7 +15554,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 17,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             175 => 
             array (
@@ -15577,7 +15577,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             176 => 
             array (
@@ -15600,7 +15600,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             177 => 
             array (
@@ -15623,7 +15623,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             178 => 
             array (
@@ -15646,7 +15646,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             179 => 
             array (
@@ -15669,7 +15669,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             180 => 
             array (
@@ -15692,7 +15692,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             181 => 
             array (
@@ -15715,7 +15715,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             182 => 
             array (
@@ -15738,7 +15738,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             183 => 
             array (
@@ -15761,7 +15761,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             184 => 
             array (
@@ -15784,7 +15784,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             185 => 
             array (
@@ -15807,7 +15807,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             186 => 
             array (
@@ -15830,7 +15830,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             187 => 
             array (
@@ -15853,7 +15853,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             188 => 
             array (
@@ -15876,7 +15876,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             189 => 
             array (
@@ -15899,7 +15899,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             190 => 
             array (
@@ -15922,7 +15922,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Max height 80 cm',
             ),
             191 => 
             array (
@@ -15945,7 +15945,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             192 => 
             array (
@@ -15968,7 +15968,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             193 => 
             array (
@@ -15991,7 +15991,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             194 => 
             array (
@@ -16014,7 +16014,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             195 => 
             array (
@@ -16037,7 +16037,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             196 => 
             array (
@@ -16060,7 +16060,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Not exceeding 38cm (15”) diameter',
             ),
             197 => 
             array (
@@ -16083,7 +16083,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Pot not to exceed 30cm (12”) diameter',
             ),
             198 => 
             array (
@@ -16106,7 +16106,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Pots not to exceed 15cm (6”) in diameter. Note regulation 2',
             ),
             199 => 
             array (
@@ -16129,7 +16129,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Not to exceed 15cm (6”) in diameter',
             ),
             200 => 
             array (
@@ -16152,7 +16152,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'sponsored by Petersham Nursery',
             ),
             201 => 
             array (
@@ -16175,7 +16175,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             202 => 
             array (
@@ -16198,7 +16198,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             203 => 
             array (
@@ -16221,7 +16221,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             204 => 
             array (
@@ -16244,7 +16244,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             205 => 
             array (
@@ -16267,7 +16267,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             206 => 
             array (
@@ -16290,7 +16290,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             207 => 
             array (
@@ -16313,7 +16313,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             208 => 
             array (
@@ -16336,7 +16336,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             209 => 
             array (
@@ -16359,7 +16359,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             210 => 
             array (
@@ -16382,7 +16382,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             211 => 
             array (
@@ -16405,7 +16405,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             212 => 
             array (
@@ -16428,7 +16428,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             213 => 
             array (
@@ -16451,7 +16451,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'As grown, no weight limit',
             ),
             214 => 
             array (
@@ -16474,7 +16474,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             215 => 
             array (
@@ -16497,7 +16497,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             216 => 
             array (
@@ -16520,7 +16520,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             217 => 
             array (
@@ -16543,7 +16543,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Must be able to go through a 30mm ring',
             ),
             218 => 
             array (
@@ -16566,7 +16566,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no size limit',
             ),
             219 => 
             array (
@@ -16589,7 +16589,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             220 => 
             array (
@@ -16612,7 +16612,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Any length/ diameter',
             ),
             221 => 
             array (
@@ -16635,7 +16635,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'other than Cos',
             ),
             222 => 
             array (
@@ -16658,7 +16658,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             223 => 
             array (
@@ -16681,7 +16681,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             224 => 
             array (
@@ -16704,7 +16704,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             225 => 
             array (
@@ -16727,7 +16727,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             226 => 
             array (
@@ -16750,7 +16750,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             227 => 
             array (
@@ -16773,7 +16773,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             228 => 
             array (
@@ -16796,7 +16796,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Mustard and cress count as one kind',
             ),
             229 => 
             array (
@@ -16819,7 +16819,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             230 => 
             array (
@@ -16842,7 +16842,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Sponsored by Petersham Nursery',
             ),
             231 => 
             array (
@@ -16865,7 +16865,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             232 => 
             array (
@@ -16888,7 +16888,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'may include non-floral decorative items',
             ),
             233 => 
             array (
@@ -16911,7 +16911,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             234 => 
             array (
@@ -16934,7 +16934,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             235 => 
             array (
@@ -16957,7 +16957,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             236 => 
             array (
@@ -16980,7 +16980,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             237 => 
             array (
@@ -17003,7 +17003,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             238 => 
             array (
@@ -17026,7 +17026,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             239 => 
             array (
@@ -17049,7 +17049,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             240 => 
             array (
@@ -17072,7 +17072,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             241 => 
             array (
@@ -17095,7 +17095,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Handmade, not with a bread machine, can be any type of bread',
             ),
             242 => 
             array (
@@ -17118,7 +17118,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             243 => 
             array (
@@ -17141,7 +17141,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             244 => 
             array (
@@ -17164,7 +17164,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             245 => 
             array (
@@ -17187,7 +17187,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             246 => 
             array (
@@ -17210,7 +17210,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             247 => 
             array (
@@ -17233,7 +17233,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             248 => 
             array (
@@ -17256,7 +17256,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             249 => 
             array (
@@ -17279,7 +17279,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             250 => 
             array (
@@ -17302,7 +17302,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             251 => 
             array (
@@ -17325,7 +17325,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             252 => 
             array (
@@ -17348,7 +17348,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'e.g. embroidery, tapestry',
             ),
             253 => 
             array (
@@ -17371,7 +17371,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             254 => 
             array (
@@ -17394,7 +17394,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             255 => 
             array (
@@ -17417,7 +17417,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             256 => 
             array (
@@ -17440,7 +17440,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             257 => 
             array (
@@ -17463,7 +17463,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             258 => 
             array (
@@ -17486,7 +17486,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             259 => 
             array (
@@ -17509,7 +17509,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             260 => 
             array (
@@ -17532,7 +17532,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             261 => 
             array (
@@ -17555,7 +17555,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'e.g. a handmade card; collage',
             ),
             262 => 
             array (
@@ -17578,7 +17578,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             263 => 
             array (
@@ -17601,7 +17601,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20x30cm',
             ),
             264 => 
             array (
@@ -17624,7 +17624,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20x30cm',
             ),
             265 => 
             array (
@@ -17647,7 +17647,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             266 => 
             array (
@@ -17671,7 +17671,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             267 => 
             array (
@@ -17694,7 +17694,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             268 => 
             array (
@@ -17717,7 +17717,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             269 => 
             array (
@@ -17740,7 +17740,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             270 => 
             array (
@@ -17763,7 +17763,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             271 => 
             array (
@@ -17786,7 +17786,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '-',
             ),
             272 => 
             array (
@@ -17809,7 +17809,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             273 => 
             array (
@@ -17832,7 +17832,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             274 => 
             array (
@@ -17855,7 +17855,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             275 => 
             array (
@@ -17878,7 +17878,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             276 => 
             array (
@@ -17901,7 +17901,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             277 => 
             array (
@@ -17924,7 +17924,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             278 => 
             array (
@@ -17947,7 +17947,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             279 => 
             array (
@@ -17970,7 +17970,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 12,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             280 => 
             array (
@@ -17993,7 +17993,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             281 => 
             array (
@@ -18016,7 +18016,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Up to 18cm diameter',
             ),
             282 => 
             array (
@@ -18039,7 +18039,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             283 => 
             array (
@@ -18062,7 +18062,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             284 => 
             array (
@@ -18085,7 +18085,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             285 => 
             array (
@@ -18131,7 +18131,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not lego',
             ),
             287 => 
             array (
@@ -18154,7 +18154,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             288 => 
             array (
@@ -18177,7 +18177,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not Lego',
             ),
             289 => 
             array (
@@ -18200,7 +18200,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             290 => 
             array (
@@ -18223,7 +18223,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             291 => 
             array (
@@ -18246,7 +18246,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 12,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             292 => 
             array (
@@ -18269,7 +18269,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             293 => 
             array (
@@ -18292,7 +18292,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             294 => 
             array (
@@ -18315,7 +18315,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'May include Lego',
             ),
             295 => 
             array (
@@ -18338,7 +18338,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             296 => 
             array (
@@ -18361,7 +18361,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             297 => 
             array (
@@ -18384,7 +18384,7 @@ Children 7-10 years',
                 'minimum_age' => 6,
                 'maximum_age' => 8,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             298 => 
             array (
@@ -18407,7 +18407,7 @@ Children 7-10 years',
                 'minimum_age' => 9,
                 'maximum_age' => 12,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             299 => 
             array (
@@ -18430,7 +18430,7 @@ Children 7-10 years',
                 'minimum_age' => 13,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             300 => 
             array (
@@ -18453,7 +18453,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             301 => 
             array (
@@ -18476,7 +18476,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             302 => 
             array (
@@ -18499,7 +18499,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             303 => 
             array (
@@ -18522,7 +18522,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             304 => 
             array (
@@ -18545,7 +18545,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 17,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             305 => 
             array (
@@ -18568,7 +18568,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 17,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             306 => 
             array (
@@ -18591,7 +18591,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             307 => 
             array (
@@ -18614,7 +18614,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 11,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             308 => 
             array (
@@ -18637,7 +18637,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 5,
                 'private' => 1,
-                'notes' => NULL,
+                'notes' => '',
             ),
             309 => 
             array (
@@ -18660,7 +18660,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'before and after photographs can be included',
             ),
             310 => 
             array (
@@ -18683,7 +18683,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20 x 30 cm, containing natural materials',
             ),
             311 => 
             array (
@@ -18706,7 +18706,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             312 => 
             array (
@@ -18729,7 +18729,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             313 => 
             array (
@@ -18752,7 +18752,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             314 => 
             array (
@@ -18775,7 +18775,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             315 => 
             array (
@@ -18798,7 +18798,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             316 => 
             array (
@@ -18821,7 +18821,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             317 => 
             array (
@@ -18844,7 +18844,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             318 => 
             array (
@@ -18867,7 +18867,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'not a rose',
             ),
             319 => 
             array (
@@ -18890,7 +18890,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'one variety',
             ),
             320 => 
             array (
@@ -18913,7 +18913,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             321 => 
             array (
@@ -18936,7 +18936,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             322 => 
             array (
@@ -18959,7 +18959,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             323 => 
             array (
@@ -18982,7 +18982,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Max height 80 cm',
             ),
             324 => 
             array (
@@ -19005,7 +19005,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'five stems',
             ),
             325 => 
             array (
@@ -19028,7 +19028,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             326 => 
             array (
@@ -19051,7 +19051,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             327 => 
             array (
@@ -19074,7 +19074,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             328 => 
             array (
@@ -19097,7 +19097,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             329 => 
             array (
@@ -19143,7 +19143,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Pot not to exceed 30cm (12”) diameter',
             ),
             331 => 
             array (
@@ -19166,7 +19166,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'Pots not to exceed 15cm (6”) in diameter. Note regulation 2',
             ),
             332 => 
             array (
@@ -19189,7 +19189,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => 'not exceeding 15 cm (6”) in diameter',
             ),
             333 => 
             array (
@@ -19212,7 +19212,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'sponsored by Petersham Nursery',
             ),
             334 => 
             array (
@@ -19235,7 +19235,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             335 => 
             array (
@@ -19258,7 +19258,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             336 => 
             array (
@@ -19281,7 +19281,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             337 => 
             array (
@@ -19304,7 +19304,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             338 => 
             array (
@@ -19327,7 +19327,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             339 => 
             array (
@@ -19350,7 +19350,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             340 => 
             array (
@@ -19373,7 +19373,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             341 => 
             array (
@@ -19396,7 +19396,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             342 => 
             array (
@@ -19419,7 +19419,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             343 => 
             array (
@@ -19442,7 +19442,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             344 => 
             array (
@@ -19465,7 +19465,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             345 => 
             array (
@@ -19488,7 +19488,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             346 => 
             array (
@@ -19511,7 +19511,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'As grown, no weight limit',
             ),
             347 => 
             array (
@@ -19534,7 +19534,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             348 => 
             array (
@@ -19557,7 +19557,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             349 => 
             array (
@@ -19580,7 +19580,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             350 => 
             array (
@@ -19603,7 +19603,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Must be able to go through a 30mm ring',
             ),
             351 => 
             array (
@@ -19626,7 +19626,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no size limit',
             ),
             352 => 
             array (
@@ -19649,7 +19649,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             353 => 
             array (
@@ -19672,7 +19672,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Any length/ diameter',
             ),
             354 => 
             array (
@@ -19695,7 +19695,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'other than Cos',
             ),
             355 => 
             array (
@@ -19718,7 +19718,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             356 => 
             array (
@@ -19741,7 +19741,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             357 => 
             array (
@@ -19764,7 +19764,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'all one colour with a plain white saucer',
             ),
             358 => 
             array (
@@ -19787,7 +19787,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             359 => 
             array (
@@ -19810,7 +19810,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             360 => 
             array (
@@ -19833,7 +19833,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+            'notes' => '(see “Hints to Exhibitors”)',
             ),
             361 => 
             array (
@@ -19856,7 +19856,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Mustard and cress count as one kind',
             ),
             362 => 
             array (
@@ -19879,7 +19879,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             363 => 
             array (
@@ -19902,7 +19902,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Sponsored by Petersham Nursery',
             ),
             364 => 
             array (
@@ -19925,7 +19925,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'not more than 15 cm in any direction, including the vase',
             ),
             365 => 
             array (
@@ -19948,7 +19948,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'may include non-floral decorative items',
             ),
             366 => 
             array (
@@ -19971,7 +19971,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             367 => 
             array (
@@ -19994,7 +19994,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             368 => 
             array (
@@ -20017,14 +20017,14 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'decoration only to be judged',
             ),
             369 => 
             array (
                 'id' => 1270,
                 'name' => 'An apple tarte tatin',
                 'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-24 20:43:28',
+                'updated_at' => '2024-06-19 18:20:30',
                 'number' => '60',
                 'price' => 75,
                 'late_price' => 75,
@@ -20040,7 +20040,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'pastry on the bottom',
             ),
             370 => 
             array (
@@ -20063,7 +20063,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             371 => 
             array (
@@ -20086,7 +20086,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             372 => 
             array (
@@ -20132,7 +20132,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             374 => 
             array (
@@ -20155,7 +20155,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Handmade, not with a bread machine, can be any type',
             ),
             375 => 
             array (
@@ -20178,7 +20178,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             376 => 
             array (
@@ -20201,7 +20201,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Men-only',
             ),
             377 => 
             array (
@@ -20224,7 +20224,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'state when made',
             ),
             378 => 
             array (
@@ -20247,7 +20247,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'State when made',
             ),
             379 => 
             array (
@@ -20270,7 +20270,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'state when made',
             ),
             380 => 
             array (
@@ -20293,7 +20293,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'state when made',
             ),
             381 => 
             array (
@@ -20316,7 +20316,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'state when made',
             ),
             382 => 
             array (
@@ -20339,7 +20339,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'state when made',
             ),
             383 => 
             array (
@@ -20362,7 +20362,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'state when made',
             ),
             384 => 
             array (
@@ -20385,7 +20385,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             385 => 
             array (
@@ -20408,14 +20408,14 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'e.g. embroidery, tapestry',
             ),
             386 => 
             array (
                 'id' => 1287,
                 'name' => 'A knitted article',
                 'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-24 20:44:25',
+                'updated_at' => '2024-04-24 20:44:31',
                 'number' => '80',
                 'price' => 75,
                 'late_price' => 75,
@@ -20431,7 +20431,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             387 => 
             array (
@@ -20454,7 +20454,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             388 => 
             array (
@@ -20477,7 +20477,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             389 => 
             array (
@@ -20500,7 +20500,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             390 => 
             array (
@@ -20523,7 +20523,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             391 => 
             array (
@@ -20615,7 +20615,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'e.g. a handmade card; collage',
             ),
             395 => 
             array (
@@ -20638,7 +20638,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             396 => 
             array (
@@ -20661,7 +20661,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'before and after photographs can be included',
             ),
             397 => 
             array (
@@ -20684,7 +20684,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20 x 30 cm, containing natural materials',
             ),
             398 => 
             array (
@@ -20707,7 +20707,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20 x 30 cm, containing natural materials',
             ),
             399 => 
             array (
@@ -20730,7 +20730,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'no bigger than 20 x 30 cm, containing natural materials',
             ),
             400 => 
             array (
@@ -20753,7 +20753,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             401 => 
             array (
@@ -20776,7 +20776,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             402 => 
             array (
@@ -20799,7 +20799,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             403 => 
             array (
@@ -20868,7 +20868,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             406 => 
             array (
@@ -20891,7 +20891,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             407 => 
             array (
@@ -20914,7 +20914,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             408 => 
             array (
@@ -20937,7 +20937,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'No more than 15 cm in diameter',
             ),
             409 => 
             array (
@@ -20960,7 +20960,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             410 => 
             array (
@@ -21052,7 +21052,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Up to 18cm diameter',
             ),
             414 => 
             array (
@@ -21075,7 +21075,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             415 => 
             array (
@@ -21121,7 +21121,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '',
             ),
             417 => 
             array (
@@ -21144,7 +21144,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 6,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not Lego',
             ),
             418 => 
             array (
@@ -21167,7 +21167,7 @@ Children 7-10 years',
                 'minimum_age' => 7,
                 'maximum_age' => 10,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not lego',
             ),
             419 => 
             array (
@@ -21190,7 +21190,7 @@ Children 7-10 years',
                 'minimum_age' => 11,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'Not Lego',
             ),
             420 => 
             array (
@@ -21305,7 +21305,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => 'May include Lego',
             ),
             425 => 
             array (
@@ -21402,9 +21402,9 @@ Children 7-10 years',
             429 => 
             array (
                 'id' => 1334,
-                'name' => 'Your favourite animal photograph, taken by yourself',
+            'name' => '(do not use) Your favourite animal photograph, taken by yourself',
                 'created_at' => '2024-04-23 21:27:41',
-                'updated_at' => '2024-04-24 21:20:50',
+                'updated_at' => '2024-06-28 12:57:32',
                 'number' => '108',
                 'price' => 0,
                 'late_price' => 0,
@@ -21420,7 +21420,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => 'No larger than A4 and mounted on card',
+                'notes' => NULL,
             ),
             430 => 
             array (
@@ -21627,7 +21627,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => NULL,
                 'private' => 0,
-                'notes' => NULL,
+                'notes' => '20-30cm',
             ),
             439 => 
             array (
@@ -21650,7 +21650,7 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => 'No larger than A4 and mounted on card',
+                'notes' => NULL,
             ),
             440 => 
             array (
@@ -21673,7 +21673,30 @@ Children 7-10 years',
                 'minimum_age' => NULL,
                 'maximum_age' => 16,
                 'private' => 0,
-                'notes' => 'No larger than A4 and mounted on card',
+                'notes' => NULL,
+            ),
+            441 => 
+            array (
+                'id' => 1346,
+                'name' => 'A photograph featuring shapes and patterns, taken by yourself',
+                'created_at' => '2024-06-28 12:56:07',
+                'updated_at' => '2024-06-28 12:56:07',
+                'number' => '108-b',
+                'price' => 0,
+                'late_price' => 0,
+                'sortorder' => 152,
+                'first_prize' => 100,
+                'second_prize' => 50,
+                'third_prize' => 30,
+                'show_id' => 10,
+                'section_id' => 85,
+                'status' => 'active',
+                'cloned_from' => NULL,
+                'deleted_at' => NULL,
+                'minimum_age' => NULL,
+                'maximum_age' => 16,
+                'private' => 0,
+                'notes' => NULL,
             ),
         ));
         
