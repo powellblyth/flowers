@@ -75,7 +75,7 @@
                                     </option>
                                 @endforeach
                             </select>
-                            <x-button type="submit" class="ml-4">
+                            <x-buttons.default type="submit" class="ml-4">
                                 {{ __('Subscribe') }}
                             </x-buttons.default>
                         </form>

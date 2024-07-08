@@ -20,7 +20,7 @@
 {{--                        @lang('Create New Family Manager')--}}
                 {{--                    </a></x-buttons.default>--}}
 
-                <x-button type="button"
+                <x-buttons.default type="button"
                           data-te-toggle="modal"
                           data-te-target="#exampleModalScrollable"
                           data-te-ripple-init

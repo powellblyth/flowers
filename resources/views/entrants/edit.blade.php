@@ -63,7 +63,7 @@
                         <x-input id="can_retain_data" class="block mt-1 " type="checkbox" name="can_retain_data"
                                  value="1" checked="old('can_retain_data')" autofocus/>
                     </div>
-                    <x-button class="ml-4">
+                        <x-buttons.default class="ml-4">
                         @if($entrant->exists)
                             {{ __('Update') . ' ' .strip_tags($entrant->first_name) }}
                         @else

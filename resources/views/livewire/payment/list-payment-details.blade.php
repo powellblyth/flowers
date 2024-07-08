@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    <x-button class="bg-red-600" wire:click="$emit('deleteCard', '{{$card->id}}')">
+                    <x-buttons.default class="bg-red-600" wire:click="$emit('deleteCard', '{{$card->id}}')">
                         REMOVE</x-buttons.default>
                 </div>
             @empty

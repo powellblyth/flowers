@@ -181,7 +181,7 @@
                     </div>
                 </div>
                 <div class="text-right pr-4  ">
-                    <x-button class="align-right">Merge</x-buttons.default>
+                    <x-buttons.default class="align-right">Merge</x-buttons.default>
                 </div>
         </form>
     </x-layout.intro-para>
