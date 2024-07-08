@@ -352,6 +352,95 @@ class User extends Authenticatable
             ?->getNumber();
     }
 
+    public function mergeInto(
+        User $mergeIntoUser,
+        ?string $firstName,
+        ?string $lastName,
+        ?string $address_1,
+        ?string $address_2,
+        ?string $address_town,
+        ?string $postcode,
+        ?string $email,
+        ?string $password,
+    ) {
+        try {
+            \DB::beginTransaction();
+            $mergeIntoUser->first_name = $firstName;
+            $mergeIntoUser->last_name = $lastName;
+            $mergeIntoUser->address_1 = $address_1;
+            $mergeIntoUser->address_2 = $address_2;
+            $mergeIntoUser->address_town = $address_town;
+            $mergeIntoUser->postcode = $postcode;
+            $mergeIntoUser->email = $email;
+            $mergeIntoUser->password = $password;
+
+
+            $this->membershipPurchases()
+                ->each(function (MembershipPurchase $purchase) use ($mergeIntoUser) {
+                    $purchase->user()->associate($mergeIntoUser);
+                    $purchase->save();
+                });
+
+            $this->payments()
+                ->each(function (Payment $payment) use ($mergeIntoUser) {
+                    $payment->user()->associate($mergeIntoUser);
+                    $payment->save();
+                });
+
+            $this->paymentCards()
+                ->each(function (PaymentCard $paymentCard) use ($mergeIntoUser) {
+                    $paymentCard->user()->associate($mergeIntoUser);
+                    $paymentCard->save();
+                });
+
+            $this->subscriptions()
+                ->each(function (Subscription $subscription) use ($mergeIntoUser) {
+                    $subscription->user()->associate($mergeIntoUser);
+                    $subscription->save();
+                });
+
+            $metaData = [
+                'merged_from' => [
+                    'first_name' => $this->first_name,
+                    'last_name' => $this->last_name,
+                    'email' => $this->email,
+                    'stripe_id' => $this->stripe_id,
+                    'address_1' => $this->address_1,
+                    'address_2' => $this->address_2,
+                    'address_town' => $this->address_town,
+                    'postcode' => $this->postcode,
+                    'can_email' => $this->can_email,
+                    'email_opt_in' => $this->email_opt_in,
+                    'telephone' => $this->telephone,
+                    'password' => $this->password,
+                ],
+                'merged_to' => [
+                    'first_name' => $mergeIntoUser->first_name,
+                    'last_name' => $mergeIntoUser->last_name,
+                    'email' => $mergeIntoUser->email,
+                    'stripe_id' => $mergeIntoUser->stripe_id,
+                    'address_1' => $mergeIntoUser->address_1,
+                    'address_2' => $mergeIntoUser->address_2,
+                    'address_town' => $mergeIntoUser->address_town,
+                    'postcode' => $mergeIntoUser->postcode,
+                    'can_email' => $mergeIntoUser->can_email,
+                    'email_opt_in' => $mergeIntoUser->email_opt_in,
+                    'telephone' => $mergeIntoUser->telephone,
+                    'password' => $mergeIntoUser->password,
+                ]
+            ];
+            $mergeUserLog = new MergeUserLog();
+            $mergeUserLog->mergeFromUser()->associate($this);
+            $mergeUserLog->mergeToUser()->associate($mergeIntoUser);
+            $mergeUserLog->metadata = $metaData;
+            $mergeUserLog->save();
+            \DB::commit();
+        } catch (\Exception $e) {
+            \DB::rollBack();
+            dd($e->getMessage());
+        }
+    }
+
     public function anonymisePostcode(?string $postcode): ?string
     {
         if (empty($postcode)) {

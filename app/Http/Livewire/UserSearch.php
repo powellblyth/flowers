@@ -10,18 +10,22 @@ class UserSearch extends Component
 {
     public User $existingUser;
     public ?Collection $results;
-    public ?string $firstName = 'a';
+    public ?string $firstName = '';
     public ?string $familyName = '';
+
+    public array $entrantRadios = [];
 
     public function render()
     {
         return view('livewire.user-search');
     }
+
     public function mount(User $existingUser)
     {
         $this->existingUser = $existingUser;
         $this->doSearch();
     }
+
     public function doSearch()
     {
         $this->results = User::where('first_name', 'like', '%' . $this->firstName . '%')

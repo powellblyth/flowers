@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaffleController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\UserController;
@@ -98,12 +99,12 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('users.printA5');
     Route::get('/users/{user}/print/{show}', [UserController::class, 'printCards'])
         ->name('user.print');
-    Route::get('/users/{user}/merge', [UserController::class, 'merge'])
+    Route::get('/users/{user}/merge', [UserController::class, 'chooseMerge'])
         ->name('users.merge');
     Route::get('/users/{user}/prepareMerge/{mergeInto}', [UserController::class, 'prepareMerge'])
         ->name('users.prepareMerge');
-    Route::get('/users/{user}/saveMerge', [UserController::class, 'saveMerge'])
-        ->name('users.saveMerge');
+    Route::post('/users/{user}/doMerge/{mergeInto}', [UserController::class, 'doMerge'])
+        ->name('users.doMerge');
 });
 
 
@@ -162,7 +163,7 @@ Route::controller(MarketingController::class)
             ->name('marketing.membership');
     });
 
-Route::get('sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
+Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 
 Route::post(

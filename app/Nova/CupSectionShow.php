@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\FilterByCup;
 use App\Nova\Filters\FilterCupSectionShowByShow;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -43,7 +44,8 @@ class CupSectionShow extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             BelongsTo::make(__('Show'), 'show', Show::class),
-            BelongsTo::make(__('Category'), 'category', Category::class),
+            BelongsTo::make(__('Section'), 'section', Section::class),
+            BelongsTo::make(__('Section'), 'cup', Cup::class),
         ];
     }
 
@@ -68,6 +70,7 @@ class CupSectionShow extends Resource
     {
         return [
             FilterCupSectionShowByShow::make(),
+            FilterByCup::make(),
         ];
     }
 

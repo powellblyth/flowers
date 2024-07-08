@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\CreateFamilyMembership;
 use App\Nova\Actions\CreateSingleMembership;
+use App\Nova\Actions\MergeUserRedirector;
 use App\Nova\Actions\PrintAllUserCardsA5Redirector;
 use App\Nova\Actions\PrintAllUserCardsRedirector;
 use App\Nova\Actions\RecordPayment;
@@ -240,6 +241,7 @@ class User extends Resource
             PrintAllUserCardsA5Redirector::make()->showOnIndex(),
             CreateFamilyMembership::make()->showOnIndex()->showOnTableRow(),
             CreateSingleMembership::make()->showOnIndex()->showOnTableRow(),
+            MergeUserRedirector::make()->showOnIndex()->showOnTableRow(),
         ];
     }
 }

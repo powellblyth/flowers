@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Events\EntrantSaving;
 use Database\Factories\EntrantFactory;
+use DB;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -213,6 +214,121 @@ class Entrant extends Model
                 return !$entrant->canJoin($team);
             })
             ->pluck('name', 'id')->toArray();
+    }
+
+    /**
+     * Merge another entrant's data into this one
+     * @param Entrant $mergeIntoEntrant
+     * @return void
+     */
+    public function mergeInto(Entrant $mergeIntoEntrant)
+    {
+        try {
+            DB::beginTransaction();
+            $this->entries()->each(
+                function (Entry $entry) use ($mergeIntoEntrant) {
+                    $entry->entrant()->associate($mergeIntoEntrant);
+                    $entry->save();
+                }
+            );
+
+            $this->membershipPurchases()->each(
+                function (MembershipPurchase $membershipPurchase) use ($mergeIntoEntrant) {
+                    $membershipPurchase->entrant()->associate($mergeIntoEntrant);
+                    $membershipPurchase->user()->associate($mergeIntoEntrant->user);
+                    $membershipPurchase->save();
+                }
+            );
+
+            $this->payments()->each(
+                function (Payment $payment) use ($mergeIntoEntrant) {
+                    $payment->entrant()->associate($mergeIntoEntrant);
+                    $payment->user()->associate($mergeIntoEntrant->user);
+                    $payment->save();
+                }
+            );
+
+            DB::table('cup_winner_archives')
+                ->where('cup_winner_entrant_id', $this->id)
+                ->update(['cup_winner_entrant_id' => $mergeIntoEntrant->id]);
+
+            DB::table('cup_winner_archive_winners')
+                ->where('entrant_id', $this->id)
+                ->update(['entrant_id' => $mergeIntoEntrant->id]);
+
+            // Don't really use this field but... referential integrity and all that
+            DB::table('cup_direct_winners')
+                ->where('entrant_id', $this->id)
+                ->update(['entrant_id' => $mergeIntoEntrant->id]);
+
+            DB::table('entrant_team')
+                ->where('entrant_id', $this->id)
+                ->update(['entrant_id' => $mergeIntoEntrant->id]);
+
+            $metaData = [
+                'merged_from' => [
+                    'first_name' => $this->first_name,
+                    'family_name' => $this->family_name,
+                    'membernumber' => $this->membernumber,
+                    'created_at' => $this->created_at,
+                    'updated_at' => $this->updated_at,
+                    'age' => $this->age,
+                    'approx_birth_year' => $this->approx_birth_year,
+                    'can_retain_data' => $this->can_retain_data,
+                    'retain_data_opt_in' => $this->retain_data_opt_in,
+                    'retain_data_opt_out' => $this->retain_data_opt_out,
+                ]
+            ];
+            $mergeEntrantLog = new MergeEntrantLog();
+            $mergeEntrantLog->mergeFromEntrant()->associate($this);
+            $mergeEntrantLog->mergeToEntrant()->associate($mergeIntoEntrant);
+            $mergeEntrantLog->mergeFromUser()->associate($this->user);
+            $mergeEntrantLog->mergeToUser()->associate($mergeIntoEntrant->user);
+            $mergeEntrantLog->metadata = $metaData;
+            $mergeEntrantLog->merge_type = 'MergeEntrantIntoEntrant';
+            $mergeEntrantLog->save();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage());
+        }
+    }
+
+    public function moveToUser(User $user): void
+    {
+        try {
+            DB::beginTransaction();
+
+//            dump($this->user->id);
+//            dump($user->id);
+            $this->user()->associate($user);
+//            dump($this->user->id);
+            $this->save();
+//            dd($user->id);
+            $this->payments()
+                ->where('user_id', $user->id)
+                ->each(function (Payment $payment) {
+                    $payment->user()->associate($this);
+                });
+            $this->membershipPurchases()
+                ->where('user_id', $user->id)
+                ->each(function (MembershipPurchase $membershipPurchase) {
+                    $membershipPurchase->user()->associate($this);
+                });
+
+            $mergeEntrantLog = new MergeEntrantLog();
+            $mergeEntrantLog->mergeFromEntrant()->associate($this);
+            $mergeEntrantLog->mergeToEntrant()->associate($this);
+            $mergeEntrantLog->mergeFromUser()->associate($this->user);
+            $mergeEntrantLog->mergeToUser()->associate($user);
+            $mergeEntrantLog->metadata = [];
+            $mergeEntrantLog->merge_type = 'MoveEntrantToUser';
+            $mergeEntrantLog->save();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage());
+        }
     }
 
     public function anonymise(): Entrant

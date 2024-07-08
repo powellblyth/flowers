@@ -21,4 +21,14 @@ class CupSectionShow extends Model
     {
         return $this->belongsTo(Cup::class);
     }
+
+    public function section(): BelongsTo
+    {
+        return $this->belongsTo(Section::class);
+    }
+
+    public function show(): BelongsTo
+    {
+        return $this->belongsTo(Show::class);
+    }
 }
