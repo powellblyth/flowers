@@ -79,7 +79,7 @@
                     </label>
                 </div>
                 <div class="margin-left-auto">
-                    <x-button>Save Member</x-button>
+                    <x-buttons.default>Save Member</x-buttons.default>
                 </div>
             </div>
         </form>

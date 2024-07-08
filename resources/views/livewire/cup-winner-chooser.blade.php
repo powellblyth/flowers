@@ -8,7 +8,7 @@
         <form method="POST" action="{{route('cup.directResultSetWinner',['cup'=>$cup])}}">
             @csrf
             <x-select name="entry_id" :options="$entries->pluck('entrant.numbered_name', 'id')->toArray()" hasBlank="true" />
-            <x-button>Set Winner</x-button>
+            <x-buttons.default>Set Winner</x-buttons.default>
         </form>
     @endif
 </div>

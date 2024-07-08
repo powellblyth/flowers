@@ -29,7 +29,7 @@
 
         <x-button @click.prevent.stop id="card-button" data-secret="{{ $intent->client_secret }}">
             Create your subscription Payment Method
-        </x-button>
+            </x-buttons.default>
         <script defer="defer">
             const stripe = Stripe('{{$stripeKey}}');
 

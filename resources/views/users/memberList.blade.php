@@ -16,9 +16,9 @@
                 <p>@lang('Please accurately record the source of payment')</p>
             </div>
             <div class="text-right flex-none"><br /><br /><br /><br />
-{{--                <x-button><a href="{{config('nova.url') . '/resources/users/new'}}">--}}
+                {{--                <x-buttons.default><a href="{{config('nova.url') . '/resources/users/new'}}">--}}
 {{--                        @lang('Create New Family Manager')--}}
-{{--                    </a></x-button>--}}
+                {{--                    </a></x-buttons.default>--}}
 
                 <x-button type="button"
                           data-te-toggle="modal"
@@ -26,7 +26,7 @@
                           data-te-ripple-init
                           data-te-ripple-color="light">
                     Create a Family Manager
-                </x-button>
+                    </x-buttons.default>
 {{--                <button--}}
 {{--                    type="button"--}}
 {{--                    class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"--}}
@@ -97,14 +97,14 @@
 {{--                                data-te-ripple-init--}}
 {{--                                data-te-ripple-color="light">--}}
 {{--                                Close--}}
-{{--                            </x-button>--}}
+                        {{--                            </x-buttons.default>--}}
 {{--                            <x-button--}}
 {{--                                type="button"--}}
 {{--                                class="ml-1 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"--}}
 {{--                                data-te-ripple-init--}}
 {{--                                data-te-ripple-color="light">--}}
 {{--                                Save changes--}}
-{{--                            </x-button>--}}
+                        {{--                            </x-buttons.default>--}}
 {{--                        </div>--}}
                     </div>
                 </div>
@@ -182,7 +182,7 @@
 {{--                        @if(!$member->membershipIsCurrent())--}}
 {{--                            <input form="form_{{$member->id}}" type="hidden" name="user_id"--}}
 {{--                                   value="{{(int)$member->id}}"/>--}}
-{{--                            <x-button form="form_{{$member->id}}">Renew</x-button>--}}
+        {{--                            <x-button form="form_{{$member->id}}">Renew</x-buttons.default>--}}
 {{--                            --}}{{--                        <div class="border-4 w-12">&nbsp;</div>--}}
 {{--                        @else--}}
 {{--                        @endif--}}

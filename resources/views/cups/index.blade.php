@@ -56,11 +56,11 @@
                 @endif
                 <div class="flex-1">
                     <x-headers.h2><a name="cup_{{$cup->id}}">{{ $cup->name }}</a>
-                        <x-button>
+                        <x-buttons.default>
                             <a class="print:hidden" href="{{ route('cups.show', ['cup'=>$cup, 'show'=>$show]) }}">
                                 Details
                             </a>
-                        </x-button>
+                        </x-buttons.default>
                     </x-headers.h2>
                     <div class="print:text-sm">
                         {{ $cup->winning_criteria }}

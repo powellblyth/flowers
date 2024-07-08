@@ -49,7 +49,7 @@
 
                 <x-button class="ml-3">
                     {{ __('Log in') }}
-                </x-button>
+                    </x-buttons.default>
             </div>
         </form>
     </x-auth-card>

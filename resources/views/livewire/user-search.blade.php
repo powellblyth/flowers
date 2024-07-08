@@ -24,11 +24,11 @@
                         @endforeach
                     </div>
                     <div class="p-2 border-t mb-2 border-b border-lime-300">
-                        <x-button>
+                        <x-buttons.default>
                             <a href="{{route('users.prepareMerge', ['user' => $existingUser, 'mergeInto' => $familyManager])}}">
                                 Merge {{$existingUser->first_name}} into {{$familyManager->full_name}}
                             </a>
-                        </x-button>
+                        </x-buttons.default>
                     </div>
                 @endforeach
             </div>

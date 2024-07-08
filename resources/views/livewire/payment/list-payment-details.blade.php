@@ -45,7 +45,8 @@
                             </div>
                         </div>
                     </div>
-                    <x-button class="bg-red-600" wire:click="$emit('deleteCard', '{{$card->id}}')">REMOVE</x-button>
+                    <x-button class="bg-red-600" wire:click="$emit('deleteCard', '{{$card->id}}')">
+                        REMOVE</x-buttons.default>
                 </div>
             @empty
                 <div>You currently have no cards registered</div>
@@ -54,7 +55,7 @@
     </div>
 
     <div>
-        <x-button><a href="{{route('paymentcards.create')}}">Add a new card</a></x-button>
+        <x-buttons.default><a href="{{route('paymentcards.create')}}">Add a new card</a></x-buttons.default>
     </div>
 
 

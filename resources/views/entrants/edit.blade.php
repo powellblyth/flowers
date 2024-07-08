@@ -69,7 +69,7 @@
                         @else
                             {{ __('Add this person to My Family') }}
                         @endif
-                    </x-button>
+                    </x-buttons.default>
 
                 </form>
             </div>

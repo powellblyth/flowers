@@ -13,7 +13,7 @@
          }}
                         </div>
                         <div>
-                            <x-button><a wire:click="cancelsubscription($subscription->name)">Cancel Membership</a></x-button>
+                            <x-buttons.default><a wire:click="cancelsubscription($subscription->name)">Cancel Membership</a></x-buttons.default>
                         </div>
                     </div>
                 @endforeach
@@ -77,13 +77,13 @@
                             </select>
                             <x-button type="submit" class="ml-4">
                                 {{ __('Subscribe') }}
-                            </x-button>
+                            </x-buttons.default>
                         </form>
                     @else
                         <p>@lang('Before you subscribe for membership, you must register a payment card at Stripe')</p>
-                        <x-button>
+                        <x-buttons.default>
                             <a href="{{route('paymentcards.create')}}">@lang('Register a new card')</a>
-                        </x-button>
+                        </x-buttons.default>
                     @endif
                 </div>
             @else

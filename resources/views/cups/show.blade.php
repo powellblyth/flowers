@@ -10,6 +10,7 @@
     </x-slot>
 
     <x-layout.intro-para>
+        <x-buttons.small class="mb-4"><a href="{{route('cups.index')}}"> &laquo; Back</a></x-buttons.small>
         <div class="flex">
             @if($cup->image)
                 <div class="flex-initial pr-4 ">
