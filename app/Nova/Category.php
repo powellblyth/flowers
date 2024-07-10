@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\AddCategoryAfter;
 use App\Nova\Actions\AddCategoryToCup;
 use App\Nova\Actions\ChangeSectionAction;
 use App\Nova\Actions\CreateUsersEntry;
@@ -161,6 +162,7 @@ class Category extends Resource
                 ->showOnTableRow(),
             AddCategoryToCup::make(),
             ChangeSectionAction::make(),
+            AddCategoryAfter::make(),
         ];
     }
 }

@@ -8,9 +8,11 @@ use Tests\TestCase;
 class EntrantTest extends TestCase
 {
 
-    public function providergetFullName()
+    public function providergetFullName(): array
     {
         return [
+            // Note that we expect this to be capitalised correctly
+            ['First Second', 'First', 'Second', null],
             ['First Second', 'first', 'second', null],
             ['First Second', 'first', 'second', false],
             ['First', 'first', '', null],
@@ -34,7 +36,7 @@ class EntrantTest extends TestCase
         $this->assertSame($expected, $sut->full_name);
     }
 
-    public function providergetPrintableName()
+    public function providergetPrintableName(): array
     {
         return [
             ['first', 'second', 'f second'],
@@ -61,7 +63,6 @@ class EntrantTest extends TestCase
 
         $this->assertSame($expected, $sut->printable_name);
         $this->assertSame($expected, $sut->printableName);
-        $this->assertSame($expected, $sut->getPrintableNameAttribute());
     }
 
     public function providergetEntrantNumber(): array
@@ -87,14 +88,16 @@ class EntrantTest extends TestCase
         $this->assertSame($expected, $sut->entrant_number);
     }
 
-    public function providerDescribeAge():array{
+    public function providerDescribeAge(): array
+    {
         return [
-            ['',null],
-            ['',88],
-            ['',18],
-            ['12 years',12],
+            ['', null],
+            ['', 88],
+            ['', 18],
+            ['12 years', 12],
         ];
     }
+
     /**
      * @param $expected
      * @param $age
@@ -102,7 +105,7 @@ class EntrantTest extends TestCase
      */
     public function testDescribeAge($expected, $age)
     {
-        $sut = new Entrant(['age'=>$age]);
+        $sut = new Entrant(['age' => $age]);
         $this->assertSame($expected, $sut->age_description);
     }
 

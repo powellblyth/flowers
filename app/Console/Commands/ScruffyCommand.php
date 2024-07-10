@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Cup;
 use Illuminate\Console\Command;
 
 class ScruffyCommand extends Command {
@@ -26,8 +25,16 @@ class ScruffyCommand extends Command {
      * @return mixed
      */
     public function handle() {
-        $cup = Cup::find(1);
+        $this->thing('432a');
+        $this->thing('432-ba');
+        $this->thing('banadna 1');
+        $this->thing('21 banadna 13');
+    }
 
-        $cup->sections;
+    public function thing($value)
+    {
+        $matches = [];
+        $numbers = preg_match('/[^0-9]*([0-9]*)/', $value, $matches);
+        dump($matches);
     }
 }

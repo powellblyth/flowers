@@ -53,7 +53,7 @@ class Entry extends Model
     public function winningLabel(): Attribute
     {
         return new Attribute(
-            get: fn($value) => match ($this->winningplace) {
+            get: fn($value) => match ((string) $this->winningplace) {
                 '1' => 'First Place',
                 '2' => 'Second Place',
                 '3' => 'Third Place',
@@ -97,7 +97,7 @@ class Entry extends Model
 
     public function getPlacementName(): string
     {
-        return match ($this->winningplace) {
+        return match ((string) $this->winningplace) {
             '1' => 'First Place',
             '2' => 'Second Place',
             '3' => 'Third Place',

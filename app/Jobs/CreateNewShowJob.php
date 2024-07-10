@@ -65,7 +65,7 @@ class CreateNewShowJob implements ShouldQueue
                     $newCategory->cups()->attach($category->cups);
                     $newCategory->show()->associate($this->newShow);
                     $newCategory->judgeRoles()->saveMany($category->judgeRoles);
-                    $newCategory->cloned_from = $category->id;
+                    $newCategory->clonedFrom()->associate($category);
                     $newCategory->section()->associate($newSection);
                     $newCategory->save();
                 });

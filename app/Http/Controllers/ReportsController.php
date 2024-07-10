@@ -114,14 +114,14 @@ class ReportsController extends Controller
 
             $purchases[$entry->id] = [
                 'created' => $entry->created_at,
-                'type' => $category->getType(),
+                'type' => $category->isAdult() ? Category::TYPE_ADULT : Category::TYPE_JUNIOR,
                 'is_late' => $entry->isLate(),
                 'category_number' => $entry->category->number,
                 'amount' => $price,
                 'entrant_id' => $entrant_id,
                 'entrant_name' => $entrant_name];
 
-            if (Category::TYPE_ADULT == $category->getType()) {
+            if ($category->isAdult()) {
                 $amountAdult += $price;
                 $countAdult++;
             } else {

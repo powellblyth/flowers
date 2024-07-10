@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Log;
 
 /**
  * App\Models\Category
@@ -92,6 +91,15 @@ class Category extends Model implements \Stringable
         'private' => 'bool',
     ];
 
+    /**
+     * Default ordering for index query.
+     *
+     * @var array
+     */
+    public static $indexDefaultOrder = [
+        'sortorder' => 'asc'
+    ];
+
     public function scopeForSection(Builder $query, Section $section): Builder
     {
         return $query->where('section_id', $section->id);
@@ -105,6 +113,13 @@ class Category extends Model implements \Stringable
     public function scopeExceptPrivate(Builder $query): Builder
     {
         return $query->where('private', false);
+    }
+
+    protected function numberedName(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => $this->number . '. ' . $this->name
+        );
     }
 
     public function entries(): HasMany
@@ -122,21 +137,43 @@ class Category extends Model implements \Stringable
         return $this->belongsToMany(JudgeRole::class)->withTimestamps();
     }
 
+    public function clonedFrom(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'cloned_from');
+    }
+
     public function cups(): BelongsToMany
     {
         return $this->belongsToMany(Cup::class)->withTimestamps();
     }
 
-    public function numberedName(): Attribute
-    {
-        return new Attribute(
-            get: fn($value) => $this->number . '. ' . $this->name
-        );
-    }
-
     public function __toString(): string
     {
         return (string) $this->numbered_name;
+    }
+
+    public function incrementOrder($amount): static
+    {
+        $this->sortorder = $this->sortorder + $amount;
+        // TODO this could handle categories like 103a better
+        // Also toDO this could be a model method
+        if (is_numeric($this->number)) {
+            $this->number = $this->number + $amount;
+        } else {
+            $this->incrementNumberWithText($amount);
+        }
+        return $this;
+    }
+
+    public function incrementNumberWithText($amount)
+    {
+        $matches = null;
+        preg_match('/[^0-9]*([0-9]*)[^0-9]*/', $this->number, $matches);
+        $answer = $matches[1] ?? '';
+//        dd($matches);
+        if (is_numeric($answer)) {
+            $this->number = str_replace($answer, ((int) $answer) + $amount, $this->number);
+        }
     }
 
     public function getWinningAmount(string $placement): int
@@ -149,16 +186,6 @@ class Category extends Model implements \Stringable
         };
     }
 
-    public function getType(): string
-    {
-        if (in_array($this->section->number, ['8', '9'])) {
-            $type = Category::TYPE_JUNIOR;
-        } else {
-            $type = Category::TYPE_ADULT;
-        }
-        return $type;
-    }
-
     public function getPrice(string $type): float
     {
         if ($type === Category::PRICE_EARLY_PRICE) {
@@ -168,40 +195,29 @@ class Category extends Model implements \Stringable
         }
     }
 
-    /**
-     * Default ordering for index query.
-     *
-     * @var array
-     */
-    public static $indexDefaultOrder = [
-        'sortorder' => 'asc'
-    ];
+    public function isAdult(): bool
+    {
+        return is_null($this->maximum_age);
+    }
 
     public function notAgeRestricted(Entrant $entrant): bool
     {
-        Log::debug('can enter ' . $this->name . '?');
         if (is_null($this->minimum_age) && is_null($this->maximum_age)) {
-            Log::debug('yes, is unrestrained');
             return true;
         }
 
         $age = $entrant->age;
-        Log::debug('age is ' . $age);
         if (is_null($age)) {
-            Log::debug('age is now ' . $age);
             $age = 18;
         }
 
         if (!is_null($this->maximum_age) && $age > $this->maximum_age) {
-            Log::debug('no, age too young' . $this->maximum_age);
             return false;
         }
         if (!is_null($this->minimum_age) && $age < $this->minimum_age) {
-            Log::debug('no, age too old' . $this->minimum_age);
             return false;
         }
 
-        Log::debug('yes in right age');
         return true;
     }
 

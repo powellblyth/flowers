@@ -264,7 +264,9 @@ class User extends Authenticatable
     protected function printableName(): Attribute
     {
         return Attribute::make(
-            get: fn() => trim(substr($this->first_name, 0, 1) . ' ' . $this->last_name)
+            get: fn() => Str::title(
+                trim(substr($this->first_name, 0, 1) . ' ' . $this->last_name)
+            )
         );
     }
 
