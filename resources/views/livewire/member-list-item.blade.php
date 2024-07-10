@@ -1,5 +1,5 @@
 @props(['member'])
-<div wire:key="member_list_item_{{$member->id}}" class="grid grid-cols-[250px_120px_80px_80px_300px_170px_120px]">
+<div class="grid grid-cols-[250px_120px_80px_80px_300px_170px_120px]">
 
     <div class=" border-b-2 my-4">
         {{$member->last_name}}, {{$member->first_name}} / {{$member->postcode, $member->address_1}}
