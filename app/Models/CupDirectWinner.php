@@ -33,8 +33,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|CupDirectWinner whereWinningCategoryId($value)
  * @method static Builder|CupDirectWinner whereWinningEntryId($value)
  * @method static Builder|CupDirectWinner whereYear($value)
- * @property-read \App\Models\Cup|null $cup
- * @method static Builder|CupDirectWinner forShow(\App\Models\Show $show)
+ * @property-read Cup|null $cup
+ * @method static Builder|CupDirectWinner forShow(Show $show)
  * @property int|null $entrant_id
  * @method static Builder|CupDirectWinner whereEntrantId($value)
  * @mixin \Eloquent

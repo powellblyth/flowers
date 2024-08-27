@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -43,9 +44,15 @@ use Illuminate\Support\Carbon;
  */
 class Section extends Model
 {
+    use BelongsToShow;
     protected $attributes = [
         'is_junior' => 'bool',
     ];
+
+    public function scopeInOrder(Builder $query): Builder
+    {
+        return $query->orderby('sort_order', 'asc');
+    }
 
     public function displayName(): Attribute
     {
@@ -54,13 +61,30 @@ class Section extends Model
         );
     }
 
+    public function displayNameShow(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => $this->number . ' - ' . $this->name . ' - ' . $this->show?->name
+        );
+    }
+
     public function categories(): HasMany
     {
         return $this->hasMany(Category::class);
     }
 
+    public function clonedFrom(): BelongsTo
+    {
+        return $this->belongsTo(Section::class, 'cloned_from_id');
+    }
+
     public function judgeRole(): BelongsTo
     {
         return $this->belongsTo(JudgeRole::class);
+    }
+
+    public function show(): BelongsTo
+    {
+        return $this->belongsTo(Show::class);
     }
 }

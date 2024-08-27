@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Entrant;
 use App\Models\Entry;
-use App\Models\Section;
 use App\Models\Show;
 use App\Models\User;
 use App\Traits\Controllers\HasShowSwitcher;
@@ -59,13 +57,35 @@ class EntryController extends Controller
     }
 
     /**
+     * referenced by nova
+     */
+    public function printAllCardsA5(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
+    {
+        $entriesQuery = $this->getEntriesQuery($show);
+        if ($request->filled('since')) {
+            $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
+        }
+
+        $cardData = $this->getCardDataFromEntries($entriesQuery->get());
+
+        return view(
+            'cards.printcardsA5',
+            [
+                'show' => $show,
+                'card_fronts' => $cardData['fronts'],
+                'card_backs' => $cardData['backs'],
+            ]
+        );
+    }
+
+    /**
      * @param Request $request
      * @param Show $show
      * @param User|null $user
      * @return View
      * @throws AuthorizationException
      */
-    public function entryCard(Request $request, Show $show, User $user = null ): View
+    public function entryCard(Request $request, Show $show, User $user = null): View
     {
         if (is_null($user)) {
             $user = Auth::user();
@@ -81,13 +101,10 @@ class EntryController extends Controller
 
         return view('entries.entryCard', [
             'user' => $user,
-            'categories' => $show
-                ->categories
-                ->reject(fn(Category $category) => $category->private === true),
+            'sections' => $show->sections()->inOrder()->get(),
             'show' => $show,
             'showId' => $show->id,
             'can_enter' => !$show->isClosedToEntries(),
-            'sections' => Section::all(),
         ]);
     }
 

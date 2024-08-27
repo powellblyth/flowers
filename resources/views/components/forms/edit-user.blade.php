@@ -89,8 +89,8 @@
     </div>
 
     <div class="flex items-center justify-end mt-4">
-        <x-button class="ml-4">
+        <x-buttons.default class="ml-4">
             {{ __('Update') }}
-        </x-button>
+        </x-buttons.default>
     </div>
 </form>

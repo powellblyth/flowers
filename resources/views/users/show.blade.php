@@ -31,9 +31,9 @@
         </div>
 
         <div class="h-10 mb-10">
-            <x-button><a href="{{route('entries.entryCard', ['show'=>$show])}}">
+            <x-buttons.default><a href="{{route('entries.entryCard', ['show'=>$show])}}">
                 &raquo; @lang('Open the Entry Form for :show', ['show'=>$show->name])
-            </a></x-button>
+                </a></x-buttons.default>
         </div>
 
         <div class="table border-4 p-4">
@@ -87,12 +87,12 @@
             @endforelse
 
             <div>
-                <x-button>
+                <x-buttons.default>
                     <a href="{{route('entrants.create')}}"
                              class="bg-primary-200 hover:bg-primary text-white font-bold py-2 px-4 rounded">
                         @lang('Add another family member')
                     </a>
-                </x-button>
+                </x-buttons.default>
             </div>
         </div>
 

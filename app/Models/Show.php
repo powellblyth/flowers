@@ -121,6 +121,11 @@ class Show extends Model
         return $this->HasMany(RafflePrize::class);
     }
 
+    public function sections(): HasMany
+    {
+        return $this->HasMany(Section::class);
+    }
+
     public function resultsArePublic(): bool
     {
         return $this->ends_date->isBefore(Carbon::now());
@@ -135,5 +140,31 @@ class Show extends Model
         static::saving(function ($show) {
             $show->slug = Str::slug($show->name);
         });
+    }
+
+    /**
+     * simply function to generate a homogenous "hours ago" for printing cards
+     * @return string[]
+     */
+    public static function getHoursAgo(): array
+    {
+        return [
+            1 => '1 minute',
+            5 => '5 minutes',
+            10 => '10 minutes',
+            20 => '20 minutes',
+            30 => '30 minutes',
+            40 => '40 minutes',
+            50 => '50 minutes',
+            60 => '1 hour ago',
+            120 => '2 hours ago',
+            180 => '3 hours ago',
+            360 => '6 hours ago',
+            720 => '12 hours ago',
+            1080 => '18 hours ago',
+            1440 => '24 hours ago',
+            525600 => 'All Year',
+
+        ];
     }
 }

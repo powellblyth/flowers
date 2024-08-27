@@ -16,10 +16,10 @@ class SectionController extends Controller
 {
     use HasShowSwitcher;
 
-    public function index(): View
+    public function index(Request $request): View
     {
-        $sections = Section::orderBy('number', 'asc')
-            ->get();
+        $show = $this->getShowFromRequest($request);
+        $sections = $show->sections()->inOrder()->get();
         return view(
             'sections.index',
             [
@@ -34,7 +34,7 @@ class SectionController extends Controller
      */
     public function resultsEntryForm(Request $request, Show $show, Section $section): View
     {
-        if (!$show->exists){
+        if (!$show->exists) {
             $show = $this->getShowFromRequest($request);
         }
 
@@ -81,8 +81,7 @@ class SectionController extends Controller
     public function forWebSite(): View
     {
         $categoryList = [];
-        $sections = Section::orderBy('number', 'asc')
-            ->get();
+        $sections = Section::inOrder()->get();
         foreach ($sections as $section) {
             /**
              * @var Section $section

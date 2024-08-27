@@ -44,13 +44,10 @@ class ResultsEntryRedirector extends Action
      */
     public function handle(ActionFields $fields, Collection $sections)
     {
-        $params = [];
-        // Can only do one at once.
-        foreach ($sections as $model) {
-            $params['section'] = $model;
-            // can only do one show at once
-        }
-        return Action::openInNewTab(route('sections.resultsentry', $params));
+        return Action::openInNewTab(route(
+            'sections.resultsentry',
+            ['section' => $sections->first()]
+        ));
     }
 
     /**

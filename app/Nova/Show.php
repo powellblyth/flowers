@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\CheckShowRedirector;
 use App\Nova\Actions\DuplicateShowAction;
+use App\Nova\Actions\PrintAllShowCardsA5Redirector;
 use App\Nova\Actions\PrintAllShowCardsRedirector;
 use App\Nova\Actions\PrintLookupSheetsRedirector;
 use App\Nova\Actions\PrintTableTopCardsRedirector;
@@ -95,6 +96,7 @@ class Show extends Resource
                 \App\Models\Show::STATUS_PASSED => 'success',
                 \App\Models\Show::STATUS_CANCELLED => 'danger',
             ])->sortable(),
+            HasMany::make('Sections'),
             HasMany::make('Categories'),
 
         ];
@@ -144,6 +146,7 @@ class Show extends Resource
         return [
             DuplicateShowAction::make()->showOnIndex(),
             PrintAllShowCardsRedirector::make()->showOnIndex(),
+            PrintAllShowCardsA5Redirector::make()->showOnIndex(),
             PrintTableTopCardsRedirector::make()->showOnIndex(),
             PrintLookupSheetsRedirector::make()->showOnIndex(),
             CheckShowRedirector::make()->showOnIndex(),

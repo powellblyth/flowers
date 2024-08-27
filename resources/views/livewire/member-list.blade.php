@@ -13,6 +13,6 @@
         <div class="px-4 border-b-2 font-bold"></div>
     </div>
     @foreach($memberList as $member)
-        <livewire:member-list-item :member="$member" wire:key="list_item_{{$member->id}}"/>
+        <livewire:member-list-item :member="$member" wire:key="list_item_{{$member->id}}_{{microtime(true)}}"/>
     @endforeach
 </div>

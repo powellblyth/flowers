@@ -15,17 +15,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-//        Commands\CreateNewYearDataCommand::class,
-//        Commands\UpdateAgesCommand::class,
-//        Commands\resetPasswordResetsCommand::class,
-//        Commands\AnonymiseEntrantsCommand::class,
-//        Commands\ConvertYearToShow::class,
-//        Commands\SyncProductsCommand::class,
-//        Commands\ScruffyCommand::class,
-//        Commands\SendEmailToUnpasswordedPeopleCommand::class,
-//        Commands\ConvertMembershipToMembershipModelCommand::class,
-//        Commands\SendMailchimpSubscribesCommand::class,
-//        CheckExpiredMemberships::class,
     ];
 
     /**
@@ -35,7 +24,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-//         $schedule->command('inspire')->hourly();
         $schedule->command(UpdateAgesCommand::class)->yearlyOn(1, 1);
         $schedule->command(CheckExpiredMemberships::class)->hourlyAt(12);
     }

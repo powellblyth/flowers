@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class EntryTest extends TestCase
 {
-    public function providergetPriceType()
+    public function providergetPriceType(): array
     {
         return [
             [true, \App\Models\Category::PRICE_LATE_PRICE],
@@ -30,7 +30,7 @@ class EntryTest extends TestCase
         $this->assertSame($expected, $this->sut->getPriceType());
     }
 
-    public function providergetPlacementName()
+    public function providergetPlacementName(): array
     {
         return [
             [1, 'First Place'],
@@ -50,7 +50,7 @@ class EntryTest extends TestCase
      * @param $expected
      * @return void
      */
-    public function testgetgetPlacementName($placement, $expected)
+    public function testgetPlacementName($placement, $expected)
     {
         $this->sut               = new Entry();
         $this->sut->winningplace = $placement;
@@ -59,7 +59,7 @@ class EntryTest extends TestCase
         $this->assertSame($expected, $this->sut->winning_label);
     }
 
-    public function providerhasWon()
+    public function providerhasWon(): array
     {
         return [
             [1, true],

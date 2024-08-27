@@ -103,7 +103,7 @@ class CupJudgeRoleTableSeeder extends Seeder
             array (
                 'id' => 11,
                 'cup_id' => 16,
-                'judge_role_id' => 8,
+                'judge_role_id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -111,9 +111,49 @@ class CupJudgeRoleTableSeeder extends Seeder
             array (
                 'id' => 12,
                 'cup_id' => 15,
-                'judge_role_id' => 8,
+                'judge_role_id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'cup_id' => 29,
+                'judge_role_id' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'cup_id' => 29,
+                'judge_role_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'cup_id' => 29,
+                'judge_role_id' => 3,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'cup_id' => 11,
+                'judge_role_id' => 2,
+                'created_at' => '2024-06-18 22:30:51',
+                'updated_at' => '2024-06-18 22:30:55',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'cup_id' => 12,
+                'judge_role_id' => 1,
+                'created_at' => '2024-06-18 22:31:47',
+                'updated_at' => '2024-06-18 22:31:49',
             ),
         ));
         

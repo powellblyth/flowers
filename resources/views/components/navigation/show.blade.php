@@ -1,4 +1,4 @@
-<div class="py-4">
+<div class="py-4 print:hidden">
     <div class="max-w-7xl mx-auto sm:px-4 lg:px-4">
         <div class="bg-white">
             <nav class="flex flex-col sm:flex-row">

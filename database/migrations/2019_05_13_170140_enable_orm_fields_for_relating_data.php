@@ -26,7 +26,7 @@ class EnableOrmFieldsForRelatingData extends Migration {
             $table->renameColumn('entrant', 'entrant_id');
         }); //
         Schema::table('cup_direct_winners', function (Blueprint $table) {
-//            $table->renameColumn('entrant', 'entrant_id');
+            $table->renameColumn('entrant', 'entrant_id');
             $table->renameColumn('cup', 'cup_id');
             $table->renameColumn('winning_entry', 'winning_entry_id');
             $table->renameColumn('winning_category', 'winning_category_id');

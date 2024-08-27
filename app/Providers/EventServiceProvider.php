@@ -6,10 +6,12 @@ use App\Events\EntrantSaving;
 use App\Events\UserSaving;
 use App\Listeners\EntrantSubscriptionListener;
 use App\Listeners\UserSubscriptionListener;
+use App\Models\Category;
 use App\Models\MembershipPurchase;
 use App\Models\PaymentCard;
 use App\Models\RaffleDonor;
 use App\Models\User;
+use App\Observers\CategoryObserver;
 use App\Observers\MembershipPurchaseObserver;
 use App\Observers\PaymentCardObserver;
 use App\Observers\RaffleDonorObserver;
@@ -24,7 +26,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        UserSaving::class    => [
+        UserSaving::class => [
             UserSubscriptionListener::class,
         ],
         EntrantSaving::class => [
@@ -37,14 +39,14 @@ class EventServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         parent::boot();
-        User::observe(UserObserver::class);
+        Category::observe(CategoryObserver::class);
         MembershipPurchase::observe(MembershipPurchaseObserver::class);
-        RaffleDonor::observe(RaffleDonorObserver::class);
         PaymentCard::observe(PaymentCardObserver::class);
-        //
+        RaffleDonor::observe(RaffleDonorObserver::class);
+        User::observe(UserObserver::class);
     }
 
     /**

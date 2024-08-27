@@ -15,6 +15,11 @@ class Entry extends Resource
      */
     public static $with = ['show'];
 
+    public static function authorizedToCreate(Request $request)
+    {
+        return false;
+    }
+
     /**
      * The model the resource corresponds to.
      */

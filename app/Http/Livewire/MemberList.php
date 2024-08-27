@@ -25,6 +25,7 @@ class MemberList extends Component
             $memberSearch = $memberSearch->where('last_name', 'LIKE', '%' . $this->filter . '%')
                 ->orWhere('first_name', 'LIKE', '%' . $this->filter . '%')
                 ->orWhere('email', 'LIKE', '%' . $this->filter . '%')
+                ->orWhere('id', '=', $this->filter)
                 ->orWhere('postcode', 'LIKE', '%' . $this->filter . '%')
                 ->orWhere('address_1', 'LIKE', '%' . $this->filter . '%')
                 ->orWhere('address_2', 'LIKE', '%' . $this->filter . '%');

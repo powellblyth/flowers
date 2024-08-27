@@ -1,0 +1,174 @@
+
+@page {
+    margin: 0;
+    width: 148mm;
+    height: 210mm;
+    size: A5 portrait;
+}
+@media print {
+  html, body {
+    width: 148mm;
+    height: 210mm;
+      size: A5 portrait;
+  }
+}
+
+.pageset
+{
+    page-break-before: always;
+    width:800px;
+    min-width:100%;
+    display:block;
+}
+.backpage
+{
+    size: A5 portrait;
+    margin: 0;
+}
+.card_row
+{
+    margin-left:20px;
+    border-bottom: 1px solid black;
+    margin-top:25px;
+    width:97%;
+}
+
+.frontpage .entrant_number_box
+{
+    padding-top:40px;
+    padding-bottom:30px;
+    width:520px;
+    text-align:center;
+    font-size:20px;
+}
+.frontpage .entrant_number
+{
+    font-size:25px;
+    border-bottom: 1px solid black;
+    display:inline-block;
+    width:120px;
+}
+.frontpage .prize_box
+{
+    padding-top:30px;
+    padding-bottom:100px;
+    width:456px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-size:20px;
+}
+.frontpage .prize
+{
+    font-size:20px;
+    border-bottom: 1px solid black;
+    display:inline-block;
+    width:180px;
+}
+.frontpage .class_number_box
+{
+    padding-top:20px;
+    padding-bottom:26px;
+    width:230px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-size:30px;=
+}
+.frontpage .class_number
+{
+    font-size:36px;
+    border-bottom: 1px solid black;
+    display:inline-block;
+    width:100px;
+    font-weight:bold;
+}
+.frontpage .entrant_number
+{
+    margin-left:auto;
+}
+.entrycard
+{
+    width:800px;
+    height:140mm;
+}
+.backpage
+{
+    width:100%;
+}
+.frontpage
+{
+    width:100%;
+}
+.frontpage .footer
+{
+    font-size: 12px;
+}
+.frontpage .footer_box
+{
+    margin-left:50px;
+    margin-bottom:10px;
+}
+img.rhs-logo
+{
+    padding:10px;
+    margin:10px;
+    margin-top:24px;
+}
+.backpage .sort_letter{
+    display: inline-block;
+    font-size:20px;
+    margin-left:8px;
+    margin-top:-6px;
+    text-align:right;
+    font-style: italic;
+    color:#999;
+}
+.backpage .society_name
+{
+    margin-top:30px;
+    margin-left:20px;
+    font-size:26px;
+    display:inline-block;
+    width:340px;
+}
+.backpage .prize_box
+{
+    margin-left:20px;
+    margin-top:30px;
+    width:345px;
+    height:30px;
+    border:1px solid black;
+    padding:10px;
+    text-align: center;
+    vertical-align: middle;
+    font-style: italic;
+    color: darkgray;
+}
+.backpage .class_number
+{
+    padding-top:20px;
+}
+
+.backpage .gardener_name
+{
+    margin-bottom:6px;
+}
+.backpage .class_name
+{
+    margin-bottom:6px;
+    height:18px;
+}
+div.foldline {
+
+    height:1px;
+    border-bottom: 1px dashed green;
+    text-align: center;
+    font-size: 12pt;
+    margin-top: 4px;
+    color: darkgrey;
+
+}
+div.foldline .arrow{
+    font-size:12pt;
+}

@@ -18,12 +18,12 @@ use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\View\View;
 use Throwable;
 
 class UserController extends Controller
@@ -127,6 +127,86 @@ class UserController extends Controller
     }
 
     /**
+     * Show the form for merging a person
+     *
+     * @return \Illuminate\Contracts\View\View
+     * @throws AuthorizationException
+     */
+    public function chooseMerge(User $user): View
+    {
+        $this->authorize('delete', $user);
+        return view('users.merge', ['user' => $user]);
+    }
+
+    public function prepareMerge(User $user, User $mergeInto)
+    {
+        $this->authorize('delete', $user);
+        $this->authorize('delete', $mergeInto);
+        return view('users.prepareMerge', ['user' => $user, 'mergeInto' => $mergeInto]);
+    }
+
+    /**
+     * @throws Throwable
+     * @throws AuthorizationException
+     */
+    public function doMerge(Request $request, User $user, User $mergeInto): Factory|View|Application|RedirectResponse
+    {
+        $this->authorize('delete', $user);
+        $this->authorize('delete', $mergeInto);
+
+        DB::beginTransaction();
+        try {
+            $mergeUserBlocked = false;
+            foreach ($request->post('mergeEntrantOptions') ?? [] as $mergeFromEntrantId => $mergePath) {
+                $mergeFromEntrant = Entrant::findOrFail($mergeFromEntrantId);
+
+                if ($mergePath == 'ignore') {
+//                    dump('ignoring ' . $mergeFromEntrant->full_name);
+                    // we cannot merge and delete a user if we are disregarding an entrant
+                    $mergeUserBlocked = true;
+                } elseif ($mergePath == 'merge') {
+                    $mergeToEntrant = Entrant::findOrFail(
+                        $request->post('mergeEntrant')[$mergeFromEntrantId]
+                    );
+//                    dump('merging ' . $mergeFromEntrant->full_name . ' into ' . $mergeToEntrant);
+                    $mergeFromEntrant->mergeInto($mergeToEntrant);
+                    $mergeFromEntrant->delete();
+                } else {
+                    $mergeFromEntrant->moveToUser($mergeInto);
+//                    dump('moving ' . $mergeFromEntrant->full_name . ' into user ' . $mergeInto->full_name);
+                }
+            }
+
+            if (!$mergeUserBlocked && $request->post('user_merge_type') == 'merge') {
+//                dump('Merging user ' . $user->full_name . ' into user ' . $mergeInto->full_name);
+//                dump($request->post()->all());
+                $user->mergeInto(
+                    $mergeInto,
+                    $request->post('first_name'),
+                    $request->post('last_name'),
+                    $request->post('address_1'),
+                    $request->post('address_2'),
+                    $request->post('address_town'),
+                    $request->post('postcode'),
+                    $request->post('email'),
+                    $request->post('password'),
+                );
+                $user->delete();
+            } else {
+//                dump('not merging users ' . $request->post('user_merge_type') . ' ' . (int) $mergeUserBlocked);
+            }
+//            DB::rollBack();
+//            dd();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage());
+        }
+        //@TODO  This is a bit crap, need a better list page or to use a nova route really
+        return redirect('/admin/resources/users/' . $mergeInto->id);
+    }
+
+    /**
      * Store a newly created user in storage
      *
      * @param UserRequest $request
@@ -201,6 +281,24 @@ class UserController extends Controller
         $cardData = $this->getCardDataFromEntries($entriesQuery->get());
 
         return view('cards.printcards', [
+            'card_fronts' => $cardData['fronts'],
+            'card_backs' => $cardData['backs'],
+        ]);
+    }
+
+    public function printCardsA5(Request $request, Show $show): Application|Factory|\Illuminate\Contracts\View\View
+    {
+        $entriesQuery = $this->getEntriesQuery($show);
+        $entriesQuery->whereIn('users.id', $request->get('users'));
+
+        if ($request->filled('since')) {
+            $entriesQuery->where('entries.updated_at', '>', Carbon::now()->subMinutes((int) $request->since));
+        }
+
+        $cardData = $this->getCardDataFromEntries($entriesQuery->get());
+
+        return view('cards.printcardsA5', [
+            'show' => $show,
             'card_fronts' => $cardData['fronts'],
             'card_backs' => $cardData['backs'],
         ]);

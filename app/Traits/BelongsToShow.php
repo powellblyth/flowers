@@ -3,7 +3,7 @@
 namespace App\Traits;
 
 use App\Models\Show;
-use  Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 trait BelongsToShow

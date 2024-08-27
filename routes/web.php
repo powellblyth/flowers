@@ -1,22 +1,22 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CupController;
 use App\Http\Controllers\EntrantController;
 use App\Http\Controllers\EntryController;
 use App\Http\Controllers\JudgeController;
 use App\Http\Controllers\MarketingController;
-use App\Http\Controllers\MembershipPurchaseController;
 use App\Http\Controllers\PaymentCardsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaffleController;
+use App\Http\Controllers\SectionController;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\CategoryController;
-use \App\Http\Controllers\CupController;
-use App\Http\Controllers\SectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,12 +80,14 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
         ->name('sections.storeresults');
     Route::get('/sections/{section}/resultsentry', [SectionController::class, 'resultsEntryForm'])
         ->name('sections.resultsentry');
-    Route::get('/shows/{show}/printtabletop', [CategoryController::class, 'printCards'])
+    Route::get('/shows/{show}/printtabletop', [CategoryController::class, 'printTableCards'])
         ->name('category.tabletopprint');
     Route::get('/show/{show}/printLookups', [CategoryController::class, 'printLookups'])
         ->name('category.lookupprint');
     Route::get('/shows/{show}/printAllCards', [EntryController::class, 'printAllCards'])
         ->name('entries.printall');
+    Route::get('/shows/{show}/printAllCardsA5', [EntryController::class, 'printAllCardsA5'])
+        ->name('entries.printallA5');
     Route::get('/shows/{show}/judges/{judge}/printSheets', [JudgeController::class, 'printSheets'])
         ->name('judges.printSheets');
 
@@ -93,8 +95,16 @@ Route::group(['middleware' => ['is_admin', 'auth']], function () {
 
     Route::get('/users/print/{show}', [UserController::class, 'printCards'])
         ->name('users.print');
-    Route::get('/user/{user}print/{show}', [UserController::class, 'printCards'])
+    Route::get('/users/printA5/{show}', [UserController::class, 'printCardsA5'])
+        ->name('users.printA5');
+    Route::get('/users/{user}/print/{show}', [UserController::class, 'printCards'])
         ->name('user.print');
+    Route::get('/users/{user}/merge', [UserController::class, 'chooseMerge'])
+        ->name('users.merge');
+    Route::get('/users/{user}/prepareMerge/{mergeInto}', [UserController::class, 'prepareMerge'])
+        ->name('users.prepareMerge');
+    Route::post('/users/{user}/doMerge/{mergeInto}', [UserController::class, 'doMerge'])
+        ->name('users.doMerge');
 });
 
 
@@ -153,7 +163,7 @@ Route::controller(MarketingController::class)
             ->name('marketing.membership');
     });
 
-Route::get('sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
+Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 
 Route::post(

@@ -3,7 +3,6 @@
 namespace App\Nova\Actions;
 
 use App\Models\Show;
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
@@ -68,19 +67,7 @@ class PrintAllShowCardsRedirector extends Action
     {
         return [
             Select::make('Since')->options(
-                [
-                    1 => '1 minute',
-                    5 => '5 minutes',
-                    10 => '10 minutes',
-                    30 => '30 minutes',
-                    60 => '1 hour ago',
-                    120 => '2 hours ago',
-                    360 => '6 hours ago',
-                    720 => '12 hours ago',
-                    1440 => '24 hours ago',
-                    525600 => 'All Year',
-
-                ]
+                Show::getHoursAgo()
             )->default(525600)
         ];
     }
