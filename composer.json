@@ -14,6 +14,7 @@
         "php": "^8.2",
         "akki-io/laravel-nova-search": "^1.0",
         "aws/aws-sdk-php": "^3.228",
+        "benjacho/belongs-to-many-field": "^2.0",
         "composer/composer": "^2.6.0",
         "doctrine/dbal": "~2.3",
         "guzzlehttp/guzzle": "^7.2",

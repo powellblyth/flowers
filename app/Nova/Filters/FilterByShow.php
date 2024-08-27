@@ -42,7 +42,7 @@ class FilterByShow extends Filter
         return Cache::remember(
             'all_shows',
             '1000',
-            fn() => Show::orderBy('start_date')->get()->pluck('id', 'name')->toArray(),
+            fn() => Show::newestFirst()->get()->pluck('id', 'name')->toArray(),
         );
     }
 }

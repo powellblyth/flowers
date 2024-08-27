@@ -71,6 +71,17 @@ class Cup extends Model
         return $query->orderby('cups.sort_order');
     }
 
+    public function sections(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Section::class,
+            'cup_section_show',
+            'cup_id',
+            'section_id'
+
+        )->withPivot('show_id');
+    }
+
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
@@ -78,19 +89,21 @@ class Cup extends Model
 
     public function relatedCategories(Show $show): Collection
     {
-        if ($this->section !== null) {
-            return $this
-                ->section
-                ->categories()
-                ->orderBy('sortorder')
-                ->forShow($show)
-                ->get();
-        } else {
-            return $this->categories()
-                ->orderBy('sortorder')
-                ->forShow($show)
-                ->get();
+        $categories = new Collection();
+        if ($this->sections()->withPivotValue('show_id', $show->id)->count() > 0) {
+            $this
+                ->sections()
+                ->withPivotValue('show_id', $show->id)
+                ->each(function (Section $section) use (&$categories, $show) {
+                    $categories = $categories->merge($section->categories()->forShow($show)->get());
+                });
         }
+        return $categories->merge($this->categories()
+                ->inOrder()
+                ->forShow($show)
+            ->get())
+            // TO DO why doesn't this work?
+            ->sortBy('sort_order');
     }
 
     public function judgeRoles(): BelongsToMany
@@ -118,6 +131,33 @@ class Cup extends Model
     }
 
     /**
+     * returns a list of either sections (preferred) or categories by number of the cup's relevant winning triggers)
+     * @param Show $show
+     * @return string
+     */
+    public function getSectionsOrCategoriesDescription(Show $show): ?string
+    {
+        $sections = $this->sections()->withPivotValue('show_id', $show->id)->inOrder()->get();
+        $result = null;
+        if ($sections->count() > 0) {
+            $result = \Str::plural('section', $sections)
+                   . ' '
+                   . implode(', ', $sections->pluck('number')->all());
+        }
+        $categories = $this->categories()->forShow($show)->get();
+
+        if ($categories->count() > 0) {
+            if (!is_null($result)) {
+                $result .= ' and ';
+            }
+            $result .= \Str::plural('category', $categories)
+                       . ' '
+                       . implode(', ', $categories->pluck('number')->all());
+        }
+        return $result;
+    }
+
+    /**
      * creates or returns the cup winner archive
      */
     public function getWinnerArchiveForShow(Show $show): CupWinnerArchive
@@ -132,34 +172,38 @@ class Cup extends Model
             );
     }
 
-    public function getJudgesForThisShow(Show $show, string $prefix = ''): ?string
+    public function getJudgesForThisShow(Show $show): Collection
     {
         // TODO this should be a model call not a display call
-        $judges = $this
+        return $this
             ->judgeRoles
             // this is good, all the judge roles for the cups
             // NEXT we need to       bring in all the JudgeAtShow for that role, for that show
 
-            ->reduce(function (\Illuminate\Support\Collection $carry, \App\Models\JudgeRole $judgeRole) use ($show) {
-//   echo($judgeRole->judgesForShow($show));die();
-//var_dump(($judgeRole->label));die();
-                return $carry->merge($judgeRole->judgesForShow($show)->get());
+            ->reduce(function (\Illuminate\Support\Collection $carry, JudgeRole $judgeRole) use ($show) {
+                return $carry->merge($judgeRole->judgesForShow()->withPivotValue('show_id', $show->id)->get());
             },
                 new \Illuminate\Support\Collection())
-            ->reduce(function (array $carry, \App\Models\Judge $judge) {
-                $carry[] = $judge->name;
-                return $carry;
-            }, []);
-        if (empty($judges)) {
+            ->reduce(function (Collection $carry, \App\Models\Judge $judge) {
+                return $carry->add($judge);
+            }, new Collection);
+    }
+
+    public function getJudgesDescriptionForThisShow(Show $show, string $prefix = ''): ?string
+    {
+        // TODO this should be a model call not a display call
+        $judges = $this->getJudgesForThisShow($show);
+
+        if (0 == $judges->count()) {
             return '';
         }
 
-        return $prefix . ' ' . implode(', ', $judges);
+        return $prefix . ' ' . implode(', ', $judges->pluck('name')->toArray());
     }
 
     public function getWinnersForShow(Show $show): CupWinnerArchive
     {
-        $service = new CupCalculatorService($show, $this);
+        $calculatorService = new CupCalculatorService($show, $this);
         //TODO this is a little inefficient
         $winnerArchive = $this->getWinnerArchiveForShow($show);
         // If the show has passed, then we can stop foofing about with the calculations
@@ -168,22 +212,27 @@ class Cup extends Model
         // this will go in the bin once all historics are generated
         if (!$winnerArchive->exists || $show->isCurrent()) {
             if ($this->is_points_based) {
-                $winnerArchive = $service->recalculateWinnerFromPoints();
+                $winnerArchive = $calculatorService->recalculateWinnerFromPoints();
             } else {
-                $winnerArchive = $service->recalculateWinnerFromJudgeNotes();
+                $winnerArchive = $calculatorService->recalculateWinnerFromJudgeNotes();
             }
         }
         return $winnerArchive;
     }
 
-
     public function getValidCategoryIdsForShow(Show $show): array
     {
-        if ($this->section_id) {
-            return $this->section->categories()->forShow($show)->pluck('id')->toArray();
-        } else {
-            return $this->relatedCategories($show)->pluck('id')->toArray();
+        $sections = $this->sections()->withPivotValue('show_id', $show->id);
+        if ($sections->count() > 0) {
+            $categories = new Collection();
+            $sections->each(
+                function (Section $section) use ($show, &$categories) {
+                    $categories = $categories->merge($section->categories);
+                }
+            );
+            return $categories->pluck('id')->toArray();
         }
+        return $this->relatedCategories($show)->pluck('id')->toArray();
     }
 
     public static function getWinningBasisOptions(): array

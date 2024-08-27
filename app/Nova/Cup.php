@@ -3,8 +3,8 @@
 namespace App\Nova;
 
 use App\Nova\Actions\CupResultsChooserRedirector;
+use Benjacho\BelongsToManyField\BelongsToManyField;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 
 class Cup extends Resource
 {
@@ -81,6 +82,11 @@ class Cup extends Resource
             Text::make(__('Winning Criteria'), 'winning_criteria')
                 ->rules('required', 'max:255')
                 ->hideFromIndex(),
+            Trix::make(__('Rules'), 'rules')
+                ->hideFromIndex(),
+            Text::make(__('Prize Description'), 'prize_description')
+                ->rules('max:255')
+                ->hideFromIndex(),
 
             Select::make(__('Winning Basis'), 'winning_basis')
                 ->required()
@@ -96,11 +102,23 @@ class Cup extends Resource
             Textarea::make(__('Judges\' notes'), 'judges_notes')
                 ->hideFromIndex(),
             HasMany::make(__('Categories'), 'categories'),
-            BelongsTo::make(__('Section (only if all categories are for this cup)'), 'section', Section::class)->nullable(),
+            //            BelongsTo::make(__('Section (only if all categories are for this cup)'), 'section', Section::class)->nullable(),
             BelongsToMany::make(__('Judge Role'), 'judgeRoles')->nullable()
                 ->canSee(
                     fn() => $this->resource->winning_basis === \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE
                 ),
+
+            BelongsToManyField::make('Sections', 'sections', Section::class),
+
+            //            BelongsToMany::make(__('Sections'), 'sections')
+            //                ->fields(function (Request $request, \App\Models\Section $section) {
+            //                    return [
+            //                        BelongsTo::make('section')
+            //                            ->nullable()
+            //                            ->searchable(),
+            //                        //                        BelongsTo::make('cup'),
+            //                    ];
+            //                }),
         ];
     }
 

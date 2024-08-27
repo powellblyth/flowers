@@ -24,9 +24,6 @@ class PaymentCardsController extends Controller
 
     public function create()
     {
-
-        return response()->view('subscriptions.updatePaymentMethod', [
-        ]);
-        //
+        return response()->view('subscriptions.updatePaymentMethod');
     }
 }

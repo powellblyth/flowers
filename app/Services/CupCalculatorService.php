@@ -28,7 +28,7 @@ class CupCalculatorService
 
         // Some shows may not have ANY categories (e.g. Covid mini show)
         // by forcing this to 0 we unbreak the SQL
-        if ($categoryIds === []) {
+        if (empty($categoryIds)) {
             $categoryIds = [0=>0];
         }
         $results = collect(DB::select(

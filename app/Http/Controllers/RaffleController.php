@@ -22,7 +22,7 @@ class RaffleController extends Controller
     {
         $show = $this->getShowFromRequest($request);
         return redirect(
-            route('show.raffle', ['show' => $this->getShowFromRequest($request)]),
+            route('show.raffle', ['show' => $show]),
             301
         );
     }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Entry;
-use App\Models\Section;
 use App\Models\Show;
 use App\Traits\Controllers\HasShowSwitcher;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -34,7 +33,7 @@ class CategoryController extends Controller
      */
     public function forShow(Request $request, Show $show): View
     {
-        $sections = Section::orderBy('number', 'asc')->get();
+        $sections = $show->sections()->inOrder()->get();
 
         return view(
             'categories.index',
@@ -49,17 +48,18 @@ class CategoryController extends Controller
      * This prints all the category cards for the show entries to put on the tables
      * @throws AuthorizationException
      */
-    public function printCards(Request $request, Show $show): Factory|View
+    public function printTableCards(Request $request, Show $show): Factory|View
     {
-        $this->authorize('printCards', Entry::class);
-        $categories = Category::where('show_id', $show->id)->inOrder()->get();
+        $this->authorize('printTableCards', Entry::class);
+        $categories = Category::forShow($show)->inOrder()->get();
         $cardFronts = [];
 
         foreach ($categories as $category) {
             /** @var Category $category */
             $cardFronts[] = [
                 'class_number' => $category->number,
-                'class_name' => $category->name
+                'class_name' => $category->name,
+                'class_notes' => $category->notes,
             ];
         }
         return view('categories.printcards', ['show' => $show, 'card_fronts' => $cardFronts]);
@@ -83,7 +83,7 @@ class CategoryController extends Controller
             $section = $category->section;
             $cardFronts[] = [
                 'section' => $section->id,
-                'section_name' => $section->name,
+                'section_name' => $section->display_name,
                 'class_number' => $category->number,
                 'class_name' => $category->name
             ];

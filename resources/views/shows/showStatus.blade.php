@@ -20,7 +20,7 @@
     </x-layout.intro-para>
 
 
-    @foreach (\App\Models\Section::all() as $section)
+    @foreach ($show->sections()->inOrder()->get() as $section)
         <x-layout.intro-para class="py-2">
             <x-headers.h2>
                 @lang('Section') {{$section->display_name}}
@@ -43,14 +43,35 @@
     @foreach (\App\Models\Cup::with(['section'])->inOrder()->get() as $cup)
         <x-layout.intro-para class="py-2">
             <div>{{ $cup->name }}[{{$cup->id}}]<br />
-            {{$cup->winning_criteria}}</div>
-            <x-goodbad
-                :success="$cup->categories()->forShow($show)->count() > 0 || $cup->section?->categories()->forShow($show)->count() > 0">
+                {{\App\Models\Cup::getWinningBasisOptions()[$cup->winning_basis]}}<br/>
+                {{$cup->winning_criteria}}<br/>
+                @if($cup->winning_basis == \App\Models\Cup::WINNING_BASIS_JUDGES_CHOICE  )
+                    @php $judges = $cup->getJudgesForThisShow($show)->pluck('name')->toArray();
+                    @endphp
+                    <x-goodbad
+                        :success="count($judges) > 0">
+                        <b>Judges:</b> {{implode(', ' , $judges)}}
+                    </x-goodbad>
+                @endif
+            </div>
 
-                {{$cup->categories()->forShow($show)->count() }} direct categories<br/>
+            @php
+                $sections = $cup->sections()->withPivotValue('show_id', $show->id)->inOrder()->get();
+            @endphp
+
+            <div class="my-2">
+            <x-goodbad
+                :success="$cup->categories()->forShow($show)->count() > 0 || $sections->count() > 0">
+                {{$cup->categories()->forShow($show)->count() }}
+                {{Str::plural('category', $cup->categories()->forShow($show)->count())}}
+                , {{count($sections) . ' ' . Str::plural('section', $sections->count())}}
             </x-goodbad>
+            </div>
             @foreach ($cup->categories()->forShow($show)->inOrder()->get() as $category)
                 {{$category->numbered_name}}<br />
+            @endforeach
+            @foreach ($sections as $section)
+                {{$section->display_name}}<br/>
             @endforeach
             @if($cup->section?->categories()->forShow($show)->count() > 0)
                 <x-goodbad

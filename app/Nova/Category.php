@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\AddCategoryAfter;
 use App\Nova\Actions\AddCategoryToCup;
 use App\Nova\Actions\ChangeSectionAction;
 use App\Nova\Actions\CreateUsersEntry;
@@ -23,7 +24,7 @@ class Category extends Resource
      * The model the resource corresponds to.
      */
     public static string $model = \App\Models\Category::class;
-    public static $perPageOptions = [120, 50];
+    public static $perPageOptions = [150, 50];
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
@@ -161,6 +162,7 @@ class Category extends Resource
                 ->showOnTableRow(),
             AddCategoryToCup::make(),
             ChangeSectionAction::make(),
+            AddCategoryAfter::make(),
         ];
     }
 }

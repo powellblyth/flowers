@@ -22,6 +22,8 @@ class JudgeController extends Controller
         return view('judges.printsheets', [
             'judge' => $judge,
             'show' => $show,
+            'relatedCups' => $judge->relatedCups($show),
+            'relatedCategories' => $judge->relatedCategories($show),
         ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Events\EntrantSaving;
 use Database\Factories\EntrantFactory;
+use DB;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
@@ -87,7 +88,6 @@ class Entrant extends Model
         'first_name',
         'family_name',
         'membernumber',
-        'age',
         'can_retain_data',
     ];
 
@@ -98,42 +98,70 @@ class Entrant extends Model
         'saving' => EntrantSaving::class
     ];
 
-    public function printableName(): Attribute
+    protected function printableName(): Attribute
     {
         return new Attribute(
             get: fn($value) => trim(substr($this->first_name, 0, 1) . ' ' . $this->family_name)
         );
     }
 
-    public function entrantNumber(): Attribute
+    protected function ageDescription(): Attribute
     {
         return new Attribute(
-            get: fn($value) => $this->getEntrantNumber()
+            get: function ($value) {
+                if (!$this->age) {
+                    return '';
+                }
+                if ($this->age >= 18) {
+                    return '';
+                }
+                return __(':age years', ['age' => $this->age]);
+            }
         );
     }
 
-    public function numberedName(): Attribute
+    protected function entrantNumber(): Attribute
     {
         return new Attribute(
-            get: fn($value) => $this->getEntrantNumber() .' ' . $this->full_name
+            get: fn($value) => 'E-' . str_pad((string) $this->id, 4, '0', STR_PAD_LEFT)
         );
     }
 
-    public function fullName(): Attribute
+    protected function numberedName(): Attribute
     {
-        return new Attribute(
-            get: fn($value) => Str::title(trim($this->first_name . ' ' . $this->family_name))
+        return Attribute::make(
+            get: fn() => $this->entrant_number . ' ' . $this->full_name
+        );
+    }
+
+    protected function fullName(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => Str::title(
+                trim($this->first_name . ' ' . $this->family_name)
+            )
         );
     }
 
     /**
      * Simple way to get an entrant number
      */
-    public function getEntrantNumber(): string
+    public function getAddressDetails($joiningChars = ', '): string
     {
-        return 'E-' . str_pad((string) $this->id, 4, '0', STR_PAD_LEFT);
+        $addressItems = [];
+        if ($this->user) {
+            if (!empty($this->user->address)) {
+                $addressItems[] = $this->user->address;
+            }
+            if (!empty($this->user->email)) {
+                $addressItems[] = $this->user->email;
+            }
+            if (!empty($this->user->telephone)) {
+                $addressItems[] = $this->user->telephone;
+            }
+        }
+        return implode($joiningChars, $addressItems);
     }
-
 
     public function user(): BelongsTo
     {
@@ -186,6 +214,121 @@ class Entrant extends Model
                 return !$entrant->canJoin($team);
             })
             ->pluck('name', 'id')->toArray();
+    }
+
+    /**
+     * Merge another entrant's data into this one
+     * @param Entrant $mergeIntoEntrant
+     * @return void
+     */
+    public function mergeInto(Entrant $mergeIntoEntrant)
+    {
+        try {
+            DB::beginTransaction();
+            $this->entries()->each(
+                function (Entry $entry) use ($mergeIntoEntrant) {
+                    $entry->entrant()->associate($mergeIntoEntrant);
+                    $entry->save();
+                }
+            );
+
+            $this->membershipPurchases()->each(
+                function (MembershipPurchase $membershipPurchase) use ($mergeIntoEntrant) {
+                    $membershipPurchase->entrant()->associate($mergeIntoEntrant);
+                    $membershipPurchase->user()->associate($mergeIntoEntrant->user);
+                    $membershipPurchase->save();
+                }
+            );
+
+            $this->payments()->each(
+                function (Payment $payment) use ($mergeIntoEntrant) {
+                    $payment->entrant()->associate($mergeIntoEntrant);
+                    $payment->user()->associate($mergeIntoEntrant->user);
+                    $payment->save();
+                }
+            );
+
+            DB::table('cup_winner_archives')
+                ->where('cup_winner_entrant_id', $this->id)
+                ->update(['cup_winner_entrant_id' => $mergeIntoEntrant->id]);
+
+            DB::table('cup_winner_archive_winners')
+                ->where('entrant_id', $this->id)
+                ->update(['entrant_id' => $mergeIntoEntrant->id]);
+
+            // Don't really use this field but... referential integrity and all that
+            DB::table('cup_direct_winners')
+                ->where('entrant_id', $this->id)
+                ->update(['entrant_id' => $mergeIntoEntrant->id]);
+
+            DB::table('entrant_team')
+                ->where('entrant_id', $this->id)
+                ->update(['entrant_id' => $mergeIntoEntrant->id]);
+
+            $metaData = [
+                'merged_from' => [
+                    'first_name' => $this->first_name,
+                    'family_name' => $this->family_name,
+                    'membernumber' => $this->membernumber,
+                    'created_at' => $this->created_at,
+                    'updated_at' => $this->updated_at,
+                    'age' => $this->age,
+                    'approx_birth_year' => $this->approx_birth_year,
+                    'can_retain_data' => $this->can_retain_data,
+                    'retain_data_opt_in' => $this->retain_data_opt_in,
+                    'retain_data_opt_out' => $this->retain_data_opt_out,
+                ]
+            ];
+            $mergeEntrantLog = new MergeEntrantLog();
+            $mergeEntrantLog->mergeFromEntrant()->associate($this);
+            $mergeEntrantLog->mergeToEntrant()->associate($mergeIntoEntrant);
+            $mergeEntrantLog->mergeFromUser()->associate($this->user);
+            $mergeEntrantLog->mergeToUser()->associate($mergeIntoEntrant->user);
+            $mergeEntrantLog->metadata = $metaData;
+            $mergeEntrantLog->merge_type = 'MergeEntrantIntoEntrant';
+            $mergeEntrantLog->save();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage());
+        }
+    }
+
+    public function moveToUser(User $user): void
+    {
+        try {
+            DB::beginTransaction();
+
+//            dump($this->user->id);
+//            dump($user->id);
+            $this->user()->associate($user);
+//            dump($this->user->id);
+            $this->save();
+//            dd($user->id);
+            $this->payments()
+                ->where('user_id', $user->id)
+                ->each(function (Payment $payment) {
+                    $payment->user()->associate($this);
+                });
+            $this->membershipPurchases()
+                ->where('user_id', $user->id)
+                ->each(function (MembershipPurchase $membershipPurchase) {
+                    $membershipPurchase->user()->associate($this);
+                });
+
+            $mergeEntrantLog = new MergeEntrantLog();
+            $mergeEntrantLog->mergeFromEntrant()->associate($this);
+            $mergeEntrantLog->mergeToEntrant()->associate($this);
+            $mergeEntrantLog->mergeFromUser()->associate($this->user);
+            $mergeEntrantLog->mergeToUser()->associate($user);
+            $mergeEntrantLog->metadata = [];
+            $mergeEntrantLog->merge_type = 'MoveEntrantToUser';
+            $mergeEntrantLog->save();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage());
+        }
     }
 
     public function anonymise(): Entrant

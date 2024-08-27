@@ -6,6 +6,7 @@ use Database\Factories\SubscriptionFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 
 /**
@@ -61,6 +62,11 @@ class Subscription extends Model
         return Membership::where('name', $this->stripe_id)
             //->where('price_id', $this->stripe_price)
             ->first();
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 
     /****   Checks   ****/

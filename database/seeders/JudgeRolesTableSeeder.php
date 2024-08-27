@@ -75,6 +75,15 @@ class JudgeRolesTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            8 => 
+            array (
+                'id' => 9,
+                'label' => 'Art',
+                'created_at' => '2023-05-01 21:21:21',
+                'updated_at' => '2023-05-01 21:21:21',
+            ),
         ));
+        
+        
     }
 }

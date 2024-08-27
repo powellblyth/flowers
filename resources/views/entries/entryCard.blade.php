@@ -33,9 +33,7 @@
                         @lang(':name\'s entry form', ['name'=>$entrant->full_name])
                         {{$entrant->age_description}}
                         @if ($can_enter)
-                            {{--                        <div>--}}
                             <input type="submit" value="Save" class="text-white bg-green-500 px-3 py-1 ml-4 rounded">
-                            {{--                        </div>--}}
                         @endif
                     </h3>
                 </div>
@@ -55,7 +53,12 @@
                     @foreach($sections as $section)
                         <div class="pl-2 text-xl font-bold bg-pink-200 rounded-md">{{$section->display_name}}</div>
                         <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
-                            @forelse($categories->where('section_id', $section->id)->sortBy('sortorder') as $category)
+                            @forelse(
+                                $section->categories()
+                                ->exceptPrivate()
+                                ->inOrder()
+                                ->get() as $category
+                                )
                                 @if($category->notAgeRestricted($entrant))
                                     <!-- TODO dont bother showing unentered historic categories -->
                                     <div class="p-2 flex bg-green-200 mx-2 my-3 rounded-xl">
@@ -97,7 +100,6 @@
                 @lang('There are no family members configured yet. You must have configured at least one
                 family member before you can add any show entries')
             </div>
-
         @endforelse
 
         @if ($can_enter)
@@ -105,9 +107,5 @@
             </form>
 
         @endif
-        <div class="row">
-
-        </div>
-
     </div>
 </x-app-layout>

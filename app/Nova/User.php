@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use App\Nova\Actions\CreateFamilyMembership;
 use App\Nova\Actions\CreateSingleMembership;
+use App\Nova\Actions\MergeUserRedirector;
+use App\Nova\Actions\PrintAllUserCardsA5Redirector;
 use App\Nova\Actions\PrintAllUserCardsRedirector;
 use App\Nova\Actions\RecordPayment;
 use Illuminate\Http\Request;
@@ -84,17 +86,17 @@ class User extends Resource
         return [
             ID::make()->sortable(),
             Gravatar::make()->maxWidth(50),
-            Text::make(__('Name'), fn(\App\Models\User $user) => $user->fullName),
+            Text::make(__('Name'), fn(\App\Models\User $user) => $user->full_name),
             Text::make(
                 __('Membership Number'),
                 fn(\App\Models\User $user) => $user->getMemberNumber()
             ),
 
             Text::make('Fees for current show', function () {
+                $latestShow = \App\Models\Show::public()->newestFirst()->first();
                 $fees = 0;
                 $freeEntries = 0;
                 $entries = 0;
-                $latestShow = \App\Models\Show::public()->newestFirst()->first();
                 foreach ($this->entrants as $entrant) {
                     foreach ($entrant->entries()->forShow($latestShow)->get() as $entry) {
                         $entryPrice = (int) $entry->getActualPrice();
@@ -107,12 +109,18 @@ class User extends Resource
                 }
 //                return '£' . ($fees/100);
                 $payments = 0;
-                foreach ($this->payments()->where('created_at', '>', '2022-01-01 00:00:00')->get() as $payment) {
+                foreach (
+                    $this->payments()->where(
+                        'created_at',
+                        '>',
+                        $latestShow->start_date->format('Y-05-01')
+                    )->get() as $payment
+                ) {
                     $payments += (int) $payment->amount;
                 }
 
                 $memberships = $this->membershipPurchases()
-                    ->where('created_at', '>', '2022-06-01 00:00:00')
+                    ->where('created_at', '>', '2023-06-01 00:00:00')
                     ->get();
                 $numMembership = $memberships->count();
                 $amountMemberships = $memberships->sum('amount');
@@ -230,8 +238,10 @@ class User extends Resource
         return [
             RecordPayment::make(),
             PrintAllUserCardsRedirector::make()->showOnIndex(),
+            PrintAllUserCardsA5Redirector::make()->showOnIndex(),
             CreateFamilyMembership::make()->showOnIndex()->showOnTableRow(),
             CreateSingleMembership::make()->showOnIndex()->showOnTableRow(),
+            MergeUserRedirector::make()->showOnIndex()->showOnTableRow(),
         ];
     }
 }

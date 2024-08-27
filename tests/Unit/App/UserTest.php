@@ -8,7 +8,7 @@ use Tests\TestCase;
 class UserTest extends TestCase
 {
 
-    public function providerGetAddress()
+    public function providerGetAddress(): array
     {
         return [
             ['first', 'second', 'town', 'postcode', 'first, second, town postcode'],
@@ -35,14 +35,14 @@ class UserTest extends TestCase
         $this->assertSame($expected, $sut->address);
     }
 
-    public function providergetName()
+    public function providergetName(): array
     {
         return [
-            ['first second', 'first', 'second', null],
-            ['first second', 'first', 'second', false],
-            ['first', 'first', '', null],
-            ['second', '', 'second', null],
-            ['first second', 'first', 'second ', null],
+            ['First Second', 'first', 'second', null],
+            ['First Second', 'first', 'second', false],
+            ['First', 'first', '', null],
+            ['Second', '', 'second', null],
+            ['First Second', 'first', 'second ', null],
             ['', '', '']
         ];
     }
@@ -65,13 +65,13 @@ class UserTest extends TestCase
         $this->assertSame($expected, $sut->full_name);
     }
 
-    public function providergetPrintableName()
+    public function providergetPrintableName(): array
     {
         return [
-            ['first', 'second', 'f second'],
-            ['first', '', 'f'],
-            ['', 'second', 'second'],
-            ['first', 'second ', 'f second'],
+            ['first', 'second', 'F Second'],
+            ['first', '', 'F'],
+            ['', 'second', 'Second'],
+            ['first', 'second ', 'F Second'],
             ['', '', '']
         ];
     }
@@ -88,6 +88,7 @@ class UserTest extends TestCase
         $sut->last_name  = $second;
 
         $this->assertSame($expected, $sut->printable_name);
+        $this->assertSame($expected, $sut->printableName);
     }
 
 

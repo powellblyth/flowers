@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BelongsToCategory;
 use App\Traits\BelongsToShow;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -41,6 +42,7 @@ use Illuminate\Support\Carbon;
 class Entry extends Model
 {
     use BelongsToShow;
+    use BelongsToCategory;
 
     public $fillable = [
         'entrant_id',
@@ -51,7 +53,7 @@ class Entry extends Model
     public function winningLabel(): Attribute
     {
         return new Attribute(
-            get: fn($value) => match ($this->winningplace) {
+            get: fn($value) => match ((string) $this->winningplace) {
                 '1' => 'First Place',
                 '2' => 'Second Place',
                 '3' => 'Third Place',
@@ -93,14 +95,9 @@ class Entry extends Model
         return $this->belongsTo(Entrant::class);
     }
 
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(Category::class);
-    }
-
     public function getPlacementName(): string
     {
-        return match ($this->winningplace) {
+        return match ((string) $this->winningplace) {
             '1' => 'First Place',
             '2' => 'Second Place',
             '3' => 'Third Place',

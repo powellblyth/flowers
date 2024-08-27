@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
 use Illuminate\Console\Command;
 
 class ScruffyCommand extends Command {
@@ -26,7 +25,16 @@ class ScruffyCommand extends Command {
      * @return mixed
      */
     public function handle() {
-$user = User::first();
-$user->merge(User::find(10));
+        $this->thing('432a');
+        $this->thing('432-ba');
+        $this->thing('banadna 1');
+        $this->thing('21 banadna 13');
+    }
+
+    public function thing($value)
+    {
+        $matches = [];
+        $numbers = preg_match('/[^0-9]*([0-9]*)/', $value, $matches);
+        dump($matches);
     }
 }

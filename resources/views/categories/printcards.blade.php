@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{URL::asset('css/categoryCardPrint.css')}}"/>
+<link rel="stylesheet" href="{{URL::asset('css/tableCardPrint.css')}}"/>
 <div id="everything">
     @php
     $numPerPage = 4;
@@ -22,6 +22,7 @@
                                 <div class="class_name">
                                     <span class="class_name">{{ $card_fronts[$cardcounter]['class_name'] }}</span>
                                 </div>
+                                <div class="class_notes">{{ $card_fronts[$cardcounter]['class_notes'] }}</div>
 
                             </div>
                         </td>

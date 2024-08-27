@@ -5,24 +5,36 @@
     <x-slot name="canonical">{{route('cups.show', ['show' => $show, 'cup' => $cup]) }}</x-slot>
     <x-slot name="header">
         <x-headers.h1>
-            {{ __('Cup ' . $cup->name . ' ' . $show->name) }}
+            {{ __($cup->name . ' ' . $show->name) }}
         </x-headers.h1>
     </x-slot>
-    {{--    <x-navigation.show route="cups.show" :show="$show" />--}}
 
     <x-layout.intro-para>
-        {{--        <p>--}}
-        {{--            These are the cups we award during the annual Flower Show and--}}
-        {{--            the winners of the {{$show->name}} Show (when available).--}}
-        {{--        </p>--}}
-        <ul>
-            <li>@lang('Name'): {{ $cup->name }}</li>
-            <li>@lang('Show'): {{ $show->name }}</li>
-            <li>@lang('Criteria'): {{ $cup->winning_criteria }}</li>
+        <x-buttons.small class="mb-4"><a href="{{route('cups.index')}}"> &laquo; Back</a></x-buttons.small>
+        <div class="flex">
+            @if($cup->image)
+                <div class="flex-initial pr-4 ">
+                    <img src="/images/cups/{{$cup->image}}" class="max-w-200"
+                         alt="Image of {{$cup->name}}"
+                         title="Image of {{$cup->name}}"/>
+                </div>
+            @endif
+
+            <ul class="flex-1">
+            <li><b>@lang('Show')</b>: {{ $show->name }}</li>
+            <li><b>@lang('Name')</b>: {{ $cup->name }}</li>
+            <li><b>@lang('Criteria')</b>: {{ $cup->winning_criteria }}
+                <i>{{ $cup->getSectionsOrCategoriesDescription($show) }}</i></li>
+            @if($cup->prize_description)
+                <li><b>Prize</b>: {{$cup->prize_description}}</li>
+            @endif
+                @if (!$cup->is_points_based)
+                    <li><b>Judges for {{$show->name}}</b>: {{ $cup->getJudgesDescriptionForThisShow($show)  }}</li>
+                @endif
         </ul>
+        </div>
     </x-layout.intro-para>
     <x-layout.intro-para>
-
         <b>
             @if ($cup->is_points_based)
                 @lang('For the most points in ')
@@ -33,46 +45,6 @@
 
         @foreach ($categories as $category)
             <p>{{$category->numbered_name}} <small>{{$category->notes}}</small></p>
-            @can('storeResults', $show)
-
-                {{--            @if (array_key_exists($category->id, $winners_by_category) && count($winners_by_category[$category->id]) > 0)--}}
-                {{--                <td>--}}
-                {{--                    @if (array_key_exists('1', $winners_by_category[$category->id]))--}}
-                {{--                        {{$winners[$winners_by_category[$category->id]['1']['entrant']]->printable_name}}--}}
-                {{--                        ({{$winners_by_category[$category->id]['1']['points']}} points)--}}
-                {{--                    @else--}}
-                {{--                        ---}}
-                {{--                    @endif--}}
-                {{--                </td>--}}
-                {{--                <td>--}}
-                {{--                    @if (array_key_exists('2', $winners_by_category[$category->id]))--}}
-                {{--                        {{$winners[$winners_by_category[$category->id]['2']['entrant']]->printable_name}}--}}
-                {{--                        ({{$winners_by_category[$category->id]['2']['points']}} points)--}}
-                {{--                    @else--}}
-                {{--                        ---}}
-                {{--                    @endif--}}
-                {{--                </td>--}}
-                {{--                <td>--}}
-                {{--                    @if (array_key_exists('3', $winners_by_category[$category->id]))--}}
-                {{--                        {{$winners[$winners_by_category[$category->id]['3']['entrant']]->printable_name}}--}}
-                {{--                        ({{$winners_by_category[$category->id]['3']['points']}} points)--}}
-                {{--                    @else--}}
-                {{--                        ---}}
-                {{--                    @endif--}}
-                {{--                </td>--}}
-                {{--                <td>--}}
-                {{--                    @if (array_key_exists('commended', $winners_by_category[$category->id]))--}}
-                {{--                        {{$winners[$winners_by_category[$category->id]['commended']['entrant']]->printable_name}}--}}
-                {{--                        ({{$winners_by_category[$category->id]['commended']['points']}} points)--}}
-                {{--                    @else--}}
-                {{--                        ---}}
-                {{--                    @endif--}}
-                {{--                </td>--}}
-                {{--            @else--}}
-                {{--                <td colspan="4">@lang('Unavailable')</td>--}}
-                {{--            @endif--}}
-
-            @endcan
         @endforeach
 
         @can('storeResults', $show)
@@ -90,5 +62,10 @@
         @endcan
 
     </x-layout.intro-para>
+    @if($cup->rules)
+        <x-layout.intro-para>
+            <b>Rules</b>: {!! str_replace('<ol>', '<ol class="list-decimal ml-8">', $cup->rules) !!}</li>
+        </x-layout.intro-para>
+    @endif
 </x-app-layout>
 
