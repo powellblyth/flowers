@@ -96,6 +96,17 @@ class Membership extends Model
         ];
     }
 
+    public static function getTypesWithLabels(): array
+    {
+        $entrantMembership = Membership::whereSku('SINGLE')->first();
+        $familyMembership = Membership::whereSku('FAMILY')->first();
+        return [
+            Membership::APPLIES_TO_ENTRANT => $entrantMembership->label . ' £' . ($entrantMembership->price_gbp / 100),
+            Membership::APPLIES_TO_USER => $familyMembership->label . ' £' . ($familyMembership->price_gbp / 100),
+            //            Membership::APPLIES_TO_USER => 'Family',
+        ];
+    }
+
     /**
      * This method is a utility to determine the next appropriate renewal date
      * @return Carbon

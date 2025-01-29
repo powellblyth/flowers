@@ -14,6 +14,11 @@
 <dropdown-menu slot="menu" width="200" direction="rtl">
     <ul class="list-reset">
         <li>
+            <a href="{{ route('members.list') }}" class="block no-underline text-90 hover:bg-30 p-3">
+                {{ __('Membership Tool') }}
+            </a>
+        </li>
+        <li>
             <a href="{{ route('family') }}" class="block no-underline text-90 hover:bg-30 p-3">
                 {{ __('Your Family Page') }}
             </a>

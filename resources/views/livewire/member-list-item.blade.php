@@ -39,7 +39,7 @@
 
             @if(!$member->membershipIsCurrent())
             <x-select wire:model="membership_type" class="w-40  text-sm" name="membership_type"
-                      blankLabel="Membership Type.." :options="Membership::getTypes()"
+                      blankLabel="Membership Type.." :options="Membership::getTypesWithLabels()"
                       hasBlank="true"/>
             <br/>
             <x-select wire:model="payment_type" class="w-40 text-sm" name="payment_type"
