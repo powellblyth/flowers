@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Controllers\MembershipPurchaseController;
 use App\Models\Entrant;
 use App\Models\Membership;
 use App\Models\MembershipPurchase;
@@ -100,7 +99,8 @@ class MemberListItem extends Component
 
         $payment = new Payment();
         $payment->user()->associate($this->member);
-        $payment->amount = MembershipPurchaseController::getAmount($this->membership_type);
+        $payment->amount = Membership::getMembershipForType($this->membership_type)->amount_gbp;
+//        $payment->amount = MembershipPurchaseController::getAmount($this->membership_type);
         $payment->source = $this->payment_type;
 
         if ($entrant instanceof Entrant) {
@@ -115,7 +115,8 @@ class MemberListItem extends Component
 
         $membershipPurchase = new MembershipPurchase();
         $membershipPurchase->type = $this->membership_type;
-        $membershipPurchase->amount = MembershipPurchaseController::getAmount($this->membership_type);
+        $membershipPurchase->amount = Membership::getMembershipForType($this->membership_type)->price_gbp;
+//        $membershipPurchase->amount = MembershipPurchaseController::getAmount($this->membership_type);
 
         if ($entrant instanceof Entrant) {
             $membershipPurchase->entrant()->associate($entrant);

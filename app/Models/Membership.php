@@ -119,4 +119,12 @@ class Membership extends Model
         }
         return $renewalDate;
     }
+
+    public static function getMembershipForType(string $type): Membership
+    {
+        return match ($type) {
+            Membership::APPLIES_TO_ENTRANT => Membership::firstWhere('sku', 'SINGLE'),
+            default => Membership::firstWhere('sku', 'FAMILY'),
+        };
+    }
 }

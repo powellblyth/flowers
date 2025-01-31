@@ -368,7 +368,7 @@ class UserController extends Controller
 
         $payment = new Payment();
         $payment->user()->associate($user);
-        $payment->amount = MembershipPurchaseController::getAmount($request->membership_type);
+        $payment->amount = Membership::getMembershipForType($request->membership_type)->price_gbp;
         $payment->source = $request->post('payment_method');
 
         if ($entrant instanceof Entrant) {
@@ -381,7 +381,8 @@ class UserController extends Controller
 
         $membershipPurchase = new MembershipPurchase();
         $membershipPurchase->type = $request->membership_type;
-        $membershipPurchase->amount = MembershipPurchaseController::getAmount($request->type);
+        $membershipPurchase->amount = Membership::getMembershipForType($request->type)->price_gbp;
+//        $membershipPurchase->amount = MembershipPurchaseController::getAmount($request->type);
         if ($entrant instanceof Entrant) {
             $membershipPurchase->entrant()->associate($entrant);
         }
