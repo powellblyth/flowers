@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\FilterByShow;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
@@ -82,7 +83,9 @@ class Entry extends Resource
      */
     public function filters(Request $request): array
     {
-        return [];
+        return [
+            FilterByShow::make(),
+        ];
     }
 
     /**
