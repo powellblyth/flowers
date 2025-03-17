@@ -15,7 +15,7 @@
     <ul class="list-reset">
         <li>
             <a href="{{ route('members.list') }}" class="block no-underline text-90 hover:bg-30 p-3">
-                {{ __('Membership Tool') }}
+                {{ __('Membership Renewal Tool') }}
             </a>
         </li>
         <li>

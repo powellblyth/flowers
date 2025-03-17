@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="pageTitle">
-        {{ __('Renewal Sheet') }}
+        {{ __('Membership Renewal Tool') }}
     </x-slot>
     <x-slot name="header">
         <x-headers.h1>
-            {{ __('Renewal Sheet') }}
+            {{ __('Membership Renewal Tool') }}
         </x-headers.h1>
     </x-slot>
 

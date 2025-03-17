@@ -1,6 +1,8 @@
+@php use App\Models\Membership; @endphp
+@php use App\Models\Payment; @endphp
 <div>
     @if($succeeded)
-        <div>Member Succesfully Created</div>
+        <div>Member Successfully Created</div>
     @else
         <form wire:submit.prevent="submit">
             <!-- Name -->
@@ -58,6 +60,17 @@
                 @error('postcode')@enderror
                 <x-input wire:model="postcode" id="postcode" class="block w-full" type="text" name="postcode"
                          :value="old('postcode')" placeholder="Postcode"/>
+            </div>
+            <div>
+                @error('membership')@enderror
+                <x-label for="membership" :value="__('Membership')"/>
+                <x-select wire:model="membership_type" class="w-40  text-sm" name="membership_type"
+                          blankLabel="Membership Type.." :options="Membership::getTypesWithLabels()"
+                          hasBlank="true"/>
+                <br/>
+                <x-select wire:model="payment_type" class="w-40 text-sm" name="payment_type"
+                          blankLabel="Payment Type.."
+                          :options="Payment::getAllPaymentTypes(false)" hasBlank="true"/>
             </div>
 
             <div class="mt-4">
